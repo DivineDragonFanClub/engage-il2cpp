@@ -9,14 +9,19 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesysteminfo/FileSystemInfo.md"))]
     #[::unity2::class(namespace = "System.IO", name = "FileSystemInfo")]
     pub struct FileSystemInfo {
+        #[offset(24)]
         #[rename(name = "_data")]
         pub data: crate::system::io::monoiostat::MonoIOStat,
+        #[offset(64)]
         #[rename(name = "_dataInitialised")]
         pub data_initialised: i32,
+        #[offset(72)]
         #[rename(name = "FullPath")]
         pub full_path: ::unity2::Il2CppString,
+        #[offset(80)]
         #[rename(name = "OriginalPath")]
         pub original_path: ::unity2::Il2CppString,
+        #[offset(88)]
         #[rename(name = "_displayPath")]
         pub display_path_field: ::unity2::Il2CppString,
     }

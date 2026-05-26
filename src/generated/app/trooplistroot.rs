@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TroopListRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TroopListRoot {
+        #[offset(24)]
         #[rename(name = "m_UnitListRoot")]
         pub m_unit_list_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_SortRoot")]
         pub m_sort_root: crate::unity_engine::gameobject::GameObject,
     }

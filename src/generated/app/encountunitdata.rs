@@ -53,10 +53,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EncountUnitData")]
     #[parent(crate::system::object::Object)]
     pub struct EncountUnitData {
+        #[offset(16)]
         #[rename(name = "m_DisposData")]
         pub m_dispos_data: crate::app::disposdata::DisposData,
+        #[offset(24)]
         #[rename(name = "m_RareType")]
         pub m_rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
+        #[offset(32)]
         #[rename(name = "m_JobData")]
         pub m_job_data: crate::app::jobdata::JobData,
     }

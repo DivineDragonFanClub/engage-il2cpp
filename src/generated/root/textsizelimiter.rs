@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "TextSizeLimiter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TextSizeLimiter {
+        #[offset(24)]
         #[rename(name = "m_LimitMaxWidth")]
         pub m_limit_max_width: f32,
+        #[offset(32)]
         #[rename(name = "m_Text")]
         pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_Layout")]
         pub m_layout: crate::unity_engine::ui::layoutelement::LayoutElement,
     }

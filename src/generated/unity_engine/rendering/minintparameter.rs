@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "MinIntParameter")]
     #[parent(crate::unity_engine::rendering::intparameter::IntParameter)]
     pub struct MinIntParameter {
+        #[offset(24)]
         #[rename(name = "min")]
         pub min: i32,
     }

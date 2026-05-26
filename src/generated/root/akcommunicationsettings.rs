@@ -15,8 +15,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkCommunicationSettings")]
     #[parent(crate::system::object::Object)]
     pub struct AkCommunicationSettings {
+        #[offset(16)]
         #[rename(name = "swigCPtr")]
         pub swig_c_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "swigCMemOwn")]
         pub swig_c_mem_own: bool,
     }

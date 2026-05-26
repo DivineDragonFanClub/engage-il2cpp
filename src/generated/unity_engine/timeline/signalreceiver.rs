@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalReceiver")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SignalReceiver {
+        #[offset(24)]
         #[rename(name = "m_Events")]
         pub m_events: crate::unity_engine::timeline::signalreceiver::SignalReceiver_EventKeyValue,
     }
@@ -27,8 +28,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalReceiver.EventKeyValue")]
     #[parent(crate::system::object::Object)]
     pub struct SignalReceiver_EventKeyValue {
+        #[offset(16)]
         #[rename(name = "m_Signals")]
         pub m_signals: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::signalasset::SignalAsset>,
+        #[offset(24)]
         #[rename(name = "m_Events")]
         pub m_events: crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::unityevent::UnityEvent>,
     }

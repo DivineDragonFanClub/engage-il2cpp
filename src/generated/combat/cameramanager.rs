@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraManager")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: cameramanager :: CameraManager >)]
     pub struct CameraManager {
+        #[offset(32)]
         #[rename(name = "Switch")]
         pub switch: crate::combat::cameraswitch::CameraSwitch,
+        #[offset(40)]
         #[rename(name = "PosData")]
         pub pos_data: crate::combat::camerapositiondata::CameraPositionData,
+        #[offset(48)]
         #[rename(name = "Selector")]
         pub selector: crate::combat::camerasituationconverter::CameraSituationConverter,
+        #[offset(56)]
         #[rename(name = "m_LastUnusedTime")]
         pub m_last_unused_time: f32,
+        #[offset(60)]
         #[rename(name = "m_IsTemporaryCamera")]
         pub m_is_temporary_camera: bool,
+        #[offset(64)]
         #[rename(name = "m_LastChangeTime")]
         pub m_last_change_time: f32,
     }

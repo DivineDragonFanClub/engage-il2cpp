@@ -72,18 +72,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubItemShopSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct HubItemShopSequence {
+        #[offset(112)]
         #[rename(name = "m_ShopMenuResult")]
         pub m_shop_menu_result: crate::app::itemshoptopmenu::ItemShopTopMenu_Result2,
+        #[offset(116)]
         #[rename(name = "m_ShopUnitSelectMenuResult")]
         pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
+        #[offset(120)]
         #[rename(name = "m_UnitSelectRoot")]
         pub m_unit_select_root: crate::app::shopunitselectroot::ShopUnitSelectRoot,
+        #[offset(128)]
         #[rename(name = "m_ItemShopBuyRoot")]
         pub m_item_shop_buy_root: crate::app::itemshopbuyroot::ItemShopBuyRoot,
+        #[offset(136)]
         #[rename(name = "m_ItemShopSellRoot")]
         pub m_item_shop_sell_root: crate::app::shopsellroot::ShopSellRoot,
+        #[offset(144)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(152)]
         #[rename(name = "m_UnitSelectMenuScrollIndex")]
         pub m_unit_select_menu_scroll_index: i32,
     }

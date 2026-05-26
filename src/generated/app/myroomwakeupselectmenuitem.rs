@@ -22,8 +22,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MyRoomWakeupSelectMenuItem {
+        #[offset(104)]
         #[rename(name = "m_UnitL")]
         pub m_unit_l: crate::app::unit::Unit,
+        #[offset(112)]
         #[rename(name = "m_UnitR")]
         pub m_unit_r: crate::app::unit::Unit,
     }

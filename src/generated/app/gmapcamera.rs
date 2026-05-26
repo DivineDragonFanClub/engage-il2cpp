@@ -24,32 +24,46 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapCamera")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gmapcamera :: GmapCamera >)]
     pub struct GmapCamera {
+        #[offset(32)]
         #[rename(name = "m_SphereCenter")]
         pub m_sphere_center: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_DefaultAngleX")]
         pub m_default_angle_x: f32,
+        #[offset(44)]
         #[rename(name = "m_DefaultDistance")]
         pub m_default_distance: f32,
+        #[offset(48)]
         #[rename(name = "m_AngleCurve")]
         pub m_angle_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(56)]
         #[rename(name = "m_DistanceCurve")]
         pub m_distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(64)]
         #[rename(name = "m_ZoomSpeed")]
         pub m_zoom_speed: f32,
+        #[offset(72)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(80)]
         #[rename(name = "m_ZoomParam")]
         pub m_zoom_param: ::unity2::Array<f32>,
+        #[offset(88)]
         #[rename(name = "m_ZoomDir")]
         pub m_zoom_dir: f32,
+        #[offset(96)]
         #[rename(name = "m_Position")]
         pub m_position: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(104)]
         #[rename(name = "m_AngleX")]
         pub m_angle_x: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(112)]
         #[rename(name = "m_Distance")]
         pub m_distance: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(120)]
         #[rename(name = "m_IsRStickZoom")]
         pub m_is_r_stick_zoom: bool,
+        #[offset(124)]
         #[rename(name = "m_PrevZoom")]
         pub m_prev_zoom: f32,
     }

@@ -22,8 +22,10 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxCount")]
         pub max_count: i32,
+        #[offset(32)]
         #[rename(name = "m_Data")]
         pub m_data: ::unity2::Array<crate::app::mapsortieposition::MapSortiePosition_Data>,
+        #[offset(40)]
         #[rename(name = "m_DataCount")]
         pub m_data_count: i32,
     }

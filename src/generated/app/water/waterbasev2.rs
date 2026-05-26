@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Water", name = "WaterBaseV2")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct WaterBaseV2 {
+        #[offset(24)]
         #[rename(name = "sharedMaterial")]
         pub shared_material: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "edgeBlend")]
         pub edge_blend: bool,
+        #[offset(33)]
         #[rename(name = "reflection")]
         pub reflection: bool,
     }

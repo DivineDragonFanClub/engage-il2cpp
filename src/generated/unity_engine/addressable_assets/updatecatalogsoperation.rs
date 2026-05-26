@@ -14,12 +14,15 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "UpdateCatalogsOperation")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > >)]
     pub struct UpdateCatalogsOperation {
+        #[offset(136)]
         #[rename(name = "m_Addressables")]
         pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        #[offset(144)]
         #[rename(name = "m_LocatorInfos")]
         pub m_locator_infos: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo,
         >,
+        #[offset(152)]
         #[rename(name = "m_DepOp")]
         pub m_dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<

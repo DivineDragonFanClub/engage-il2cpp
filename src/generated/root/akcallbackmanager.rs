@@ -11,69 +11,33 @@ mod __types {
         object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BankCallback.md"))]
-    #[::unity2::class(namespace = "", name = "AkCallbackManager.BankCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AkCallbackManager_BankCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_EventCallbackPackage.md"))]
-    #[::unity2::class(namespace = "", name = "AkCallbackManager.EventCallbackPackage")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCallbackManager_EventCallbackPackage {
-        #[rename(name = "m_bNotifyEndOfEvent")]
-        pub m_b_notify_end_of_event: bool,
-        #[rename(name = "m_Callback")]
-        pub m_callback: crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
-        #[rename(name = "m_Cookie")]
-        pub m_cookie: ::unity2::IlInstance,
-        #[rename(name = "m_playingID")]
-        pub m_playing_id: u32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_MonitoringCallback.md"))]
-    #[::unity2::class(namespace = "", name = "AkCallbackManager.MonitoringCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AkCallbackManager_MonitoringCallback {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BankCallbackPackage.md"))]
     #[::unity2::class(namespace = "", name = "AkCallbackManager.BankCallbackPackage")]
     #[parent(crate::system::object::Object)]
     pub struct AkCallbackManager_BankCallbackPackage {
+        #[offset(16)]
         #[rename(name = "m_Callback")]
         pub m_callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
+        #[offset(24)]
         #[rename(name = "m_Cookie")]
         pub m_cookie: ::unity2::IlInstance,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BGMCallback.md"))]
+    #[::unity2::class(namespace = "", name = "AkCallbackManager.BGMCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AkCallbackManager_BGMCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BGMCallbackPackage.md"))]
     #[::unity2::class(namespace = "", name = "AkCallbackManager.BGMCallbackPackage")]
     #[parent(crate::system::object::Object)]
     pub struct AkCallbackManager_BGMCallbackPackage {
+        #[offset(16)]
         #[rename(name = "m_Callback")]
         pub m_callback: crate::root::akcallbackmanager::AkCallbackManager_BGMCallback,
+        #[offset(24)]
         #[rename(name = "m_Cookie")]
         pub m_cookie: ::unity2::IlInstance,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_EventCallback.md"))]
-    #[::unity2::class(namespace = "", name = "AkCallbackManager.EventCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AkCallbackManager_EventCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_InitializationSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCallbackManager.InitializationSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCallbackManager_InitializationSettings {
-        #[static_field]
-        #[rename(name = "DefaultBufferSize")]
-        pub default_buffer_size: i32,
-        #[static_field]
-        #[rename(name = "DefaultIsLoggingEnabled")]
-        pub default_is_logging_enabled: bool,
-        #[rename(name = "BufferSize")]
-        pub buffer_size: i32,
-        #[rename(name = "IsLoggingEnabled")]
-        pub is_logging_enabled: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager.md"))]
@@ -136,486 +100,60 @@ mod __types {
         pub ms_source_change_callback_pkg: crate::root::akcallbackmanager::AkCallbackManager_BGMCallbackPackage,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BGMCallback.md"))]
-    #[::unity2::class(namespace = "", name = "AkCallbackManager.BGMCallback")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_MonitoringCallback.md"))]
+    #[::unity2::class(namespace = "", name = "AkCallbackManager.MonitoringCallback")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AkCallbackManager_BGMCallback {}
+    pub struct AkCallbackManager_MonitoringCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_EventCallback.md"))]
+    #[::unity2::class(namespace = "", name = "AkCallbackManager.EventCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AkCallbackManager_EventCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BankCallback.md"))]
+    #[::unity2::class(namespace = "", name = "AkCallbackManager.BankCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AkCallbackManager_BankCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_EventCallbackPackage.md"))]
+    #[::unity2::class(namespace = "", name = "AkCallbackManager.EventCallbackPackage")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCallbackManager_EventCallbackPackage {
+        #[offset(16)]
+        #[rename(name = "m_bNotifyEndOfEvent")]
+        pub m_b_notify_end_of_event: bool,
+        #[offset(24)]
+        #[rename(name = "m_Callback")]
+        pub m_callback: crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
+        #[offset(32)]
+        #[rename(name = "m_Cookie")]
+        pub m_cookie: ::unity2::IlInstance,
+        #[offset(40)]
+        #[rename(name = "m_playingID")]
+        pub m_playing_id: u32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_InitializationSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkCallbackManager.InitializationSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCallbackManager_InitializationSettings {
+        #[static_field]
+        #[rename(name = "DefaultBufferSize")]
+        pub default_buffer_size: i32,
+        #[static_field]
+        #[rename(name = "DefaultIsLoggingEnabled")]
+        pub default_is_logging_enabled: bool,
+        #[offset(16)]
+        #[rename(name = "BufferSize")]
+        pub buffer_size: i32,
+        #[offset(20)]
+        #[rename(name = "IsLoggingEnabled")]
+        pub is_logging_enabled: bool,
+    }
 }
 
 #[cfg(feature = "root-akcallbackmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-akcallbackmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCallbackManager_BankCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkCallbackManager_BankCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkCallbackManager_BankCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <crate::root::akresult::AKRESULT as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AkCallbackManager_BankCallback,
-        in_bank_id: u32,
-        in_in_memory_bank_ptr: ::unity2::IntPtr,
-        in_e_load_result: crate::root::akresult::AKRESULT,
-        in_cookie: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCallbackManager_BankCallback,
-            u32,
-            ::unity2::IntPtr,
-            crate::root::akresult::AKRESULT,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, in_bank_id, in_in_memory_bank_ptr, in_e_load_result, in_cookie, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_BankCallbackMethods: IAkCallbackManager_BankCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCallbackManager_BankCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCallbackManager_BankCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]
-    fn invoke(
-        self,
-        in_bank_id: impl ::core::convert::Into<u32>,
-        in_in_memory_bank_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        in_e_load_result: impl ::core::convert::Into<crate::root::akresult::AKRESULT>,
-        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkCallbackManager_BankCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCallbackManager_BankCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(in_bank_id),
-                ::core::convert::Into::into(in_in_memory_bank_ptr),
-                ::core::convert::Into::into(in_e_load_result),
-                ::core::convert::Into::into(in_cookie),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl<__T: IAkCallbackManager_BankCallback> IAkCallbackManager_BankCallbackMethods for __T {}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BankCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCallbackManager_BankCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCallbackManager_BankCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCallbackManager_EventCallbackPackage_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akcallbackmanager::AkCallbackManager_EventCallback as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::class(),
-                "Create",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(
-        in_cb: crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
-        in_cookie: crate::system::object::Object,
-        io_flags: *mut u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage {
-        let inner: extern "C" fn(
-            crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
-            crate::system::object::Object,
-            *mut u32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(in_cb, in_cookie, io_flags, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkCallbackManager_EventCallbackPackage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkCallbackManager_EventCallbackPackage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallbackPackage {
-    #[doc = "`Create(crate::root::akcallbackmanager::AkCallbackManager_EventCallback, crate::system::object::Object, *mutu32)` overload"]
-    pub fn create(
-        in_cb: impl ::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_EventCallback>,
-        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> (crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage, u32) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
-            let __ret = {
-                __AkCallbackManager_EventCallbackPackage_unity2_raw::create(
-                    ::core::convert::Into::into(in_cb),
-                    ::core::convert::Into::into(in_cookie),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_EventCallbackPackageMethods: IAkCallbackManager_EventCallbackPackage {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkCallbackManager_EventCallbackPackage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCallbackManager_EventCallbackPackage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl<__T: IAkCallbackManager_EventCallbackPackage> IAkCallbackManager_EventCallbackPackageMethods for __T {}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallbackPackage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCallbackManager_EventCallbackPackage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCallbackManager_EventCallbackPackageMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCallbackManager_MonitoringCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkCallbackManager_MonitoringCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCallbackManager_MonitoringCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akmonitorerrorcode::AkMonitorErrorCode as ::unity2::IlType>::il_type(),
-                <crate::root::akmonitorerrorlevel::AkMonitorErrorLevel as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AkCallbackManager_MonitoringCallback,
-        in_error_code: crate::root::akmonitorerrorcode::AkMonitorErrorCode,
-        in_error_level: crate::root::akmonitorerrorlevel::AkMonitorErrorLevel,
-        in_playing_id: u32,
-        in_game_obj_id: u64,
-        in_msg: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCallbackManager_MonitoringCallback,
-            crate::root::akmonitorerrorcode::AkMonitorErrorCode,
-            crate::root::akmonitorerrorlevel::AkMonitorErrorLevel,
-            u32,
-            u64,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(
-            this,
-            in_error_code,
-            in_error_level,
-            in_playing_id,
-            in_game_obj_id,
-            in_msg,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_MonitoringCallbackMethods: IAkCallbackManager_MonitoringCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <AkCallbackManager_MonitoringCallback as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCallbackManager_MonitoringCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::root::akmonitorerrorcode::AkMonitorErrorCode, crate::root::akmonitorerrorlevel::AkMonitorErrorLevel, u32, u64, ::unity2::Il2CppString)` overload"]
-    fn invoke(
-        self,
-        in_error_code: impl ::core::convert::Into<crate::root::akmonitorerrorcode::AkMonitorErrorCode>,
-        in_error_level: impl ::core::convert::Into<crate::root::akmonitorerrorlevel::AkMonitorErrorLevel>,
-        in_playing_id: impl ::core::convert::Into<u32>,
-        in_game_obj_id: impl ::core::convert::Into<u64>,
-        in_msg: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AkCallbackManager_MonitoringCallback as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCallbackManager_MonitoringCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(in_error_code),
-                ::core::convert::Into::into(in_error_level),
-                ::core::convert::Into::into(in_playing_id),
-                ::core::convert::Into::into(in_game_obj_id),
-                ::core::convert::Into::into(in_msg),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl<__T: IAkCallbackManager_MonitoringCallback> IAkCallbackManager_MonitoringCallbackMethods for __T {}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_MonitoringCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCallbackManager_MonitoringCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCallbackManager_MonitoringCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "root-akcallbackmanager")]
 #[doc(hidden)]
@@ -713,6 +251,152 @@ impl AkCallbackManager_BankCallbackPackage {
 #[cfg(feature = "root-akcallbackmanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkCallbackManager_BGMCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkCallbackManager_BGMCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AkCallbackManager_BGMCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AkCallbackManager_BGMCallback,
+        in_b_other_audio_playing: bool,
+        in_cookie: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::akresult::AKRESULT {
+        let inner: extern "C" fn(
+            AkCallbackManager_BGMCallback,
+            bool,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, in_b_other_audio_playing, in_cookie, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+pub trait IAkCallbackManager_BGMCallbackMethods: IAkCallbackManager_BGMCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <AkCallbackManager_BGMCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCallbackManager_BGMCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(bool, crate::system::object::Object)` overload"]
+    fn invoke(
+        self,
+        in_b_other_audio_playing: impl ::core::convert::Into<bool>,
+        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> crate::root::akresult::AKRESULT {
+        unsafe {
+            let __receiver =
+                <AkCallbackManager_BGMCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCallbackManager_BGMCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(in_b_other_audio_playing),
+                ::core::convert::Into::into(in_cookie),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl<__T: IAkCallbackManager_BGMCallback> IAkCallbackManager_BGMCallbackMethods for __T {}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl AkCallbackManager_BGMCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkCallbackManager_BGMCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkCallbackManager_BGMCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AkCallbackManager_BGMCallbackPackage_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -778,269 +462,6 @@ impl AkCallbackManager_BGMCallbackPackage {
             )
         });
         <Self as IAkCallbackManager_BGMCallbackPackageMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCallbackManager_EventCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkCallbackManager_EventCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkCallbackManager_EventCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <crate::root::akcallbacktype::AkCallbackType as ::unity2::IlType>::il_type(),
-                <crate::root::akcallbackinfo::AkCallbackInfo as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AkCallbackManager_EventCallback,
-        in_cookie: crate::system::object::Object,
-        in_type: crate::root::akcallbacktype::AkCallbackType,
-        in_info: crate::root::akcallbackinfo::AkCallbackInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCallbackManager_EventCallback,
-            crate::system::object::Object,
-            crate::root::akcallbacktype::AkCallbackType,
-            crate::root::akcallbackinfo::AkCallbackInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, in_cookie, in_type, in_info, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_EventCallbackMethods: IAkCallbackManager_EventCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <AkCallbackManager_EventCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCallbackManager_EventCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]
-    fn invoke(
-        self,
-        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
-        in_type: impl ::core::convert::Into<crate::root::akcallbacktype::AkCallbackType>,
-        in_info: impl ::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AkCallbackManager_EventCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCallbackManager_EventCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(in_cookie),
-                ::core::convert::Into::into(in_type),
-                ::core::convert::Into::into(in_info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl<__T: IAkCallbackManager_EventCallback> IAkCallbackManager_EventCallbackMethods for __T {}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCallbackManager_EventCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCallbackManager_EventCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCallbackManager_InitializationSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkCallbackManager_InitializationSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkCallbackManager_InitializationSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_InitializationSettings {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkCallbackManager_InitializationSettings_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_InitializationSettingsMethods: IAkCallbackManager_InitializationSettings {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkCallbackManager_InitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkCallbackManager_InitializationSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl<__T: IAkCallbackManager_InitializationSettings> IAkCallbackManager_InitializationSettingsMethods for __T {}
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_InitializationSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCallbackManager_InitializationSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCallbackManager_InitializationSettingsMethods>::ctor(this);
         this
     }
 }
@@ -1557,7 +978,7 @@ impl AkCallbackManager {
 #[cfg(feature = "root-akcallbackmanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCallbackManager_BGMCallback_unity2_raw {
+mod __AkCallbackManager_MonitoringCallback_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1569,7 +990,7 @@ mod __AkCallbackManager_BGMCallback_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::class(),
+                <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1582,7 +1003,7 @@ mod __AkCallbackManager_BGMCallback_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::NAME,
+                        <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1591,13 +1012,17 @@ mod __AkCallbackManager_BGMCallback_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: AkCallbackManager_BGMCallback,
+        this: AkCallbackManager_MonitoringCallback,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(AkCallbackManager_BGMCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        let inner: extern "C" fn(
+            AkCallbackManager_MonitoringCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -1606,12 +1031,142 @@ mod __AkCallbackManager_BGMCallback_unity2_raw {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::root::akmonitorerrorcode::AkMonitorErrorCode as ::unity2::IlType>::il_type(),
+                <crate::root::akmonitorerrorlevel::AkMonitorErrorLevel as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::class(),
+                <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::class(),
                 "Invoke",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_MonitoringCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AkCallbackManager_MonitoringCallback,
+        in_error_code: crate::root::akmonitorerrorcode::AkMonitorErrorCode,
+        in_error_level: crate::root::akmonitorerrorlevel::AkMonitorErrorLevel,
+        in_playing_id: u32,
+        in_game_obj_id: u64,
+        in_msg: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AkCallbackManager_MonitoringCallback,
+            crate::root::akmonitorerrorcode::AkMonitorErrorCode,
+            crate::root::akmonitorerrorlevel::AkMonitorErrorLevel,
+            u32,
+            u64,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(
+            this,
+            in_error_code,
+            in_error_level,
+            in_playing_id,
+            in_game_obj_id,
+            in_msg,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+pub trait IAkCallbackManager_MonitoringCallbackMethods: IAkCallbackManager_MonitoringCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <AkCallbackManager_MonitoringCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkCallbackManager_MonitoringCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::root::akmonitorerrorcode::AkMonitorErrorCode, crate::root::akmonitorerrorlevel::AkMonitorErrorLevel, u32, u64, ::unity2::Il2CppString)` overload"]
+    fn invoke(
+        self,
+        in_error_code: impl ::core::convert::Into<crate::root::akmonitorerrorcode::AkMonitorErrorCode>,
+        in_error_level: impl ::core::convert::Into<crate::root::akmonitorerrorlevel::AkMonitorErrorLevel>,
+        in_playing_id: impl ::core::convert::Into<u32>,
+        in_game_obj_id: impl ::core::convert::Into<u64>,
+        in_msg: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AkCallbackManager_MonitoringCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkCallbackManager_MonitoringCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(in_error_code),
+                ::core::convert::Into::into(in_error_level),
+                ::core::convert::Into::into(in_playing_id),
+                ::core::convert::Into::into(in_game_obj_id),
+                ::core::convert::Into::into(in_msg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl<__T: IAkCallbackManager_MonitoringCallback> IAkCallbackManager_MonitoringCallbackMethods for __T {}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl AkCallbackManager_MonitoringCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkCallbackManager_MonitoringCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkCallbackManager_MonitoringCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkCallbackManager_EventCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 2,
                 param_types,
                 false,
@@ -1623,7 +1178,49 @@ mod __AkCallbackManager_BGMCallback_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AkCallbackManager_BGMCallback as ::unity2::ClassIdentity>::NAME,
+                        <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkCallbackManager_EventCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AkCallbackManager_EventCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::root::akcallbacktype::AkCallbackType as ::unity2::IlType>::il_type(),
+                <crate::root::akcallbackinfo::AkCallbackInfo as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_EventCallback as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -1632,29 +1229,31 @@ mod __AkCallbackManager_BGMCallback_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: AkCallbackManager_BGMCallback,
-        in_b_other_audio_playing: bool,
+        this: AkCallbackManager_EventCallback,
         in_cookie: crate::system::object::Object,
+        in_type: crate::root::akcallbacktype::AkCallbackType,
+        in_info: crate::root::akcallbackinfo::AkCallbackInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::akresult::AKRESULT {
+    ) -> () {
         let inner: extern "C" fn(
-            AkCallbackManager_BGMCallback,
-            bool,
+            AkCallbackManager_EventCallback,
             crate::system::object::Object,
+            crate::root::akcallbacktype::AkCallbackType,
+            crate::root::akcallbackinfo::AkCallbackInfo,
             ::unity2::OptionalMethod,
-        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, in_b_other_audio_playing, in_cookie, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, in_cookie, in_type, in_info, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_BGMCallbackMethods: IAkCallbackManager_BGMCallback {
+pub trait IAkCallbackManager_EventCallbackMethods: IAkCallbackManager_EventCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <AkCallbackManager_BGMCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCallbackManager_BGMCallback_unity2_raw::ctor(
+                <AkCallbackManager_EventCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCallbackManager_EventCallback_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1662,18 +1261,176 @@ pub trait IAkCallbackManager_BGMCallbackMethods: IAkCallbackManager_BGMCallback 
             )
         }
     }
-    #[doc = "`Invoke(bool, crate::system::object::Object)` overload"]
+    #[doc = "`Invoke(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]
     fn invoke(
         self,
-        in_b_other_audio_playing: impl ::core::convert::Into<bool>,
         in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> crate::root::akresult::AKRESULT {
+        in_type: impl ::core::convert::Into<crate::root::akcallbacktype::AkCallbackType>,
+        in_info: impl ::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>,
+    ) -> () {
         unsafe {
             let __receiver =
-                <AkCallbackManager_BGMCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkCallbackManager_BGMCallback_unity2_raw::invoke(
+                <AkCallbackManager_EventCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCallbackManager_EventCallback_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(in_b_other_audio_playing),
+                ::core::convert::Into::into(in_cookie),
+                ::core::convert::Into::into(in_type),
+                ::core::convert::Into::into(in_info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl<__T: IAkCallbackManager_EventCallback> IAkCallbackManager_EventCallbackMethods for __T {}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl AkCallbackManager_EventCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkCallbackManager_EventCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkCallbackManager_EventCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkCallbackManager_BankCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkCallbackManager_BankCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AkCallbackManager_BankCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::root::akresult::AKRESULT as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_BankCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AkCallbackManager_BankCallback,
+        in_bank_id: u32,
+        in_in_memory_bank_ptr: ::unity2::IntPtr,
+        in_e_load_result: crate::root::akresult::AKRESULT,
+        in_cookie: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AkCallbackManager_BankCallback,
+            u32,
+            ::unity2::IntPtr,
+            crate::root::akresult::AKRESULT,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, in_bank_id, in_in_memory_bank_ptr, in_e_load_result, in_cookie, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+pub trait IAkCallbackManager_BankCallbackMethods: IAkCallbackManager_BankCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <AkCallbackManager_BankCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCallbackManager_BankCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]
+    fn invoke(
+        self,
+        in_bank_id: impl ::core::convert::Into<u32>,
+        in_in_memory_bank_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        in_e_load_result: impl ::core::convert::Into<crate::root::akresult::AKRESULT>,
+        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AkCallbackManager_BankCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCallbackManager_BankCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(in_bank_id),
+                ::core::convert::Into::into(in_in_memory_bank_ptr),
+                ::core::convert::Into::into(in_e_load_result),
                 ::core::convert::Into::into(in_cookie),
                 ::core::option::Option::None,
             )
@@ -1682,20 +1439,273 @@ pub trait IAkCallbackManager_BGMCallbackMethods: IAkCallbackManager_BGMCallback 
 }
 
 #[cfg(feature = "root-akcallbackmanager")]
-impl<__T: IAkCallbackManager_BGMCallback> IAkCallbackManager_BGMCallbackMethods for __T {}
+impl<__T: IAkCallbackManager_BankCallback> IAkCallbackManager_BankCallbackMethods for __T {}
 
 #[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BGMCallback {
+impl AkCallbackManager_BankCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AkCallbackManager_BGMCallback),
+                ::core::stringify!(AkCallbackManager_BankCallback),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAkCallbackManager_BGMCallbackMethods>::ctor(this, object, method);
+        <Self as IAkCallbackManager_BankCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkCallbackManager_EventCallbackPackage_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::root::akcallbackmanager::AkCallbackManager_EventCallback as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::class(),
+                "Create",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create(
+        in_cb: crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
+        in_cookie: crate::system::object::Object,
+        io_flags: *mut u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage {
+        let inner: extern "C" fn(
+            crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
+            crate::system::object::Object,
+            *mut u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(in_cb, in_cookie, io_flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_EventCallbackPackage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AkCallbackManager_EventCallbackPackage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkCallbackManager_EventCallbackPackage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl AkCallbackManager_EventCallbackPackage {
+    #[doc = "`Create(crate::root::akcallbackmanager::AkCallbackManager_EventCallback, crate::system::object::Object, *mutu32)` overload"]
+    pub fn create(
+        in_cb: impl ::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_EventCallback>,
+        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> (crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage, u32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
+            let __ret = {
+                __AkCallbackManager_EventCallbackPackage_unity2_raw::create(
+                    ::core::convert::Into::into(in_cb),
+                    ::core::convert::Into::into(in_cookie),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+pub trait IAkCallbackManager_EventCallbackPackageMethods: IAkCallbackManager_EventCallbackPackage {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkCallbackManager_EventCallbackPackage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkCallbackManager_EventCallbackPackage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl<__T: IAkCallbackManager_EventCallbackPackage> IAkCallbackManager_EventCallbackPackageMethods for __T {}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl AkCallbackManager_EventCallbackPackage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkCallbackManager_EventCallbackPackage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkCallbackManager_EventCallbackPackageMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkCallbackManager_InitializationSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AkCallbackManager_InitializationSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkCallbackManager_InitializationSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCallbackManager_InitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl AkCallbackManager_InitializationSettings {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __AkCallbackManager_InitializationSettings_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+pub trait IAkCallbackManager_InitializationSettingsMethods: IAkCallbackManager_InitializationSettings {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkCallbackManager_InitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkCallbackManager_InitializationSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl<__T: IAkCallbackManager_InitializationSettings> IAkCallbackManager_InitializationSettingsMethods for __T {}
+
+#[cfg(feature = "root-akcallbackmanager")]
+impl AkCallbackManager_InitializationSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkCallbackManager_InitializationSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkCallbackManager_InitializationSettingsMethods>::ctor(this);
         this
     }
 }

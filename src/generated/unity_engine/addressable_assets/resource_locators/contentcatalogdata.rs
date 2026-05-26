@@ -14,28 +14,39 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets.ResourceLocators", name = "ContentCatalogData")]
     #[parent(crate::system::object::Object)]
     pub struct ContentCatalogData {
+        #[offset(16)]
         #[rename(name = "localHash")]
         pub local_hash: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "location")]
         pub location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        #[offset(32)]
         #[rename(name = "m_LocatorId")]
         pub m_locator_id: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_InstanceProviderData")]
         pub m_instance_provider_data: crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
+        #[offset(88)]
         #[rename(name = "m_SceneProviderData")]
         pub m_scene_provider_data: crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
+        #[offset(136)]
         #[rename(name = "m_ResourceProviderData")]
         pub m_resource_provider_data: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
         >,
+        #[offset(144)]
         #[rename(name = "m_ProviderIds")]
         pub m_provider_ids: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(152)]
         #[rename(name = "m_InternalIds")]
         pub m_internal_ids: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(160)]
         #[rename(name = "m_KeyDataString")]
         pub m_key_data_string: ::unity2::Il2CppString,
+        #[offset(168)]
         #[rename(name = "m_BucketDataString")]
         pub m_bucket_data_string: ::unity2::Il2CppString,
+        #[offset(176)]
         #[rename(name = "m_EntryDataString")]
         pub m_entry_data_string: ::unity2::Il2CppString,
         #[static_field]
@@ -44,36 +55,15 @@ mod __types {
         #[static_field]
         #[rename(name = "k_EntryDataItemPerEntry")]
         pub k_entry_data_item_per_entry: i32,
+        #[offset(184)]
         #[rename(name = "m_ExtraDataString")]
         pub m_extra_data_string: ::unity2::Il2CppString,
+        #[offset(192)]
         #[rename(name = "m_resourceTypes")]
         pub m_resource_types: ::unity2::Array<crate::unity_engine::resource_management::util::serializedtype::SerializedType>,
+        #[offset(200)]
         #[rename(name = "m_InternalIdPrefixes")]
         pub m_internal_id_prefixes: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_CompactLocation.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.ResourceLocators", name = "ContentCatalogData.CompactLocation")]
-    #[parent(crate::system::object::Object)]
-    pub struct ContentCatalogData_CompactLocation {
-        #[rename(name = "m_Locator")]
-        pub m_locator: crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,
-        #[rename(name = "m_InternalId")]
-        pub m_internal_id: ::unity2::Il2CppString,
-        #[rename(name = "m_ProviderId")]
-        pub m_provider_id: ::unity2::Il2CppString,
-        #[rename(name = "m_Dependency")]
-        pub m_dependency: ::unity2::IlInstance,
-        #[rename(name = "m_Data")]
-        pub m_data: ::unity2::IlInstance,
-        #[rename(name = "m_HashCode")]
-        pub m_hash_code: i32,
-        #[rename(name = "m_DependencyHashCode")]
-        pub m_dependency_hash_code: i32,
-        #[rename(name = "m_PrimaryKey")]
-        pub m_primary_key: ::unity2::Il2CppString,
-        #[rename(name = "m_Type")]
-        pub m_type: ::unity2::SystemType,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_Bucket.md"))]
@@ -99,6 +89,39 @@ mod __types {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_CompactLocation.md"))]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.ResourceLocators", name = "ContentCatalogData.CompactLocation")]
+    #[parent(crate::system::object::Object)]
+    pub struct ContentCatalogData_CompactLocation {
+        #[offset(16)]
+        #[rename(name = "m_Locator")]
+        pub m_locator: crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,
+        #[offset(24)]
+        #[rename(name = "m_InternalId")]
+        pub m_internal_id: ::unity2::Il2CppString,
+        #[offset(32)]
+        #[rename(name = "m_ProviderId")]
+        pub m_provider_id: ::unity2::Il2CppString,
+        #[offset(40)]
+        #[rename(name = "m_Dependency")]
+        pub m_dependency: ::unity2::IlInstance,
+        #[offset(48)]
+        #[rename(name = "m_Data")]
+        pub m_data: ::unity2::IlInstance,
+        #[offset(56)]
+        #[rename(name = "m_HashCode")]
+        pub m_hash_code: i32,
+        #[offset(60)]
+        #[rename(name = "m_DependencyHashCode")]
+        pub m_dependency_hash_code: i32,
+        #[offset(64)]
+        #[rename(name = "m_PrimaryKey")]
+        pub m_primary_key: ::unity2::Il2CppString,
+        #[offset(72)]
+        #[rename(name = "m_Type")]
+        pub m_type: ::unity2::SystemType,
     }
 }
 

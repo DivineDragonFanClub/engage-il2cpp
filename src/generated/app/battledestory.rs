@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BattleDestory")]
     #[parent(crate::system::object::Object)]
     pub struct BattleDestory {
+        #[offset(16)]
         #[rename(name = "Inspector")]
         pub inspector: crate::app::pokeinspector::PokeInspector,
+        #[offset(24)]
         #[rename(name = "Overlap")]
         pub overlap: crate::app::mapoverlap::MapOverlap_Data,
     }

@@ -24,30 +24,43 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MiniMapTerrainRenderer")]
     #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
     pub struct MiniMapTerrainRenderer {
+        #[offset(208)]
         #[rename(name = "m_Texture")]
         pub m_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(216)]
         #[rename(name = "m_CanvasRenderer")]
         pub m_canvas_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+        #[offset(224)]
         #[rename(name = "m_CostTypeColors")]
         pub m_cost_type_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[offset(232)]
         #[rename(name = "m_IsFillConstColorSightRange")]
         pub m_is_fill_const_color_sight_range: bool,
+        #[offset(236)]
         #[rename(name = "m_SightColorDarkness")]
         pub m_sight_color_darkness: f32,
+        #[offset(240)]
         #[rename(name = "m_SightFillColor")]
         pub m_sight_fill_color: crate::unity_engine::color::Color,
+        #[offset(256)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(264)]
         #[rename(name = "m_Vertices")]
         pub m_vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(272)]
         #[rename(name = "m_Colors")]
         pub m_colors: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        #[offset(280)]
         #[rename(name = "m_UVs")]
         pub m_u_vs: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>,
+        #[offset(288)]
         #[rename(name = "m_Indices")]
         pub m_indices: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(296)]
         #[rename(name = "VERTEX_CAPACITY")]
         pub vertex_capacity: i32,
+        #[offset(312)]
         #[rename(name = "vtxOffsets")]
         pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
     }

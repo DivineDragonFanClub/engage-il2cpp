@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapUI")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapui :: MapUI >)]
     pub struct MapUI {
+        #[offset(32)]
         #[rename(name = "m_UpDownCurve")]
         pub m_up_down_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
         #[rename(name = "m_ScaleCurve")]
         pub m_scale_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(48)]
         #[rename(name = "m_CannonIconOffset")]
         pub m_cannon_icon_offset: f32,
+        #[offset(52)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
     }

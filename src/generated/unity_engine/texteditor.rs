@@ -15,36 +15,52 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "TextEditor")]
     #[parent(crate::system::object::Object)]
     pub struct TextEditor {
+        #[offset(16)]
         #[rename(name = "keyboardOnScreen")]
         pub keyboard_on_screen: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
+        #[offset(24)]
         #[rename(name = "controlID")]
         pub control_id: i32,
+        #[offset(32)]
         #[rename(name = "style")]
         pub style: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(40)]
         #[rename(name = "multiline")]
         pub multiline: bool,
+        #[offset(41)]
         #[rename(name = "hasHorizontalCursorPos")]
         pub has_horizontal_cursor_pos: bool,
+        #[offset(42)]
         #[rename(name = "isPasswordField")]
         pub is_password_field: bool,
+        #[offset(44)]
         #[rename(name = "scrollOffset")]
         pub scroll_offset: crate::unity_engine::vector2::Vector2,
+        #[offset(56)]
         #[rename(name = "m_Content")]
         pub m_content: crate::unity_engine::guicontent::GUIContent,
+        #[offset(64)]
         #[rename(name = "m_CursorIndex")]
         pub m_cursor_index: i32,
+        #[offset(68)]
         #[rename(name = "m_SelectIndex")]
         pub m_select_index: i32,
+        #[offset(72)]
         #[rename(name = "m_RevealCursor")]
         pub m_reveal_cursor: bool,
+        #[offset(73)]
         #[rename(name = "m_MouseDragSelectsWholeWords")]
         pub m_mouse_drag_selects_whole_words: bool,
+        #[offset(76)]
         #[rename(name = "m_DblClickInitPos")]
         pub m_dbl_click_init_pos: i32,
+        #[offset(80)]
         #[rename(name = "m_DblClickSnap")]
         pub m_dbl_click_snap: crate::unity_engine::texteditor::TextEditor_DblClickSnapping,
+        #[offset(81)]
         #[rename(name = "m_bJustSelected")]
         pub m_b_just_selected: bool,
+        #[offset(84)]
         #[rename(name = "m_iAltCursorPos")]
         pub m_i_alt_cursor_pos: i32,
     }

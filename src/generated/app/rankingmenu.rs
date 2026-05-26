@@ -27,10 +27,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RankingMenu.RankingMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RankingMenu_RankingMenuItem {
+        #[offset(100)]
         #[rename(name = "m_rank")]
         pub m_rank: i32,
+        #[offset(104)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::persondata::PersonData,
+        #[offset(112)]
         #[rename(name = "m_god")]
         pub m_god: crate::app::goddata::GodData,
     }

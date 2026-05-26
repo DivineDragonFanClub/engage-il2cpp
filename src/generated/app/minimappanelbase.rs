@@ -24,16 +24,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MiniMapPanelBase")]
     #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
     pub struct MiniMapPanelBase {
+        #[offset(208)]
         #[rename(name = "m_Texture")]
         pub m_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(216)]
         #[rename(name = "m_CanvasRenderer")]
         pub m_canvas_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+        #[offset(224)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(232)]
         #[rename(name = "m_Materials")]
         pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[offset(248)]
         #[rename(name = "m_IsAwaked")]
         pub m_is_awaked: bool,
+        #[offset(252)]
         #[rename(name = "m_CustomOffsetZ")]
         pub m_custom_offset_z: i32,
     }

@@ -14,11 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MaterialListMenuSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MaterialListMenuSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/materiallistmenusequence/MaterialListMenuSequence_Label2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -52,6 +47,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MaterialListMenuSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MaterialListMenuSequence {}
 }
 
 #[cfg(feature = "app-materiallistmenusequence-types")]

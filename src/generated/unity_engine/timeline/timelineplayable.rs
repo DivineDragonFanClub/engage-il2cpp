@@ -14,19 +14,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelinePlayable")]
     #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
     pub struct TimelinePlayable {
+        #[offset(16)]
         #[rename(name = "m_IntervalTree")]
         pub m_interval_tree:
             crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
+        #[offset(24)]
         #[rename(name = "m_ActiveClips")]
         pub m_active_clips: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
+        #[offset(32)]
         #[rename(name = "m_CurrentListOfActiveClips")]
         pub m_current_list_of_active_clips:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>,
+        #[offset(40)]
         #[rename(name = "m_ActiveBit")]
         pub m_active_bit: i32,
+        #[offset(48)]
         #[rename(name = "m_EvaluateCallbacks")]
         pub m_evaluate_callbacks:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::itimelineevaluatecallback::ITimelineEvaluateCallback>,
+        #[offset(56)]
         #[rename(name = "m_PlayableCache")]
         pub m_playable_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::timeline::trackasset::TrackAsset,

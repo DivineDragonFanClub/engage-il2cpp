@@ -70,16 +70,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "AspectRatioFitter")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct AspectRatioFitter {
+        #[offset(24)]
         #[rename(name = "m_AspectMode")]
         pub m_aspect_mode: crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode,
+        #[offset(28)]
         #[rename(name = "m_AspectRatio")]
         pub m_aspect_ratio: f32,
+        #[offset(32)]
         #[rename(name = "m_Rect")]
         pub m_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(40)]
         #[rename(name = "m_DelayedSetDirty")]
         pub m_delayed_set_dirty: bool,
+        #[offset(41)]
         #[rename(name = "m_DoesParentExist")]
         pub m_does_parent_exist: bool,
+        #[offset(42)]
         #[rename(name = "m_Tracker")]
         pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
     }

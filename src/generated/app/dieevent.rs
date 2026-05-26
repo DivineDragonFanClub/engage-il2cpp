@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DieEvent")]
     #[parent(crate::app::procbattlecallback::ProcBattleCallback)]
     pub struct DieEvent {
+        #[offset(136)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(144)]
         #[rename(name = "m_IsInCombat")]
         pub m_is_in_combat: bool,
     }

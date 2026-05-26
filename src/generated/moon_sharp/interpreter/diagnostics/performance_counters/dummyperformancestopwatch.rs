@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Instance")]
         pub instance: crate::moon_sharp::interpreter::diagnostics::performance_counters::dummyperformancestopwatch::DummyPerformanceStopwatch,
+        #[offset(16)]
         #[rename(name = "m_Result")]
         pub m_result: crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult,
     }

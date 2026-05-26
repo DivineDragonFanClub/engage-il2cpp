@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraBoundingBox")]
     #[parent(crate::system::object::Object)]
     pub struct CameraBoundingBox {
+        #[offset(16)]
         #[rename(name = "m_CameraDirection")]
         pub m_camera_direction: crate::unity_engine::vector3::Vector3,
+        #[offset(28)]
         #[rename(name = "m_MatrixWorldToCamera")]
         pub m_matrix_world_to_camera: crate::unity_engine::matrix4x4::Matrix4x4,
+        #[offset(92)]
         #[rename(name = "m_MatrixCameraToWorld")]
         pub m_matrix_camera_to_world: crate::unity_engine::matrix4x4::Matrix4x4,
+        #[offset(156)]
         #[rename(name = "m_Box")]
         pub m_box: crate::unity_engine::bounds::Bounds,
+        #[offset(192)]
         #[rename(name = "m_ScreenSpaceReprojectionRatio")]
         pub m_screen_space_reprojection_ratio: f32,
+        #[offset(196)]
         #[rename(name = "m_IsFinalized")]
         pub m_is_finalized: bool,
     }

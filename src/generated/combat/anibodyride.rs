@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "AniBodyRide")]
     #[parent(crate::system::object::Object)]
     pub struct AniBodyRide {
+        #[offset(16)]
         #[rename(name = "initialized")]
         pub initialized: bool,
+        #[offset(56)]
         #[rename(name = "playingIndex")]
         pub playing_index: i32,
     }

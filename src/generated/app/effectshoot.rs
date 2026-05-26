@@ -28,26 +28,37 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EffectShoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EffectShoot {
+        #[offset(24)]
         #[rename(name = "m_Start")]
         pub m_start: crate::unity_engine::vector3::Vector3,
+        #[offset(36)]
         #[rename(name = "m_Goal")]
         pub m_goal: crate::unity_engine::vector3::Vector3,
+        #[offset(48)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(52)]
         #[rename(name = "m_TotalTime")]
         pub m_total_time: f32,
+        #[offset(56)]
         #[rename(name = "m_DeltaTime")]
         pub m_delta_time: f32,
+        #[offset(60)]
         #[rename(name = "m_Position0")]
         pub m_position0: crate::unity_engine::vector3::Vector3,
+        #[offset(72)]
         #[rename(name = "m_Position1")]
         pub m_position1: crate::unity_engine::vector3::Vector3,
+        #[offset(84)]
         #[rename(name = "m_Position2")]
         pub m_position2: crate::unity_engine::vector3::Vector3,
+        #[offset(96)]
         #[rename(name = "m_Position3")]
         pub m_position3: crate::unity_engine::vector3::Vector3,
+        #[offset(112)]
         #[rename(name = "m_Callback")]
         pub m_callback: crate::app::effectshoot::EffectShoot_Callback,
+        #[offset(120)]
         #[rename(name = "m_ParticleSystems")]
         pub m_particle_systems: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem>,
     }

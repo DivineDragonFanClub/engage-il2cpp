@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerChainAttack")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerChainAttack {
+        #[offset(168)]
         #[rename(name = "Distance")]
         pub distance: f32,
+        #[offset(172)]
         #[rename(name = "EnemyDistance")]
         pub enemy_distance: f32,
+        #[offset(176)]
         #[rename(name = "Height")]
         pub height: f32,
+        #[offset(180)]
         #[rename(name = "Back")]
         pub back: f32,
     }

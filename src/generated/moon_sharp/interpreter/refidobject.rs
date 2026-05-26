@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_RefIDCounter")]
         pub s_ref_id_counter: i32,
+        #[offset(16)]
         #[rename(name = "m_RefID")]
         pub m_ref_id: i32,
     }

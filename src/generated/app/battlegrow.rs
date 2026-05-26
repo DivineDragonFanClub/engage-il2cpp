@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BattleGrow")]
     #[parent(crate::app::procbattlecallback::ProcBattleCallback)]
     pub struct BattleGrow {
+        #[offset(129)]
         #[rename(name = "m_IsTalk")]
         pub m_is_talk: bool,
     }

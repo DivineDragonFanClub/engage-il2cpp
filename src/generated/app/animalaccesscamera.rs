@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AnimalAccessCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AnimalAccessCamera {
+        #[offset(48)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(56)]
         #[rename(name = "m_AngleX")]
         pub m_angle_x: crate::app::interpolatorrotation::InterpolatorRotation,
+        #[offset(64)]
         #[rename(name = "m_AngleY")]
         pub m_angle_y: crate::app::interpolatorrotation::InterpolatorRotation,
     }

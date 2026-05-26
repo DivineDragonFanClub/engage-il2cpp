@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionWaitTime")]
     #[parent(crate::combat::actionbase::ActionBase)]
     pub struct ActionWaitTime {
+        #[offset(40)]
         #[rename(name = "m_Seconds")]
         pub m_seconds: f32,
     }

@@ -56,10 +56,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "JobIntroSequence")]
     # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: jobintrosequence :: JobIntroSequence >)]
     pub struct JobIntroSequence {
+        #[offset(136)]
         #[rename(name = "m_JobDataList")]
         pub m_job_data_list: crate::app::structlist_1::StructList_1<crate::app::jobintrodata::JobIntroData>,
+        #[offset(144)]
         #[rename(name = "m_CurrentIndex")]
         pub m_current_index: i32,
+        #[offset(148)]
         #[rename(name = "m_WaitTime")]
         pub m_wait_time: f32,
     }

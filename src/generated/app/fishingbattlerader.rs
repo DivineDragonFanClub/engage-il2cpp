@@ -25,62 +25,91 @@ mod __types {
         #[static_field]
         #[rename(name = "cEffectRaderBubble")]
         pub c_effect_rader_bubble: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_FishShadowObj")]
         pub m_fish_shadow_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_FishBubbleEffect")]
         pub m_fish_bubble_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_FishShadowTrans")]
         pub m_fish_shadow_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(56)]
         #[rename(name = "m_FishAnime")]
         pub m_fish_anime: crate::unity_engine::animator::Animator,
+        #[offset(64)]
         #[rename(name = "m_IsCounterShadow")]
         pub m_is_counter_shadow: bool,
+        #[offset(72)]
         #[rename(name = "m_Area")]
         pub m_area: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_HPGauge")]
         pub m_hp_gauge: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_DangerLine")]
         pub m_danger_line: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_ShadowScale")]
         pub m_shadow_scale: f32,
+        #[offset(104)]
         #[rename(name = "m_HPGaugeHpMove")]
         pub m_hp_gauge_hp_move: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_HPGaugeHpNow")]
         pub m_hp_gauge_hp_now: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_DamageColor")]
         pub m_damage_color: crate::unity_engine::color::Color,
+        #[offset(136)]
         #[rename(name = "m_HealColor")]
         pub m_heal_color: crate::unity_engine::color::Color,
+        #[offset(152)]
         #[rename(name = "m_StickObj")]
         pub m_stick_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
         #[rename(name = "m_ButtonObj")]
         pub m_button_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_RepeatGauge")]
         pub m_repeat_gauge: crate::unity_engine::recttransform::RectTransform,
+        #[offset(176)]
         #[rename(name = "m_Config")]
         pub m_config: crate::app::fishingconfig_battle::FishingConfig_Battle,
+        #[offset(192)]
         #[rename(name = "m_PositionInterp")]
         pub m_position_interp: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(200)]
         #[rename(name = "m_ShakeCount")]
         pub m_shake_count: i32,
+        #[offset(208)]
         #[rename(name = "cShakeDiffArray")]
         pub c_shake_diff_array: ::unity2::Array<f32>,
+        #[offset(216)]
         #[rename(name = "m_MaxHPWidth")]
         pub m_max_hp_width: f32,
+        #[offset(220)]
         #[rename(name = "m_NowHPWidth")]
         pub m_now_hp_width: f32,
+        #[offset(224)]
         #[rename(name = "m_MovingHPWidth")]
         pub m_moving_hp_width: f32,
+        #[offset(228)]
         #[rename(name = "m_HPMoveWaitTimer")]
         pub m_hp_move_wait_timer: f32,
+        #[offset(232)]
         #[rename(name = "m_IsForceCounter")]
         pub m_is_force_counter: bool,
+        #[offset(233)]
         #[rename(name = "m_IsLethal")]
         pub m_is_lethal: bool,
+        #[offset(236)]
         #[rename(name = "m_LethalTimer")]
         pub m_lethal_timer: f32,
+        #[offset(240)]
         #[rename(name = "m_IsLethalButtonAppear")]
         pub m_is_lethal_button_appear: bool,
+        #[offset(241)]
         #[rename(name = "m_IsFirstAttack")]
         pub m_is_first_attack: bool,
     }

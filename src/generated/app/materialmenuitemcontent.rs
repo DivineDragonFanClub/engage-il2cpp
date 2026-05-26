@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MaterialMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct MaterialMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_IconImage")]
         pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "RuntimeDisplaying")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RuntimeDisplaying {
+        #[offset(24)]
         #[rename(name = "assetTable")]
         pub asset_table: crate::combat::assettabledemo::AssetTableDemo,
     }

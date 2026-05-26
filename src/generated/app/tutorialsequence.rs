@@ -17,55 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialsequence/TutorialSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "TutorialSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: tutorialsequence :: TutorialSequence >)]
-    pub struct TutorialSequence {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SpriteAtlasPaths")]
-        pub sprite_atlas_paths: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "CapCommonName")]
-        pub cap_common_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "USCommonName")]
-        pub us_common_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "EUCommonName")]
-        pub eu_common_name: ::unity2::Il2CppString,
-        #[rename(name = "m_TutorialObject")]
-        pub m_tutorial_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_MainSpriteAtlas")]
-        pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[rename(name = "m_SubSpriteAtlas")]
-        pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[rename(name = "m_LocatorRoot")]
-        pub m_locator_root: crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot,
-        #[rename(name = "m_TutorialData")]
-        pub m_tutorial_data: crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>,
-        #[rename(name = "m_TutorialID")]
-        pub m_tutorial_id: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FirstPage")]
-        pub first_page: i32,
-        #[rename(name = "m_Page")]
-        pub m_page: i32,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_PrefabHandle")]
-        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_MainHandle")]
-        pub m_main_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
-        #[rename(name = "m_SubHandle")]
-        pub m_sub_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
-        #[static_field]
-        #[rename(name = "ClassChangeKey")]
-        pub class_change_key: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -102,6 +53,66 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialsequence/TutorialSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "TutorialSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: tutorialsequence :: TutorialSequence >)]
+    pub struct TutorialSequence {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "SpriteAtlasPaths")]
+        pub sprite_atlas_paths: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "CapCommonName")]
+        pub cap_common_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "USCommonName")]
+        pub us_common_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "EUCommonName")]
+        pub eu_common_name: ::unity2::Il2CppString,
+        #[offset(120)]
+        #[rename(name = "m_TutorialObject")]
+        pub m_tutorial_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
+        #[rename(name = "m_MainSpriteAtlas")]
+        pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(136)]
+        #[rename(name = "m_SubSpriteAtlas")]
+        pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(144)]
+        #[rename(name = "m_LocatorRoot")]
+        pub m_locator_root: crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot,
+        #[offset(152)]
+        #[rename(name = "m_TutorialData")]
+        pub m_tutorial_data: crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>,
+        #[offset(160)]
+        #[rename(name = "m_TutorialID")]
+        pub m_tutorial_id: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "FirstPage")]
+        pub first_page: i32,
+        #[offset(168)]
+        #[rename(name = "m_Page")]
+        pub m_page: i32,
+        #[offset(172)]
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[offset(176)]
+        #[rename(name = "m_PrefabHandle")]
+        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(184)]
+        #[rename(name = "m_MainHandle")]
+        pub m_main_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+        #[offset(192)]
+        #[rename(name = "m_SubHandle")]
+        pub m_sub_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+        #[static_field]
+        #[rename(name = "ClassChangeKey")]
+        pub class_change_key: ::unity2::Il2CppString,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_LanguageType.md"))]

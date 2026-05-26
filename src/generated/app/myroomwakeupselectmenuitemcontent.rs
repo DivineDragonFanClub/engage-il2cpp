@@ -23,20 +23,28 @@ mod __types {
         #[static_field]
         #[rename(name = "TYPE_MAX")]
         pub type_max: i32,
+        #[offset(72)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_RankObjects")]
         pub m_rank_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(96)]
         #[rename(name = "m_Frame")]
         pub m_frame: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "m_RankImages")]
         pub m_rank_images: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(120)]
         #[rename(name = "m_RankImagesBase")]
         pub m_rank_images_base: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(128)]
         #[rename(name = "m_RankImagesNumber")]
         pub m_rank_images_number: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
     }

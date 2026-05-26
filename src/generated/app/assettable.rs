@@ -19,6 +19,43 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_AccessoryList.md"))]
+    #[::unity2::class(namespace = "App", name = "AssetTable.AccessoryList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: assettable :: AssetTable_Accessory >)]
+    pub struct AssetTable_AccessoryList {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionIndexes.md"))]
+    #[::unity2::class(namespace = "App", name = "AssetTable.ConditionIndexes")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetTable_ConditionIndexes {
+        #[offset(16)]
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<i32>>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Accessory.md"))]
+    #[::unity2::class(namespace = "App", name = "AssetTable.Accessory")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetTable_Accessory {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionFlags.md"))]
+    #[::unity2::class(namespace = "App", name = "AssetTable.ConditionFlags")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetTable_ConditionFlags {
+        #[offset(16)]
+        #[rename(name = "m_Bits")]
+        pub m_bits: crate::app::bitstruct::BitStruct,
+        #[offset(24)]
+        #[rename(name = "m_Keys")]
+        pub m_keys: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(32)]
+        #[rename(name = "m_Hits")]
+        pub m_hits: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(40)]
+        #[rename(name = "m_Dics")]
+        pub m_dics: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_Modes.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -65,11 +102,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_AccessoryList.md"))]
-    #[::unity2::class(namespace = "App", name = "AssetTable.AccessoryList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: assettable :: AssetTable_Accessory >)]
-    pub struct AssetTable_AccessoryList {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable.md"))]
     #[::unity2::class(namespace = "App", name = "AssetTable")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: assettable :: AssetTable >)]
@@ -77,22 +109,31 @@ mod __types {
         #[static_field]
         #[rename(name = "s_PresetNames")]
         pub s_preset_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(208)]
         #[rename(name = "HairColor")]
         pub hair_color: crate::unity_engine::color::Color,
+        #[offset(224)]
         #[rename(name = "GradColor")]
         pub grad_color: crate::unity_engine::color::Color,
+        #[offset(240)]
         #[rename(name = "SkinColor")]
         pub skin_color: crate::unity_engine::color::Color,
+        #[offset(256)]
         #[rename(name = "ToonShadowColor")]
         pub toon_shadow_color: crate::unity_engine::color::Color,
+        #[offset(272)]
         #[rename(name = "MaskColor100")]
         pub mask_color100: crate::unity_engine::color::Color,
+        #[offset(288)]
         #[rename(name = "MaskColor075")]
         pub mask_color075: crate::unity_engine::color::Color,
+        #[offset(304)]
         #[rename(name = "MaskColor050")]
         pub mask_color050: crate::unity_engine::color::Color,
+        #[offset(320)]
         #[rename(name = "MaskColor025")]
         pub mask_color025: crate::unity_engine::color::Color,
+        #[offset(520)]
         #[rename(name = "m_ConditionIndexes")]
         pub m_condition_indexes: crate::app::assettable::AssetTable_ConditionIndexes,
         #[static_field]
@@ -116,31 +157,6 @@ mod __types {
         #[static_field]
         #[rename(name = "Shared")]
         pub shared: crate::app::assettable::AssetTable_Result,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Result.md"))]
-    #[::unity2::class(namespace = "App", name = "AssetTable.Result")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetTable_Result {
-        #[rename(name = "m_InfoAnim")]
-        pub m_info_anim: ::unity2::Il2CppString,
-        #[rename(name = "m_TalkAnim")]
-        pub m_talk_anim: ::unity2::Il2CppString,
-        #[rename(name = "m_DemoAnim")]
-        pub m_demo_anim: ::unity2::Il2CppString,
-        #[rename(name = "m_HubAnim")]
-        pub m_hub_anim: ::unity2::Il2CppString,
-        #[rename(name = "m_ForceID")]
-        pub m_force_id: ::unity2::Il2CppString,
-        #[rename(name = "m_WeaponID")]
-        pub m_weapon_id: ::unity2::Il2CppString,
-        #[rename(name = "m_BodyAnims")]
-        pub m_body_anims: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[rename(name = "m_Accessories")]
-        pub m_accessories: crate::app::assettable::AssetTable_AccessoryList,
-        #[rename(name = "m_AccessoryDictionary")]
-        pub m_accessory_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::assettable::AssetTable_Accessory>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_Sound.md"))]
@@ -168,33 +184,6 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionIndexes.md"))]
-    #[::unity2::class(namespace = "App", name = "AssetTable.ConditionIndexes")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetTable_ConditionIndexes {
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<i32>>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionFlags.md"))]
-    #[::unity2::class(namespace = "App", name = "AssetTable.ConditionFlags")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetTable_ConditionFlags {
-        #[rename(name = "m_Bits")]
-        pub m_bits: crate::app::bitstruct::BitStruct,
-        #[rename(name = "m_Keys")]
-        pub m_keys: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[rename(name = "m_Hits")]
-        pub m_hits: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_Dics")]
-        pub m_dics: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Accessory.md"))]
-    #[::unity2::class(namespace = "App", name = "AssetTable.Accessory")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetTable_Accessory {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_States.md"))]
     #[repr(C)]
@@ -240,6 +229,40 @@ mod __types {
         pub fn engage_link_attack_sub() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Result.md"))]
+    #[::unity2::class(namespace = "App", name = "AssetTable.Result")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetTable_Result {
+        #[offset(360)]
+        #[rename(name = "m_InfoAnim")]
+        pub m_info_anim: ::unity2::Il2CppString,
+        #[offset(368)]
+        #[rename(name = "m_TalkAnim")]
+        pub m_talk_anim: ::unity2::Il2CppString,
+        #[offset(376)]
+        #[rename(name = "m_DemoAnim")]
+        pub m_demo_anim: ::unity2::Il2CppString,
+        #[offset(384)]
+        #[rename(name = "m_HubAnim")]
+        pub m_hub_anim: ::unity2::Il2CppString,
+        #[offset(392)]
+        #[rename(name = "m_ForceID")]
+        pub m_force_id: ::unity2::Il2CppString,
+        #[offset(400)]
+        #[rename(name = "m_WeaponID")]
+        pub m_weapon_id: ::unity2::Il2CppString,
+        #[offset(408)]
+        #[rename(name = "m_BodyAnims")]
+        pub m_body_anims: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(416)]
+        #[rename(name = "m_Accessories")]
+        pub m_accessories: crate::app::assettable::AssetTable_AccessoryList,
+        #[offset(424)]
+        #[rename(name = "m_AccessoryDictionary")]
+        pub m_accessory_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::assettable::AssetTable_Accessory>,
     }
 }
 
@@ -400,6 +423,1625 @@ impl AssetTable_AccessoryList {
             )
         });
         <Self as IAssetTable_AccessoryListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetTable_ConditionIndexes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AssetTable_ConditionIndexes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionIndexes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        this: AssetTable_ConditionIndexes,
+        indexes: crate::system::collections::generic::list_1::List_1<i32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssetTable_ConditionIndexes,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, indexes, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
+                "Commit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit(this: AssetTable_ConditionIndexes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionIndexes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::assettable::AssetTable_ConditionFlags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
+                "Test",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn test(
+        this: AssetTable_ConditionIndexes,
+        flags: crate::app::assettable::AssetTable_ConditionFlags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AssetTable_ConditionIndexes, crate::app::assettable::AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test::get_method_info().method_ptr);
+        inner(this, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AssetTable_ConditionIndexes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionIndexes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+pub trait IAssetTable_ConditionIndexesMethods: IAssetTable_ConditionIndexes {
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionIndexes_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<i32>)` overload"]
+    fn add(self, indexes: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionIndexes_unity2_raw::add(__receiver, ::core::convert::Into::into(indexes), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Commit()` overload"]
+    fn commit(self) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionIndexes_unity2_raw::commit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Test(crate::app::assettable::AssetTable_ConditionFlags)` overload"]
+    fn test(self, flags: impl ::core::convert::Into<crate::app::assettable::AssetTable_ConditionFlags>) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionIndexes_unity2_raw::test(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionIndexes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+impl<__T: IAssetTable_ConditionIndexes> IAssetTable_ConditionIndexesMethods for __T {}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_ConditionIndexes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTable_ConditionIndexes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTable_ConditionIndexesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetTable_Accessory_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_locator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
+                "get_Locator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
+                        "get_Locator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_locator(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_locator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_locator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
+                "set_Locator",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
+                        "set_Locator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_locator(this: AssetTable_Accessory, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_locator::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_model {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
+                "get_Model",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
+                        "get_Model",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_model(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_model::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_model {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
+                "set_Model",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
+                        "set_Model",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_model(this: AssetTable_Accessory, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_model::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_string(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_exist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
+                "get_Exist",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
+                        "get_Exist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_exist(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_exist::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+pub trait IAssetTable_AccessoryMethods: IAssetTable_Accessory {
+    #[doc = "`get_Locator()` overload"]
+    fn get_locator(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_Accessory_unity2_raw::get_locator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Locator(::unity2::Il2CppString)` overload"]
+    fn set_locator(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_Accessory_unity2_raw::set_locator(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Model()` overload"]
+    fn get_model(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_Accessory_unity2_raw::get_model(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Model(::unity2::Il2CppString)` overload"]
+    fn set_model(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_Accessory_unity2_raw::set_model(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_Accessory_unity2_raw::to_string(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Exist()` overload"]
+    fn get_exist(self) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_Accessory_unity2_raw::get_exist(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_Accessory_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+impl<__T: IAssetTable_Accessory> IAssetTable_AccessoryMethods for __T {}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_Accessory {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTable_Accessory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTable_AccessoryMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetTable_ConditionFlags_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AssetTable_ConditionFlags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_names {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "get_Names",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "get_Names",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_names(
+        this: AssetTable_ConditionFlags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            AssetTable_ConditionFlags,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_names::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hits {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "get_Hits",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "get_Hits",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_hits(
+        this: AssetTable_ConditionFlags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<i32> {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<i32> =
+            ::core::mem::transmute(__lookup_get_hits::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AssetTable_ConditionFlags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Test",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn test(this: AssetTable_ConditionFlags, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Test",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn test_2(this: AssetTable_ConditionFlags, key: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_2::get_method_info().method_ptr);
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        this: AssetTable_ConditionFlags,
+        keys: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, keys, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_2(this: AssetTable_ConditionFlags, key: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
+        inner(this, key, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_3(this: AssetTable_ConditionFlags, item: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_3::get_method_info().method_ptr);
+        inner(this, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_4(this: AssetTable_ConditionFlags, force: crate::app::force::Force_Type, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_4::get_method_info().method_ptr);
+        inner(this, force, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "GetState",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "GetState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::assettable::AssetTable_States {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::assettable::AssetTable_States =
+            ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_5(this: AssetTable_ConditionFlags, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_5::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_simple_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "IsSimpleMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsSimpleMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_simple_mode(this: AssetTable_ConditionFlags, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_simple_mode::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_gender {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gender::Gender as ::unity2::IlType>::il_type(),
+                <crate::app::gender::Gender as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "AddGender",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "AddGender",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_gender(
+        this: AssetTable_ConditionFlags,
+        gender: crate::app::gender::Gender,
+        dress_gender: crate::app::gender::Gender,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::gender::Gender, crate::app::gender::Gender, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_gender::get_method_info().method_ptr);
+        inner(this, gender, dress_gender, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_gender_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "AddGender",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "AddGender",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_gender_2(
+        this: AssetTable_ConditionFlags,
+        person: crate::app::persondata::PersonData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_gender_2::get_method_info().method_ptr);
+        inner(this, person, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_gender_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "AddGender",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "AddGender",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_gender_3(this: AssetTable_ConditionFlags, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_gender_3::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_gender_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "AddGender",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "AddGender",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_gender_4(
+        this: AssetTable_ConditionFlags,
+        goid_data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_gender_4::get_method_info().method_ptr);
+        inner(this, goid_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_6(
+        this: AssetTable_ConditionFlags,
+        person: crate::app::persondata::PersonData,
+        job: crate::app::jobdata::JobData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssetTable_ConditionFlags,
+            crate::app::persondata::PersonData,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_6::get_method_info().method_ptr);
+        inner(this, person, job, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_7(
+        this: AssetTable_ConditionFlags,
+        person: crate::app::persondata::PersonData,
+        job: crate::app::jobdata::JobData,
+        force: crate::app::force::Force_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssetTable_ConditionFlags,
+            crate::app::persondata::PersonData,
+            crate::app::jobdata::JobData,
+            crate::app::force::Force_Type,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_7::get_method_info().method_ptr);
+        inner(this, person, job, force, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_8(
+        this: AssetTable_ConditionFlags,
+        skills: crate::app::skillarray::SkillArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_8::get_method_info().method_ptr);
+        inner(this, skills, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::assettable::AssetTable_States as ::unity2::IlType>::il_type(),
+                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "Add",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_9(
+        this: AssetTable_ConditionFlags,
+        state: crate::app::assettable::AssetTable_States,
+        god_data: crate::app::goddata::GodData,
+        is_darkness: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssetTable_ConditionFlags,
+            crate::app::assettable::AssetTable_States,
+            crate::app::goddata::GodData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_9::get_method_info().method_ptr);
+        inner(this, state, god_data, is_darkness, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replace_gid2_eid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
+                "ReplaceGid2Eid",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
+                        "ReplaceGid2Eid",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn replace_gid2_eid(
+        this: AssetTable_ConditionFlags,
+        gid: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_replace_gid2_eid::get_method_info().method_ptr);
+        inner(this, gid, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_ConditionFlags {
+    #[doc = "`GetState(crate::app::unit::Unit)` overload"]
+    pub fn get_state(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::assettable::AssetTable_States {
+        unsafe { __AssetTable_ConditionFlags_unity2_raw::get_state(::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+pub trait IAssetTable_ConditionFlagsMethods: IAssetTable_ConditionFlags {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Names()` overload"]
+    fn get_names(self) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::get_names(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Hits()` overload"]
+    fn get_hits(self) -> crate::system::collections::generic::list_1::List_1<i32> {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::get_hits(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Test(i32)` overload"]
+    fn test(self, index: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::test(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Test(::unity2::Il2CppString)` overload"]
+    fn test_2(self, key: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::test_2(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn add(self, keys: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add(__receiver, ::core::convert::Into::into(keys), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(::unity2::Il2CppString)` overload"]
+    fn add_2(self, key: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_2(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::itemdata::ItemData)` overload"]
+    fn add_3(self, item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_3(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::force::Force_Type)` overload"]
+    fn add_4(self, force: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_4(__receiver, ::core::convert::Into::into(force), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::unit::Unit)` overload"]
+    fn add_5(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_5(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsSimpleMode()` overload"]
+    fn is_simple_mode(self) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::is_simple_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddGender(crate::app::gender::Gender, crate::app::gender::Gender)` overload"]
+    fn add_gender(
+        self,
+        gender: impl ::core::convert::Into<crate::app::gender::Gender>,
+        dress_gender: impl ::core::convert::Into<crate::app::gender::Gender>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_gender(
+                __receiver,
+                ::core::convert::Into::into(gender),
+                ::core::convert::Into::into(dress_gender),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AddGender(crate::app::persondata::PersonData)` overload"]
+    fn add_gender_2(self, person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_gender_2(__receiver, ::core::convert::Into::into(person), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddGender(crate::app::unit::Unit)` overload"]
+    fn add_gender_3(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_gender_3(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddGender(crate::app::goddata::GodData)` overload"]
+    fn add_gender_4(self, goid_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_gender_4(__receiver, ::core::convert::Into::into(goid_data), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData)` overload"]
+    fn add_6(
+        self,
+        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_6(
+                __receiver,
+                ::core::convert::Into::into(person),
+                ::core::convert::Into::into(job),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::force::Force_Type)` overload"]
+    fn add_7(
+        self,
+        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+        force: impl ::core::convert::Into<crate::app::force::Force_Type>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_7(
+                __receiver,
+                ::core::convert::Into::into(person),
+                ::core::convert::Into::into(job),
+                ::core::convert::Into::into(force),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(crate::app::skillarray::SkillArray)` overload"]
+    fn add_8(self, skills: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_8(__receiver, ::core::convert::Into::into(skills), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::assettable::AssetTable_States, crate::app::goddata::GodData, bool)` overload"]
+    fn add_9(
+        self,
+        state: impl ::core::convert::Into<crate::app::assettable::AssetTable_States>,
+        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
+        is_darkness: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::add_9(
+                __receiver,
+                ::core::convert::Into::into(state),
+                ::core::convert::Into::into(god_data),
+                ::core::convert::Into::into(is_darkness),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReplaceGid2Eid(::unity2::Il2CppString)` overload"]
+    fn replace_gid2_eid(self, gid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssetTable_ConditionFlags_unity2_raw::replace_gid2_eid(__receiver, ::core::convert::Into::into(gid), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+impl<__T: IAssetTable_ConditionFlags> IAssetTable_ConditionFlagsMethods for __T {}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_ConditionFlags {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTable_ConditionFlags),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTable_ConditionFlagsMethods>::ctor(this);
         this
     }
 }
@@ -6810,6 +8452,54 @@ impl AssetTable {
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AssetTable), ::core::stringify!(new),));
         <Self as IAssetTableMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetTable_Sound_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetTable_Sound as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetTable_Sound as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_string(this: AssetTable_Sound, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AssetTable_Sound, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_Sound {
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe { __AssetTable_Sound_unity2_raw::to_string(self, ::core::option::Option::None) }
     }
 }
 
@@ -13380,1673 +15070,6 @@ impl AssetTable_Result {
             )
         });
         <Self as IAssetTable_ResultMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetTable_Sound_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Sound as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Sound as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: AssetTable_Sound, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AssetTable_Sound, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_Sound {
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __AssetTable_Sound_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetTable_ConditionIndexes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AssetTable_ConditionIndexes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionIndexes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: AssetTable_ConditionIndexes,
-        indexes: crate::system::collections::generic::list_1::List_1<i32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetTable_ConditionIndexes,
-            crate::system::collections::generic::list_1::List_1<i32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, indexes, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
-                        "Commit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit(this: AssetTable_ConditionIndexes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionIndexes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::assettable::AssetTable_ConditionFlags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
-                        "Test",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn test(
-        this: AssetTable_ConditionIndexes,
-        flags: crate::app::assettable::AssetTable_ConditionFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AssetTable_ConditionIndexes, crate::app::assettable::AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_test::get_method_info().method_ptr);
-        inner(this, flags, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionIndexes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AssetTable_ConditionIndexes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionIndexes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-pub trait IAssetTable_ConditionIndexesMethods: IAssetTable_ConditionIndexes {
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionIndexes_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<i32>)` overload"]
-    fn add(self, indexes: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionIndexes_unity2_raw::add(__receiver, ::core::convert::Into::into(indexes), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Commit()` overload"]
-    fn commit(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionIndexes_unity2_raw::commit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Test(crate::app::assettable::AssetTable_ConditionFlags)` overload"]
-    fn test(self, flags: impl ::core::convert::Into<crate::app::assettable::AssetTable_ConditionFlags>) -> bool {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionIndexes_unity2_raw::test(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionIndexes as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionIndexes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-impl<__T: IAssetTable_ConditionIndexes> IAssetTable_ConditionIndexesMethods for __T {}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_ConditionIndexes {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetTable_ConditionIndexes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetTable_ConditionIndexesMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetTable_ConditionFlags_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AssetTable_ConditionFlags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_names {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "get_Names",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "get_Names",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_names(
-        this: AssetTable_ConditionFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            AssetTable_ConditionFlags,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_names::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hits {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "get_Hits",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "get_Hits",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hits(
-        this: AssetTable_ConditionFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<i32> {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<i32> =
-            ::core::mem::transmute(__lookup_get_hits::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AssetTable_ConditionFlags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Test",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn test(this: AssetTable_ConditionFlags, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_test::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Test",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn test_2(this: AssetTable_ConditionFlags, key: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_test_2::get_method_info().method_ptr);
-        inner(this, key, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: AssetTable_ConditionFlags,
-        keys: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, keys, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_2(this: AssetTable_ConditionFlags, key: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
-        inner(this, key, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_3(this: AssetTable_ConditionFlags, item: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_3::get_method_info().method_ptr);
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_4(this: AssetTable_ConditionFlags, force: crate::app::force::Force_Type, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_4::get_method_info().method_ptr);
-        inner(this, force, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "GetState",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "GetState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::assettable::AssetTable_States {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::assettable::AssetTable_States =
-            ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_5(this: AssetTable_ConditionFlags, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_5::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_simple_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "IsSimpleMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "IsSimpleMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_simple_mode(this: AssetTable_ConditionFlags, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_simple_mode::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_gender {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gender::Gender as ::unity2::IlType>::il_type(),
-                <crate::app::gender::Gender as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "AddGender",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "AddGender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_gender(
-        this: AssetTable_ConditionFlags,
-        gender: crate::app::gender::Gender,
-        dress_gender: crate::app::gender::Gender,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::gender::Gender, crate::app::gender::Gender, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_gender::get_method_info().method_ptr);
-        inner(this, gender, dress_gender, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_gender_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "AddGender",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "AddGender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_gender_2(
-        this: AssetTable_ConditionFlags,
-        person: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_gender_2::get_method_info().method_ptr);
-        inner(this, person, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_gender_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "AddGender",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "AddGender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_gender_3(this: AssetTable_ConditionFlags, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_gender_3::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_gender_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "AddGender",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "AddGender",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_gender_4(
-        this: AssetTable_ConditionFlags,
-        goid_data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_gender_4::get_method_info().method_ptr);
-        inner(this, goid_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_6 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_6(
-        this: AssetTable_ConditionFlags,
-        person: crate::app::persondata::PersonData,
-        job: crate::app::jobdata::JobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetTable_ConditionFlags,
-            crate::app::persondata::PersonData,
-            crate::app::jobdata::JobData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_6::get_method_info().method_ptr);
-        inner(this, person, job, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_7 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
-                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_7(
-        this: AssetTable_ConditionFlags,
-        person: crate::app::persondata::PersonData,
-        job: crate::app::jobdata::JobData,
-        force: crate::app::force::Force_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetTable_ConditionFlags,
-            crate::app::persondata::PersonData,
-            crate::app::jobdata::JobData,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_7::get_method_info().method_ptr);
-        inner(this, person, job, force, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_8 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_8(
-        this: AssetTable_ConditionFlags,
-        skills: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_8::get_method_info().method_ptr);
-        inner(this, skills, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_9 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::assettable::AssetTable_States as ::unity2::IlType>::il_type(),
-                <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "Add",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_9(
-        this: AssetTable_ConditionFlags,
-        state: crate::app::assettable::AssetTable_States,
-        god_data: crate::app::goddata::GodData,
-        is_darkness: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetTable_ConditionFlags,
-            crate::app::assettable::AssetTable_States,
-            crate::app::goddata::GodData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_9::get_method_info().method_ptr);
-        inner(this, state, god_data, is_darkness, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_replace_gid2_eid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::class(),
-                "ReplaceGid2Eid",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_ConditionFlags as ::unity2::ClassIdentity>::NAME,
-                        "ReplaceGid2Eid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn replace_gid2_eid(
-        this: AssetTable_ConditionFlags,
-        gid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AssetTable_ConditionFlags, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_replace_gid2_eid::get_method_info().method_ptr);
-        inner(this, gid, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_ConditionFlags {
-    #[doc = "`GetState(crate::app::unit::Unit)` overload"]
-    pub fn get_state(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::assettable::AssetTable_States {
-        unsafe { __AssetTable_ConditionFlags_unity2_raw::get_state(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-pub trait IAssetTable_ConditionFlagsMethods: IAssetTable_ConditionFlags {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Names()` overload"]
-    fn get_names(self) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::get_names(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Hits()` overload"]
-    fn get_hits(self) -> crate::system::collections::generic::list_1::List_1<i32> {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::get_hits(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Test(i32)` overload"]
-    fn test(self, index: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::test(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Test(::unity2::Il2CppString)` overload"]
-    fn test_2(self, key: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::test_2(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn add(self, keys: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add(__receiver, ::core::convert::Into::into(keys), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(::unity2::Il2CppString)` overload"]
-    fn add_2(self, key: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_2(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::itemdata::ItemData)` overload"]
-    fn add_3(self, item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_3(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::force::Force_Type)` overload"]
-    fn add_4(self, force: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_4(__receiver, ::core::convert::Into::into(force), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::unit::Unit)` overload"]
-    fn add_5(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_5(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsSimpleMode()` overload"]
-    fn is_simple_mode(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::is_simple_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddGender(crate::app::gender::Gender, crate::app::gender::Gender)` overload"]
-    fn add_gender(
-        self,
-        gender: impl ::core::convert::Into<crate::app::gender::Gender>,
-        dress_gender: impl ::core::convert::Into<crate::app::gender::Gender>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_gender(
-                __receiver,
-                ::core::convert::Into::into(gender),
-                ::core::convert::Into::into(dress_gender),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddGender(crate::app::persondata::PersonData)` overload"]
-    fn add_gender_2(self, person: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_gender_2(__receiver, ::core::convert::Into::into(person), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddGender(crate::app::unit::Unit)` overload"]
-    fn add_gender_3(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_gender_3(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddGender(crate::app::goddata::GodData)` overload"]
-    fn add_gender_4(self, goid_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_gender_4(__receiver, ::core::convert::Into::into(goid_data), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData)` overload"]
-    fn add_6(
-        self,
-        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_6(
-                __receiver,
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(job),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::force::Force_Type)` overload"]
-    fn add_7(
-        self,
-        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-        force: impl ::core::convert::Into<crate::app::force::Force_Type>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_7(
-                __receiver,
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(job),
-                ::core::convert::Into::into(force),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::app::skillarray::SkillArray)` overload"]
-    fn add_8(self, skills: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_8(__receiver, ::core::convert::Into::into(skills), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::assettable::AssetTable_States, crate::app::goddata::GodData, bool)` overload"]
-    fn add_9(
-        self,
-        state: impl ::core::convert::Into<crate::app::assettable::AssetTable_States>,
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-        is_darkness: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::add_9(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::convert::Into::into(god_data),
-                ::core::convert::Into::into(is_darkness),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReplaceGid2Eid(::unity2::Il2CppString)` overload"]
-    fn replace_gid2_eid(self, gid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <AssetTable_ConditionFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_ConditionFlags_unity2_raw::replace_gid2_eid(__receiver, ::core::convert::Into::into(gid), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-impl<__T: IAssetTable_ConditionFlags> IAssetTable_ConditionFlagsMethods for __T {}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_ConditionFlags {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetTable_ConditionFlags),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetTable_ConditionFlagsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetTable_Accessory_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_locator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
-                "get_Locator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
-                        "get_Locator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_locator(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_locator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_locator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
-                "set_Locator",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
-                        "set_Locator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_locator(this: AssetTable_Accessory, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_locator::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_model {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
-                "get_Model",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
-                        "get_Model",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_model(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_model::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_model {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
-                "set_Model",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
-                        "set_Model",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_model(this: AssetTable_Accessory, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_model::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
-                        "ToString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_string(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
-                "get_Exist",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
-                        "get_Exist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_exist(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_exist::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetTable_Accessory as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetTable_Accessory as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AssetTable_Accessory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-pub trait IAssetTable_AccessoryMethods: IAssetTable_Accessory {
-    #[doc = "`get_Locator()` overload"]
-    fn get_locator(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_Accessory_unity2_raw::get_locator(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Locator(::unity2::Il2CppString)` overload"]
-    fn set_locator(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_Accessory_unity2_raw::set_locator(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Model()` overload"]
-    fn get_model(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_Accessory_unity2_raw::get_model(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Model(::unity2::Il2CppString)` overload"]
-    fn set_model(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_Accessory_unity2_raw::set_model(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ToString()` overload"]
-    fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_Accessory_unity2_raw::to_string(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Exist()` overload"]
-    fn get_exist(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_Accessory_unity2_raw::get_exist(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AssetTable_Accessory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AssetTable_Accessory_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-impl<__T: IAssetTable_Accessory> IAssetTable_AccessoryMethods for __T {}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_Accessory {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetTable_Accessory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetTable_AccessoryMethods>::ctor(this);
         this
     }
 }

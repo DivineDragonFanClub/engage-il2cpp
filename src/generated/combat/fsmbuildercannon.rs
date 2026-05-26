@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "FSMBuilderCannon")]
     #[parent(crate::combat::fsmbuilder::FSMBuilder)]
     pub struct FSMBuilderCannon {
+        #[offset(16)]
         #[rename(name = "m_Cannon")]
         pub m_cannon: crate::app::mapobject::MapObject,
     }

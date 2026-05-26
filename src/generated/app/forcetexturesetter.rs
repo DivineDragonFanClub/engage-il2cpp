@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ForceTextureSetter")]
     #[parent(crate::system::object::Object)]
     pub struct ForceTextureSetter {
+        #[offset(16)]
         #[rename(name = "m_image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(24)]
         #[rename(name = "m_playerTexture")]
         pub m_player_texture: crate::unity_engine::sprite::Sprite,
+        #[offset(32)]
         #[rename(name = "m_enemyTexture")]
         pub m_enemy_texture: crate::unity_engine::sprite::Sprite,
+        #[offset(40)]
         #[rename(name = "m_allyTexture")]
         pub m_ally_texture: crate::unity_engine::sprite::Sprite,
+        #[offset(48)]
         #[rename(name = "m_f4thTexture")]
         pub m_f4th_texture: crate::unity_engine::sprite::Sprite,
     }

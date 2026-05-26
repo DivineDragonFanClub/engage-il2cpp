@@ -18,14 +18,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EngageSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct EngageSequence {
+        #[offset(112)]
         #[rename(name = "m_Master")]
         pub m_master: crate::combat::engagesequence::EngageSequence_Cast,
+        #[offset(120)]
         #[rename(name = "m_Grandew")]
         pub m_grandew: crate::combat::engagesequence::EngageSequence_Cast,
+        #[offset(144)]
         #[rename(name = "m_CamGO")]
         pub m_cam_go: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
         #[rename(name = "m_bSetupDone")]
         pub m_b_setup_done: bool,
+        #[offset(153)]
         #[rename(name = "m_bSkipped")]
         pub m_b_skipped: bool,
     }
@@ -34,12 +39,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EngageSequence.Cast")]
     #[parent(crate::system::object::Object)]
     pub struct EngageSequence_Cast {
+        #[offset(16)]
         #[rename(name = "Unit")]
         pub unit: crate::app::unit::Unit,
+        #[offset(24)]
         #[rename(name = "God")]
         pub god: crate::app::godunit::GodUnit,
+        #[offset(32)]
         #[rename(name = "GameStatus")]
         pub game_status: crate::combat::charactergamestatus::CharacterGameStatus,
+        #[offset(40)]
         #[rename(name = "Character")]
         pub character: crate::combat::character::Character,
     }

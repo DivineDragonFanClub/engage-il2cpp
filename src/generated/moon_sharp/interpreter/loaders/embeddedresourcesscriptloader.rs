@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Loaders", name = "EmbeddedResourcesScriptLoader")]
     #[parent(crate::moon_sharp::interpreter::loaders::scriptloaderbase::ScriptLoaderBase)]
     pub struct EmbeddedResourcesScriptLoader {
+        #[offset(32)]
         #[rename(name = "m_ResourceAssembly")]
         pub m_resource_assembly: crate::system::reflection::assembly::Assembly,
+        #[offset(40)]
         #[rename(name = "m_ResourceNames")]
         pub m_resource_names: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        #[offset(48)]
         #[rename(name = "m_Namespace")]
         pub m_namespace: ::unity2::Il2CppString,
     }

@@ -14,20 +14,28 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::tm_pro::tmp_updatemanager::TMP_UpdateManager,
+        #[offset(16)]
         #[rename(name = "m_LayoutQueueLookup")]
         pub m_layout_queue_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        #[offset(24)]
         #[rename(name = "m_LayoutRebuildQueue")]
         pub m_layout_rebuild_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
+        #[offset(32)]
         #[rename(name = "m_GraphicQueueLookup")]
         pub m_graphic_queue_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        #[offset(40)]
         #[rename(name = "m_GraphicRebuildQueue")]
         pub m_graphic_rebuild_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
+        #[offset(48)]
         #[rename(name = "m_InternalUpdateLookup")]
         pub m_internal_update_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        #[offset(56)]
         #[rename(name = "m_InternalUpdateQueue")]
         pub m_internal_update_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
+        #[offset(64)]
         #[rename(name = "m_CullingUpdateLookup")]
         pub m_culling_update_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        #[offset(72)]
         #[rename(name = "m_CullingUpdateQueue")]
         pub m_culling_update_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
     }

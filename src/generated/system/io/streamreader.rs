@@ -22,30 +22,43 @@ mod __types {
         #[static_field]
         #[rename(name = "Null")]
         pub null: crate::system::io::streamreader::StreamReader,
+        #[offset(24)]
         #[rename(name = "stream")]
         pub stream: crate::system::io::stream::Stream,
+        #[offset(48)]
         #[rename(name = "byteBuffer")]
         pub byte_buffer: ::unity2::Array<u8>,
+        #[offset(56)]
         #[rename(name = "charBuffer")]
         pub char_buffer: ::unity2::Array<u16>,
+        #[offset(64)]
         #[rename(name = "_preamble")]
         pub preamble: ::unity2::Array<u8>,
+        #[offset(72)]
         #[rename(name = "charPos")]
         pub char_pos: i32,
+        #[offset(76)]
         #[rename(name = "charLen")]
         pub char_len: i32,
+        #[offset(80)]
         #[rename(name = "byteLen")]
         pub byte_len: i32,
+        #[offset(84)]
         #[rename(name = "bytePos")]
         pub byte_pos: i32,
+        #[offset(88)]
         #[rename(name = "_maxCharsPerBuffer")]
         pub max_chars_per_buffer: i32,
+        #[offset(92)]
         #[rename(name = "_detectEncoding")]
         pub detect_encoding_field: bool,
+        #[offset(93)]
         #[rename(name = "_checkPreamble")]
         pub check_preamble: bool,
+        #[offset(94)]
         #[rename(name = "_isBlocked")]
         pub is_blocked: bool,
+        #[offset(95)]
         #[rename(name = "_closable")]
         pub closable: bool,
     }

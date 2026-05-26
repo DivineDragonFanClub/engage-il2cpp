@@ -19,24 +19,34 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterConfig")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterConfig {
+        #[offset(24)]
         #[rename(name = "InitialDebugPlaybackRate")]
         pub initial_debug_playback_rate: f32,
+        #[offset(28)]
         #[rename(name = "InitialBackwardCancelRatio")]
         pub initial_backward_cancel_ratio: f32,
+        #[offset(32)]
         #[rename(name = "InitialHeavinessFactor")]
         pub initial_heaviness_factor: f32,
+        #[offset(36)]
         #[rename(name = "InitialAgilityFactor")]
         pub initial_agility_factor: f32,
+        #[offset(40)]
         #[rename(name = "InitialHitRatio")]
         pub initial_hit_ratio: f32,
+        #[offset(44)]
         #[rename(name = "InitialCriticalRatio")]
         pub initial_critical_ratio: f32,
+        #[offset(48)]
         #[rename(name = "InitialGuardRatio")]
         pub initial_guard_ratio: f32,
+        #[offset(52)]
         #[rename(name = "InitialDamageRatio")]
         pub initial_damage_ratio: f32,
+        #[offset(56)]
         #[rename(name = "InitialAttackRatio")]
         pub initial_attack_ratio: f32,
+        #[offset(136)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
     }

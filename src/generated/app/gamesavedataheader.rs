@@ -17,34 +17,49 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_GameVersion")]
         pub m_game_version: i32,
+        #[offset(24)]
         #[rename(name = "m_Status")]
         pub m_status: crate::app::gameuserdata::GameUserData_StatusField,
+        #[offset(32)]
         #[rename(name = "m_Chapter")]
         pub m_chapter: crate::app::chapterdata::ChapterData,
+        #[offset(40)]
         #[rename(name = "m_NextChapter")]
         pub m_next_chapter: crate::app::chapterdata::ChapterData,
+        #[offset(48)]
         #[rename(name = "m_Sequence")]
         pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
+        #[offset(52)]
         #[rename(name = "m_GameMode")]
         pub m_game_mode: crate::app::gamemode::GameMode,
+        #[offset(56)]
         #[rename(name = "m_Difficulty")]
         pub m_difficulty: crate::app::difficulty::Difficulty,
+        #[offset(60)]
         #[rename(name = "m_EvilDifficulty")]
         pub m_evil_difficulty: crate::app::difficulty::Difficulty,
+        #[offset(64)]
         #[rename(name = "m_Turn")]
         pub m_turn: i32,
+        #[offset(68)]
         #[rename(name = "m_ContentsIndex")]
         pub m_contents_index: i32,
+        #[offset(72)]
         #[rename(name = "m_Identifier")]
         pub m_identifier: u64,
+        #[offset(80)]
         #[rename(name = "m_PlayTime")]
         pub m_play_time: f32,
+        #[offset(84)]
         #[rename(name = "m_ChallengeRoute")]
         pub m_challenge_route: i32,
+        #[offset(88)]
         #[rename(name = "m_ChallengeStage")]
         pub m_challenge_stage: i32,
+        #[offset(96)]
         #[rename(name = "m_UnitEdit")]
         pub m_unit_edit: crate::app::unitedit::UnitEdit,
     }

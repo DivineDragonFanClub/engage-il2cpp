@@ -17,20 +17,28 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "FunctionDefinitionStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct FunctionDefinitionStatement {
+        #[offset(32)]
         #[rename(name = "m_FuncSymbol")]
         pub m_func_symbol: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(40)]
         #[rename(name = "m_SourceRef")]
         pub m_source_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[offset(48)]
         #[rename(name = "m_Local")]
         pub m_local: bool,
+        #[offset(49)]
         #[rename(name = "m_IsMethodCallingConvention")]
         pub m_is_method_calling_convention: bool,
+        #[offset(56)]
         #[rename(name = "m_MethodName")]
         pub m_method_name: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_FriendlyName")]
         pub m_friendly_name: ::unity2::Il2CppString,
+        #[offset(72)]
         #[rename(name = "m_TableAccessors")]
         pub m_table_accessors: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(80)]
         #[rename(name = "m_FuncDef")]
         pub m_func_def: crate::moon_sharp::interpreter::tree::expressions::functiondefinitionexpression::FunctionDefinitionExpression,
     }

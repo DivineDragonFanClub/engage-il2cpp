@@ -17,14 +17,51 @@ mod __types {
         },
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapSequenceCommandSkill_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Label {
+        const NAME: &'static str = "MapSequenceCommandSkill.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSequenceCommandSkill_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapSequenceCommandSkill_Label {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn impact() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceCommandSkill")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill >)]
     pub struct MapSequenceCommandSkill {
+        #[offset(116)]
         #[rename(name = "m_Action")]
         pub m_action: crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
+        #[offset(120)]
         #[rename(name = "m_Results")]
         pub m_results: crate::app::mapskill::MapSkill_Results,
+        #[offset(176)]
         #[rename(name = "m_Signal")]
         pub m_signal: crate::app::unitsignal::UnitSignal,
     }
@@ -59,40 +96,6 @@ mod __types {
         }
 
         pub fn charge() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceCommandSkill_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Label {
-        const NAME: &'static str = "MapSequenceCommandSkill.Label";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSequenceCommandSkill_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapSequenceCommandSkill_Label {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn impact() -> Self {
             Self { value: 1 }
         }
     }
@@ -718,10 +721,7 @@ impl<__T: IMapSequenceCommandSkill> IMapSequenceCommandSkillMethods for __T {}
 #[cfg(feature = "app-mapsequencecommandskill")]
 impl MapSequenceCommandSkill {
     #[doc = "`.ctor(*mutcrate::app::mapskill::MapSkill_Results, crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action)` — overload selector"]
-    pub fn new(
-        results: *mut crate::app::mapskill::MapSkill_Results,
-        action: crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
-    ) -> Self {
+    pub fn new(action: crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -729,7 +729,7 @@ impl MapSequenceCommandSkill {
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSequenceCommandSkillMethods>::ctor(this, results, action);
+        <Self as IMapSequenceCommandSkillMethods>::ctor(this, action);
         this
     }
 }

@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct PhotographSelectAreaMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_NewIcon")]
         pub m_new_icon: crate::unity_engine::gameobject::GameObject,
     }

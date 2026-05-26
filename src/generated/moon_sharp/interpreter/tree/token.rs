@@ -11,20 +11,28 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "Token")]
     #[parent(crate::system::object::Object)]
     pub struct Token {
+        #[offset(16)]
         #[rename(name = "SourceId")]
         pub source_id: i32,
+        #[offset(20)]
         #[rename(name = "FromCol")]
         pub from_col: i32,
+        #[offset(24)]
         #[rename(name = "ToCol")]
         pub to_col: i32,
+        #[offset(28)]
         #[rename(name = "FromLine")]
         pub from_line: i32,
+        #[offset(32)]
         #[rename(name = "ToLine")]
         pub to_line: i32,
+        #[offset(36)]
         #[rename(name = "PrevCol")]
         pub prev_col: i32,
+        #[offset(40)]
         #[rename(name = "PrevLine")]
         pub prev_line: i32,
+        #[offset(44)]
         #[rename(name = "Type")]
         pub r#type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
     }

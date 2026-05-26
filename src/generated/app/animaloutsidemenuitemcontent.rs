@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AnimalOutsideMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct AnimalOutsideMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_Cursor")]
         pub m_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_BackFrame")]
         pub m_back_frame: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_Frame")]
         pub m_frame: crate::unity_engine::gameobject::GameObject,
     }

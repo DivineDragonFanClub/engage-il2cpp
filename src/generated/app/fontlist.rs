@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FontList")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: fontlist :: FontList >)]
     pub struct FontList {
+        #[offset(24)]
         #[rename(name = "m_FontArray")]
         pub m_font_array: ::unity2::Array<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        #[offset(32)]
         #[rename(name = "m_ReplaceCharactar")]
         pub m_replace_charactar: u16,
     }

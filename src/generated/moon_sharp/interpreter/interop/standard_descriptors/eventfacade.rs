@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.StandardDescriptors", name = "EventFacade")]
     #[parent(crate::system::object::Object)]
     pub struct EventFacade {
+        #[offset(16)]
         #[rename(name = "m_AddCallback")]
         pub m_add_callback: crate::system::func_4::Func_4<
             crate::system::object::Object,
@@ -18,6 +19,7 @@ mod __types {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
         >,
+        #[offset(24)]
         #[rename(name = "m_RemoveCallback")]
         pub m_remove_callback: crate::system::func_4::Func_4<
             crate::system::object::Object,
@@ -25,6 +27,7 @@ mod __types {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
         >,
+        #[offset(32)]
         #[rename(name = "m_Object")]
         pub m_object: ::unity2::IlInstance,
     }

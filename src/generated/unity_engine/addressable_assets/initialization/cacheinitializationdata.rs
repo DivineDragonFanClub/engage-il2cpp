@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Initialization", name = "CacheInitializationData")]
     #[parent(crate::system::object::Object)]
     pub struct CacheInitializationData {
+        #[offset(16)]
         #[rename(name = "m_CompressionEnabled")]
         pub m_compression_enabled: bool,
+        #[offset(24)]
         #[rename(name = "m_CacheDirectoryOverride")]
         pub m_cache_directory_override: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_ExpirationDelay")]
         pub m_expiration_delay: i32,
+        #[offset(36)]
         #[rename(name = "m_LimitCacheSize")]
         pub m_limit_cache_size: bool,
+        #[offset(40)]
         #[rename(name = "m_MaximumCacheSize")]
         pub m_maximum_cache_size: i64,
     }

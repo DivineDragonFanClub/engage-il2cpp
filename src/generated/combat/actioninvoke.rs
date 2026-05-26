@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionInvoke")]
     #[parent(crate::combat::state::State)]
     pub struct ActionInvoke {
+        #[offset(24)]
         #[rename(name = "m_Func")]
         pub m_func: crate::system::action::Action,
     }

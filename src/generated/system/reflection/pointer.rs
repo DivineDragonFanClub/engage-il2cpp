@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "Pointer")]
     #[parent(crate::system::object::Object)]
     pub struct Pointer {
+        #[offset(24)]
         #[rename(name = "_ptrType")]
         pub ptr_type: crate::system::runtimetype::RuntimeType,
     }

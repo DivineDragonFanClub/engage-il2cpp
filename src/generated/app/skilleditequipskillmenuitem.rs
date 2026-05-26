@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillMenuItem")]
     #[parent(crate::app::basicskillmenuitem::BasicSkillMenuItem)]
     pub struct SkillEditEquipSkillMenuItem {
+        #[offset(100)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
     }

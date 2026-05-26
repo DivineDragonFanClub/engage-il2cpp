@@ -20,17 +20,23 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "BaseInputModule")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct BaseInputModule {
+        #[offset(24)]
         #[rename(name = "m_RaycastResultCache")]
         pub m_raycast_result_cache:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>,
+        #[offset(32)]
         #[rename(name = "m_AxisEventData")]
         pub m_axis_event_data: crate::unity_engine::event_systems::axiseventdata::AxisEventData,
+        #[offset(40)]
         #[rename(name = "m_EventSystem")]
         pub m_event_system: crate::unity_engine::event_systems::eventsystem::EventSystem,
+        #[offset(48)]
         #[rename(name = "m_BaseEventData")]
         pub m_base_event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        #[offset(56)]
         #[rename(name = "m_InputOverride")]
         pub m_input_override: crate::unity_engine::event_systems::baseinput::BaseInput,
+        #[offset(64)]
         #[rename(name = "m_DefaultInput")]
         pub m_default_input: crate::unity_engine::event_systems::baseinput::BaseInput,
     }

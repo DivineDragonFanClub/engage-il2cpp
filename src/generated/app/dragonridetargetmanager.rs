@@ -14,24 +14,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideTargetManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonridetargetmanager :: DragonRideTargetManager >)]
     pub struct DragonRideTargetManager {
+        #[offset(28)]
         #[rename(name = "MaxArrayCount")]
         pub max_array_count: i32,
+        #[offset(32)]
         #[rename(name = "m_Prefab")]
         pub m_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[offset(40)]
         #[rename(name = "m_ReserveTargetParent")]
         pub m_reserve_target_parent: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_ReturnTargetCount")]
         pub m_return_target_count: i32,
+        #[offset(56)]
         #[rename(name = "m_ReservePopupParent")]
         pub m_reserve_popup_parent: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_ReturnPopupCount")]
         pub m_return_popup_count: i32,
+        #[offset(72)]
         #[rename(name = "m_TargetArray")]
         pub m_target_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(80)]
         #[rename(name = "m_PopupArray")]
         pub m_popup_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(88)]
         #[rename(name = "m_ObjUseCount")]
         pub m_obj_use_count: i32,
+        #[offset(92)]
         #[rename(name = "m_PopupUseCount")]
         pub m_popup_use_count: i32,
     }

@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EmissionAnimation")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EmissionAnimation {
+        #[offset(32)]
         #[rename(name = "m_EmissionCurve")]
         pub m_emission_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
         #[rename(name = "m_Materials")]
         pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[offset(48)]
         #[rename(name = "m_EmissionPropertyKey")]
         pub m_emission_property_key: i32,
     }

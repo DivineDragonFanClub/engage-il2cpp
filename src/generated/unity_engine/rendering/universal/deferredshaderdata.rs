@@ -10,25 +10,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "DeferredShaderData")]
-    #[parent(crate::system::object::Object)]
-    pub struct DeferredShaderData {
-        #[static_field]
-        #[rename(name = "m_Instance")]
-        pub m_instance: crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData,
-        #[rename(name = "m_Buffers")]
-        pub m_buffers: ::unity2::Array<crate::unity_engine::computebuffer::ComputeBuffer>,
-        #[rename(name = "m_BufferInfos")]
-        pub m_buffer_infos: ::unity2::Array<crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData_ComputeBufferInfo>,
-        #[rename(name = "m_BufferCount")]
-        pub m_buffer_count: i32,
-        #[rename(name = "m_CachedBufferIndex")]
-        pub m_cached_buffer_index: i32,
-        #[rename(name = "m_FrameIndex")]
-        pub m_frame_index: u32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData_ComputeBufferInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,6 +33,30 @@ mod __types {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "DeferredShaderData")]
+    #[parent(crate::system::object::Object)]
+    pub struct DeferredShaderData {
+        #[static_field]
+        #[rename(name = "m_Instance")]
+        pub m_instance: crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData,
+        #[offset(24)]
+        #[rename(name = "m_Buffers")]
+        pub m_buffers: ::unity2::Array<crate::unity_engine::computebuffer::ComputeBuffer>,
+        #[offset(32)]
+        #[rename(name = "m_BufferInfos")]
+        pub m_buffer_infos: ::unity2::Array<crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData_ComputeBufferInfo>,
+        #[offset(40)]
+        #[rename(name = "m_BufferCount")]
+        pub m_buffer_count: i32,
+        #[offset(44)]
+        #[rename(name = "m_CachedBufferIndex")]
+        pub m_cached_buffer_index: i32,
+        #[offset(48)]
+        #[rename(name = "m_FrameIndex")]
+        pub m_frame_index: u32,
     }
 }
 

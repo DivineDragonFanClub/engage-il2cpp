@@ -27,20 +27,80 @@ mod __types {
     #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
     pub struct InventorySubMenu_UseMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_SortMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.SortMenuItem")]
-    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
-    pub struct InventorySubMenu_SortMenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_StoreMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "InventorySubMenu.StoreMenuItem")]
     #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
     pub struct InventorySubMenu_StoreMenuItem {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_SortMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.SortMenuItem")]
+    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
+    pub struct InventorySubMenu_SortMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.UseMenuItem.ConfirmDialog.YesEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.ConfirmDialogItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes {
+        #[offset(112)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(120)]
+        #[rename(name = "m_UnitItemIndex")]
+        pub m_unit_item_index: i32,
+        #[offset(128)]
+        #[rename(name = "m_DecideCallback")]
+        pub m_decide_callback: crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.DecideCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_BaseMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.BaseMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct InventorySubMenu_BaseMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ReceiveMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ReceiveMenuItem")]
+    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
+    pub struct InventorySubMenu_ReceiveMenuItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog.md"))]
     #[::unity2::class(namespace = "App", name = "InventorySubMenu.UseMenuItem.ConfirmDialog")]
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct InventorySubMenu_UseMenuItem_ConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_TradeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.TradeMenuItem")]
+    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
+    pub struct InventorySubMenu_TradeMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_EquipMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.EquipMenuItem")]
+    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
+    pub struct InventorySubMenu_EquipMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem")]
+    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
+    pub struct InventorySubMenu_ThrowAwayMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_TakeOffMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "InventorySubMenu.TakeOffMenuItem")]
+    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
+    pub struct InventorySubMenu_TakeOffMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu.md"))]
     #[::unity2::class(namespace = "App", name = "InventorySubMenu")]
@@ -51,70 +111,14 @@ mod __types {
         pub menu_offset_x: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_EquipMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.EquipMenuItem")]
-    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
-    pub struct InventorySubMenu_EquipMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.ConfirmDialogItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_UnitItemIndex")]
-        pub m_unit_item_index: i32,
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback: crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.UseMenuItem.ConfirmDialog.YesEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_TakeOffMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.TakeOffMenuItem")]
-    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
-    pub struct InventorySubMenu_TakeOffMenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "InventorySubMenu.UseMenuItem.ConfirmDialog.YesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem {
+        #[offset(112)]
         #[rename(name = "m_YesEventHandler")]
         pub m_yes_event_handler: crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ReceiveMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ReceiveMenuItem")]
-    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
-    pub struct InventorySubMenu_ReceiveMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog.DecideCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem")]
-    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
-    pub struct InventorySubMenu_ThrowAwayMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.ThrowAwayMenuItem.ConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_TradeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.TradeMenuItem")]
-    #[parent(crate::app::inventorysubmenu::InventorySubMenu_BaseMenuItem)]
-    pub struct InventorySubMenu_TradeMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inventorysubmenu/InventorySubMenu_BaseMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "InventorySubMenu.BaseMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct InventorySubMenu_BaseMenuItem {}
 }
 
 #[cfg(feature = "app-inventorysubmenu-types")]
@@ -405,206 +409,6 @@ impl InventorySubMenu_UseMenuItem {
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_SortMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: InventorySubMenu_SortMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: InventorySubMenu_SortMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: InventorySubMenu_SortMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: InventorySubMenu_SortMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_SortMenuItemMethods: IInventorySubMenu_SortMenuItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_SortMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_SortMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_SortMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_SortMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_SortMenuItem> IInventorySubMenu_SortMenuItemMethods for __T {}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_SortMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_SortMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInventorySubMenu_SortMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __InventorySubMenu_StoreMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -805,261 +609,8 @@ impl InventorySubMenu_StoreMenuItem {
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_UseMenuItem_ConfirmDialog_unity2_raw {
+mod __InventorySubMenu_SortMenuItem_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-                <crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        item_data: crate::app::itemdata::ItemData,
-        yes_event_handler: crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::itemdata::ItemData,
-            crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, item_data, yes_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InventorySubMenu_UseMenuItem_ConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InventorySubMenu_UseMenuItem_ConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicdialogcontent::BasicDialogContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, dialog_content, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-        yes_event_handler: impl ::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler>,
-    ) -> crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog {
-        unsafe {
-            __InventorySubMenu_UseMenuItem_ConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(item_data),
-                ::core::convert::Into::into(yes_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_UseMenuItem_ConfirmDialogMethods: IInventorySubMenu_UseMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
-    ) -> () {
-        unsafe {
-            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InventorySubMenu_UseMenuItem_ConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(dialog_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_UseMenuItem_ConfirmDialog> IInventorySubMenu_UseMenuItem_ConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInventorySubMenu_UseMenuItem_ConfirmDialogMethods>::ctor(this, menu_item_list, dialog_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenu::BasicMenu as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        parent_menu: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::basicmenu::BasicMenu,
-            crate::app::basicmenuitem::BasicMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, parent_menu, parent_menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InventorySubMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InventorySubMenu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicmenucontent::BasicMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
@@ -1067,7 +618,7 @@ mod __InventorySubMenu_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -1080,7 +631,7 @@ mod __InventorySubMenu_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
                         "GetName",
                         e
                     )
@@ -1088,116 +639,8 @@ mod __InventorySubMenu_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_name(this: InventorySubMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InventorySubMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        parent_menu: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu>,
-        parent_menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
-        unsafe {
-            __InventorySubMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(parent_menu),
-                ::core::convert::Into::into(parent_menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenuMethods: IInventorySubMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-    ) -> () {
-        unsafe {
-            let __receiver = <InventorySubMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <InventorySubMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu> IInventorySubMenuMethods for __T {}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInventorySubMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_EquipMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: InventorySubMenu_EquipMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+    pub unsafe fn get_name(this: InventorySubMenu_SortMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
             ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -1208,7 +651,7 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -1221,7 +664,7 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
                         "BuildAttribute",
                         e
                     )
@@ -1230,10 +673,10 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: InventorySubMenu_EquipMenuItem,
+        this: InventorySubMenu_SortMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
             ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -1244,7 +687,7 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -1257,7 +700,7 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
                         "ACall",
                         e
                     )
@@ -1266,10 +709,10 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: InventorySubMenu_EquipMenuItem,
+        this: InventorySubMenu_SortMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
             ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -1280,7 +723,7 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1293,7 +736,7 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_SortMenuItem as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1301,64 +744,195 @@ mod __InventorySubMenu_EquipMenuItem_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: InventorySubMenu_EquipMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: InventorySubMenu_SortMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InventorySubMenu_SortMenuItem, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_EquipMenuItemMethods: IInventorySubMenu_EquipMenuItem {
+pub trait IInventorySubMenu_SortMenuItemMethods: IInventorySubMenu_SortMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_EquipMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_SortMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_EquipMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_SortMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_EquipMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_SortMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_EquipMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_SortMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_SortMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_EquipMenuItem> IInventorySubMenu_EquipMenuItemMethods for __T {}
+impl<__T: IInventorySubMenu_SortMenuItem> IInventorySubMenu_SortMenuItemMethods for __T {}
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_EquipMenuItem {
+impl InventorySubMenu_SortMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_EquipMenuItem),
+                ::core::stringify!(InventorySubMenu_SortMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInventorySubMenu_EquipMenuItemMethods>::ctor(this);
+        <Self as IInventorySubMenu_SortMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl<__T: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler> IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1532,7 +1106,7 @@ impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_ConfirmDialogItemYes {
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
+mod __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1544,7 +1118,7 @@ mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1557,7 +1131,7 @@ mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1566,13 +1140,13 @@ mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+        this: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+            InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -1586,7 +1160,7 @@ mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 0,
                 param_types,
@@ -1599,7 +1173,7 @@ mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -1607,22 +1181,27 @@ mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw {
             }
         }
     }
-    pub unsafe fn invoke(this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn invoke(
+        this: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {
+pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods:
+    IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback
+{
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw::ctor(
+            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1633,29 +1212,32 @@ pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods: II
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler> IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods for __T {}
+impl<__T: IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback> IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods
+    for __T
+{
+}
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {
+impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler),
+                ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        <Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1663,17 +1245,17 @@ impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler {
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_TakeOffMenuItem_unity2_raw {
+mod __InventorySubMenu_BaseMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
+    pub mod __lookup_b_call {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
+                <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
                 0,
                 param_types,
                 false,
@@ -1685,89 +1267,53 @@ mod __InventorySubMenu_TakeOffMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
+                        <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_name(this: InventorySubMenu_TakeOffMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: InventorySubMenu_TakeOffMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: InventorySubMenu_TakeOffMenuItem,
+    pub unsafe fn b_call(
+        this: InventorySubMenu_BaseMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        let inner: extern "C" fn(InventorySubMenu_BaseMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build_menu_item_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnBuildMenuItemContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnBuildMenuItemContent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_build_menu_item_content(this: InventorySubMenu_BaseMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InventorySubMenu_BaseMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_build_menu_item_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -1777,7 +1323,7 @@ mod __InventorySubMenu_TakeOffMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1790,7 +1336,7 @@ mod __InventorySubMenu_TakeOffMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1798,198 +1344,56 @@ mod __InventorySubMenu_TakeOffMenuItem_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: InventorySubMenu_TakeOffMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: InventorySubMenu_BaseMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InventorySubMenu_BaseMenuItem, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_TakeOffMenuItemMethods: IInventorySubMenu_TakeOffMenuItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
+pub trait IInventorySubMenu_BaseMenuItemMethods: IInventorySubMenu_BaseMenuItem {
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TakeOffMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_BaseMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_BaseMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    fn on_build_menu_item_content(self) -> () {
         unsafe {
             let __receiver =
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TakeOffMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TakeOffMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_BaseMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_BaseMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TakeOffMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_BaseMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_BaseMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_TakeOffMenuItem> IInventorySubMenu_TakeOffMenuItemMethods for __T {}
+impl<__T: IInventorySubMenu_BaseMenuItem> IInventorySubMenu_BaseMenuItemMethods for __T {}
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_TakeOffMenuItem {
+impl InventorySubMenu_BaseMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_TakeOffMenuItem),
+                ::core::stringify!(InventorySubMenu_BaseMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInventorySubMenu_TakeOffMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
-        yes_event_handler: crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
-            crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, yes_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"]
-    fn ctor(
-        self,
-        yes_event_handler: impl ::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(yes_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem> IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods for __T {}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` — overload selector"]
-    pub fn new(yes_event_handler: crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods>::ctor(this, yes_event_handler);
+        <Self as IInventorySubMenu_BaseMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -2197,19 +1601,66 @@ impl InventorySubMenu_ReceiveMenuItem {
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw {
+mod __InventorySubMenu_UseMenuItem_ConfirmDialog_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        item_data: crate::app::itemdata::ItemData,
+        yes_event_handler: crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::itemdata::ItemData,
+            crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, item_data, yes_event_handler, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -2222,7 +1673,7 @@ mod __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -2231,28 +1682,98 @@ mod __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw
         }
     }
     pub unsafe fn ctor(
-        this: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: InventorySubMenu_UseMenuItem_ConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
+            InventorySubMenu_UseMenuItem_ConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicdialogcontent::BasicDialogContent,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
+        inner(this, menu_item_list, dialog_content, __unity2_method_info)
     }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu_UseMenuItem_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+        yes_event_handler: impl ::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler>,
+    ) -> crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog {
+        unsafe {
+            __InventorySubMenu_UseMenuItem_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+pub trait IInventorySubMenu_UseMenuItem_ConfirmDialogMethods: IInventorySubMenu_UseMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        dialog_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InventorySubMenu_UseMenuItem_ConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(dialog_content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl<__T: IInventorySubMenu_UseMenuItem_ConfirmDialog> IInventorySubMenu_UseMenuItem_ConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu_UseMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInventorySubMenu_UseMenuItem_ConfirmDialogMethods>::ctor(this, menu_item_list, dialog_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InventorySubMenu_TradeMenuItem_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_get_name {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
+                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
                 0,
                 param_types,
                 false,
@@ -2264,71 +1785,535 @@ mod __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
+                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn invoke(
-        this: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
+    pub unsafe fn get_name(this: InventorySubMenu_TradeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: InventorySubMenu_TradeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: InventorySubMenu_TradeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: InventorySubMenu_TradeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods:
-    IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+pub trait IInventorySubMenu_TradeMenuItemMethods: IInventorySubMenu_TradeMenuItem {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+            let __receiver =
+                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TradeMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TradeMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TradeMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TradeMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl<__T: IInventorySubMenu_TradeMenuItem> IInventorySubMenu_TradeMenuItemMethods for __T {}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu_TradeMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InventorySubMenu_TradeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInventorySubMenu_TradeMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InventorySubMenu_EquipMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: InventorySubMenu_EquipMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: InventorySubMenu_EquipMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: InventorySubMenu_EquipMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_EquipMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: InventorySubMenu_EquipMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InventorySubMenu_EquipMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+pub trait IInventorySubMenu_EquipMenuItemMethods: IInventorySubMenu_EquipMenuItem {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_EquipMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_EquipMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_EquipMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <InventorySubMenu_EquipMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_EquipMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl<__T: IInventorySubMenu_EquipMenuItem> IInventorySubMenu_EquipMenuItemMethods for __T {}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu_EquipMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InventorySubMenu_EquipMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInventorySubMenu_EquipMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+        decide_callback: crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unit::Unit,
+            i32,
+            crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, unit, unit_item_index, decide_callback, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_item_index: impl ::core::convert::Into<i32>,
+        decide_callback: impl ::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback>,
+    ) -> () {
+        unsafe {
+            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(unit_item_index),
+                ::core::convert::Into::into(decide_callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods: IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+    ) -> () {
         unsafe {
-            let __receiver = <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback> IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods
-    for __T
-{
-}
+impl<__T: IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog> IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods for __T {}
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback),
+                ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallbackMethods>::ctor(this, object, method);
+        <Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods>::ctor(this, menu_item_list);
         this
     }
 }
@@ -2582,165 +2567,7 @@ impl InventorySubMenu_ThrowAwayMenuItem {
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-        decide_callback: crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            i32,
-            crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, unit, unit_item_index, decide_callback, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_item_index: impl ::core::convert::Into<i32>,
-        decide_callback: impl ::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_DecideCallback>,
-    ) -> () {
-        unsafe {
-            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(unit_item_index),
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods: IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialog> IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_ThrowAwayMenuItem_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInventorySubMenu_ThrowAwayMenuItem_ConfirmDialogMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-inventorysubmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_TradeMenuItem_unity2_raw {
+mod __InventorySubMenu_TakeOffMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2749,7 +2576,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -2762,7 +2589,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
                         "GetName",
                         e
                     )
@@ -2770,8 +2597,8 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_name(this: InventorySubMenu_TradeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+    pub unsafe fn get_name(this: InventorySubMenu_TakeOffMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
             ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -2782,7 +2609,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -2795,7 +2622,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
                         "BuildAttribute",
                         e
                     )
@@ -2804,10 +2631,10 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: InventorySubMenu_TradeMenuItem,
+        this: InventorySubMenu_TakeOffMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
             ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -2818,7 +2645,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -2831,7 +2658,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
                         "ACall",
                         e
                     )
@@ -2840,10 +2667,10 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: InventorySubMenu_TradeMenuItem,
+        this: InventorySubMenu_TakeOffMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
             ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -2854,7 +2681,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -2867,7 +2694,7 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_TradeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu_TakeOffMenuItem as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -2875,64 +2702,64 @@ mod __InventorySubMenu_TradeMenuItem_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: InventorySubMenu_TradeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventorySubMenu_TradeMenuItem, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: InventorySubMenu_TakeOffMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InventorySubMenu_TakeOffMenuItem, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_TradeMenuItemMethods: IInventorySubMenu_TradeMenuItem {
+pub trait IInventorySubMenu_TakeOffMenuItemMethods: IInventorySubMenu_TakeOffMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TradeMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TakeOffMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TradeMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TakeOffMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TradeMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TakeOffMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <InventorySubMenu_TradeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_TradeMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <InventorySubMenu_TakeOffMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_TakeOffMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_TradeMenuItem> IInventorySubMenu_TradeMenuItemMethods for __T {}
+impl<__T: IInventorySubMenu_TakeOffMenuItem> IInventorySubMenu_TakeOffMenuItemMethods for __T {}
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_TradeMenuItem {
+impl InventorySubMenu_TakeOffMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_TradeMenuItem),
+                ::core::stringify!(InventorySubMenu_TakeOffMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInventorySubMenu_TradeMenuItemMethods>::ctor(this);
+        <Self as IInventorySubMenu_TakeOffMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -2940,20 +2767,24 @@ impl InventorySubMenu_TradeMenuItem {
 #[cfg(feature = "app-inventorysubmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __InventorySubMenu_BaseMenuItem_unity2_raw {
+mod __InventorySubMenu_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenu::BasicMenu as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
+                <InventorySubMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -2962,65 +2793,41 @@ mod __InventorySubMenu_BaseMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
+                        <InventorySubMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn b_call(
-        this: InventorySubMenu_BaseMenuItem,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        parent_menu: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(InventorySubMenu_BaseMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build_menu_item_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnBuildMenuItemContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnBuildMenuItemContent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_build_menu_item_content(this: InventorySubMenu_BaseMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventorySubMenu_BaseMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_build_menu_item_content::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::basicmenu::BasicMenu,
+            crate::app::basicmenuitem::BasicMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, parent_menu, parent_menu_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::class(),
+                <InventorySubMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                2,
                 param_types,
                 false,
             )
@@ -3031,7 +2838,7 @@ mod __InventorySubMenu_BaseMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <InventorySubMenu_BaseMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <InventorySubMenu as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -3039,56 +2846,253 @@ mod __InventorySubMenu_BaseMenuItem_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: InventorySubMenu_BaseMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(InventorySubMenu_BaseMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+    pub unsafe fn ctor(
+        this: InventorySubMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            InventorySubMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: InventorySubMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InventorySubMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-pub trait IInventorySubMenu_BaseMenuItemMethods: IInventorySubMenu_BaseMenuItem {
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+impl InventorySubMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        parent_menu: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu>,
+        parent_menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <InventorySubMenu_BaseMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_BaseMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    fn on_build_menu_item_content(self) -> () {
-        unsafe {
-            let __receiver =
-                <InventorySubMenu_BaseMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_BaseMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <InventorySubMenu_BaseMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __InventorySubMenu_BaseMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __InventorySubMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(parent_menu),
+                ::core::convert::Into::into(parent_menu_item),
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl<__T: IInventorySubMenu_BaseMenuItem> IInventorySubMenu_BaseMenuItemMethods for __T {}
+pub trait IInventorySubMenuMethods: IInventorySubMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <InventorySubMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <InventorySubMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InventorySubMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+}
 
 #[cfg(feature = "app-inventorysubmenu")]
-impl InventorySubMenu_BaseMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl<__T: IInventorySubMenu> IInventorySubMenuMethods for __T {}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(InventorySubMenu_BaseMenuItem),
+                ::core::stringify!(InventorySubMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IInventorySubMenu_BaseMenuItemMethods>::ctor(this);
+        <Self as IInventorySubMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
+        yes_event_handler: crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
+            crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, yes_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+pub trait IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` overload"]
+    fn ctor(
+        self,
+        yes_event_handler: impl ::core::convert::Into<crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl<__T: IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem> IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods for __T {}
+
+#[cfg(feature = "app-inventorysubmenu")]
+impl InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler)` — overload selector"]
+    pub fn new(yes_event_handler: crate::app::inventorysubmenu::InventorySubMenu_UseMenuItem_ConfirmDialog_YesEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInventorySubMenu_UseMenuItem_ConfirmDialog_YesMenuItemMethods>::ctor(this, yes_event_handler);
         this
     }
 }

@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.FoodstuffsHistory")]
     #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
     pub struct DishAllMenuContent_FoodstuffsHistory {
+        #[offset(32)]
         #[rename(name = "m_FoodstuffItemList")]
         pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(40)]
         #[rename(name = "m_FoodstuffGroup")]
         pub m_foodstuff_group: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_Nothing")]
         pub m_nothing: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_Blank")]
         pub m_blank: crate::unity_engine::gameobject::GameObject,
     }
@@ -33,33 +37,68 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.DishHistory")]
     #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
     pub struct DishAllMenuContent_DishHistory {
+        #[offset(32)]
         #[rename(name = "m_FoodName")]
         pub m_food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_DifficultyIcon")]
         pub m_difficulty_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_FoodDifficulty")]
         pub m_food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_EnhanceObjectList")]
         pub m_enhance_object_list:
             crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>,
+        #[offset(64)]
         #[rename(name = "m_Dish")]
         pub m_dish: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_Params")]
         pub m_params: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_Blank0")]
         pub m_blank0: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_Blank1")]
         pub m_blank1: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_UnitsHistory.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.UnitsHistory")]
+    #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
+    pub struct DishAllMenuContent_UnitsHistory {
+        #[offset(32)]
+        #[rename(name = "m_UnitIcon0")]
+        pub m_unit_icon0: crate::app::uniticon::UnitIcon,
+        #[offset(40)]
+        #[rename(name = "m_UnitName0")]
+        pub m_unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
+        #[rename(name = "m_UnitIcon1")]
+        pub m_unit_icon1: crate::app::uniticon::UnitIcon,
+        #[offset(56)]
+        #[rename(name = "m_UnitName1")]
+        pub m_unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
+        #[rename(name = "m_UnitGrp")]
+        pub m_unit_grp: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
+        #[rename(name = "m_Blank")]
+        pub m_blank: crate::unity_engine::gameobject::GameObject,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_EnhanceObject.md"))]
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.EnhanceObject")]
     #[parent(crate::system::object::Object)]
     pub struct DishAllMenuContent_EnhanceObject {
+        #[offset(16)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_Value")]
         pub m_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
@@ -71,84 +110,93 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_UnitSelectMenuContent")]
         pub m_unit_select_menu_content: crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2,
+        #[offset(32)]
         #[rename(name = "m_DishSelectMenuContent")]
         pub m_dish_select_menu_content: crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent,
+        #[offset(40)]
         #[rename(name = "m_FoodstuffMenuContent")]
         pub m_foodstuff_menu_content: crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent,
+        #[offset(48)]
         #[rename(name = "m_HistoryList")]
         pub m_history_list:
             crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject>,
+        #[offset(56)]
         #[rename(name = "m_CookHistory")]
         pub m_cook_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_CookHistory,
+        #[offset(64)]
         #[rename(name = "m_UnitsHistory")]
         pub m_units_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_UnitsHistory,
+        #[offset(72)]
         #[rename(name = "m_DishHistory")]
         pub m_dish_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_DishHistory,
+        #[offset(80)]
         #[rename(name = "m_FoodstuffsHistory")]
         pub m_foodstuffs_history: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_FoodstuffsHistory,
+        #[offset(88)]
         #[rename(name = "m_UnitIcon0")]
         pub m_unit_icon0: crate::app::uniticon::UnitIcon,
+        #[offset(96)]
         #[rename(name = "m_UnitName0")]
         pub m_unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_UnitIcon1")]
         pub m_unit_icon1: crate::app::uniticon::UnitIcon,
+        #[offset(112)]
         #[rename(name = "m_UnitName1")]
         pub m_unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "m_FoodName")]
         pub m_food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_DifficultyIcon")]
         pub m_difficulty_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_FoodDifficulty")]
         pub m_food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(144)]
         #[rename(name = "m_EnhanceObjectList")]
         pub m_enhance_object_list:
             crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>,
+        #[offset(152)]
         #[rename(name = "m_FoodstuffItemList")]
         pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(160)]
         #[rename(name = "m_FoodstuffGroup")]
         pub m_foodstuff_group: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_CookChefTitleText")]
         pub m_cook_chef_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(176)]
         #[rename(name = "m_FriendTitleText")]
         pub m_friend_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(184)]
         #[rename(name = "m_CookMenuTitleText")]
         pub m_cook_menu_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(192)]
         #[rename(name = "m_BasicEffectTitleText")]
         pub m_basic_effect_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(200)]
         #[rename(name = "m_CookAddFoodTitleText")]
         pub m_cook_add_food_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(208)]
         #[rename(name = "m_CookAddFoodNothingTitleText")]
         pub m_cook_add_food_nothing_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(216)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_UnitsHistory.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.UnitsHistory")]
-    #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
-    pub struct DishAllMenuContent_UnitsHistory {
-        #[rename(name = "m_UnitIcon0")]
-        pub m_unit_icon0: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName0")]
-        pub m_unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_UnitIcon1")]
-        pub m_unit_icon1: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName1")]
-        pub m_unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_UnitGrp")]
-        pub m_unit_grp: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Blank")]
-        pub m_blank: crate::unity_engine::gameobject::GameObject,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_HistoryObject.md"))]
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.HistoryObject")]
     #[parent(crate::system::object::Object)]
     pub struct DishAllMenuContent_HistoryObject {
+        #[offset(16)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_CanvasGroup")]
         pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
     }
@@ -791,6 +839,209 @@ impl DishAllMenuContent_DishHistory {
             )
         });
         <Self as IDishAllMenuContent_DishHistoryMethods>::ctor(this, game_object, food_name, difficulty_icon, food_difficulty, enhance_object_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DishAllMenuContent_UnitsHistory_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DishAllMenuContent_UnitsHistory,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        unit_icon0: crate::app::uniticon::UnitIcon,
+        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        unit_icon1: crate::app::uniticon::UnitIcon,
+        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishAllMenuContent_UnitsHistory,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::uniticon::UnitIcon,
+            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+            crate::app::uniticon::UnitIcon,
+            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, game_object, unit_icon0, unit_name0, unit_icon1, unit_name1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
+                "Show",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(
+        this: DishAllMenuContent_UnitsHistory,
+        unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishAllMenuContent_UnitsHistory,
+            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, unit_list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide(this: DishAllMenuContent_UnitsHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DishAllMenuContent_UnitsHistory, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+pub trait IDishAllMenuContent_UnitsHistoryMethods: IDishAllMenuContent_UnitsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]
+    fn ctor(
+        self,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        unit_icon0: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
+        unit_name0: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        unit_icon1: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
+        unit_name1: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_UnitsHistory_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(game_object),
+                ::core::convert::Into::into(unit_icon0),
+                ::core::convert::Into::into(unit_name0),
+                ::core::convert::Into::into(unit_icon1),
+                ::core::convert::Into::into(unit_name1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
+    fn show(self, unit_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>) -> () {
+        unsafe {
+            let __receiver =
+                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_UnitsHistory_unity2_raw::show(__receiver, ::core::convert::Into::into(unit_list), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishAllMenuContent_UnitsHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl<__T: IDishAllMenuContent_UnitsHistory> IDishAllMenuContent_UnitsHistoryMethods for __T {}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl DishAllMenuContent_UnitsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` — overload selector"]
+    pub fn new(
+        game_object: crate::unity_engine::gameobject::GameObject,
+        unit_icon0: crate::app::uniticon::UnitIcon,
+        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        unit_icon1: crate::app::uniticon::UnitIcon,
+        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishAllMenuContent_UnitsHistory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishAllMenuContent_UnitsHistoryMethods>::ctor(this, game_object, unit_icon0, unit_name0, unit_icon1, unit_name1);
         this
     }
 }
@@ -1535,209 +1786,6 @@ impl DishAllMenuContent {
             )
         });
         <Self as IDishAllMenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishAllMenuContent_UnitsHistory_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-                <crate::app::uniticon::UnitIcon as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DishAllMenuContent_UnitsHistory,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        unit_icon0: crate::app::uniticon::UnitIcon,
-        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        unit_icon1: crate::app::uniticon::UnitIcon,
-        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_UnitsHistory,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::uniticon::UnitIcon,
-            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            crate::app::uniticon::UnitIcon,
-            crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, game_object, unit_icon0, unit_name0, unit_icon1, unit_name1, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
-                "Show",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(
-        this: DishAllMenuContent_UnitsHistory,
-        unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishAllMenuContent_UnitsHistory,
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, unit_list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DishAllMenuContent_UnitsHistory as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: DishAllMenuContent_UnitsHistory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DishAllMenuContent_UnitsHistory, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-pub trait IDishAllMenuContent_UnitsHistoryMethods: IDishAllMenuContent_UnitsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]
-    fn ctor(
-        self,
-        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        unit_icon0: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
-        unit_name0: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        unit_icon1: impl ::core::convert::Into<crate::app::uniticon::UnitIcon>,
-        unit_name1: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishAllMenuContent_UnitsHistory_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(game_object),
-                ::core::convert::Into::into(unit_icon0),
-                ::core::convert::Into::into(unit_name0),
-                ::core::convert::Into::into(unit_icon1),
-                ::core::convert::Into::into(unit_name1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
-    fn show(self, unit_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>) -> () {
-        unsafe {
-            let __receiver =
-                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishAllMenuContent_UnitsHistory_unity2_raw::show(__receiver, ::core::convert::Into::into(unit_list), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishAllMenuContent_UnitsHistory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DishAllMenuContent_UnitsHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl<__T: IDishAllMenuContent_UnitsHistory> IDishAllMenuContent_UnitsHistoryMethods for __T {}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_UnitsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` — overload selector"]
-    pub fn new(
-        game_object: crate::unity_engine::gameobject::GameObject,
-        unit_icon0: crate::app::uniticon::UnitIcon,
-        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        unit_icon1: crate::app::uniticon::UnitIcon,
-        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_UnitsHistory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishAllMenuContent_UnitsHistoryMethods>::ctor(this, game_object, unit_icon0, unit_name0, unit_icon1, unit_name1);
         this
     }
 }

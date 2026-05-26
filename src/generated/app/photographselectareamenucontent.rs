@@ -26,12 +26,16 @@ mod __types {
         #[static_field]
         #[rename(name = "s_AreaSpriteAtlasPath")]
         pub s_area_sprite_atlas_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_AreaImage")]
         pub m_area_image: crate::unity_engine::ui::image::Image,
+        #[offset(240)]
         #[rename(name = "m_SpotCount")]
         pub m_spot_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_AreaSpriteAtlas")]
         pub m_area_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(256)]
         #[rename(name = "m_AreaSprite")]
         pub m_area_sprite: crate::unity_engine::sprite::Sprite,
     }

@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PersonInspector")]
     #[parent(crate::app::mapinspector::MapInspector)]
     pub struct PersonInspector {
+        #[offset(48)]
         #[rename(name = "m_Person")]
         pub m_person: i32,
     }

@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "TileDepthRangePass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct TileDepthRangePass {
+        #[offset(112)]
         #[rename(name = "m_DeferredLights")]
         pub m_deferred_lights: crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,
+        #[offset(120)]
         #[rename(name = "m_PassIndex")]
         pub m_pass_index: i32,
     }

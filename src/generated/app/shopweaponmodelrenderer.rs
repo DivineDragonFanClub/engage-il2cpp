@@ -22,16 +22,22 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(32)]
         #[rename(name = "m_ModelRoot")]
         pub m_model_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_ModelPath")]
         pub m_model_path: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_ModelObject")]
         pub m_model_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_ModelPathLoading")]
         pub m_model_path_loading: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_ItemData")]
         pub m_item_data: crate::app::itemdata::ItemData,
     }

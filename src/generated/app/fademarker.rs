@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FadeMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct FadeMarker {
+        #[offset(40)]
         #[rename(name = "isFadeOut")]
         pub is_fade_out: bool,
+        #[offset(44)]
         #[rename(name = "FadeSpeedType")]
         pub fade_speed_type: crate::app::dragon_ride::fadetype_2::FadeType_2,
     }

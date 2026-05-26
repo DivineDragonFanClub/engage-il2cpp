@@ -24,18 +24,25 @@ mod __types {
         #[static_field]
         #[rename(name = "SceneName")]
         pub scene_name: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_Before")]
         pub m_before: crate::app::unit::Unit,
+        #[offset(128)]
         #[rename(name = "m_After")]
         pub m_after: crate::app::unit::Unit,
+        #[offset(144)]
         #[rename(name = "m_Status")]
         pub m_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        #[offset(152)]
         #[rename(name = "m_Characters")]
         pub m_characters: ::unity2::Array<crate::combat::character::Character>,
+        #[offset(160)]
         #[rename(name = "m_ZoneHandle")]
         pub m_zone_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[offset(168)]
         #[rename(name = "m_ChangeEffect")]
         pub m_change_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(176)]
         #[rename(name = "m_GameObjects")]
         pub m_game_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

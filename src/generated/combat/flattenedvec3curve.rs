@@ -14,10 +14,13 @@ mod __types {
         #[static_field]
         #[rename(name = "U")]
         pub u: f32,
+        #[offset(24)]
         #[rename(name = "tip")]
         pub tip: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(32)]
         #[rename(name = "roo")]
         pub roo: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(40)]
         #[rename(name = "dir")]
         pub dir: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
     }

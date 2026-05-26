@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertCrossCut")]
     #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
     pub struct ConvertCrossCut {
+        #[offset(44)]
         #[rename(name = "m_IsEnded")]
         pub m_is_ended: bool,
     }

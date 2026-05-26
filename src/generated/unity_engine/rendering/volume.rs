@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "Volume")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct Volume {
+        #[offset(24)]
         #[rename(name = "isGlobal")]
         pub is_global: bool,
+        #[offset(28)]
         #[rename(name = "priority")]
         pub priority: f32,
+        #[offset(32)]
         #[rename(name = "blendDistance")]
         pub blend_distance: f32,
+        #[offset(36)]
         #[rename(name = "weight")]
         pub weight: f32,
+        #[offset(40)]
         #[rename(name = "sharedProfile")]
         pub shared_profile: crate::unity_engine::rendering::volumeprofile::VolumeProfile,
+        #[offset(48)]
         #[rename(name = "m_PreviousLayer")]
         pub m_previous_layer: i32,
+        #[offset(52)]
         #[rename(name = "m_PreviousPriority")]
         pub m_previous_priority: f32,
+        #[offset(56)]
         #[rename(name = "m_InternalProfile")]
         pub m_internal_profile: crate::unity_engine::rendering::volumeprofile::VolumeProfile,
     }

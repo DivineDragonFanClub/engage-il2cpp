@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CommonRewardMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct CommonRewardMenu {
+        #[offset(196)]
         #[rename(name = "m_IsGaugeAllEnd")]
         pub m_is_gauge_all_end: bool,
+        #[offset(200)]
         #[rename(name = "m_AddLevelUpUnitList")]
         pub m_add_level_up_unit_list: crate::system::action_2::Action_2<crate::app::unit::Unit, i32>,
+        #[offset(208)]
         #[rename(name = "m_WaitTimeStart")]
         pub m_wait_time_start: f32,
+        #[offset(212)]
         #[rename(name = "m_WaitTimeEnd")]
         pub m_wait_time_end: f32,
+        #[offset(216)]
         #[rename(name = "m_ShowIndex")]
         pub m_show_index: i32,
     }

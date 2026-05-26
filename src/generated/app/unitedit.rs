@@ -26,16 +26,22 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxDay")]
         pub max_day: i32,
+        #[offset(16)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MorphName")]
         pub m_morph_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_Gender")]
         pub m_gender: crate::app::gender::Gender,
+        #[offset(36)]
         #[rename(name = "m_Language")]
         pub m_language: crate::app::language::Language_Langs,
+        #[offset(40)]
         #[rename(name = "m_BirthMonth")]
         pub m_birth_month: u8,
+        #[offset(41)]
         #[rename(name = "m_BirthDay")]
         pub m_birth_day: u8,
     }

@@ -13,10 +13,6 @@ mod __types {
         unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_IState.md"))]
-    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.IState")]
-    pub struct SimpleAnimationPlayable_IState {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/simpleanimationplayable/SimpleAnimationPlayable_QueuedState.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -42,108 +38,146 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateInfo.md"))]
-    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct SimpleAnimationPlayable_StateInfo {
-        #[rename(name = "m_Enabled")]
-        pub m_enabled: bool,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-        #[rename(name = "m_StateName")]
-        pub m_state_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Fading")]
-        pub m_fading: bool,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_TargetWeight")]
-        pub m_target_weight: f32,
-        #[rename(name = "m_Weight")]
-        pub m_weight: f32,
-        #[rename(name = "m_FadeSpeed")]
-        pub m_fade_speed: f32,
-        #[rename(name = "m_Clip")]
-        pub m_clip: crate::unity_engine::animationclip::AnimationClip,
-        #[rename(name = "m_Playable")]
-        pub m_playable: crate::unity_engine::playables::playable::Playable,
-        #[rename(name = "m_WrapMode")]
-        pub m_wrap_mode: crate::unity_engine::wrapmode::WrapMode,
-        #[rename(name = "m_IsClone")]
-        pub m_is_clone: bool,
-        #[rename(name = "m_ReadyForCleanup")]
-        pub m_ready_for_cleanup: bool,
-        #[rename(name = "m_ParentState")]
-        pub m_parent_state: crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle,
-        #[rename(name = "m_WeightDirty")]
-        pub m_weight_dirty: bool,
-        #[rename(name = "m_EnabledDirty")]
-        pub m_enabled_dirty: bool,
-        #[rename(name = "m_TimeIsUpToDate")]
-        pub m_time_is_up_to_date: bool,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_IState.md"))]
+    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.IState")]
+    pub struct SimpleAnimationPlayable_IState {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateManagement.md"))]
     #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateManagement")]
     #[parent(crate::system::object::Object)]
     pub struct SimpleAnimationPlayable_StateManagement {
+        #[offset(16)]
         #[rename(name = "m_States")]
         pub m_states: crate::system::collections::generic::list_1::List_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo>,
+        #[offset(24)]
         #[rename(name = "m_Count")]
         pub m_count: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateEnumerable_StateEnumerator.md"))]
-    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateEnumerable.StateEnumerator")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateInfo.md"))]
+    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateInfo")]
     #[parent(crate::system::object::Object)]
-    pub struct SimpleAnimationPlayable_StateEnumerable_StateEnumerator {
+    pub struct SimpleAnimationPlayable_StateInfo {
+        #[offset(16)]
+        #[rename(name = "m_Enabled")]
+        pub m_enabled: bool,
+        #[offset(20)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
-        #[rename(name = "m_Version")]
-        pub m_version: i32,
-        #[rename(name = "m_Owner")]
-        pub m_owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateEnumerable.md"))]
-    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateEnumerable")]
-    #[parent(crate::system::object::Object)]
-    pub struct SimpleAnimationPlayable_StateEnumerable {
-        #[rename(name = "m_Owner")]
-        pub m_owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
+        #[offset(24)]
+        #[rename(name = "m_StateName")]
+        pub m_state_name: ::unity2::Il2CppString,
+        #[offset(32)]
+        #[rename(name = "m_Fading")]
+        pub m_fading: bool,
+        #[offset(36)]
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[offset(40)]
+        #[rename(name = "m_TargetWeight")]
+        pub m_target_weight: f32,
+        #[offset(44)]
+        #[rename(name = "m_Weight")]
+        pub m_weight: f32,
+        #[offset(48)]
+        #[rename(name = "m_FadeSpeed")]
+        pub m_fade_speed: f32,
+        #[offset(56)]
+        #[rename(name = "m_Clip")]
+        pub m_clip: crate::unity_engine::animationclip::AnimationClip,
+        #[offset(64)]
+        #[rename(name = "m_Playable")]
+        pub m_playable: crate::unity_engine::playables::playable::Playable,
+        #[offset(80)]
+        #[rename(name = "m_WrapMode")]
+        pub m_wrap_mode: crate::unity_engine::wrapmode::WrapMode,
+        #[offset(84)]
+        #[rename(name = "m_IsClone")]
+        pub m_is_clone: bool,
+        #[offset(85)]
+        #[rename(name = "m_ReadyForCleanup")]
+        pub m_ready_for_cleanup: bool,
+        #[offset(88)]
+        #[rename(name = "m_ParentState")]
+        pub m_parent_state: crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle,
+        #[offset(96)]
+        #[rename(name = "m_WeightDirty")]
+        pub m_weight_dirty: bool,
+        #[offset(97)]
+        #[rename(name = "m_EnabledDirty")]
+        pub m_enabled_dirty: bool,
+        #[offset(98)]
+        #[rename(name = "m_TimeIsUpToDate")]
+        pub m_time_is_up_to_date: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable.md"))]
     #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable")]
     #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
     pub struct SimpleAnimationPlayable {
+        #[offset(16)]
         #[rename(name = "m_StateQueue")]
         pub m_state_queue: crate::system::collections::generic::linkedlist_1::LinkedList_1<
             crate::root::simpleanimationplayable::SimpleAnimationPlayable_QueuedState,
         >,
+        #[offset(24)]
         #[rename(name = "m_States")]
         pub m_states: crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateManagement,
+        #[offset(32)]
         #[rename(name = "m_Initialized")]
         pub m_initialized: bool,
+        #[offset(33)]
         #[rename(name = "m_KeepStoppedPlayablesConnected")]
         pub m_keep_stopped_playables_connected: bool,
+        #[offset(40)]
         #[rename(name = "m_ActualPlayable")]
         pub m_actual_playable: crate::unity_engine::playables::playable::Playable,
+        #[offset(56)]
         #[rename(name = "m_Mixer")]
         pub m_mixer: crate::unity_engine::animations::animationmixerplayable::AnimationMixerPlayable,
+        #[offset(72)]
         #[rename(name = "onDone")]
         pub on_done: crate::system::action::Action,
+        #[offset(80)]
         #[rename(name = "m_StatesVersion")]
         pub m_states_version: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateEnumerable.md"))]
+    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateEnumerable")]
+    #[parent(crate::system::object::Object)]
+    pub struct SimpleAnimationPlayable_StateEnumerable {
+        #[offset(16)]
+        #[rename(name = "m_Owner")]
+        pub m_owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateEnumerable_StateEnumerator.md"))]
+    #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateEnumerable.StateEnumerator")]
+    #[parent(crate::system::object::Object)]
+    pub struct SimpleAnimationPlayable_StateEnumerable_StateEnumerator {
+        #[offset(16)]
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+        #[offset(20)]
+        #[rename(name = "m_Version")]
+        pub m_version: i32,
+        #[offset(24)]
+        #[rename(name = "m_Owner")]
+        pub m_owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateHandle.md"))]
     #[::unity2::class(namespace = "", name = "SimpleAnimationPlayable.StateHandle")]
     #[parent(crate::system::object::Object)]
     pub struct SimpleAnimationPlayable_StateHandle {
+        #[offset(16)]
         #[rename(name = "m_Parent")]
         pub m_parent: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
+        #[offset(24)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
+        #[offset(32)]
         #[rename(name = "m_Target")]
         pub m_target: crate::unity_engine::playables::playable::Playable,
     }
@@ -151,6 +185,77 @@ mod __types {
 
 #[cfg(feature = "root-simpleanimationplayable-types")]
 pub use __types::*;
+
+#[cfg(feature = "root-simpleanimationplayable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SimpleAnimationPlayable_QueuedState_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_QueuedState as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_QueuedState as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SimpleAnimationPlayable_QueuedState,
+        s: crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle,
+        t: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_QueuedState,
+            crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, s, t, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+impl SimpleAnimationPlayable_QueuedState {
+    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle, f32)` overload"]
+    pub fn ctor(
+        self,
+        s: impl ::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle>,
+        t: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __SimpleAnimationPlayable_QueuedState_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(s),
+                ::core::convert::Into::into(t),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "root-simpleanimationplayable")]
 #[doc(hidden)]
@@ -839,20 +944,377 @@ impl<__T: ISimpleAnimationPlayable_IState> ISimpleAnimationPlayable_IStateMethod
 #[cfg(feature = "root-simpleanimationplayable")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SimpleAnimationPlayable_QueuedState_unity2_raw {
+mod __SimpleAnimationPlayable_StateManagement_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: SimpleAnimationPlayable_StateManagement, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item(
+        this: SimpleAnimationPlayable_StateManagement,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateManagement,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
+        inner(this, i, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_QueuedState as ::unity2::ClassIdentity>::class(),
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
                 ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SimpleAnimationPlayable_StateManagement, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_insert_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "InsertState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "InsertState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn insert_state(
+        this: SimpleAnimationPlayable_StateManagement,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateManagement,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo =
+            ::core::mem::transmute(__lookup_insert_state::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_any_state_playing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "AnyStatePlaying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "AnyStatePlaying",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn any_state_playing(this: SimpleAnimationPlayable_StateManagement, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_any_state_playing::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "RemoveState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "RemoveState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_state(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_state::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "RemoveClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "RemoveClip",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_clip(
+        this: SimpleAnimationPlayable_StateManagement,
+        clip: crate::unity_engine::animationclip::AnimationClip,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateManagement,
+            crate::unity_engine::animationclip::AnimationClip,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_remove_clip::get_method_info().method_ptr);
+        inner(this, clip, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "FindState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "FindState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn find_state(
+        this: SimpleAnimationPlayable_StateManagement,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateManagement,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo =
+            ::core::mem::transmute(__lookup_find_state::get_method_info().method_ptr);
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "EnableState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "EnableState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_state(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_state::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "DisableState",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "DisableState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn disable_state(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_state::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_input_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "SetInputWeight",
                 2,
                 param_types,
                 false,
@@ -864,46 +1326,870 @@ mod __SimpleAnimationPlayable_QueuedState_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_QueuedState as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "SetInputWeight",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(
-        this: SimpleAnimationPlayable_QueuedState,
-        s: crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle,
-        t: f32,
+    pub unsafe fn set_input_weight(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        weight: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_input_weight::get_method_info().method_ptr);
+        inner(this, index, weight, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_state_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "SetStateTime",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "SetStateTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_state_time(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_state_time::get_method_info().method_ptr);
+        inner(this, index, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetStateTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetStateTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state_time(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_state_time::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_clone_of {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "IsCloneOf",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "IsCloneOf",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_clone_of(
+        this: SimpleAnimationPlayable_StateManagement,
+        potential_clone_index: i32,
+        original_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_clone_of::get_method_info().method_ptr);
+        inner(this, potential_clone_index, original_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetStateSpeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetStateSpeed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state_speed(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_state_speed::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_state_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "SetStateSpeed",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "SetStateSpeed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_state_speed(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_state_speed::get_method_info().method_ptr);
+        inner(this, index, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_input_weight {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetInputWeight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetInputWeight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_input_weight(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_input_weight::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetStateLength",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetStateLength",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state_length(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_state_length::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_clip_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetClipLength",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetClipLength",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_clip_length(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_clip_length::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_playable_duration {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetStatePlayableDuration",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetStatePlayableDuration",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state_playable_duration(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_state_playable_duration::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetStateClip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetStateClip",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state_clip(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animationclip::AnimationClip {
         let inner: extern "C" fn(
-            SimpleAnimationPlayable_QueuedState,
-            crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle,
-            f32,
+            SimpleAnimationPlayable_StateManagement,
+            i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, s, t, __unity2_method_info)
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_state_clip::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_wrap_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetStateWrapMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetStateWrapMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state_wrap_mode(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::wrapmode::WrapMode {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> crate::unity_engine::wrapmode::WrapMode =
+            ::core::mem::transmute(__lookup_get_state_wrap_mode::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_state_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "GetStateName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "GetStateName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_state_name(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_state_name::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_state_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "SetStateName",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "SetStateName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_state_name(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_state_name::get_method_info().method_ptr);
+        inner(this, index, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
+                "StopState",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
+                        "StopState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn stop_state(
+        this: SimpleAnimationPlayable_StateManagement,
+        index: i32,
+        cleanup: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_state::get_method_info().method_ptr);
+        inner(this, index, cleanup, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-simpleanimationplayable")]
-impl SimpleAnimationPlayable_QueuedState {
-    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle, f32)` overload"]
-    pub fn ctor(
-        self,
-        s: impl ::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle>,
-        t: impl ::core::convert::Into<f32>,
-    ) -> () {
+pub trait ISimpleAnimationPlayable_StateManagementMethods: ISimpleAnimationPlayable_StateManagement {
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
         unsafe {
-            __SimpleAnimationPlayable_QueuedState_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(s),
-                ::core::convert::Into::into(t),
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_item(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InsertState()` overload"]
+    fn insert_state(self) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::insert_state(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AnyStatePlaying()` overload"]
+    fn any_state_playing(self) -> bool {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::any_state_playing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RemoveState(i32)` overload"]
+    fn remove_state(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::remove_state(
+                __receiver,
+                ::core::convert::Into::into(index),
                 ::core::option::Option::None,
             )
         }
+    }
+    #[doc = "`RemoveClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
+    fn remove_clip(self, clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>) -> bool {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::remove_clip(
+                __receiver,
+                ::core::convert::Into::into(clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FindState(::unity2::Il2CppString)` overload"]
+    fn find_state(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::find_state(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EnableState(i32)` overload"]
+    fn enable_state(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::enable_state(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisableState(i32)` overload"]
+    fn disable_state(self, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::disable_state(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetInputWeight(i32, f32)` overload"]
+    fn set_input_weight(self, index: impl ::core::convert::Into<i32>, weight: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_input_weight(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(weight),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetStateTime(i32, f32)` overload"]
+    fn set_state_time(self, index: impl ::core::convert::Into<i32>, time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_state_time(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStateTime(i32)` overload"]
+    fn get_state_time(self, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_time(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsCloneOf(i32, i32)` overload"]
+    fn is_clone_of(self, potential_clone_index: impl ::core::convert::Into<i32>, original_index: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::is_clone_of(
+                __receiver,
+                ::core::convert::Into::into(potential_clone_index),
+                ::core::convert::Into::into(original_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStateSpeed(i32)` overload"]
+    fn get_state_speed(self, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_speed(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetStateSpeed(i32, f32)` overload"]
+    fn set_state_speed(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_state_speed(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetInputWeight(i32)` overload"]
+    fn get_input_weight(self, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_input_weight(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStateLength(i32)` overload"]
+    fn get_state_length(self, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_length(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetClipLength(i32)` overload"]
+    fn get_clip_length(self, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_clip_length(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStatePlayableDuration(i32)` overload"]
+    fn get_state_playable_duration(self, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_playable_duration(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStateClip(i32)` overload"]
+    fn get_state_clip(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::animationclip::AnimationClip {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_clip(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStateWrapMode(i32)` overload"]
+    fn get_state_wrap_mode(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::wrapmode::WrapMode {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_wrap_mode(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetStateName(i32)` overload"]
+    fn get_state_name(self, index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_name(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetStateName(i32, ::unity2::Il2CppString)` overload"]
+    fn set_state_name(self, index: impl ::core::convert::Into<i32>, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_state_name(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StopState(i32, bool)` overload"]
+    fn stop_state(self, index: impl ::core::convert::Into<i32>, cleanup: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateManagement_unity2_raw::stop_state(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(cleanup),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+impl<__T: ISimpleAnimationPlayable_StateManagement> ISimpleAnimationPlayable_StateManagementMethods for __T {}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+impl SimpleAnimationPlayable_StateManagement {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SimpleAnimationPlayable_StateManagement),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISimpleAnimationPlayable_StateManagementMethods>::ctor(this);
+        this
     }
 }
 
@@ -2611,1794 +3897,6 @@ impl SimpleAnimationPlayable_StateInfo {
             )
         });
         <Self as ISimpleAnimationPlayable_StateInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SimpleAnimationPlayable_StateManagement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: SimpleAnimationPlayable_StateManagement, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(
-        this: SimpleAnimationPlayable_StateManagement,
-        i: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateManagement,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, i, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SimpleAnimationPlayable_StateManagement, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_insert_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "InsertState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "InsertState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn insert_state(
-        this: SimpleAnimationPlayable_StateManagement,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateManagement,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo =
-            ::core::mem::transmute(__lookup_insert_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_any_state_playing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "AnyStatePlaying",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "AnyStatePlaying",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn any_state_playing(this: SimpleAnimationPlayable_StateManagement, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_any_state_playing::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "RemoveState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "RemoveState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove_state(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_remove_state::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_clip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "RemoveClip",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "RemoveClip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn remove_clip(
-        this: SimpleAnimationPlayable_StateManagement,
-        clip: crate::unity_engine::animationclip::AnimationClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateManagement,
-            crate::unity_engine::animationclip::AnimationClip,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_remove_clip::get_method_info().method_ptr);
-        inner(this, clip, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "FindState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "FindState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn find_state(
-        this: SimpleAnimationPlayable_StateManagement,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateManagement,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo =
-            ::core::mem::transmute(__lookup_find_state::get_method_info().method_ptr);
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "EnableState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "EnableState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enable_state(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_enable_state::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "DisableState",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "DisableState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable_state(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable_state::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_input_weight {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "SetInputWeight",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "SetInputWeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_input_weight(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        weight: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_input_weight::get_method_info().method_ptr);
-        inner(this, index, weight, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "SetStateTime",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "SetStateTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state_time(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_state_time::get_method_info().method_ptr);
-        inner(this, index, time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetStateTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetStateTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_time(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_state_time::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_clone_of {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "IsCloneOf",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "IsCloneOf",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_clone_of(
-        this: SimpleAnimationPlayable_StateManagement,
-        potential_clone_index: i32,
-        original_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_clone_of::get_method_info().method_ptr);
-        inner(this, potential_clone_index, original_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetStateSpeed",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetStateSpeed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_speed(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_state_speed::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "SetStateSpeed",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "SetStateSpeed",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state_speed(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_state_speed::get_method_info().method_ptr);
-        inner(this, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_input_weight {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetInputWeight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetInputWeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_input_weight(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_input_weight::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetStateLength",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetStateLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_length(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_state_length::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_clip_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetClipLength",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetClipLength",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_clip_length(this: SimpleAnimationPlayable_StateManagement, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_clip_length::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_playable_duration {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetStatePlayableDuration",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetStatePlayableDuration",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_playable_duration(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_state_playable_duration::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_clip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetStateClip",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetStateClip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_clip(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateManagement,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_state_clip::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_wrap_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetStateWrapMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetStateWrapMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_wrap_mode(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::wrapmode::WrapMode {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> crate::unity_engine::wrapmode::WrapMode =
-            ::core::mem::transmute(__lookup_get_state_wrap_mode::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_state_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "GetStateName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "GetStateName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_state_name(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_state_name::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_state_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "SetStateName",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "SetStateName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_state_name(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_state_name::get_method_info().method_ptr);
-        inner(this, index, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::class(),
-                "StopState",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateManagement as ::unity2::ClassIdentity>::NAME,
-                        "StopState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn stop_state(
-        this: SimpleAnimationPlayable_StateManagement,
-        index: i32,
-        cleanup: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateManagement, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_stop_state::get_method_info().method_ptr);
-        inner(this, index, cleanup, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-pub trait ISimpleAnimationPlayable_StateManagementMethods: ISimpleAnimationPlayable_StateManagement {
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(i32)` overload"]
-    fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_item(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InsertState()` overload"]
-    fn insert_state(self) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::insert_state(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AnyStatePlaying()` overload"]
-    fn any_state_playing(self) -> bool {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::any_state_playing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RemoveState(i32)` overload"]
-    fn remove_state(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::remove_state(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RemoveClip(crate::unity_engine::animationclip::AnimationClip)` overload"]
-    fn remove_clip(self, clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>) -> bool {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::remove_clip(
-                __receiver,
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FindState(::unity2::Il2CppString)` overload"]
-    fn find_state(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::find_state(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableState(i32)` overload"]
-    fn enable_state(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::enable_state(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DisableState(i32)` overload"]
-    fn disable_state(self, index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::disable_state(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetInputWeight(i32, f32)` overload"]
-    fn set_input_weight(self, index: impl ::core::convert::Into<i32>, weight: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_input_weight(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(weight),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetStateTime(i32, f32)` overload"]
-    fn set_state_time(self, index: impl ::core::convert::Into<i32>, time: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_state_time(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStateTime(i32)` overload"]
-    fn get_state_time(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_time(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsCloneOf(i32, i32)` overload"]
-    fn is_clone_of(self, potential_clone_index: impl ::core::convert::Into<i32>, original_index: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::is_clone_of(
-                __receiver,
-                ::core::convert::Into::into(potential_clone_index),
-                ::core::convert::Into::into(original_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStateSpeed(i32)` overload"]
-    fn get_state_speed(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_speed(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetStateSpeed(i32, f32)` overload"]
-    fn set_state_speed(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_state_speed(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetInputWeight(i32)` overload"]
-    fn get_input_weight(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_input_weight(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStateLength(i32)` overload"]
-    fn get_state_length(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_length(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetClipLength(i32)` overload"]
-    fn get_clip_length(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_clip_length(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStatePlayableDuration(i32)` overload"]
-    fn get_state_playable_duration(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_playable_duration(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStateClip(i32)` overload"]
-    fn get_state_clip(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::animationclip::AnimationClip {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_clip(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStateWrapMode(i32)` overload"]
-    fn get_state_wrap_mode(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::wrapmode::WrapMode {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_wrap_mode(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetStateName(i32)` overload"]
-    fn get_state_name(self, index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::get_state_name(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetStateName(i32, ::unity2::Il2CppString)` overload"]
-    fn set_state_name(self, index: impl ::core::convert::Into<i32>, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::set_state_name(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StopState(i32, bool)` overload"]
-    fn stop_state(self, index: impl ::core::convert::Into<i32>, cleanup: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateManagement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateManagement_unity2_raw::stop_state(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(cleanup),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-impl<__T: ISimpleAnimationPlayable_StateManagement> ISimpleAnimationPlayable_StateManagementMethods for __T {}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-impl SimpleAnimationPlayable_StateManagement {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SimpleAnimationPlayable_StateManagement),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISimpleAnimationPlayable_StateManagementMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::simpleanimationplayable::SimpleAnimationPlayable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
-        owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
-            crate::root::simpleanimationplayable::SimpleAnimationPlayable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
-                "IsValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "IsValid",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_valid(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
-                "GetCurrentHandle",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "GetCurrentHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current_handle(
-        this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState =
-            ::core::mem::transmute(__lookup_get_current_handle::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerator.get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-pub trait ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods: ISimpleAnimationPlayable_StateEnumerable_StateEnumerator {
-    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` overload"]
-    fn ctor(self, owner: impl ::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(owner),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsValid()` overload"]
-    fn is_valid(self) -> bool {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCurrentHandle(i32)` overload"]
-    fn get_current_handle(self, index: impl ::core::convert::Into<i32>) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::get_current_handle(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::system_collections_i_enumerator_get_current(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MoveNext()` overload"]
-    fn move_next(self) -> bool {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-impl<__T: ISimpleAnimationPlayable_StateEnumerable_StateEnumerator> ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods for __T {}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-impl SimpleAnimationPlayable_StateEnumerable_StateEnumerator {
-    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` — overload selector"]
-    pub fn new(owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SimpleAnimationPlayable_StateEnumerable_StateEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods>::ctor(this, owner);
-        this
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SimpleAnimationPlayable_StateEnumerable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::simpleanimationplayable::SimpleAnimationPlayable as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SimpleAnimationPlayable_StateEnumerable,
-        owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateEnumerable,
-            crate::root::simpleanimationplayable::SimpleAnimationPlayable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::NAME,
-                        "GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: SimpleAnimationPlayable_StateEnumerable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState> {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateEnumerable,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<
-            crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState,
-        > = ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerable.GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: SimpleAnimationPlayable_StateEnumerable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            SimpleAnimationPlayable_StateEnumerable,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-pub trait ISimpleAnimationPlayable_StateEnumerableMethods: ISimpleAnimationPlayable_StateEnumerable {
-    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` overload"]
-    fn ctor(self, owner: impl ::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable>) -> () {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_unity2_raw::ctor(__receiver, ::core::convert::Into::into(owner), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetEnumerator()` overload"]
-    fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState> {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <SimpleAnimationPlayable_StateEnumerable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SimpleAnimationPlayable_StateEnumerable_unity2_raw::system_collections_i_enumerable_get_enumerator(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-impl<__T: ISimpleAnimationPlayable_StateEnumerable> ISimpleAnimationPlayable_StateEnumerableMethods for __T {}
-
-#[cfg(feature = "root-simpleanimationplayable")]
-impl SimpleAnimationPlayable_StateEnumerable {
-    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` — overload selector"]
-    pub fn new(owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SimpleAnimationPlayable_StateEnumerable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISimpleAnimationPlayable_StateEnumerableMethods>::ctor(this, owner);
         this
     }
 }
@@ -7032,6 +6530,542 @@ impl SimpleAnimationPlayable {
             )
         });
         <Self as ISimpleAnimationPlayableMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SimpleAnimationPlayable_StateEnumerable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::simpleanimationplayable::SimpleAnimationPlayable as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SimpleAnimationPlayable_StateEnumerable,
+        owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateEnumerable,
+            crate::root::simpleanimationplayable::SimpleAnimationPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, owner, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::class(),
+                "GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_enumerator(
+        this: SimpleAnimationPlayable_StateEnumerable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState> {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateEnumerable,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<
+            crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState,
+        > = ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerable.GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.IEnumerable.GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerable_get_enumerator(
+        this: SimpleAnimationPlayable_StateEnumerable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateEnumerable,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+pub trait ISimpleAnimationPlayable_StateEnumerableMethods: ISimpleAnimationPlayable_StateEnumerable {
+    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` overload"]
+    fn ctor(self, owner: impl ::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_unity2_raw::ctor(__receiver, ::core::convert::Into::into(owner), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEnumerator()` overload"]
+    fn get_enumerator(
+        self,
+    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState> {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_unity2_raw::system_collections_i_enumerable_get_enumerator(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+impl<__T: ISimpleAnimationPlayable_StateEnumerable> ISimpleAnimationPlayable_StateEnumerableMethods for __T {}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+impl SimpleAnimationPlayable_StateEnumerable {
+    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` — overload selector"]
+    pub fn new(owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SimpleAnimationPlayable_StateEnumerable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISimpleAnimationPlayable_StateEnumerableMethods>::ctor(this, owner);
+        this
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::simpleanimationplayable::SimpleAnimationPlayable as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
+        owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
+            crate::root::simpleanimationplayable::SimpleAnimationPlayable,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, owner, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
+                "IsValid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "IsValid",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_valid(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
+                "GetCurrentHandle",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "GetCurrentHandle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current_handle(
+        this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState {
+        let inner: extern "C" fn(
+            SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState =
+            ::core::mem::transmute(__lookup_get_current_handle::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerator_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerator.get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.IEnumerator.get_Current",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerator_get_current(
+        this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn move_next(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: SimpleAnimationPlayable_StateEnumerable_StateEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SimpleAnimationPlayable_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+pub trait ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods: ISimpleAnimationPlayable_StateEnumerable_StateEnumerator {
+    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` overload"]
+    fn ctor(self, owner: impl ::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable>) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(owner),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsValid()` overload"]
+    fn is_valid(self) -> bool {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCurrentHandle(i32)` overload"]
+    fn get_current_handle(self, index: impl ::core::convert::Into<i32>) -> crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::get_current_handle(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::system_collections_i_enumerator_get_current(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MoveNext()` overload"]
+    fn move_next(self) -> bool {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SimpleAnimationPlayable_StateEnumerable_StateEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+impl<__T: ISimpleAnimationPlayable_StateEnumerable_StateEnumerator> ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods for __T {}
+
+#[cfg(feature = "root-simpleanimationplayable")]
+impl SimpleAnimationPlayable_StateEnumerable_StateEnumerator {
+    #[doc = "`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` — overload selector"]
+    pub fn new(owner: crate::root::simpleanimationplayable::SimpleAnimationPlayable) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SimpleAnimationPlayable_StateEnumerable_StateEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods>::ctor(this, owner);
         this
     }
 }

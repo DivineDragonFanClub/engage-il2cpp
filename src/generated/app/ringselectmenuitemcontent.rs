@@ -20,30 +20,43 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingSelectMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RingSelectMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_emptyText")]
         pub m_empty_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_face")]
         pub m_face: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_symbol")]
         pub m_symbol: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_selectBg")]
         pub m_select_bg: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "m_frame")]
         pub m_frame: crate::unity_engine::ui::image::Image,
+        #[offset(120)]
         #[rename(name = "m_check")]
         pub m_check: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_unitIcon")]
         pub m_unit_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_IsEquip")]
         pub m_is_equip: bool,
+        #[offset(137)]
         #[rename(name = "m_IsEmpty")]
         pub m_is_empty: bool,
+        #[offset(144)]
         #[rename(name = "m_numRoot")]
         pub m_num_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
         #[rename(name = "m_num")]
         pub m_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
         #[rename(name = "m_x")]
         pub m_x: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

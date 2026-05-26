@@ -20,20 +20,28 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "LayoutGroup")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct LayoutGroup {
+        #[offset(24)]
         #[rename(name = "m_Padding")]
         pub m_padding: crate::unity_engine::rectoffset::RectOffset,
+        #[offset(32)]
         #[rename(name = "m_ChildAlignment")]
         pub m_child_alignment: crate::unity_engine::textanchor::TextAnchor,
+        #[offset(40)]
         #[rename(name = "m_Rect")]
         pub m_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(48)]
         #[rename(name = "m_Tracker")]
         pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+        #[offset(52)]
         #[rename(name = "m_TotalMinSize")]
         pub m_total_min_size: crate::unity_engine::vector2::Vector2,
+        #[offset(60)]
         #[rename(name = "m_TotalPreferredSize")]
         pub m_total_preferred_size: crate::unity_engine::vector2::Vector2,
+        #[offset(68)]
         #[rename(name = "m_TotalFlexibleSize")]
         pub m_total_flexible_size: crate::unity_engine::vector2::Vector2,
+        #[offset(80)]
         #[rename(name = "m_RectChildren")]
         pub m_rect_children: crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform>,
     }

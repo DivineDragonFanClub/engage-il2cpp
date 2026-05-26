@@ -20,24 +20,34 @@ mod __types {
         #[static_field]
         #[rename(name = "DecayRate")]
         pub decay_rate: f32,
+        #[offset(16)]
         #[rename(name = "CP")]
         pub cp: crate::combat::character::Character,
+        #[offset(24)]
         #[rename(name = "m_Track")]
         pub m_track: crate::combat::trailtrack::TrailTrack,
+        #[offset(32)]
         #[rename(name = "m_ClipLength")]
         pub m_clip_length: f32,
+        #[offset(40)]
         #[rename(name = "m_Vertices")]
         pub m_vertices: ::unity2::Array<crate::combat::trailvertex::TrailVertex>,
+        #[offset(52)]
         #[rename(name = "m_DeltaAlpha")]
         pub m_delta_alpha: f32,
+        #[offset(56)]
         #[rename(name = "m_WeaponRootOffset")]
         pub m_weapon_root_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(68)]
         #[rename(name = "m_WeaponTipOffset")]
         pub m_weapon_tip_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(80)]
         #[rename(name = "m_HandIndex")]
         pub m_hand_index: i32,
+        #[offset(88)]
         #[rename(name = "m_HandTransform")]
         pub m_hand_transform: crate::unity_engine::transform::Transform,
+        #[offset(96)]
         #[rename(name = "m_ElapsedTime")]
         pub m_elapsed_time: f32,
     }

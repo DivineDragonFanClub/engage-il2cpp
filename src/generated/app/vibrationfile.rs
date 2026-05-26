@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VibrationFile")]
     #[parent(crate::system::object::Object)]
     pub struct VibrationFile {
+        #[offset(16)]
         #[rename(name = "m_file")]
         pub m_file: crate::app::rawfilehandle::RawFileHandle,
+        #[offset(24)]
         #[rename(name = "m_info")]
         pub m_info: crate::nn::hid::vibrationfileinfo::VibrationFileInfo,
+        #[offset(56)]
         #[rename(name = "m_context")]
         pub m_context: crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext,
     }

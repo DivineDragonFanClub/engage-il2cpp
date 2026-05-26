@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomEnvSetManager")]
     #[parent(crate::system::object::Object)]
     pub struct CustomEnvSetManager {
+        #[offset(16)]
         #[rename(name = "m_EnvSets")]
         pub m_env_sets:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet>,

@@ -20,28 +20,40 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Throwing")]
     #[parent(crate::combat::launchbehaviour::LaunchBehaviour)]
     pub struct Throwing {
+        #[offset(56)]
         #[rename(name = "Mass")]
         pub mass: f32,
+        #[offset(60)]
         #[rename(name = "FlySpeed")]
         pub fly_speed: f32,
+        #[offset(64)]
         #[rename(name = "LocalAngularVelocity")]
         pub local_angular_velocity: f32,
+        #[offset(72)]
         #[rename(name = "TrailPrefab")]
         pub trail_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "TrailParentNode")]
         pub trail_parent_node: ::unity2::Il2CppString,
+        #[offset(88)]
         #[rename(name = "HitEffectPrefab")]
         pub hit_effect_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_ShootPassed")]
         pub m_shoot_passed: bool,
+        #[offset(97)]
         #[rename(name = "m_bReached")]
         pub m_b_reached: bool,
+        #[offset(104)]
         #[rename(name = "m_WeaponPrefab")]
         pub m_weapon_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_WeaponLength")]
         pub m_weapon_length: f32,
+        #[offset(120)]
         #[rename(name = "m_Parabola")]
         pub m_parabola: crate::combat::parabola::Parabola,
+        #[offset(128)]
         #[rename(name = "m_KnockoffAttack")]
         pub m_knockoff_attack: i32,
     }

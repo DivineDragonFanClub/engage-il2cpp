@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "TestMove")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TestMove {
+        #[offset(24)]
         #[rename(name = "m_Target")]
         pub m_target: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Speed")]
         pub m_speed: f32,
     }

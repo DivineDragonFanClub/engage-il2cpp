@@ -20,32 +20,46 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerSolo")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerSolo {
+        #[offset(168)]
         #[rename(name = "Distance")]
         pub distance: f32,
+        #[offset(172)]
         #[rename(name = "TargetSide")]
         pub target_side: i32,
+        #[offset(176)]
         #[rename(name = "FollowJoint")]
         pub follow_joint: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+        #[offset(180)]
         #[rename(name = "FollowVector")]
         pub follow_vector: crate::unity_engine::vector3::Vector3,
+        #[offset(192)]
         #[rename(name = "FollowVectorBigDragonLeg")]
         pub follow_vector_big_dragon_leg: crate::unity_engine::vector3::Vector3,
+        #[offset(204)]
         #[rename(name = "FollowVectorBigDragonFly")]
         pub follow_vector_big_dragon_fly: crate::unity_engine::vector3::Vector3,
+        #[offset(216)]
         #[rename(name = "LookAtJoint")]
         pub look_at_joint: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+        #[offset(220)]
         #[rename(name = "LookAtVector")]
         pub look_at_vector: crate::unity_engine::vector3::Vector3,
+        #[offset(232)]
         #[rename(name = "LookAtVectorBigDragonLeg")]
         pub look_at_vector_big_dragon_leg: crate::unity_engine::vector3::Vector3,
+        #[offset(244)]
         #[rename(name = "LookAtVectorBigDragonFly")]
         pub look_at_vector_big_dragon_fly: crate::unity_engine::vector3::Vector3,
+        #[offset(256)]
         #[rename(name = "LookCenterAndLookAt")]
         pub look_center_and_look_at: bool,
+        #[offset(257)]
         #[rename(name = "UnusableCheck")]
         pub unusable_check: bool,
+        #[offset(258)]
         #[rename(name = "m_IsCameraInverse")]
         pub m_is_camera_inverse: bool,
+        #[offset(259)]
         #[rename(name = "m_IsSideInverse")]
         pub m_is_side_inverse: bool,
     }

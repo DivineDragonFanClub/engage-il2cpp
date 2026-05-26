@@ -15,233 +15,120 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_battle/FishingConfig_Battle_AngleBorder.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingConfig_Battle.AngleBorder")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingConfig_Battle_AngleBorder {
-        #[rename(name = "High")]
-        pub high: f32,
-        #[rename(name = "Middle")]
-        pub middle: f32,
-        #[rename(name = "Low")]
-        pub low: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_battle/FishingConfig_Battle.md"))]
     #[::unity2::class(namespace = "App", name = "FishingConfig_Battle")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_Battle {
+        #[offset(24)]
         #[rename(name = "m_BattleCamera")]
         pub m_battle_camera: crate::app::fishing::config::fixcameraconfig::FixCameraConfig,
+        #[offset(32)]
         #[rename(name = "m_BattleCameraAngleBorder")]
         pub m_battle_camera_angle_border: ::unity2::Array<f32>,
+        #[offset(40)]
         #[rename(name = "m_BattleCameraAngleLimit")]
         pub m_battle_camera_angle_limit: ::unity2::Array<f32>,
+        #[offset(48)]
         #[rename(name = "m_BattleCameraLerpCount")]
         pub m_battle_camera_lerp_count: i32,
+        #[offset(52)]
         #[rename(name = "m_BattleCameraReverseLerpCount")]
         pub m_battle_camera_reverse_lerp_count: i32,
+        #[offset(56)]
         #[rename(name = "m_HitPopupTimeSecond")]
         pub m_hit_popup_time_second: f32,
+        #[offset(60)]
         #[rename(name = "m_ReadyLethalSecond")]
         pub m_ready_lethal_second: f32,
+        #[offset(64)]
         #[rename(name = "m_LethalTimeSecond")]
         pub m_lethal_time_second: f32,
+        #[offset(68)]
         #[rename(name = "m_LethalIncrease")]
         pub m_lethal_increase: f32,
+        #[offset(72)]
         #[rename(name = "m_LethalDecrease")]
         pub m_lethal_decrease: f32,
+        #[offset(76)]
         #[rename(name = "m_AttackPower")]
         pub m_attack_power: f32,
+        #[offset(80)]
         #[rename(name = "m_StickWaitFrameAtAttack")]
         pub m_stick_wait_frame_at_attack: f32,
+        #[offset(84)]
         #[rename(name = "m_AtAttackWaitFrameAtStick")]
         pub m_at_attack_wait_frame_at_stick: f32,
+        #[offset(88)]
         #[rename(name = "m_AngleBorder")]
         pub m_angle_border: crate::app::fishingconfig_battle::FishingConfig_Battle_AngleBorder,
+        #[offset(96)]
         #[rename(name = "m_RadarAngle")]
         pub m_radar_angle: f32,
+        #[offset(100)]
         #[rename(name = "m_RadarShadowScale")]
         pub m_radar_shadow_scale: f32,
+        #[offset(104)]
         #[rename(name = "m_RadarDistanceMax")]
         pub m_radar_distance_max: f32,
+        #[offset(108)]
         #[rename(name = "m_RadarDistanceMin")]
         pub m_radar_distance_min: f32,
+        #[offset(112)]
         #[rename(name = "m_RadarEscapeRate")]
         pub m_radar_escape_rate: f32,
+        #[offset(116)]
         #[rename(name = "m_RadarStopCounterRate")]
         pub m_radar_stop_counter_rate: f32,
+        #[offset(120)]
         #[rename(name = "m_FishEscapeSec")]
         pub m_fish_escape_sec: f32,
+        #[offset(124)]
         #[rename(name = "m_MinFishCounterTime")]
         pub m_min_fish_counter_time: f32,
+        #[offset(128)]
         #[rename(name = "m_ForceCounterTime")]
         pub m_force_counter_time: f32,
+        #[offset(132)]
         #[rename(name = "m_LethalRecoveryHPPercent")]
         pub m_lethal_recovery_hp_percent: f32,
+        #[offset(136)]
         #[rename(name = "m_HPGaugeMoveWait")]
         pub m_hp_gauge_move_wait: f32,
+        #[offset(140)]
         #[rename(name = "m_HPGaugeMoveSpeed")]
         pub m_hp_gauge_move_speed: f32,
+        #[offset(144)]
         #[rename(name = "m_FirstAttackDamageRate")]
         pub m_first_attack_damage_rate: f32,
+        #[offset(148)]
         #[rename(name = "m_AssistShowSec")]
         pub m_assist_show_sec: f32,
+        #[offset(152)]
         #[rename(name = "m_BattleSplashInterval")]
         pub m_battle_splash_interval: f32,
+        #[offset(156)]
         #[rename(name = "m_BattleCounterSplashInterval")]
         pub m_battle_counter_splash_interval: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_battle/FishingConfig_Battle_AngleBorder.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingConfig_Battle.AngleBorder")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingConfig_Battle_AngleBorder {
+        #[offset(16)]
+        #[rename(name = "High")]
+        pub high: f32,
+        #[offset(20)]
+        #[rename(name = "Middle")]
+        pub middle: f32,
+        #[offset(24)]
+        #[rename(name = "Low")]
+        pub low: f32,
     }
 }
 
 #[cfg(feature = "app-fishingconfig_battle-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-fishingconfig_battle")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingConfig_Battle_AngleBorder_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: FishingConfig_Battle_AngleBorder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingConfig_Battle_AngleBorder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: FishingConfig_Battle_AngleBorder,
-        set_high: f32,
-        set_middle: f32,
-        set_low: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FishingConfig_Battle_AngleBorder, f32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, set_high, set_middle, set_low, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fishingconfig_battle")]
-pub trait IFishingConfig_Battle_AngleBorderMethods: IFishingConfig_Battle_AngleBorder {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingConfig_Battle_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingConfig_Battle_AngleBorder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    fn ctor_2(
-        self,
-        set_high: impl ::core::convert::Into<f32>,
-        set_middle: impl ::core::convert::Into<f32>,
-        set_low: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FishingConfig_Battle_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingConfig_Battle_AngleBorder_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(set_high),
-                ::core::convert::Into::into(set_middle),
-                ::core::convert::Into::into(set_low),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-fishingconfig_battle")]
-impl<__T: IFishingConfig_Battle_AngleBorder> IFishingConfig_Battle_AngleBorderMethods for __T {}
-
-#[cfg(feature = "app-fishingconfig_battle")]
-impl FishingConfig_Battle_AngleBorder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig_Battle_AngleBorder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingConfig_Battle_AngleBorderMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(f32, f32, f32)` — overload selector"]
-    pub fn new_2(set_high: f32, set_middle: f32, set_low: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig_Battle_AngleBorder),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IFishingConfig_Battle_AngleBorderMethods>::ctor_2(this, set_high, set_middle, set_low);
-        this
-    }
-}
 
 #[cfg(feature = "app-fishingconfig_battle")]
 #[doc(hidden)]
@@ -392,6 +279,152 @@ impl FishingConfig_Battle {
             )
         });
         <Self as IFishingConfig_BattleMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-fishingconfig_battle")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FishingConfig_Battle_AngleBorder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: FishingConfig_Battle_AngleBorder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingConfig_Battle_AngleBorder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingConfig_Battle_AngleBorder as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: FishingConfig_Battle_AngleBorder,
+        set_high: f32,
+        set_middle: f32,
+        set_low: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FishingConfig_Battle_AngleBorder, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, set_high, set_middle, set_low, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fishingconfig_battle")]
+pub trait IFishingConfig_Battle_AngleBorderMethods: IFishingConfig_Battle_AngleBorder {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingConfig_Battle_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingConfig_Battle_AngleBorder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    fn ctor_2(
+        self,
+        set_high: impl ::core::convert::Into<f32>,
+        set_middle: impl ::core::convert::Into<f32>,
+        set_low: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <FishingConfig_Battle_AngleBorder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingConfig_Battle_AngleBorder_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(set_high),
+                ::core::convert::Into::into(set_middle),
+                ::core::convert::Into::into(set_low),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fishingconfig_battle")]
+impl<__T: IFishingConfig_Battle_AngleBorder> IFishingConfig_Battle_AngleBorderMethods for __T {}
+
+#[cfg(feature = "app-fishingconfig_battle")]
+impl FishingConfig_Battle_AngleBorder {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingConfig_Battle_AngleBorder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingConfig_Battle_AngleBorderMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(f32, f32, f32)` — overload selector"]
+    pub fn new_2(set_high: f32, set_middle: f32, set_low: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingConfig_Battle_AngleBorder),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IFishingConfig_Battle_AngleBorderMethods>::ctor_2(this, set_high, set_middle, set_low);
         this
     }
 }

@@ -15,20 +15,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GameUserGmapData")]
     #[parent(crate::system::object::Object)]
     pub struct GameUserGmapData {
+        #[offset(16)]
         #[rename(name = "m_GmapCameraDistance")]
         pub m_gmap_camera_distance: f32,
+        #[offset(24)]
         #[rename(name = "m_Mobs")]
         pub m_mobs: crate::system::collections::specialized::ordereddictionary::OrderedDictionary,
+        #[offset(32)]
         #[rename(name = "m_LastUpdateDateTime")]
         pub m_last_update_date_time: i64,
+        #[offset(40)]
         #[rename(name = "m_EncountCounters")]
         pub m_encount_counters: ::unity2::Array<u8>,
+        #[offset(48)]
         #[rename(name = "EncountTimeHoursSpan")]
         pub encount_time_hours_span: f32,
+        #[offset(52)]
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::gmapmode::GmapMode_Mode,
+        #[offset(56)]
         #[rename(name = "m_NowSpotGod")]
         pub m_now_spot_god: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_NowSpotEvil")]
         pub m_now_spot_evil: ::unity2::Il2CppString,
         #[static_field]

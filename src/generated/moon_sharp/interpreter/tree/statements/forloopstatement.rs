@@ -17,20 +17,28 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "ForLoopStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct ForLoopStatement {
+        #[offset(32)]
         #[rename(name = "m_StackFrame")]
         pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        #[offset(40)]
         #[rename(name = "m_InnerBlock")]
         pub m_inner_block: crate::moon_sharp::interpreter::tree::statement::Statement,
+        #[offset(48)]
         #[rename(name = "m_VarName")]
         pub m_var_name: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(56)]
         #[rename(name = "m_Start")]
         pub m_start: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(64)]
         #[rename(name = "m_End")]
         pub m_end: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(72)]
         #[rename(name = "m_Step")]
         pub m_step: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(80)]
         #[rename(name = "m_RefFor")]
         pub m_ref_for: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[offset(88)]
         #[rename(name = "m_RefEnd")]
         pub m_ref_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

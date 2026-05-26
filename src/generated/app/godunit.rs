@@ -20,38 +20,52 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxSynchroCount")]
         pub max_synchro_count: i32,
+        #[offset(32)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::goddata::GodData,
+        #[offset(40)]
         #[rename(name = "m_Parent")]
         pub m_parent: crate::app::unit::Unit,
+        #[offset(48)]
         #[rename(name = "m_Child")]
         pub m_child: crate::app::unit::Unit,
+        #[offset(56)]
         #[rename(name = "m_Bonds")]
         pub m_bonds: crate::app::godbondholder::GodBondHolder,
+        #[offset(64)]
         #[rename(name = "m_SavedParent")]
         pub m_saved_parent: crate::app::unit::Unit,
+        #[offset(72)]
         #[rename(name = "m_IsTemporaryParent")]
         pub m_is_temporary_parent: bool,
+        #[offset(73)]
         #[rename(name = "m_IsTemporaryChanged")]
         pub m_is_temporary_changed: bool,
+        #[offset(74)]
         #[rename(name = "m_IsReservedDeleting")]
         pub m_is_reserved_deleting: bool,
+        #[offset(75)]
         #[rename(name = "m_IsEscaping")]
         pub m_is_escaping: bool,
+        #[offset(76)]
         #[rename(name = "m_Dirty")]
         pub m_dirty: u8,
+        #[offset(80)]
         #[rename(name = "m_SynchroCounts")]
         pub m_synchro_counts: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
+        #[offset(88)]
         #[rename(name = "m_WeaponRefineLevels")]
         pub m_weapon_refine_levels: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             crate::app::godweaponrefinelevels::GodWeaponRefineLevels,
         >,
+        #[offset(96)]
         #[rename(name = "m_WeaponRefineResults")]
         pub m_weapon_refine_results: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             crate::app::godweaponrefineresult::GodWeaponRefineResult,
         >,
+        #[offset(104)]
         #[rename(name = "m_SyncroSkills")]
         pub m_syncro_skills: crate::app::skillarray::SkillArray,
         #[static_field]

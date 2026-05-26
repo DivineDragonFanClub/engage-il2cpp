@@ -21,6 +21,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapPanelSortie.DontPosChangeMap")]
     #[parent(crate::system::object::Object)]
     pub struct MapPanelSortie_DontPosChangeMap {
+        #[offset(16)]
         #[rename(name = "m_Bits")]
         pub m_bits: crate::system::collections::bitarray::BitArray,
     }
@@ -29,10 +30,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapPanelSortie")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelsortie :: MapPanelSortie >)]
     pub struct MapPanelSortie {
+        #[offset(64)]
         #[rename(name = "m_DontPosChangeMap")]
         pub m_dont_pos_change_map: crate::app::mappanelsortie::MapPanelSortie_DontPosChangeMap,
+        #[offset(72)]
         #[rename(name = "m_SelectX")]
         pub m_select_x: i32,
+        #[offset(76)]
         #[rename(name = "m_SelectZ")]
         pub m_select_z: i32,
     }

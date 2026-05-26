@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicItemMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct BasicItemMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_ItemFrame")]
         pub m_item_frame: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_Text")]
         pub m_text: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_Count")]
         pub m_count: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_Efficacy")]
         pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(104)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_FixedCursor")]
         pub m_fixed_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_FixedCursorFrame")]
         pub m_fixed_cursor_frame: crate::unity_engine::gameobject::GameObject,
     }

@@ -22,10 +22,13 @@ mod __types {
         #[static_field]
         #[rename(name = "MAX_ENVIRONMENTS_PER_PORTAL")]
         pub max_environments_per_portal: i32,
+        #[offset(24)]
         #[rename(name = "axis")]
         pub axis: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "environments")]
         pub environments: ::unity2::Array<crate::root::akenvironment::AkEnvironment>,
+        #[offset(48)]
         #[rename(name = "m_BoxCollider")]
         pub m_box_collider: crate::unity_engine::boxcollider::BoxCollider,
     }

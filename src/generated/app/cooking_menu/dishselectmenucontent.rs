@@ -20,22 +20,31 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct DishSelectMenuContent {
+        #[offset(232)]
         #[rename(name = "m_winSubAnimatorList")]
         pub m_win_sub_animator_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animator::Animator>,
+        #[offset(240)]
         #[rename(name = "m_CategoryContent")]
         pub m_category_content: crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent,
+        #[offset(248)]
         #[rename(name = "m_FoodInfoContent")]
         pub m_food_info_content: crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent,
+        #[offset(256)]
         #[rename(name = "m_BasicEffectText")]
         pub m_basic_effect_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_CanAddFoodText")]
         pub m_can_add_food_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_FavoriteText")]
         pub m_favorite_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_FavoriteLikeText")]
         pub m_favorite_like_text: crate::system::collections::generic::list_1::List_1<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[offset(288)]
         #[rename(name = "m_FavoriteNormalText")]
         pub m_favorite_normal_text: crate::system::collections::generic::list_1::List_1<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[offset(296)]
         #[rename(name = "m_FavoriteDislikeText")]
         pub m_favorite_dislike_text: crate::system::collections::generic::list_1::List_1<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
     }

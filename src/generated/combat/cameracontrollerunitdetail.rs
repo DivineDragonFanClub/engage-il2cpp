@@ -20,42 +20,61 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerUnitDetail")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerUnitDetail {
+        #[offset(168)]
         #[rename(name = "SpeedDistance")]
         pub speed_distance: f32,
+        #[offset(172)]
         #[rename(name = "SpeedRotate")]
         pub speed_rotate: f32,
+        #[offset(176)]
         #[rename(name = "AccelRotate")]
         pub accel_rotate: f32,
+        #[offset(180)]
         #[rename(name = "BrakeRotate")]
         pub brake_rotate: f32,
+        #[offset(184)]
         #[rename(name = "TargetEmblemSpeed")]
         pub target_emblem_speed: f32,
+        #[offset(188)]
         #[rename(name = "DistanceEmblemHideNormal")]
         pub distance_emblem_hide_normal: f32,
+        #[offset(192)]
         #[rename(name = "DistanceEmblemHideSigurd")]
         pub distance_emblem_hide_sigurd: f32,
+        #[offset(196)]
         #[rename(name = "FlyingEmblemUpDown")]
         pub flying_emblem_up_down: bool,
+        #[offset(200)]
         #[rename(name = "AutoSpeed")]
         pub auto_speed: f32,
+        #[offset(204)]
         #[rename(name = "DefaultCameraPosIndex")]
         pub default_camera_pos_index: i32,
+        #[offset(208)]
         #[rename(name = "CameraPos")]
         pub camera_pos: ::unity2::Array<crate::combat::unitdetailcameraposition::UnitDetailCameraPosition>,
+        #[offset(216)]
         #[rename(name = "m_Front")]
         pub m_front: f32,
+        #[offset(220)]
         #[rename(name = "m_Direction")]
         pub m_direction: f32,
+        #[offset(228)]
         #[rename(name = "m_LastRotateSpeed")]
         pub m_last_rotate_speed: f32,
+        #[offset(232)]
         #[rename(name = "m_AutoRotate")]
         pub m_auto_rotate: bool,
+        #[offset(236)]
         #[rename(name = "m_EmblemAlpha")]
         pub m_emblem_alpha: f32,
+        #[offset(240)]
         #[rename(name = "m_EmblemAlphaStep")]
         pub m_emblem_alpha_step: f32,
+        #[offset(244)]
         #[rename(name = "m_LookEmblem")]
         pub m_look_emblem: bool,
+        #[offset(248)]
         #[rename(name = "m_LookEmblemRate")]
         pub m_look_emblem_rate: f32,
     }

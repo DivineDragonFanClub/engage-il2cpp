@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InventoryUnitItemMenuItem")]
     #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
     pub struct InventoryUnitItemMenuItem {
+        #[offset(100)]
         #[rename(name = "m_OwnerItemIndex")]
         pub m_owner_item_index: i32,
     }

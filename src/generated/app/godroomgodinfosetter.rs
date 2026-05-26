@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodRoomGodInfoSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct GodRoomGodInfoSetter {
+        #[offset(24)]
         #[rename(name = "m_Infos")]
         pub m_infos: ::unity2::Array<crate::app::godroomgodinfoitemcontent::GodRoomGodInfoItemContent>,
+        #[offset(32)]
         #[rename(name = "m_Wdws")]
         pub m_wdws: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
     }

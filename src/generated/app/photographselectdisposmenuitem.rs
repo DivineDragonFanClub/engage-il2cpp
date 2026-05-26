@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectDisposMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct PhotographSelectDisposMenuItem {
+        #[offset(104)]
         #[rename(name = "m_CharacterID")]
         pub m_character_id: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_IsMascotArea")]
         pub m_is_mascot_area: bool,
     }

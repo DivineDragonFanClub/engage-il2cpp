@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App.Water", name = "ReflectionManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ReflectionManager {
+        #[offset(24)]
         #[rename(name = "WaterMeshRoot")]
         pub water_mesh_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_renderedList")]
         pub m_rendered_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }

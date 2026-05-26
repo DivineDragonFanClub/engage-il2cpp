@@ -32,14 +32,19 @@ mod __types {
         #[static_field]
         #[rename(name = "m_MenuItemIndexEmpty")]
         pub m_menu_item_index_empty: i32,
+        #[offset(200)]
         #[rename(name = "m_DisposeEventHandler")]
         pub m_dispose_event_handler: crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        #[offset(208)]
         #[rename(name = "m_ProfileCardRoot")]
         pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[offset(216)]
         #[rename(name = "m_MyProfileCardTemp")]
         pub m_my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        #[offset(224)]
         #[rename(name = "m_DecidedMenuItemIndex")]
         pub m_decided_menu_item_index: i32,
+        #[offset(228)]
         #[rename(name = "m_Sorted")]
         pub m_sorted: bool,
     }

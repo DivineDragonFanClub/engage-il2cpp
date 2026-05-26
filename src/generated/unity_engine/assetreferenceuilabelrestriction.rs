@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AssetReferenceUILabelRestriction")]
     #[parent(crate::unity_engine::assetreferenceuirestriction::AssetReferenceUIRestriction)]
     pub struct AssetReferenceUILabelRestriction {
+        #[offset(16)]
         #[rename(name = "m_AllowedLabels")]
         pub m_allowed_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(24)]
         #[rename(name = "m_CachedToString")]
         pub m_cached_to_string: ::unity2::Il2CppString,
     }

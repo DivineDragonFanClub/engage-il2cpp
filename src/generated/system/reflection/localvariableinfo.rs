@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "LocalVariableInfo")]
     #[parent(crate::system::object::Object)]
     pub struct LocalVariableInfo {
+        #[offset(16)]
         #[rename(name = "type")]
         pub r#type: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "is_pinned")]
         pub is_pinned: bool,
+        #[offset(26)]
         #[rename(name = "position")]
         pub position: u16,
     }

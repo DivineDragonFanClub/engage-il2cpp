@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "FSM")]
     #[parent(crate::system::object::Object)]
     pub struct FSM {
+        #[offset(16)]
         #[rename(name = "StateList")]
         pub state_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::combat::state::State>,
     }

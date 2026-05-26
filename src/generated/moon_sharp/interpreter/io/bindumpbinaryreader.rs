@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.IO", name = "BinDumpBinaryReader")]
     #[parent(crate::system::io::binaryreader::BinaryReader)]
     pub struct BinDumpBinaryReader {
+        #[offset(72)]
         #[rename(name = "m_Strings")]
         pub m_strings: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }

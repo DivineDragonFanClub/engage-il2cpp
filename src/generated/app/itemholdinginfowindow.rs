@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ItemHoldingInfoWindow")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ItemHoldingInfoWindow {
+        #[offset(24)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_KindFrameObject")]
         pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_UnusedHoldingTitleText")]
         pub m_unused_holding_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_UnusedHoldingValueText")]
         pub m_unused_holding_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_TotalHoldingTitleText")]
         pub m_total_holding_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_TotalHoldingValueText")]
         pub m_total_holding_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "ForceMask")]
         pub force_mask: u32,
     }

@@ -11,28 +11,40 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "FontData")]
     #[parent(crate::system::object::Object)]
     pub struct FontData {
+        #[offset(16)]
         #[rename(name = "m_Font")]
         pub m_font: crate::unity_engine::font::Font,
+        #[offset(24)]
         #[rename(name = "m_FontSize")]
         pub m_font_size: i32,
+        #[offset(28)]
         #[rename(name = "m_FontStyle")]
         pub m_font_style: crate::unity_engine::fontstyle::FontStyle,
+        #[offset(32)]
         #[rename(name = "m_BestFit")]
         pub m_best_fit: bool,
+        #[offset(36)]
         #[rename(name = "m_MinSize")]
         pub m_min_size: i32,
+        #[offset(40)]
         #[rename(name = "m_MaxSize")]
         pub m_max_size: i32,
+        #[offset(44)]
         #[rename(name = "m_Alignment")]
         pub m_alignment: crate::unity_engine::textanchor::TextAnchor,
+        #[offset(48)]
         #[rename(name = "m_AlignByGeometry")]
         pub m_align_by_geometry: bool,
+        #[offset(49)]
         #[rename(name = "m_RichText")]
         pub m_rich_text: bool,
+        #[offset(52)]
         #[rename(name = "m_HorizontalOverflow")]
         pub m_horizontal_overflow: crate::unity_engine::horizontalwrapmode::HorizontalWrapMode,
+        #[offset(56)]
         #[rename(name = "m_VerticalOverflow")]
         pub m_vertical_overflow: crate::unity_engine::verticalwrapmode::VerticalWrapMode,
+        #[offset(60)]
         #[rename(name = "m_LineSpacing")]
         pub m_line_spacing: f32,
     }

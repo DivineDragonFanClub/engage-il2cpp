@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomEnvSet")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CustomEnvSet {
+        #[offset(24)]
         #[rename(name = "reflectionProbes")]
         pub reflection_probes: ::unity2::Array<crate::unity_engine::reflectionprobe::ReflectionProbe>,
     }

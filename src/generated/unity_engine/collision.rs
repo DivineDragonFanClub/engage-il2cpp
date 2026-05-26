@@ -11,18 +11,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "Collision")]
     #[parent(crate::system::object::Object)]
     pub struct Collision {
+        #[offset(16)]
         #[rename(name = "m_Impulse")]
         pub m_impulse: crate::unity_engine::vector3::Vector3,
+        #[offset(28)]
         #[rename(name = "m_RelativeVelocity")]
         pub m_relative_velocity: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "m_Body")]
         pub m_body: crate::unity_engine::component::Component,
+        #[offset(48)]
         #[rename(name = "m_Collider")]
         pub m_collider: crate::unity_engine::collider::Collider,
+        #[offset(56)]
         #[rename(name = "m_ContactCount")]
         pub m_contact_count: i32,
+        #[offset(64)]
         #[rename(name = "m_ReusedContacts")]
         pub m_reused_contacts: ::unity2::Array<crate::unity_engine::contactpoint::ContactPoint>,
+        #[offset(72)]
         #[rename(name = "m_LegacyContacts")]
         pub m_legacy_contacts: ::unity2::Array<crate::unity_engine::contactpoint::ContactPoint>,
     }

@@ -19,40 +19,58 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubParams")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubParams {
+        #[offset(24)]
         #[rename(name = "m_DisplayUnitNum")]
         pub m_display_unit_num: i32,
+        #[offset(28)]
         #[rename(name = "m_PadThreshold")]
         pub m_pad_threshold: f32,
+        #[offset(32)]
         #[rename(name = "m_MaxSpeed")]
         pub m_max_speed: f32,
+        #[offset(36)]
         #[rename(name = "m_Accel")]
         pub m_accel: f32,
+        #[offset(40)]
         #[rename(name = "m_Decel")]
         pub m_decel: f32,
+        #[offset(44)]
         #[rename(name = "m_RotateSpeedRate")]
         pub m_rotate_speed_rate: f32,
+        #[offset(48)]
         #[rename(name = "m_DashStopTime")]
         pub m_dash_stop_time: f32,
+        #[offset(56)]
         #[rename(name = "m_SpeedCurve")]
         pub m_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(64)]
         #[rename(name = "m_DashSpeedIntensity")]
         pub m_dash_speed_intensity: f32,
+        #[offset(68)]
         #[rename(name = "m_GravityY")]
         pub m_gravity_y: f32,
+        #[offset(72)]
         #[rename(name = "m_TurnCurve")]
         pub m_turn_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(80)]
         #[rename(name = "m_MinLookAtDist")]
         pub m_min_look_at_dist: f32,
+        #[offset(84)]
         #[rename(name = "m_MaxLookAtDist")]
         pub m_max_look_at_dist: f32,
+        #[offset(88)]
         #[rename(name = "m_PlayerBodyWeight")]
         pub m_player_body_weight: f32,
+        #[offset(92)]
         #[rename(name = "m_PlayerHeadWeight")]
         pub m_player_head_weight: f32,
+        #[offset(96)]
         #[rename(name = "m_OthersBodyWeight")]
         pub m_others_body_weight: f32,
+        #[offset(100)]
         #[rename(name = "m_OthersHeadWeight")]
         pub m_others_head_weight: f32,
+        #[offset(104)]
         #[rename(name = "m_Allowance")]
         pub m_allowance: f32,
     }

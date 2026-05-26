@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitIconViewerContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UnitIconViewerContent {
+        #[offset(24)]
         #[rename(name = "WEAPON_NAMES")]
         pub weapon_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(32)]
         #[rename(name = "GOD_NAMES")]
         pub god_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(40)]
         #[rename(name = "m_JobObject")]
         pub m_job_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_EmblemObject")]
         pub m_emblem_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_NameDictionary")]
         pub m_name_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "TrackedReference")]
     #[parent(crate::system::object::Object)]
     pub struct TrackedReference {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
     }

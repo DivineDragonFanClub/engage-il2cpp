@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescJumpFunc")]
     #[parent(crate::app::procdesc::ProcDesc)]
     pub struct ProcDescJumpFunc {
+        #[offset(20)]
         #[rename(name = "m_Label")]
         pub m_label: i32,
     }

@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponSelectMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RefineGodWeaponSelectMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_KindFrameObject")]
         pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_WeaponNameText")]
         pub m_weapon_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_CapacityCaptionText")]
         pub m_capacity_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_CapacityValueText")]
         pub m_capacity_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_CapacitySlashsText")]
         pub m_capacity_slashs_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_CapacityMaxText")]
         pub m_capacity_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

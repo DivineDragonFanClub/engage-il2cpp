@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BgmSelectPlayer")]
     #[parent(crate::app::bgmplayer::BgmPlayer)]
     pub struct BgmSelectPlayer {
+        #[offset(16)]
         #[rename(name = "m_handle")]
         pub m_handle: crate::app::gamesound::GameSound_Handle,
+        #[offset(24)]
         #[rename(name = "m_soundList")]
         pub m_sound_list: crate::system::collections::generic::list_1::List_1<crate::app::gamesound::GameSound_Handle>,
     }

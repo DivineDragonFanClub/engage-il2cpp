@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ClampedIntParameter")]
     #[parent(crate::unity_engine::rendering::intparameter::IntParameter)]
     pub struct ClampedIntParameter {
+        #[offset(24)]
         #[rename(name = "min")]
         pub min: i32,
+        #[offset(28)]
         #[rename(name = "max")]
         pub max: i32,
     }

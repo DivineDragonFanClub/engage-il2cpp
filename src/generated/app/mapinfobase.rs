@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapInfoBase")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapInfoBase {
+        #[offset(24)]
         #[rename(name = "m_Enable")]
         pub m_enable: bool,
     }

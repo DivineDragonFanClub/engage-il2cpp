@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App.StructObject", name = "BaseItem")]
     #[parent(crate::app::struct_object::basepiece::BasePiece)]
     pub struct BaseItem {
+        #[offset(16)]
         #[rename(name = "_DictionaryKey")]
         pub dictionary_key_field: ::unity2::Il2CppString,
     }

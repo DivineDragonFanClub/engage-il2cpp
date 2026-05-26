@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/internal/defaultvalueattribute/DefaultValueAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Internal", name = "DefaultValueAttribute")]
     pub struct DefaultValueAttribute {
+        #[offset(16)]
         #[rename(name = "DefaultValue")]
         pub default_value: ::unity2::IlInstance,
     }

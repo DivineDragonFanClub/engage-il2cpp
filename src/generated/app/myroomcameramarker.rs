@@ -22,10 +22,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomCameraMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct MyRoomCameraMarker {
+        #[offset(40)]
         #[rename(name = "CameraType")]
         pub camera_type: crate::app::myroomcameramarker::MyRoomCameraMarker_Type,
+        #[offset(48)]
         #[rename(name = "CameraName")]
         pub camera_name: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "AnimName")]
         pub anim_name: ::unity2::Il2CppString,
     }

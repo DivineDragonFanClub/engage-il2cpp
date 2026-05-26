@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WeaponLevels")]
     #[parent(crate::system::object::Object)]
     pub struct WeaponLevels {
+        #[offset(16)]
         #[rename(name = "m_Levels")]
         pub m_levels: ::unity2::Array<i8>,
     }

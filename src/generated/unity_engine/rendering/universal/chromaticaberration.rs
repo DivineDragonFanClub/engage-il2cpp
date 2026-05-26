@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ChromaticAberration")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct ChromaticAberration {
+        #[offset(56)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

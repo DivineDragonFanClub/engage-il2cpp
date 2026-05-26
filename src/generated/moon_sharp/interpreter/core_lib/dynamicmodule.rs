@@ -16,6 +16,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "DynamicModule.DynamicExprWrapper")]
     #[parent(crate::system::object::Object)]
     pub struct DynamicModule_DynamicExprWrapper {
+        #[offset(16)]
         #[rename(name = "Expr")]
         pub expr: crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression,
     }

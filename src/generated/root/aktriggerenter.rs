@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkTriggerEnter")]
     #[parent(crate::root::aktriggerbase::AkTriggerBase)]
     pub struct AkTriggerEnter {
+        #[offset(32)]
         #[rename(name = "triggerObject")]
         pub trigger_object: crate::unity_engine::gameobject::GameObject,
     }

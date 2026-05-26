@@ -18,6 +18,63 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset.EditorSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct TimelineAsset_EditorSettings {
+        #[static_field]
+        #[rename(name = "kMinFps")]
+        pub k_min_fps: f32,
+        #[static_field]
+        #[rename(name = "kMaxFps")]
+        pub k_max_fps: f32,
+        #[static_field]
+        #[rename(name = "kDefaultFps")]
+        pub k_default_fps: f32,
+        #[offset(16)]
+        #[rename(name = "m_Framerate")]
+        pub m_framerate: f32,
+        #[offset(20)]
+        #[rename(name = "m_ScenePreview")]
+        pub m_scene_preview: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset")]
+    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
+    pub struct TimelineAsset {
+        #[static_field]
+        #[rename(name = "k_LatestVersion")]
+        pub k_latest_version: i32,
+        #[offset(24)]
+        #[rename(name = "m_Version")]
+        pub m_version: i32,
+        #[offset(32)]
+        #[rename(name = "m_Tracks")]
+        pub m_tracks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>,
+        #[offset(40)]
+        #[rename(name = "m_FixedDuration")]
+        pub m_fixed_duration: f64,
+        #[offset(48)]
+        #[rename(name = "m_CacheOutputTracks")]
+        pub m_cache_output_tracks: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        #[offset(56)]
+        #[rename(name = "m_CacheRootTracks")]
+        pub m_cache_root_tracks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        #[offset(64)]
+        #[rename(name = "m_CacheFlattenedTracks")]
+        pub m_cache_flattened_tracks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        #[offset(72)]
+        #[rename(name = "m_EditorSettings")]
+        pub m_editor_settings: crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings,
+        #[offset(80)]
+        #[rename(name = "m_DurationMode")]
+        pub m_duration_mode: crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode,
+        #[offset(88)]
+        #[rename(name = "m_MarkerTrack")]
+        pub m_marker_track: crate::unity_engine::timeline::markertrack::MarkerTrack,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -50,52 +107,6 @@ mod __types {
         pub fn fixed_length() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset.EditorSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct TimelineAsset_EditorSettings {
-        #[static_field]
-        #[rename(name = "kMinFps")]
-        pub k_min_fps: f32,
-        #[static_field]
-        #[rename(name = "kMaxFps")]
-        pub k_max_fps: f32,
-        #[static_field]
-        #[rename(name = "kDefaultFps")]
-        pub k_default_fps: f32,
-        #[rename(name = "m_Framerate")]
-        pub m_framerate: f32,
-        #[rename(name = "m_ScenePreview")]
-        pub m_scene_preview: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset")]
-    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
-    pub struct TimelineAsset {
-        #[static_field]
-        #[rename(name = "k_LatestVersion")]
-        pub k_latest_version: i32,
-        #[rename(name = "m_Version")]
-        pub m_version: i32,
-        #[rename(name = "m_Tracks")]
-        pub m_tracks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>,
-        #[rename(name = "m_FixedDuration")]
-        pub m_fixed_duration: f64,
-        #[rename(name = "m_CacheOutputTracks")]
-        pub m_cache_output_tracks: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset>,
-        #[rename(name = "m_CacheRootTracks")]
-        pub m_cache_root_tracks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
-        #[rename(name = "m_CacheFlattenedTracks")]
-        pub m_cache_flattened_tracks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
-        #[rename(name = "m_EditorSettings")]
-        pub m_editor_settings: crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings,
-        #[rename(name = "m_DurationMode")]
-        pub m_duration_mode: crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode,
-        #[rename(name = "m_MarkerTrack")]
-        pub m_marker_track: crate::unity_engine::timeline::markertrack::MarkerTrack,
     }
 }
 

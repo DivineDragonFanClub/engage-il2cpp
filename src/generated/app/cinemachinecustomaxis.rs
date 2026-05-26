@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CinemachineCustomAxis")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CinemachineCustomAxis {
+        #[offset(24)]
         #[rename(name = "xInversion")]
         pub x_inversion: bool,
+        #[offset(25)]
         #[rename(name = "yInversion")]
         pub y_inversion: bool,
+        #[offset(40)]
         #[rename(name = "Fov_Top")]
         pub fov_top: f32,
+        #[offset(44)]
         #[rename(name = "Fov_Middle")]
         pub fov_middle: f32,
+        #[offset(48)]
         #[rename(name = "Fov_Bottom")]
         pub fov_bottom: f32,
+        #[offset(52)]
         #[rename(name = "Allowance")]
         pub allowance: f32,
     }

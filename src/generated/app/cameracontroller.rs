@@ -20,20 +20,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CameraController")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: cameracontroller :: CameraController >)]
     pub struct CameraController {
+        #[offset(32)]
         #[rename(name = "m_Hash")]
         pub m_hash: i32,
+        #[offset(36)]
         #[rename(name = "m_Original")]
         pub m_original: crate::app::cameraparameter::CameraParameter,
+        #[offset(64)]
         #[rename(name = "m_Operation")]
         pub m_operation: crate::app::cameraparameter::CameraParameter,
+        #[offset(92)]
         #[rename(name = "m_Updated")]
         pub m_updated: bool,
+        #[offset(96)]
         #[rename(name = "m_NearClipPlane")]
         pub m_near_clip_plane: f32,
+        #[offset(100)]
         #[rename(name = "m_FarClipPlane")]
         pub m_far_clip_plane: f32,
+        #[offset(104)]
         #[rename(name = "m_MouseX")]
         pub m_mouse_x: f32,
+        #[offset(108)]
         #[rename(name = "m_MouseY")]
         pub m_mouse_y: f32,
     }

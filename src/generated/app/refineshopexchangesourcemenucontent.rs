@@ -20,22 +20,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopExchangeSourceMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefineShopExchangeSourceMenuContent {
+        #[offset(232)]
         #[rename(name = "m_HelpText")]
         pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_MaterialSourceCaption")]
         pub m_material_source_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_MaterialSourceIconImage")]
         pub m_material_source_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(256)]
         #[rename(name = "m_MaterialSourceNameText")]
         pub m_material_source_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_MaterialSourceValueText")]
         pub m_material_source_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_MaterialTargetCaption")]
         pub m_material_target_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_MaterialTargetIconImage")]
         pub m_material_target_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(288)]
         #[rename(name = "m_MaterialTargetNameText")]
         pub m_material_target_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(296)]
         #[rename(name = "m_MaterialTargetValueText")]
         pub m_material_target_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

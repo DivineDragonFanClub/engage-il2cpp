@@ -28,18 +28,22 @@ mod __types {
         #[static_field]
         #[rename(name = "UsedTreeName")]
         pub used_tree_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "usedDic")]
         pub used_dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::gameobject::GameObject,
         >,
+        #[offset(32)]
         #[rename(name = "freeDic")]
         pub free_dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::gameobject::GameObject,
             crate::system::collections::generic::stack_1::Stack_1<crate::unity_engine::gameobject::GameObject>,
         >,
+        #[offset(40)]
         #[rename(name = "usedNode")]
         pub used_node: crate::unity_engine::transform::Transform,
+        #[offset(48)]
         #[rename(name = "freeNode")]
         pub free_node: crate::unity_engine::transform::Transform,
     }

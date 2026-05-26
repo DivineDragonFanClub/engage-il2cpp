@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "StructBase")]
     #[parent(crate::system::object::Object)]
     pub struct StructBase {
+        #[offset(16)]
         #[rename(name = "Index")]
         pub index: i32,
+        #[offset(20)]
         #[rename(name = "Hash")]
         pub hash: i32,
+        #[offset(24)]
         #[rename(name = "Key")]
         pub key: ::unity2::Il2CppString,
     }

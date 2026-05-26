@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardTextListMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ProfileCardTextListMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Text")]
         pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_FixedCursorObject")]
         pub m_fixed_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_FixedCursorImage")]
         pub m_fixed_cursor_image: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_FixedCursorFrameImage")]
         pub m_fixed_cursor_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_NewIconObject")]
         pub m_new_icon_object: crate::unity_engine::gameobject::GameObject,
     }

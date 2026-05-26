@@ -20,6 +20,15 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameui/GameUI.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUI")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gameui :: GameUI >)]
+    pub struct GameUI {
+        #[static_field]
+        #[rename(name = "UnknownName")]
+        pub unknown_name: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameui/GameUI_Priority.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -112,15 +121,6 @@ mod __types {
         pub fn debug() -> Self {
             Self { value: 2000 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameui/GameUI.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUI")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gameui :: GameUI >)]
-    pub struct GameUI {
-        #[static_field]
-        #[rename(name = "UnknownName")]
-        pub unknown_name: ::unity2::Il2CppString,
     }
 }
 

@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemGodName")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemGodName {
+        #[offset(80)]
         #[rename(name = "m_IsOutsideSetup")]
         pub m_is_outside_setup: bool,
+        #[offset(88)]
         #[rename(name = "m_GodData")]
         pub m_god_data: crate::app::goddata::GodData,
     }

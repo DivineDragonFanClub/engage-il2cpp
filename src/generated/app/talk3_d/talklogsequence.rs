@@ -17,6 +17,15 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogsequence/TalkLogSequence.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talklogsequence :: TalkLogSequence >)]
+    pub struct TalkLogSequence {
+        #[offset(114)]
+        #[rename(name = "m_IsPlayedVoice")]
+        pub m_is_played_voice: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talklogsequence/TalkLogSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,14 +66,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogsequence/TalkLogSequence.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talklogsequence :: TalkLogSequence >)]
-    pub struct TalkLogSequence {
-        #[rename(name = "m_IsPlayedVoice")]
-        pub m_is_played_voice: bool,
     }
 }
 

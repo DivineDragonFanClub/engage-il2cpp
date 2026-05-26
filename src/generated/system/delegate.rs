@@ -11,24 +11,34 @@ mod __types {
     #[::unity2::class(namespace = "System", name = "Delegate")]
     #[parent(crate::system::object::Object)]
     pub struct Delegate {
+        #[offset(16)]
         #[rename(name = "method_ptr")]
         pub method_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "invoke_impl")]
         pub invoke_impl: ::unity2::IntPtr,
+        #[offset(32)]
         #[rename(name = "m_target")]
         pub m_target: ::unity2::IlInstance,
+        #[offset(40)]
         #[rename(name = "method")]
         pub method: ::unity2::IntPtr,
+        #[offset(48)]
         #[rename(name = "delegate_trampoline")]
         pub delegate_trampoline: ::unity2::IntPtr,
+        #[offset(56)]
         #[rename(name = "extra_arg")]
         pub extra_arg: ::unity2::IntPtr,
+        #[offset(64)]
         #[rename(name = "method_code")]
         pub method_code: ::unity2::IntPtr,
+        #[offset(72)]
         #[rename(name = "method_info")]
         pub method_info: crate::system::reflection::methodinfo::MethodInfo,
+        #[offset(80)]
         #[rename(name = "original_method_info")]
         pub original_method_info: crate::system::reflection::methodinfo::MethodInfo,
+        #[offset(96)]
         #[rename(name = "method_is_virtual")]
         pub method_is_virtual: bool,
     }

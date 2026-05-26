@@ -28,36 +28,6 @@ mod __types {
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct RingCleaningSequence_ExitConfirmDialog {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RingCleaningSequence_RButtonHoldSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RingCleaningSequence_RButtonHoldSequence_Label {
-        const NAME: &'static str = "RingCleaningSequence.RButtonHoldSequence.Label";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RingCleaningSequence_RButtonHoldSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl RingCleaningSequence_RButtonHoldSequence_Label {
-        pub fn end() -> Self {
-            Self { value: 0 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_HitResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -93,6 +63,49 @@ mod __types {
 
         pub fn hit() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningsequence/RingCleaningSequence_ConfirmDialogItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "RingCleaningSequence.ConfirmDialogItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct RingCleaningSequence_ConfirmDialogItemYes {
+        #[offset(112)]
+        #[rename(name = "m_Action")]
+        pub m_action: crate::system::action::Action,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_Strength.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct RingCleaningSequence_Strength {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RingCleaningSequence_Strength {
+        const NAME: &'static str = "RingCleaningSequence.Strength";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RingCleaningSequence_Strength {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl RingCleaningSequence_Strength {
+        pub fn strong() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn weak() -> Self {
+            Self { value: 1 }
         }
     }
 
@@ -142,54 +155,26 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_Strength.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct RingCleaningSequence_Strength {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RingCleaningSequence_Strength {
-        const NAME: &'static str = "RingCleaningSequence.Strength";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RingCleaningSequence_Strength {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl RingCleaningSequence_Strength {
-        pub fn strong() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn weak() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence.md"))]
     #[::unity2::class(namespace = "App", name = "RingCleaningSequence.RButtonHoldSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct RingCleaningSequence_RButtonHoldSequence {
+        #[offset(112)]
         #[rename(name = "m_Cloth")]
         pub m_cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+        #[offset(120)]
         #[rename(name = "m_Callback")]
         pub m_callback: crate::system::action::Action,
+        #[offset(128)]
         #[rename(name = "m_HoldCounter")]
         pub m_hold_counter: i32,
+        #[offset(132)]
         #[rename(name = "HoldCounterThreshold")]
         pub hold_counter_threshold: i32,
+        #[offset(136)]
         #[rename(name = "m_IsTrigger")]
         pub m_is_trigger: bool,
+        #[offset(140)]
         #[rename(name = "GapSize")]
         pub gap_size: f32,
     }
@@ -198,8 +183,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCleaningSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringcleaningsequence :: RingCleaningSequence >)]
     pub struct RingCleaningSequence {
+        #[offset(120)]
         #[rename(name = "m_SceneResourceHandle")]
         pub m_scene_resource_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[offset(128)]
         #[rename(name = "m_DisableList")]
         pub m_disable_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[static_field]
@@ -208,18 +195,25 @@ mod __types {
         #[static_field]
         #[rename(name = "FinishTelopPrefab")]
         pub finish_telop_prefab: ::unity2::Il2CppString,
+        #[offset(152)]
         #[rename(name = "m_RingController")]
         pub m_ring_controller: crate::app::ringcleaningringcontroller::RingCleaningRingController,
+        #[offset(160)]
         #[rename(name = "m_FaceImage")]
         pub m_face_image: crate::app::ring_cleaning::faceimagescontroller::FaceImagesController,
+        #[offset(168)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(176)]
         #[rename(name = "m_Info")]
         pub m_info: crate::unity_engine::gameobject::GameObject,
+        #[offset(184)]
         #[rename(name = "m_InfoRoot")]
         pub m_info_root: crate::app::ringcleaningroot::RingCleaningRoot,
+        #[offset(192)]
         #[rename(name = "m_Cloth")]
         pub m_cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+        #[offset(208)]
         #[rename(name = "m_TelopObject")]
         pub m_telop_object: crate::unity_engine::gameobject::GameObject,
         #[static_field]
@@ -234,6 +228,36 @@ mod __types {
         #[static_field]
         #[rename(name = "StrongHitValue")]
         pub strong_hit_value: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct RingCleaningSequence_RButtonHoldSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RingCleaningSequence_RButtonHoldSequence_Label {
+        const NAME: &'static str = "RingCleaningSequence.RButtonHoldSequence.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RingCleaningSequence_RButtonHoldSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl RingCleaningSequence_RButtonHoldSequence_Label {
+        pub fn end() -> Self {
+            Self { value: 0 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_Label.md"))]
@@ -288,14 +312,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 6 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningsequence/RingCleaningSequence_ConfirmDialogItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCleaningSequence.ConfirmDialogItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct RingCleaningSequence_ConfirmDialogItemYes {
-        #[rename(name = "m_Action")]
-        pub m_action: crate::system::action::Action,
     }
 }
 
@@ -443,6 +459,140 @@ impl RingCleaningSequence_ExitConfirmDialog {
             )
         });
         <Self as IRingCleaningSequence_ExitConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingCleaningSequence_ConfirmDialogItemYes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingCleaningSequence_ConfirmDialogItemYes,
+        action: crate::system::action::Action,
+        text: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingCleaningSequence_ConfirmDialogItemYes,
+            crate::system::action::Action,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, action, text, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RingCleaningSequence_ConfirmDialogItemYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RingCleaningSequence_ConfirmDialogItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+pub trait IRingCleaningSequence_ConfirmDialogItemYesMethods: IRingCleaningSequence_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
+    fn ctor(self, action: impl ::core::convert::Into<crate::system::action::Action>, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningSequence_ConfirmDialogItemYes_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(action),
+                ::core::convert::Into::into(text),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingCleaningSequence_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+impl<__T: IRingCleaningSequence_ConfirmDialogItemYes> IRingCleaningSequence_ConfirmDialogItemYesMethods for __T {}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+impl RingCleaningSequence_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningSequence_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningSequence_ConfirmDialogItemYesMethods>::ctor(this, action, text);
         this
     }
 }
@@ -2834,140 +2984,6 @@ impl RingCleaningSequence {
             )
         });
         <Self as IRingCleaningSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringcleaningsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingCleaningSequence_ConfirmDialogItemYes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingCleaningSequence_ConfirmDialogItemYes,
-        action: crate::system::action::Action,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingCleaningSequence_ConfirmDialogItemYes,
-            crate::system::action::Action,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, action, text, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RingCleaningSequence_ConfirmDialogItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RingCleaningSequence_ConfirmDialogItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringcleaningsequence")]
-pub trait IRingCleaningSequence_ConfirmDialogItemYesMethods: IRingCleaningSequence_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
-    fn ctor(self, action: impl ::core::convert::Into<crate::system::action::Action>, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingCleaningSequence_ConfirmDialogItemYes_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RingCleaningSequence_ConfirmDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingCleaningSequence_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl<__T: IRingCleaningSequence_ConfirmDialogItemYes> IRingCleaningSequence_ConfirmDialogItemYesMethods for __T {}
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingCleaningSequence_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingCleaningSequence_ConfirmDialogItemYesMethods>::ctor(this, action, text);
         this
     }
 }

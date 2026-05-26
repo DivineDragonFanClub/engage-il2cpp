@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AccessoryMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct AccessoryMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_FixedCursorObject")]
         pub m_fixed_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_FixedCursorImage")]
         pub m_fixed_cursor_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_FixedCursorFrameImage")]
         pub m_fixed_cursor_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_KindIconObject")]
         pub m_kind_icon_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_KindIconImage")]
         pub m_kind_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "m_NameObject")]
         pub m_name_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

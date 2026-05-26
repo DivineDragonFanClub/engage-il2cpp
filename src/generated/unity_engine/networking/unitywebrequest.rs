@@ -11,6 +11,52 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct UnityWebRequest_UnityWebRequestMethod {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod {
+        const NAME: &'static str = "UnityWebRequest.UnityWebRequestMethod";
+        const NAMESPACE: &'static str = "UnityEngine.Networking";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnityWebRequest_UnityWebRequestMethod {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl UnityWebRequest_UnityWebRequestMethod {
+        pub fn get() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn post() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn put() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn head() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn custom() -> Self {
+            Self { value: 4 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -153,62 +199,20 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnityWebRequest_UnityWebRequestMethod {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod {
-        const NAME: &'static str = "UnityWebRequest.UnityWebRequestMethod";
-        const NAMESPACE: &'static str = "UnityEngine.Networking";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnityWebRequest_UnityWebRequestMethod {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl UnityWebRequest_UnityWebRequestMethod {
-        pub fn get() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn post() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn put() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn head() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn custom() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))]
     #[::unity2::class(namespace = "UnityEngine.Networking", name = "UnityWebRequest")]
     #[parent(crate::system::object::Object)]
     pub struct UnityWebRequest {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_DownloadHandler")]
         pub m_download_handler: crate::unity_engine::networking::downloadhandler::DownloadHandler,
+        #[offset(32)]
         #[rename(name = "m_UploadHandler")]
         pub m_upload_handler: crate::unity_engine::networking::uploadhandler::UploadHandler,
+        #[offset(40)]
         #[rename(name = "m_CertificateHandler")]
         pub m_certificate_handler: crate::unity_engine::networking::certificatehandler::CertificateHandler,
         #[static_field]

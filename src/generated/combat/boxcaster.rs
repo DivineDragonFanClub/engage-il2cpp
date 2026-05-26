@@ -11,28 +11,40 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "BoxCaster")]
     #[parent(crate::system::object::Object)]
     pub struct BoxCaster {
+        #[offset(16)]
         #[rename(name = "BoxHalfXZ")]
         pub box_half_xz: f32,
+        #[offset(20)]
         #[rename(name = "BoxHalfY")]
         pub box_half_y: f32,
+        #[offset(24)]
         #[rename(name = "BoxFlotingHeight")]
         pub box_floting_height: f32,
+        #[offset(40)]
         #[rename(name = "IsFlying")]
         pub is_flying: bool,
+        #[offset(44)]
         #[rename(name = "in_Pos0")]
         pub in_pos0: crate::unity_engine::vector3::Vector3,
+        #[offset(56)]
         #[rename(name = "in_Pos1")]
         pub in_pos1: crate::unity_engine::vector3::Vector3,
+        #[offset(72)]
         #[rename(name = "Dir2D")]
         pub dir2_d: crate::combat::fxz::FXZ,
+        #[offset(80)]
         #[rename(name = "WorldPos0")]
         pub world_pos0: crate::unity_engine::vector3::Vector3,
+        #[offset(92)]
         #[rename(name = "WorldPos1")]
         pub world_pos1: crate::unity_engine::vector3::Vector3,
+        #[offset(104)]
         #[rename(name = "Dir3D")]
         pub dir3_d: crate::unity_engine::vector3::Vector3,
+        #[offset(120)]
         #[rename(name = "Result0")]
         pub result0: crate::combat::boxcaster::BoxCaster_CastResult,
+        #[offset(128)]
         #[rename(name = "Result1")]
         pub result1: crate::combat::boxcaster::BoxCaster_CastResult,
     }
@@ -41,20 +53,28 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "BoxCaster.CastResult")]
     #[parent(crate::system::object::Object)]
     pub struct BoxCaster_CastResult {
+        #[offset(16)]
         #[rename(name = "startPos")]
         pub start_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(28)]
         #[rename(name = "endPos")]
         pub end_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "dir")]
         pub dir: crate::unity_engine::vector3::Vector3,
+        #[offset(52)]
         #[rename(name = "sizeXZ")]
         pub size_xz: f32,
+        #[offset(56)]
         #[rename(name = "sizeY")]
         pub size_y: f32,
+        #[offset(60)]
         #[rename(name = "forward")]
         pub forward: crate::unity_engine::quaternion::Quaternion,
+        #[offset(76)]
         #[rename(name = "NumHits")]
         pub num_hits: i32,
+        #[offset(80)]
         #[rename(name = "Hits")]
         pub hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
     }

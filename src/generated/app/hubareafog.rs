@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubAreaFog")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubAreaFog {
+        #[offset(24)]
         #[rename(name = "m_color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "m_start")]
         pub m_start: f32,
+        #[offset(44)]
         #[rename(name = "m_end")]
         pub m_end: f32,
+        #[offset(48)]
         #[rename(name = "m_time")]
         pub m_time: f32,
+        #[offset(52)]
         #[rename(name = "m_priority")]
         pub m_priority: i32,
+        #[offset(56)]
         #[rename(name = "m_Ratio")]
         pub m_ratio: crate::app::interpolatorfloat::InterpolatorFloat,
         #[static_field]

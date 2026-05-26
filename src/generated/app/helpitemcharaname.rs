@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemCharaName")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemCharaName {
+        #[offset(80)]
         #[rename(name = "m_IsOutSideSetup")]
         pub m_is_out_side_setup: bool,
+        #[offset(88)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }

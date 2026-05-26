@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphContext")]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraphContext {
+        #[offset(16)]
         #[rename(name = "renderContext")]
         pub render_context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        #[offset(24)]
         #[rename(name = "cmd")]
         pub cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        #[offset(32)]
         #[rename(name = "renderGraphPool")]
         pub render_graph_pool: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,
+        #[offset(40)]
         #[rename(name = "defaultResources")]
         pub default_resources:
             crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdefaultresources::RenderGraphDefaultResources,

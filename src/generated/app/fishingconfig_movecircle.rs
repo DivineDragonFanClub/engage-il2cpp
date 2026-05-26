@@ -19,22 +19,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingConfig_MoveCircle")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_MoveCircle {
+        #[offset(24)]
         #[rename(name = "m_CameraRotateSpeed")]
         pub m_camera_rotate_speed: f32,
+        #[offset(28)]
         #[rename(name = "m_DistanceMoveSpeed")]
         pub m_distance_move_speed: f32,
+        #[offset(32)]
         #[rename(name = "m_RotateMinimum")]
         pub m_rotate_minimum: f32,
+        #[offset(36)]
         #[rename(name = "m_RotateMax")]
         pub m_rotate_max: f32,
+        #[offset(40)]
         #[rename(name = "m_DistanceMinimum")]
         pub m_distance_minimum: f32,
+        #[offset(44)]
         #[rename(name = "m_DistanceMax")]
         pub m_distance_max: f32,
+        #[offset(48)]
         #[rename(name = "m_RipplesInterval")]
         pub m_ripples_interval: f32,
+        #[offset(56)]
         #[rename(name = "m_RipplesPosList")]
         pub m_ripples_pos_list: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(64)]
         #[rename(name = "m_RipplesRandomRange")]
         pub m_ripples_random_range: f32,
     }

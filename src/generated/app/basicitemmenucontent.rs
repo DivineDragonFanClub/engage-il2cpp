@@ -20,11 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicItemMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct BasicItemMenuContent {
+        #[offset(232)]
         #[rename(name = "m_wdwItemHelp")]
         pub m_wdw_item_help: crate::unity_engine::gameobject::GameObject,
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(240)]
         #[rename(name = "m_IsPerformanceOnly")]
         pub m_is_performance_only: bool,
     }

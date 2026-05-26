@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterIKAim")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterIKAim {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(48)]
         #[rename(name = "AnimAimDir")]
         pub anim_aim_dir: crate::unity_engine::vector3::Vector3,
+        #[offset(60)]
         #[rename(name = "CurrentAimDir")]
         pub current_aim_dir: crate::unity_engine::vector3::Vector3,
     }

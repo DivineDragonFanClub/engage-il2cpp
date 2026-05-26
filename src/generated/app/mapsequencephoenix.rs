@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequencePhoenix.ProcAppear")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MapSequencePhoenix_ProcAppear {
+        #[offset(112)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }

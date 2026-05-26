@@ -11,10 +11,12 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "DependenciesCacheKey")]
     #[parent(crate::system::object::Object)]
     pub struct DependenciesCacheKey {
+        #[offset(16)]
         #[rename(name = "m_Dependencies")]
         pub m_dependencies: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
             crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         >,
+        #[offset(24)]
         #[rename(name = "m_DependenciesHash")]
         pub m_dependencies_hash: i32,
     }

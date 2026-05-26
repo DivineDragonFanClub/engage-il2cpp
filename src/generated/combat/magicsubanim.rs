@@ -20,22 +20,31 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "MagicSubAnim")]
     #[parent(crate::combat::magicsub::MagicSub)]
     pub struct MagicSubAnim {
+        #[offset(80)]
         #[rename(name = "HitTimeOnAnim")]
         pub hit_time_on_anim: f32,
+        #[offset(88)]
         #[rename(name = "m_TargetNode")]
         pub m_target_node: crate::unity_engine::transform::Transform,
+        #[offset(96)]
         #[rename(name = "m_FlyingTime")]
         pub m_flying_time: f32,
+        #[offset(100)]
         #[rename(name = "m_Elapsed")]
         pub m_elapsed: f32,
+        #[offset(104)]
         #[rename(name = "m_StartPos")]
         pub m_start_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(116)]
         #[rename(name = "m_EndPos")]
         pub m_end_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(128)]
         #[rename(name = "m_Forward")]
         pub m_forward: crate::unity_engine::vector3::Vector3,
+        #[offset(140)]
         #[rename(name = "m_Distance")]
         pub m_distance: f32,
+        #[offset(144)]
         #[rename(name = "m_InitialLocalScaleList")]
         pub m_initial_local_scale_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
     }

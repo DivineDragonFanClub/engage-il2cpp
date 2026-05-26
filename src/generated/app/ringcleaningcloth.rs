@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCleaningCloth")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingCleaningCloth {
+        #[offset(24)]
         #[rename(name = "m_HelpObject")]
         pub m_help_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Rect")]
         pub m_rect: crate::unity_engine::recttransform::RectTransform,
         #[static_field]
@@ -35,14 +37,19 @@ mod __types {
         #[static_field]
         #[rename(name = "MoveSpeedAccelRate")]
         pub move_speed_accel_rate: f32,
+        #[offset(40)]
         #[rename(name = "m_LocalPosition")]
         pub m_local_position: crate::unity_engine::vector2::Vector2,
+        #[offset(48)]
         #[rename(name = "m_HoldGapPosition")]
         pub m_hold_gap_position: crate::unity_engine::vector2::Vector2,
+        #[offset(88)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(96)]
         #[rename(name = "m_IsStartAnim")]
         pub m_is_start_anim: bool,
+        #[offset(100)]
         #[rename(name = "m_OldAnimSpeed")]
         pub m_old_anim_speed: f32,
     }

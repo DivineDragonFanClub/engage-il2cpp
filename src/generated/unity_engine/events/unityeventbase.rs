@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Events", name = "UnityEventBase")]
     #[parent(crate::system::object::Object)]
     pub struct UnityEventBase {
+        #[offset(16)]
         #[rename(name = "m_Calls")]
         pub m_calls: crate::unity_engine::events::invokablecalllist::InvokableCallList,
+        #[offset(24)]
         #[rename(name = "m_PersistentCalls")]
         pub m_persistent_calls: crate::unity_engine::events::persistentcallgroup::PersistentCallGroup,
+        #[offset(32)]
         #[rename(name = "m_CallsDirty")]
         pub m_calls_dirty: bool,
     }

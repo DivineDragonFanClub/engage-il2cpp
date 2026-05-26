@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "CombatGaugeController.Value")]
     #[parent(crate::system::object::Object)]
     pub struct CombatGaugeController_Value {
+        #[offset(16)]
         #[rename(name = "root")]
         pub root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "text")]
         pub text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
@@ -38,96 +40,142 @@ mod __types {
         #[static_field]
         #[rename(name = "ParamClamp")]
         pub param_clamp: i32,
+        #[offset(24)]
         #[rename(name = "m_IsLeft")]
         pub m_is_left: bool,
+        #[offset(32)]
         #[rename(name = "m_CharaName")]
         pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_ItemRoot")]
         pub m_item_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_ItemName")]
         pub m_item_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_Item")]
         pub m_item: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_HpRoot")]
         pub m_hp_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_Hp")]
         pub m_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_GaueRoot")]
         pub m_gaue_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_GaugeHpBase")]
         pub m_gauge_hp_base: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_GaugeHpMove")]
         pub m_gauge_hp_move: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_GaugeHpNow")]
         pub m_gauge_hp_now: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_DamageColor")]
         pub m_damage_color: crate::unity_engine::color::Color,
+        #[offset(128)]
         #[rename(name = "m_HealColor")]
         pub m_heal_color: crate::unity_engine::color::Color,
+        #[offset(144)]
         #[rename(name = "m_MaxHpGaugeWidth")]
         pub m_max_hp_gauge_width: i32,
+        #[offset(148)]
         #[rename(name = "m_MinHpGaugeWidth")]
         pub m_min_hp_gauge_width: i32,
+        #[offset(152)]
         #[rename(name = "m_HpGaugeMax")]
         pub m_hp_gauge_max: i32,
+        #[offset(156)]
         #[rename(name = "m_HpMoveWait")]
         pub m_hp_move_wait: f32,
+        #[offset(160)]
         #[rename(name = "m_HpMoveSpeed")]
         pub m_hp_move_speed: f32,
+        #[offset(168)]
         #[rename(name = "m_HpStockRoot")]
         pub m_hp_stock_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(176)]
         #[rename(name = "m_HpStock")]
         pub m_hp_stock: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(184)]
         #[rename(name = "m_HpStockSprites")]
         pub m_hp_stock_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(192)]
         #[rename(name = "m_NowHpWidth")]
         pub m_now_hp_width: f32,
+        #[offset(196)]
         #[rename(name = "m_MovingHpWidth")]
         pub m_moving_hp_width: f32,
+        #[offset(200)]
         #[rename(name = "m_HpMoveWaitTimer")]
         pub m_hp_move_wait_timer: f32,
+        #[offset(204)]
         #[rename(name = "m_IsHpMove")]
         pub m_is_hp_move: bool,
+        #[offset(208)]
         #[rename(name = "m_HpMoveScale")]
         pub m_hp_move_scale: f32,
+        #[offset(216)]
         #[rename(name = "m_ParamRoot")]
         pub m_param_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(224)]
         #[rename(name = "m_BtlHPTitle")]
         pub m_btl_hp_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(232)]
         #[rename(name = "m_BtlAtkTitle")]
         pub m_btl_atk_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_BtlHitTitle")]
         pub m_btl_hit_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_BtlCritTitle")]
         pub m_btl_crit_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_BtlAtk")]
         pub m_btl_atk: crate::system::collections::generic::list_1::List_1<crate::root::combatgaugecontroller::CombatGaugeController_Value>,
+        #[offset(264)]
         #[rename(name = "m_BtlHit")]
         pub m_btl_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_BtlCrit")]
         pub m_btl_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_ChainRoot")]
         pub m_chain_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(288)]
         #[rename(name = "m_ChainBtlAtk")]
         pub m_chain_btl_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(296)]
         #[rename(name = "m_ChainBtlHit")]
         pub m_chain_btl_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(304)]
         #[rename(name = "m_ChainBtlCrit")]
         pub m_chain_btl_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(312)]
         #[rename(name = "m_GodInfoRoot")]
         pub m_god_info_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(320)]
         #[rename(name = "m_GodName")]
         pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(328)]
         #[rename(name = "m_EngageCount")]
         pub m_engage_count: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(336)]
         #[rename(name = "m_TriggeredSkillListSetter")]
         pub m_triggered_skill_list_setter: crate::app::triggeredskilllistsetter::TriggeredSkillListSetter,
+        #[offset(344)]
         #[rename(name = "m_BattleStartSkillList")]
         pub m_battle_start_skill_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
+        #[offset(352)]
         #[rename(name = "m_BattleStartSkillIndex")]
         pub m_battle_start_skill_index: i32,
+        #[offset(360)]
         #[rename(name = "m_forceTexture")]
         pub m_force_texture: crate::system::collections::generic::list_1::List_1<crate::app::forcetexturesetter::ForceTextureSetter>,
+        #[offset(368)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
     }

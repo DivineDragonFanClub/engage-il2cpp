@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubMoveController")]
     #[parent(crate::system::object::Object)]
     pub struct HubMoveController {
+        #[offset(24)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::hubunitcontroller::HubUnitController,
+        #[offset(32)]
         #[rename(name = "m_State")]
         pub m_state: crate::system::collections::generic::list_1::List_1<crate::app::hubmovestate::HubMoveState>,
+        #[offset(40)]
         #[rename(name = "m_current")]
         pub m_current: crate::app::hubmovestate::HubMoveState,
+        #[offset(48)]
         #[rename(name = "m_ActiveIndex")]
         pub m_active_index: i32,
     }

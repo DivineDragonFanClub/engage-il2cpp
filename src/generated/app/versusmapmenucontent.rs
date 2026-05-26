@@ -26,12 +26,16 @@ mod __types {
         #[static_field]
         #[rename(name = "SpriteAtlasPath")]
         pub sprite_atlas_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_HelpTitle")]
         pub m_help_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_MapImage")]
         pub m_map_image: crate::unity_engine::ui::image::Image,
+        #[offset(248)]
         #[rename(name = "m_SpriteAtlas")]
         pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(256)]
         #[rename(name = "m_Sprite")]
         pub m_sprite: crate::unity_engine::sprite::Sprite,
     }

@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemCapability")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemCapability {
+        #[offset(80)]
         #[rename(name = "m_Type")]
         pub m_type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
     }

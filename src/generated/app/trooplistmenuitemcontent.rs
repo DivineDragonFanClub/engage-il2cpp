@@ -20,68 +20,100 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TroopListMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct TroopListMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_face")]
         pub m_face: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_faceBase")]
         pub m_face_base: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_statusBase")]
         pub m_status_base: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_faceFrame")]
         pub m_face_frame: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "m_statusFrame")]
         pub m_status_frame: crate::unity_engine::ui::image::Image,
+        #[offset(120)]
         #[rename(name = "m_symbolIcon")]
         pub m_symbol_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_checkIcon")]
         pub m_check_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_relayOthersIcon")]
         pub m_relay_others_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_job")]
         pub m_job: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(152)]
         #[rename(name = "m_level")]
         pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
         #[rename(name = "m_exp")]
         pub m_exp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(168)]
         #[rename(name = "m_expSlash")]
         pub m_exp_slash: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(176)]
         #[rename(name = "m_expMax")]
         pub m_exp_max: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(184)]
         #[rename(name = "m_hp")]
         pub m_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(192)]
         #[rename(name = "m_hpSlash")]
         pub m_hp_slash: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(200)]
         #[rename(name = "m_hpMax")]
         pub m_hp_max: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(208)]
         #[rename(name = "m_phys")]
         pub m_phys: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(216)]
         #[rename(name = "m_str")]
         pub m_str: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(224)]
         #[rename(name = "m_magic")]
         pub m_magic: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(232)]
         #[rename(name = "m_tech")]
         pub m_tech: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_quick")]
         pub m_quick: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_luck")]
         pub m_luck: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_def")]
         pub m_def: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_mdef")]
         pub m_mdef: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_atk")]
         pub m_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_hit")]
         pub m_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_crit")]
         pub m_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(296)]
         #[rename(name = "m_avoid")]
         pub m_avoid: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(304)]
         #[rename(name = "m_critAvoid")]
         pub m_crit_avoid: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(312)]
         #[rename(name = "m_move")]
         pub m_move: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(320)]
         #[rename(name = "m_pageRoot")]
         pub m_page_root: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
     }

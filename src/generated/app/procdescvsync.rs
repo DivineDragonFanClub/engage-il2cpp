@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescVsync")]
     #[parent(crate::app::procdesccallbase::ProcDescCallBase)]
     pub struct ProcDescVsync {
+        #[offset(20)]
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::gametime::GameTime_VsycMode,
     }

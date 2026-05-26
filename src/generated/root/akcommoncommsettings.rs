@@ -11,21 +11,28 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkCommonCommSettings")]
     #[parent(crate::system::object::Object)]
     pub struct AkCommonCommSettings {
+        #[offset(16)]
         #[rename(name = "m_PoolSize")]
         pub m_pool_size: u32,
         #[static_field]
         #[rename(name = "DefaultDiscoveryBroadcastPort")]
         pub default_discovery_broadcast_port: u16,
+        #[offset(20)]
         #[rename(name = "m_DiscoveryBroadcastPort")]
         pub m_discovery_broadcast_port: u16,
+        #[offset(22)]
         #[rename(name = "m_CommandPort")]
         pub m_command_port: u16,
+        #[offset(24)]
         #[rename(name = "m_NotificationPort")]
         pub m_notification_port: u16,
+        #[offset(26)]
         #[rename(name = "m_InitializeSystemComms")]
         pub m_initialize_system_comms: bool,
+        #[offset(32)]
         #[rename(name = "m_NetworkName")]
         pub m_network_name: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_commSystem")]
         pub m_comm_system: crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem,
     }

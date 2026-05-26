@@ -14,16 +14,22 @@ mod __types {
         #[static_field]
         #[rename(name = "s_RefIDCounter")]
         pub s_ref_id_counter: i32,
+        #[offset(16)]
         #[rename(name = "m_RefID")]
         pub m_ref_id: i32,
+        #[offset(20)]
         #[rename(name = "m_HashCode")]
         pub m_hash_code: i32,
+        #[offset(24)]
         #[rename(name = "m_ReadOnly")]
         pub m_read_only: bool,
+        #[offset(32)]
         #[rename(name = "m_Number")]
         pub m_number: f64,
+        #[offset(40)]
         #[rename(name = "m_Object")]
         pub m_object: ::unity2::IlInstance,
+        #[offset(48)]
         #[rename(name = "m_Type")]
         pub m_type: crate::moon_sharp::interpreter::datatype::DataType,
     }

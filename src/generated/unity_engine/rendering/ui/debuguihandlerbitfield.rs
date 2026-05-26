@@ -20,16 +20,21 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerBitField")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
     pub struct DebugUIHandlerBitField {
+        #[offset(88)]
         #[rename(name = "nameLabel")]
         pub name_label: crate::unity_engine::ui::text::Text,
+        #[offset(96)]
         #[rename(name = "valueToggle")]
         pub value_toggle: crate::unity_engine::rendering::ui::uifoldout::UIFoldout,
+        #[offset(104)]
         #[rename(name = "toggles")]
         pub toggles: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::ui::debuguihandlerindirecttoggle::DebugUIHandlerIndirectToggle,
         >,
+        #[offset(112)]
         #[rename(name = "m_Field")]
         pub m_field: crate::unity_engine::rendering::debugui::DebugUI_BitField,
+        #[offset(120)]
         #[rename(name = "m_Container")]
         pub m_container: crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer,
     }

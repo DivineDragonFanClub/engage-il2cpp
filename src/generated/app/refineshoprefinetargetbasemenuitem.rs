@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopRefineTargetBaseMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RefineShopRefineTargetBaseMenuItem {
+        #[offset(104)]
         #[rename(name = "m_BaseUnitItem")]
         pub m_base_unit_item: crate::app::unititem::UnitItem,
     }

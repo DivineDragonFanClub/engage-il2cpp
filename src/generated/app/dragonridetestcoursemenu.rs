@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideTestCourseMenu")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct DragonRideTestCourseMenu {
+        #[offset(32)]
         #[rename(name = "m_CameraComp")]
         pub m_camera_comp: crate::app::dragonridecamera::DragonRideCamera,
+        #[offset(40)]
         #[rename(name = "m_PatternList")]
         pub m_pattern_list: crate::app::structarraylist_1::StructArrayList_1<crate::app::dragonridetargetpatterndata::DragonRideTargetPatternData>,
+        #[offset(48)]
         #[rename(name = "m_PatternCount")]
         pub m_pattern_count: i32,
     }

@@ -136,6 +136,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EffectData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectdata :: EffectData >)]
     pub struct EffectData {
+        #[offset(80)]
         #[rename(name = "m_FilePaths")]
         pub m_file_paths: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]

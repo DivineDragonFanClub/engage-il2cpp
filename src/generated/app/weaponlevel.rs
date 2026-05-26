@@ -11,6 +11,11 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponlevel/WeaponLevel.md"))]
+    #[::unity2::class(namespace = "App", name = "WeaponLevel")]
+    #[parent(crate::system::object::Object)]
+    pub struct WeaponLevel {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponlevel/WeaponLevel_Kind.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -60,11 +65,6 @@ mod __types {
             Self { value: 5 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponlevel/WeaponLevel.md"))]
-    #[::unity2::class(namespace = "App", name = "WeaponLevel")]
-    #[parent(crate::system::object::Object)]
-    pub struct WeaponLevel {}
 }
 
 #[cfg(feature = "app-weaponlevel-types")]

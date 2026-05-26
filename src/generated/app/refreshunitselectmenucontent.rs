@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefreshUnitSelectMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefreshUnitSelectMenuContent {
+        #[offset(229)]
         #[rename(name = "isStarted")]
         pub is_started: bool,
     }

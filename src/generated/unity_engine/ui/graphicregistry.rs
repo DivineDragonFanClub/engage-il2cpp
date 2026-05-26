@@ -14,11 +14,13 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::unity_engine::ui::graphicregistry::GraphicRegistry,
+        #[offset(16)]
         #[rename(name = "m_Graphics")]
         pub m_graphics: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::canvas::Canvas,
             crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<crate::unity_engine::ui::graphic::Graphic>,
         >,
+        #[offset(24)]
         #[rename(name = "m_RaycastableGraphics")]
         pub m_raycastable_graphics: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::canvas::Canvas,

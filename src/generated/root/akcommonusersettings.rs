@@ -15,22 +15,31 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkCommonUserSettings.SpatialAudioSettings")]
     #[parent(crate::system::object::Object)]
     pub struct AkCommonUserSettings_SpatialAudioSettings {
+        #[offset(16)]
         #[rename(name = "m_MaxSoundPropagationDepth")]
         pub m_max_sound_propagation_depth: u32,
+        #[offset(20)]
         #[rename(name = "m_DiffractionFlags")]
         pub m_diffraction_flags: crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags,
+        #[offset(24)]
         #[rename(name = "m_MovementThreshold")]
         pub m_movement_threshold: f32,
+        #[offset(28)]
         #[rename(name = "m_NumberOfPrimaryRays")]
         pub m_number_of_primary_rays: u32,
+        #[offset(32)]
         #[rename(name = "m_MaxReflectionOrder")]
         pub m_max_reflection_order: u32,
+        #[offset(36)]
         #[rename(name = "m_MaxPathLength")]
         pub m_max_path_length: f32,
+        #[offset(40)]
         #[rename(name = "m_EnableDiffractionOnReflections")]
         pub m_enable_diffraction_on_reflections: bool,
+        #[offset(41)]
         #[rename(name = "m_EnableDirectPathDiffraction")]
         pub m_enable_direct_path_diffraction: bool,
+        #[offset(42)]
         #[rename(name = "m_EnableTransmission")]
         pub m_enable_transmission: bool,
     }
@@ -77,26 +86,37 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkCommonUserSettings")]
     #[parent(crate::system::object::Object)]
     pub struct AkCommonUserSettings {
+        #[offset(16)]
         #[rename(name = "m_BasePath")]
         pub m_base_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_StartupLanguage")]
         pub m_startup_language: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_EngineLogging")]
         pub m_engine_logging: bool,
+        #[offset(36)]
         #[rename(name = "m_MaximumNumberOfPositioningPaths")]
         pub m_maximum_number_of_positioning_paths: u32,
+        #[offset(40)]
         #[rename(name = "m_CommandQueueSize")]
         pub m_command_queue_size: u32,
+        #[offset(44)]
         #[rename(name = "m_SamplesPerFrame")]
         pub m_samples_per_frame: u32,
+        #[offset(48)]
         #[rename(name = "m_MainOutputSettings")]
         pub m_main_output_settings: crate::root::akcommonoutputsettings::AkCommonOutputSettings,
+        #[offset(56)]
         #[rename(name = "m_StreamingLookAheadRatio")]
         pub m_streaming_look_ahead_ratio: f32,
+        #[offset(60)]
         #[rename(name = "m_SampleRate")]
         pub m_sample_rate: u32,
+        #[offset(64)]
         #[rename(name = "m_NumberOfRefillsInVoice")]
         pub m_number_of_refills_in_voice: u16,
+        #[offset(72)]
         #[rename(name = "m_SpatialAudioSettings")]
         pub m_spatial_audio_settings: crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings,
     }

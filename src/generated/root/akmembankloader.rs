@@ -28,16 +28,22 @@ mod __types {
         #[static_field]
         #[rename(name = "AK_BANK_PLATFORM_DATA_ALIGNMENT_MASK")]
         pub ak_bank_platform_data_alignment_mask: i64,
+        #[offset(24)]
         #[rename(name = "bankName")]
         pub bank_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "isLocalizedBank")]
         pub is_localized_bank: bool,
+        #[offset(40)]
         #[rename(name = "m_bankPath")]
         pub m_bank_path: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "ms_bankID")]
         pub ms_bank_id: u32,
+        #[offset(56)]
         #[rename(name = "ms_pInMemoryBankPtr")]
         pub ms_p_in_memory_bank_ptr: ::unity2::IntPtr,
+        #[offset(72)]
         #[rename(name = "ms_www")]
         pub ms_www: crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
     }

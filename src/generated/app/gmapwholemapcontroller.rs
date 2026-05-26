@@ -28,15 +28,19 @@ mod __types {
         #[static_field]
         #[rename(name = "GmapEvilPath")]
         pub gmap_evil_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MapImageBefore")]
         pub m_map_image_before: crate::unity_engine::sprite::Sprite,
+        #[offset(32)]
         #[rename(name = "m_MapImageAfter")]
         pub m_map_image_after: crate::unity_engine::sprite::Sprite,
         #[static_field]
         #[rename(name = "s_LoadedPath")]
         pub s_loaded_path: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_CanvasGroup")]
         pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(48)]
         #[rename(name = "m_Alpha")]
         pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
     }

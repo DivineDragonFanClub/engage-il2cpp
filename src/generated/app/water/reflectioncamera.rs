@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App.Water", name = "ReflectionCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ReflectionCamera {
+        #[offset(24)]
         #[rename(name = "m_id")]
         pub m_id: i16,
+        #[offset(32)]
         #[rename(name = "m_camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(40)]
         #[rename(name = "m_cameraOriginal")]
         pub m_camera_original: crate::unity_engine::camera::Camera,
+        #[offset(48)]
         #[rename(name = "renderTextureSize")]
         pub render_texture_size_field: crate::unity_engine::vector2::Vector2,
+        #[offset(56)]
         #[rename(name = "farClip")]
         pub far_clip: f32,
+        #[offset(60)]
         #[rename(name = "clipPlaneOffset")]
         pub clip_plane_offset: f32,
     }

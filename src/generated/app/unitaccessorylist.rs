@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_UnitAccessorys")]
         pub m_unit_accessorys: ::unity2::Array<crate::app::unitaccessory::UnitAccessory>,
     }

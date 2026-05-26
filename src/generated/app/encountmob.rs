@@ -11,28 +11,40 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EncountMob")]
     #[parent(crate::system::object::Object)]
     pub struct EncountMob {
+        #[offset(16)]
         #[rename(name = "m_EJid")]
         pub m_e_jid: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Type")]
         pub m_type: crate::app::gmapspot::GmapSpot_EncountPersonType,
+        #[offset(28)]
         #[rename(name = "m_Rank")]
         pub m_rank: u8,
+        #[offset(29)]
         #[rename(name = "m_Cycle")]
         pub m_cycle: u8,
+        #[offset(30)]
         #[rename(name = "m_PlayerDispos")]
         pub m_player_dispos: u8,
+        #[offset(31)]
         #[rename(name = "m_EnemyDispos")]
         pub m_enemy_dispos: u8,
+        #[offset(32)]
         #[rename(name = "m_Seed")]
         pub m_seed: crate::app::randomseed::RandomSeed,
+        #[offset(48)]
         #[rename(name = "m_RareType")]
         pub m_rare_type: crate::app::encountunitdata::EncountUnitData_RareType,
+        #[offset(52)]
         #[rename(name = "m_ExpRareCount")]
         pub m_exp_rare_count: u8,
+        #[offset(53)]
         #[rename(name = "m_GoldRareCount")]
         pub m_gold_rare_count: u8,
+        #[offset(56)]
         #[rename(name = "m_LeaderJid")]
         pub m_leader_jid: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_LeaderGender")]
         pub m_leader_gender: u8,
         #[static_field]

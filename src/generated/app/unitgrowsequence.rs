@@ -64,24 +64,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitGrowSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct UnitGrowSequence {
+        #[offset(112)]
         #[rename(name = "m_CameraMode")]
         pub m_camera_mode: crate::app::viewmode::ViewMode_Mode,
+        #[offset(120)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(128)]
         #[rename(name = "m_Exp")]
         pub m_exp: i32,
+        #[offset(132)]
         #[rename(name = "m_OldLevel")]
         pub m_old_level: i32,
+        #[offset(136)]
         #[rename(name = "m_IsTalk")]
         pub m_is_talk: bool,
+        #[offset(140)]
         #[rename(name = "m_SkillPoint")]
         pub m_skill_point: i32,
+        #[offset(144)]
         #[rename(name = "m_ClassChangeJob")]
         pub m_class_change_job: crate::app::jobdata::JobData,
+        #[offset(152)]
         #[rename(name = "m_ClassChangeItem")]
         pub m_class_change_item: crate::app::itemdata::ItemData,
+        #[offset(160)]
         #[rename(name = "m_ClassChangeWeaponMask")]
         pub m_class_change_weapon_mask: crate::app::weaponmask::WeaponMask,
+        #[offset(168)]
         #[rename(name = "m_ClassChangeWeapon")]
         pub m_class_change_weapon: crate::app::itemdata::ItemData,
     }

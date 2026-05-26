@@ -14,20 +14,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubMoveStateMoveSplineLoop")]
     #[parent(crate::app::hubmovestate::HubMoveState)]
     pub struct HubMoveStateMoveSplineLoop {
+        #[offset(16)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::hubunitcontroller::HubUnitController,
+        #[offset(24)]
         #[rename(name = "m_data")]
         pub m_data: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(32)]
         #[rename(name = "m_term")]
         pub m_term: f32,
+        #[offset(40)]
         #[rename(name = "m_bodyAnim")]
         pub m_body_anim: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_faceAnim")]
         pub m_face_anim: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_isTurn")]
         pub m_is_turn: bool,
+        #[offset(57)]
         #[rename(name = "m_resume")]
         pub m_resume: bool,
+        #[offset(60)]
         #[rename(name = "m_speed")]
         pub m_speed: f32,
     }

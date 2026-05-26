@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcEventWait")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct ProcEventWait {
+        #[offset(112)]
         #[rename(name = "m_Tick")]
         pub m_tick: f32,
+        #[offset(116)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
     }

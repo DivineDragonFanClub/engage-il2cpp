@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_TextElement")]
     #[parent(crate::system::object::Object)]
     pub struct TMP_TextElement {
+        #[offset(16)]
         #[rename(name = "m_ElementType")]
         pub m_element_type: crate::tm_pro::textelementtype::TextElementType,
+        #[offset(20)]
         #[rename(name = "m_Unicode")]
         pub m_unicode: u32,
+        #[offset(24)]
         #[rename(name = "m_TextAsset")]
         pub m_text_asset: crate::tm_pro::tmp_asset::TMP_Asset,
+        #[offset(32)]
         #[rename(name = "m_Glyph")]
         pub m_glyph: crate::unity_engine::text_core::glyph::Glyph,
+        #[offset(40)]
         #[rename(name = "m_GlyphIndex")]
         pub m_glyph_index: u32,
+        #[offset(44)]
         #[rename(name = "m_Scale")]
         pub m_scale: f32,
     }

@@ -21,8 +21,10 @@ mod __types {
         #[static_field]
         #[rename(name = "RankNone")]
         pub rank_none: i32,
+        #[offset(52)]
         #[rename(name = "m_LowerRank")]
         pub m_lower_rank: i32,
+        #[offset(56)]
         #[rename(name = "m_UpperRank")]
         pub m_upper_rank: i32,
     }

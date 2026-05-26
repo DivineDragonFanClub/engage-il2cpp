@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagArg")]
     #[parent(crate::app::talk3_d::talktag::TalkTag)]
     pub struct TalkTagArg {
+        #[offset(16)]
         #[rename(name = "m_ArgIndex")]
         pub m_arg_index: i32,
     }

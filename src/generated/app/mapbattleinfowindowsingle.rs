@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBattleInfoWindowSingle")]
     #[parent(crate::system::object::Object)]
     pub struct MapBattleInfoWindowSingle {
+        #[offset(16)]
         #[rename(name = "m_MapBattleInfoParamSetter")]
         pub m_map_battle_info_param_setter: crate::app::mapbattleinfoparamsetter::MapBattleInfoParamSetter,
+        #[offset(24)]
         #[rename(name = "m_SideType")]
         pub m_side_type: crate::app::battleside::BattleSide_Type,
     }

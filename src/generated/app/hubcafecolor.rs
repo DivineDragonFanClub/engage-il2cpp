@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubCafeColor")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubCafeColor {
+        #[offset(24)]
         #[rename(name = "m_targets")]
         pub m_targets: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(32)]
         #[rename(name = "m_lods")]
         pub m_lods: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(40)]
         #[rename(name = "m_renderers")]
         pub m_renderers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer>,
     }

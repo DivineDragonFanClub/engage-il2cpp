@@ -20,16 +20,20 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSetting")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapsetting :: MapSetting >)]
     pub struct MapSetting {
+        #[offset(32)]
         #[rename(name = "m_MapTerrain")]
         pub m_map_terrain: crate::app::mapterrain::MapTerrain,
+        #[offset(40)]
         #[rename(name = "m_ObjectList")]
         pub m_object_list: crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject>,
+        #[offset(48)]
         #[rename(name = "m_ObjectDictionary")]
         pub m_object_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::mapobject::MapObject>,
         #[static_field]
         #[rename(name = "s_BackupList")]
         pub s_backup_list: crate::app::mapbackuplist::MapBackupList,
+        #[offset(56)]
         #[rename(name = "m_MapDevelop")]
         pub m_map_develop: crate::app::mapterrain::MapTerrain,
     }

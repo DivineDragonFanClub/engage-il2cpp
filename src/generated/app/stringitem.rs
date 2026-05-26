@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "StringItem")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct StringItem {
+        #[offset(32)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_English")]
         pub m_english: ::unity2::Il2CppString,
     }

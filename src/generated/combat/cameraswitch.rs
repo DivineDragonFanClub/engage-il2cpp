@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraSwitch")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CameraSwitch {
+        #[offset(24)]
         #[rename(name = "MainCamera")]
         pub main_camera: crate::unity_engine::camera::Camera,
+        #[offset(32)]
         #[rename(name = "VCameras")]
         pub v_cameras: crate::system::collections::generic::list_1::List_1<crate::combat::camerainfo::CameraInfo>,
+        #[offset(56)]
         #[rename(name = "m_MaxPriprity")]
         pub m_max_priprity: i32,
     }

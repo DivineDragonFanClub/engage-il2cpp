@@ -24,32 +24,46 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_SubMeshUI")]
     #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
     pub struct TMP_SubMeshUI {
+        #[offset(208)]
         #[rename(name = "m_fontAsset")]
         pub m_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[offset(216)]
         #[rename(name = "m_spriteAsset")]
         pub m_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        #[offset(224)]
         #[rename(name = "m_material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(232)]
         #[rename(name = "m_sharedMaterial")]
         pub m_shared_material: crate::unity_engine::material::Material,
+        #[offset(240)]
         #[rename(name = "m_fallbackMaterial")]
         pub m_fallback_material: crate::unity_engine::material::Material,
+        #[offset(248)]
         #[rename(name = "m_fallbackSourceMaterial")]
         pub m_fallback_source_material: crate::unity_engine::material::Material,
+        #[offset(256)]
         #[rename(name = "m_isDefaultMaterial")]
         pub m_is_default_material: bool,
+        #[offset(260)]
         #[rename(name = "m_padding")]
         pub m_padding: f32,
+        #[offset(264)]
         #[rename(name = "m_mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(272)]
         #[rename(name = "m_TextComponent")]
         pub m_text_component: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_isRegisteredForEvents")]
         pub m_is_registered_for_events: bool,
+        #[offset(281)]
         #[rename(name = "m_materialDirty")]
         pub m_material_dirty: bool,
+        #[offset(284)]
         #[rename(name = "m_materialReferenceIndex")]
         pub m_material_reference_index: i32,
+        #[offset(288)]
         #[rename(name = "m_RootCanvasTransform")]
         pub m_root_canvas_transform: crate::unity_engine::transform::Transform,
     }

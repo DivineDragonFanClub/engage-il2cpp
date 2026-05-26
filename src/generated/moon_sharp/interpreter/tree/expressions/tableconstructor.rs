@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "TableConstructor")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct TableConstructor {
+        #[offset(32)]
         #[rename(name = "m_Shared")]
         pub m_shared: bool,
+        #[offset(40)]
         #[rename(name = "m_PositionalValues")]
         pub m_positional_values: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression>,
+        #[offset(48)]
         #[rename(name = "m_CtorArgs")]
         pub m_ctor_args: crate::system::collections::generic::list_1::List_1<
             crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<

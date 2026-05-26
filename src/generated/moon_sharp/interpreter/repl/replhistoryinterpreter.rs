@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.REPL", name = "ReplHistoryInterpreter")]
     #[parent(crate::moon_sharp::interpreter::repl::replinterpreter::ReplInterpreter)]
     pub struct ReplHistoryInterpreter {
+        #[offset(40)]
         #[rename(name = "m_History")]
         pub m_history: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(48)]
         #[rename(name = "m_Last")]
         pub m_last: i32,
+        #[offset(52)]
         #[rename(name = "m_Navi")]
         pub m_navi: i32,
     }

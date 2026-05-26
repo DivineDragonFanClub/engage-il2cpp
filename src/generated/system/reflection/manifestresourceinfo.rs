@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "ManifestResourceInfo")]
     #[parent(crate::system::object::Object)]
     pub struct ManifestResourceInfo {
+        #[offset(16)]
         #[rename(name = "_containingAssembly")]
         pub containing_assembly: crate::system::reflection::assembly::Assembly,
+        #[offset(24)]
         #[rename(name = "_containingFileName")]
         pub containing_file_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "_resourceLocation")]
         pub resource_location: crate::system::reflection::resourcelocation::ResourceLocation,
     }

@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FleaMarketBuyMenuItemContent")]
     #[parent(crate::app::itemshopbuymenuitemcontent::ItemShopBuyMenuItemContent)]
     pub struct FleaMarketBuyMenuItemContent {
+        #[offset(152)]
         #[rename(name = "m_KindIconImage")]
         pub m_kind_icon_image: crate::unity_engine::ui::image::Image,
     }

@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescPush")]
     #[parent(crate::app::procdesc::ProcDesc)]
     pub struct ProcDescPush {
+        #[offset(20)]
         #[rename(name = "m_Label")]
         pub m_label: i32,
     }

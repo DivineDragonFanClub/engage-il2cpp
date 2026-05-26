@@ -17,26 +17,37 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapCombatViewerSettings")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct MapCombatViewerSettings {
+        #[offset(24)]
         #[rename(name = "FieldName")]
         pub field_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "Characters")]
         pub characters: ::unity2::Array<crate::app::characteridset::CharacterIdSet>,
+        #[offset(40)]
         #[rename(name = "RandomPosition")]
         pub random_position: bool,
+        #[offset(41)]
         #[rename(name = "RandomCharacter")]
         pub random_character: bool,
+        #[offset(42)]
         #[rename(name = "PlayerAttack")]
         pub player_attack: bool,
+        #[offset(43)]
         #[rename(name = "EternalCombat")]
         pub eternal_combat: bool,
+        #[offset(44)]
         #[rename(name = "RepeatCombat")]
         pub repeat_combat: bool,
+        #[offset(45)]
         #[rename(name = "CharaSelectRandomly")]
         pub chara_select_randomly: bool,
+        #[offset(48)]
         #[rename(name = "SortiePreset")]
         pub sortie_preset: i32,
+        #[offset(52)]
         #[rename(name = "BattlePreset")]
         pub battle_preset: i32,
+        #[offset(56)]
         #[rename(name = "CombatSeed")]
         pub combat_seed: u32,
         #[static_field]

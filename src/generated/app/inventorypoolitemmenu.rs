@@ -62,12 +62,16 @@ mod __types {
         #[static_field]
         #[rename(name = "ShowRowNum")]
         pub show_row_num: i32,
+        #[offset(200)]
         #[rename(name = "m_SavedFullMenuItemList")]
         pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(208)]
         #[rename(name = "m_SortMenuItemList")]
         pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(216)]
         #[rename(name = "m_ItemKind")]
         pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
+        #[offset(224)]
         #[rename(name = "m_Selects")]
         pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
     }

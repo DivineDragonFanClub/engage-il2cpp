@@ -14,40 +14,56 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomBaseOpaquePass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CustomBaseOpaquePass {
+        #[offset(112)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(136)]
         #[rename(name = "m_RenderStateBlock")]
         pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+        #[offset(244)]
         #[rename(name = "m_DefaultShaderTagId")]
         pub m_default_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(248)]
         #[rename(name = "m_ShaderTagIdList")]
         pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[offset(256)]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(264)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "s_DrawObjectPassDataPropID")]
         pub s_draw_object_pass_data_prop_id: i32,
+        #[offset(272)]
         #[rename(name = "m_NoOverrideStateShaderTagId")]
         pub m_no_override_state_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(280)]
         #[rename(name = "m_NoOverrideStateShaderTagIdList")]
         pub m_no_override_state_shader_tag_id_list:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[offset(288)]
         #[rename(name = "m_DepthState")]
         pub m_depth_state: crate::unity_engine::rendering::depthstate::DepthState,
+        #[offset(290)]
         #[rename(name = "m_ZPrepassEnabled")]
         pub m_z_prepass_enabled: bool,
+        #[offset(291)]
         #[rename(name = "m_ZPrepassOptimizedSort")]
         pub m_z_prepass_optimized_sort: bool,
+        #[offset(296)]
         #[rename(name = "m_BlitMaterial")]
         pub m_blit_material: crate::unity_engine::material::Material,
+        #[offset(304)]
         #[rename(name = "m_SilhouetteColorPropID")]
         pub m_silhouette_color_prop_id: ::unity2::Array<i32>,
+        #[offset(322)]
         #[rename(name = "m_CustomViewport")]
         pub m_custom_viewport: bool,
+        #[offset(324)]
         #[rename(name = "m_CustomViewportRect")]
         pub m_custom_viewport_rect: crate::unity_engine::rect::Rect,
+        #[offset(340)]
         #[rename(name = "m_OriginalViewportRect")]
         pub m_original_viewport_rect: crate::unity_engine::rect::Rect,
     }

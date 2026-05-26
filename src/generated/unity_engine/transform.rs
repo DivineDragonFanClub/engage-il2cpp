@@ -22,8 +22,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "Transform.Enumerator")]
     #[parent(crate::system::object::Object)]
     pub struct Transform_Enumerator {
+        #[offset(16)]
         #[rename(name = "outer")]
         pub outer: crate::unity_engine::transform::Transform,
+        #[offset(24)]
         #[rename(name = "currentIndex")]
         pub current_index: i32,
     }

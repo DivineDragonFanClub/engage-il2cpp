@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "LiteralExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct LiteralExpression {
+        #[offset(32)]
         #[rename(name = "m_Value")]
         pub m_value: crate::moon_sharp::interpreter::dynvalue::DynValue,
     }

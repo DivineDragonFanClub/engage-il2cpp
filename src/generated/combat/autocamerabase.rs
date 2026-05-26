@@ -35,23 +35,31 @@ mod __types {
         #[static_field]
         #[rename(name = "HalfLatitude")]
         pub half_latitude: f32,
+        #[offset(168)]
         #[rename(name = "m_Longitude")]
         pub m_longitude: f32,
+        #[offset(172)]
         #[rename(name = "m_Latitude")]
         pub m_latitude: f32,
+        #[offset(176)]
         #[rename(name = "m_MinDistance")]
         pub m_min_distance: f32,
+        #[offset(180)]
         #[rename(name = "m_FocusSide")]
         pub m_focus_side: f32,
+        #[offset(184)]
         #[rename(name = "m_LastViewDir")]
         pub m_last_view_dir: crate::unity_engine::vector3::Vector3,
+        #[offset(196)]
         #[rename(name = "m_FOV")]
         pub m_fov: f32,
+        #[offset(200)]
         #[rename(name = "m_CameraLookUp")]
         pub m_camera_look_up: crate::unity_engine::vector3::Vector3,
         #[static_field]
         #[rename(name = "HalfDegree")]
         pub half_degree: f32,
+        #[offset(212)]
         #[rename(name = "HalfDegreeDot")]
         pub half_degree_dot: f32,
     }

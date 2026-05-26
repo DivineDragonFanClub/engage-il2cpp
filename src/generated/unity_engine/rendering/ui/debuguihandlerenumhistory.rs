@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerEnumHistory")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerenumfield::DebugUIHandlerEnumField)]
     pub struct DebugUIHandlerEnumHistory {
+        #[offset(112)]
         #[rename(name = "historyValues")]
         pub history_values: ::unity2::Array<crate::unity_engine::ui::text::Text>,
         #[static_field]

@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertRefresh")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConvertRefresh {
+        #[offset(24)]
         #[rename(name = "m_IsFinished")]
         pub m_is_finished: bool,
     }

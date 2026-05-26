@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "VolumeStack")]
     #[parent(crate::system::object::Object)]
     pub struct VolumeStack {
+        #[offset(16)]
         #[rename(name = "components")]
         pub components: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::SystemType,

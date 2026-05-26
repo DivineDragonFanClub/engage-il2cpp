@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "System.IO.Compression", name = "GZipStream")]
     #[parent(crate::system::io::stream::Stream)]
     pub struct GZipStream {
+        #[offset(40)]
         #[rename(name = "_deflateStream")]
         pub deflate_stream: crate::system::io::compression::deflatestream::DeflateStream,
     }

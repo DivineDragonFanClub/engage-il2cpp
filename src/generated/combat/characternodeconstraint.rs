@@ -23,14 +23,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterNodeConstraint")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterNodeConstraint {
+        #[offset(24)]
         #[rename(name = "state")]
         pub state: crate::combat::characternodeconstraint::CharacterNodeConstraint_State,
+        #[offset(32)]
         #[rename(name = "SpecialPurposeCameraNodes")]
         pub special_purpose_camera_nodes: ::unity2::Array<crate::unity_engine::transform::Transform>,
+        #[offset(40)]
         #[rename(name = "SpecialPurposeParticleNodes")]
         pub special_purpose_particle_nodes: ::unity2::Array<crate::unity_engine::transform::Transform>,
+        #[offset(48)]
         #[rename(name = "specialPurposeParticleNodesOffset")]
         pub special_purpose_particle_nodes_offset: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(56)]
         #[rename(name = "_ctr")]
         pub ctr: crate::unity_engine::transform::Transform,
     }

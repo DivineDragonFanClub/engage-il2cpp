@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapSpotManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapspotmanager :: GmapSpotManager >)]
     pub struct GmapSpotManager {
+        #[offset(32)]
         #[rename(name = "m_SpotArray")]
         pub m_spot_array: ::unity2::Array<crate::app::gmapspot::GmapSpot>,
         #[static_field]

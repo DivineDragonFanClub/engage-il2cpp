@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyinformationalversionattribute/AssemblyInformationalVersionAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyInformationalVersionAttribute")]
     pub struct AssemblyInformationalVersionAttribute {
+        #[offset(16)]
         #[rename(name = "m_informationalVersion")]
         pub m_informational_version: ::unity2::Il2CppString,
     }

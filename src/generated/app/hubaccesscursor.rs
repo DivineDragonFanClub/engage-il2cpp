@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubAccessCursor")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubAccessCursor {
+        #[offset(56)]
         #[rename(name = "m_propetyToID")]
         pub m_propety_to_id: i32,
+        #[offset(64)]
         #[rename(name = "m_renderer")]
         pub m_renderer: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+        #[offset(72)]
         #[rename(name = "m_materials")]
         pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[offset(80)]
         #[rename(name = "m_alpha")]
         pub m_alpha: f32,
     }

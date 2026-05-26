@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "NoInterpClampedIntParameter")]
     # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < i32 >)]
     pub struct NoInterpClampedIntParameter {
+        #[offset(24)]
         #[rename(name = "min")]
         pub min: i32,
+        #[offset(28)]
         #[rename(name = "max")]
         pub max: i32,
     }

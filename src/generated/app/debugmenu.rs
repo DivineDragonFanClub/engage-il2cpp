@@ -29,44 +29,64 @@ mod __types {
         #[static_field]
         #[rename(name = "COLOR_ZERO")]
         pub color_zero: crate::unity_engine::color::Color,
+        #[offset(112)]
         #[rename(name = "m_Rect")]
         pub m_rect: crate::unity_engine::rect::Rect,
+        #[offset(128)]
         #[rename(name = "m_Select")]
         pub m_select: i32,
+        #[offset(132)]
         #[rename(name = "m_Orient")]
         pub m_orient: f32,
+        #[offset(136)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(152)]
         #[rename(name = "m_Depth")]
         pub m_depth: i32,
+        #[offset(156)]
         #[rename(name = "m_Anchor")]
         pub m_anchor: crate::app::gx::GX_Anchor,
+        #[offset(160)]
         #[rename(name = "m_Prefab")]
         pub m_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::debugwindow::DebugWindow,
+        #[offset(176)]
         #[rename(name = "m_BindMode")]
         pub m_bind_mode: crate::app::debugmenu::DebugMenu_BindMode,
+        #[offset(184)]
         #[rename(name = "m_Items")]
         pub m_items: crate::system::collections::generic::list_1::List_1<crate::app::menuitem::MenuItem>,
+        #[offset(192)]
         #[rename(name = "m_IsFirst")]
         pub m_is_first: bool,
+        #[offset(193)]
         #[rename(name = "m_IsRelay")]
         pub m_is_relay: bool,
+        #[offset(194)]
         #[rename(name = "m_IsCalcW")]
         pub m_is_calc_w: bool,
+        #[offset(195)]
         #[rename(name = "m_IsCalcH")]
         pub m_is_calc_h: bool,
+        #[offset(196)]
         #[rename(name = "m_IsMovePage")]
         pub m_is_move_page: bool,
+        #[offset(197)]
         #[rename(name = "m_IsMapCursor")]
         pub m_is_map_cursor: bool,
+        #[offset(200)]
         #[rename(name = "m_RecordKey")]
         pub m_record_key: ::unity2::Il2CppString,
+        #[offset(208)]
         #[rename(name = "m_SelectTick")]
         pub m_select_tick: i32,
+        #[offset(212)]
         #[rename(name = "m_SelectTime")]
         pub m_select_time: f32,
+        #[offset(216)]
         #[rename(name = "m_TimeScale")]
         pub m_time_scale: f32,
     }

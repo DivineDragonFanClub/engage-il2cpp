@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.Scopes", name = "BuildTimeScopeFrame")]
     #[parent(crate::system::object::Object)]
     pub struct BuildTimeScopeFrame {
+        #[offset(16)]
         #[rename(name = "m_ScopeTreeRoot")]
         pub m_scope_tree_root: crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+        #[offset(24)]
         #[rename(name = "m_ScopeTreeHead")]
         pub m_scope_tree_head: crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+        #[offset(32)]
         #[rename(name = "m_ScopeFrame")]
         pub m_scope_frame: crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame,
     }

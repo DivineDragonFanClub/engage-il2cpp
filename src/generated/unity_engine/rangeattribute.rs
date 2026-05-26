@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "RangeAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct RangeAttribute {
+        #[offset(16)]
         #[rename(name = "min")]
         pub min: f32,
+        #[offset(20)]
         #[rename(name = "max")]
         pub max: f32,
     }

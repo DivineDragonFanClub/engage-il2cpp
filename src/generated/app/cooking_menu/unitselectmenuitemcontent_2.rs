@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "UnitSelectMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct UnitSelectMenuItemContent_2 {
+        #[offset(72)]
         #[rename(name = "m_Setter")]
         pub m_setter: crate::app::unitmenuitemsetter::UnitMenuItemSetter,
+        #[offset(80)]
         #[rename(name = "m_MenuItem")]
         pub m_menu_item: crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem,
+        #[offset(88)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }

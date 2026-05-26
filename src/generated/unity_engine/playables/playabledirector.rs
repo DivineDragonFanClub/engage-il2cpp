@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Playables", name = "PlayableDirector")]
     #[parent(crate::unity_engine::behaviour::Behaviour)]
     pub struct PlayableDirector {
+        #[offset(24)]
         #[rename(name = "played")]
         pub played: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
+        #[offset(32)]
         #[rename(name = "paused")]
         pub paused: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
+        #[offset(40)]
         #[rename(name = "stopped")]
         pub stopped: crate::system::action_1::Action_1<crate::unity_engine::playables::playabledirector::PlayableDirector>,
     }

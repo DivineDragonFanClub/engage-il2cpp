@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InvestmentMapPoint")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct InvestmentMapPoint {
+        #[offset(24)]
         #[rename(name = "m_mapCid")]
         pub m_map_cid: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_balloonRoot")]
         pub m_balloon_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_battleIcon")]
         pub m_battle_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_animalIcon")]
         pub m_animal_icon: crate::unity_engine::gameobject::GameObject,
     }

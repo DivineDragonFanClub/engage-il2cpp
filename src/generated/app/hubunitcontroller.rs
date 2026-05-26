@@ -19,48 +19,70 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubUnitController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubUnitController {
+        #[offset(24)]
         #[rename(name = "m_HomeDir")]
         pub m_home_dir: f32,
+        #[offset(28)]
         #[rename(name = "m_HomePosition")]
         pub m_home_position: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "m_TalkHeadPosition")]
         pub m_talk_head_position: crate::unity_engine::vector3::Vector3,
+        #[offset(52)]
         #[rename(name = "m_CharacterHeight")]
         pub m_character_height: f32,
+        #[offset(56)]
         #[rename(name = "m_Dir")]
         pub m_dir: crate::app::interpolatorrotationcurve::InterpolatorRotationCurve,
+        #[offset(64)]
         #[rename(name = "m_Move")]
         pub m_move: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(72)]
         #[rename(name = "m_PlayerController")]
         pub m_player_controller: crate::app::hubplayercontroller::HubPlayerController,
+        #[offset(80)]
         #[rename(name = "m_TalkCharacterController")]
         pub m_talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+        #[offset(88)]
         #[rename(name = "m_Access")]
         pub m_access: crate::app::hubaccess::HubAccess,
+        #[offset(96)]
         #[rename(name = "m_Character")]
         pub m_character: crate::combat::character::Character,
+        #[offset(104)]
         #[rename(name = "m_SoundAction")]
         pub m_sound_action: crate::app::hubrangeaction::HubRangeAction,
+        #[offset(112)]
         #[rename(name = "m_LookAction")]
         pub m_look_action: crate::app::hubrangeaction::HubRangeAction,
+        #[offset(120)]
         #[rename(name = "m_MoveController")]
         pub m_move_controller: crate::app::hubmovecontroller::HubMoveController,
+        #[offset(128)]
         #[rename(name = "m_LookAt")]
         pub m_look_at: crate::app::hublookatcontroller::HubLookAtController,
+        #[offset(136)]
         #[rename(name = "m_EnableFadeDelay")]
         pub m_enable_fade_delay: crate::unity_engine::coroutine::Coroutine,
+        #[offset(144)]
         #[rename(name = "m_ReserveReset")]
         pub m_reserve_reset: bool,
+        #[offset(148)]
         #[rename(name = "m_ReserveResetTime")]
         pub m_reserve_reset_time: f32,
+        #[offset(152)]
         #[rename(name = "m_OutRangeTime")]
         pub m_out_range_time: f32,
+        #[offset(160)]
         #[rename(name = "m_WaitAnimName")]
         pub m_wait_anim_name: ::unity2::Il2CppString,
+        #[offset(168)]
         #[rename(name = "m_TalkDefaultAnimName")]
         pub m_talk_default_anim_name: ::unity2::Il2CppString,
+        #[offset(180)]
         #[rename(name = "m_OldHeadPosition")]
         pub m_old_head_position: crate::unity_engine::vector3::Vector3,
+        #[offset(192)]
         #[rename(name = "m_CenterPosition")]
         pub m_center_position: crate::unity_engine::vector3::Vector3,
     }

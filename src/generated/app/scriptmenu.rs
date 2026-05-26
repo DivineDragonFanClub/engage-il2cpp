@@ -15,36 +15,46 @@ mod __types {
         system::object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu_EventMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenu")]
-    #[parent(crate::app::debugmenu::DebugMenu)]
-    pub struct ScriptMenu_EventMenu {
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-        #[rename(name = "m_Address")]
-        pub m_address: i32,
-        #[rename(name = "m_CancelCall")]
-        pub m_cancel_call: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        #[rename(name = "m_CancelJump")]
-        pub m_cancel_jump: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu_EventMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenuItem")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct ScriptMenu_EventMenuItem {
+        #[offset(32)]
         #[rename(name = "m_Mid")]
         pub m_mid: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Function")]
         pub m_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(48)]
         #[rename(name = "m_Args")]
         pub m_args: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(56)]
         #[rename(name = "m_SelectFunction")]
         pub m_select_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(64)]
         #[rename(name = "m_SelectArgs")]
         pub m_select_args: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(72)]
         #[rename(name = "m_Condition")]
         pub m_condition: crate::app::scriptutil::ScriptUtil_MenuCondtion,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu_EventMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenu")]
+    #[parent(crate::app::debugmenu::DebugMenu)]
+    pub struct ScriptMenu_EventMenu {
+        #[offset(220)]
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+        #[offset(224)]
+        #[rename(name = "m_Address")]
+        pub m_address: i32,
+        #[offset(232)]
+        #[rename(name = "m_CancelCall")]
+        pub m_cancel_call: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(240)]
+        #[rename(name = "m_CancelJump")]
+        pub m_cancel_jump: crate::moon_sharp::interpreter::dynvalue::DynValue,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu.md"))]
@@ -55,538 +65,6 @@ mod __types {
 
 #[cfg(feature = "app-scriptmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-scriptmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptMenu_EventMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "GetIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "GetIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_index(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "LoadCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "LoadCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_cursor(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_selectable_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "ToSelectableIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "ToSelectableIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_selectable_index(this: ScriptMenu_EventMenu, select: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_to_selectable_index::get_method_info().method_ptr);
-        inner(this, select, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "SaveCursor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "SaveCursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn save_cursor(this: ScriptMenu_EventMenu, decide: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_save_cursor::get_method_info().method_ptr);
-        inner(this, decide, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "OnOpen",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnOpen",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_open(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_open::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "OnClose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnClose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_close(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_close::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "OnTick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_tick(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_x_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "XCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "XCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn x_call(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_x_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_cancel_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "SetCancelCall",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "SetCancelCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_cancel_call(
-        this: ScriptMenu_EventMenu,
-        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_cancel_call::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_cancel_jump {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
-                "SetCancelJump",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
-                        "SetCancelJump",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_cancel_jump(
-        this: ScriptMenu_EventMenu,
-        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ScriptMenu_EventMenu, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_cancel_jump::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-scriptmenu")]
-pub trait IScriptMenu_EventMenuMethods: IScriptMenu_EventMenu {
-    #[doc = "`GetIndex()` overload"]
-    fn get_index(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::get_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadCursor()` overload"]
-    fn load_cursor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::load_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ToSelectableIndex(i32)` overload"]
-    fn to_selectable_index(self, select: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::to_selectable_index(__receiver, ::core::convert::Into::into(select), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SaveCursor(bool)` overload"]
-    fn save_cursor(self, decide: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::save_cursor(__receiver, ::core::convert::Into::into(decide), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnOpen()` overload"]
-    fn on_open(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::on_open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnClose()` overload"]
-    fn on_close(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnTick()` overload"]
-    fn on_tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`XCall()` overload"]
-    fn x_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCancelCall(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    fn set_cancel_call(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::set_cancel_call(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetCancelJump(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    fn set_cancel_jump(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> () {
-        unsafe {
-            let __receiver =
-                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScriptMenu_EventMenu_unity2_raw::set_cancel_jump(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-scriptmenu")]
-impl<__T: IScriptMenu_EventMenu> IScriptMenu_EventMenuMethods for __T {}
-
-#[cfg(feature = "app-scriptmenu")]
-impl ScriptMenu_EventMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptMenu_EventMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScriptMenu_EventMenuMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-scriptmenu")]
 #[doc(hidden)]
@@ -1254,6 +732,538 @@ impl ScriptMenu_EventMenuItem {
             )
         });
         <Self as IScriptMenu_EventMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-scriptmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptMenu_EventMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "GetIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_index(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_cursor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "LoadCursor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "LoadCursor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_cursor(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_cursor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_selectable_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "ToSelectableIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "ToSelectableIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_selectable_index(this: ScriptMenu_EventMenu, select: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_selectable_index::get_method_info().method_ptr);
+        inner(this, select, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_cursor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "SaveCursor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "SaveCursor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn save_cursor(this: ScriptMenu_EventMenu, decide: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_save_cursor::get_method_info().method_ptr);
+        inner(this, decide, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "OnOpen",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnOpen",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_open(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_open::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "OnClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnClose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_close(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_close::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnTick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_tick(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_x_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "XCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "XCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn x_call(this: ScriptMenu_EventMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_x_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cancel_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "SetCancelCall",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetCancelCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_cancel_call(
+        this: ScriptMenu_EventMenu,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cancel_call::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_cancel_jump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::class(),
+                "SetCancelJump",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptMenu_EventMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetCancelJump",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_cancel_jump(
+        this: ScriptMenu_EventMenu,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ScriptMenu_EventMenu, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cancel_jump::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-scriptmenu")]
+pub trait IScriptMenu_EventMenuMethods: IScriptMenu_EventMenu {
+    #[doc = "`GetIndex()` overload"]
+    fn get_index(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::get_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadCursor()` overload"]
+    fn load_cursor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::load_cursor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ToSelectableIndex(i32)` overload"]
+    fn to_selectable_index(self, select: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::to_selectable_index(__receiver, ::core::convert::Into::into(select), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SaveCursor(bool)` overload"]
+    fn save_cursor(self, decide: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::save_cursor(__receiver, ::core::convert::Into::into(decide), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnOpen()` overload"]
+    fn on_open(self) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::on_open(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnClose()` overload"]
+    fn on_close(self) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`XCall()` overload"]
+    fn x_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetCancelCall(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    fn set_cancel_call(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::set_cancel_call(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetCancelJump(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    fn set_cancel_jump(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptMenu_EventMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptMenu_EventMenu_unity2_raw::set_cancel_jump(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-scriptmenu")]
+impl<__T: IScriptMenu_EventMenu> IScriptMenu_EventMenuMethods for __T {}
+
+#[cfg(feature = "app-scriptmenu")]
+impl ScriptMenu_EventMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptMenu_EventMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptMenu_EventMenuMethods>::ctor(this);
         this
     }
 }

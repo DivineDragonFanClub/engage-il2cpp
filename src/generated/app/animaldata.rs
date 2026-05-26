@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AnimalData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: animaldata :: AnimalData >)]
     pub struct AnimalData {
+        #[offset(104)]
         #[rename(name = "Items")]
         pub items: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(120)]
         #[rename(name = "m_catchNumFlagName")]
         pub m_catch_num_flag_name: ::unity2::Il2CppString,
     }

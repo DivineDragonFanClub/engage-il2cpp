@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "ProviderLoadRequestOptions")]
     #[parent(crate::system::object::Object)]
     pub struct ProviderLoadRequestOptions {
+        #[offset(16)]
         #[rename(name = "m_IgnoreFailures")]
         pub m_ignore_failures: bool,
+        #[offset(20)]
         #[rename(name = "m_WebRequestTimeout")]
         pub m_web_request_timeout: i32,
     }

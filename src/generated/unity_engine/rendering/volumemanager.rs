@@ -14,18 +14,23 @@ mod __types {
         #[static_field]
         #[rename(name = "k_MaxLayerCount")]
         pub k_max_layer_count: i32,
+        #[offset(32)]
         #[rename(name = "m_SortedVolumes")]
         pub m_sorted_volumes: crate::system::collections::generic::dictionary_2::Dictionary_2<
             i32,
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volume::Volume>,
         >,
+        #[offset(40)]
         #[rename(name = "m_Volumes")]
         pub m_volumes: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volume::Volume>,
+        #[offset(48)]
         #[rename(name = "m_SortNeeded")]
         pub m_sort_needed: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, bool>,
+        #[offset(56)]
         #[rename(name = "m_ComponentsDefaultState")]
         pub m_components_default_state:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volumecomponent::VolumeComponent>,
+        #[offset(64)]
         #[rename(name = "m_TempColliders")]
         pub m_temp_colliders: crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider>,
     }

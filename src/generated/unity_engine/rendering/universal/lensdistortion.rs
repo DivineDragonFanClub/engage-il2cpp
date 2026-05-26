@@ -18,14 +18,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "LensDistortion")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct LensDistortion {
+        #[offset(56)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(64)]
         #[rename(name = "xMultiplier")]
         pub x_multiplier: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "yMultiplier")]
         pub y_multiplier: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "center")]
         pub center: crate::unity_engine::rendering::vector2parameter::Vector2Parameter,
+        #[offset(88)]
         #[rename(name = "scale")]
         pub scale: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

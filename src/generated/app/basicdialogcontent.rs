@@ -23,16 +23,22 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_objText")]
         pub m_obj_text: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_objFrmContent")]
         pub m_obj_frm_content: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_textW")]
         pub m_text_w: f32,
+        #[offset(252)]
         #[rename(name = "m_textH")]
         pub m_text_h: f32,
+        #[offset(256)]
         #[rename(name = "m_textSpacing")]
         pub m_text_spacing: f32,
+        #[offset(260)]
         #[rename(name = "m_contentOriginX")]
         pub m_content_origin_x: f32,
     }

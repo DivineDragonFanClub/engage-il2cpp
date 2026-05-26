@@ -11,26 +11,26 @@ mod __types {
         object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrpass/XRPass_CustomMirrorView.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRPass.CustomMirrorView")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct XRPass_CustomMirrorView {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrpass/XRPass.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRPass")]
     #[parent(crate::system::object::Object)]
     pub struct XRPass {
+        #[offset(16)]
         #[rename(name = "views")]
         pub views: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::xrview::XRView>,
         #[static_field]
         #[rename(name = "invalidRT")]
         pub invalid_rt: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        #[offset(1704)]
         #[rename(name = "occlusionMeshMaterial")]
         pub occlusion_mesh_material: crate::unity_engine::material::Material,
+        #[offset(1712)]
         #[rename(name = "occlusionMeshCombined")]
         pub occlusion_mesh_combined: crate::unity_engine::mesh::Mesh,
+        #[offset(1720)]
         #[rename(name = "occlusionMeshCombinedHashCode")]
         pub occlusion_mesh_combined_hash_code: i32,
+        #[offset(1728)]
         #[rename(name = "customMirrorView")]
         pub custom_mirror_view_field: crate::unity_engine::rendering::universal::xrpass::XRPass_CustomMirrorView,
         #[static_field]
@@ -45,175 +45,28 @@ mod __types {
         #[static_field]
         #[rename(name = "_XROcclusionProfilingSampler")]
         pub xr_occlusion_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(1736)]
         #[rename(name = "stereoEyeIndices")]
         pub stereo_eye_indices: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[offset(1744)]
         #[rename(name = "stereoProjectionMatrix")]
         pub stereo_projection_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(1752)]
         #[rename(name = "stereoViewMatrix")]
         pub stereo_view_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(1760)]
         #[rename(name = "stereoCameraProjectionMatrix")]
         pub stereo_camera_projection_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrpass/XRPass_CustomMirrorView.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRPass.CustomMirrorView")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct XRPass_CustomMirrorView {}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrpass-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRPass_CustomMirrorView_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: XRPass_CustomMirrorView,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(XRPass_CustomMirrorView, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::universal::xrpass::XRPass as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: XRPass_CustomMirrorView,
-        pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rt: crate::unity_engine::rendertexture::RenderTexture,
-        viewport: crate::unity_engine::rect::Rect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            XRPass_CustomMirrorView,
-            crate::unity_engine::rendering::universal::xrpass::XRPass,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            crate::unity_engine::rendertexture::RenderTexture,
-            crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, pass, cmd, rt, viewport, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
-pub trait IXRPass_CustomMirrorViewMethods: IXRPass_CustomMirrorView {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <XRPass_CustomMirrorView as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRPass_CustomMirrorView_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::rendering::universal::xrpass::XRPass, crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rect::Rect)` overload"]
-    fn invoke(
-        self,
-        pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrpass::XRPass>,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        rt: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
-        viewport: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <XRPass_CustomMirrorView as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __XRPass_CustomMirrorView_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(pass),
-                ::core::convert::Into::into(cmd),
-                ::core::convert::Into::into(rt),
-                ::core::convert::Into::into(viewport),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
-impl<__T: IXRPass_CustomMirrorView> IXRPass_CustomMirrorViewMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
-impl XRPass_CustomMirrorView {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(XRPass_CustomMirrorView),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IXRPass_CustomMirrorViewMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-rendering-universal-xrpass")]
 #[doc(hidden)]
@@ -2278,6 +2131,162 @@ impl XRPass {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(XRPass), ::core::stringify!(new),));
         <Self as IXRPassMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __XRPass_CustomMirrorView_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: XRPass_CustomMirrorView,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(XRPass_CustomMirrorView, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::xrpass::XRPass as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRPass_CustomMirrorView as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: XRPass_CustomMirrorView,
+        pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rt: crate::unity_engine::rendertexture::RenderTexture,
+        viewport: crate::unity_engine::rect::Rect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            XRPass_CustomMirrorView,
+            crate::unity_engine::rendering::universal::xrpass::XRPass,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            crate::unity_engine::rendertexture::RenderTexture,
+            crate::unity_engine::rect::Rect,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, pass, cmd, rt, viewport, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
+pub trait IXRPass_CustomMirrorViewMethods: IXRPass_CustomMirrorView {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <XRPass_CustomMirrorView as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __XRPass_CustomMirrorView_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::rendering::universal::xrpass::XRPass, crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rect::Rect)` overload"]
+    fn invoke(
+        self,
+        pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrpass::XRPass>,
+        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
+        rt: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
+        viewport: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <XRPass_CustomMirrorView as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __XRPass_CustomMirrorView_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(pass),
+                ::core::convert::Into::into(cmd),
+                ::core::convert::Into::into(rt),
+                ::core::convert::Into::into(viewport),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
+impl<__T: IXRPass_CustomMirrorView> IXRPass_CustomMirrorViewMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrpass")]
+impl XRPass_CustomMirrorView {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRPass_CustomMirrorView),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRPass_CustomMirrorViewMethods>::ctor(this, object, method);
         this
     }
 }

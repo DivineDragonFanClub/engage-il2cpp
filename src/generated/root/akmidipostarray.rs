@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkMIDIPostArray")]
     #[parent(crate::system::object::Object)]
     pub struct AkMIDIPostArray {
+        #[offset(16)]
         #[rename(name = "m_Count")]
         pub m_count: i32,
+        #[offset(20)]
         #[rename(name = "SIZE_OF")]
         pub size_of: i32,
+        #[offset(24)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::IntPtr,
     }

@@ -20,34 +20,49 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Magic")]
     #[parent(crate::combat::launchbehaviour::LaunchBehaviour)]
     pub struct Magic {
+        #[offset(56)]
         #[rename(name = "BulletSettings")]
         pub bullet_settings: crate::combat::magicbulletsettings::MagicBulletSettings,
+        #[offset(64)]
         #[rename(name = "m_SignalProcessor")]
         pub m_signal_processor: crate::combat::magicsignalprocessor::MagicSignalProcessor,
+        #[offset(96)]
         #[rename(name = "Track開始時処理")]
         pub track開始時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(104)]
         #[rename(name = "Track魔法動作1処理")]
         pub track魔法動作1処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(112)]
         #[rename(name = "Track魔法動作2処理")]
         pub track魔法動作2処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(120)]
         #[rename(name = "Track魔法動作3処理")]
         pub track魔法動作3処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(128)]
         #[rename(name = "Trackヒット時処理")]
         pub trackヒット時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(136)]
         #[rename(name = "Trackミス時処理")]
         pub trackミス時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(144)]
         #[rename(name = "Trackガード時処理")]
         pub trackガード時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(152)]
         #[rename(name = "Trackパリィ時処理")]
         pub trackパリィ時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(160)]
         #[rename(name = "Track衝突時処理")]
         pub track衝突時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(168)]
         #[rename(name = "Track自然消滅処理")]
         pub track自然消滅処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(176)]
         #[rename(name = "Track打撃命中処理")]
         pub track打撃命中処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(184)]
         #[rename(name = "_homeNode")]
         pub home_node: crate::unity_engine::transform::Transform,
+        #[offset(192)]
         #[rename(name = "_targetNode")]
         pub target_node: crate::unity_engine::transform::Transform,
     }

@@ -20,32 +20,46 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RewindMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RewindMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_prev")]
         pub m_prev: crate::app::rewindmenuitemcontent::RewindMenuItemContent,
+        #[offset(80)]
         #[rename(name = "m_next")]
         pub m_next: crate::app::rewindmenuitemcontent::RewindMenuItemContent,
+        #[offset(88)]
         #[rename(name = "m_initStateName")]
         pub m_init_state_name: ::unity2::Il2CppString,
+        #[offset(96)]
         #[rename(name = "m_MenuPosIndex")]
         pub m_menu_pos_index: i32,
+        #[offset(104)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(112)]
         #[rename(name = "m_WindowImage")]
         pub m_window_image: crate::unity_engine::ui::image::Image,
+        #[offset(120)]
         #[rename(name = "m_WhiteImage")]
         pub m_white_image: crate::unity_engine::ui::image::Image,
+        #[offset(128)]
         #[rename(name = "m_LogText")]
         pub m_log_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(136)]
         #[rename(name = "m_UnitObject")]
         pub m_unit_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(152)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
         #[rename(name = "m_DieUnitIcon")]
         pub m_die_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(168)]
         #[rename(name = "m_DieIconImage")]
         pub m_die_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(176)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::rewindmenu::RewindMenu,
     }

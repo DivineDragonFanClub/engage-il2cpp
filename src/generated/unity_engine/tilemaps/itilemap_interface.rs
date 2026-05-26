@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,
+        #[offset(16)]
         #[rename(name = "m_Tilemap")]
         pub m_tilemap: crate::unity_engine::tilemaps::tilemap::Tilemap,
     }

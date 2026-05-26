@@ -62,43 +62,62 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: u16,
+        #[offset(16)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::Array<u8>,
+        #[offset(24)]
         #[rename(name = "m_Stream")]
         pub m_stream: crate::app::stream_2::Stream_2,
+        #[offset(32)]
         #[rename(name = "m_BufferOnServer")]
         pub m_buffer_on_server: ::unity2::Array<u8>,
+        #[offset(40)]
         #[rename(name = "m_SizeOnServer")]
         pub m_size_on_server: i32,
+        #[offset(48)]
         #[rename(name = "m_DataId")]
         pub m_data_id: u64,
+        #[offset(56)]
         #[rename(name = "m_DataCode")]
         pub m_data_code: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_UpdatedUnixTimeOnServer")]
         pub m_updated_unix_time_on_server: i64,
+        #[offset(72)]
         #[rename(name = "m_IsSecret")]
         pub m_is_secret: bool,
+        #[offset(80)]
         #[rename(name = "m_Cid")]
         pub m_cid: ::unity2::Il2CppString,
+        #[offset(88)]
         #[rename(name = "m_BeginUnixTime")]
         pub m_begin_unix_time: i64,
+        #[offset(96)]
         #[rename(name = "m_EndUnixTime")]
         pub m_end_unix_time: i64,
+        #[offset(104)]
         #[rename(name = "m_Turn")]
         pub m_turn: u8,
+        #[offset(108)]
         #[rename(name = "m_State")]
         pub m_state: crate::app::relayservermetadata::RelayServerMetaData_States,
+        #[offset(112)]
         #[rename(name = "m_PlayerIds")]
         pub m_player_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        #[offset(120)]
         #[rename(name = "m_PlayerNames")]
         pub m_player_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(128)]
         #[rename(name = "m_Pids")]
         pub m_pids: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(136)]
         #[rename(name = "m_PlayingCount")]
         pub m_playing_count: u32,
+        #[offset(144)]
         #[rename(name = "m_Awardees")]
         pub m_awardees:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::relayawardeedata::RelayAwardeeData>,
+        #[offset(152)]
         #[rename(name = "m_AwardRandomSeed")]
         pub m_award_random_seed: crate::app::randomseed::RandomSeed,
     }

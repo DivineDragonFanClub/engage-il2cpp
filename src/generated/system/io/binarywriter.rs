@@ -14,14 +14,19 @@ mod __types {
         #[static_field]
         #[rename(name = "Null")]
         pub null: crate::system::io::binarywriter::BinaryWriter,
+        #[offset(16)]
         #[rename(name = "OutStream")]
         pub out_stream: crate::system::io::stream::Stream,
+        #[offset(24)]
         #[rename(name = "_buffer")]
         pub buffer: ::unity2::Array<u8>,
+        #[offset(48)]
         #[rename(name = "_leaveOpen")]
         pub leave_open: bool,
+        #[offset(56)]
         #[rename(name = "_largeByteBuffer")]
         pub large_byte_buffer: ::unity2::Array<u8>,
+        #[offset(64)]
         #[rename(name = "_maxChars")]
         pub max_chars: i32,
     }

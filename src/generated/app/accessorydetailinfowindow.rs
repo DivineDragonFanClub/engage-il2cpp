@@ -15,33 +15,111 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydetailinfowindow/AccessoryDetailInfoWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryDetailInfoWindow")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AccessoryDetailInfoWindow {
-        #[rename(name = "m_AccessoryName")]
-        pub m_accessory_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Message")]
-        pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BodyParts")]
-        pub m_body_parts: ::unity2::Array<crate::app::accessorydetailinfowindow::AccessoryDetailInfoWindow_BodyParts>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydetailinfowindow/AccessoryDetailInfoWindow_BodyParts.md"))]
     #[::unity2::class(namespace = "App", name = "AccessoryDetailInfoWindow.BodyParts")]
     #[parent(crate::system::object::Object)]
     pub struct AccessoryDetailInfoWindow_BodyParts {
+        #[offset(16)]
         #[rename(name = "m_Object")]
         pub m_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_Text")]
         pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydetailinfowindow/AccessoryDetailInfoWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "AccessoryDetailInfoWindow")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct AccessoryDetailInfoWindow {
+        #[offset(24)]
+        #[rename(name = "m_AccessoryName")]
+        pub m_accessory_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
+        #[rename(name = "m_Message")]
+        pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
+        #[rename(name = "m_BodyParts")]
+        pub m_body_parts: ::unity2::Array<crate::app::accessorydetailinfowindow::AccessoryDetailInfoWindow_BodyParts>,
     }
 }
 
 #[cfg(feature = "app-accessorydetailinfowindow-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AccessoryDetailInfoWindow_BodyParts_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AccessoryDetailInfoWindow_BodyParts as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AccessoryDetailInfoWindow_BodyParts as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AccessoryDetailInfoWindow_BodyParts, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AccessoryDetailInfoWindow_BodyParts, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+pub trait IAccessoryDetailInfoWindow_BodyPartsMethods: IAccessoryDetailInfoWindow_BodyParts {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AccessoryDetailInfoWindow_BodyParts as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AccessoryDetailInfoWindow_BodyParts_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+impl<__T: IAccessoryDetailInfoWindow_BodyParts> IAccessoryDetailInfoWindow_BodyPartsMethods for __T {}
+
+#[cfg(feature = "app-accessorydetailinfowindow")]
+impl AccessoryDetailInfoWindow_BodyParts {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryDetailInfoWindow_BodyParts),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryDetailInfoWindow_BodyPartsMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-accessorydetailinfowindow")]
 #[doc(hidden)]
@@ -295,78 +373,6 @@ impl AccessoryDetailInfoWindow {
             )
         });
         <Self as IAccessoryDetailInfoWindowMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-accessorydetailinfowindow")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AccessoryDetailInfoWindow_BodyParts_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryDetailInfoWindow_BodyParts as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AccessoryDetailInfoWindow_BodyParts as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AccessoryDetailInfoWindow_BodyParts, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AccessoryDetailInfoWindow_BodyParts, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-accessorydetailinfowindow")]
-pub trait IAccessoryDetailInfoWindow_BodyPartsMethods: IAccessoryDetailInfoWindow_BodyParts {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AccessoryDetailInfoWindow_BodyParts as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AccessoryDetailInfoWindow_BodyParts_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-accessorydetailinfowindow")]
-impl<__T: IAccessoryDetailInfoWindow_BodyParts> IAccessoryDetailInfoWindow_BodyPartsMethods for __T {}
-
-#[cfg(feature = "app-accessorydetailinfowindow")]
-impl AccessoryDetailInfoWindow_BodyParts {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryDetailInfoWindow_BodyParts),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryDetailInfoWindow_BodyPartsMethods>::ctor(this);
         this
     }
 }

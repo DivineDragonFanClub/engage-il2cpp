@@ -17,16 +17,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PrivateEffectCatalog")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct PrivateEffectCatalog {
+        #[offset(24)]
         #[rename(name = "TrailMeshPrefab")]
         pub trail_mesh_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "AppearEffect")]
         pub appear_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "DisappearEffect")]
         pub disappear_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "SyncHitEffect")]
         pub sync_hit_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "GuardEffectPrefab")]
         pub guard_effect_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "GuardEffectNodeName")]
         pub guard_effect_node_name: ::unity2::Il2CppString,
     }

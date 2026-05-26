@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "WWWForm")]
     #[parent(crate::system::object::Object)]
     pub struct WWWForm {
+        #[offset(16)]
         #[rename(name = "formData")]
         pub form_data: crate::system::collections::generic::list_1::List_1<::unity2::Array<u8>>,
+        #[offset(24)]
         #[rename(name = "fieldNames")]
         pub field_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(32)]
         #[rename(name = "fileNames")]
         pub file_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(40)]
         #[rename(name = "types")]
         pub types: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(48)]
         #[rename(name = "boundary")]
         pub boundary: ::unity2::Array<u8>,
+        #[offset(56)]
         #[rename(name = "containsFiles")]
         pub contains_files: bool,
     }

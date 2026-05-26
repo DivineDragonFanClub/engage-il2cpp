@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ArenaBondLevelSelectMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ArenaBondLevelSelectMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_LevelTitle")]
         pub m_level_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_Cost")]
         pub m_cost: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_CostIcon")]
         pub m_cost_icon: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_TalkRoot")]
         pub m_talk_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_TalkIcon")]
         pub m_talk_icon: crate::unity_engine::ui::image::Image,
     }

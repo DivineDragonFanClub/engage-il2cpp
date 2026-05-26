@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TargetHideMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct TargetHideMarker {
+        #[offset(40)]
         #[rename(name = "targetLocator")]
         pub target_locator: ::unity2::Array<::unity2::Il2CppString>,
     }

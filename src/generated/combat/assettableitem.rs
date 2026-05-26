@@ -11,18 +11,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "AssetTableItem")]
     #[parent(crate::system::object::Object)]
     pub struct AssetTableItem {
+        #[offset(16)]
         #[rename(name = "PresetName")]
         pub preset_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "Mode")]
         pub mode: u8,
+        #[offset(32)]
         #[rename(name = "Conditions")]
         pub conditions: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "BodyModel")]
         pub body_model: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "BodyTexture")]
         pub body_texture: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "DressModel")]
         pub dress_model: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "DressTexture")]
         pub dress_texture: ::unity2::Il2CppString,
     }

@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardFlags")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: profilecardflags :: ProfileCardFlags >)]
     pub struct ProfileCardFlags {
+        #[offset(32)]
         #[rename(name = "m_Dictionary")]
         pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, bool>,
     }

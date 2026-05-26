@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InterpolatorRotationCurve")]
     #[parent(crate::system::object::Object)]
     pub struct InterpolatorRotationCurve {
+        #[offset(28)]
         #[rename(name = "m_time")]
         pub m_time: f32,
+        #[offset(32)]
         #[rename(name = "m_term")]
         pub m_term: f32,
     }

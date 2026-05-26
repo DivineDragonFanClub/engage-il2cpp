@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "UnitSelectMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct UnitSelectMenuContent_2 {
+        #[offset(232)]
         #[rename(name = "m_RelianceContent")]
         pub m_reliance_content: crate::app::eatunitsselectmenureliancecontent::EatUnitsSelectMenuRelianceContent,
+        #[offset(240)]
         #[rename(name = "m_winSubAnimatorList")]
         pub m_win_sub_animator_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animator::Animator>,
+        #[offset(248)]
         #[rename(name = "m_FriendText")]
         pub m_friend_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_RelianceText")]
         pub m_reliance_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

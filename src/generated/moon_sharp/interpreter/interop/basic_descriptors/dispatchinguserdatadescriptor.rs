@@ -11,13 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors", name = "DispatchingUserDataDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct DispatchingUserDataDescriptor {
+        #[offset(16)]
         #[rename(name = "m_ExtMethodsVersion")]
         pub m_ext_methods_version: i32,
+        #[offset(24)]
         #[rename(name = "m_MetaMembers")]
         pub m_meta_members: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,
         >,
+        #[offset(32)]
         #[rename(name = "m_Members")]
         pub m_members: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,

@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteAnimator")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TMP_SpriteAnimator {
+        #[offset(24)]
         #[rename(name = "m_animations")]
         pub m_animations: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, bool>,
+        #[offset(32)]
         #[rename(name = "m_TextComponent")]
         pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
     }

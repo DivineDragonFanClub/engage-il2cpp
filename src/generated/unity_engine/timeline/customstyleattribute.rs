@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/customstyleattribute/CustomStyleAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "CustomStyleAttribute")]
     pub struct CustomStyleAttribute {
+        #[offset(16)]
         #[rename(name = "ussStyle")]
         pub uss_style: ::unity2::Il2CppString,
     }

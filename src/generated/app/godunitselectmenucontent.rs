@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodUnitSelectMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct GodUnitSelectMenuContent {
+        #[offset(232)]
         #[rename(name = "m_ConditionIcons")]
         pub m_condition_icons: crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite>,
     }

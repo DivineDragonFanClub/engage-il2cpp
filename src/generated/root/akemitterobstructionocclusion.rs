@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkEmitterObstructionOcclusion")]
     #[parent(crate::root::akobstructionocclusion::AkObstructionOcclusion)]
     pub struct AkEmitterObstructionOcclusion {
+        #[offset(72)]
         #[rename(name = "m_gameObj")]
         pub m_game_obj: crate::root::akgameobj::AkGameObj,
     }

@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "", name = "UVFlag")]
     #[parent(crate::root::materialbehaviour::MaterialBehaviour)]
     pub struct UVFlag {
+        #[offset(80)]
         #[rename(name = "m_Cycle")]
         pub m_cycle: f32,
+        #[offset(84)]
         #[rename(name = "m_RangeU")]
         pub m_range_u: crate::unity_engine::vector2::Vector2,
+        #[offset(92)]
         #[rename(name = "m_RangeV")]
         pub m_range_v: crate::unity_engine::vector2::Vector2,
+        #[offset(100)]
         #[rename(name = "m_RangeX")]
         pub m_range_x: crate::unity_engine::vector2::Vector2,
+        #[offset(108)]
         #[rename(name = "m_RangeY")]
         pub m_range_y: crate::unity_engine::vector2::Vector2,
+        #[offset(116)]
         #[rename(name = "m_RangeZ")]
         pub m_range_z: crate::unity_engine::vector2::Vector2,
+        #[offset(124)]
         #[rename(name = "m_Position")]
         pub m_position: crate::unity_engine::vector3::Vector3,
     }

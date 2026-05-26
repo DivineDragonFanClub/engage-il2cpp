@@ -38,10 +38,13 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct ExtensionMethodsRegistry_UnresolvedGenericMethod {
+        #[offset(16)]
         #[rename(name = "Method")]
         pub method: crate::system::reflection::methodinfo::MethodInfo,
+        #[offset(24)]
         #[rename(name = "AccessMode")]
         pub access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+        #[offset(32)]
         #[rename(name = "AlreadyAddedTypes")]
         pub already_added_types: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::SystemType>,
     }

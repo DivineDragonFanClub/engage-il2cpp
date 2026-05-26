@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "ProxyUserDataDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct ProxyUserDataDescriptor {
+        #[offset(16)]
         #[rename(name = "m_ProxyDescriptor")]
         pub m_proxy_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+        #[offset(24)]
         #[rename(name = "m_ProxyFactory")]
         pub m_proxy_factory: crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory,
     }

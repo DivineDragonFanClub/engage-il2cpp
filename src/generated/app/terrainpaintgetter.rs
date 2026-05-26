@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TerrainPaintGetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TerrainPaintGetter {
+        #[offset(24)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::terrainpaintdata::TerrainPaintData,
+        #[offset(32)]
         #[rename(name = "m_drawDebugGizmo")]
         pub m_draw_debug_gizmo: bool,
+        #[offset(36)]
         #[rename(name = "m_debugGizmoHeight")]
         pub m_debug_gizmo_height: f32,
+        #[offset(40)]
         #[rename(name = "m_debugGizmoGridColor")]
         pub m_debug_gizmo_grid_color: crate::unity_engine::color::Color,
+        #[offset(56)]
         #[rename(name = "m_debugGizmoDrawIndex")]
         pub m_debug_gizmo_draw_index: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(64)]
         #[rename(name = "m_debugGizmoDrawAlpha")]
         pub m_debug_gizmo_draw_alpha: f32,
+        #[offset(72)]
         #[rename(name = "m_debugGizmoDrawColor")]
         pub m_debug_gizmo_draw_color: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
     }

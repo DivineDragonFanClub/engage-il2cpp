@@ -22,6 +22,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubGoToMap.GoToDialogItem")]
     #[parent(crate::app::confirmdialogitemfunc::ConfirmDialogItemFunc)]
     pub struct HubGoToMap_GoToDialogItem {
+        #[offset(120)]
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::gmapmode::GmapMode_Mode,
     }

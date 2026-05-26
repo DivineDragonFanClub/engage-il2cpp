@@ -14,18 +14,23 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::unity_engine::ui::canvasupdateregistry::CanvasUpdateRegistry,
+        #[offset(16)]
         #[rename(name = "m_PerformingLayoutUpdate")]
         pub m_performing_layout_update: bool,
+        #[offset(17)]
         #[rename(name = "m_PerformingGraphicUpdate")]
         pub m_performing_graphic_update: bool,
+        #[offset(24)]
         #[rename(name = "m_CanvasUpdateProfilerStrings")]
         pub m_canvas_update_profiler_strings: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "m_CullingUpdateProfilerString")]
         pub m_culling_update_profiler_string: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_LayoutRebuildQueue")]
         pub m_layout_rebuild_queue:
             crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+        #[offset(40)]
         #[rename(name = "m_GraphicRebuildQueue")]
         pub m_graphic_rebuild_queue:
             crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<crate::unity_engine::ui::icanvaselement::ICanvasElement>,

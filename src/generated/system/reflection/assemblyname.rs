@@ -11,28 +11,40 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyName")]
     #[parent(crate::system::object::Object)]
     pub struct AssemblyName {
+        #[offset(16)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "codebase")]
         pub codebase: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "major")]
         pub major: i32,
+        #[offset(36)]
         #[rename(name = "minor")]
         pub minor: i32,
+        #[offset(40)]
         #[rename(name = "build")]
         pub build: i32,
+        #[offset(44)]
         #[rename(name = "revision")]
         pub revision: i32,
+        #[offset(56)]
         #[rename(name = "flags")]
         pub flags: crate::system::reflection::assemblynameflags::AssemblyNameFlags,
+        #[offset(64)]
         #[rename(name = "keypair")]
         pub keypair: crate::system::reflection::strongnamekeypair::StrongNameKeyPair,
+        #[offset(72)]
         #[rename(name = "publicKey")]
         pub public_key: ::unity2::Array<u8>,
+        #[offset(80)]
         #[rename(name = "keyToken")]
         pub key_token: ::unity2::Array<u8>,
+        #[offset(104)]
         #[rename(name = "processor_architecture")]
         pub processor_architecture: crate::system::reflection::processorarchitecture::ProcessorArchitecture,
+        #[offset(108)]
         #[rename(name = "contentType")]
         pub content_type: crate::system::reflection::assemblycontenttype::AssemblyContentType,
     }

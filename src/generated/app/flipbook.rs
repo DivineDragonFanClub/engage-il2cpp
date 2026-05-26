@@ -19,46 +19,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))]
-    #[::unity2::class(namespace = "App", name = "Flipbook")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct Flipbook {
-        #[rename(name = "m_patterns")]
-        pub m_patterns: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_span")]
-        pub m_span: f32,
-        #[rename(name = "m_animateStrength")]
-        pub m_animate_strength: bool,
-        #[rename(name = "m_strength")]
-        pub m_strength: f32,
-        #[rename(name = "m_strengthCycle")]
-        pub m_strength_cycle: f32,
-        #[rename(name = "m_mode")]
-        pub m_mode: crate::app::flipbook::Flipbook_Mode,
-        #[rename(name = "m_autoPlay")]
-        pub m_auto_play: bool,
-        #[rename(name = "m_playing")]
-        pub m_playing: bool,
-        #[rename(name = "m_spanIndex")]
-        pub m_span_index: i32,
-        #[rename(name = "m_strengthCycleIndex")]
-        pub m_strength_cycle_index: i32,
-        #[rename(name = "m_patternIndex")]
-        pub m_pattern_index: i32,
-        #[rename(name = "m_patternCount")]
-        pub m_pattern_count: i32,
-        #[rename(name = "m_material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_targetTexture")]
-        pub m_target_texture: ::unity2::Il2CppString,
-        #[rename(name = "m_targetTextureId")]
-        pub m_target_texture_id: i32,
-        #[rename(name = "m_targetStrength")]
-        pub m_target_strength: ::unity2::Il2CppString,
-        #[rename(name = "m_targetStrengthId")]
-        pub m_target_strength_id: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -99,6 +59,63 @@ mod __types {
         pub fn delete_object() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))]
+    #[::unity2::class(namespace = "App", name = "Flipbook")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct Flipbook {
+        #[offset(24)]
+        #[rename(name = "m_patterns")]
+        pub m_patterns: crate::unity_engine::vector2::Vector2,
+        #[offset(32)]
+        #[rename(name = "m_span")]
+        pub m_span: f32,
+        #[offset(36)]
+        #[rename(name = "m_animateStrength")]
+        pub m_animate_strength: bool,
+        #[offset(40)]
+        #[rename(name = "m_strength")]
+        pub m_strength: f32,
+        #[offset(44)]
+        #[rename(name = "m_strengthCycle")]
+        pub m_strength_cycle: f32,
+        #[offset(48)]
+        #[rename(name = "m_mode")]
+        pub m_mode: crate::app::flipbook::Flipbook_Mode,
+        #[offset(52)]
+        #[rename(name = "m_autoPlay")]
+        pub m_auto_play: bool,
+        #[offset(53)]
+        #[rename(name = "m_playing")]
+        pub m_playing: bool,
+        #[offset(56)]
+        #[rename(name = "m_spanIndex")]
+        pub m_span_index: i32,
+        #[offset(60)]
+        #[rename(name = "m_strengthCycleIndex")]
+        pub m_strength_cycle_index: i32,
+        #[offset(64)]
+        #[rename(name = "m_patternIndex")]
+        pub m_pattern_index: i32,
+        #[offset(68)]
+        #[rename(name = "m_patternCount")]
+        pub m_pattern_count: i32,
+        #[offset(72)]
+        #[rename(name = "m_material")]
+        pub m_material: crate::unity_engine::material::Material,
+        #[offset(80)]
+        #[rename(name = "m_targetTexture")]
+        pub m_target_texture: ::unity2::Il2CppString,
+        #[offset(88)]
+        #[rename(name = "m_targetTextureId")]
+        pub m_target_texture_id: i32,
+        #[offset(96)]
+        #[rename(name = "m_targetStrength")]
+        pub m_target_strength: ::unity2::Il2CppString,
+        #[offset(104)]
+        #[rename(name = "m_targetStrengthId")]
+        pub m_target_strength_id: i32,
     }
 }
 

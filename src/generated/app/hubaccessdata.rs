@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubAccessData")]
     #[parent(crate::system::object::Object)]
     pub struct HubAccessData {
+        #[offset(16)]
         #[rename(name = "AID")]
         pub aid: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_flagName")]
         pub m_flag_name: ::unity2::Il2CppString,
+        #[offset(72)]
         #[rename(name = "m_messages")]
         pub m_messages: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[static_field]

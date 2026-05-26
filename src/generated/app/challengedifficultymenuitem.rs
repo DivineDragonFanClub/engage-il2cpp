@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ChallengeDifficultyMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct ChallengeDifficultyMenuItem {
+        #[offset(104)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler,
     }

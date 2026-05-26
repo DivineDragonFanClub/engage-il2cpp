@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertFortress")]
     #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
     pub struct ConvertFortress {
+        #[offset(44)]
         #[rename(name = "m_LastCameraPos")]
         pub m_last_camera_pos: crate::combat::cameraposition::CameraPosition,
     }

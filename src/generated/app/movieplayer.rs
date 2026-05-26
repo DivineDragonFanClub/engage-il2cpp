@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MoviePlayer")]
     #[parent(crate::app::movieplayerbase::MoviePlayerBase)]
     pub struct MoviePlayer {
+        #[offset(128)]
         #[rename(name = "m_VideoPlayer")]
         pub m_video_player: crate::unity_engine::video::videoplayer::VideoPlayer,
+        #[offset(136)]
         #[rename(name = "m_IsSoundEventEnable")]
         pub m_is_sound_event_enable: bool,
+        #[offset(137)]
         #[rename(name = "m_triggerStop")]
         pub m_trigger_stop: bool,
     }

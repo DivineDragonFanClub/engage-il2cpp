@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "MaxFloatParameter")]
     #[parent(crate::unity_engine::rendering::floatparameter::FloatParameter)]
     pub struct MaxFloatParameter {
+        #[offset(24)]
         #[rename(name = "max")]
         pub max: f32,
     }

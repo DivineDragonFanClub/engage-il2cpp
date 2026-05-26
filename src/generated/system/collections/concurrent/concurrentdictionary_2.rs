@@ -7,16 +7,18 @@ mod __types {
     use super::*;
     use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2_Tables.md"))]
-    #[::unity2::class(namespace = "System.Collections.Concurrent", name = "ConcurrentDictionary`2.Tables")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2_Node.md"))]
+    #[::unity2::class(namespace = "System.Collections.Concurrent", name = "ConcurrentDictionary`2.Node")]
     #[parent(crate::system::object::Object)]
-    pub struct ConcurrentDictionary_2_Tables<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-        #[rename(name = "_buckets")]
-        pub buckets: ::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>>,
-        #[rename(name = "_locks")]
-        pub locks: ::unity2::Array<crate::system::object::Object>,
-        #[rename(name = "_countPerLock")]
-        pub count_per_lock: ::unity2::Array<i32>,
+    pub struct ConcurrentDictionary_2_Node<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+        #[rename(name = "_key")]
+        pub key: T0,
+        #[rename(name = "_value")]
+        pub value: T1,
+        #[rename(name = "_next")]
+        pub next: crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>,
+        #[rename(name = "_hashcode")]
+        pub hashcode: i32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2.md"))]
@@ -36,20 +38,6 @@ mod __types {
         pub s_is_value_write_atomic: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2_Node.md"))]
-    #[::unity2::class(namespace = "System.Collections.Concurrent", name = "ConcurrentDictionary`2.Node")]
-    #[parent(crate::system::object::Object)]
-    pub struct ConcurrentDictionary_2_Node<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-        #[rename(name = "_key")]
-        pub key: T0,
-        #[rename(name = "_value")]
-        pub value: T1,
-        #[rename(name = "_next")]
-        pub next: crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>,
-        #[rename(name = "_hashcode")]
-        pub hashcode: i32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2_DictionaryEnumerator.md"))]
     #[::unity2::class(namespace = "System.Collections.Concurrent", name = "ConcurrentDictionary`2.DictionaryEnumerator")]
     #[parent(crate::system::object::Object)]
@@ -59,6 +47,18 @@ mod __types {
             crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<T0, T1>,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2_Tables.md"))]
+    #[::unity2::class(namespace = "System.Collections.Concurrent", name = "ConcurrentDictionary`2.Tables")]
+    #[parent(crate::system::object::Object)]
+    pub struct ConcurrentDictionary_2_Tables<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+        #[rename(name = "_buckets")]
+        pub buckets: ::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>>,
+        #[rename(name = "_locks")]
+        pub locks: ::unity2::Array<crate::system::object::Object>,
+        #[rename(name = "_countPerLock")]
+        pub count_per_lock: ::unity2::Array<i32>,
+    }
 }
 
 #[cfg(feature = "system-collections-concurrent-concurrentdictionary_2-types")]
@@ -66,33 +66,35 @@ pub use __types::*;
 
 #[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Tables<T0, T1> {
-    #[doc = "`.ctor(::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>>, ::unity2::Array<crate::system::object::Object>, ::unity2::Array<i32>)` overload"]
-    #[method(name = ".ctor", args = 3)]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
+    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` overload"]
+    #[method(name = ".ctor", args = 4)]
     pub fn ctor(
         self,
-        buckets: ::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>>,
-        locks: ::unity2::Array<crate::system::object::Object>,
-        count_per_lock: ::unity2::Array<i32>,
+        key: T0,
+        value: T1,
+        hashcode: i32,
+        next: crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>,
     ) -> ();
 }
 
 #[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Tables<T0, T1> {
-    #[doc = "`.ctor(::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>>, ::unity2::Array<crate::system::object::Object>, ::unity2::Array<i32>)` — overload selector"]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
+    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` — overload selector"]
     pub fn new(
-        buckets: ::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>>,
-        locks: ::unity2::Array<crate::system::object::Object>,
-        count_per_lock: ::unity2::Array<i32>,
+        key: T0,
+        value: T1,
+        hashcode: i32,
+        next: crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ConcurrentDictionary_2_Tables),
+                ::core::stringify!(ConcurrentDictionary_2_Node),
                 ::core::stringify!(new),
             )
         });
-        <Self as IConcurrentDictionary_2_TablesMethods<T0, T1>>::ctor(this, buckets, locks, count_per_lock);
+        <Self as IConcurrentDictionary_2_NodeMethods<T0, T1>>::ctor(this, key, value, hashcode, next);
         this
     }
 }
@@ -322,41 +324,6 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDiction
 
 #[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
-    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        key: T0,
-        value: T1,
-        hashcode: i32,
-        next: crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>,
-    ) -> ();
-}
-
-#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
-    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` — overload selector"]
-    pub fn new(
-        key: T0,
-        value: T1,
-        hashcode: i32,
-        next: crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConcurrentDictionary_2_Node),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConcurrentDictionary_2_NodeMethods<T0, T1>>::ctor(this, key, value, hashcode, next);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
-#[::unity2::methods]
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_DictionaryEnumerator<T0, T1> {
     #[doc = "`.ctor(crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2<T0,T1>)` overload"]
     #[method(name = ".ctor", args = 1)]
@@ -399,6 +366,39 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDiction
             )
         });
         <Self as IConcurrentDictionary_2_DictionaryEnumeratorMethods<T0, T1>>::ctor(this, dictionary);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Tables<T0, T1> {
+    #[doc = "`.ctor(::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>>, ::unity2::Array<crate::system::object::Object>, ::unity2::Array<i32>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        buckets: ::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>>,
+        locks: ::unity2::Array<crate::system::object::Object>,
+        count_per_lock: ::unity2::Array<i32>,
+    ) -> ();
+}
+
+#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Tables<T0, T1> {
+    #[doc = "`.ctor(::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>>, ::unity2::Array<crate::system::object::Object>, ::unity2::Array<i32>)` — overload selector"]
+    pub fn new(
+        buckets: ::unity2::Array<crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0, T1>>,
+        locks: ::unity2::Array<crate::system::object::Object>,
+        count_per_lock: ::unity2::Array<i32>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConcurrentDictionary_2_Tables),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConcurrentDictionary_2_TablesMethods<T0, T1>>::ctor(this, buckets, locks, count_per_lock);
         this
     }
 }

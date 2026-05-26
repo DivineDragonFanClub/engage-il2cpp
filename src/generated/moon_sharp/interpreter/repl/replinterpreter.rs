@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.REPL", name = "ReplInterpreter")]
     #[parent(crate::system::object::Object)]
     pub struct ReplInterpreter {
+        #[offset(16)]
         #[rename(name = "m_Script")]
         pub m_script: crate::moon_sharp::interpreter::script::Script,
+        #[offset(24)]
         #[rename(name = "m_CurrentCommand")]
         pub m_current_command: ::unity2::Il2CppString,
     }

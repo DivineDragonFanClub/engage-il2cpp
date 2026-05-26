@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapMapInfoContent.ItemInfo")]
     #[parent(crate::system::object::Object)]
     pub struct GmapMapInfoContent_ItemInfo {
+        #[offset(16)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_Name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_Sub")]
         pub m_sub: crate::unity_engine::gameobject::GameObject,
     }
@@ -39,83 +43,122 @@ mod __types {
         #[static_field]
         #[rename(name = "SpriteAtlasPath")]
         pub sprite_atlas_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_SpriteAtlas")]
         pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(32)]
         #[rename(name = "m_MapInfoAnim")]
         pub m_map_info_anim: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_MapInfoImage")]
         pub m_map_info_image: crate::unity_engine::ui::image::Image,
+        #[offset(48)]
         #[rename(name = "m_MapInfoChapterObj")]
         pub m_map_info_chapter_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_MapInfoTitle")]
         pub m_map_info_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_MapInfoIconExpObj")]
         pub m_map_info_icon_exp_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_MapInfoIconCoinObj")]
         pub m_map_info_icon_coin_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_MapInfoIconEncountObj")]
         pub m_map_info_icon_encount_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_MapInfoMessageRootObj")]
         pub m_map_info_message_root_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_MapInfoMessageStoryObj")]
         pub m_map_info_message_story_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_MapInfoMessageEncountObj")]
         pub m_map_info_message_encount_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_MapInfoLvRootObj")]
         pub m_map_info_lv_root_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_MapInfoLvObj")]
         pub m_map_info_lv_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_MapInfoCountryName")]
         pub m_map_info_country_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(136)]
         #[rename(name = "m_MapInfoCountryLv")]
         pub m_map_info_country_lv: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(144)]
         #[rename(name = "m_ItemMaterialList")]
         pub m_item_material_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(152)]
         #[rename(name = "m_ItemFoodList")]
         pub m_item_food_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(160)]
         #[rename(name = "m_ItemAnimalList")]
         pub m_item_animal_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(168)]
         #[rename(name = "m_ItemInfoMaterialList")]
         pub m_item_info_material_list:
             crate::system::collections::generic::list_1::List_1<crate::app::gmapmapinfocontent::GmapMapInfoContent_ItemInfo>,
+        #[offset(176)]
         #[rename(name = "m_ItemInfoFoodList")]
         pub m_item_info_food_list: crate::system::collections::generic::list_1::List_1<crate::app::gmapmapinfocontent::GmapMapInfoContent_ItemInfo>,
+        #[offset(184)]
         #[rename(name = "m_ItemInfoAnimalList")]
         pub m_item_info_animal_list: crate::system::collections::generic::list_1::List_1<crate::app::gmapmapinfocontent::GmapMapInfoContent_ItemInfo>,
+        #[offset(192)]
         #[rename(name = "m_MapInfoSprite")]
         pub m_map_info_sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(200)]
         #[rename(name = "m_EncountInfo")]
         pub m_encount_info: crate::unity_engine::gameobject::GameObject,
+        #[offset(208)]
         #[rename(name = "m_EncountInfoAnim")]
         pub m_encount_info_anim: crate::unity_engine::animator::Animator,
+        #[offset(216)]
         #[rename(name = "m_MainTitle")]
         pub m_main_title: crate::unity_engine::gameobject::GameObject,
+        #[offset(224)]
         #[rename(name = "m_GodTitle")]
         pub m_god_title: crate::unity_engine::gameobject::GameObject,
+        #[offset(232)]
         #[rename(name = "m_EvilTitle")]
         pub m_evil_title: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_MainValue")]
         pub m_main_value: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_GodValue")]
         pub m_god_value: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_EvilValue")]
         pub m_evil_value: crate::unity_engine::gameobject::GameObject,
+        #[offset(264)]
         #[rename(name = "m_MainNormal")]
         pub m_main_normal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_MainGoldRare")]
         pub m_main_gold_rare: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_MainExpRare")]
         pub m_main_exp_rare: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_GodNormal")]
         pub m_god_normal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(296)]
         #[rename(name = "m_GodGoldRare")]
         pub m_god_gold_rare: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(304)]
         #[rename(name = "m_GodExpRare")]
         pub m_god_exp_rare: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(312)]
         #[rename(name = "m_EvilNormal")]
         pub m_evil_normal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(320)]
         #[rename(name = "m_EvilGoldRare")]
         pub m_evil_gold_rare: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(328)]
         #[rename(name = "m_EvilExpRare")]
         pub m_evil_exp_rare: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

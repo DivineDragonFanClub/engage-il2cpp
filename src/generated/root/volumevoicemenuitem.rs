@@ -27,10 +27,13 @@ mod __types {
         #[static_field]
         #[rename(name = "PlayWaitFrame")]
         pub play_wait_frame: i32,
+        #[offset(136)]
         #[rename(name = "m_Hero")]
         pub m_hero: crate::app::unit::Unit,
+        #[offset(144)]
         #[rename(name = "m_IsPlay")]
         pub m_is_play: bool,
+        #[offset(148)]
         #[rename(name = "m_WaitFrame")]
         pub m_wait_frame: i32,
     }

@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WellItemSelectMenuItem")]
     #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
     pub struct WellItemSelectMenuItem {
+        #[offset(100)]
         #[rename(name = "m_OwnerItemIndex")]
         pub m_owner_item_index: i32,
+        #[offset(104)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(112)]
         #[rename(name = "m_SortIndex")]
         pub m_sort_index: i32,
+        #[offset(116)]
         #[rename(name = "m_IsMarking")]
         pub m_is_marking: bool,
+        #[offset(120)]
         #[rename(name = "m_Expected")]
         pub m_expected: i32,
     }

@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TradeRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TradeRoot {
+        #[offset(24)]
         #[rename(name = "m_ItemListLeft")]
         pub m_item_list_left: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_ItemListRight")]
         pub m_item_list_right: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_ItemInfo")]
         pub m_item_info: crate::unity_engine::gameobject::GameObject,
     }

@@ -26,20 +26,28 @@ mod __types {
         #[static_field]
         #[rename(name = "BattleSequenceObjName")]
         pub battle_sequence_obj_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_PrefabHandle")]
         pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(40)]
         #[rename(name = "m_IsValid")]
         pub m_is_valid: bool,
+        #[offset(48)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_BattleInfoL")]
         pub m_battle_info_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_BattleInfoR")]
         pub m_battle_info_r: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_Singles")]
         pub m_singles: ::unity2::Array<crate::app::mapbattleinfowindowsingle::MapBattleInfoWindowSingle>,
+        #[offset(80)]
         #[rename(name = "m_BattleSequence")]
         pub m_battle_sequence: crate::app::mapbattleinfosequence::MapBattleInfoSequence,
+        #[offset(88)]
         #[rename(name = "m_SupportInfos")]
         pub m_support_infos: ::unity2::Array<crate::app::supportinfo::SupportInfo>,
     }

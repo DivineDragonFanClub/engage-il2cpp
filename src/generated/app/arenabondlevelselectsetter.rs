@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ArenaBondLevelSelectSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ArenaBondLevelSelectSetter {
+        #[offset(24)]
         #[rename(name = "m_Abilitys")]
         pub m_abilitys: ::unity2::Array<crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent>,
     }

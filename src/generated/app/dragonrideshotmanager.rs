@@ -14,22 +14,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideShotManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideshotmanager :: DragonRideShotManager >)]
     pub struct DragonRideShotManager {
+        #[offset(32)]
         #[rename(name = "m_PoolParent")]
         pub m_pool_parent: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_UseCount")]
         pub m_use_count: i32,
+        #[offset(44)]
         #[rename(name = "m_ReturnCount")]
         pub m_return_count: i32,
+        #[offset(48)]
         #[rename(name = "m_ReservePoolArray")]
         pub m_reserve_pool_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(56)]
         #[rename(name = "MaxShotCount")]
         pub max_shot_count: i32,
+        #[offset(60)]
         #[rename(name = "m_DefaultInterpSecond")]
         pub m_default_interp_second: f32,
+        #[offset(64)]
         #[rename(name = "m_DefaultShotSpeed")]
         pub m_default_shot_speed: f32,
+        #[offset(68)]
         #[rename(name = "m_DefaultLifeSecond")]
         pub m_default_life_second: f32,
+        #[offset(72)]
         #[rename(name = "m_IsPenetrate")]
         pub m_is_penetrate: bool,
     }

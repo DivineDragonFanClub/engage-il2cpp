@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotFoodSelectItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct MascotFoodSelectItemContent {
+        #[offset(72)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_Count")]
         pub m_count: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
     }

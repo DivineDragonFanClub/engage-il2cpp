@@ -19,62 +19,54 @@ mod __types {
         },
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformanimation/TransformAnimation_Actions.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TransformAnimation_Actions {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TransformAnimation_Actions {
+        const NAME: &'static str = "TransformAnimation.Actions";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TransformAnimation_Actions {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TransformAnimation_Actions {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn r#loop() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn repeat() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation.md"))]
     #[::unity2::class(namespace = "App", name = "TransformAnimation")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TransformAnimation {
+        #[offset(24)]
         #[rename(name = "m_Animations")]
         pub m_animations: ::unity2::Array<crate::app::transformanimation::TransformAnimation_Animation>,
+        #[offset(32)]
         #[rename(name = "m_Animators")]
         pub m_animators: crate::system::collections::generic::list_1::List_1<crate::app::transformanimation::TransformAnimation_Animator>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animation.md"))]
-    #[::unity2::class(namespace = "App", name = "TransformAnimation.Animation")]
-    #[parent(crate::system::object::Object)]
-    pub struct TransformAnimation_Animation {
-        #[rename(name = "Kind")]
-        pub kind: crate::app::transformanimation::TransformAnimation_Kinds,
-        #[rename(name = "Action")]
-        pub action: crate::app::transformanimation::TransformAnimation_Actions,
-        #[rename(name = "Start")]
-        pub start: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "End")]
-        pub end: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "Cycle")]
-        pub cycle: f32,
-        #[rename(name = "IsRandom")]
-        pub is_random: bool,
-        #[rename(name = "Tragets")]
-        pub tragets: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator_Node.md"))]
-    #[::unity2::class(namespace = "App", name = "TransformAnimation.Animator.Node")]
-    #[parent(crate::system::object::Object)]
-    pub struct TransformAnimation_Animator_Node {
-        #[rename(name = "m_Target")]
-        pub m_target: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_Start")]
-        pub m_start: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_End")]
-        pub m_end: crate::unity_engine::vector3::Vector3,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator.md"))]
-    #[::unity2::class(namespace = "App", name = "TransformAnimation.Animator")]
-    #[parent(crate::system::object::Object)]
-    pub struct TransformAnimation_Animator {
-        #[rename(name = "m_Animation")]
-        pub m_animation: crate::app::transformanimation::TransformAnimation_Animation,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_Cycle")]
-        pub m_cycle: f32,
-        #[rename(name = "m_Inverse")]
-        pub m_inverse: f32,
-        #[rename(name = "m_Nodes")]
-        pub m_nodes: crate::system::collections::generic::list_1::List_1<crate::app::transformanimation::TransformAnimation_Animator_Node>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformanimation/TransformAnimation_Kinds.md"))]
@@ -119,42 +111,67 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformanimation/TransformAnimation_Actions.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TransformAnimation_Actions {
-        pub value: i32,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator_Node.md"))]
+    #[::unity2::class(namespace = "App", name = "TransformAnimation.Animator.Node")]
+    #[parent(crate::system::object::Object)]
+    pub struct TransformAnimation_Animator_Node {
+        #[offset(16)]
+        #[rename(name = "m_Target")]
+        pub m_target: crate::unity_engine::transform::Transform,
+        #[offset(24)]
+        #[rename(name = "m_Start")]
+        pub m_start: crate::unity_engine::vector3::Vector3,
+        #[offset(36)]
+        #[rename(name = "m_End")]
+        pub m_end: crate::unity_engine::vector3::Vector3,
     }
 
-    impl ::unity2::ClassIdentity for TransformAnimation_Actions {
-        const NAME: &'static str = "TransformAnimation.Actions";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animation.md"))]
+    #[::unity2::class(namespace = "App", name = "TransformAnimation.Animation")]
+    #[parent(crate::system::object::Object)]
+    pub struct TransformAnimation_Animation {
+        #[offset(16)]
+        #[rename(name = "Kind")]
+        pub kind: crate::app::transformanimation::TransformAnimation_Kinds,
+        #[offset(20)]
+        #[rename(name = "Action")]
+        pub action: crate::app::transformanimation::TransformAnimation_Actions,
+        #[offset(24)]
+        #[rename(name = "Start")]
+        pub start: crate::unity_engine::vector3::Vector3,
+        #[offset(36)]
+        #[rename(name = "End")]
+        pub end: crate::unity_engine::vector3::Vector3,
+        #[offset(48)]
+        #[rename(name = "Cycle")]
+        pub cycle: f32,
+        #[offset(52)]
+        #[rename(name = "IsRandom")]
+        pub is_random: bool,
+        #[offset(56)]
+        #[rename(name = "Tragets")]
+        pub tragets: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
     }
 
-    impl ::unity2::IlType for TransformAnimation_Actions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl TransformAnimation_Actions {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn r#loop() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn repeat() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator.md"))]
+    #[::unity2::class(namespace = "App", name = "TransformAnimation.Animator")]
+    #[parent(crate::system::object::Object)]
+    pub struct TransformAnimation_Animator {
+        #[offset(16)]
+        #[rename(name = "m_Animation")]
+        pub m_animation: crate::app::transformanimation::TransformAnimation_Animation,
+        #[offset(24)]
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[offset(28)]
+        #[rename(name = "m_Cycle")]
+        pub m_cycle: f32,
+        #[offset(32)]
+        #[rename(name = "m_Inverse")]
+        pub m_inverse: f32,
+        #[offset(40)]
+        #[rename(name = "m_Nodes")]
+        pub m_nodes: crate::system::collections::generic::list_1::List_1<crate::app::transformanimation::TransformAnimation_Animator_Node>,
     }
 }
 
@@ -354,159 +371,6 @@ impl TransformAnimation {
 #[cfg(feature = "app-transformanimation")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TransformAnimation_Animation_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TransformAnimation_Animation as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TransformAnimation_Animation as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TransformAnimation_Animation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TransformAnimation_Animation, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cycle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TransformAnimation_Animation as ::unity2::ClassIdentity>::class(),
-                "CalcCycle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TransformAnimation_Animation as ::unity2::ClassIdentity>::NAME,
-                        "CalcCycle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cycle(this: TransformAnimation_Animation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(TransformAnimation_Animation, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cycle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_inverse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TransformAnimation_Animation as ::unity2::ClassIdentity>::class(),
-                "CalcInverse",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TransformAnimation_Animation as ::unity2::ClassIdentity>::NAME,
-                        "CalcInverse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_inverse(this: TransformAnimation_Animation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(TransformAnimation_Animation, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_inverse::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-transformanimation")]
-pub trait ITransformAnimation_AnimationMethods: ITransformAnimation_Animation {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TransformAnimation_Animation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TransformAnimation_Animation_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcCycle()` overload"]
-    fn calc_cycle(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <TransformAnimation_Animation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TransformAnimation_Animation_unity2_raw::calc_cycle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcInverse()` overload"]
-    fn calc_inverse(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <TransformAnimation_Animation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TransformAnimation_Animation_unity2_raw::calc_inverse(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-transformanimation")]
-impl<__T: ITransformAnimation_Animation> ITransformAnimation_AnimationMethods for __T {}
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animation {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TransformAnimation_Animation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITransformAnimation_AnimationMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-transformanimation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __TransformAnimation_Animator_Node_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -687,6 +551,159 @@ impl TransformAnimation_Animator_Node {
             )
         });
         <Self as ITransformAnimation_Animator_NodeMethods>::ctor(this, go);
+        this
+    }
+}
+
+#[cfg(feature = "app-transformanimation")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TransformAnimation_Animation_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAnimation_Animation as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TransformAnimation_Animation as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TransformAnimation_Animation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TransformAnimation_Animation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_cycle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAnimation_Animation as ::unity2::ClassIdentity>::class(),
+                "CalcCycle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TransformAnimation_Animation as ::unity2::ClassIdentity>::NAME,
+                        "CalcCycle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_cycle(this: TransformAnimation_Animation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(TransformAnimation_Animation, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_cycle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_inverse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TransformAnimation_Animation as ::unity2::ClassIdentity>::class(),
+                "CalcInverse",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TransformAnimation_Animation as ::unity2::ClassIdentity>::NAME,
+                        "CalcInverse",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_inverse(this: TransformAnimation_Animation, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(TransformAnimation_Animation, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_inverse::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-transformanimation")]
+pub trait ITransformAnimation_AnimationMethods: ITransformAnimation_Animation {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TransformAnimation_Animation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TransformAnimation_Animation_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcCycle()` overload"]
+    fn calc_cycle(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <TransformAnimation_Animation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TransformAnimation_Animation_unity2_raw::calc_cycle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcInverse()` overload"]
+    fn calc_inverse(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <TransformAnimation_Animation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TransformAnimation_Animation_unity2_raw::calc_inverse(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-transformanimation")]
+impl<__T: ITransformAnimation_Animation> ITransformAnimation_AnimationMethods for __T {}
+
+#[cfg(feature = "app-transformanimation")]
+impl TransformAnimation_Animation {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TransformAnimation_Animation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITransformAnimation_AnimationMethods>::ctor(this);
         this
     }
 }

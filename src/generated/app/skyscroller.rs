@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkyScroller")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SkyScroller {
+        #[offset(24)]
         #[rename(name = "ScrollSpeed")]
         pub scroll_speed: f32,
+        #[offset(32)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
     }

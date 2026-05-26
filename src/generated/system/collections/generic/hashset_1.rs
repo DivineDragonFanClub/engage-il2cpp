@@ -10,15 +10,15 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_ElementCount.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Slot.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct HashSet_1_ElementCount<T0> {
+    pub struct HashSet_1_Slot<T0> {
         pub _phantom: ::core::marker::PhantomData<(T0,)>,
     }
 
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_ElementCount<T0> {
-        const NAME: &'static str = "HashSet`1.ElementCount";
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0> {
+        const NAME: &'static str = "HashSet`1.Slot";
         const NAMESPACE: &'static str = "System.Collections.Generic";
 
         fn class() -> ::unity2::Class {
@@ -32,7 +32,7 @@ mod __types {
         }
     }
 
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_ElementCount<T0> {
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Slot<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -79,34 +79,6 @@ mod __types {
         pub version: i32,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Slot.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct HashSet_1_Slot<T0> {
-        pub _phantom: ::core::marker::PhantomData<(T0,)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0> {
-        const NAME: &'static str = "HashSet`1.Slot";
-        const NAMESPACE: &'static str = "System.Collections.Generic";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| {
-                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                    .expect("generic instantiation")
-            })
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Slot<T0> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Enumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -130,6 +102,34 @@ mod __types {
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Enumerator<T0> {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_ElementCount.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct HashSet_1_ElementCount<T0> {
+        pub _phantom: ::core::marker::PhantomData<(T0,)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_ElementCount<T0> {
+        const NAME: &'static str = "HashSet`1.ElementCount";
+        const NAMESPACE: &'static str = "System.Collections.Generic";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| {
+                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                    .expect("generic instantiation")
+            })
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_ElementCount<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }

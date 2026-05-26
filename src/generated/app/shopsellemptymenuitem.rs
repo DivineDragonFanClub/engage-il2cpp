@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopSellEmptyMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct ShopSellEmptyMenuItem {
+        #[offset(104)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler,
+        #[offset(112)]
         #[rename(name = "m_ChangeUnitToPrevEventHandler")]
         pub m_change_unit_to_prev_event_handler: crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler,
+        #[offset(120)]
         #[rename(name = "m_ChangeUnitToNextEventHandler")]
         pub m_change_unit_to_next_event_handler: crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler,
     }

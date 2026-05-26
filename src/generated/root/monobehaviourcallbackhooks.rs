@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MonoBehaviourCallbackHooks")]
     # [parent (crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: ComponentSingleton_1_2 < crate :: root :: monobehaviourcallbackhooks :: MonoBehaviourCallbackHooks >)]
     pub struct MonoBehaviourCallbackHooks {
+        #[offset(24)]
         #[rename(name = "m_OnUpdateDelegate")]
         pub m_on_update_delegate: crate::system::action_1::Action_1<f32>,
     }

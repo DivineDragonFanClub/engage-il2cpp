@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GroupItemScope")]
     #[parent(crate::system::object::Object)]
     pub struct GroupItemScope {
+        #[offset(16)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::debugmenu::DebugMenu,
     }

@@ -11,11 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcore/ShopCore.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopCore")]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopCore {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopcore/ShopCore_Result.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,6 +52,11 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcore/ShopCore.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopCore")]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopCore {}
 }
 
 #[cfg(feature = "app-shopcore-types")]

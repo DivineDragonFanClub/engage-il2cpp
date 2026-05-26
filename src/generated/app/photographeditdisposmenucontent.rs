@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographEditDisposMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct PhotographEditDisposMenuContent {
+        #[offset(232)]
         #[rename(name = "m_ArrowRoot")]
         pub m_arrow_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_BodyAccIcon")]
         pub m_body_acc_icon: crate::unity_engine::ui::image::Image,
+        #[offset(248)]
         #[rename(name = "m_FaceAccIcon")]
         pub m_face_acc_icon: crate::unity_engine::ui::image::Image,
+        #[offset(256)]
         #[rename(name = "m_WeaponOrScarfIcon")]
         pub m_weapon_or_scarf_icon: crate::unity_engine::ui::image::Image,
+        #[offset(264)]
         #[rename(name = "m_PauseCount")]
         pub m_pause_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

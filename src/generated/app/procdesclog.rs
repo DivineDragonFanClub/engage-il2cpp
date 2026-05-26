@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescLog")]
     #[parent(crate::app::procdesccallbase::ProcDescCallBase)]
     pub struct ProcDescLog {
+        #[offset(24)]
         #[rename(name = "m_Log")]
         pub m_log: ::unity2::Il2CppString,
     }

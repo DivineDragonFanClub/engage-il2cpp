@@ -14,19 +14,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomSpecialReflectionPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CustomSpecialReflectionPass {
+        #[offset(112)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(136)]
         #[rename(name = "m_ShaderTagId")]
         pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(144)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "s_DrawObjectPassDataPropID")]
         pub s_draw_object_pass_data_prop_id: i32,
+        #[offset(152)]
         #[rename(name = "m_CustomViewport")]
         pub m_custom_viewport: bool,
+        #[offset(156)]
         #[rename(name = "m_CustomViewportRect")]
         pub m_custom_viewport_rect: crate::unity_engine::rect::Rect,
+        #[offset(172)]
         #[rename(name = "m_OriginalViewportRect")]
         pub m_original_viewport_rect: crate::unity_engine::rect::Rect,
     }

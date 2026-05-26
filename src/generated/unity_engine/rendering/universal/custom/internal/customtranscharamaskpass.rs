@@ -17,12 +17,16 @@ mod __types {
         #[static_field]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(120)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(144)]
         #[rename(name = "m_ShaderTagId")]
         pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(152)]
         #[rename(name = "m_DepthDestination")]
         pub m_depth_destination: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
     }

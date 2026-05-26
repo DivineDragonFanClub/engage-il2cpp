@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "BillboardSample")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BillboardSample {
+        #[offset(24)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
     }

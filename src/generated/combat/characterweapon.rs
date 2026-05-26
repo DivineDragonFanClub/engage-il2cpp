@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterWeapon")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterWeapon {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
         #[static_field]
@@ -30,6 +31,7 @@ mod __types {
         #[static_field]
         #[rename(name = "NumHands")]
         pub num_hands: i32,
+        #[offset(32)]
         #[rename(name = "m_Hands")]
         pub m_hands: ::unity2::Array<crate::combat::trailhand::TrailHand>,
     }

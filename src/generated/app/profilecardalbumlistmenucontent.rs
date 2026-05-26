@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct ProfileCardAlbumListMenuContent {
+        #[offset(229)]
         #[rename(name = "isStarted")]
         pub is_started: bool,
     }

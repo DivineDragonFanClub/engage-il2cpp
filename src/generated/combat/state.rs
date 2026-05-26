@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "State")]
     #[parent(crate::system::object::Object)]
     pub struct State {
+        #[offset(16)]
         #[rename(name = "progress")]
         pub progress: crate::combat::stateprogress::StateProgress,
     }

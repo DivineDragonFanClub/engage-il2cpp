@@ -19,28 +19,40 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapProjector")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapProjector {
+        #[offset(24)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_Texture")]
         pub m_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(40)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(56)]
         #[rename(name = "m_Scale")]
         pub m_scale: f32,
+        #[offset(60)]
         #[rename(name = "m_DirectionX")]
         pub m_direction_x: f32,
+        #[offset(64)]
         #[rename(name = "m_DirectionY")]
         pub m_direction_y: f32,
+        #[offset(68)]
         #[rename(name = "m_Speed")]
         pub m_speed: f32,
+        #[offset(72)]
         #[rename(name = "m_OffsetX")]
         pub m_offset_x: f32,
+        #[offset(76)]
         #[rename(name = "m_OffsetY")]
         pub m_offset_y: f32,
+        #[offset(80)]
         #[rename(name = "m_Instance")]
         pub m_instance: crate::unity_engine::material::Material,
+        #[offset(88)]
         #[rename(name = "m_ScrollX")]
         pub m_scroll_x: f32,
+        #[offset(92)]
         #[rename(name = "m_ScrollY")]
         pub m_scroll_y: f32,
     }

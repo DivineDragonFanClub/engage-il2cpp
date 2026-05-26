@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomFadeColor")]
     #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
     pub struct MyRoomFadeColor {
+        #[offset(16)]
         #[rename(name = "color")]
         pub color: crate::unity_engine::color::Color,
     }

@@ -20,40 +20,58 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelectItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct MyRoomRelianceSubSelectItemContent {
+        #[offset(72)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_TalkIcon")]
         pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_RankC")]
         pub m_rank_c: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_RankB")]
         pub m_rank_b: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_RankA")]
         pub m_rank_a: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_RankS")]
         pub m_rank_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_Frame")]
         pub m_frame: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(144)]
         #[rename(name = "m_RankCImage")]
         pub m_rank_c_image: crate::unity_engine::ui::image::Image,
+        #[offset(152)]
         #[rename(name = "m_RankBImage")]
         pub m_rank_b_image: crate::unity_engine::ui::image::Image,
+        #[offset(160)]
         #[rename(name = "m_RankAImage")]
         pub m_rank_a_image: crate::unity_engine::ui::image::Image,
+        #[offset(168)]
         #[rename(name = "m_RankSImage")]
         pub m_rank_s_image: crate::unity_engine::ui::image::Image,
+        #[offset(176)]
         #[rename(name = "m_RankCImageBase")]
         pub m_rank_c_image_base: crate::unity_engine::ui::image::Image,
+        #[offset(184)]
         #[rename(name = "m_RankBImageBase")]
         pub m_rank_b_image_base: crate::unity_engine::ui::image::Image,
+        #[offset(192)]
         #[rename(name = "m_RankAImageBase")]
         pub m_rank_a_image_base: crate::unity_engine::ui::image::Image,
+        #[offset(200)]
         #[rename(name = "m_RankSImageBase")]
         pub m_rank_s_image_base: crate::unity_engine::ui::image::Image,
+        #[offset(208)]
         #[rename(name = "OpenRank")]
         pub open_rank: i32,
     }

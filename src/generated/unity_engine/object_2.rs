@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "Object")]
     #[parent(crate::system::object::Object)]
     pub struct Object_2 {
+        #[offset(16)]
         #[rename(name = "m_CachedPtr")]
         pub m_cached_ptr: ::unity2::IntPtr,
         #[static_field]

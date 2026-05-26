@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "ChunkStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct ChunkStatement {
+        #[offset(32)]
         #[rename(name = "m_Block")]
         pub m_block: crate::moon_sharp::interpreter::tree::statement::Statement,
+        #[offset(40)]
         #[rename(name = "m_StackFrame")]
         pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame,
+        #[offset(48)]
         #[rename(name = "m_Env")]
         pub m_env: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(56)]
         #[rename(name = "m_VarArgs")]
         pub m_var_args: crate::moon_sharp::interpreter::symbolref::SymbolRef,
     }

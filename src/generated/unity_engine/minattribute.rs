@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "MinAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct MinAttribute {
+        #[offset(16)]
         #[rename(name = "min")]
         pub min: f32,
     }

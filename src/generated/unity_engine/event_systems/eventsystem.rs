@@ -20,26 +20,35 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventSystem")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct EventSystem {
+        #[offset(24)]
         #[rename(name = "m_SystemInputModules")]
         pub m_system_input_modules:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::baseinputmodule::BaseInputModule>,
+        #[offset(32)]
         #[rename(name = "m_CurrentInputModule")]
         pub m_current_input_module: crate::unity_engine::event_systems::baseinputmodule::BaseInputModule,
         #[static_field]
         #[rename(name = "m_EventSystems")]
         pub m_event_systems: crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventsystem::EventSystem>,
+        #[offset(40)]
         #[rename(name = "m_FirstSelected")]
         pub m_first_selected: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_sendNavigationEvents")]
         pub m_send_navigation_events: bool,
+        #[offset(52)]
         #[rename(name = "m_DragThreshold")]
         pub m_drag_threshold: i32,
+        #[offset(56)]
         #[rename(name = "m_CurrentSelected")]
         pub m_current_selected: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_HasFocus")]
         pub m_has_focus: bool,
+        #[offset(65)]
         #[rename(name = "m_SelectionGuard")]
         pub m_selection_guard: bool,
+        #[offset(72)]
         #[rename(name = "m_DummyData")]
         pub m_dummy_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         #[static_field]

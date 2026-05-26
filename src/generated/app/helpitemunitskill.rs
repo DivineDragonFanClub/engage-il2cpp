@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemUnitSkill")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemUnitSkill {
+        #[offset(80)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
+        #[offset(84)]
         #[rename(name = "m_IsPack")]
         pub m_is_pack: bool,
+        #[offset(88)]
         #[rename(name = "m_tempUnit")]
         pub m_temp_unit: crate::app::unit::Unit,
     }

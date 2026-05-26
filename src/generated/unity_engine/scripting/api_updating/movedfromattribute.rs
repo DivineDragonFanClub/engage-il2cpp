@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/api_updating/movedfromattribute/MovedFromAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Scripting.APIUpdating", name = "MovedFromAttribute")]
     pub struct MovedFromAttribute {
+        #[offset(16)]
         #[rename(name = "data")]
         pub data: crate::unity_engine::scripting::api_updating::movedfromattributedata::MovedFromAttributeData,
     }

@@ -22,10 +22,13 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MapHelpObject")]
         pub m_map_help_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_MapMenu")]
         pub m_map_menu: crate::app::relaymapmenu::RelayMapMenu,
+        #[offset(40)]
         #[rename(name = "m_WdwMapHelp")]
         pub m_wdw_map_help: crate::app::relaywdwmaphelp::RelayWdwMapHelp,
     }

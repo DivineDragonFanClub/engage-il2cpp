@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomCaptionClip")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct MyRoomCaptionClip {
+        #[offset(24)]
         #[rename(name = "Template")]
         pub template: crate::app::myroomcaptionmid::MyRoomCaptionMID,
     }

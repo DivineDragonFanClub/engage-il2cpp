@@ -89,14 +89,19 @@ mod __types {
         #[static_field]
         #[rename(name = "SortieResNameC")]
         pub sortie_res_name_c: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::unitselectroot::UnitSelectRoot,
+        #[offset(136)]
         #[rename(name = "m_unitSelectMenu")]
         pub m_unit_select_menu: crate::app::basicmenu::BasicMenu,
+        #[offset(144)]
         #[rename(name = "m_rootAnimator")]
         pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[offset(152)]
         #[rename(name = "m_menuSelect")]
         pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
     }

@@ -57,8 +57,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MaterialReplacer")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MaterialReplacer {
+        #[offset(24)]
         #[rename(name = "m_MaterialBmap")]
         pub m_material_bmap: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_MaterialCombat")]
         pub m_material_combat: crate::unity_engine::material::Material,
     }

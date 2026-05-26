@@ -48,8 +48,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveDemo")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct RefineShopEngraveDemo {
+        #[offset(136)]
         #[rename(name = "m_RefineShopEngraveDemoRoot")]
         pub m_refine_shop_engrave_demo_root: crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot,
+        #[offset(144)]
         #[rename(name = "m_ShopWeaponModelRenderer")]
         pub m_shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
     }

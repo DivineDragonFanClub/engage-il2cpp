@@ -19,24 +19,34 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "CameraSwitcher")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CameraSwitcher {
+        #[offset(24)]
         #[rename(name = "m_Cameras")]
         pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
+        #[offset(32)]
         #[rename(name = "m_CurrentCameraIndex")]
         pub m_current_camera_index: i32,
+        #[offset(40)]
         #[rename(name = "m_OriginalCamera")]
         pub m_original_camera: crate::unity_engine::camera::Camera,
+        #[offset(48)]
         #[rename(name = "m_OriginalCameraPosition")]
         pub m_original_camera_position: crate::unity_engine::vector3::Vector3,
+        #[offset(60)]
         #[rename(name = "m_OriginalCameraRotation")]
         pub m_original_camera_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(80)]
         #[rename(name = "m_CurrentCamera")]
         pub m_current_camera: crate::unity_engine::camera::Camera,
+        #[offset(88)]
         #[rename(name = "m_CameraNames")]
         pub m_camera_names: ::unity2::Array<crate::unity_engine::guicontent::GUIContent>,
+        #[offset(96)]
         #[rename(name = "m_CameraIndices")]
         pub m_camera_indices: ::unity2::Array<i32>,
+        #[offset(104)]
         #[rename(name = "m_DebugEntry")]
         pub m_debug_entry: crate::unity_engine::rendering::debugui::DebugUI_EnumField,
+        #[offset(112)]
         #[rename(name = "m_DebugEntryEnumIndex")]
         pub m_debug_entry_enum_index: i32,
     }

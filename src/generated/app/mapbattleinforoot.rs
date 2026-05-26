@@ -19,26 +19,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinforoot/MapBattleInfoRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleInfoRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapBattleInfoRoot {
-        #[rename(name = "m_FrameRoot")]
-        pub m_frame_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CommandRoot")]
-        pub m_command_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CommandSubRoot")]
-        pub m_command_sub_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CommandText")]
-        pub m_command_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CommandSubText")]
-        pub m_command_sub_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_InfoLeft")]
-        pub m_info_left: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_InfoRight")]
-        pub m_info_right: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinforoot/MapBattleInfoRoot_StatusShowType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,6 +63,33 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinforoot/MapBattleInfoRoot.md"))]
+    #[::unity2::class(namespace = "App", name = "MapBattleInfoRoot")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapBattleInfoRoot {
+        #[offset(24)]
+        #[rename(name = "m_FrameRoot")]
+        pub m_frame_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
+        #[rename(name = "m_CommandRoot")]
+        pub m_command_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
+        #[rename(name = "m_CommandSubRoot")]
+        pub m_command_sub_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
+        #[rename(name = "m_CommandText")]
+        pub m_command_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
+        #[rename(name = "m_CommandSubText")]
+        pub m_command_sub_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
+        #[rename(name = "m_InfoLeft")]
+        pub m_info_left: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
+        #[rename(name = "m_InfoRight")]
+        pub m_info_right: crate::unity_engine::gameobject::GameObject,
     }
 }
 

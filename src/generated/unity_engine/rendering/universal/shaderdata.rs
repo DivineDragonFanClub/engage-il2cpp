@@ -14,12 +14,16 @@ mod __types {
         #[static_field]
         #[rename(name = "m_Instance")]
         pub m_instance: crate::unity_engine::rendering::universal::shaderdata::ShaderData,
+        #[offset(16)]
         #[rename(name = "m_LightDataBuffer")]
         pub m_light_data_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+        #[offset(24)]
         #[rename(name = "m_LightIndicesBuffer")]
         pub m_light_indices_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+        #[offset(32)]
         #[rename(name = "m_ShadowDataBuffer")]
         pub m_shadow_data_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+        #[offset(40)]
         #[rename(name = "m_ShadowIndicesBuffer")]
         pub m_shadow_indices_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
     }

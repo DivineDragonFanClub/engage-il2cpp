@@ -9,10 +9,13 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/helpurlattribute/HelpURLAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "HelpURLAttribute")]
     pub struct HelpURLAttribute {
+        #[offset(16)]
         #[rename(name = "m_Url")]
         pub m_url: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Dispatcher")]
         pub m_dispatcher: bool,
+        #[offset(32)]
         #[rename(name = "m_DispatchingFieldName")]
         pub m_dispatching_field_name: ::unity2::Il2CppString,
     }

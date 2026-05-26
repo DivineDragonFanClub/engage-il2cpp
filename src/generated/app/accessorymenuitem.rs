@@ -14,19 +14,22 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryMenuItem.SelectEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "AccessoryMenuItem.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AccessoryMenuItem_SelectEventHandler {}
+    pub struct AccessoryMenuItem_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "AccessoryMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct AccessoryMenuItem {
+        #[offset(124)]
         #[rename(name = "m_AlwaysActive")]
         pub m_always_active: bool,
+        #[offset(128)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler,
+        #[offset(136)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler,
     }
@@ -36,10 +39,10 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct AccessoryMenuItem_RequestCloseEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryMenuItem.DecideEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "AccessoryMenuItem.SelectEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AccessoryMenuItem_DecideEventHandler {}
+    pub struct AccessoryMenuItem_SelectEventHandler {}
 }
 
 #[cfg(feature = "app-accessorymenuitem-types")]
@@ -48,7 +51,7 @@ pub use __types::*;
 #[cfg(feature = "app-accessorymenuitem")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
+mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -60,7 +63,7 @@ mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -73,7 +76,7 @@ mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -82,13 +85,13 @@ mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: AccessoryMenuItem_SelectEventHandler,
+        this: AccessoryMenuItem_DecideEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            AccessoryMenuItem_SelectEventHandler,
+            AccessoryMenuItem_DecideEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -102,7 +105,7 @@ mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 1,
                 param_types,
@@ -115,7 +118,7 @@ mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -124,25 +127,25 @@ mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: AccessoryMenuItem_SelectEventHandler,
+        this: AccessoryMenuItem_DecideEventHandler,
         accessory_data: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(AccessoryMenuItem_SelectEventHandler, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(AccessoryMenuItem_DecideEventHandler, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, accessory_data, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-accessorymenuitem")]
-pub trait IAccessoryMenuItem_SelectEventHandlerMethods: IAccessoryMenuItem_SelectEventHandler {
+pub trait IAccessoryMenuItem_DecideEventHandlerMethods: IAccessoryMenuItem_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <AccessoryMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <AccessoryMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __AccessoryMenuItem_SelectEventHandler_unity2_raw::ctor(
+            __AccessoryMenuItem_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -153,10 +156,10 @@ pub trait IAccessoryMenuItem_SelectEventHandlerMethods: IAccessoryMenuItem_Selec
     #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
     fn invoke(self, accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
-            let __receiver = <AccessoryMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <AccessoryMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __AccessoryMenuItem_SelectEventHandler_unity2_raw::invoke(
+            __AccessoryMenuItem_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(accessory_data),
                 ::core::option::Option::None,
@@ -166,20 +169,20 @@ pub trait IAccessoryMenuItem_SelectEventHandlerMethods: IAccessoryMenuItem_Selec
 }
 
 #[cfg(feature = "app-accessorymenuitem")]
-impl<__T: IAccessoryMenuItem_SelectEventHandler> IAccessoryMenuItem_SelectEventHandlerMethods for __T {}
+impl<__T: IAccessoryMenuItem_DecideEventHandler> IAccessoryMenuItem_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-accessorymenuitem")]
-impl AccessoryMenuItem_SelectEventHandler {
+impl AccessoryMenuItem_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryMenuItem_SelectEventHandler),
+                ::core::stringify!(AccessoryMenuItem_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAccessoryMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
+        <Self as IAccessoryMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1316,7 +1319,7 @@ impl AccessoryMenuItem_RequestCloseEventHandler {
 #[cfg(feature = "app-accessorymenuitem")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
+mod __AccessoryMenuItem_SelectEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1328,7 +1331,7 @@ mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1341,7 +1344,7 @@ mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1350,13 +1353,13 @@ mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: AccessoryMenuItem_DecideEventHandler,
+        this: AccessoryMenuItem_SelectEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            AccessoryMenuItem_DecideEventHandler,
+            AccessoryMenuItem_SelectEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -1370,7 +1373,7 @@ mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::accessorydata::AccessoryData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 1,
                 param_types,
@@ -1383,7 +1386,7 @@ mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AccessoryMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        <AccessoryMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -1392,25 +1395,25 @@ mod __AccessoryMenuItem_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: AccessoryMenuItem_DecideEventHandler,
+        this: AccessoryMenuItem_SelectEventHandler,
         accessory_data: crate::app::accessorydata::AccessoryData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(AccessoryMenuItem_DecideEventHandler, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(AccessoryMenuItem_SelectEventHandler, crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, accessory_data, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-accessorymenuitem")]
-pub trait IAccessoryMenuItem_DecideEventHandlerMethods: IAccessoryMenuItem_DecideEventHandler {
+pub trait IAccessoryMenuItem_SelectEventHandlerMethods: IAccessoryMenuItem_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <AccessoryMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <AccessoryMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __AccessoryMenuItem_DecideEventHandler_unity2_raw::ctor(
+            __AccessoryMenuItem_SelectEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1421,10 +1424,10 @@ pub trait IAccessoryMenuItem_DecideEventHandlerMethods: IAccessoryMenuItem_Decid
     #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
     fn invoke(self, accessory_data: impl ::core::convert::Into<crate::app::accessorydata::AccessoryData>) -> () {
         unsafe {
-            let __receiver = <AccessoryMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <AccessoryMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __AccessoryMenuItem_DecideEventHandler_unity2_raw::invoke(
+            __AccessoryMenuItem_SelectEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(accessory_data),
                 ::core::option::Option::None,
@@ -1434,20 +1437,20 @@ pub trait IAccessoryMenuItem_DecideEventHandlerMethods: IAccessoryMenuItem_Decid
 }
 
 #[cfg(feature = "app-accessorymenuitem")]
-impl<__T: IAccessoryMenuItem_DecideEventHandler> IAccessoryMenuItem_DecideEventHandlerMethods for __T {}
+impl<__T: IAccessoryMenuItem_SelectEventHandler> IAccessoryMenuItem_SelectEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-accessorymenuitem")]
-impl AccessoryMenuItem_DecideEventHandler {
+impl AccessoryMenuItem_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryMenuItem_DecideEventHandler),
+                ::core::stringify!(AccessoryMenuItem_SelectEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAccessoryMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IAccessoryMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

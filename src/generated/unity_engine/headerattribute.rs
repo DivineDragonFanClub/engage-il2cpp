@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "HeaderAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct HeaderAttribute {
+        #[offset(16)]
         #[rename(name = "header")]
         pub header: ::unity2::Il2CppString,
     }

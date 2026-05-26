@@ -18,32 +18,46 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodColor")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: godcolor :: GodColor >)]
     pub struct GodColor {
+        #[offset(24)]
         #[rename(name = "マルス")]
         pub マルス: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "シグルド")]
         pub シグルド: crate::unity_engine::color::Color,
+        #[offset(56)]
         #[rename(name = "セリカ")]
         pub セリカ: crate::unity_engine::color::Color,
+        #[offset(72)]
         #[rename(name = "ミカヤ")]
         pub ミカヤ: crate::unity_engine::color::Color,
+        #[offset(88)]
         #[rename(name = "ロイ")]
         pub ロイ: crate::unity_engine::color::Color,
+        #[offset(104)]
         #[rename(name = "リーフ")]
         pub リーフ: crate::unity_engine::color::Color,
+        #[offset(120)]
         #[rename(name = "ルキナ")]
         pub ルキナ: crate::unity_engine::color::Color,
+        #[offset(136)]
         #[rename(name = "リン")]
         pub リン: crate::unity_engine::color::Color,
+        #[offset(152)]
         #[rename(name = "アイク")]
         pub アイク: crate::unity_engine::color::Color,
+        #[offset(168)]
         #[rename(name = "ベレト")]
         pub ベレト: crate::unity_engine::color::Color,
+        #[offset(184)]
         #[rename(name = "カムイ")]
         pub カムイ: crate::unity_engine::color::Color,
+        #[offset(200)]
         #[rename(name = "エイリーク")]
         pub エイリーク: crate::unity_engine::color::Color,
+        #[offset(216)]
         #[rename(name = "エフラム")]
         pub エフラム: crate::unity_engine::color::Color,
+        #[offset(232)]
         #[rename(name = "リュール")]
         pub リュール: crate::unity_engine::color::Color,
     }

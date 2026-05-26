@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MeshGroundPaintGetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MeshGroundPaintGetter {
+        #[offset(24)]
         #[rename(name = "m_PaintDataArray")]
         pub m_paint_data_array: ::unity2::Array<crate::app::meshgroundpaintdata::MeshGroundPaintData>,
     }

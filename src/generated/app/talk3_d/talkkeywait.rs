@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkKeyWait")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct TalkKeyWait {
+        #[offset(112)]
         #[rename(name = "m_Mid")]
         pub m_mid: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_VoiceEventName")]
         pub m_voice_event_name: ::unity2::Il2CppString,
+        #[offset(128)]
         #[rename(name = "m_WaitSecForAutoPlay")]
         pub m_wait_sec_for_auto_play: f32,
+        #[offset(132)]
         #[rename(name = "m_waitCounter")]
         pub m_wait_counter: f32,
     }

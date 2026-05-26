@@ -60,6 +60,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertJobIntro")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConvertJobIntro {
+        #[offset(24)]
         #[rename(name = "m_State")]
         pub m_state: crate::combat::situation_converter::convertjobintro::ConvertJobIntro_State,
     }

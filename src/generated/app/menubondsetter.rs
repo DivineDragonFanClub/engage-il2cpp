@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MenuBondSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MenuBondSetter {
+        #[offset(24)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_GodName")]
         pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_BondLv")]
         pub m_bond_lv: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_BondGauge")]
         pub m_bond_gauge: crate::unity_engine::gameobject::GameObject,
     }

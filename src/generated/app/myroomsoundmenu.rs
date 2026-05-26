@@ -17,19 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundmenu/MyRoomSoundMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSoundMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MyRoomSoundMenu {
-        #[rename(name = "m_menuType")]
-        pub m_menu_type: crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType,
-        #[static_field]
-        #[rename(name = "DefaultBgmChangeSuppressCount")]
-        pub default_bgm_change_suppress_count: i32,
-        #[rename(name = "m_bgmChangeSuppressCount")]
-        pub m_bgm_change_suppress_count: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsoundmenu/MyRoomSoundMenu_MenuType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -66,6 +53,21 @@ mod __types {
         pub fn bgm_select() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundmenu/MyRoomSoundMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSoundMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MyRoomSoundMenu {
+        #[offset(208)]
+        #[rename(name = "m_menuType")]
+        pub m_menu_type: crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType,
+        #[static_field]
+        #[rename(name = "DefaultBgmChangeSuppressCount")]
+        pub default_bgm_change_suppress_count: i32,
+        #[offset(212)]
+        #[rename(name = "m_bgmChangeSuppressCount")]
+        pub m_bgm_change_suppress_count: i32,
     }
 }
 

@@ -53,6 +53,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapCinemachineController")]
     #[parent(crate::system::object::Object)]
     pub struct GmapCinemachineController {
+        #[offset(16)]
         #[rename(name = "m_Carrier")]
         pub m_carrier: crate::unity_engine::gameobject::GameObject,
     }

@@ -11,19 +11,23 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.Scopes", name = "BuildTimeScopeBlock")]
     #[parent(crate::system::object::Object)]
     pub struct BuildTimeScopeBlock {
+        #[offset(40)]
         #[rename(name = "m_DefinedNames")]
         pub m_defined_names: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::symbolref::SymbolRef,
         >,
+        #[offset(48)]
         #[rename(name = "m_PendingGotos")]
         pub m_pending_gotos:
             crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement>,
+        #[offset(56)]
         #[rename(name = "m_LocalLabels")]
         pub m_local_labels: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement,
         >,
+        #[offset(64)]
         #[rename(name = "m_LastDefinedName")]
         pub m_last_defined_name: ::unity2::Il2CppString,
     }

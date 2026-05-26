@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUIContent")]
     #[parent(crate::system::object::Object)]
     pub struct GUIContent {
+        #[offset(16)]
         #[rename(name = "m_Text")]
         pub m_text: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::texture::Texture,
+        #[offset(32)]
         #[rename(name = "m_Tooltip")]
         pub m_tooltip: ::unity2::Il2CppString,
         #[static_field]

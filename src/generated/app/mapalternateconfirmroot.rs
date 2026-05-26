@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapAlternateConfirmRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapAlternateConfirmRoot {
+        #[offset(24)]
         #[rename(name = "m_beforeGodName")]
         pub m_before_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_afterGodName")]
         pub m_after_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_skillBefore")]
         pub m_skill_before: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(48)]
         #[rename(name = "m_skillAfter")]
         pub m_skill_after: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

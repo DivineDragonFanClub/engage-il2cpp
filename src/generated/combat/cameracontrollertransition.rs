@@ -23,18 +23,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerTransition")]
     #[parent(crate::combat::basetransitioncameracontroller::BaseTransitionCameraController)]
     pub struct CameraControllerTransition {
+        #[offset(192)]
         #[rename(name = "StartCurve")]
         pub start_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(200)]
         #[rename(name = "ReturnCurve")]
         pub return_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(208)]
         #[rename(name = "RotateStartHeightStart")]
         pub rotate_start_height_start: f32,
+        #[offset(212)]
         #[rename(name = "RotateStartHeightReturn")]
         pub rotate_start_height_return: f32,
+        #[offset(252)]
         #[rename(name = "m_DoRotateTarget")]
         pub m_do_rotate_target: bool,
+        #[offset(256)]
         #[rename(name = "m_RdialBlur")]
         pub m_rdial_blur: crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur,
+        #[offset(264)]
         #[rename(name = "WaitProgress")]
         pub wait_progress: f32,
     }

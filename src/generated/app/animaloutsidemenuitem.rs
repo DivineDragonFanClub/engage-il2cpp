@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AnimalOutsideMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct AnimalOutsideMenuItem {
+        #[offset(120)]
         #[rename(name = "m_pid")]
         pub m_pid: ::unity2::Il2CppString,
     }

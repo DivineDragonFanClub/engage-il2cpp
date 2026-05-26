@@ -11,14 +11,18 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "ExecutionState")]
     #[parent(crate::system::object::Object)]
     pub struct ExecutionState {
+        #[offset(16)]
         #[rename(name = "ValueStack")]
         pub value_stack: crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        #[offset(24)]
         #[rename(name = "ExecutionStack")]
         pub execution_stack: crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<
             crate::moon_sharp::interpreter::execution::vm::callstackitem::CallStackItem,
         >,
+        #[offset(32)]
         #[rename(name = "InstructionPtr")]
         pub instruction_ptr: i32,
+        #[offset(36)]
         #[rename(name = "State")]
         pub state: crate::moon_sharp::interpreter::coroutinestate::CoroutineState,
     }

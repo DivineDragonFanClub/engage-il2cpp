@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieTopMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct SortieTopMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Partner")]
         pub m_partner: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_help")]
         pub m_help: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

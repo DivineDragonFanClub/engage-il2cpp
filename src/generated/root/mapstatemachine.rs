@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapStateMachine")]
     #[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]
     pub struct MapStateMachine {
+        #[offset(24)]
         #[rename(name = "m_IsRandom")]
         pub m_is_random: bool,
         #[static_field]

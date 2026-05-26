@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "LightmapData")]
     #[parent(crate::system::object::Object)]
     pub struct LightmapData {
+        #[offset(16)]
         #[rename(name = "m_Light")]
         pub m_light: crate::unity_engine::texture2d::Texture2D,
+        #[offset(24)]
         #[rename(name = "m_Dir")]
         pub m_dir: crate::unity_engine::texture2d::Texture2D,
+        #[offset(32)]
         #[rename(name = "m_ShadowMask")]
         pub m_shadow_mask: crate::unity_engine::texture2d::Texture2D,
     }

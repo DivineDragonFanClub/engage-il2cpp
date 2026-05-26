@@ -14,20 +14,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct WeaponShopBuyMenuItem {
+        #[offset(104)]
         #[rename(name = "m_Iid")]
         pub m_iid: ::unity2::Il2CppString,
+        #[offset(136)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(144)]
         #[rename(name = "m_activeTextColor2")]
         pub m_active_text_color2: crate::unity_engine::color::Color,
+        #[offset(160)]
         #[rename(name = "m_inactiveTextColor2")]
         pub m_inactive_text_color2: crate::unity_engine::color::Color,
+        #[offset(176)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,
+        #[offset(184)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler,
+        #[offset(192)]
         #[rename(name = "m_ChangeUnitToPrevEventHandler")]
         pub m_change_unit_to_prev_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+        #[offset(200)]
         #[rename(name = "m_ChangeUnitToNextEventHandler")]
         pub m_change_unit_to_next_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
     }

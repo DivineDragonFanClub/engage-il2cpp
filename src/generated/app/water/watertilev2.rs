@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App.Water", name = "WaterTileV2")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct WaterTileV2 {
+        #[offset(24)]
         #[rename(name = "reflection")]
         pub reflection: crate::app::water::planarreflectionv2::PlanarReflectionV2,
     }

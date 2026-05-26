@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hlslarray/HLSLArray.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HLSLArray")]
     pub struct HLSLArray {
+        #[offset(16)]
         #[rename(name = "arraySize")]
         pub array_size: i32,
+        #[offset(24)]
         #[rename(name = "elementType")]
         pub element_type: ::unity2::SystemType,
     }

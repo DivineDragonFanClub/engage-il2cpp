@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitItemMenuItem")]
     #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
     pub struct UnitItemMenuItem {
+        #[offset(100)]
         #[rename(name = "m_OwnerItemIndex")]
         pub m_owner_item_index: i32,
+        #[offset(104)]
         #[rename(name = "m_SelectableBlank")]
         pub m_selectable_blank: bool,
+        #[offset(112)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::unititemmenu::UnitItemMenu_SelectEventHandler,
+        #[offset(120)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::unititemmenu::UnitItemMenu_DecideEventHandler,
+        #[offset(128)]
         #[rename(name = "m_RequestCloseEventHandler")]
         pub m_request_close_event_handler: crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,
     }

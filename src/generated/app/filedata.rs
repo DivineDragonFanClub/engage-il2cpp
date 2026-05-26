@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FileData")]
     #[parent(crate::app::filecommon::FileCommon)]
     pub struct FileData {
+        #[offset(16)]
         #[rename(name = "m_State")]
         pub m_state: crate::app::filecommon::FileCommon_State,
+        #[offset(24)]
         #[rename(name = "m_Path")]
         pub m_path: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_Data")]
         pub m_data: ::unity2::Array<u8>,
+        #[offset(40)]
         #[rename(name = "m_Refer")]
         pub m_refer: crate::app::bindholder::BindHolder,
     }

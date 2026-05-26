@@ -14,20 +14,28 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: u16,
+        #[offset(16)]
         #[rename(name = "m_Edit")]
         pub m_edit: crate::app::unitedit::UnitEdit,
+        #[offset(24)]
         #[rename(name = "m_Person")]
         pub m_person: crate::app::persondata::PersonData,
+        #[offset(32)]
         #[rename(name = "m_Job")]
         pub m_job: crate::app::jobdata::JobData,
+        #[offset(40)]
         #[rename(name = "m_God")]
         pub m_god: crate::app::goddata::GodData,
+        #[offset(48)]
         #[rename(name = "m_RecordValue")]
         pub m_record_value: i32,
+        #[offset(52)]
         #[rename(name = "m_RelayPlayerIndex")]
         pub m_relay_player_index: u8,
+        #[offset(53)]
         #[rename(name = "m_IsMorph")]
         pub m_is_morph: bool,
+        #[offset(56)]
         #[rename(name = "m_Item")]
         pub m_item: crate::app::itemdata::ItemData,
     }

@@ -17,36 +17,52 @@ mod __types {
         #[static_field]
         #[rename(name = "k_InfinityVectorNegative")]
         pub k_infinity_vector_negative: crate::unity_engine::vector2::Vector2,
+        #[offset(16)]
         #[rename(name = "textComponent")]
         pub text_component: crate::tm_pro::tmp_text::TMP_Text,
+        #[offset(24)]
         #[rename(name = "characterCount")]
         pub character_count: i32,
+        #[offset(28)]
         #[rename(name = "spriteCount")]
         pub sprite_count: i32,
+        #[offset(32)]
         #[rename(name = "spaceCount")]
         pub space_count: i32,
+        #[offset(36)]
         #[rename(name = "wordCount")]
         pub word_count: i32,
+        #[offset(40)]
         #[rename(name = "linkCount")]
         pub link_count: i32,
+        #[offset(44)]
         #[rename(name = "lineCount")]
         pub line_count: i32,
+        #[offset(48)]
         #[rename(name = "pageCount")]
         pub page_count: i32,
+        #[offset(52)]
         #[rename(name = "materialCount")]
         pub material_count: i32,
+        #[offset(56)]
         #[rename(name = "characterInfo")]
         pub character_info: ::unity2::Array<crate::tm_pro::tmp_characterinfo::TMP_CharacterInfo>,
+        #[offset(64)]
         #[rename(name = "wordInfo")]
         pub word_info: ::unity2::Array<crate::tm_pro::tmp_wordinfo::TMP_WordInfo>,
+        #[offset(72)]
         #[rename(name = "linkInfo")]
         pub link_info: ::unity2::Array<crate::tm_pro::tmp_linkinfo::TMP_LinkInfo>,
+        #[offset(80)]
         #[rename(name = "lineInfo")]
         pub line_info: ::unity2::Array<crate::tm_pro::tmp_lineinfo::TMP_LineInfo>,
+        #[offset(88)]
         #[rename(name = "pageInfo")]
         pub page_info: ::unity2::Array<crate::tm_pro::tmp_pageinfo::TMP_PageInfo>,
+        #[offset(96)]
         #[rename(name = "meshInfo")]
         pub mesh_info: ::unity2::Array<crate::tm_pro::tmp_meshinfo::TMP_MeshInfo>,
+        #[offset(104)]
         #[rename(name = "m_CachedMeshInfo")]
         pub m_cached_mesh_info: ::unity2::Array<crate::tm_pro::tmp_meshinfo::TMP_MeshInfo>,
     }

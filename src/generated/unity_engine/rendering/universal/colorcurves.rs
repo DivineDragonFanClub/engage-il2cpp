@@ -18,20 +18,28 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ColorCurves")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct ColorCurves {
+        #[offset(56)]
         #[rename(name = "master")]
         pub master: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
+        #[offset(64)]
         #[rename(name = "red")]
         pub red: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
+        #[offset(72)]
         #[rename(name = "green")]
         pub green: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
+        #[offset(80)]
         #[rename(name = "blue")]
         pub blue: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
+        #[offset(88)]
         #[rename(name = "hueVsHue")]
         pub hue_vs_hue: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
+        #[offset(96)]
         #[rename(name = "hueVsSat")]
         pub hue_vs_sat: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
+        #[offset(104)]
         #[rename(name = "satVsSat")]
         pub sat_vs_sat: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
+        #[offset(112)]
         #[rename(name = "lumVsSat")]
         pub lum_vs_sat: crate::unity_engine::rendering::texturecurveparameter::TextureCurveParameter,
     }

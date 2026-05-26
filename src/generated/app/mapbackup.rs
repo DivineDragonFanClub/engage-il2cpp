@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBackup")]
     #[parent(crate::system::object::Object)]
     pub struct MapBackup {
+        #[offset(16)]
         #[rename(name = "Key")]
         pub key: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "State")]
         pub state: i32,
+        #[offset(28)]
         #[rename(name = "Action")]
         pub action: crate::app::mapobject::MapObject_Actions,
+        #[offset(32)]
         #[rename(name = "MapMaterial")]
         pub map_material: crate::app::mapmaterial::MapMaterial,
     }

@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodRoomGodInfoItemContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct GodRoomGodInfoItemContent {
+        #[offset(24)]
         #[rename(name = "m_GodName")]
         pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_Level")]
         pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_LevelTitle")]
         pub m_level_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_LevelGauge")]
         pub m_level_gauge: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_LevelGaugeImage")]
         pub m_level_gauge_image: crate::unity_engine::ui::image::Image,
     }

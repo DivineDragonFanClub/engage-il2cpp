@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingResultData")]
     #[parent(crate::system::object::Object)]
     pub struct FishingResultData {
+        #[offset(16)]
         #[rename(name = "BaseData")]
         pub base_data: crate::app::fishingfishdata::FishingFishData,
+        #[offset(24)]
         #[rename(name = "Size")]
         pub size: f32,
+        #[offset(28)]
         #[rename(name = "Rank")]
         pub rank: crate::app::fishing::sizerank::SizeRank,
+        #[offset(32)]
         #[rename(name = "IsBonus")]
         pub is_bonus: bool,
+        #[offset(36)]
         #[rename(name = "ItemNum")]
         pub item_num: i32,
+        #[offset(40)]
         #[rename(name = "Cench2Inch")]
         pub cench2_inch: f32,
     }

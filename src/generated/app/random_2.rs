@@ -18,6 +18,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Rand")]
         pub s_rand: ::unity2::Array<crate::app::random_2::Random_2>,
+        #[offset(16)]
         #[rename(name = "m_Seed")]
         pub m_seed: crate::app::randomseed::RandomSeed,
     }

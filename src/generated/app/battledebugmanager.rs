@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BattleDebugManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: battledebugmanager :: BattleDebugManager >)]
     pub struct BattleDebugManager {
+        #[offset(32)]
         #[rename(name = "m_Visible")]
         pub m_visible: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, bool>,
     }

@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapDeployBitImage")]
     #[parent(crate::app::mapimagecorebit::MapImageCoreBit)]
     pub struct MapDeployBitImage {
+        #[offset(28)]
         #[rename(name = "m_Changed")]
         pub m_changed: bool,
     }

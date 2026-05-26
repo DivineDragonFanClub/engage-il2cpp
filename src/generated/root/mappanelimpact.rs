@@ -59,26 +59,37 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapPanelImpact")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappanelimpact :: MapPanelImpact >)]
     pub struct MapPanelImpact {
+        #[offset(64)]
         #[rename(name = "m_Alpha")]
         pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(72)]
         #[rename(name = "m_LandImage")]
         pub m_land_image: crate::unity_engine::material::Material,
+        #[offset(80)]
         #[rename(name = "m_FriendlyLandColor")]
         pub m_friendly_land_color: crate::unity_engine::color::Color,
+        #[offset(96)]
         #[rename(name = "m_HostileLandColor")]
         pub m_hostile_land_color: crate::unity_engine::color::Color,
+        #[offset(112)]
         #[rename(name = "m_FriendlyLandImage")]
         pub m_friendly_land_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[offset(120)]
         #[rename(name = "m_HostileLandImage")]
         pub m_hostile_land_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[offset(128)]
         #[rename(name = "m_CurrentUnit")]
         pub m_current_unit: crate::app::unit::Unit,
+        #[offset(136)]
         #[rename(name = "m_LandImageFunc")]
         pub m_land_image_func: crate::app::mapskill::MapSkill_UnitFunc,
+        #[offset(144)]
         #[rename(name = "m_LandCellFunc")]
         pub m_land_cell_func: crate::app::mapfor::MapFor_PosFunction,
+        #[offset(152)]
         #[rename(name = "m_FriendlyLandImageGetter")]
         pub m_friendly_land_image_getter: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::root::mappanelimpact::MapPanelImpact>,
+        #[offset(160)]
         #[rename(name = "m_HostileLandImageGetter")]
         pub m_hostile_land_image_getter: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::root::mappanelimpact::MapPanelImpact>,
     }

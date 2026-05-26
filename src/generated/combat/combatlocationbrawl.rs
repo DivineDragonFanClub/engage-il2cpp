@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatLocationBrawl")]
     #[parent(crate::combat::basecombatlocation::BaseCombatLocation)]
     pub struct CombatLocationBrawl {
+        #[offset(137)]
         #[rename(name = "m_IsShootAttack")]
         pub m_is_shoot_attack: bool,
+        #[offset(144)]
         #[rename(name = "RotateTable")]
         pub rotate_table: ::unity2::Array<i32>,
+        #[offset(152)]
         #[rename(name = "MaxCheckLength")]
         pub max_check_length: i32,
     }

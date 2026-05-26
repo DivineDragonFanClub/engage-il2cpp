@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomFadeClip")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct MyRoomFadeClip {
+        #[offset(24)]
         #[rename(name = "Template")]
         pub template: crate::app::myroomfadecolor::MyRoomFadeColor,
     }

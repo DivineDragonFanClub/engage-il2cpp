@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodRelianceTalkSequence")]
     #[parent(crate::app::commonreliancetalksequence::CommonRelianceTalkSequence)]
     pub struct GodRelianceTalkSequence {
+        #[offset(128)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(136)]
         #[rename(name = "m_UnitAsciiName")]
         pub m_unit_ascii_name: ::unity2::Il2CppString,
+        #[offset(144)]
         #[rename(name = "m_God")]
         pub m_god: crate::app::godunit::GodUnit,
+        #[offset(152)]
         #[rename(name = "m_GodAsciiName")]
         pub m_god_ascii_name: ::unity2::Il2CppString,
+        #[offset(160)]
         #[rename(name = "m_RelianceLevel")]
         pub m_reliance_level: crate::app::goddata::GodData_RelianceLevel,
     }

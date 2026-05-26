@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopGodSymbol")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RefineShopGodSymbol {
+        #[offset(24)]
         #[rename(name = "m_GodSymbol0Object")]
         pub m_god_symbol0_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_GodSymbol0Image")]
         pub m_god_symbol0_image: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_GodSymbol0EffectObject")]
         pub m_god_symbol0_effect_object: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(48)]
         #[rename(name = "m_GodSymbol1Object")]
         pub m_god_symbol1_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_GodSymbol1Image")]
         pub m_god_symbol1_image: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "m_GodSymbol1EffectObject")]
         pub m_god_symbol1_effect_object: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(72)]
         #[rename(name = "m_CurrentGodSymbolObject")]
         pub m_current_god_symbol_object: crate::unity_engine::gameobject::GameObject,
     }

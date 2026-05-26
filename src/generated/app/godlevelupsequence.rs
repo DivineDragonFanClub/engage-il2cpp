@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodLevelUpSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct GodLevelUpSequence {
+        #[offset(112)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(120)]
         #[rename(name = "m_GodUnit")]
         pub m_god_unit: crate::app::godunit::GodUnit,
+        #[offset(128)]
         #[rename(name = "m_GodData")]
         pub m_god_data: crate::app::goddata::GodData,
+        #[offset(136)]
         #[rename(name = "m_PrevAptitude")]
         pub m_prev_aptitude: crate::app::weaponmask::WeaponMask,
     }

@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieTradeItemMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct SortieTradeItemMenu {
+        #[offset(200)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(208)]
         #[rename(name = "m_recieverUnit")]
         pub m_reciever_unit: crate::app::unit::Unit,
+        #[offset(216)]
         #[rename(name = "m_firstSelect")]
         pub m_first_select: i32,
+        #[offset(220)]
         #[rename(name = "m_secondSelect")]
         pub m_second_select: i32,
     }

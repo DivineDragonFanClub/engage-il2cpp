@@ -17,8 +17,10 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct LegacyResourcesProvider_InternalOp {
+        #[offset(16)]
         #[rename(name = "m_RequestOperation")]
         pub m_request_operation: crate::unity_engine::asyncoperation::AsyncOperation,
+        #[offset(24)]
         #[rename(name = "m_ProvideHandle")]
         pub m_provide_handle: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
     }

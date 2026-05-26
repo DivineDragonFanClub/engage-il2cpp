@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomLookingCameraMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct MyRoomLookingCameraMarker {
+        #[offset(40)]
         #[rename(name = "DisbaleLookingCamera")]
         pub disbale_looking_camera: bool,
     }

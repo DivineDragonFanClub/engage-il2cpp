@@ -17,24 +17,34 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "FunctionDefinitionExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct FunctionDefinitionExpression {
+        #[offset(32)]
         #[rename(name = "m_ParamNames")]
         pub m_param_names: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        #[offset(40)]
         #[rename(name = "m_Statement")]
         pub m_statement: crate::moon_sharp::interpreter::tree::statement::Statement,
+        #[offset(48)]
         #[rename(name = "m_StackFrame")]
         pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame,
+        #[offset(56)]
         #[rename(name = "m_Closure")]
         pub m_closure: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        #[offset(64)]
         #[rename(name = "m_HasVarArgs")]
         pub m_has_var_args: bool,
+        #[offset(72)]
         #[rename(name = "m_ClosureInstruction")]
         pub m_closure_instruction: crate::moon_sharp::interpreter::execution::vm::instruction::Instruction,
+        #[offset(80)]
         #[rename(name = "m_UsesGlobalEnv")]
         pub m_uses_global_env: bool,
+        #[offset(88)]
         #[rename(name = "m_Env")]
         pub m_env: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(96)]
         #[rename(name = "m_Begin")]
         pub m_begin: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[offset(104)]
         #[rename(name = "m_End")]
         pub m_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

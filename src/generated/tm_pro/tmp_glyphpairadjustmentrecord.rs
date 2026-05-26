@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_GlyphPairAdjustmentRecord")]
     #[parent(crate::system::object::Object)]
     pub struct TMP_GlyphPairAdjustmentRecord {
+        #[offset(16)]
         #[rename(name = "m_FirstAdjustmentRecord")]
         pub m_first_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
+        #[offset(36)]
         #[rename(name = "m_SecondAdjustmentRecord")]
         pub m_second_adjustment_record: crate::tm_pro::tmp_glyphadjustmentrecord::TMP_GlyphAdjustmentRecord,
+        #[offset(56)]
         #[rename(name = "m_FeatureLookupFlags")]
         pub m_feature_lookup_flags: crate::tm_pro::fontfeaturelookupflags_2::FontFeatureLookupFlags_2,
     }

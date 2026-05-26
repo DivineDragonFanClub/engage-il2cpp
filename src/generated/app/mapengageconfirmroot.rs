@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapEngageConfirmRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapEngageConfirmRoot {
+        #[offset(24)]
         #[rename(name = "m_unitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_godName")]
         pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_unitNameR")]
         pub m_unit_name_r: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_item")]
         pub m_item: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(56)]
         #[rename(name = "m_skill")]
         pub m_skill: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

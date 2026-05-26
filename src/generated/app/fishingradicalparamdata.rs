@@ -47,6 +47,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingRadicalParamData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData >)]
     pub struct FishingRadicalParamData {
+        #[offset(88)]
         #[rename(name = "Param")]
         pub param: ::unity2::Array<crate::app::fishingradicalparamdata::FishingRadicalParamData_RadicalParam>,
     }

@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineItemDetailWindow")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RefineItemDetailWindow {
+        #[offset(24)]
         #[rename(name = "m_ItemMenuDetailSetter")]
         pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+        #[offset(32)]
         #[rename(name = "m_ItemNameContent")]
         pub m_item_name_content: crate::app::basicitemmenuitemcontent::BasicItemMenuItemContent,
     }

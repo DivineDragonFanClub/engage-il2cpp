@@ -9,16 +9,22 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinerecomposer/CinemachineRecomposer.md"))]
     #[::unity2::class(namespace = "", name = "CinemachineRecomposer")]
     pub struct CinemachineRecomposer {
+        #[offset(44)]
         #[rename(name = "m_Tilt")]
         pub m_tilt: f32,
+        #[offset(48)]
         #[rename(name = "m_Pan")]
         pub m_pan: f32,
+        #[offset(52)]
         #[rename(name = "m_Dutch")]
         pub m_dutch: f32,
+        #[offset(56)]
         #[rename(name = "m_ZoomScale")]
         pub m_zoom_scale: f32,
+        #[offset(60)]
         #[rename(name = "m_FollowAttachment")]
         pub m_follow_attachment: f32,
+        #[offset(64)]
         #[rename(name = "m_LookAtAttachment")]
         pub m_look_at_attachment: f32,
     }

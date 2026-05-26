@@ -19,25 +19,34 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkObstructionOcclusion")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AkObstructionOcclusion {
+        #[offset(24)]
         #[rename(name = "listenersToRemove")]
         pub listeners_to_remove: crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>,
+        #[offset(32)]
         #[rename(name = "currentListenerList")]
         pub current_listener_list: crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>,
+        #[offset(40)]
         #[rename(name = "ObstructionOcclusionValues")]
         pub obstruction_occlusion_values: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::root::akaudiolistener::AkAudioListener,
             crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue,
         >,
+        #[offset(48)]
         #[rename(name = "fadeRate")]
         pub fade_rate: f32,
+        #[offset(52)]
         #[rename(name = "fadeTime")]
         pub fade_time: f32,
+        #[offset(56)]
         #[rename(name = "LayerMask")]
         pub layer_mask: crate::unity_engine::layermask::LayerMask,
+        #[offset(60)]
         #[rename(name = "maxDistance")]
         pub max_distance: f32,
+        #[offset(64)]
         #[rename(name = "refreshInterval")]
         pub refresh_interval: f32,
+        #[offset(68)]
         #[rename(name = "refreshTime")]
         pub refresh_time: f32,
     }
@@ -46,8 +55,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkObstructionOcclusion.ObstructionOcclusionValue")]
     #[parent(crate::system::object::Object)]
     pub struct AkObstructionOcclusion_ObstructionOcclusionValue {
+        #[offset(16)]
         #[rename(name = "currentValue")]
         pub current_value: f32,
+        #[offset(20)]
         #[rename(name = "targetValue")]
         pub target_value: f32,
     }

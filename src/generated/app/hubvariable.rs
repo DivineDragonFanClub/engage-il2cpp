@@ -7,11 +7,6 @@ mod __types {
     use super::*;
     use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubvariable/HubVariable_Mascot.md"))]
-    #[::unity2::class(namespace = "App", name = "HubVariable.Mascot")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubVariable_Mascot {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubvariable/HubVariable.md"))]
     #[::unity2::class(namespace = "App", name = "HubVariable")]
     #[parent(crate::system::object::Object)]
@@ -20,942 +15,15 @@ mod __types {
         #[rename(name = "MaxAnimalNum")]
         pub max_animal_num: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubvariable/HubVariable_Mascot.md"))]
+    #[::unity2::class(namespace = "App", name = "HubVariable.Mascot")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubVariable_Mascot {}
 }
 
 #[cfg(feature = "app-hubvariable-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubvariable")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubVariable_Mascot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_follow {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "get_CanFollow",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "get_CanFollow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_can_follow(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_can_follow::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_found {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "IsFound",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "IsFound",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_found(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_found::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_found {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "Found",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "Found",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn found(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_found::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "GetPoint",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "GetPoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_point::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "SetPoint",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "SetPoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_point::get_method_info().method_ptr);
-        inner(point, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ignore_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "get_IgnorePoint",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "get_IgnorePoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ignore_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_ignore_point::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_turn_limit_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "get_TurnLimitPoint",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "get_TurnLimitPoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_turn_limit_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_turn_limit_point::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_limit_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "GetLimitPoint",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "GetLimitPoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_limit_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_limit_point::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_limit_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "SetLimitPoint",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "SetLimitPoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_limit_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_limit_point::get_method_info().method_ptr);
-        inner(point, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "AddPoint",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "AddPoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_point::get_method_info().method_ptr);
-        inner(point, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dec_point {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "DecPoint",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "DecPoint",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dec_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dec_point::get_method_info().method_ptr);
-        inner(point, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_head_acc_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "SetHeadAccName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "SetHeadAccName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_head_acc_name(acc_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_head_acc_name::get_method_info().method_ptr);
-        inner(acc_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_head_acc_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "GetHeadAccName",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "GetHeadAccName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_head_acc_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_head_acc_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_tail_acc_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "SetTailAccName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "SetTailAccName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_tail_acc_name(acc_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_tail_acc_name::get_method_info().method_ptr);
-        inner(acc_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_tail_acc_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "GetTailAccName",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "GetTailAccName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_tail_acc_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_tail_acc_name::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_color_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "SetColorIndex",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "SetColorIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_color_index(color_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_color_index::get_method_info().method_ptr);
-        inner(color_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_color_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "GetColorIndex",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "GetColorIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_color_index(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_color_index::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_done_strok {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "DoneStrok",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "DoneStrok",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn done_strok(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_done_strok::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_done_strok {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "IsDoneStrok",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "IsDoneStrok",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_done_strok(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_done_strok::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_done_eat_food {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "DoneEatFood",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "DoneEatFood",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn done_eat_food(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_done_eat_food::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_done_eat_food {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "IsDoneEatFood",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "IsDoneEatFood",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_done_eat_food(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_done_eat_food::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_done_change_equip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "DoneChangeEquip",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "DoneChangeEquip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn done_change_equip(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_done_change_equip::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_done_change_equip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                "IsDoneChangeEquip",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        "IsDoneChangeEquip",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_done_change_equip(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_done_change_equip::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: HubVariable_Mascot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubVariable_Mascot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubvariable")]
-impl HubVariable_Mascot {
-    #[doc = "`get_CanFollow()` overload"]
-    pub fn get_can_follow() -> bool {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_can_follow(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsFound()` overload"]
-    pub fn is_found() -> bool {
-        unsafe { __HubVariable_Mascot_unity2_raw::is_found(::core::option::Option::None) }
-    }
-
-    #[doc = "`Found()` overload"]
-    pub fn found() -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::found(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPoint()` overload"]
-    pub fn get_point() -> i32 {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_point(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetPoint(i32)` overload"]
-    pub fn set_point(point: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::set_point(::core::convert::Into::into(point), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_IgnorePoint()` overload"]
-    pub fn get_ignore_point() -> i32 {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_ignore_point(::core::option::Option::None) }
-    }
-
-    #[doc = "`get_TurnLimitPoint()` overload"]
-    pub fn get_turn_limit_point() -> i32 {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_turn_limit_point(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetLimitPoint()` overload"]
-    pub fn get_limit_point() -> i32 {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_limit_point(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetLimitPoint(i32)` overload"]
-    pub fn set_limit_point(point: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::set_limit_point(::core::convert::Into::into(point), ::core::option::Option::None) }
-    }
-
-    #[doc = "`AddPoint(i32)` overload"]
-    pub fn add_point(point: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::add_point(::core::convert::Into::into(point), ::core::option::Option::None) }
-    }
-
-    #[doc = "`DecPoint(i32)` overload"]
-    pub fn dec_point(point: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::dec_point(::core::convert::Into::into(point), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SetHeadAccName(::unity2::Il2CppString)` overload"]
-    pub fn set_head_acc_name(acc_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::set_head_acc_name(::core::convert::Into::into(acc_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetHeadAccName()` overload"]
-    pub fn get_head_acc_name() -> ::unity2::Il2CppString {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_head_acc_name(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetTailAccName(::unity2::Il2CppString)` overload"]
-    pub fn set_tail_acc_name(acc_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::set_tail_acc_name(::core::convert::Into::into(acc_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetTailAccName()` overload"]
-    pub fn get_tail_acc_name() -> ::unity2::Il2CppString {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_tail_acc_name(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetColorIndex(i32)` overload"]
-    pub fn set_color_index(color_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::set_color_index(::core::convert::Into::into(color_index), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetColorIndex()` overload"]
-    pub fn get_color_index() -> i32 {
-        unsafe { __HubVariable_Mascot_unity2_raw::get_color_index(::core::option::Option::None) }
-    }
-
-    #[doc = "`DoneStrok()` overload"]
-    pub fn done_strok() -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::done_strok(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsDoneStrok()` overload"]
-    pub fn is_done_strok() -> bool {
-        unsafe { __HubVariable_Mascot_unity2_raw::is_done_strok(::core::option::Option::None) }
-    }
-
-    #[doc = "`DoneEatFood()` overload"]
-    pub fn done_eat_food() -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::done_eat_food(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsDoneEatFood()` overload"]
-    pub fn is_done_eat_food() -> bool {
-        unsafe { __HubVariable_Mascot_unity2_raw::is_done_eat_food(::core::option::Option::None) }
-    }
-
-    #[doc = "`DoneChangeEquip()` overload"]
-    pub fn done_change_equip() -> () {
-        unsafe { __HubVariable_Mascot_unity2_raw::done_change_equip(::core::option::Option::None) }
-    }
-
-    #[doc = "`IsDoneChangeEquip()` overload"]
-    pub fn is_done_change_equip() -> bool {
-        unsafe { __HubVariable_Mascot_unity2_raw::is_done_change_equip(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-hubvariable")]
-pub trait IHubVariable_MascotMethods: IHubVariable_Mascot {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubVariable_Mascot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __HubVariable_Mascot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubvariable")]
-impl<__T: IHubVariable_Mascot> IHubVariable_MascotMethods for __T {}
-
-#[cfg(feature = "app-hubvariable")]
-impl HubVariable_Mascot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubVariable_Mascot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubVariable_MascotMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubvariable")]
 #[doc(hidden)]
@@ -2916,6 +1984,938 @@ impl HubVariable {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HubVariable), ::core::stringify!(new),));
         <Self as IHubVariableMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubvariable")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubVariable_Mascot_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_follow {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "get_CanFollow",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "get_CanFollow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_can_follow(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_can_follow::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_found {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "IsFound",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "IsFound",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_found(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_found::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_found {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "Found",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "Found",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn found(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_found::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "GetPoint",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "GetPoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_point::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "SetPoint",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "SetPoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_point::get_method_info().method_ptr);
+        inner(point, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ignore_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "get_IgnorePoint",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "get_IgnorePoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_ignore_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_ignore_point::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_turn_limit_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "get_TurnLimitPoint",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "get_TurnLimitPoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_turn_limit_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_turn_limit_point::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_limit_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "GetLimitPoint",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "GetLimitPoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_limit_point(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_limit_point::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_limit_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "SetLimitPoint",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "SetLimitPoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_limit_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_limit_point::get_method_info().method_ptr);
+        inner(point, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "AddPoint",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "AddPoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_add_point::get_method_info().method_ptr);
+        inner(point, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dec_point {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "DecPoint",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "DecPoint",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dec_point(point: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dec_point::get_method_info().method_ptr);
+        inner(point, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_head_acc_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "SetHeadAccName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "SetHeadAccName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_head_acc_name(acc_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_head_acc_name::get_method_info().method_ptr);
+        inner(acc_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_head_acc_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "GetHeadAccName",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "GetHeadAccName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_head_acc_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_head_acc_name::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_tail_acc_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "SetTailAccName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "SetTailAccName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_tail_acc_name(acc_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_tail_acc_name::get_method_info().method_ptr);
+        inner(acc_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_tail_acc_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "GetTailAccName",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "GetTailAccName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_tail_acc_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_tail_acc_name::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_color_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "SetColorIndex",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "SetColorIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_color_index(color_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_color_index::get_method_info().method_ptr);
+        inner(color_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "GetColorIndex",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "GetColorIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_color_index(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_color_index::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_done_strok {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "DoneStrok",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "DoneStrok",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn done_strok(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_done_strok::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_done_strok {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "IsDoneStrok",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "IsDoneStrok",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_done_strok(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_done_strok::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_done_eat_food {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "DoneEatFood",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "DoneEatFood",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn done_eat_food(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_done_eat_food::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_done_eat_food {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "IsDoneEatFood",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "IsDoneEatFood",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_done_eat_food(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_done_eat_food::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_done_change_equip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "DoneChangeEquip",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "DoneChangeEquip",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn done_change_equip(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_done_change_equip::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_done_change_equip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                "IsDoneChangeEquip",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        "IsDoneChangeEquip",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_done_change_equip(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_done_change_equip::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubVariable_Mascot as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubVariable_Mascot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: HubVariable_Mascot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubVariable_Mascot, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubvariable")]
+impl HubVariable_Mascot {
+    #[doc = "`get_CanFollow()` overload"]
+    pub fn get_can_follow() -> bool {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_can_follow(::core::option::Option::None) }
+    }
+
+    #[doc = "`IsFound()` overload"]
+    pub fn is_found() -> bool {
+        unsafe { __HubVariable_Mascot_unity2_raw::is_found(::core::option::Option::None) }
+    }
+
+    #[doc = "`Found()` overload"]
+    pub fn found() -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::found(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetPoint()` overload"]
+    pub fn get_point() -> i32 {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_point(::core::option::Option::None) }
+    }
+
+    #[doc = "`SetPoint(i32)` overload"]
+    pub fn set_point(point: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::set_point(::core::convert::Into::into(point), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_IgnorePoint()` overload"]
+    pub fn get_ignore_point() -> i32 {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_ignore_point(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_TurnLimitPoint()` overload"]
+    pub fn get_turn_limit_point() -> i32 {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_turn_limit_point(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetLimitPoint()` overload"]
+    pub fn get_limit_point() -> i32 {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_limit_point(::core::option::Option::None) }
+    }
+
+    #[doc = "`SetLimitPoint(i32)` overload"]
+    pub fn set_limit_point(point: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::set_limit_point(::core::convert::Into::into(point), ::core::option::Option::None) }
+    }
+
+    #[doc = "`AddPoint(i32)` overload"]
+    pub fn add_point(point: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::add_point(::core::convert::Into::into(point), ::core::option::Option::None) }
+    }
+
+    #[doc = "`DecPoint(i32)` overload"]
+    pub fn dec_point(point: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::dec_point(::core::convert::Into::into(point), ::core::option::Option::None) }
+    }
+
+    #[doc = "`SetHeadAccName(::unity2::Il2CppString)` overload"]
+    pub fn set_head_acc_name(acc_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::set_head_acc_name(::core::convert::Into::into(acc_name), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetHeadAccName()` overload"]
+    pub fn get_head_acc_name() -> ::unity2::Il2CppString {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_head_acc_name(::core::option::Option::None) }
+    }
+
+    #[doc = "`SetTailAccName(::unity2::Il2CppString)` overload"]
+    pub fn set_tail_acc_name(acc_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::set_tail_acc_name(::core::convert::Into::into(acc_name), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetTailAccName()` overload"]
+    pub fn get_tail_acc_name() -> ::unity2::Il2CppString {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_tail_acc_name(::core::option::Option::None) }
+    }
+
+    #[doc = "`SetColorIndex(i32)` overload"]
+    pub fn set_color_index(color_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::set_color_index(::core::convert::Into::into(color_index), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetColorIndex()` overload"]
+    pub fn get_color_index() -> i32 {
+        unsafe { __HubVariable_Mascot_unity2_raw::get_color_index(::core::option::Option::None) }
+    }
+
+    #[doc = "`DoneStrok()` overload"]
+    pub fn done_strok() -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::done_strok(::core::option::Option::None) }
+    }
+
+    #[doc = "`IsDoneStrok()` overload"]
+    pub fn is_done_strok() -> bool {
+        unsafe { __HubVariable_Mascot_unity2_raw::is_done_strok(::core::option::Option::None) }
+    }
+
+    #[doc = "`DoneEatFood()` overload"]
+    pub fn done_eat_food() -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::done_eat_food(::core::option::Option::None) }
+    }
+
+    #[doc = "`IsDoneEatFood()` overload"]
+    pub fn is_done_eat_food() -> bool {
+        unsafe { __HubVariable_Mascot_unity2_raw::is_done_eat_food(::core::option::Option::None) }
+    }
+
+    #[doc = "`DoneChangeEquip()` overload"]
+    pub fn done_change_equip() -> () {
+        unsafe { __HubVariable_Mascot_unity2_raw::done_change_equip(::core::option::Option::None) }
+    }
+
+    #[doc = "`IsDoneChangeEquip()` overload"]
+    pub fn is_done_change_equip() -> bool {
+        unsafe { __HubVariable_Mascot_unity2_raw::is_done_change_equip(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-hubvariable")]
+pub trait IHubVariable_MascotMethods: IHubVariable_Mascot {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubVariable_Mascot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubVariable_Mascot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubvariable")]
+impl<__T: IHubVariable_Mascot> IHubVariable_MascotMethods for __T {}
+
+#[cfg(feature = "app-hubvariable")]
+impl HubVariable_Mascot {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubVariable_Mascot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubVariable_MascotMethods>::ctor(this);
         this
     }
 }

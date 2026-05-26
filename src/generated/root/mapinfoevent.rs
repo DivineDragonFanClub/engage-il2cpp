@@ -19,52 +19,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoevent/MapInfoEvent.md"))]
-    #[::unity2::class(namespace = "", name = "MapInfoEvent")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapInfoEvent {
-        #[rename(name = "m_Mesh")]
-        pub m_mesh: crate::app::map::Map_CellMesh,
-        #[rename(name = "m_Materials")]
-        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[static_field]
-        #[rename(name = "COLOR_DARK")]
-        pub color_dark: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "COLOR_VTX0")]
-        pub color_vtx0: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "COLOR_VTX1")]
-        pub color_vtx1: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "COLOR_VTX2")]
-        pub color_vtx2: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "COLOR_VTX3")]
-        pub color_vtx3: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "UV_ZERO")]
-        pub uv_zero: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_SubMeshCount")]
-        pub m_sub_mesh_count: i32,
-        #[rename(name = "m_VisitColor")]
-        pub m_visit_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_EscapeColor")]
-        pub m_escape_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_BreakdownEnemyColor")]
-        pub m_breakdown_enemy_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_ScrollCurve")]
-        pub m_scroll_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_AlphaCurve")]
-        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_SpeedPropertyID")]
-        pub m_speed_property_id: i32,
-        #[rename(name = "m_AlphaPropertyID")]
-        pub m_alpha_property_id: i32,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfoevent/MapInfoEvent_MeshIndex.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -101,6 +55,63 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoevent/MapInfoEvent.md"))]
+    #[::unity2::class(namespace = "", name = "MapInfoEvent")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapInfoEvent {
+        #[offset(24)]
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::app::map::Map_CellMesh,
+        #[offset(32)]
+        #[rename(name = "m_Materials")]
+        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[static_field]
+        #[rename(name = "COLOR_DARK")]
+        pub color_dark: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "COLOR_VTX0")]
+        pub color_vtx0: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "COLOR_VTX1")]
+        pub color_vtx1: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "COLOR_VTX2")]
+        pub color_vtx2: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "COLOR_VTX3")]
+        pub color_vtx3: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "UV_ZERO")]
+        pub uv_zero: crate::unity_engine::vector2::Vector2,
+        #[offset(40)]
+        #[rename(name = "m_SubMeshCount")]
+        pub m_sub_mesh_count: i32,
+        #[offset(44)]
+        #[rename(name = "m_VisitColor")]
+        pub m_visit_color: crate::unity_engine::color::Color,
+        #[offset(60)]
+        #[rename(name = "m_EscapeColor")]
+        pub m_escape_color: crate::unity_engine::color::Color,
+        #[offset(76)]
+        #[rename(name = "m_BreakdownEnemyColor")]
+        pub m_breakdown_enemy_color: crate::unity_engine::color::Color,
+        #[offset(96)]
+        #[rename(name = "m_ScrollCurve")]
+        pub m_scroll_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(104)]
+        #[rename(name = "m_AlphaCurve")]
+        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(112)]
+        #[rename(name = "m_SpeedPropertyID")]
+        pub m_speed_property_id: i32,
+        #[offset(116)]
+        #[rename(name = "m_AlphaPropertyID")]
+        pub m_alpha_property_id: i32,
+        #[offset(120)]
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
     }
 }
 

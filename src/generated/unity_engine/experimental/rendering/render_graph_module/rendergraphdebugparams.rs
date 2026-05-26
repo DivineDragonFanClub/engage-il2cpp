@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphDebugParams")]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraphDebugParams {
+        #[offset(16)]
         #[rename(name = "clearRenderTargetsAtCreation")]
         pub clear_render_targets_at_creation: bool,
+        #[offset(17)]
         #[rename(name = "clearRenderTargetsAtRelease")]
         pub clear_render_targets_at_release: bool,
+        #[offset(18)]
         #[rename(name = "disablePassCulling")]
         pub disable_pass_culling: bool,
+        #[offset(19)]
         #[rename(name = "immediateMode")]
         pub immediate_mode: bool,
+        #[offset(20)]
         #[rename(name = "logFrameInformation")]
         pub log_frame_information: bool,
+        #[offset(21)]
         #[rename(name = "logResources")]
         pub log_resources: bool,
     }

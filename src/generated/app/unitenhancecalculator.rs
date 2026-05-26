@@ -20,8 +20,10 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxValue")]
         pub max_value: i32,
+        #[offset(16)]
         #[rename(name = "m_Values")]
         pub m_values: crate::app::unitenhancevalues::UnitEnhanceValues,
+        #[offset(24)]
         #[rename(name = "m_Temps")]
         pub m_temps: crate::app::unitenhancevalues::UnitEnhanceValues,
     }

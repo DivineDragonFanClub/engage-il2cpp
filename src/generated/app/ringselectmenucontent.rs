@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingSelectMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RingSelectMenuContent {
+        #[offset(232)]
         #[rename(name = "m_rootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_pageIcon")]
         pub m_page_icon: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(248)]
         #[rename(name = "m_pageTitle")]
         pub m_page_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

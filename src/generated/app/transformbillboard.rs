@@ -61,10 +61,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TransformBillboard")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TransformBillboard {
+        #[offset(24)]
         #[rename(name = "m_Axis")]
         pub m_axis: crate::app::transformbillboard::TransformBillboard_Axis,
+        #[offset(28)]
         #[rename(name = "m_IsScaling")]
         pub m_is_scaling: bool,
+        #[offset(32)]
         #[rename(name = "m_BaseScale")]
         pub m_base_scale: f32,
         #[static_field]

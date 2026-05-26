@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BitHash")]
     #[parent(crate::system::object::Object)]
     pub struct BitHash {
+        #[offset(16)]
         #[rename(name = "m_Shift")]
         pub m_shift: i32,
+        #[offset(20)]
         #[rename(name = "m_Mask")]
         pub m_mask: i32,
+        #[offset(24)]
         #[rename(name = "m_List")]
         pub m_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(32)]
         #[rename(name = "m_Names")]
         pub m_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(40)]
         #[rename(name = "m_Dictionary")]
         pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
+        #[offset(48)]
         #[rename(name = "m_Bits")]
         pub m_bits: ::unity2::Array<u8>,
     }

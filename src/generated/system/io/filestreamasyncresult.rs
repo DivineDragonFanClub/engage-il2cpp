@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "FileStreamAsyncResult")]
     #[parent(crate::system::object::Object)]
     pub struct FileStreamAsyncResult {
+        #[offset(16)]
         #[rename(name = "state")]
         pub state: ::unity2::IlInstance,
+        #[offset(24)]
         #[rename(name = "completed")]
         pub completed: bool,
+        #[offset(48)]
         #[rename(name = "completedSynch")]
         pub completed_synch: bool,
+        #[offset(52)]
         #[rename(name = "Count")]
         pub count: i32,
+        #[offset(56)]
         #[rename(name = "OriginalCount")]
         pub original_count: i32,
+        #[offset(60)]
         #[rename(name = "BytesRead")]
         pub bytes_read: i32,
     }

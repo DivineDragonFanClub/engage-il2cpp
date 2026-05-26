@@ -20,28 +20,40 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ClassChangeJobMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct ClassChangeJobMenuContent {
+        #[offset(232)]
         #[rename(name = "m_CostTextLevel")]
         pub m_cost_text_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_CostWeaponIconObjList")]
         pub m_cost_weapon_icon_obj_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(248)]
         #[rename(name = "m_CostWeaponText")]
         pub m_cost_weapon_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_CostItemImage")]
         pub m_cost_item_image: crate::unity_engine::ui::image::Image,
+        #[offset(264)]
         #[rename(name = "m_CostItemTitle")]
         pub m_cost_item_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_CostItemValue")]
         pub m_cost_item_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_HelpText")]
         pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_SkillRoodObj")]
         pub m_skill_rood_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_SkillImage")]
         pub m_skill_image: crate::unity_engine::ui::image::Image,
+        #[offset(304)]
         #[rename(name = "m_SkillName")]
         pub m_skill_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(312)]
         #[rename(name = "m_SkillGetLevel")]
         pub m_skill_get_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(320)]
         #[rename(name = "m_SkillHelpText")]
         pub m_skill_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

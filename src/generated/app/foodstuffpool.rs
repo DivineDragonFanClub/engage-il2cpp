@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FoodstuffPool")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: foodstuffpool :: FoodstuffPool >)]
     pub struct FoodstuffPool {
+        #[offset(32)]
         #[rename(name = "m_Food")]
         pub m_food: crate::app::fooddata::FoodData,
+        #[offset(40)]
         #[rename(name = "m_FoodstuffList")]
         pub m_foodstuff_list: crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
+        #[offset(48)]
         #[rename(name = "AddableFoodstuffNum")]
         pub addable_foodstuff_num: i32,
     }

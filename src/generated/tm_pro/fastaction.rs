@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "FastAction")]
     #[parent(crate::system::object::Object)]
     pub struct FastAction {
+        #[offset(16)]
         #[rename(name = "delegates")]
         pub delegates: crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::system::action::Action>,
+        #[offset(24)]
         #[rename(name = "lookup")]
         pub lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::system::action::Action,

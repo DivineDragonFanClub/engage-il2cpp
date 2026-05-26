@@ -17,23 +17,24 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DialogMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardPublicSettingDialog.DialogMenuItem")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct ProfileCardPublicSettingDialog_DialogMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardPublicSettingDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardPublicSettingDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardPublicSettingDialog.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardPublicSettingDialog_DecideEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardPublicSettingDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardPublicSettingDialog {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DialogMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardPublicSettingDialog.DialogMenuItem")]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct ProfileCardPublicSettingDialog_DialogMenuItem {
+        #[offset(112)]
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
+    }
 }
 
 #[cfg(feature = "app-profilecardpublicsettingdialog-types")]
@@ -42,23 +43,20 @@ pub use __types::*;
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw {
+mod __ProfileCardPublicSettingDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
+                <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -67,37 +65,31 @@ mod __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(
-        this: ProfileCardPublicSettingDialog_DialogMenuItem,
-        message: ::unity2::Il2CppString,
-        decide_event_handler: crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardPublicSettingDialog_DialogMenuItem,
-            ::unity2::Il2CppString,
-            crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, message, decide_event_handler, __unity2_method_info)
+    ) -> crate::app::basicdialog::BasicDialog {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::basicdialog::BasicDialog =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
+                <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 0,
                 param_types,
                 false,
@@ -109,73 +101,56 @@ mod __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
+                        <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn a_call(
-        this: ProfileCardPublicSettingDialog_DialogMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(ProfileCardPublicSettingDialog_DialogMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+    pub unsafe fn ctor(this: ProfileCardPublicSettingDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardPublicSettingDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
-pub trait IProfileCardPublicSettingDialog_DialogMenuItemMethods: IProfileCardPublicSettingDialog_DialogMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide_event_handler: impl ::core::convert::Into<crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(message),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
+impl ProfileCardPublicSettingDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::basicdialog::BasicDialog {
+        unsafe { __ProfileCardPublicSettingDialog_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+pub trait IProfileCardPublicSettingDialogMethods: IProfileCardPublicSettingDialog {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <ProfileCardPublicSettingDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardPublicSettingDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
-impl<__T: IProfileCardPublicSettingDialog_DialogMenuItem> IProfileCardPublicSettingDialog_DialogMenuItemMethods for __T {}
+impl<__T: IProfileCardPublicSettingDialog> IProfileCardPublicSettingDialogMethods for __T {}
 
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
-impl ProfileCardPublicSettingDialog_DialogMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        message: ::unity2::Il2CppString,
-        decide_event_handler: crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
-    ) -> Self {
+impl ProfileCardPublicSettingDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardPublicSettingDialog_DialogMenuItem),
+                ::core::stringify!(ProfileCardPublicSettingDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardPublicSettingDialog_DialogMenuItemMethods>::ctor(this, message, decide_event_handler);
+        <Self as IProfileCardPublicSettingDialogMethods>::ctor(this);
         this
     }
 }
@@ -314,20 +289,23 @@ impl ProfileCardPublicSettingDialog_DecideEventHandler {
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardPublicSettingDialog_unity2_raw {
+mod __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
+                <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -336,31 +314,37 @@ mod __ProfileCardPublicSettingDialog_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
+                        <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
+    pub unsafe fn ctor(
+        this: ProfileCardPublicSettingDialog_DialogMenuItem,
+        message: ::unity2::Il2CppString,
+        decide_event_handler: crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicdialog::BasicDialog {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::basicdialog::BasicDialog =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardPublicSettingDialog_DialogMenuItem,
+            ::unity2::Il2CppString,
+            crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, message, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_a_call {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
                 0,
                 param_types,
                 false,
@@ -372,56 +356,73 @@ mod __ProfileCardPublicSettingDialog_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <ProfileCardPublicSettingDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(this: ProfileCardPublicSettingDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCardPublicSettingDialog, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+    pub unsafe fn a_call(
+        this: ProfileCardPublicSettingDialog_DialogMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(ProfileCardPublicSettingDialog_DialogMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
-impl ProfileCardPublicSettingDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::basicdialog::BasicDialog {
-        unsafe { __ProfileCardPublicSettingDialog_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-profilecardpublicsettingdialog")]
-pub trait IProfileCardPublicSettingDialogMethods: IProfileCardPublicSettingDialog {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IProfileCardPublicSettingDialog_DialogMenuItemMethods: IProfileCardPublicSettingDialog_DialogMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardPublicSettingDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCardPublicSettingDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver = <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <ProfileCardPublicSettingDialog_DialogMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardPublicSettingDialog_DialogMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
-impl<__T: IProfileCardPublicSettingDialog> IProfileCardPublicSettingDialogMethods for __T {}
+impl<__T: IProfileCardPublicSettingDialog_DialogMenuItem> IProfileCardPublicSettingDialog_DialogMenuItemMethods for __T {}
 
 #[cfg(feature = "app-profilecardpublicsettingdialog")]
-impl ProfileCardPublicSettingDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl ProfileCardPublicSettingDialog_DialogMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        message: ::unity2::Il2CppString,
+        decide_event_handler: crate::app::profilecardpublicsettingdialog::ProfileCardPublicSettingDialog_DecideEventHandler,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardPublicSettingDialog),
+                ::core::stringify!(ProfileCardPublicSettingDialog_DialogMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardPublicSettingDialogMethods>::ctor(this);
+        <Self as IProfileCardPublicSettingDialog_DialogMenuItemMethods>::ctor(this, message, decide_event_handler);
         this
     }
 }

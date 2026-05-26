@@ -19,84 +19,97 @@ mod __types {
         system::object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_MenuItem_UnitIconInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.MenuItem.UnitIconInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct RewindMenu_MenuItem_UnitIconInfo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct RewindMenu_ExecuteConfirmDialog_ItemYes {
-        #[rename(name = "m_IsToPhaseBegin")]
-        pub m_is_to_phase_begin: bool,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct RewindMenu_CancelConfirmDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_MenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenu.MenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RewindMenu_MenuItem {
+        #[offset(100)]
         #[rename(name = "m_LogIndex")]
         pub m_log_index: i32,
+        #[offset(104)]
         #[rename(name = "m_LogText")]
         pub m_log_text: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_CursorX")]
         pub m_cursor_x: i32,
+        #[offset(116)]
         #[rename(name = "m_CursorZ")]
         pub m_cursor_z: i32,
+        #[offset(120)]
         #[rename(name = "m_ActorMapHistoryIndex")]
         pub m_actor_map_history_index: i32,
+        #[offset(128)]
         #[rename(name = "m_UnitIconInfo")]
         pub m_unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
+        #[offset(136)]
         #[rename(name = "m_DieUnitIconInfo")]
         pub m_die_unit_icon_info: crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,
+        #[offset(144)]
         #[rename(name = "m_ForceType")]
         pub m_force_type: crate::app::force::Force_Type,
+        #[offset(148)]
         #[rename(name = "m_IsPlayerPhaseBegin")]
         pub m_is_player_phase_begin: bool,
+        #[offset(152)]
         #[rename(name = "m_prev")]
         pub m_prev: crate::app::rewindmenu::RewindMenu_MenuItem,
+        #[offset(160)]
         #[rename(name = "m_next")]
         pub m_next: crate::app::rewindmenu::RewindMenu_MenuItem,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct RewindMenu_ExecuteConfirmDialog_ItemYes {
+        #[offset(112)]
+        #[rename(name = "m_IsToPhaseBegin")]
+        pub m_is_to_phase_begin: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RewindMenu {
+        #[offset(208)]
+        #[rename(name = "m_scrollNow")]
+        pub m_scroll_now: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_MenuItem_UnitIconInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.MenuItem.UnitIconInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct RewindMenu_MenuItem_UnitIconInfo {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemYesForChallengeMap")]
     #[parent(crate::app::rewindmenu::RewindMenu_CancelConfirmDialog_ItemYes)]
     pub struct RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemNo.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct RewindMenu_CancelConfirmDialog_ItemNo {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog")]
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct RewindMenu_ExecuteConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemNo.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct RewindMenu_ExecuteConfirmDialog_ItemNo {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYes.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemYes")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct RewindMenu_CancelConfirmDialog_ItemYes {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RewindMenu {
-        #[rename(name = "m_scrollNow")]
-        pub m_scroll_now: i32,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemNo.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.ExecuteConfirmDialog.ItemNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct RewindMenu_ExecuteConfirmDialog_ItemNo {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct RewindMenu_CancelConfirmDialog {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemNo.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenu.CancelConfirmDialog.ItemNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct RewindMenu_CancelConfirmDialog_ItemNo {}
 }
 
 #[cfg(feature = "app-rewindmenu-types")]
@@ -105,437 +118,21 @@ pub use __types::*;
 #[cfg(feature = "app-rewindmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_MenuItem_UnitIconInfo_unity2_raw {
+mod __RewindMenu_CancelConfirmDialog_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_person {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "get_Person",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Person",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_person(
-        this: RewindMenu_MenuItem_UnitIconInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::persondata::PersonData {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::persondata::PersonData =
-            ::core::mem::transmute(__lookup_get_person::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_person {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "set_Person",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_Person",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_person(
-        this: RewindMenu_MenuItem_UnitIconInfo,
-        value: crate::app::persondata::PersonData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_person::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_job {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "get_Job",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_Job",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_job(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::jobdata::JobData {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::jobdata::JobData =
-            ::core::mem::transmute(__lookup_get_job::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_job {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "set_Job",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_Job",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_job(
-        this: RewindMenu_MenuItem_UnitIconInfo,
-        value: crate::app::jobdata::JobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::jobdata::JobData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_job::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_female {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "get_IsFemale",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_IsFemale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_female(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_female::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_female {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "set_IsFemale",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_IsFemale",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_female(this: RewindMenu_MenuItem_UnitIconInfo, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_female::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "get_ItemKind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_ItemKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_kind(
-        this: RewindMenu_MenuItem_UnitIconInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData_Kinds {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_Kinds =
-            ::core::mem::transmute(__lookup_get_item_kind::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "set_ItemKind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_ItemKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item_kind(
-        this: RewindMenu_MenuItem_UnitIconInfo,
-        value: crate::app::itemdata::ItemData_Kinds,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item_kind::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_engage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "get_IsEngage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_IsEngage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_engage(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_engage::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_engage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "set_IsEngage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_IsEngage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_engage(this: RewindMenu_MenuItem_UnitIconInfo, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_engage::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "get_God",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_God",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_god(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::goddata::GodData {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::goddata::GodData =
-            ::core::mem::transmute(__lookup_get_god::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
-                "set_God",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_God",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_god(
-        this: RewindMenu_MenuItem_UnitIconInfo,
-        value: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_god::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::maphistory::MapHistory_RewindLog_UnitIcon as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -546,7 +143,7 @@ mod __RewindMenu_MenuItem_UnitIconInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -555,167 +152,31 @@ mod __RewindMenu_MenuItem_UnitIconInfo_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RewindMenu_MenuItem_UnitIconInfo,
-        rewind_log_unit_icon: crate::app::maphistory::MapHistory_RewindLog_UnitIcon,
+        this: RewindMenu_CancelConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RewindMenu_MenuItem_UnitIconInfo,
-            crate::app::maphistory::MapHistory_RewindLog_UnitIcon,
+            RewindMenu_CancelConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicdialogcontent::BasicDialogContent,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, rewind_log_unit_icon, __unity2_method_info)
+        inner(this, menu_item_list, menu_content, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_MenuItem_UnitIconInfoMethods: IRewindMenu_MenuItem_UnitIconInfo {
-    #[doc = "`get_Person()` overload"]
-    fn get_person(self) -> crate::app::persondata::PersonData {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_person(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Person(crate::app::persondata::PersonData)` overload"]
-    fn set_person(self, value: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_person(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Job()` overload"]
-    fn get_job(self) -> crate::app::jobdata::JobData {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_job(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Job(crate::app::jobdata::JobData)` overload"]
-    fn set_job(self, value: impl ::core::convert::Into<crate::app::jobdata::JobData>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_job(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsFemale()` overload"]
-    fn get_is_female(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_is_female(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsFemale(bool)` overload"]
-    fn set_is_female(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_is_female(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ItemKind()` overload"]
-    fn get_item_kind(self) -> crate::app::itemdata::ItemData_Kinds {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_item_kind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ItemKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_item_kind(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_item_kind(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsEngage()` overload"]
-    fn get_is_engage(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_is_engage(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsEngage(bool)` overload"]
-    fn set_is_engage(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_is_engage(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_God()` overload"]
-    fn get_god(self) -> crate::app::goddata::GodData {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_god(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_God(crate::app::goddata::GodData)` overload"]
-    fn set_god(self, value: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_god(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::maphistory::MapHistory_RewindLog_UnitIcon)` overload"]
-    fn ctor(self, rewind_log_unit_icon: impl ::core::convert::Into<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(rewind_log_unit_icon),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_MenuItem_UnitIconInfo> IRewindMenu_MenuItem_UnitIconInfoMethods for __T {}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_MenuItem_UnitIconInfo {
-    #[doc = "`.ctor(crate::app::maphistory::MapHistory_RewindLog_UnitIcon)` — overload selector"]
-    pub fn new(rewind_log_unit_icon: crate::app::maphistory::MapHistory_RewindLog_UnitIcon) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_MenuItem_UnitIconInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_MenuItem_UnitIconInfoMethods>::ctor(this, rewind_log_unit_icon);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw {
-    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_create_dialog {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateDialog",
                 1,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -724,98 +185,68 @@ mod __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateDialog",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(this: RewindMenu_ExecuteConfirmDialog_ItemYes, is_to_phase_begin: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenu_ExecuteConfirmDialog_ItemYes, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, is_to_phase_begin, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RewindMenu_ExecuteConfirmDialog_ItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RewindMenu_ExecuteConfirmDialog_ItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
+    pub unsafe fn create_dialog(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_dialog::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_ExecuteConfirmDialog_ItemYesMethods: IRewindMenu_ExecuteConfirmDialog_ItemYes {
-    #[doc = "`.ctor(bool)` overload"]
-    fn ctor(self, is_to_phase_begin: impl ::core::convert::Into<bool>) -> () {
+impl RewindMenu_CancelConfirmDialog {
+    #[doc = "`CreateDialog(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_dialog(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RewindMenu_CancelConfirmDialog_unity2_raw::create_dialog(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+pub trait IRewindMenu_CancelConfirmDialogMethods: IRewindMenu_CancelConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+    ) -> () {
         unsafe {
-            let __receiver = <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw::ctor(
+            let __receiver =
+                <RewindMenu_CancelConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_CancelConfirmDialog_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(is_to_phase_begin),
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_ExecuteConfirmDialog_ItemYes> IRewindMenu_ExecuteConfirmDialog_ItemYesMethods for __T {}
+impl<__T: IRewindMenu_CancelConfirmDialog> IRewindMenu_CancelConfirmDialogMethods for __T {}
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_ExecuteConfirmDialog_ItemYes {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_to_phase_begin: bool) -> Self {
+impl RewindMenu_CancelConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemYes),
+                ::core::stringify!(RewindMenu_CancelConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenu_ExecuteConfirmDialog_ItemYesMethods>::ctor(this, is_to_phase_begin);
+        <Self as IRewindMenu_CancelConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }
@@ -1612,18 +1043,18 @@ impl RewindMenu_MenuItem {
 #[cfg(feature = "app-rewindmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap_unity2_raw {
+mod __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as ::unity2::ClassIdentity>::class(),
+                <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -1634,7 +1065,7 @@ mod __RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as ::unity2::ClassIdentity>::NAME,
+                        <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1642,378 +1073,10 @@ mod __RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: RewindMenu_ExecuteConfirmDialog_ItemYes, is_to_phase_begin: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenu_ExecuteConfirmDialog_ItemYes, bool, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods: IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap> IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods for __T {}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_CancelConfirmDialog_ItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_CancelConfirmDialog_ItemNo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_CancelConfirmDialog_ItemNo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RewindMenu_CancelConfirmDialog_ItemNo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemNo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_CancelConfirmDialog_ItemNoMethods: IRewindMenu_CancelConfirmDialog_ItemNo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RewindMenu_CancelConfirmDialog_ItemNo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RewindMenu_CancelConfirmDialog_ItemNo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_CancelConfirmDialog_ItemNo> IRewindMenu_CancelConfirmDialog_ItemNoMethods for __T {}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog_ItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_CancelConfirmDialog_ItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_ExecuteConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RewindMenu_ExecuteConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RewindMenu_ExecuteConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicdialogcontent::BasicDialogContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateDialog",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateDialog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_dialog(
-        super_: crate::app::procinst::ProcInst,
-        is_to_phase_begin: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_dialog::get_method_info().method_ptr);
-        inner(super_, is_to_phase_begin, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_ExecuteConfirmDialog {
-    #[doc = "`CreateDialog(crate::app::procinst::ProcInst, bool)` overload"]
-    pub fn create_dialog(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        is_to_phase_begin: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __RewindMenu_ExecuteConfirmDialog_unity2_raw::create_dialog(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(is_to_phase_begin),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_ExecuteConfirmDialogMethods: IRewindMenu_ExecuteConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenu_ExecuteConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_ExecuteConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_ExecuteConfirmDialog> IRewindMenu_ExecuteConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_ExecuteConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_ExecuteConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_ExecuteConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_ExecuteConfirmDialog_ItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_ExecuteConfirmDialog_ItemNo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_ExecuteConfirmDialog_ItemNo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RewindMenu_ExecuteConfirmDialog_ItemNo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenu_ExecuteConfirmDialog_ItemNo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_ExecuteConfirmDialog_ItemNoMethods: IRewindMenu_ExecuteConfirmDialog_ItemNo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RewindMenu_ExecuteConfirmDialog_ItemNo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RewindMenu_ExecuteConfirmDialog_ItemNo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_ExecuteConfirmDialog_ItemNo> IRewindMenu_ExecuteConfirmDialog_ItemNoMethods for __T {}
-
-#[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_ExecuteConfirmDialog_ItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenu_ExecuteConfirmDialog_ItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RewindMenu_CancelConfirmDialog_ItemYes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemYes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
+        inner(this, is_to_phase_begin, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2022,7 +1085,7 @@ mod __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
+                <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -2035,7 +1098,7 @@ mod __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
+                        <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
                         "ACall",
                         e
                     )
@@ -2044,52 +1107,56 @@ mod __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: RewindMenu_CancelConfirmDialog_ItemYes,
+        this: RewindMenu_ExecuteConfirmDialog_ItemYes,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+        let inner: extern "C" fn(RewindMenu_ExecuteConfirmDialog_ItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
             ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_CancelConfirmDialog_ItemYesMethods: IRewindMenu_CancelConfirmDialog_ItemYes {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IRewindMenu_ExecuteConfirmDialog_ItemYesMethods: IRewindMenu_ExecuteConfirmDialog_ItemYes {
+    #[doc = "`.ctor(bool)` overload"]
+    fn ctor(self, is_to_phase_begin: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(is_to_phase_begin),
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RewindMenu_ExecuteConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+            __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_CancelConfirmDialog_ItemYes> IRewindMenu_CancelConfirmDialog_ItemYesMethods for __T {}
+impl<__T: IRewindMenu_ExecuteConfirmDialog_ItemYes> IRewindMenu_ExecuteConfirmDialog_ItemYesMethods for __T {}
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog_ItemYes {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl RewindMenu_ExecuteConfirmDialog_ItemYes {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_to_phase_begin: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYes),
+                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemYes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenu_CancelConfirmDialog_ItemYesMethods>::ctor(this);
+        <Self as IRewindMenu_ExecuteConfirmDialog_ItemYesMethods>::ctor(this, is_to_phase_begin);
         this
     }
 }
@@ -2923,7 +1990,676 @@ impl RewindMenu {
 #[cfg(feature = "app-rewindmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenu_CancelConfirmDialog_unity2_raw {
+mod __RewindMenu_MenuItem_UnitIconInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "get_Person",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Person",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_person(
+        this: RewindMenu_MenuItem_UnitIconInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::persondata::PersonData {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::persondata::PersonData =
+            ::core::mem::transmute(__lookup_get_person::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_person {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::persondata::PersonData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "set_Person",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_Person",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_person(
+        this: RewindMenu_MenuItem_UnitIconInfo,
+        value: crate::app::persondata::PersonData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::persondata::PersonData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_person::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_job {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "get_Job",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Job",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_job(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::jobdata::JobData {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::jobdata::JobData =
+            ::core::mem::transmute(__lookup_get_job::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_job {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "set_Job",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_Job",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_job(
+        this: RewindMenu_MenuItem_UnitIconInfo,
+        value: crate::app::jobdata::JobData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::jobdata::JobData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_job::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_female {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "get_IsFemale",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_IsFemale",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_female(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_female::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_female {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "set_IsFemale",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_IsFemale",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_female(this: RewindMenu_MenuItem_UnitIconInfo, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_female::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_kind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "get_ItemKind",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemKind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_kind(
+        this: RewindMenu_MenuItem_UnitIconInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemdata::ItemData_Kinds {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_Kinds =
+            ::core::mem::transmute(__lookup_get_item_kind::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_kind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "set_ItemKind",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_ItemKind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item_kind(
+        this: RewindMenu_MenuItem_UnitIconInfo,
+        value: crate::app::itemdata::ItemData_Kinds,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item_kind::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_engage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "get_IsEngage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEngage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_engage(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_engage::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_engage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "set_IsEngage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_IsEngage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_engage(this: RewindMenu_MenuItem_UnitIconInfo, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_engage::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "get_God",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_God",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_god(this: RewindMenu_MenuItem_UnitIconInfo, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::goddata::GodData {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, ::unity2::OptionalMethod) -> crate::app::goddata::GodData =
+            ::core::mem::transmute(__lookup_get_god::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                "set_God",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_God",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_god(
+        this: RewindMenu_MenuItem_UnitIconInfo,
+        value: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenu_MenuItem_UnitIconInfo, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_god::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::maphistory::MapHistory_RewindLog_UnitIcon as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_MenuItem_UnitIconInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RewindMenu_MenuItem_UnitIconInfo,
+        rewind_log_unit_icon: crate::app::maphistory::MapHistory_RewindLog_UnitIcon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RewindMenu_MenuItem_UnitIconInfo,
+            crate::app::maphistory::MapHistory_RewindLog_UnitIcon,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, rewind_log_unit_icon, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+pub trait IRewindMenu_MenuItem_UnitIconInfoMethods: IRewindMenu_MenuItem_UnitIconInfo {
+    #[doc = "`get_Person()` overload"]
+    fn get_person(self) -> crate::app::persondata::PersonData {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_person(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Person(crate::app::persondata::PersonData)` overload"]
+    fn set_person(self, value: impl ::core::convert::Into<crate::app::persondata::PersonData>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_person(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Job()` overload"]
+    fn get_job(self) -> crate::app::jobdata::JobData {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_job(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Job(crate::app::jobdata::JobData)` overload"]
+    fn set_job(self, value: impl ::core::convert::Into<crate::app::jobdata::JobData>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_job(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsFemale()` overload"]
+    fn get_is_female(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_is_female(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsFemale(bool)` overload"]
+    fn set_is_female(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_is_female(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_ItemKind()` overload"]
+    fn get_item_kind(self) -> crate::app::itemdata::ItemData_Kinds {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_item_kind(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_ItemKind(crate::app::itemdata::ItemData_Kinds)` overload"]
+    fn set_item_kind(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_item_kind(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsEngage()` overload"]
+    fn get_is_engage(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_is_engage(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsEngage(bool)` overload"]
+    fn set_is_engage(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_is_engage(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_God()` overload"]
+    fn get_god(self) -> crate::app::goddata::GodData {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::get_god(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_God(crate::app::goddata::GodData)` overload"]
+    fn set_god(self, value: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::set_god(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::maphistory::MapHistory_RewindLog_UnitIcon)` overload"]
+    fn ctor(self, rewind_log_unit_icon: impl ::core::convert::Into<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenu_MenuItem_UnitIconInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_MenuItem_UnitIconInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(rewind_log_unit_icon),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+impl<__T: IRewindMenu_MenuItem_UnitIconInfo> IRewindMenu_MenuItem_UnitIconInfoMethods for __T {}
+
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_MenuItem_UnitIconInfo {
+    #[doc = "`.ctor(crate::app::maphistory::MapHistory_RewindLog_UnitIcon)` — overload selector"]
+    pub fn new(rewind_log_unit_icon: crate::app::maphistory::MapHistory_RewindLog_UnitIcon) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_MenuItem_UnitIconInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_MenuItem_UnitIconInfoMethods>::ctor(this, rewind_log_unit_icon);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+pub trait IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods: IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+impl<__T: IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap> IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods for __T {}
+
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenu_ExecuteConfirmDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2935,7 +2671,7 @@ mod __RewindMenu_CancelConfirmDialog_unity2_raw {
                 <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::class(),
+                <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -2948,7 +2684,7 @@ mod __RewindMenu_CancelConfirmDialog_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -2957,13 +2693,13 @@ mod __RewindMenu_CancelConfirmDialog_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RewindMenu_CancelConfirmDialog,
+        this: RewindMenu_ExecuteConfirmDialog,
         menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::basicdialogcontent::BasicDialogContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RewindMenu_CancelConfirmDialog,
+            RewindMenu_ExecuteConfirmDialog,
             crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             crate::app::basicdialogcontent::BasicDialogContent,
             ::unity2::OptionalMethod,
@@ -2975,11 +2711,14 @@ mod __RewindMenu_CancelConfirmDialog_unity2_raw {
     pub mod __lookup_create_dialog {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::class(),
+                <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::class(),
                 "CreateDialog",
-                1,
+                2,
                 param_types,
                 true,
             )
@@ -2990,7 +2729,7 @@ mod __RewindMenu_CancelConfirmDialog_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RewindMenu_CancelConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        <RewindMenu_ExecuteConfirmDialog as ::unity2::ClassIdentity>::NAME,
                         "CreateDialog",
                         e
                     )
@@ -2998,23 +2737,36 @@ mod __RewindMenu_CancelConfirmDialog_unity2_raw {
             }
         }
     }
-    pub unsafe fn create_dialog(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn create_dialog(
+        super_: crate::app::procinst::ProcInst,
+        is_to_phase_begin: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_create_dialog::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
+        inner(super_, is_to_phase_begin, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog {
-    #[doc = "`CreateDialog(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_dialog(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RewindMenu_CancelConfirmDialog_unity2_raw::create_dialog(::core::convert::Into::into(super_), ::core::option::Option::None) }
+impl RewindMenu_ExecuteConfirmDialog {
+    #[doc = "`CreateDialog(crate::app::procinst::ProcInst, bool)` overload"]
+    pub fn create_dialog(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        is_to_phase_begin: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __RewindMenu_ExecuteConfirmDialog_unity2_raw::create_dialog(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(is_to_phase_begin),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 
 #[cfg(feature = "app-rewindmenu")]
-pub trait IRewindMenu_CancelConfirmDialogMethods: IRewindMenu_CancelConfirmDialog {
+pub trait IRewindMenu_ExecuteConfirmDialogMethods: IRewindMenu_ExecuteConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
     fn ctor(
         self,
@@ -3023,8 +2775,8 @@ pub trait IRewindMenu_CancelConfirmDialogMethods: IRewindMenu_CancelConfirmDialo
     ) -> () {
         unsafe {
             let __receiver =
-                <RewindMenu_CancelConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenu_CancelConfirmDialog_unity2_raw::ctor(
+                <RewindMenu_ExecuteConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenu_ExecuteConfirmDialog_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_item_list),
                 ::core::convert::Into::into(menu_content),
@@ -3035,10 +2787,10 @@ pub trait IRewindMenu_CancelConfirmDialogMethods: IRewindMenu_CancelConfirmDialo
 }
 
 #[cfg(feature = "app-rewindmenu")]
-impl<__T: IRewindMenu_CancelConfirmDialog> IRewindMenu_CancelConfirmDialogMethods for __T {}
+impl<__T: IRewindMenu_ExecuteConfirmDialog> IRewindMenu_ExecuteConfirmDialogMethods for __T {}
 
 #[cfg(feature = "app-rewindmenu")]
-impl RewindMenu_CancelConfirmDialog {
+impl RewindMenu_ExecuteConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
     pub fn new(
         menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
@@ -3047,11 +2799,272 @@ impl RewindMenu_CancelConfirmDialog {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenu_CancelConfirmDialog),
+                ::core::stringify!(RewindMenu_ExecuteConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenu_CancelConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
+        <Self as IRewindMenu_ExecuteConfirmDialogMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RewindMenu_CancelConfirmDialog_ItemYes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemYes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RewindMenu_CancelConfirmDialog_ItemYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+pub trait IRewindMenu_CancelConfirmDialog_ItemYesMethods: IRewindMenu_CancelConfirmDialog_ItemYes {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RewindMenu_CancelConfirmDialog_ItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+impl<__T: IRewindMenu_CancelConfirmDialog_ItemYes> IRewindMenu_CancelConfirmDialog_ItemYesMethods for __T {}
+
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_CancelConfirmDialog_ItemYes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_CancelConfirmDialog_ItemYesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenu_ExecuteConfirmDialog_ItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_ExecuteConfirmDialog_ItemNo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_ExecuteConfirmDialog_ItemNo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RewindMenu_ExecuteConfirmDialog_ItemNo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenu_ExecuteConfirmDialog_ItemNo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+pub trait IRewindMenu_ExecuteConfirmDialog_ItemNoMethods: IRewindMenu_ExecuteConfirmDialog_ItemNo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RewindMenu_ExecuteConfirmDialog_ItemNo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RewindMenu_ExecuteConfirmDialog_ItemNo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+impl<__T: IRewindMenu_ExecuteConfirmDialog_ItemNo> IRewindMenu_ExecuteConfirmDialog_ItemNoMethods for __T {}
+
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_ExecuteConfirmDialog_ItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_ExecuteConfirmDialog_ItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenu_CancelConfirmDialog_ItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenu_CancelConfirmDialog_ItemNo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenu_CancelConfirmDialog_ItemNo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RewindMenu_CancelConfirmDialog_ItemNo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenu_CancelConfirmDialog_ItemNo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+pub trait IRewindMenu_CancelConfirmDialog_ItemNoMethods: IRewindMenu_CancelConfirmDialog_ItemNo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RewindMenu_CancelConfirmDialog_ItemNo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RewindMenu_CancelConfirmDialog_ItemNo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenu")]
+impl<__T: IRewindMenu_CancelConfirmDialog_ItemNo> IRewindMenu_CancelConfirmDialog_ItemNoMethods for __T {}
+
+#[cfg(feature = "app-rewindmenu")]
+impl RewindMenu_CancelConfirmDialog_ItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenu_CancelConfirmDialog_ItemNoMethods>::ctor(this);
         this
     }
 }

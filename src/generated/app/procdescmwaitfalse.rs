@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescMWaitFalse")]
     #[parent(crate::app::procdescwaitfunc::ProcDescWaitFunc)]
     pub struct ProcDescMWaitFalse {
+        #[offset(24)]
         #[rename(name = "m_Method")]
         pub m_method: crate::app::procboolmethod::ProcBoolMethod,
     }

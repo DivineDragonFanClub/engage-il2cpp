@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "DebugService")]
     #[parent(crate::system::object::Object)]
     pub struct DebugService {
+        #[offset(16)]
         #[rename(name = "m_Processor")]
         pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
     }

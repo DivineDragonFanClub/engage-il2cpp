@@ -22,6 +22,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EffectSequence")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)]
     pub struct EffectSequence {
+        #[offset(64)]
         #[rename(name = "m_Effects")]
         pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData>,
     }

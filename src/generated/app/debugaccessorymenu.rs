@@ -15,25 +15,27 @@ mod __types {
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct DebugAccessoryMenu_AddAllMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugAccessoryMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugAccessoryMenu {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.DeleteAllMenuItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct DebugAccessoryMenu_DeleteAllMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_AccessoryMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.AccessoryMenuItem")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct DebugAccessoryMenu_AccessoryMenuItem {
+        #[offset(32)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
+        #[offset(40)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::accessorydata::AccessoryData,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.DeleteAllMenuItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct DebugAccessoryMenu_DeleteAllMenuItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugAccessoryMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugAccessoryMenu {}
 }
 
 #[cfg(feature = "app-debugaccessorymenu-types")]
@@ -201,20 +203,20 @@ impl DebugAccessoryMenu_AddAllMenuItem {
 #[cfg(feature = "app-debugaccessorymenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugAccessoryMenu_unity2_raw {
+mod __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_get_name {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugAccessoryMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
+                <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -223,18 +225,54 @@ mod __DebugAccessoryMenu_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugAccessoryMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
+                        <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
+    pub unsafe fn get_name(this: DebugAccessoryMenu_DeleteAllMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: DebugAccessoryMenu_DeleteAllMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -243,7 +281,7 @@ mod __DebugAccessoryMenu_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugAccessoryMenu as ::unity2::ClassIdentity>::class(),
+                <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -256,7 +294,7 @@ mod __DebugAccessoryMenu_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugAccessoryMenu as ::unity2::ClassIdentity>::NAME,
+                        <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -264,47 +302,59 @@ mod __DebugAccessoryMenu_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: DebugAccessoryMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugAccessoryMenu, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: DebugAccessoryMenu_DeleteAllMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugaccessorymenu")]
-impl DebugAccessoryMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __DebugAccessoryMenu_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
+pub trait IDebugAccessoryMenu_DeleteAllMenuItemMethods: IDebugAccessoryMenu_DeleteAllMenuItem {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
     }
-}
-
-#[cfg(feature = "app-debugaccessorymenu")]
-pub trait IDebugAccessoryMenuMethods: IDebugAccessoryMenu {
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver = <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DebugAccessoryMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugAccessoryMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver = <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugaccessorymenu")]
-impl<__T: IDebugAccessoryMenu> IDebugAccessoryMenuMethods for __T {}
+impl<__T: IDebugAccessoryMenu_DeleteAllMenuItem> IDebugAccessoryMenu_DeleteAllMenuItemMethods for __T {}
 
 #[cfg(feature = "app-debugaccessorymenu")]
-impl DebugAccessoryMenu {
+impl DebugAccessoryMenu_DeleteAllMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugAccessoryMenu),
+                ::core::stringify!(DebugAccessoryMenu_DeleteAllMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugAccessoryMenuMethods>::ctor(this);
+        <Self as IDebugAccessoryMenu_DeleteAllMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -684,20 +734,20 @@ impl DebugAccessoryMenu_AccessoryMenuItem {
 #[cfg(feature = "app-debugaccessorymenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw {
+mod __DebugAccessoryMenu_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
+                <DebugAccessoryMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -706,54 +756,18 @@ mod __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
+                        <DebugAccessoryMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_name(this: DebugAccessoryMenu_DeleteAllMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: DebugAccessoryMenu_DeleteAllMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -762,7 +776,7 @@ mod __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::class(),
+                <DebugAccessoryMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -775,7 +789,7 @@ mod __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::ClassIdentity>::NAME,
+                        <DebugAccessoryMenu as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -783,59 +797,47 @@ mod __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: DebugAccessoryMenu_DeleteAllMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: DebugAccessoryMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugAccessoryMenu, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugaccessorymenu")]
-pub trait IDebugAccessoryMenu_DeleteAllMenuItemMethods: IDebugAccessoryMenu_DeleteAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
+impl DebugAccessoryMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __DebugAccessoryMenu_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver = <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
+}
+
+#[cfg(feature = "app-debugaccessorymenu")]
+pub trait IDebugAccessoryMenuMethods: IDebugAccessoryMenu {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DebugAccessoryMenu_DeleteAllMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver = <DebugAccessoryMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugAccessoryMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugaccessorymenu")]
-impl<__T: IDebugAccessoryMenu_DeleteAllMenuItem> IDebugAccessoryMenu_DeleteAllMenuItemMethods for __T {}
+impl<__T: IDebugAccessoryMenu> IDebugAccessoryMenuMethods for __T {}
 
 #[cfg(feature = "app-debugaccessorymenu")]
-impl DebugAccessoryMenu_DeleteAllMenuItem {
+impl DebugAccessoryMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugAccessoryMenu_DeleteAllMenuItem),
+                ::core::stringify!(DebugAccessoryMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugAccessoryMenu_DeleteAllMenuItemMethods>::ctor(this);
+        <Self as IDebugAccessoryMenuMethods>::ctor(this);
         this
     }
 }

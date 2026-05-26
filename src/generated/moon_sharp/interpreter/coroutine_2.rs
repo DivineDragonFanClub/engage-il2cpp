@@ -14,6 +14,18 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Coroutine")]
+    #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
+    pub struct Coroutine_2 {
+        #[offset(24)]
+        #[rename(name = "m_ClrCallback")]
+        pub m_clr_callback: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+        #[offset(32)]
+        #[rename(name = "m_Processor")]
+        pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coroutine_2/Coroutine_CoroutineType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -50,16 +62,6 @@ mod __types {
         pub fn clr_callback_dead() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Coroutine")]
-    #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
-    pub struct Coroutine_2 {
-        #[rename(name = "m_ClrCallback")]
-        pub m_clr_callback: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
-        #[rename(name = "m_Processor")]
-        pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
     }
 }
 

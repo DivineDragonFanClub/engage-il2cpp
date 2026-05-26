@@ -18,22 +18,31 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkEventPlayable")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct AkEventPlayable {
+        #[offset(32)]
         #[rename(name = "blendInCurve")]
         pub blend_in_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
+        #[offset(36)]
         #[rename(name = "blendOutCurve")]
         pub blend_out_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
+        #[offset(40)]
         #[rename(name = "emitterObjectRef")]
         pub emitter_object_ref: crate::unity_engine::exposedreference_1::ExposedReference_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(56)]
         #[rename(name = "eventDurationMax")]
         pub event_duration_max: f32,
+        #[offset(60)]
         #[rename(name = "eventDurationMin")]
         pub event_duration_min: f32,
+        #[offset(64)]
         #[rename(name = "owningClip")]
         pub owning_clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+        #[offset(72)]
         #[rename(name = "retriggerEvent")]
         pub retrigger_event: bool,
+        #[offset(73)]
         #[rename(name = "UseWwiseEventDuration")]
         pub use_wwise_event_duration: bool,
+        #[offset(74)]
         #[rename(name = "StopEventAtClipEnd")]
         pub stop_event_at_clip_end: bool,
     }

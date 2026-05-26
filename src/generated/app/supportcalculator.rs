@@ -17,24 +17,34 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxShowUnits")]
         pub max_show_units: i32,
+        #[offset(16)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(24)]
         #[rename(name = "m_X")]
         pub m_x: i32,
+        #[offset(28)]
         #[rename(name = "m_Z")]
         pub m_z: i32,
+        #[offset(32)]
         #[rename(name = "m_Hit")]
         pub m_hit: i32,
+        #[offset(36)]
         #[rename(name = "m_Avoid")]
         pub m_avoid: i32,
+        #[offset(40)]
         #[rename(name = "m_Critical")]
         pub m_critical: i32,
+        #[offset(44)]
         #[rename(name = "m_Secure")]
         pub m_secure: i32,
+        #[offset(48)]
         #[rename(name = "m_ShowUnits")]
         pub m_show_units: ::unity2::Array<crate::app::unit::Unit>,
+        #[offset(56)]
         #[rename(name = "m_ShowUnitLevels")]
         pub m_show_unit_levels: ::unity2::Array<crate::app::reliancedata::RelianceData_Level>,
+        #[offset(64)]
         #[rename(name = "m_RangeFunction")]
         pub m_range_function: crate::app::mapfor::MapFor_RangeFunction,
     }

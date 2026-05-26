@@ -1056,6 +1056,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkSoundEngine.AutoObject")]
     #[parent(crate::system::object::Object)]
     pub struct AkSoundEngine_AutoObject {
+        #[offset(16)]
         #[rename(name = "gameObject")]
         pub game_object: crate::unity_engine::gameobject::GameObject,
     }

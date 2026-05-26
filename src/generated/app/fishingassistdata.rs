@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingAssistData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingassistdata :: FishingAssistData >)]
     pub struct FishingAssistData {
+        #[offset(88)]
         #[rename(name = "Param")]
         pub param: ::unity2::Array<f32>,
     }

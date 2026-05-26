@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerFreeCamera")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerFreeCamera {
+        #[offset(168)]
         #[rename(name = "CameraPosFromChara")]
         pub camera_pos_from_chara: crate::unity_engine::vector3::Vector3,
+        #[offset(180)]
         #[rename(name = "LookDirection")]
         pub look_direction: crate::unity_engine::vector3::Vector3,
     }

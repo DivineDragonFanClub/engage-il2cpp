@@ -23,8 +23,10 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_NavigationText")]
         pub m_navigation_text: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_NavigationPointList")]
         pub m_navigation_point_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

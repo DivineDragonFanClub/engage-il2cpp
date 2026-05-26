@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MultiItemGainSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MultiItemGainSequence {
+        #[offset(112)]
         #[rename(name = "m_Items")]
         pub m_items: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+        #[offset(120)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
     }

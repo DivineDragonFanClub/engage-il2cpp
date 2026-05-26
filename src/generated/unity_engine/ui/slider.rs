@@ -72,6 +72,60 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Slider")]
+    #[parent(crate::unity_engine::ui::selectable::Selectable)]
+    pub struct Slider {
+        #[offset(248)]
+        #[rename(name = "m_FillRect")]
+        pub m_fill_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(256)]
+        #[rename(name = "m_HandleRect")]
+        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(264)]
+        #[rename(name = "m_Direction")]
+        pub m_direction: crate::unity_engine::ui::slider::Slider_Direction,
+        #[offset(268)]
+        #[rename(name = "m_MinValue")]
+        pub m_min_value: f32,
+        #[offset(272)]
+        #[rename(name = "m_MaxValue")]
+        pub m_max_value: f32,
+        #[offset(276)]
+        #[rename(name = "m_WholeNumbers")]
+        pub m_whole_numbers: bool,
+        #[offset(280)]
+        #[rename(name = "m_Value")]
+        pub m_value: f32,
+        #[offset(288)]
+        #[rename(name = "m_OnValueChanged")]
+        pub m_on_value_changed: crate::unity_engine::ui::slider::Slider_SliderEvent,
+        #[offset(296)]
+        #[rename(name = "m_FillImage")]
+        pub m_fill_image: crate::unity_engine::ui::image::Image,
+        #[offset(304)]
+        #[rename(name = "m_FillTransform")]
+        pub m_fill_transform: crate::unity_engine::transform::Transform,
+        #[offset(312)]
+        #[rename(name = "m_FillContainerRect")]
+        pub m_fill_container_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(320)]
+        #[rename(name = "m_HandleTransform")]
+        pub m_handle_transform: crate::unity_engine::transform::Transform,
+        #[offset(328)]
+        #[rename(name = "m_HandleContainerRect")]
+        pub m_handle_container_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(336)]
+        #[rename(name = "m_Offset")]
+        pub m_offset: crate::unity_engine::vector2::Vector2,
+        #[offset(344)]
+        #[rename(name = "m_Tracker")]
+        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+        #[offset(345)]
+        #[rename(name = "m_DelayedUpdateVisuals")]
+        pub m_delayed_update_visuals: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -104,44 +158,6 @@ mod __types {
         pub fn vertical() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Slider")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct Slider {
-        #[rename(name = "m_FillRect")]
-        pub m_fill_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_HandleRect")]
-        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Direction")]
-        pub m_direction: crate::unity_engine::ui::slider::Slider_Direction,
-        #[rename(name = "m_MinValue")]
-        pub m_min_value: f32,
-        #[rename(name = "m_MaxValue")]
-        pub m_max_value: f32,
-        #[rename(name = "m_WholeNumbers")]
-        pub m_whole_numbers: bool,
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[rename(name = "m_OnValueChanged")]
-        pub m_on_value_changed: crate::unity_engine::ui::slider::Slider_SliderEvent,
-        #[rename(name = "m_FillImage")]
-        pub m_fill_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_FillTransform")]
-        pub m_fill_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_FillContainerRect")]
-        pub m_fill_container_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_HandleTransform")]
-        pub m_handle_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HandleContainerRect")]
-        pub m_handle_container_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Offset")]
-        pub m_offset: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Tracker")]
-        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
-        #[rename(name = "m_DelayedUpdateVisuals")]
-        pub m_delayed_update_visuals: bool,
     }
 }
 

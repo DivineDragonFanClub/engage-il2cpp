@@ -14,11 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonRewardSequence.ProcDiscardMessage")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct CommonRewardSequence_ProcDiscardMessage {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonrewardsequence/CommonRewardSequence_Label2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -61,26 +56,40 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]
+    #[::unity2::class(namespace = "App", name = "CommonRewardSequence.ProcDiscardMessage")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct CommonRewardSequence_ProcDiscardMessage {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence.md"))]
     #[::unity2::class(namespace = "App", name = "CommonRewardSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct CommonRewardSequence {
+        #[offset(112)]
         #[rename(name = "m_Bg")]
         pub m_bg: crate::app::menubg::MenuBg,
+        #[offset(120)]
         #[rename(name = "m_RewardExpList")]
         pub m_reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
+        #[offset(128)]
         #[rename(name = "m_RewardItemList")]
         pub m_reward_item_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+        #[offset(136)]
         #[rename(name = "m_RewardMoney")]
         pub m_reward_money: i32,
+        #[offset(140)]
         #[rename(name = "m_IsDiscard")]
         pub m_is_discard: bool,
+        #[offset(141)]
         #[rename(name = "m_IsCreateBg")]
         pub m_is_create_bg: bool,
+        #[offset(142)]
         #[rename(name = "m_IsClear")]
         pub m_is_clear: bool,
+        #[offset(144)]
         #[rename(name = "TitleMID")]
         pub title_mid: ::unity2::Il2CppString,
+        #[offset(152)]
         #[rename(name = "m_LevelUpUnitList")]
         pub m_level_up_unit_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
     }

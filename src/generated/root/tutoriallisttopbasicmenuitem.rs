@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "TutorialListTopBasicMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct TutorialListTopBasicMenuItem {
+        #[offset(100)]
         #[rename(name = "m_IsGetAllTutorial")]
         pub m_is_get_all_tutorial: bool,
+        #[offset(104)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
     }

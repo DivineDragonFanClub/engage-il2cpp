@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionKnockoff")]
     #[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]
     pub struct ActionKnockoff {
+        #[offset(48)]
         #[rename(name = "played")]
         pub played: bool,
     }

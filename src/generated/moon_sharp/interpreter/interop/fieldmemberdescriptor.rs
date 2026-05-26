@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "FieldMemberDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct FieldMemberDescriptor {
+        #[offset(48)]
         #[rename(name = "m_ConstValue")]
         pub m_const_value: ::unity2::IlInstance,
+        #[offset(56)]
         #[rename(name = "m_OptimizedGetter")]
         pub m_optimized_getter: crate::system::func_2::Func_2<crate::system::object::Object, crate::system::object::Object>,
     }

@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WeaponHoldingInfoWindow")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct WeaponHoldingInfoWindow {
+        #[offset(24)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_KindFrameObject")]
         pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_HoldingValueText")]
         pub m_holding_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "ForceMask")]
         pub force_mask: u32,
     }

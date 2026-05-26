@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerRow")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerfoldout::DebugUIHandlerFoldout)]
     pub struct DebugUIHandlerRow {
+        #[offset(120)]
         #[rename(name = "m_Timer")]
         pub m_timer: f32,
     }

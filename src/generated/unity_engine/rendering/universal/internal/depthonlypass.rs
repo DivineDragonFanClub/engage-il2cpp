@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "DepthOnlyPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct DepthOnlyPass {
+        #[offset(112)]
         #[rename(name = "kDepthBufferBits")]
         pub k_depth_buffer_bits: i32,
+        #[offset(220)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(244)]
         #[rename(name = "m_ShaderTagId")]
         pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(248)]
         #[rename(name = "m_ShaderTagIdList")]
         pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
     }

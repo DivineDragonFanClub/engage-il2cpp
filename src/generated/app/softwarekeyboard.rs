@@ -14,27 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))]
-    #[::unity2::class(namespace = "App", name = "SoftwareKeyboard")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct SoftwareKeyboard {
-        #[static_field]
-        #[rename(name = "DataCodeMaxLength")]
-        pub data_code_max_length: i32,
-        #[rename(name = "m_maxLength")]
-        pub m_max_length: i32,
-        #[rename(name = "m_headerText")]
-        pub m_header_text: ::unity2::Il2CppString,
-        #[rename(name = "m_subText")]
-        pub m_sub_text: ::unity2::Il2CppString,
-        #[rename(name = "m_initialText")]
-        pub m_initial_text: ::unity2::Il2CppString,
-        #[rename(name = "m_preset")]
-        pub m_preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
-        #[rename(name = "m_callback")]
-        pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,6 +50,33 @@ mod __types {
         pub fn reported_reason() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))]
+    #[::unity2::class(namespace = "App", name = "SoftwareKeyboard")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct SoftwareKeyboard {
+        #[static_field]
+        #[rename(name = "DataCodeMaxLength")]
+        pub data_code_max_length: i32,
+        #[offset(296)]
+        #[rename(name = "m_maxLength")]
+        pub m_max_length: i32,
+        #[offset(304)]
+        #[rename(name = "m_headerText")]
+        pub m_header_text: ::unity2::Il2CppString,
+        #[offset(312)]
+        #[rename(name = "m_subText")]
+        pub m_sub_text: ::unity2::Il2CppString,
+        #[offset(320)]
+        #[rename(name = "m_initialText")]
+        pub m_initial_text: ::unity2::Il2CppString,
+        #[offset(328)]
+        #[rename(name = "m_preset")]
+        pub m_preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+        #[offset(336)]
+        #[rename(name = "m_callback")]
+        pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
     }
 }
 

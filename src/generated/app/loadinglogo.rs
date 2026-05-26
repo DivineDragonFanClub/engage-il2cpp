@@ -66,6 +66,24 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]
+    #[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
+    #[parent(crate::system::object::Object)]
+    pub struct LoadingLogo_UnitDotObject {
+        #[offset(16)]
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::rawimage::RawImage,
+        #[offset(32)]
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
+        #[rename(name = "m_Material")]
+        pub m_material: crate::unity_engine::material::Material,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md"))]
     #[::unity2::class(namespace = "App", name = "LoadingLogo")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: loadinglogo :: LoadingLogo >)]
@@ -76,65 +94,337 @@ mod __types {
         #[static_field]
         #[rename(name = "UnitDotMax")]
         pub unit_dot_max: i32,
+        #[offset(32)]
         #[rename(name = "m_Tips")]
         pub m_tips: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_IconCanvasGroup")]
         pub m_icon_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(56)]
         #[rename(name = "m_TipsCanvasGroup")]
         pub m_tips_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(64)]
         #[rename(name = "m_TipsUnitIcon")]
         pub m_tips_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(72)]
         #[rename(name = "m_ItemIconRootObject")]
         pub m_item_icon_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_ItemIconFrameImage")]
         pub m_item_icon_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_ItemIconImage")]
         pub m_item_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_SkillIconImage")]
         pub m_skill_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_TitleFrameImage")]
         pub m_title_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "m_TipsText")]
         pub m_tips_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_UnitIconAndGroundRootObject")]
         pub m_unit_icon_and_ground_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_GroundImageObjects")]
         pub m_ground_image_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(144)]
         #[rename(name = "m_UnitDotObjects")]
         pub m_unit_dot_objects: ::unity2::Array<crate::app::loadinglogo::LoadingLogo_UnitDotObject>,
+        #[offset(152)]
         #[rename(name = "m_TipsData")]
         pub m_tips_data: crate::app::tipsdata::TipsData,
+        #[offset(160)]
         #[rename(name = "m_TipsAlpha")]
         pub m_tips_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(168)]
         #[rename(name = "m_IconAlpha")]
         pub m_icon_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(176)]
         #[rename(name = "m_LoadingMode")]
         pub m_loading_mode: crate::app::loadingmanager::LoadingManager_Modes,
+        #[offset(180)]
         #[rename(name = "m_Sequence")]
         pub m_sequence: crate::app::loadinglogo::LoadingLogo_Sequences,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]
-    #[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
-    #[parent(crate::system::object::Object)]
-    pub struct LoadingLogo_UnitDotObject {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::rawimage::RawImage,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
     }
 }
 
 #[cfg(feature = "app-loadinglogo-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-loadinglogo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LoadingLogo_UnitDotObject_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: LoadingLogo_UnitDotObject,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LoadingLogo_UnitDotObject, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup(
+        this: LoadingLogo_UnitDotObject,
+        person: crate::app::persondata::PersonData,
+        is_female: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(LoadingLogo_UnitDotObject, crate::app::persondata::PersonData, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
+        inner(this, person, is_female, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: LoadingLogo_UnitDotObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LoadingLogo_UnitDotObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_dot_texture_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
+                "GetUnitDotTexturePath",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitDotTexturePath",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit_dot_texture_path(
+        person: crate::app::persondata::PersonData,
+        is_female: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::persondata::PersonData, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_unit_dot_texture_path::get_method_info().method_ptr);
+        inner(person, is_female, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_unit_dot_texture_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
+                "LoadUnitDotTextureAll",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
+                        "LoadUnitDotTextureAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_unit_dot_texture_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_unit_dot_texture_all::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-loadinglogo")]
+impl LoadingLogo_UnitDotObject {
+    #[doc = "`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"]
+    pub fn get_unit_dot_texture_path(
+        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
+        is_female: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __LoadingLogo_UnitDotObject_unity2_raw::get_unit_dot_texture_path(
+                ::core::convert::Into::into(person),
+                ::core::convert::Into::into(is_female),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`LoadUnitDotTextureAll()` overload"]
+    pub fn load_unit_dot_texture_all() -> () {
+        unsafe { __LoadingLogo_UnitDotObject_unity2_raw::load_unit_dot_texture_all(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-loadinglogo")]
+pub trait ILoadingLogo_UnitDotObjectMethods: ILoadingLogo_UnitDotObject {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LoadingLogo_UnitDotObject_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Setup(crate::app::persondata::PersonData, bool)` overload"]
+    fn setup(self, person: impl ::core::convert::Into<crate::app::persondata::PersonData>, is_female: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver =
+                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LoadingLogo_UnitDotObject_unity2_raw::setup(
+                __receiver,
+                ::core::convert::Into::into(person),
+                ::core::convert::Into::into(is_female),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LoadingLogo_UnitDotObject_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-loadinglogo")]
+impl<__T: ILoadingLogo_UnitDotObject> ILoadingLogo_UnitDotObjectMethods for __T {}
+
+#[cfg(feature = "app-loadinglogo")]
+impl LoadingLogo_UnitDotObject {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LoadingLogo_UnitDotObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILoadingLogo_UnitDotObjectMethods>::ctor(this, root_object);
+        this
+    }
+}
 
 #[cfg(feature = "app-loadinglogo")]
 #[doc(hidden)]
@@ -1001,272 +1291,6 @@ impl LoadingLogo {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(LoadingLogo), ::core::stringify!(new),));
         <Self as ILoadingLogoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-loadinglogo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LoadingLogo_UnitDotObject_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: LoadingLogo_UnitDotObject,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(LoadingLogo_UnitDotObject, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: LoadingLogo_UnitDotObject,
-        person: crate::app::persondata::PersonData,
-        is_female: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(LoadingLogo_UnitDotObject, crate::app::persondata::PersonData, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, person, is_female, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: LoadingLogo_UnitDotObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LoadingLogo_UnitDotObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_dot_texture_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "GetUnitDotTexturePath",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitDotTexturePath",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_dot_texture_path(
-        person: crate::app::persondata::PersonData,
-        is_female: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(crate::app::persondata::PersonData, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_unit_dot_texture_path::get_method_info().method_ptr);
-        inner(person, is_female, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_unit_dot_texture_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::class(),
-                "LoadUnitDotTextureAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LoadingLogo_UnitDotObject as ::unity2::ClassIdentity>::NAME,
-                        "LoadUnitDotTextureAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load_unit_dot_texture_all(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_load_unit_dot_texture_all::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-loadinglogo")]
-impl LoadingLogo_UnitDotObject {
-    #[doc = "`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"]
-    pub fn get_unit_dot_texture_path(
-        person: impl ::core::convert::Into<crate::app::persondata::PersonData>,
-        is_female: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __LoadingLogo_UnitDotObject_unity2_raw::get_unit_dot_texture_path(
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(is_female),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`LoadUnitDotTextureAll()` overload"]
-    pub fn load_unit_dot_texture_all() -> () {
-        unsafe { __LoadingLogo_UnitDotObject_unity2_raw::load_unit_dot_texture_all(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-loadinglogo")]
-pub trait ILoadingLogo_UnitDotObjectMethods: ILoadingLogo_UnitDotObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_UnitDotObject_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Setup(crate::app::persondata::PersonData, bool)` overload"]
-    fn setup(self, person: impl ::core::convert::Into<crate::app::persondata::PersonData>, is_female: impl ::core::convert::Into<bool>) -> bool {
-        unsafe {
-            let __receiver =
-                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_UnitDotObject_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(person),
-                ::core::convert::Into::into(is_female),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <LoadingLogo_UnitDotObject as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LoadingLogo_UnitDotObject_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-loadinglogo")]
-impl<__T: ILoadingLogo_UnitDotObject> ILoadingLogo_UnitDotObjectMethods for __T {}
-
-#[cfg(feature = "app-loadinglogo")]
-impl LoadingLogo_UnitDotObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LoadingLogo_UnitDotObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILoadingLogo_UnitDotObjectMethods>::ctor(this, root_object);
         this
     }
 }

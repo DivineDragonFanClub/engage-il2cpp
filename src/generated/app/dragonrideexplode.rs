@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideExplode")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DragonRideExplode {
+        #[offset(24)]
         #[rename(name = "m_Type")]
         pub m_type: i32,
     }

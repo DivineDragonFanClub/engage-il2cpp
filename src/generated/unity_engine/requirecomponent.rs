@@ -9,10 +9,13 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/requirecomponent/RequireComponent.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "RequireComponent")]
     pub struct RequireComponent {
+        #[offset(16)]
         #[rename(name = "m_Type0")]
         pub m_type0: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "m_Type1")]
         pub m_type1: ::unity2::SystemType,
+        #[offset(32)]
         #[rename(name = "m_Type2")]
         pub m_type2: ::unity2::SystemType,
     }

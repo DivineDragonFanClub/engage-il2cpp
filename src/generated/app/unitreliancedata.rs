@@ -14,12 +14,16 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_RelianceExp")]
         pub m_reliance_exp: crate::app::relianceexpdata::RelianceExpData,
+        #[offset(24)]
         #[rename(name = "m_Level")]
         pub m_level: crate::app::reliancedata::RelianceData_Level,
+        #[offset(28)]
         #[rename(name = "m_Exp")]
         pub m_exp: i8,
+        #[offset(29)]
         #[rename(name = "m_Score")]
         pub m_score: i8,
     }

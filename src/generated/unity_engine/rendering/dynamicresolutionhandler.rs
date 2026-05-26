@@ -11,34 +11,49 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DynamicResolutionHandler")]
     #[parent(crate::system::object::Object)]
     pub struct DynamicResolutionHandler {
+        #[offset(16)]
         #[rename(name = "m_Enabled")]
         pub m_enabled: bool,
+        #[offset(20)]
         #[rename(name = "m_MinScreenFraction")]
         pub m_min_screen_fraction: f32,
+        #[offset(24)]
         #[rename(name = "m_MaxScreenFraction")]
         pub m_max_screen_fraction: f32,
+        #[offset(28)]
         #[rename(name = "m_CurrentFraction")]
         pub m_current_fraction: f32,
+        #[offset(32)]
         #[rename(name = "m_PrevFraction")]
         pub m_prev_fraction: f32,
+        #[offset(36)]
         #[rename(name = "m_ForcingRes")]
         pub m_forcing_res: bool,
+        #[offset(37)]
         #[rename(name = "m_CurrentCameraRequest")]
         pub m_current_camera_request: bool,
+        #[offset(38)]
         #[rename(name = "m_ForceSoftwareFallback")]
         pub m_force_software_fallback: bool,
+        #[offset(40)]
         #[rename(name = "m_PrevHWScaleWidth")]
         pub m_prev_hw_scale_width: f32,
+        #[offset(44)]
         #[rename(name = "m_PrevHWScaleHeight")]
         pub m_prev_hw_scale_height: f32,
+        #[offset(48)]
         #[rename(name = "m_LastScaledSize")]
         pub m_last_scaled_size: crate::unity_engine::vector2int::Vector2Int,
+        #[offset(56)]
         #[rename(name = "m_ScalerType")]
         pub m_scaler_type: crate::unity_engine::rendering::dynamicresscalepolicytype::DynamicResScalePolicyType,
+        #[offset(60)]
         #[rename(name = "cachedOriginalSize")]
         pub cached_original_size: crate::unity_engine::vector2int::Vector2Int,
+        #[offset(80)]
         #[rename(name = "type")]
         pub r#type: crate::unity_engine::rendering::dynamicresolutiontype::DynamicResolutionType,
+        #[offset(88)]
         #[rename(name = "m_DynamicResMethod")]
         pub m_dynamic_res_method: crate::unity_engine::rendering::performdynamicres::PerformDynamicRes,
         #[static_field]

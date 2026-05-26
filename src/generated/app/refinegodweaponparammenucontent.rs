@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponParamMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefineGodWeaponParamMenuContent {
+        #[offset(232)]
         #[rename(name = "m_CaptionText")]
         pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_KindFrameObject")]
         pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_GodWeaponNameText")]
         pub m_god_weapon_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_GodIcon")]
         pub m_god_icon: crate::app::uniticon::UnitIcon,
+        #[offset(264)]
         #[rename(name = "m_PageIconImage")]
         pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
     }

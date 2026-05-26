@@ -17,6 +17,48 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_MapEventStatck.md"))]
+    #[::unity2::class(namespace = "App", name = "EventSequence.MapEventStatck")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct EventSequence_MapEventStatck {
+        #[offset(112)]
+        #[rename(name = "m_Stack")]
+        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
+        #[offset(120)]
+        #[rename(name = "m_UnitIndex")]
+        pub m_unit_index: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "EventSequence")]
+    # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: eventsequence :: EventSequence >)]
+    pub struct EventSequence {
+        #[offset(112)]
+        #[rename(name = "m_Current")]
+        pub m_current: crate::app::eventsequence::EventSequence_Coroutine,
+        #[offset(120)]
+        #[rename(name = "m_Coroutines")]
+        pub m_coroutines: crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine>,
+        #[offset(128)]
+        #[rename(name = "m_BindingUI")]
+        pub m_binding_ui: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))]
+    #[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventSequence_Coroutine {
+        #[offset(16)]
+        #[rename(name = "m_Func")]
+        pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(24)]
+        #[rename(name = "m_Args")]
+        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        #[offset(32)]
+        #[rename(name = "m_First")]
+        pub m_first: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventsequence/EventSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -46,44 +88,659 @@ mod __types {
             Self { value: 0 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "EventSequence")]
-    # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: eventsequence :: EventSequence >)]
-    pub struct EventSequence {
-        #[rename(name = "m_Current")]
-        pub m_current: crate::app::eventsequence::EventSequence_Coroutine,
-        #[rename(name = "m_Coroutines")]
-        pub m_coroutines: crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine>,
-        #[rename(name = "m_BindingUI")]
-        pub m_binding_ui: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_MapEventStatck.md"))]
-    #[::unity2::class(namespace = "App", name = "EventSequence.MapEventStatck")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct EventSequence_MapEventStatck {
-        #[rename(name = "m_Stack")]
-        pub m_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
-        #[rename(name = "m_UnitIndex")]
-        pub m_unit_index: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))]
-    #[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventSequence_Coroutine {
-        #[rename(name = "m_Func")]
-        pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        #[rename(name = "m_Args")]
-        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        #[rename(name = "m_First")]
-        pub m_first: bool,
-    }
 }
 
 #[cfg(feature = "app-eventsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-eventsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventSequence_MapEventStatck_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventSequence_MapEventStatck,
+        inspector: crate::app::mapinspector::MapInspector,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventSequence_MapEventStatck, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, inspector, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: EventSequence_MapEventStatck,
+        stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EventSequence_MapEventStatck,
+            crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, stack, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_create(this: EventSequence_MapEventStatck, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "OnTick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_tick(this: EventSequence_MapEventStatck, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: EventSequence_MapEventStatck, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "TryCreateBind",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_create_bind(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        arg1: i32,
+        arg2: i32,
+        arg3: i32,
+        arg4: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::mapinspector::MapInspector_Kind,
+            crate::app::unit::Unit,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind::get_method_info().method_ptr);
+        inner(super_, kind, unit, arg1, arg2, arg3, arg4, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "TryCreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_create_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        inspector: crate::app::mapinspector::MapInspector,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_try_create_bind_2::get_method_info().method_ptr);
+        inner(super_, inspector, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "IsExist",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exist(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_bind_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "TryCreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_create_bind_3(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::mapinspector::MapInspector_Kind,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind_3::get_method_info().method_ptr);
+        inner(super_, kind, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_bind_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "TryCreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_create_bind_4(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::mapinspector::MapInspector_Kind,
+            crate::app::unit::Unit,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind_4::get_method_info().method_ptr);
+        inner(super_, kind, unit, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_bind_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
+                "TryCreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_create_bind_5(
+        super_: crate::app::procinst::ProcInst,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        from: crate::app::unit::Unit,
+        to: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::mapinspector::MapInspector_Kind,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind_5::get_method_info().method_ptr);
+        inner(super_, kind, from, to, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-eventsequence")]
+impl EventSequence_MapEventStatck {
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    pub fn try_create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        arg1: impl ::core::convert::Into<i32>,
+        arg2: impl ::core::convert::Into<i32>,
+        arg3: impl ::core::convert::Into<i32>,
+        arg4: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            __EventSequence_MapEventStatck_unity2_raw::try_create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(arg1),
+                ::core::convert::Into::into(arg2),
+                ::core::convert::Into::into(arg3),
+                ::core::convert::Into::into(arg4),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]
+    pub fn try_create_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
+    ) -> bool {
+        unsafe {
+            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_2(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(inspector),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`IsExist(crate::app::unit::Unit)` overload"]
+    pub fn is_exist(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
+        unsafe { __EventSequence_MapEventStatck_unity2_raw::is_exist(::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]
+    pub fn try_create_bind_3(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_3(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]
+    pub fn try_create_bind_4(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_4(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    pub fn try_create_bind_5(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
+        from: impl ::core::convert::Into<crate::app::unit::Unit>,
+        to: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> bool {
+        unsafe {
+            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_5(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(kind),
+                ::core::convert::Into::into(from),
+                ::core::convert::Into::into(to),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-eventsequence")]
+pub trait IEventSequence_MapEventStatckMethods: IEventSequence_MapEventStatck {
+    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` overload"]
+    fn ctor(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
+        unsafe {
+            let __receiver =
+                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventSequence_MapEventStatck_unity2_raw::ctor(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]
+    fn ctor_2(
+        self,
+        stack: impl ::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventSequence_MapEventStatck_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(stack),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventSequence_MapEventStatck_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventSequence_MapEventStatck_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventSequence_MapEventStatck_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-eventsequence")]
+impl<__T: IEventSequence_MapEventStatck> IEventSequence_MapEventStatckMethods for __T {}
+
+#[cfg(feature = "app-eventsequence")]
+impl EventSequence_MapEventStatck {
+    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]
+    pub fn new(inspector: crate::app::mapinspector::MapInspector) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventSequence_MapEventStatck),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventSequence_MapEventStatckMethods>::ctor(this, inspector);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]
+    pub fn new_2(
+        stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
+        unit: crate::app::unit::Unit,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventSequence_MapEventStatck),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IEventSequence_MapEventStatckMethods>::ctor_2(this, stack, unit);
+        this
+    }
+}
 
 #[cfg(feature = "app-eventsequence")]
 #[doc(hidden)]
@@ -2515,655 +3172,6 @@ impl EventSequence {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(EventSequence), ::core::stringify!(new),));
         <Self as IEventSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-eventsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventSequence_MapEventStatck_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventSequence_MapEventStatck,
-        inspector: crate::app::mapinspector::MapInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(EventSequence_MapEventStatck, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, inspector, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: EventSequence_MapEventStatck,
-        stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventSequence_MapEventStatck,
-            crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, stack, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "OnCreate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_create(this: EventSequence_MapEventStatck, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "OnTick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_tick(this: EventSequence_MapEventStatck, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: EventSequence_MapEventStatck, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "TryCreateBind",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_bind(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        arg1: i32,
-        arg2: i32,
-        arg3: i32,
-        arg4: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::mapinspector::MapInspector_Kind,
-            crate::app::unit::Unit,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind::get_method_info().method_ptr);
-        inner(super_, kind, unit, arg1, arg2, arg3, arg4, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_bind_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::mapinspector::MapInspector as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "TryCreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        inspector: crate::app::mapinspector::MapInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_create_bind_2::get_method_info().method_ptr);
-        inner(super_, inspector, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "IsExist",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "IsExist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exist(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_bind_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "TryCreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_bind_3(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::mapinspector::MapInspector_Kind,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind_3::get_method_info().method_ptr);
-        inner(super_, kind, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_bind_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "TryCreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_bind_4(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::mapinspector::MapInspector_Kind,
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind_4::get_method_info().method_ptr);
-        inner(super_, kind, unit, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_bind_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::mapinspector::MapInspector_Kind as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::class(),
-                "TryCreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <EventSequence_MapEventStatck as ::unity2::ClassIdentity>::NAME,
-                        "TryCreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_create_bind_5(
-        super_: crate::app::procinst::ProcInst,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        from: crate::app::unit::Unit,
-        to: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::mapinspector::MapInspector_Kind,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_try_create_bind_5::get_method_info().method_ptr);
-        inner(super_, kind, from, to, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-eventsequence")]
-impl EventSequence_MapEventStatck {
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    pub fn try_create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        arg1: impl ::core::convert::Into<i32>,
-        arg2: impl ::core::convert::Into<i32>,
-        arg3: impl ::core::convert::Into<i32>,
-        arg4: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            __EventSequence_MapEventStatck_unity2_raw::try_create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(arg1),
-                ::core::convert::Into::into(arg2),
-                ::core::convert::Into::into(arg3),
-                ::core::convert::Into::into(arg4),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]
-    pub fn try_create_bind_2(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>,
-    ) -> bool {
-        unsafe {
-            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_2(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(inspector),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsExist(crate::app::unit::Unit)` overload"]
-    pub fn is_exist(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe { __EventSequence_MapEventStatck_unity2_raw::is_exist(::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]
-    pub fn try_create_bind_3(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
-        unsafe {
-            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_3(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]
-    pub fn try_create_bind_4(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_4(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    pub fn try_create_bind_5(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        kind: impl ::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>,
-        from: impl ::core::convert::Into<crate::app::unit::Unit>,
-        to: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
-        unsafe {
-            __EventSequence_MapEventStatck_unity2_raw::try_create_bind_5(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(kind),
-                ::core::convert::Into::into(from),
-                ::core::convert::Into::into(to),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-eventsequence")]
-pub trait IEventSequence_MapEventStatckMethods: IEventSequence_MapEventStatck {
-    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` overload"]
-    fn ctor(self, inspector: impl ::core::convert::Into<crate::app::mapinspector::MapInspector>) -> () {
-        unsafe {
-            let __receiver =
-                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventSequence_MapEventStatck_unity2_raw::ctor(__receiver, ::core::convert::Into::into(inspector), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]
-    fn ctor_2(
-        self,
-        stack: impl ::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventSequence_MapEventStatck_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(stack),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver =
-                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventSequence_MapEventStatck_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnTick()` overload"]
-    fn on_tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventSequence_MapEventStatck_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <EventSequence_MapEventStatck as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __EventSequence_MapEventStatck_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-eventsequence")]
-impl<__T: IEventSequence_MapEventStatck> IEventSequence_MapEventStatckMethods for __T {}
-
-#[cfg(feature = "app-eventsequence")]
-impl EventSequence_MapEventStatck {
-    #[doc = "`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]
-    pub fn new(inspector: crate::app::mapinspector::MapInspector) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventSequence_MapEventStatck),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventSequence_MapEventStatckMethods>::ctor(this, inspector);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]
-    pub fn new_2(
-        stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>,
-        unit: crate::app::unit::Unit,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventSequence_MapEventStatck),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IEventSequence_MapEventStatckMethods>::ctor_2(this, stack, unit);
         this
     }
 }

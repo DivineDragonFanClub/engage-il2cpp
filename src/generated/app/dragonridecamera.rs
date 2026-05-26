@@ -32,65 +32,94 @@ mod __types {
         #[static_field]
         #[rename(name = "SolaRenderPath")]
         pub sola_render_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_ShotIntervalTimer")]
         pub m_shot_interval_timer: f32,
+        #[offset(32)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_PlayerChara")]
         pub m_player_chara: crate::combat::character::Character,
+        #[offset(48)]
         #[rename(name = "m_DragonReins")]
         pub m_dragon_reins: crate::combat::reinscontroller::ReinsController,
+        #[offset(64)]
         #[rename(name = "m_AssistChara")]
         pub m_assist_chara: crate::combat::character::Character,
+        #[offset(80)]
         #[rename(name = "m_ScreenDust")]
         pub m_screen_dust: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_DustEffect")]
         pub m_dust_effect: crate::unity_engine::particlesystem::ParticleSystem,
+        #[offset(96)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_Cart")]
         pub m_cart: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_EventCart")]
         pub m_event_cart: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_Timeline")]
         pub m_timeline: crate::unity_engine::playables::playabledirector::PlayableDirector,
+        #[offset(136)]
         #[rename(name = "m_CursorObj")]
         pub m_cursor_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_StartTelop")]
         pub m_start_telop: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
         #[rename(name = "m_FinishTelop")]
         pub m_finish_telop: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
         #[rename(name = "m_IsPlayStartTelop")]
         pub m_is_play_start_telop: bool,
+        #[offset(161)]
         #[rename(name = "m_IsPlayFinishTelop")]
         pub m_is_play_finish_telop: bool,
+        #[offset(162)]
         #[rename(name = "m_IsDoneStartTelop")]
         pub m_is_done_start_telop: bool,
+        #[offset(163)]
         #[rename(name = "m_IsDoneFinishTelop")]
         pub m_is_done_finish_telop: bool,
+        #[offset(168)]
         #[rename(name = "m_ShotParent")]
         pub m_shot_parent: crate::unity_engine::gameobject::GameObject,
+        #[offset(176)]
         #[rename(name = "m_PastPosition")]
         pub m_past_position: crate::unity_engine::vector3::Vector3,
+        #[offset(192)]
         #[rename(name = "m_LevelStr")]
         pub m_level_str: ::unity2::Il2CppString,
+        #[offset(200)]
         #[rename(name = "m_CourseID")]
         pub m_course_id: ::unity2::Il2CppString,
+        #[offset(208)]
         #[rename(name = "m_ShowGroupList")]
         pub m_show_group_list: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "cAssistLevelMax")]
         pub c_assist_level_max: i32,
+        #[offset(216)]
         #[rename(name = "m_AngleX")]
         pub m_angle_x: f32,
+        #[offset(220)]
         #[rename(name = "m_AngleY")]
         pub m_angle_y: f32,
+        #[offset(224)]
         #[rename(name = "m_AngleXSpeed")]
         pub m_angle_x_speed: f32,
+        #[offset(228)]
         #[rename(name = "m_AngleYSpeed")]
         pub m_angle_y_speed: f32,
+        #[offset(232)]
         #[rename(name = "m_AngleSpeedRate")]
         pub m_angle_speed_rate: f32,
+        #[offset(236)]
         #[rename(name = "m_AngleSpeedLerpCounter")]
         pub m_angle_speed_lerp_counter: f32,
         #[static_field]
@@ -99,87 +128,127 @@ mod __types {
         #[static_field]
         #[rename(name = "cAngleSpeedRateMax")]
         pub c_angle_speed_rate_max: f32,
+        #[offset(240)]
         #[rename(name = "m_SolaRenderObj")]
         pub m_sola_render_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_SolaImagerRender")]
         pub m_sola_imager_render: crate::app::dragonridesolaimagerender::DragonRideSolaImageRender,
+        #[offset(256)]
         #[rename(name = "m_Cutin")]
         pub m_cutin: crate::unity_engine::animator::Animator,
+        #[offset(264)]
         #[rename(name = "m_Cutin2")]
         pub m_cutin2: crate::unity_engine::animator::Animator,
+        #[offset(272)]
         #[rename(name = "m_CutinSate")]
         pub m_cutin_sate: crate::app::dragonridecamera::DragonRideCamera_CutinState,
+        #[offset(276)]
         #[rename(name = "m_CutinTimer")]
         pub m_cutin_timer: f32,
+        #[offset(280)]
         #[rename(name = "m_SpecialTimer")]
         pub m_special_timer: f32,
+        #[offset(288)]
         #[rename(name = "m_InstructionObj")]
         pub m_instruction_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_ShotNamingCounter")]
         pub m_shot_naming_counter: i32,
+        #[offset(300)]
         #[rename(name = "m_AssistNamingCounter")]
         pub m_assist_naming_counter: i32,
+        #[offset(304)]
         #[rename(name = "m_Config")]
         pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
+        #[offset(312)]
         #[rename(name = "m_FaderScript")]
         pub m_fader_script: crate::app::dragonrideeventfader::DragonRideEventFader,
+        #[offset(320)]
         #[rename(name = "m_AssistIntervalTimer")]
         pub m_assist_interval_timer: f32,
+        #[offset(328)]
         #[rename(name = "cAssistIntervalFrame")]
         pub c_assist_interval_frame: ::unity2::Array<i32>,
+        #[offset(336)]
         #[rename(name = "cLevelString")]
         pub c_level_string: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(344)]
         #[rename(name = "m_RotateSpeedXZAxis")]
         pub m_rotate_speed_xz_axis: f32,
+        #[offset(348)]
         #[rename(name = "m_RotateSpeedYAxis")]
         pub m_rotate_speed_y_axis: f32,
+        #[offset(352)]
         #[rename(name = "m_RotateHighSpeedMult")]
         pub m_rotate_high_speed_mult: f32,
+        #[offset(356)]
         #[rename(name = "m_XZAxisRotateMax")]
         pub m_xz_axis_rotate_max: f32,
+        #[offset(360)]
         #[rename(name = "m_XZAxisRotateMin")]
         pub m_xz_axis_rotate_min: f32,
+        #[offset(364)]
         #[rename(name = "m_YAxisRotateMax")]
         pub m_y_axis_rotate_max: f32,
+        #[offset(368)]
         #[rename(name = "m_YAxisRotateMin")]
         pub m_y_axis_rotate_min: f32,
+        #[offset(372)]
         #[rename(name = "m_ShotAdjustX")]
         pub m_shot_adjust_x: f32,
+        #[offset(376)]
         #[rename(name = "m_ShotAdjustY")]
         pub m_shot_adjust_y: f32,
+        #[offset(380)]
         #[rename(name = "m_AssistShotAngle")]
         pub m_assist_shot_angle: f32,
+        #[offset(384)]
         #[rename(name = "m_AssistCutInRate")]
         pub m_assist_cut_in_rate: f32,
         #[static_field]
         #[rename(name = "cAssistAngleMax")]
         pub c_assist_angle_max: f32,
+        #[offset(388)]
         #[rename(name = "m_ShotSpeed")]
         pub m_shot_speed: f32,
+        #[offset(392)]
         #[rename(name = "m_AssistShotSpeed")]
         pub m_assist_shot_speed: f32,
+        #[offset(396)]
         #[rename(name = "m_ShotLifeSecond")]
         pub m_shot_life_second: f32,
+        #[offset(400)]
         #[rename(name = "m_ShotInterpStraightSec")]
         pub m_shot_interp_straight_sec: f32,
+        #[offset(404)]
         #[rename(name = "m_MuzzleOffsetX")]
         pub m_muzzle_offset_x: f32,
+        #[offset(408)]
         #[rename(name = "m_MuzzleOffsetY")]
         pub m_muzzle_offset_y: f32,
+        #[offset(412)]
         #[rename(name = "m_MuzzleOffsetZ")]
         pub m_muzzle_offset_z: f32,
+        #[offset(416)]
         #[rename(name = "m_TargetDistanceMax")]
         pub m_target_distance_max: f32,
+        #[offset(420)]
         #[rename(name = "m_CursorMoveHalfWidth")]
         pub m_cursor_move_half_width: f32,
+        #[offset(424)]
         #[rename(name = "m_CursorMoveHalfHeight")]
         pub m_cursor_move_half_height: f32,
+        #[offset(428)]
         #[rename(name = "m_CursorMaxSpeed")]
         pub m_cursor_max_speed: f32,
+        #[offset(508)]
         #[rename(name = "m_BaseAngleX")]
         pub m_base_angle_x: f32,
+        #[offset(512)]
         #[rename(name = "m_BaseAngleZ")]
         pub m_base_angle_z: f32,
+        #[offset(516)]
         #[rename(name = "m_DeviceType")]
         pub m_device_type: crate::app::gyromnager::GyroMnager_DeviceType,
     }

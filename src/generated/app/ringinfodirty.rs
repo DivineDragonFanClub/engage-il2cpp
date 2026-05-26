@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingInfoDirty")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingInfoDirty {
+        #[offset(24)]
         #[rename(name = "m_DirtyTextureCurve")]
         pub m_dirty_texture_curve: crate::unity_engine::animationcurve::AnimationCurve,
     }

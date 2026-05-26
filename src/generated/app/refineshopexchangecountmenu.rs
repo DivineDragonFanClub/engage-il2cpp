@@ -32,12 +32,16 @@ mod __types {
         #[static_field]
         #[rename(name = "SourceValueMin")]
         pub source_value_min: i32,
+        #[offset(236)]
         #[rename(name = "m_Times")]
         pub m_times: i32,
+        #[offset(240)]
         #[rename(name = "m_Min")]
         pub m_min: bool,
+        #[offset(241)]
         #[rename(name = "m_Max")]
         pub m_max: bool,
+        #[offset(248)]
         #[rename(name = "m_CloseEventHandler")]
         pub m_close_event_handler: crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu_CloseEventHandler,
     }

@@ -21,154 +21,6 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct JobData_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for JobData_Flags {
-        const NAME: &'static str = "JobData.Flags";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for JobData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl JobData_Flags {
-        pub fn can_cc() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn anyone_cc() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn female_only() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn encount_map() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_WeaponValues.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct JobData_WeaponValues {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for JobData_WeaponValues {
-        const NAME: &'static str = "JobData.WeaponValues";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for JobData_WeaponValues {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl JobData_WeaponValues {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn equippable() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn selectable1() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn selectable2() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md"))]
-    #[::unity2::class(namespace = "App", name = "JobData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: jobdata :: JobData >)]
-    pub struct JobData {
-        #[static_field]
-        #[rename(name = "MaxHighJob")]
-        pub max_high_job: i32,
-        #[static_field]
-        #[rename(name = "JidMaleSuffix")]
-        pub jid_male_suffix: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "JidFemaleSuffix")]
-        pub jid_female_suffix: ::unity2::Il2CppString,
-        #[rename(name = "Weapons")]
-        pub weapons: ::unity2::Array<i8>,
-        #[rename(name = "MaxWeaponLevels")]
-        pub max_weapon_levels: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "WeaponLevels")]
-        pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind>,
-        #[rename(name = "WeaponLevelPlusMask")]
-        pub weapon_level_plus_mask: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "HighJobs")]
-        pub high_jobs: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "JobData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)]
-    pub struct JobData_FlagField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct JobData_Ranks {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for JobData_Ranks {
-        const NAME: &'static str = "JobData.Ranks";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for JobData_Ranks {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl JobData_Ranks {
-        pub fn low() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn high() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_MoveTypes.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -222,10 +74,326 @@ mod __types {
             Self { value: 6 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "JobData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)]
+    pub struct JobData_FlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_WeaponValues.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct JobData_WeaponValues {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for JobData_WeaponValues {
+        const NAME: &'static str = "JobData.WeaponValues";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for JobData_WeaponValues {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl JobData_WeaponValues {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn equippable() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn selectable1() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn selectable2() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct JobData_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for JobData_Flags {
+        const NAME: &'static str = "JobData.Flags";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for JobData_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl JobData_Flags {
+        pub fn can_cc() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn anyone_cc() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn female_only() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn encount_map() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct JobData_Ranks {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for JobData_Ranks {
+        const NAME: &'static str = "JobData.Ranks";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for JobData_Ranks {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl JobData_Ranks {
+        pub fn low() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn high() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md"))]
+    #[::unity2::class(namespace = "App", name = "JobData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: jobdata :: JobData >)]
+    pub struct JobData {
+        #[static_field]
+        #[rename(name = "MaxHighJob")]
+        pub max_high_job: i32,
+        #[static_field]
+        #[rename(name = "JidMaleSuffix")]
+        pub jid_male_suffix: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "JidFemaleSuffix")]
+        pub jid_female_suffix: ::unity2::Il2CppString,
+        #[offset(152)]
+        #[rename(name = "Weapons")]
+        pub weapons: ::unity2::Array<i8>,
+        #[offset(160)]
+        #[rename(name = "MaxWeaponLevels")]
+        pub max_weapon_levels: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(168)]
+        #[rename(name = "WeaponLevels")]
+        pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind>,
+        #[offset(176)]
+        #[rename(name = "WeaponLevelPlusMask")]
+        pub weapon_level_plus_mask: crate::app::weaponmask::WeaponMask,
+        #[offset(184)]
+        #[rename(name = "HighJobs")]
+        pub high_jobs: ::unity2::Array<::unity2::Il2CppString>,
+    }
 }
 
 #[cfg(feature = "app-jobdata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-jobdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __JobData_FlagField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <JobData_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobData_FlagField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: JobData_FlagField, f: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(JobData_FlagField, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <JobData_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobData_FlagField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(this: JobData_FlagField, f: crate::app::jobdata::JobData_Flags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(JobData_FlagField, crate::app::jobdata::JobData_Flags, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <JobData_FlagField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobData_FlagField as ::unity2::ClassIdentity>::NAME,
+                        "ToInt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_int(this: JobData_FlagField, value: crate::app::jobdata::JobData_Flags, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(JobData_FlagField, crate::app::jobdata::JobData_Flags, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-jobdata")]
+pub trait IJobData_FlagFieldMethods: IJobData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <JobData_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobData_FlagField_unity2_raw::ctor(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` overload"]
+    fn ctor_2(self, f: impl ::core::convert::Into<crate::app::jobdata::JobData_Flags>) -> () {
+        unsafe {
+            let __receiver = <JobData_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobData_FlagField_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ToInt(crate::app::jobdata::JobData_Flags)` overload"]
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::jobdata::JobData_Flags>) -> i32 {
+        unsafe {
+            let __receiver = <JobData_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-jobdata")]
+impl<__T: IJobData_FlagField> IJobData_FlagFieldMethods for __T {}
+
+#[cfg(feature = "app-jobdata")]
+impl JobData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(JobData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IJobData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::jobdata::JobData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(JobData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IJobData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
 
 #[cfg(feature = "app-jobdata")]
 #[doc(hidden)]
@@ -5865,169 +6033,6 @@ impl JobData {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(JobData), ::core::stringify!(new),));
         <Self as IJobDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-jobdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __JobData_FlagField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobData_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobData_FlagField as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: JobData_FlagField, f: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobData_FlagField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobData_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobData_FlagField as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(this: JobData_FlagField, f: crate::app::jobdata::JobData_Flags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobData_FlagField, crate::app::jobdata::JobData_Flags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobData_FlagField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <JobData_FlagField as ::unity2::ClassIdentity>::NAME,
-                        "ToInt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_int(this: JobData_FlagField, value: crate::app::jobdata::JobData_Flags, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(JobData_FlagField, crate::app::jobdata::JobData_Flags, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-jobdata")]
-pub trait IJobData_FlagFieldMethods: IJobData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <JobData_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobData_FlagField_unity2_raw::ctor(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` overload"]
-    fn ctor_2(self, f: impl ::core::convert::Into<crate::app::jobdata::JobData_Flags>) -> () {
-        unsafe {
-            let __receiver = <JobData_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobData_FlagField_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ToInt(crate::app::jobdata::JobData_Flags)` overload"]
-    fn to_int(self, value: impl ::core::convert::Into<crate::app::jobdata::JobData_Flags>) -> i32 {
-        unsafe {
-            let __receiver = <JobData_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __JobData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-jobdata")]
-impl<__T: IJobData_FlagField> IJobData_FlagFieldMethods for __T {}
-
-#[cfg(feature = "app-jobdata")]
-impl JobData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(JobData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IJobData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::jobdata::JobData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(JobData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IJobData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
 }

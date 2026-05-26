@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterBuilder")]
     #[parent(crate::combat::characterassetform::CharacterAssetForm)]
     pub struct CharacterBuilder {
+        #[offset(152)]
         #[rename(name = "dressUt")]
         pub dress_ut: crate::combat::dressutility::DressUtility,
+        #[offset(160)]
         #[rename(name = "m_CachedRenderers")]
         pub m_cached_renderers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer>,
+        #[offset(168)]
         #[rename(name = "m_CachedShadowRenderers")]
         pub m_cached_shadow_renderers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer>,
+        #[offset(184)]
         #[rename(name = "weaponName")]
         pub weapon_name_field: ::unity2::Il2CppString,
+        #[offset(192)]
         #[rename(name = "m_bVisible")]
         pub m_b_visible: bool,
     }

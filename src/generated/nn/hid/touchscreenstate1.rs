@@ -10,6 +10,30 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate1/TouchScreenState1_TouchStateArray1.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TouchScreenState1_TouchStateArray1 {
+        pub value0: crate::nn::hid::touchstate::TouchState,
+    }
+
+    impl ::unity2::ClassIdentity for TouchScreenState1_TouchStateArray1 {
+        const NAME: &'static str = "TouchScreenState1.TouchStateArray1";
+        const NAMESPACE: &'static str = "nn.hid";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TouchScreenState1_TouchStateArray1 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate1/TouchScreenState1.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -36,82 +60,10 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate1/TouchScreenState1_TouchStateArray1.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TouchScreenState1_TouchStateArray1 {
-        pub value0: crate::nn::hid::touchstate::TouchState,
-    }
-
-    impl ::unity2::ClassIdentity for TouchScreenState1_TouchStateArray1 {
-        const NAME: &'static str = "TouchScreenState1.TouchStateArray1";
-        const NAMESPACE: &'static str = "nn.hid";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TouchScreenState1_TouchStateArray1 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "nn-hid-touchscreenstate1-types")]
 pub use __types::*;
-
-#[cfg(feature = "nn-hid-touchscreenstate1")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TouchScreenState1_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_default {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TouchScreenState1 as ::unity2::ClassIdentity>::class(),
-                "SetDefault",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TouchScreenState1 as ::unity2::ClassIdentity>::NAME,
-                        "SetDefault",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_default(this: TouchScreenState1, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TouchScreenState1, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_default::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "nn-hid-touchscreenstate1")]
-impl TouchScreenState1 {
-    #[doc = "`SetDefault()` overload"]
-    pub fn set_default(self) -> () {
-        unsafe { __TouchScreenState1_unity2_raw::set_default(self, ::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "nn-hid-touchscreenstate1")]
 #[doc(hidden)]
@@ -814,6 +766,54 @@ impl TouchScreenState1_TouchStateArray1 {
     #[doc = "`RemoveAt(i32)` overload"]
     pub fn remove_at(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe { __TouchScreenState1_TouchStateArray1_unity2_raw::remove_at(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "nn-hid-touchscreenstate1")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TouchScreenState1_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_default {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TouchScreenState1 as ::unity2::ClassIdentity>::class(),
+                "SetDefault",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchScreenState1 as ::unity2::ClassIdentity>::NAME,
+                        "SetDefault",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_default(this: TouchScreenState1, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TouchScreenState1, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_default::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "nn-hid-touchscreenstate1")]
+impl TouchScreenState1 {
+    #[doc = "`SetDefault()` overload"]
+    pub fn set_default(self) -> () {
+        unsafe { __TouchScreenState1_unity2_raw::set_default(self, ::core::option::Option::None) }
     }
 }
 

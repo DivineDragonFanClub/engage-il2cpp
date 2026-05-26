@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "", name = "CinemachineTouchInputMapper")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CinemachineTouchInputMapper {
+        #[offset(24)]
         #[rename(name = "TouchSensitivityX")]
         pub touch_sensitivity_x: f32,
+        #[offset(28)]
         #[rename(name = "TouchSensitivityY")]
         pub touch_sensitivity_y: f32,
+        #[offset(32)]
         #[rename(name = "TouchXInputMapTo")]
         pub touch_x_input_map_to: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "TouchYInputMapTo")]
         pub touch_y_input_map_to: ::unity2::Il2CppString,
     }

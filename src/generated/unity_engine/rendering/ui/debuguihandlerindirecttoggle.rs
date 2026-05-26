@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerIndirectToggle")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
     pub struct DebugUIHandlerIndirectToggle {
+        #[offset(88)]
         #[rename(name = "nameLabel")]
         pub name_label: crate::unity_engine::ui::text::Text,
+        #[offset(96)]
         #[rename(name = "valueToggle")]
         pub value_toggle: crate::unity_engine::ui::toggle::Toggle,
+        #[offset(104)]
         #[rename(name = "checkmarkImage")]
         pub checkmark_image: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "getter")]
         pub getter: crate::system::func_2::Func_2<i32, bool>,
+        #[offset(120)]
         #[rename(name = "setter")]
         pub setter: crate::system::action_2::Action_2<i32, bool>,
+        #[offset(128)]
         #[rename(name = "index")]
         pub index: i32,
     }

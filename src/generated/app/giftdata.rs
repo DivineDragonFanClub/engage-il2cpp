@@ -21,6 +21,7 @@ mod __types {
         #[static_field]
         #[rename(name = "DataMax")]
         pub data_max: i32,
+        #[offset(40)]
         #[rename(name = "m_Values")]
         pub m_values: ::unity2::Array<i8>,
     }

@@ -21,6 +21,30 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct HubCookingStartMenuSequence_DecideEventHandler {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "HubCookingStartMenuSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubCookingStartMenuSequence {
+        #[offset(112)]
+        #[rename(name = "m_DecideCallback")]
+        pub m_decide_callback: crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler,
+        #[offset(120)]
+        #[rename(name = "m_EndCallback")]
+        pub m_end_callback: crate::system::action::Action,
+        #[offset(128)]
+        #[rename(name = "m_SelectUnitList")]
+        pub m_select_unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[offset(136)]
+        #[rename(name = "m_SelectFood")]
+        pub m_select_food: crate::app::fooddata::FoodData,
+        #[offset(144)]
+        #[rename(name = "m_SelectFoodstuffList")]
+        pub m_select_foodstuff_list: crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
+        #[offset(152)]
+        #[rename(name = "m_AllContent")]
+        pub m_all_content: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -69,24 +93,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 5 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "HubCookingStartMenuSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubCookingStartMenuSequence {
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback: crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler,
-        #[rename(name = "m_EndCallback")]
-        pub m_end_callback: crate::system::action::Action,
-        #[rename(name = "m_SelectUnitList")]
-        pub m_select_unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_SelectFood")]
-        pub m_select_food: crate::app::fooddata::FoodData,
-        #[rename(name = "m_SelectFoodstuffList")]
-        pub m_select_foodstuff_list: crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>,
-        #[rename(name = "m_AllContent")]
-        pub m_all_content: crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,
     }
 }
 

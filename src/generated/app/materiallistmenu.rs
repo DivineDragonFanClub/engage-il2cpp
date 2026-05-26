@@ -17,16 +17,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MaterialListMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct MaterialListMenu {
+        #[offset(200)]
         #[rename(name = "m_MenuItemListAll")]
         pub m_menu_item_list_all: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(208)]
         #[rename(name = "m_MenuItemListGift")]
         pub m_menu_item_list_gift: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(216)]
         #[rename(name = "m_MenuItemListFood")]
         pub m_menu_item_list_food: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(224)]
         #[rename(name = "m_MenuItemListMaterial")]
         pub m_menu_item_list_material: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(232)]
         #[rename(name = "m_MenuItemListOther")]
         pub m_menu_item_list_other: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(240)]
         #[rename(name = "m_MenuSelectList")]
         pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
     }

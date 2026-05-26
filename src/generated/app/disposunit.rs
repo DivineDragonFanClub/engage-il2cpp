@@ -50,36 +50,52 @@ mod __types {
         #[static_field]
         #[rename(name = "LevelMax")]
         pub level_max: i32,
+        #[offset(24)]
         #[rename(name = "m_Person")]
         pub m_person: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_Job")]
         pub m_job: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Force")]
         pub m_force: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_Level")]
         pub m_level: i32,
+        #[offset(52)]
         #[rename(name = "m_Normal")]
         pub m_normal: bool,
+        #[offset(53)]
         #[rename(name = "m_Hard")]
         pub m_hard: bool,
+        #[offset(54)]
         #[rename(name = "m_Lunatic")]
         pub m_lunatic: bool,
+        #[offset(55)]
         #[rename(name = "新規生成")]
         pub 新規生成: bool,
+        #[offset(56)]
         #[rename(name = "リーダー")]
         pub リーダー: bool,
+        #[offset(57)]
         #[rename(name = "移動禁止")]
         pub 移動禁止: bool,
+        #[offset(58)]
         #[rename(name = "進撃位置")]
         pub 進撃位置: bool,
+        #[offset(59)]
         #[rename(name = "進撃強制")]
         pub 進撃強制: bool,
+        #[offset(60)]
         #[rename(name = "進撃固定")]
         pub 進撃固定: bool,
+        #[offset(61)]
         #[rename(name = "外枠配置")]
         pub 外枠配置: bool,
+        #[offset(62)]
         #[rename(name = "ゲスト")]
         pub ゲスト: bool,
+        #[offset(64)]
         #[rename(name = "m_Items")]
         pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item>,
     }

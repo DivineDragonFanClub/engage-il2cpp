@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotColorData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotcolordata :: MascotColorData >)]
     pub struct MascotColorData {
+        #[offset(44)]
         #[rename(name = "MaskColor075")]
         pub mask_color075: crate::unity_engine::color::Color,
     }

@@ -22,8 +22,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FriendListSelectMenu.FriendListSelectMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct FriendListSelectMenu_FriendListSelectMenuItem {
+        #[offset(104)]
         #[rename(name = "m_Pid")]
         pub m_pid: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler,
     }

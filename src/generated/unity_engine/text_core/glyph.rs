@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.TextCore", name = "Glyph")]
     #[parent(crate::system::object::Object)]
     pub struct Glyph {
+        #[offset(16)]
         #[rename(name = "m_Index")]
         pub m_index: u32,
+        #[offset(20)]
         #[rename(name = "m_Metrics")]
         pub m_metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
+        #[offset(40)]
         #[rename(name = "m_GlyphRect")]
         pub m_glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
+        #[offset(56)]
         #[rename(name = "m_Scale")]
         pub m_scale: f32,
+        #[offset(60)]
         #[rename(name = "m_AtlasIndex")]
         pub m_atlas_index: i32,
     }

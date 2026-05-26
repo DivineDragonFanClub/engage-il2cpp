@@ -19,26 +19,37 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterIllusion")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterIllusion {
+        #[offset(24)]
         #[rename(name = "NumIllusions")]
         pub num_illusions: i32,
+        #[offset(28)]
         #[rename(name = "Interval")]
         pub interval: f32,
+        #[offset(32)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(40)]
         #[rename(name = "illusionHistory")]
         pub illusion_history: ::unity2::Array<::unity2::Array<crate::combat::bakedmesh::BakedMesh>>,
+        #[offset(48)]
         #[rename(name = "index")]
         pub index: i32,
+        #[offset(52)]
         #[rename(name = "freqency")]
         pub freqency: f32,
+        #[offset(56)]
         #[rename(name = "illusionGOs")]
         pub illusion_g_os: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(64)]
         #[rename(name = "srcSkinnedMeshRenderers")]
         pub src_skinned_mesh_renderers: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
+        #[offset(72)]
         #[rename(name = "srcMeshFilters")]
         pub src_mesh_filters: ::unity2::Array<crate::unity_engine::meshfilter::MeshFilter>,
+        #[offset(80)]
         #[rename(name = "srcMeshRenderers")]
         pub src_mesh_renderers: ::unity2::Array<crate::unity_engine::meshrenderer::MeshRenderer>,
+        #[offset(88)]
         #[rename(name = "initialized")]
         pub initialized: bool,
     }

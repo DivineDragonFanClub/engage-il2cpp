@@ -11,28 +11,24 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections.Specialized", name = "OrderedDictionary")]
     #[parent(crate::system::object::Object)]
     pub struct OrderedDictionary {
+        #[offset(16)]
         #[rename(name = "_objectsArray")]
         pub objects_array: crate::system::collections::arraylist::ArrayList,
+        #[offset(24)]
         #[rename(name = "_objectsTable")]
         pub objects_table: crate::system::collections::hashtable::Hashtable,
+        #[offset(32)]
         #[rename(name = "_initialCapacity")]
         pub initial_capacity: i32,
+        #[offset(40)]
         #[rename(name = "_comparer")]
         pub comparer: crate::system::collections::iequalitycomparer::IEqualityComparer,
+        #[offset(48)]
         #[rename(name = "_readOnly")]
         pub read_only: bool,
+        #[offset(56)]
         #[rename(name = "_syncRoot")]
         pub sync_root: ::unity2::IlInstance,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryEnumerator.md"))]
-    #[::unity2::class(namespace = "System.Collections.Specialized", name = "OrderedDictionary.OrderedDictionaryEnumerator")]
-    #[parent(crate::system::object::Object)]
-    pub struct OrderedDictionary_OrderedDictionaryEnumerator {
-        #[rename(name = "_objectReturnType")]
-        pub object_return_type: i32,
-        #[rename(name = "arrayEnumerator")]
-        pub array_enumerator: crate::system::collections::ienumerator::IEnumerator,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryKeyValueCollection.md"))]
@@ -42,10 +38,24 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct OrderedDictionary_OrderedDictionaryKeyValueCollection {
+        #[offset(16)]
         #[rename(name = "_objects")]
         pub objects: crate::system::collections::arraylist::ArrayList,
+        #[offset(24)]
         #[rename(name = "isKeys")]
         pub is_keys: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryEnumerator.md"))]
+    #[::unity2::class(namespace = "System.Collections.Specialized", name = "OrderedDictionary.OrderedDictionaryEnumerator")]
+    #[parent(crate::system::object::Object)]
+    pub struct OrderedDictionary_OrderedDictionaryEnumerator {
+        #[offset(16)]
+        #[rename(name = "_objectReturnType")]
+        pub object_return_type: i32,
+        #[offset(24)]
+        #[rename(name = "arrayEnumerator")]
+        pub array_enumerator: crate::system::collections::ienumerator::IEnumerator,
     }
 }
 
@@ -1180,6 +1190,353 @@ impl OrderedDictionary {
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        array: crate::system::collections::arraylist::ArrayList,
+        is_keys: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            crate::system::collections::arraylist::ArrayList,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, array, is_keys, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_copy_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.CopyTo",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.CopyTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_copy_to(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        array: ::unity2::IlInstance,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_copy_to::get_method_info().method_ptr);
+        inner(this, array, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_count(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_is_synchronized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_IsSynchronized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_IsSynchronized",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_is_synchronized(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_is_synchronized::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_collection_get_sync_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.ICollection.get_SyncRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.ICollection.get_SyncRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_collection_get_sync_root(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_system_collections_i_collection_get_sync_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerable.GetEnumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.IEnumerable.GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerable_get_enumerator(
+        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            OrderedDictionary_OrderedDictionaryKeyValueCollection,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+pub trait IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods: IOrderedDictionary_OrderedDictionaryKeyValueCollection {
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]
+    fn ctor(
+        self,
+        array: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
+        is_keys: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(is_keys),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    fn system_collections_i_collection_copy_to(
+        self,
+        array: impl ::core::convert::Into<::unity2::IlInstance>,
+        index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_copy_to(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
+    fn system_collections_i_collection_get_count(self) -> i32 {
+        unsafe {
+            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_count(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    fn system_collections_i_collection_get_is_synchronized(self) -> bool {
+        unsafe {
+            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_is_synchronized(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_sync_root(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_enumerable_get_enumerator(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+impl<__T: IOrderedDictionary_OrderedDictionaryKeyValueCollection> IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods for __T {}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]
+    pub fn new(array: crate::system::collections::arraylist::ArrayList, is_keys: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods>::ctor(this, array, is_keys);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-ordereddictionary")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1532,353 +1889,6 @@ impl OrderedDictionary_OrderedDictionaryEnumerator {
             )
         });
         <Self as IOrderedDictionary_OrderedDictionaryEnumeratorMethods>::ctor(this, array, object_return_type);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-ordereddictionary")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
-        array: crate::system::collections::arraylist::ArrayList,
-        is_keys: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            OrderedDictionary_OrderedDictionaryKeyValueCollection,
-            crate::system::collections::arraylist::ArrayList,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, array, is_keys, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_copy_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.CopyTo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.ICollection.CopyTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_collection_copy_to(
-        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
-        array: ::unity2::IlInstance,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_system_collections_i_collection_copy_to::get_method_info().method_ptr);
-        inner(this, array, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.ICollection.get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_collection_get_count(
-        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_system_collections_i_collection_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_get_is_synchronized {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.get_IsSynchronized",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.ICollection.get_IsSynchronized",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_collection_get_is_synchronized(
-        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_system_collections_i_collection_get_is_synchronized::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_collection_get_sync_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.ICollection.get_SyncRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.ICollection.get_SyncRoot",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_collection_get_sync_root(
-        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_collection_get_sync_root::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerable_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerable.GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerable.GetEnumerator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerable_get_enumerator(
-        this: OrderedDictionary_OrderedDictionaryKeyValueCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            OrderedDictionary_OrderedDictionaryKeyValueCollection,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerable_get_enumerator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-ordereddictionary")]
-pub trait IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods: IOrderedDictionary_OrderedDictionaryKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]
-    fn ctor(
-        self,
-        array: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>,
-        is_keys: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(is_keys),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    fn system_collections_i_collection_copy_to(
-        self,
-        array: impl ::core::convert::Into<::unity2::IlInstance>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_copy_to(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
-    fn system_collections_i_collection_get_count(self) -> i32 {
-        unsafe {
-            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    fn system_collections_i_collection_get_is_synchronized(self) -> bool {
-        unsafe {
-            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_is_synchronized(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_sync_root(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <OrderedDictionary_OrderedDictionaryKeyValueCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_enumerable_get_enumerator(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-ordereddictionary")]
-impl<__T: IOrderedDictionary_OrderedDictionaryKeyValueCollection> IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods for __T {}
-
-#[cfg(feature = "system-collections-specialized-ordereddictionary")]
-impl OrderedDictionary_OrderedDictionaryKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]
-    pub fn new(array: crate::system::collections::arraylist::ArrayList, is_keys: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods>::ctor(this, array, is_keys);
         this
     }
 }

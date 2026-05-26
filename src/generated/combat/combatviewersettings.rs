@@ -17,37 +17,53 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatViewerSettings")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct CombatViewerSettings {
+        #[offset(24)]
         #[rename(name = "ViewerPhaseArray")]
         pub viewer_phase_array:
             crate::system::collections::generic::list_1::List_1<crate::combat::combatviewersettings::CombatViewerSettings_ViewerPhase>,
+        #[offset(32)]
         #[rename(name = "EternalCombat")]
         pub eternal_combat: bool,
+        #[offset(33)]
         #[rename(name = "ForceCrosscut")]
         pub force_crosscut: bool,
+        #[offset(34)]
         #[rename(name = "ForceBulletCamera")]
         pub force_bullet_camera: bool,
+        #[offset(35)]
         #[rename(name = "EnemyIsBoss")]
         pub enemy_is_boss: bool,
+        #[offset(36)]
         #[rename(name = "StartCamera")]
         pub start_camera: crate::combat::cameraposition::CameraPosition,
+        #[offset(40)]
         #[rename(name = "CameraStyle")]
         pub camera_style: crate::combat::camerasituationconverter::CameraSituationConverter_CameraLocateStyle,
+        #[offset(44)]
         #[rename(name = "AttendanceEnemy")]
         pub attendance_enemy: bool,
+        #[offset(45)]
         #[rename(name = "AttendancePEmblem")]
         pub attendance_p_emblem: bool,
+        #[offset(46)]
         #[rename(name = "AttendanceEEmblem")]
         pub attendance_e_emblem: bool,
+        #[offset(48)]
         #[rename(name = "AttendancePChain")]
         pub attendance_p_chain: i32,
+        #[offset(52)]
         #[rename(name = "AttendanceEChain")]
         pub attendance_e_chain: i32,
+        #[offset(56)]
         #[rename(name = "MapDistance")]
         pub map_distance: i32,
+        #[offset(60)]
         #[rename(name = "RepeatDemo")]
         pub repeat_demo: bool,
+        #[offset(61)]
         #[rename(name = "FakeDead")]
         pub fake_dead: bool,
+        #[offset(62)]
         #[rename(name = "SpeedUp")]
         pub speed_up: bool,
     }
@@ -56,6 +72,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatViewerSettings.ViewerPhase")]
     #[parent(crate::system::object::Object)]
     pub struct CombatViewerSettings_ViewerPhase {
+        #[offset(16)]
         #[rename(name = "s")]
         pub s: ::unity2::Array<::unity2::Il2CppString>,
     }

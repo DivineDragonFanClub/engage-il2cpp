@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "SliderState")]
     #[parent(crate::system::object::Object)]
     pub struct SliderState {
+        #[offset(16)]
         #[rename(name = "dragStartPos")]
         pub drag_start_pos: f32,
+        #[offset(20)]
         #[rename(name = "dragStartValue")]
         pub drag_start_value: f32,
+        #[offset(24)]
         #[rename(name = "isDragging")]
         pub is_dragging: bool,
     }

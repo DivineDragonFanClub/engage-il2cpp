@@ -23,6 +23,7 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_gridLayoutGroup")]
         pub m_grid_layout_group: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup,
     }

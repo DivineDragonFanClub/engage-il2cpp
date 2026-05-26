@@ -21,8 +21,10 @@ mod __types {
         #[static_field]
         #[rename(name = "GetMasterPlayableDirector")]
         pub get_master_playable_director: crate::root::cinemachinemixer::CinemachineMixer_MasterDirectorDelegate,
+        #[offset(24)]
         #[rename(name = "mBrainOverrideId")]
         pub m_brain_override_id: i32,
+        #[offset(28)]
         #[rename(name = "mPreviewPlay")]
         pub m_preview_play: bool,
     }

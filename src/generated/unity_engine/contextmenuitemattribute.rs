@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "ContextMenuItemAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct ContextMenuItemAttribute {
+        #[offset(16)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "function")]
         pub function: ::unity2::Il2CppString,
     }

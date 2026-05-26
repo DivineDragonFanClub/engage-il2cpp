@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "ObjectCallbackMemberDescriptor")]
     #[parent(crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::FunctionMemberDescriptorBase)]
     pub struct ObjectCallbackMemberDescriptor {
+        #[offset(72)]
         #[rename(name = "m_CallbackFunc")]
         pub m_callback_func: crate::system::func_4::Func_4<
             crate::system::object::Object,

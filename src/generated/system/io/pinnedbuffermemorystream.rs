@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "PinnedBufferMemoryStream")]
     #[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]
     pub struct PinnedBufferMemoryStream {
+        #[offset(104)]
         #[rename(name = "_array")]
         pub array: ::unity2::Array<u8>,
     }

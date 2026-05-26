@@ -20,32 +20,46 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "ShadowCaster2D")]
     #[parent(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)]
     pub struct ShadowCaster2D {
+        #[offset(40)]
         #[rename(name = "m_HasRenderer")]
         pub m_has_renderer: bool,
+        #[offset(41)]
         #[rename(name = "m_UseRendererSilhouette")]
         pub m_use_renderer_silhouette: bool,
+        #[offset(42)]
         #[rename(name = "m_CastsShadows")]
         pub m_casts_shadows: bool,
+        #[offset(43)]
         #[rename(name = "m_SelfShadows")]
         pub m_self_shadows: bool,
+        #[offset(48)]
         #[rename(name = "m_ApplyToSortingLayers")]
         pub m_apply_to_sorting_layers: ::unity2::Array<i32>,
+        #[offset(56)]
         #[rename(name = "m_ShapePath")]
         pub m_shape_path: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(64)]
         #[rename(name = "m_ShapePathHash")]
         pub m_shape_path_hash: i32,
+        #[offset(72)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(80)]
         #[rename(name = "m_InstanceId")]
         pub m_instance_id: i32,
+        #[offset(88)]
         #[rename(name = "m_ShadowCasterGroup")]
         pub m_shadow_caster_group: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        #[offset(96)]
         #[rename(name = "m_PreviousShadowCasterGroup")]
         pub m_previous_shadow_caster_group: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        #[offset(104)]
         #[rename(name = "m_PreviousShadowGroup")]
         pub m_previous_shadow_group: i32,
+        #[offset(108)]
         #[rename(name = "m_PreviousCastsShadows")]
         pub m_previous_casts_shadows: bool,
+        #[offset(112)]
         #[rename(name = "m_PreviousPathHash")]
         pub m_previous_path_hash: i32,
     }

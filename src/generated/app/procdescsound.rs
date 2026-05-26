@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescSound")]
     #[parent(crate::app::procdesccallbase::ProcDescCallBase)]
     pub struct ProcDescSound {
+        #[offset(24)]
         #[rename(name = "m_EventName")]
         pub m_event_name: ::unity2::Il2CppString,
     }

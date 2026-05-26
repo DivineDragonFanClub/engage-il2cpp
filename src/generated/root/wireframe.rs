@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "", name = "Wireframe")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct Wireframe {
+        #[offset(24)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "m_Width")]
         pub m_width: i32,
+        #[offset(44)]
         #[rename(name = "m_Height")]
         pub m_height: i32,
+        #[offset(48)]
         #[rename(name = "m_Size")]
         pub m_size: f32,
     }

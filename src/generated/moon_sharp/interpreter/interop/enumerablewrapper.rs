@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "EnumerableWrapper")]
     #[parent(crate::system::object::Object)]
     pub struct EnumerableWrapper {
+        #[offset(16)]
         #[rename(name = "m_Enumerator")]
         pub m_enumerator: crate::system::collections::ienumerator::IEnumerator,
+        #[offset(24)]
         #[rename(name = "m_Script")]
         pub m_script: crate::moon_sharp::interpreter::script::Script,
+        #[offset(32)]
         #[rename(name = "m_Prev")]
         pub m_prev: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(40)]
         #[rename(name = "m_HasTurnOnce")]
         pub m_has_turn_once: bool,
     }

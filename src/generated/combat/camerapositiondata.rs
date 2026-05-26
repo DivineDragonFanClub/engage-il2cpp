@@ -19,6 +19,39 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraPositionData")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CameraPositionData {
+        #[offset(24)]
+        #[rename(name = "ShakeSetting")]
+        pub shake_setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
+        #[offset(128)]
+        #[rename(name = "m_DrawCount")]
+        pub m_draw_count: crate::app::gameparam::GameParam_Holder,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct CameraPositionData_CameraShakeSettings {
+        #[offset(16)]
+        #[rename(name = "ShakeDuration")]
+        pub shake_duration: i32,
+        #[offset(20)]
+        #[rename(name = "ShakeRadius")]
+        pub shake_radius: f32,
+        #[offset(24)]
+        #[rename(name = "ArmorStepDuraton")]
+        pub armor_step_duraton: i32,
+        #[offset(28)]
+        #[rename(name = "ArmorStepMagnitude")]
+        pub armor_step_magnitude: f32,
+        #[offset(32)]
+        #[rename(name = "ScaleCurveDistance")]
+        pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerapositiondata/CameraPositionData_TargetJoint.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,32 +96,6 @@ mod __types {
         pub fn look_at_loc_human() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraPositionData")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CameraPositionData {
-        #[rename(name = "ShakeSetting")]
-        pub shake_setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-        #[rename(name = "m_DrawCount")]
-        pub m_draw_count: crate::app::gameparam::GameParam_Holder,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct CameraPositionData_CameraShakeSettings {
-        #[rename(name = "ShakeDuration")]
-        pub shake_duration: i32,
-        #[rename(name = "ShakeRadius")]
-        pub shake_radius: f32,
-        #[rename(name = "ArmorStepDuraton")]
-        pub armor_step_duraton: i32,
-        #[rename(name = "ArmorStepMagnitude")]
-        pub armor_step_magnitude: f32,
-        #[rename(name = "ScaleCurveDistance")]
-        pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
     }
 }
 

@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "WhiteBalance")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct WhiteBalance {
+        #[offset(56)]
         #[rename(name = "temperature")]
         pub temperature: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(64)]
         #[rename(name = "tint")]
         pub tint: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

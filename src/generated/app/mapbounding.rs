@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBounding")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapBounding {
+        #[offset(24)]
         #[rename(name = "m_Ratio")]
         pub m_ratio: f32,
     }

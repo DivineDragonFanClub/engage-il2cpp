@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ConfirmDialogItemYes")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct ConfirmDialogItemYes {
+        #[offset(112)]
         #[rename(name = "hubSequence")]
         pub hub_sequence: crate::app::hubsequence::HubSequence,
+        #[offset(120)]
         #[rename(name = "scriptName")]
         pub script_name: ::unity2::Il2CppString,
     }

@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.XR", name = "XRInputSubsystem")]
     # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrinputsubsystemdescriptor :: XRInputSubsystemDescriptor >)]
     pub struct XRInputSubsystem {
+        #[offset(32)]
         #[rename(name = "trackingOriginUpdated")]
         pub tracking_origin_updated: crate::system::action_1::Action_1<crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem>,
+        #[offset(40)]
         #[rename(name = "boundaryChanged")]
         pub boundary_changed: crate::system::action_1::Action_1<crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem>,
     }

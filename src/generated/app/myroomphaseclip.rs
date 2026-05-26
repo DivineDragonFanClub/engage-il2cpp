@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomPhaseClip")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct MyRoomPhaseClip {
+        #[offset(24)]
         #[rename(name = "Situation")]
         pub situation: crate::app::gamesound::GameSound_WakeupVoiceSituation,
     }

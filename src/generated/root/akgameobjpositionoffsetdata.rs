@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkGameObjPositionOffsetData")]
     #[parent(crate::system::object::Object)]
     pub struct AkGameObjPositionOffsetData {
+        #[offset(16)]
         #[rename(name = "KeepMe")]
         pub keep_me: bool,
+        #[offset(20)]
         #[rename(name = "positionOffset")]
         pub position_offset: crate::unity_engine::vector3::Vector3,
     }

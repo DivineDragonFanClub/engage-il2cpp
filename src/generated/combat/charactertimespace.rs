@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterTimespace")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterTimespace {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(36)]
         #[rename(name = "DefaultPlayBackRate")]
         pub default_play_back_rate: f32,
+        #[offset(48)]
         #[rename(name = "m_bImpactAdjustReserved")]
         pub m_b_impact_adjust_reserved: bool,
+        #[offset(49)]
         #[rename(name = "m_bImpactAdjust命中信号実行")]
         pub m_b_impact_adjust命中信号実行: bool,
+        #[offset(50)]
         #[rename(name = "m_bImpactAdjust連続実行防止")]
         pub m_b_impact_adjust連続実行防止: bool,
+        #[offset(52)]
         #[rename(name = "m_ImpactAdjustWorldTime")]
         pub m_impact_adjust_world_time: f32,
+        #[offset(56)]
         #[rename(name = "IsStartCalled")]
         pub is_start_called: bool,
     }

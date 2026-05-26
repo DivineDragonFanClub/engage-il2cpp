@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EffectHandle")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EffectHandle {
+        #[offset(24)]
         #[rename(name = "m_ParticleSystem")]
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
     }

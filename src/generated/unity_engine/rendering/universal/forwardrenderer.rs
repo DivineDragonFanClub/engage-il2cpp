@@ -59,101 +59,148 @@ mod __types {
         #[static_field]
         #[rename(name = "k_DepthStencilBufferBits")]
         pub k_depth_stencil_buffer_bits: i32,
+        #[offset(144)]
         #[rename(name = "m_ColorGradingLutPass")]
         pub m_color_grading_lut_pass: crate::unity_engine::rendering::universal::internal::colorgradinglutpass::ColorGradingLutPass,
+        #[offset(152)]
         #[rename(name = "m_DepthPrepass")]
         pub m_depth_prepass: crate::unity_engine::rendering::universal::internal::depthonlypass::DepthOnlyPass,
+        #[offset(160)]
         #[rename(name = "m_DepthNormalPrepass")]
         pub m_depth_normal_prepass: crate::unity_engine::rendering::universal::internal::depthnormalonlypass::DepthNormalOnlyPass,
+        #[offset(168)]
         #[rename(name = "m_MainLightShadowCasterPass")]
         pub m_main_light_shadow_caster_pass:
             crate::unity_engine::rendering::universal::internal::mainlightshadowcasterpass::MainLightShadowCasterPass,
+        #[offset(176)]
         #[rename(name = "m_AdditionalLightsShadowCasterPass")]
         pub m_additional_lights_shadow_caster_pass:
             crate::unity_engine::rendering::universal::internal::additionallightsshadowcasterpass::AdditionalLightsShadowCasterPass,
+        #[offset(184)]
         #[rename(name = "m_GBufferPass")]
         pub m_g_buffer_pass: crate::unity_engine::rendering::universal::internal::gbufferpass::GBufferPass,
+        #[offset(192)]
         #[rename(name = "m_GBufferCopyDepthPass")]
         pub m_g_buffer_copy_depth_pass: crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass,
+        #[offset(200)]
         #[rename(name = "m_TileDepthRangePass")]
         pub m_tile_depth_range_pass: crate::unity_engine::rendering::universal::internal::tiledepthrangepass::TileDepthRangePass,
+        #[offset(208)]
         #[rename(name = "m_TileDepthRangeExtraPass")]
         pub m_tile_depth_range_extra_pass: crate::unity_engine::rendering::universal::internal::tiledepthrangepass::TileDepthRangePass,
+        #[offset(216)]
         #[rename(name = "m_DeferredPass")]
         pub m_deferred_pass: crate::unity_engine::rendering::universal::internal::deferredpass::DeferredPass,
+        #[offset(224)]
         #[rename(name = "m_RenderOpaqueForwardOnlyPass")]
         pub m_render_opaque_forward_only_pass: crate::unity_engine::rendering::universal::internal::drawobjectspass::DrawObjectsPass,
+        #[offset(232)]
         #[rename(name = "m_RenderOpaqueForwardPass")]
         pub m_render_opaque_forward_pass: crate::unity_engine::rendering::universal::internal::drawobjectspass::DrawObjectsPass,
+        #[offset(240)]
         #[rename(name = "m_DrawSkyboxPass")]
         pub m_draw_skybox_pass: crate::unity_engine::rendering::universal::drawskyboxpass::DrawSkyboxPass,
+        #[offset(248)]
         #[rename(name = "m_CopyDepthPass")]
         pub m_copy_depth_pass: crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass,
+        #[offset(256)]
         #[rename(name = "m_CopyColorPass")]
         pub m_copy_color_pass: crate::unity_engine::rendering::universal::internal::copycolorpass::CopyColorPass,
+        #[offset(264)]
         #[rename(name = "m_TransparentSettingsPass")]
         pub m_transparent_settings_pass: crate::unity_engine::rendering::universal::transparentsettingspass::TransparentSettingsPass,
+        #[offset(272)]
         #[rename(name = "m_RenderTransparentForwardPass")]
         pub m_render_transparent_forward_pass: crate::unity_engine::rendering::universal::internal::drawobjectspass::DrawObjectsPass,
+        #[offset(280)]
         #[rename(name = "m_OnRenderObjectCallbackPass")]
         pub m_on_render_object_callback_pass:
             crate::unity_engine::rendering::universal::invokeonrenderobjectcallbackpass::InvokeOnRenderObjectCallbackPass,
+        #[offset(288)]
         #[rename(name = "m_PostProcessPass")]
         pub m_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[offset(296)]
         #[rename(name = "m_FinalPostProcessPass")]
         pub m_final_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[offset(304)]
         #[rename(name = "m_FinalBlitPass")]
         pub m_final_blit_pass: crate::unity_engine::rendering::universal::internal::finalblitpass::FinalBlitPass,
+        #[offset(312)]
         #[rename(name = "m_CapturePass")]
         pub m_capture_pass: crate::unity_engine::rendering::universal::capturepass::CapturePass,
+        #[offset(320)]
         #[rename(name = "m_XROcclusionMeshPass")]
         pub m_xr_occlusion_mesh_pass: crate::unity_engine::rendering::universal::xrocclusionmeshpass::XROcclusionMeshPass,
+        #[offset(328)]
         #[rename(name = "m_XRCopyDepthPass")]
         pub m_xr_copy_depth_pass: crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass,
+        #[offset(336)]
         #[rename(name = "m_ActiveCameraColorAttachment")]
         pub m_active_camera_color_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(384)]
         #[rename(name = "m_ActiveCameraDepthAttachment")]
         pub m_active_camera_depth_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(432)]
         #[rename(name = "m_CameraColorAttachment")]
         pub m_camera_color_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(480)]
         #[rename(name = "m_CameraDepthAttachment")]
         pub m_camera_depth_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(528)]
         #[rename(name = "m_DepthTexture")]
         pub m_depth_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(576)]
         #[rename(name = "m_NormalsTexture")]
         pub m_normals_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(624)]
         #[rename(name = "m_GBufferHandles")]
         pub m_g_buffer_handles: ::unity2::Array<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>,
+        #[offset(632)]
         #[rename(name = "m_OpaqueColor")]
         pub m_opaque_color: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(680)]
         #[rename(name = "m_AfterPostProcessColor")]
         pub m_after_post_process_color: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(728)]
         #[rename(name = "m_ColorGradingLut")]
         pub m_color_grading_lut: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(776)]
         #[rename(name = "m_DepthInfoTexture")]
         pub m_depth_info_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(824)]
         #[rename(name = "m_TileDepthInfoTexture")]
         pub m_tile_depth_info_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(872)]
         #[rename(name = "m_ForwardLights")]
         pub m_forward_lights: crate::unity_engine::rendering::universal::internal::forwardlights::ForwardLights,
+        #[offset(880)]
         #[rename(name = "m_DeferredLights")]
         pub m_deferred_lights: crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,
+        #[offset(888)]
         #[rename(name = "m_RenderingMode")]
         pub m_rendering_mode: crate::unity_engine::rendering::universal::renderingmode::RenderingMode,
+        #[offset(892)]
         #[rename(name = "m_DefaultStencilState")]
         pub m_default_stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        #[offset(904)]
         #[rename(name = "m_BlitMaterial")]
         pub m_blit_material: crate::unity_engine::material::Material,
+        #[offset(912)]
         #[rename(name = "m_CopyDepthMaterial")]
         pub m_copy_depth_material: crate::unity_engine::material::Material,
+        #[offset(920)]
         #[rename(name = "m_SamplingMaterial")]
         pub m_sampling_material: crate::unity_engine::material::Material,
+        #[offset(928)]
         #[rename(name = "m_ScreenspaceShadowsMaterial")]
         pub m_screenspace_shadows_material: crate::unity_engine::material::Material,
+        #[offset(936)]
         #[rename(name = "m_TileDepthInfoMaterial")]
         pub m_tile_depth_info_material: crate::unity_engine::material::Material,
+        #[offset(944)]
         #[rename(name = "m_TileDeferredMaterial")]
         pub m_tile_deferred_material: crate::unity_engine::material::Material,
+        #[offset(952)]
         #[rename(name = "m_StencilDeferredMaterial")]
         pub m_stencil_deferred_material: crate::unity_engine::material::Material,
     }

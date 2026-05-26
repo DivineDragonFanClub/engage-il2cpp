@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "MagicSub")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MagicSub {
+        #[offset(24)]
         #[rename(name = "BulletSettings")]
         pub bullet_settings: crate::combat::magicbulletsettings::MagicBulletSettings,
+        #[offset(32)]
         #[rename(name = "Trackヒット時処理")]
         pub trackヒット時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(40)]
         #[rename(name = "Trackミス時処理")]
         pub trackミス時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(48)]
         #[rename(name = "Trackガード時処理")]
         pub trackガード時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(56)]
         #[rename(name = "Trackパリィ時処理")]
         pub trackパリィ時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(64)]
         #[rename(name = "Track衝突時処理")]
         pub track衝突時処理: crate::combat::magicsignaltrack::MagicSignalTrack,
+        #[offset(72)]
         #[rename(name = "Track自然消滅処理")]
         pub track自然消滅処理: crate::combat::magicsignaltrack::MagicSignalTrack,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution", name = "LoopTracker")]
     #[parent(crate::system::object::Object)]
     pub struct LoopTracker {
+        #[offset(16)]
         #[rename(name = "Loops")]
         pub loops: crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<crate::moon_sharp::interpreter::execution::iloop::ILoop>,
     }

@@ -25,14 +25,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapPanelGimmick")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelgimmick :: MapPanelGimmick >)]
     pub struct MapPanelGimmick {
+        #[offset(64)]
         #[rename(name = "m_Alpha")]
         pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(72)]
         #[rename(name = "m_GimmickImage")]
         pub m_gimmick_image: crate::unity_engine::material::Material,
+        #[offset(80)]
         #[rename(name = "m_GimmickColor")]
         pub m_gimmick_color: crate::unity_engine::color::Color,
+        #[offset(96)]
         #[rename(name = "m_IsUpdate")]
         pub m_is_update: bool,
+        #[offset(100)]
         #[rename(name = "previousCount")]
         pub previous_count: i32,
     }

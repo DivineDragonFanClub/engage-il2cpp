@@ -21,14 +21,19 @@ mod __types {
         #[static_field]
         #[rename(name = "GidMax")]
         pub gid_max: i32,
+        #[offset(200)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(208)]
         #[rename(name = "m_statusSetter")]
         pub m_status_setter: crate::app::unitstatussetter::UnitStatusSetter,
+        #[offset(216)]
         #[rename(name = "m_ringSelectRoot")]
         pub m_ring_select_root: crate::app::ringselectroot::RingSelectRoot,
+        #[offset(224)]
         #[rename(name = "m_menuSelect")]
         pub m_menu_select: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(232)]
         #[rename(name = "m_selectPage")]
         pub m_select_page: i32,
         #[static_field]
@@ -49,10 +54,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingSelectMenu.RingMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RingSelectMenu_RingMenuItem {
+        #[offset(100)]
         #[rename(name = "m_isGod")]
         pub m_is_god: bool,
+        #[offset(104)]
         #[rename(name = "m_god")]
         pub m_god: crate::app::godunit::GodUnit,
+        #[offset(112)]
         #[rename(name = "m_ring")]
         pub m_ring: crate::app::unitring::UnitRing,
     }

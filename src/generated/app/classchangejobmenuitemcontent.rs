@@ -20,14 +20,18 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ClassChangeJobMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ClassChangeJobMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(80)]
         #[rename(name = "m_Title")]
         pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_WeaponLevelList")]
         pub m_weapon_level_list: crate::system::collections::generic::list_1::List_1<
             crate::app::classchangejobmenuitemcontent::ClassChangeJobMenuItemContent_WeaponLevelItem,
         >,
+        #[offset(96)]
         #[rename(name = "m_NameRanks")]
         pub m_name_ranks: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
@@ -36,12 +40,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ClassChangeJobMenuItemContent.WeaponLevelItem")]
     #[parent(crate::system::object::Object)]
     pub struct ClassChangeJobMenuItemContent_WeaponLevelItem {
+        #[offset(16)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_Level")]
         pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_IsUp")]
         pub m_is_up: bool,
     }

@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardStampListMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct ProfileCardStampListMenuItem {
+        #[offset(104)]
         #[rename(name = "m_ProfileCardStampData")]
         pub m_profile_card_stamp_data: crate::app::profilecardstampdata::ProfileCardStampData,
+        #[offset(112)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler,
     }

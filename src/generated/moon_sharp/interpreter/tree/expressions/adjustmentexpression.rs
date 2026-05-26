@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "AdjustmentExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct AdjustmentExpression {
+        #[offset(32)]
         #[rename(name = "expression")]
         pub expression: crate::moon_sharp::interpreter::tree::expression::Expression,
     }

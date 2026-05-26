@@ -23,6 +23,7 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(240)]
         #[rename(name = "m_MenuListAnimator")]
         pub m_menu_list_animator: crate::unity_engine::animator::Animator,
     }

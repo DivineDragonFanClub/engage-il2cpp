@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AudienceAnime")]
     #[parent(crate::system::object::Object)]
     pub struct AudienceAnime {
+        #[offset(16)]
         #[rename(name = "m_Pattern")]
         pub m_pattern: i32,
+        #[offset(20)]
         #[rename(name = "m_Now")]
         pub m_now: i32,
+        #[offset(24)]
         #[rename(name = "m_Speed")]
         pub m_speed: f32,
+        #[offset(32)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(40)]
         #[rename(name = "m_PatternInv")]
         pub m_pattern_inv: f32,
+        #[offset(44)]
         #[rename(name = "m_Timer")]
         pub m_timer: f32,
     }

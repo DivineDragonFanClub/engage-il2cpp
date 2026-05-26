@@ -14,16 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
-    #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
-    #[parent(crate::system::object::Object)]
-    pub struct MuscleSquatSequence_RandomPack {
-        #[rename(name = "type")]
-        pub r#type: ::unity2::Il2CppString,
-        #[rename(name = "param")]
-        pub param: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -84,6 +74,18 @@ mod __types {
         pub fn r#final() -> Self {
             Self { value: 8 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
+    #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
+    #[parent(crate::system::object::Object)]
+    pub struct MuscleSquatSequence_RandomPack {
+        #[offset(16)]
+        #[rename(name = "type")]
+        pub r#type: ::unity2::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "param")]
+        pub param: f32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence.md"))]
@@ -153,16 +155,19 @@ mod __types {
         #[static_field]
         #[rename(name = "cUINotesUnClockwise")]
         pub c_ui_notes_un_clockwise: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "cLoadObjectList")]
         pub c_load_object_list: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "cAnimeRoopFrame")]
         pub c_anime_roop_frame: f32,
+        #[offset(120)]
         #[rename(name = "cPlayerPos")]
         pub c_player_pos: crate::unity_engine::vector3::Vector3,
         #[static_field]
         #[rename(name = "cPlayerRotY")]
         pub c_player_rot_y: f32,
+        #[offset(132)]
         #[rename(name = "cAssistPos")]
         pub c_assist_pos: crate::unity_engine::vector3::Vector3,
         #[static_field]
@@ -177,190 +182,280 @@ mod __types {
         #[static_field]
         #[rename(name = "cResultMinimumSec")]
         pub c_result_minimum_sec: f32,
+        #[offset(160)]
         #[rename(name = "m_Window")]
         pub m_window: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_ResultWindow")]
         pub m_result_window: crate::unity_engine::gameobject::GameObject,
+        #[offset(176)]
         #[rename(name = "m_PopUpPerfect")]
         pub m_pop_up_perfect: crate::unity_engine::gameobject::GameObject,
+        #[offset(184)]
         #[rename(name = "m_PopUpGood")]
         pub m_pop_up_good: crate::unity_engine::gameobject::GameObject,
+        #[offset(192)]
         #[rename(name = "m_PopUpBad")]
         pub m_pop_up_bad: crate::unity_engine::gameobject::GameObject,
+        #[offset(200)]
         #[rename(name = "m_PopUpAssist")]
         pub m_pop_up_assist: crate::unity_engine::gameobject::GameObject,
+        #[offset(208)]
         #[rename(name = "m_PopUpAssistRectTrans")]
         pub m_pop_up_assist_rect_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(216)]
         #[rename(name = "m_AssistGlitter")]
         pub m_assist_glitter: crate::unity_engine::gameobject::GameObject,
+        #[offset(224)]
         #[rename(name = "m_CurrentPopUp")]
         pub m_current_pop_up: crate::unity_engine::gameobject::GameObject,
+        #[offset(232)]
         #[rename(name = "m_PopupTimer")]
         pub m_popup_timer: f32,
+        #[offset(236)]
         #[rename(name = "m_PopupAssistTimer")]
         pub m_popup_assist_timer: f32,
+        #[offset(240)]
         #[rename(name = "m_TimeMult")]
         pub m_time_mult: f32,
+        #[offset(244)]
         #[rename(name = "m_NotesHeightMult")]
         pub m_notes_height_mult: f32,
+        #[offset(248)]
         #[rename(name = "m_ClockWiseLengthMult")]
         pub m_clock_wise_length_mult: f32,
+        #[offset(256)]
         #[rename(name = "m_StickR")]
         pub m_stick_r: crate::app::squat::stick::Stick,
+        #[offset(264)]
         #[rename(name = "m_StickL")]
         pub m_stick_l: crate::app::squat::stick::Stick,
+        #[offset(272)]
         #[rename(name = "m_NotesCanvasRoot")]
         pub m_notes_canvas_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(280)]
         #[rename(name = "m_NotesR")]
         pub m_notes_r: crate::system::collections::generic::list_1::List_1<crate::app::squat::note::Note>,
+        #[offset(288)]
         #[rename(name = "m_NotesL")]
         pub m_notes_l: crate::system::collections::generic::list_1::List_1<crate::app::squat::note::Note>,
+        #[offset(296)]
         #[rename(name = "m_EraseNoteReserveR")]
         pub m_erase_note_reserve_r: crate::system::collections::generic::list_1::List_1<crate::app::squat::note::Note>,
+        #[offset(304)]
         #[rename(name = "m_EraseNoteReserveL")]
         pub m_erase_note_reserve_l: crate::system::collections::generic::list_1::List_1<crate::app::squat::note::Note>,
+        #[offset(312)]
         #[rename(name = "m_RightRankReserver")]
         pub m_right_rank_reserver: i32,
+        #[offset(316)]
         #[rename(name = "m_LeftRankReserver")]
         pub m_left_rank_reserver: i32,
+        #[offset(320)]
         #[rename(name = "m_JudgeData")]
         pub m_judge_data: crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData,
+        #[offset(328)]
         #[rename(name = "m_NotesPatternA_R")]
         pub m_notes_pattern_a_r: ::unity2::Array<i32>,
+        #[offset(336)]
         #[rename(name = "m_NotesPatternA_L")]
         pub m_notes_pattern_a_l: ::unity2::Array<i32>,
+        #[offset(344)]
         #[rename(name = "m_NotesPatternB_R")]
         pub m_notes_pattern_b_r: ::unity2::Array<i32>,
+        #[offset(352)]
         #[rename(name = "m_NotesPatternB_L")]
         pub m_notes_pattern_b_l: ::unity2::Array<i32>,
+        #[offset(360)]
         #[rename(name = "m_NotesPatternC_R")]
         pub m_notes_pattern_c_r: ::unity2::Array<i32>,
+        #[offset(368)]
         #[rename(name = "m_NotesPatternC_L")]
         pub m_notes_pattern_c_l: ::unity2::Array<i32>,
+        #[offset(376)]
         #[rename(name = "m_NotesPatternD_R")]
         pub m_notes_pattern_d_r: ::unity2::Array<i32>,
+        #[offset(384)]
         #[rename(name = "m_NotesPatternD_L")]
         pub m_notes_pattern_d_l: ::unity2::Array<i32>,
+        #[offset(392)]
         #[rename(name = "m_NotesPatternE_R")]
         pub m_notes_pattern_e_r: ::unity2::Array<i32>,
+        #[offset(400)]
         #[rename(name = "m_NotesPatternE_L")]
         pub m_notes_pattern_e_l: ::unity2::Array<i32>,
+        #[offset(408)]
         #[rename(name = "m_SelectedTypeList")]
         pub m_selected_type_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(416)]
         #[rename(name = "m_UsePatternCount")]
         pub m_use_pattern_count: i32,
+        #[offset(424)]
         #[rename(name = "m_CountText")]
         pub m_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(432)]
         #[rename(name = "m_TotalNotesCount")]
         pub m_total_notes_count: i32,
+        #[offset(436)]
         #[rename(name = "m_PastCount")]
         pub m_past_count: i32,
+        #[offset(440)]
         #[rename(name = "m_PerfectText")]
         pub m_perfect_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(448)]
         #[rename(name = "m_GoodText")]
         pub m_good_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(456)]
         #[rename(name = "m_BadBase")]
         pub m_bad_base: crate::unity_engine::gameobject::GameObject,
+        #[offset(464)]
         #[rename(name = "m_BadAnime")]
         pub m_bad_anime: ::unity2::Array<crate::unity_engine::animator::Animator>,
+        #[offset(472)]
         #[rename(name = "m_GoodScore")]
         pub m_good_score: i32,
+        #[offset(476)]
         #[rename(name = "m_PerfectScore")]
         pub m_perfect_score: i32,
+        #[offset(480)]
         #[rename(name = "m_TargetScore")]
         pub m_target_score: i32,
+        #[offset(484)]
         #[rename(name = "m_EndlessLimitCount")]
         pub m_endless_limit_count: i32,
+        #[offset(488)]
         #[rename(name = "m_BadCount")]
         pub m_bad_count: i32,
+        #[offset(492)]
         #[rename(name = "m_PerfectCount")]
         pub m_perfect_count: i32,
+        #[offset(496)]
         #[rename(name = "m_GoodCount")]
         pub m_good_count: i32,
+        #[offset(504)]
         #[rename(name = "m_PlayerRoot")]
         pub m_player_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(512)]
         #[rename(name = "m_ExerciseChara")]
         pub m_exercise_chara: crate::unity_engine::gameobject::GameObject,
+        #[offset(520)]
         #[rename(name = "m_PlayerAnimator")]
         pub m_player_animator: crate::unity_engine::animator::Animator,
+        #[offset(528)]
         #[rename(name = "m_PlayerResetPos")]
         pub m_player_reset_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(540)]
         #[rename(name = "m_PlayerResetRot")]
         pub m_player_reset_rot: crate::unity_engine::quaternion::Quaternion,
+        #[offset(556)]
         #[rename(name = "m_PlayerResetDir")]
         pub m_player_reset_dir: f32,
+        #[offset(560)]
         #[rename(name = "m_AnimeFrame")]
         pub m_anime_frame: f32,
+        #[offset(568)]
         #[rename(name = "m_AnimeFrameInterp")]
         pub m_anime_frame_interp: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(576)]
         #[rename(name = "m_IsReadyPlayerModel")]
         pub m_is_ready_player_model: bool,
+        #[offset(577)]
         #[rename(name = "m_IsClear")]
         pub m_is_clear: bool,
         #[static_field]
         #[rename(name = "CameraAnimeCountMax")]
         pub camera_anime_count_max: i32,
+        #[offset(584)]
         #[rename(name = "m_UseCamera")]
         pub m_use_camera: crate::unity_engine::camera::Camera,
+        #[offset(592)]
         #[rename(name = "m_CameraAnime")]
         pub m_camera_anime: crate::unity_engine::animation::Animation,
+        #[offset(600)]
         #[rename(name = "m_UseCameraAnimeIndex")]
         pub m_use_camera_anime_index: i32,
+        #[offset(608)]
         #[rename(name = "m_CameraAnimeResouce")]
         pub m_camera_anime_resouce: ::unity2::Array<crate::app::resourcehandle_2::ResourceHandle_2>,
+        #[offset(616)]
         #[rename(name = "m_CameraResourceObjList")]
         pub m_camera_resource_obj_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(624)]
         #[rename(name = "m_Talker")]
         pub m_talker: crate::unity_engine::transform::Transform,
+        #[offset(632)]
         #[rename(name = "m_TalkChara")]
         pub m_talk_chara: crate::combat::character::Character,
+        #[offset(640)]
         #[rename(name = "m_VoiceHandle")]
         pub m_voice_handle: crate::app::gamesound::GameSound_Handle,
+        #[offset(648)]
         #[rename(name = "m_VoiceIntervalTimer")]
         pub m_voice_interval_timer: f32,
         #[static_field]
         #[rename(name = "VoiceIntervalSec")]
         pub voice_interval_sec: f32,
+        #[offset(656)]
         #[rename(name = "m_Sola")]
         pub m_sola: crate::combat::character::Character,
+        #[offset(664)]
         #[rename(name = "m_SolaAnime")]
         pub m_sola_anime: crate::unity_engine::animator::Animator,
+        #[offset(672)]
         #[rename(name = "m_SolaReaction")]
         pub m_sola_reaction: bool,
+        #[offset(676)]
         #[rename(name = "m_AssistMax")]
         pub m_assist_max: i32,
+        #[offset(680)]
         #[rename(name = "m_AssistCount")]
         pub m_assist_count: i32,
+        #[offset(684)]
         #[rename(name = "m_IsReadyAssistModel")]
         pub m_is_ready_assist_model: bool,
+        #[offset(688)]
         #[rename(name = "m_HubSolaLct")]
         pub m_hub_sola_lct: crate::unity_engine::gameobject::GameObject,
+        #[offset(696)]
         #[rename(name = "m_IsSetSolaInvisible")]
         pub m_is_set_sola_invisible: bool,
+        #[offset(700)]
         #[rename(name = "m_CountTimer")]
         pub m_count_timer: f32,
+        #[offset(704)]
         #[rename(name = "m_CountTelop")]
         pub m_count_telop: crate::unity_engine::gameobject::GameObject,
+        #[offset(712)]
         #[rename(name = "m_StopTelop")]
         pub m_stop_telop: crate::unity_engine::gameobject::GameObject,
+        #[offset(720)]
         #[rename(name = "m_RankStr")]
         pub m_rank_str: ::unity2::Il2CppString,
+        #[offset(728)]
         #[rename(name = "m_RankBonus")]
         pub m_rank_bonus: ::unity2::Il2CppString,
+        #[offset(736)]
         #[rename(name = "m_RankBond")]
         pub m_rank_bond: i32,
+        #[offset(740)]
         #[rename(name = "m_ResultTimer")]
         pub m_result_timer: f32,
+        #[offset(744)]
         #[rename(name = "m_JudgeFB")]
         pub m_judge_fb: f32,
+        #[offset(748)]
         #[rename(name = "m_JudgeFG")]
         pub m_judge_fg: f32,
+        #[offset(752)]
         #[rename(name = "m_JudgeFP")]
         pub m_judge_fp: f32,
+        #[offset(756)]
         #[rename(name = "m_JudgeLP")]
         pub m_judge_lp: f32,
+        #[offset(760)]
         #[rename(name = "m_JudgeLG")]
         pub m_judge_lg: f32,
+        #[offset(764)]
         #[rename(name = "m_JudgeLB")]
         pub m_judge_lb: f32,
     }

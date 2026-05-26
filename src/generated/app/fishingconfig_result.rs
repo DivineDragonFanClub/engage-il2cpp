@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingConfig_Result")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_Result {
+        #[offset(24)]
         #[rename(name = "m_ResultTime")]
         pub m_result_time: f32,
+        #[offset(28)]
         #[rename(name = "m_ResultFadeInType")]
         pub m_result_fade_in_type: crate::app::fishing::fadetype::FadeType,
+        #[offset(32)]
         #[rename(name = "m_ResultCamera")]
         pub m_result_camera: crate::app::fishing::config::fixcameraconfig::FixCameraConfig,
+        #[offset(40)]
         #[rename(name = "m_ResultPlayerRotY")]
         pub m_result_player_rot_y: f32,
     }

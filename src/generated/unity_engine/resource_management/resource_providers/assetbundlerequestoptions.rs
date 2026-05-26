@@ -11,26 +11,37 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "AssetBundleRequestOptions")]
     #[parent(crate::system::object::Object)]
     pub struct AssetBundleRequestOptions {
+        #[offset(16)]
         #[rename(name = "m_Hash")]
         pub m_hash: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Crc")]
         pub m_crc: u32,
+        #[offset(28)]
         #[rename(name = "m_Timeout")]
         pub m_timeout: i32,
+        #[offset(32)]
         #[rename(name = "m_ChunkedTransfer")]
         pub m_chunked_transfer: bool,
+        #[offset(36)]
         #[rename(name = "m_RedirectLimit")]
         pub m_redirect_limit: i32,
+        #[offset(40)]
         #[rename(name = "m_RetryCount")]
         pub m_retry_count: i32,
+        #[offset(48)]
         #[rename(name = "m_BundleName")]
         pub m_bundle_name: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_BundleSize")]
         pub m_bundle_size: i64,
+        #[offset(64)]
         #[rename(name = "m_UseCrcForCachedBundles")]
         pub m_use_crc_for_cached_bundles: bool,
+        #[offset(65)]
         #[rename(name = "m_UseUWRForLocalBundles")]
         pub m_use_uwr_for_local_bundles: bool,
+        #[offset(66)]
         #[rename(name = "m_ClearOtherCachedVersionsWhenLoaded")]
         pub m_clear_other_cached_versions_when_loaded: bool,
     }

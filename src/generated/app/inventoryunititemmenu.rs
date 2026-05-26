@@ -20,8 +20,10 @@ mod __types {
         #[static_field]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(196)]
         #[rename(name = "m_firstSelect")]
         pub m_first_select: i32,
+        #[offset(200)]
         #[rename(name = "m_secondSelect")]
         pub m_second_select: i32,
     }

@@ -34,12 +34,16 @@ mod __types {
         #[static_field]
         #[rename(name = "m_MenuItemOrder")]
         pub m_menu_item_order: ::unity2::Array<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind>,
+        #[offset(240)]
         #[rename(name = "m_Selects")]
         pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(248)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler,
+        #[offset(256)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_DecideEventHandler,
+        #[offset(264)]
         #[rename(name = "m_RequestCloseEventHandler")]
         pub m_request_close_event_handler: crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler,
     }

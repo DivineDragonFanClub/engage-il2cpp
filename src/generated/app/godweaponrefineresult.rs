@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodWeaponRefineResult")]
     #[parent(crate::system::object::Object)]
     pub struct GodWeaponRefineResult {
+        #[offset(16)]
         #[rename(name = "m_Enhance")]
         pub m_enhance: crate::app::capabilitysbyte::CapabilitySbyte,
+        #[offset(24)]
         #[rename(name = "m_EquipSkills")]
         pub m_equip_skills: crate::app::skillarray::SkillArray,
+        #[offset(32)]
         #[rename(name = "m_EnchantSkills")]
         pub m_enchant_skills: crate::app::skillarray::SkillArray,
     }

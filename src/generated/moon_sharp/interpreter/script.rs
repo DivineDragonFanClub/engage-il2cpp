@@ -17,16 +17,22 @@ mod __types {
         #[static_field]
         #[rename(name = "LUA_VERSION")]
         pub lua_version: ::unity2::Il2CppString,
+        #[offset(16)]
         #[rename(name = "m_MainProcessor")]
         pub m_main_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+        #[offset(24)]
         #[rename(name = "m_ByteCode")]
         pub m_byte_code: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        #[offset(32)]
         #[rename(name = "m_Sources")]
         pub m_sources: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>,
+        #[offset(40)]
         #[rename(name = "m_GlobalTable")]
         pub m_global_table: crate::moon_sharp::interpreter::table::Table,
+        #[offset(48)]
         #[rename(name = "m_Debugger")]
         pub m_debugger: crate::moon_sharp::interpreter::debugging::idebugger::IDebugger,
+        #[offset(56)]
         #[rename(name = "m_TypeMetatables")]
         pub m_type_metatables: ::unity2::Array<crate::moon_sharp::interpreter::table::Table>,
     }

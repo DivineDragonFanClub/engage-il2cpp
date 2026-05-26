@@ -18,24 +18,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlestyle/BattleStyle.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleStyle")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: battlestyle :: BattleStyle >)]
-    pub struct BattleStyle {
-        #[static_field]
-        #[rename(name = "Begin")]
-        pub begin: crate::app::battlestyle::BattleStyle_Types,
-        #[static_field]
-        #[rename(name = "End")]
-        pub end: crate::app::battlestyle::BattleStyle_Types,
-        #[static_field]
-        #[rename(name = "Count")]
-        pub count: i32,
-        #[static_field]
-        #[rename(name = "Names")]
-        pub names: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlestyle/BattleStyle_Types.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -96,6 +78,24 @@ mod __types {
         pub fn dragon() -> Self {
             Self { value: 8 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlestyle/BattleStyle.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleStyle")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: battlestyle :: BattleStyle >)]
+    pub struct BattleStyle {
+        #[static_field]
+        #[rename(name = "Begin")]
+        pub begin: crate::app::battlestyle::BattleStyle_Types,
+        #[static_field]
+        #[rename(name = "End")]
+        pub end: crate::app::battlestyle::BattleStyle_Types,
+        #[static_field]
+        #[rename(name = "Count")]
+        pub count: i32,
+        #[static_field]
+        #[rename(name = "Names")]
+        pub names: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 

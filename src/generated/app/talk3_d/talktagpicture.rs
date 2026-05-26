@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagPicture")]
     #[parent(crate::app::talk3_d::talktag::TalkTag)]
     pub struct TalkTagPicture {
+        #[offset(16)]
         #[rename(name = "m_TagID")]
         pub m_tag_id: crate::app::mess::Mess_TagID_Picture,
+        #[offset(20)]
         #[rename(name = "m_PictureIndex")]
         pub m_picture_index: i32,
+        #[offset(24)]
         #[rename(name = "m_TextureName")]
         pub m_texture_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_AnimName")]
         pub m_anim_name: ::unity2::Il2CppString,
     }

@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionDisableFootIK")]
     #[parent(crate::combat::state::State)]
     pub struct ActionDisableFootIK {
+        #[offset(20)]
         #[rename(name = "m_IsOnlyHorse")]
         pub m_is_only_horse: bool,
+        #[offset(21)]
         #[rename(name = "m_IsOnlyDragonic")]
         pub m_is_only_dragonic: bool,
     }

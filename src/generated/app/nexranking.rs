@@ -17,96 +17,6 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_Data.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct NexRanking_Data {
-        pub person_index: i32,
-        pub god_index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexRanking_Data {
-        const NAME: &'static str = "NexRanking.Data";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexRanking_Data {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_DownloadSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRanking.DownloadSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexRanking_DownloadSequence {
-        #[static_field]
-        #[rename(name = "MaxBatch")]
-        pub max_batch: u32,
-        #[rename(name = "m_Data")]
-        pub m_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-        #[rename(name = "m_RatingValues")]
-        pub m_rating_values: ::unity2::Array<i64>,
-        #[rename(name = "m_DataIndex")]
-        pub m_data_index: i32,
-        #[rename(name = "m_ChapterIndex")]
-        pub m_chapter_index: i32,
-        #[rename(name = "m_StartDataId")]
-        pub m_start_data_id: u64,
-        #[rename(name = "m_StartSlot")]
-        pub m_start_slot: i32,
-        #[rename(name = "m_EndDataId")]
-        pub m_end_data_id: u64,
-        #[rename(name = "m_EndSlot")]
-        pub m_end_slot: i32,
-        #[rename(name = "m_DataIds")]
-        pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_UploadSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRanking.UploadSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexRanking_UploadSequence {
-        #[static_field]
-        #[rename(name = "MaxBatch")]
-        pub max_batch: u32,
-        #[static_field]
-        #[rename(name = "MaxRatingSlot")]
-        pub max_rating_slot: u32,
-        #[rename(name = "m_Pairs")]
-        pub m_pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-        #[rename(name = "m_DataIndex")]
-        pub m_data_index: i32,
-        #[rename(name = "m_ChapterIndex")]
-        pub m_chapter_index: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRanking")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexranking :: NexRanking >)]
-    pub struct NexRanking {
-        #[static_field]
-        #[rename(name = "MaxRatingSlot")]
-        pub max_rating_slot: u32,
-        #[static_field]
-        #[rename(name = "MaxPerson")]
-        pub max_person: i32,
-        #[static_field]
-        #[rename(name = "MaxGod")]
-        pub max_god: i32,
-        #[static_field]
-        #[rename(name = "InvalidIndex")]
-        pub invalid_index: i32,
-        #[rename(name = "m_IsSucceeded")]
-        pub m_is_succeeded: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_UploadSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -190,58 +100,113 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_DownloadSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRanking.DownloadSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexRanking_DownloadSequence {
+        #[static_field]
+        #[rename(name = "MaxBatch")]
+        pub max_batch: u32,
+        #[offset(112)]
+        #[rename(name = "m_Data")]
+        pub m_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+        #[offset(120)]
+        #[rename(name = "m_RatingValues")]
+        pub m_rating_values: ::unity2::Array<i64>,
+        #[offset(128)]
+        #[rename(name = "m_DataIndex")]
+        pub m_data_index: i32,
+        #[offset(132)]
+        #[rename(name = "m_ChapterIndex")]
+        pub m_chapter_index: i32,
+        #[offset(136)]
+        #[rename(name = "m_StartDataId")]
+        pub m_start_data_id: u64,
+        #[offset(144)]
+        #[rename(name = "m_StartSlot")]
+        pub m_start_slot: i32,
+        #[offset(152)]
+        #[rename(name = "m_EndDataId")]
+        pub m_end_data_id: u64,
+        #[offset(160)]
+        #[rename(name = "m_EndSlot")]
+        pub m_end_slot: i32,
+        #[offset(168)]
+        #[rename(name = "m_DataIds")]
+        pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_UploadSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRanking.UploadSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexRanking_UploadSequence {
+        #[static_field]
+        #[rename(name = "MaxBatch")]
+        pub max_batch: u32,
+        #[static_field]
+        #[rename(name = "MaxRatingSlot")]
+        pub max_rating_slot: u32,
+        #[offset(112)]
+        #[rename(name = "m_Pairs")]
+        pub m_pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+        #[offset(120)]
+        #[rename(name = "m_DataIndex")]
+        pub m_data_index: i32,
+        #[offset(124)]
+        #[rename(name = "m_ChapterIndex")]
+        pub m_chapter_index: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRanking")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexranking :: NexRanking >)]
+    pub struct NexRanking {
+        #[static_field]
+        #[rename(name = "MaxRatingSlot")]
+        pub max_rating_slot: u32,
+        #[static_field]
+        #[rename(name = "MaxPerson")]
+        pub max_person: i32,
+        #[static_field]
+        #[rename(name = "MaxGod")]
+        pub max_god: i32,
+        #[static_field]
+        #[rename(name = "InvalidIndex")]
+        pub invalid_index: i32,
+        #[offset(25)]
+        #[rename(name = "m_IsSucceeded")]
+        pub m_is_succeeded: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_Data.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct NexRanking_Data {
+        pub person_index: i32,
+        pub god_index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexRanking_Data {
+        const NAME: &'static str = "NexRanking.Data";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexRanking_Data {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-nexranking-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-nexranking")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRanking_Data_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRanking_Data as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <NexRanking_Data as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: NexRanking_Data, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NexRanking_Data, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-impl NexRanking_Data {
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __NexRanking_Data_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "app-nexranking")]
 #[doc(hidden)]
@@ -1460,6 +1425,54 @@ impl NexRanking {
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(NexRanking), ::core::stringify!(new),));
         <Self as INexRankingMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexRanking_Data_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRanking_Data as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NexRanking_Data as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: NexRanking_Data, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRanking_Data, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+impl NexRanking_Data {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __NexRanking_Data_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 

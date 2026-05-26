@@ -59,6 +59,7 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_InstractionObject")]
         pub m_instraction_object: crate::unity_engine::gameobject::GameObject,
     }

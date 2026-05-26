@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GameCurve")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct GameCurve {
+        #[offset(24)]
         #[rename(name = "m_Curve")]
         pub m_curve: crate::unity_engine::animationcurve::AnimationCurve,
     }

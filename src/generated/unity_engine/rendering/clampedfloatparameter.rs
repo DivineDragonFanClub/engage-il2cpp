@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ClampedFloatParameter")]
     #[parent(crate::unity_engine::rendering::floatparameter::FloatParameter)]
     pub struct ClampedFloatParameter {
+        #[offset(24)]
         #[rename(name = "min")]
         pub min: f32,
+        #[offset(28)]
         #[rename(name = "max")]
         pub max: f32,
     }

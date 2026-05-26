@@ -19,22 +19,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BattleRecordSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BattleRecordSetter {
+        #[offset(24)]
         #[rename(name = "InfoTitle")]
         pub info_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "Records")]
         pub records: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "RecordPrefab")]
         pub record_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(52)]
         #[rename(name = "m_ScrollTime")]
         pub m_scroll_time: f32,
+        #[offset(56)]
         #[rename(name = "m_StartPos")]
         pub m_start_pos: f32,
+        #[offset(60)]
         #[rename(name = "m_RecordLength")]
         pub m_record_length: f32,
+        #[offset(64)]
         #[rename(name = "m_ScrolledTime")]
         pub m_scrolled_time: f32,
+        #[offset(72)]
         #[rename(name = "m_RecordList")]
         pub m_record_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform>,
+        #[offset(80)]
         #[rename(name = "m_StartTime")]
         pub m_start_time: f64,
     }

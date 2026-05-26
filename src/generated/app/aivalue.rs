@@ -11,6 +11,18 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aivalue/AIValue.md"))]
+    #[::unity2::class(namespace = "App", name = "AIValue")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIValue {
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[offset(16)]
+        #[rename(name = "m_V")]
+        pub m_v: crate::app::aivalue::AIValue_UnionValue,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Order.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,6 +69,32 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_UnionValue.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIValue_UnionValue {
+        pub v8_0: u8,
+        pub v8_1: u8,
+        pub v16: i16,
+    }
+
+    impl ::unity2::ClassIdentity for AIValue_UnionValue {
+        const NAME: &'static str = "AIValue.UnionValue";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIValue_UnionValue {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Value.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -85,43 +123,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_UnionValue.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIValue_UnionValue {
-        pub v8_0: u8,
-        pub v8_1: u8,
-        pub v16: i16,
-    }
-
-    impl ::unity2::ClassIdentity for AIValue_UnionValue {
-        const NAME: &'static str = "AIValue.UnionValue";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIValue_UnionValue {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aivalue/AIValue.md"))]
-    #[::unity2::class(namespace = "App", name = "AIValue")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIValue {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[rename(name = "m_V")]
-        pub m_v: crate::app::aivalue::AIValue_UnionValue,
     }
 }
 

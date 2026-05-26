@@ -20,20 +20,28 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "LayoutElement")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct LayoutElement {
+        #[offset(24)]
         #[rename(name = "m_IgnoreLayout")]
         pub m_ignore_layout: bool,
+        #[offset(28)]
         #[rename(name = "m_MinWidth")]
         pub m_min_width: f32,
+        #[offset(32)]
         #[rename(name = "m_MinHeight")]
         pub m_min_height: f32,
+        #[offset(36)]
         #[rename(name = "m_PreferredWidth")]
         pub m_preferred_width: f32,
+        #[offset(40)]
         #[rename(name = "m_PreferredHeight")]
         pub m_preferred_height: f32,
+        #[offset(44)]
         #[rename(name = "m_FlexibleWidth")]
         pub m_flexible_width: f32,
+        #[offset(48)]
         #[rename(name = "m_FlexibleHeight")]
         pub m_flexible_height: f32,
+        #[offset(52)]
         #[rename(name = "m_LayoutPriority")]
         pub m_layout_priority: i32,
     }

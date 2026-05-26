@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TerrainExporter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TerrainExporter {
+        #[offset(24)]
         #[rename(name = "m_TerrainSize")]
         pub m_terrain_size: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "m_OriginalTerrainGuid")]
         pub m_original_terrain_guid: ::unity2::Il2CppString,
     }

@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_Asset")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct TMP_Asset {
+        #[offset(24)]
         #[rename(name = "m_InstanceID")]
         pub m_instance_id: i32,
+        #[offset(28)]
         #[rename(name = "hashCode")]
         pub hash_code: i32,
+        #[offset(32)]
         #[rename(name = "material")]
         pub material: crate::unity_engine::material::Material,
+        #[offset(40)]
         #[rename(name = "materialHashCode")]
         pub material_hash_code: i32,
     }

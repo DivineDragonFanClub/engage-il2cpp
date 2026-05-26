@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicDialog")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct BasicDialog {
+        #[offset(200)]
         #[rename(name = "m_dialogContent")]
         pub m_dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+        #[offset(208)]
         #[rename(name = "m_bBindBg")]
         pub m_b_bind_bg: bool,
+        #[offset(209)]
         #[rename(name = "m_IsNotBindBg")]
         pub m_is_not_bind_bg: bool,
     }

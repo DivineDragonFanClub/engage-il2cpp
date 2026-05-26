@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumecomponentmenu/VolumeComponentMenu.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "VolumeComponentMenu")]
     pub struct VolumeComponentMenu {
+        #[offset(16)]
         #[rename(name = "menu")]
         pub menu: ::unity2::Il2CppString,
     }

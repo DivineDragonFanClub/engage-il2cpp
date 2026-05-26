@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "AutoDescribingUserDataDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct AutoDescribingUserDataDescriptor {
+        #[offset(16)]
         #[rename(name = "m_FriendlyName")]
         pub m_friendly_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Type")]
         pub m_type: ::unity2::SystemType,
     }

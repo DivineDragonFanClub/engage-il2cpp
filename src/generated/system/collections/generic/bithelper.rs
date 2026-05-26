@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections.Generic", name = "BitHelper")]
     #[parent(crate::system::object::Object)]
     pub struct BitHelper {
+        #[offset(16)]
         #[rename(name = "_length")]
         pub length: i32,
+        #[offset(32)]
         #[rename(name = "_array")]
         pub array: ::unity2::Array<i32>,
+        #[offset(40)]
         #[rename(name = "_useStackAlloc")]
         pub use_stack_alloc: bool,
     }

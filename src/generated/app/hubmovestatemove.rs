@@ -14,20 +14,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubMoveStateMove")]
     #[parent(crate::app::hubmovestate::HubMoveState)]
     pub struct HubMoveStateMove {
+        #[offset(16)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::hubunitcontroller::HubUnitController,
+        #[offset(24)]
         #[rename(name = "m_target")]
         pub m_target: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "m_bodyAnim")]
         pub m_body_anim: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_faceAnim")]
         pub m_face_anim: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_isTurn")]
         pub m_is_turn: bool,
+        #[offset(57)]
         #[rename(name = "m_resume")]
         pub m_resume: bool,
+        #[offset(60)]
         #[rename(name = "m_speed")]
         pub m_speed: f32,
+        #[offset(64)]
         #[rename(name = "m_blend")]
         pub m_blend: f32,
     }

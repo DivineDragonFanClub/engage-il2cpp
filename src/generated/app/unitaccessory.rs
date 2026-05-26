@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitAccessory")]
     #[parent(crate::system::object::Object)]
     pub struct UnitAccessory {
+        #[offset(16)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
     }

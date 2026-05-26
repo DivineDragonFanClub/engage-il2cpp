@@ -14,12 +14,16 @@ mod __types {
         #[static_field]
         #[rename(name = "s_DefaultEnv")]
         pub s_default_env: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(16)]
         #[rename(name = "i_Type")]
         pub i_type: crate::moon_sharp::interpreter::symbolreftype::SymbolRefType,
+        #[offset(24)]
         #[rename(name = "i_Env")]
         pub i_env: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(32)]
         #[rename(name = "i_Index")]
         pub i_index: i32,
+        #[offset(40)]
         #[rename(name = "i_Name")]
         pub i_name: ::unity2::Il2CppString,
     }

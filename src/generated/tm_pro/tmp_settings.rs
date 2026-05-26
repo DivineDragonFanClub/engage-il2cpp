@@ -13,16 +13,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings_LineBreakingTable.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Settings.LineBreakingTable")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_Settings_LineBreakingTable {
-        #[rename(name = "leadingCharacters")]
-        pub leading_characters: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
-        #[rename(name = "followingCharacters")]
-        pub following_characters: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_Settings")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
@@ -30,144 +20,116 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::tm_pro::tmp_settings::TMP_Settings,
+        #[offset(24)]
         #[rename(name = "m_enableWordWrapping")]
         pub m_enable_word_wrapping: bool,
+        #[offset(25)]
         #[rename(name = "m_enableKerning")]
         pub m_enable_kerning: bool,
+        #[offset(26)]
         #[rename(name = "m_enableExtraPadding")]
         pub m_enable_extra_padding: bool,
+        #[offset(27)]
         #[rename(name = "m_enableTintAllSprites")]
         pub m_enable_tint_all_sprites: bool,
+        #[offset(28)]
         #[rename(name = "m_enableParseEscapeCharacters")]
         pub m_enable_parse_escape_characters: bool,
+        #[offset(29)]
         #[rename(name = "m_EnableRaycastTarget")]
         pub m_enable_raycast_target: bool,
+        #[offset(30)]
         #[rename(name = "m_GetFontFeaturesAtRuntime")]
         pub m_get_font_features_at_runtime: bool,
+        #[offset(32)]
         #[rename(name = "m_missingGlyphCharacter")]
         pub m_missing_glyph_character: i32,
+        #[offset(36)]
         #[rename(name = "m_warningsDisabled")]
         pub m_warnings_disabled: bool,
+        #[offset(40)]
         #[rename(name = "m_defaultFontAsset")]
         pub m_default_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[offset(48)]
         #[rename(name = "m_defaultFontAssetPath")]
         pub m_default_font_asset_path: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_defaultFontSize")]
         pub m_default_font_size: f32,
+        #[offset(60)]
         #[rename(name = "m_defaultAutoSizeMinRatio")]
         pub m_default_auto_size_min_ratio: f32,
+        #[offset(64)]
         #[rename(name = "m_defaultAutoSizeMaxRatio")]
         pub m_default_auto_size_max_ratio: f32,
+        #[offset(68)]
         #[rename(name = "m_defaultTextMeshProTextContainerSize")]
         pub m_default_text_mesh_pro_text_container_size: crate::unity_engine::vector2::Vector2,
+        #[offset(76)]
         #[rename(name = "m_defaultTextMeshProUITextContainerSize")]
         pub m_default_text_mesh_pro_ui_text_container_size: crate::unity_engine::vector2::Vector2,
+        #[offset(84)]
         #[rename(name = "m_autoSizeTextContainer")]
         pub m_auto_size_text_container: bool,
+        #[offset(85)]
         #[rename(name = "m_IsTextObjectScaleStatic")]
         pub m_is_text_object_scale_static: bool,
+        #[offset(88)]
         #[rename(name = "m_fallbackFontAssets")]
         pub m_fallback_font_assets: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        #[offset(96)]
         #[rename(name = "m_matchMaterialPreset")]
         pub m_match_material_preset: bool,
+        #[offset(104)]
         #[rename(name = "m_defaultSpriteAsset")]
         pub m_default_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        #[offset(112)]
         #[rename(name = "m_defaultSpriteAssetPath")]
         pub m_default_sprite_asset_path: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_enableEmojiSupport")]
         pub m_enable_emoji_support: bool,
+        #[offset(124)]
         #[rename(name = "m_MissingCharacterSpriteUnicode")]
         pub m_missing_character_sprite_unicode: u32,
+        #[offset(128)]
         #[rename(name = "m_defaultColorGradientPresetsPath")]
         pub m_default_color_gradient_presets_path: ::unity2::Il2CppString,
+        #[offset(136)]
         #[rename(name = "m_defaultStyleSheet")]
         pub m_default_style_sheet: crate::tm_pro::tmp_stylesheet::TMP_StyleSheet,
+        #[offset(144)]
         #[rename(name = "m_StyleSheetsResourcePath")]
         pub m_style_sheets_resource_path: ::unity2::Il2CppString,
+        #[offset(152)]
         #[rename(name = "m_leadingCharacters")]
         pub m_leading_characters: crate::unity_engine::textasset::TextAsset,
+        #[offset(160)]
         #[rename(name = "m_followingCharacters")]
         pub m_following_characters: crate::unity_engine::textasset::TextAsset,
+        #[offset(168)]
         #[rename(name = "m_linebreakingRules")]
         pub m_linebreaking_rules: crate::tm_pro::tmp_settings::TMP_Settings_LineBreakingTable,
+        #[offset(176)]
         #[rename(name = "m_UseModernHangulLineBreakingRules")]
         pub m_use_modern_hangul_line_breaking_rules: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings_LineBreakingTable.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_Settings.LineBreakingTable")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_Settings_LineBreakingTable {
+        #[offset(16)]
+        #[rename(name = "leadingCharacters")]
+        pub leading_characters: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
+        #[offset(24)]
+        #[rename(name = "followingCharacters")]
+        pub following_characters: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
     }
 }
 
 #[cfg(feature = "tm_pro-tmp_settings-types")]
 pub use __types::*;
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Settings_LineBreakingTable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Settings_LineBreakingTable as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Settings_LineBreakingTable as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_Settings_LineBreakingTable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Settings_LineBreakingTable, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-pub trait ITMP_Settings_LineBreakingTableMethods: ITMP_Settings_LineBreakingTable {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_Settings_LineBreakingTable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_Settings_LineBreakingTable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl<__T: ITMP_Settings_LineBreakingTable> ITMP_Settings_LineBreakingTableMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl TMP_Settings_LineBreakingTable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_Settings_LineBreakingTable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_Settings_LineBreakingTableMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "tm_pro-tmp_settings")]
 #[doc(hidden)]
@@ -1956,6 +1918,77 @@ impl TMP_Settings {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TMP_Settings), ::core::stringify!(new),));
         <Self as ITMP_SettingsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_settings")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Settings_LineBreakingTable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Settings_LineBreakingTable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Settings_LineBreakingTable as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_Settings_LineBreakingTable, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Settings_LineBreakingTable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_settings")]
+pub trait ITMP_Settings_LineBreakingTableMethods: ITMP_Settings_LineBreakingTable {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_Settings_LineBreakingTable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_Settings_LineBreakingTable_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_settings")]
+impl<__T: ITMP_Settings_LineBreakingTable> ITMP_Settings_LineBreakingTableMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_settings")]
+impl TMP_Settings_LineBreakingTable {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Settings_LineBreakingTable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_Settings_LineBreakingTableMethods>::ctor(this);
         this
     }
 }

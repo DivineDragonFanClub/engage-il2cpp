@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescMTickEnum")]
     #[parent(crate::app::procdesctickbase::ProcDescTickBase)]
     pub struct ProcDescMTickEnum {
+        #[offset(24)]
         #[rename(name = "m_SrcMethod")]
         pub m_src_method: crate::app::procenummethod::ProcEnumMethod,
+        #[offset(32)]
         #[rename(name = "m_Method")]
         pub m_method: crate::system::collections::ienumerator::IEnumerator,
+        #[offset(40)]
         #[rename(name = "m_IsFinished")]
         pub m_is_finished: bool,
     }

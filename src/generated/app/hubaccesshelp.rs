@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubAccessHelp")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubAccessHelp {
+        #[offset(24)]
         #[rename(name = "m_NowAccess")]
         pub m_now_access: crate::app::hubaccess::HubAccess,
+        #[offset(32)]
         #[rename(name = "m_LastAccess")]
         pub m_last_access: crate::app::hubaccess::HubAccess,
     }

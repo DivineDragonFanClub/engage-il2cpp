@@ -29,6 +29,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Num")]
         pub num: i32,
+        #[offset(208)]
         #[rename(name = "m_Table")]
         pub m_table: crate::app::calculatortable::CalculatorTable,
     }
@@ -37,6 +38,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CalculatorTableAdd1D.TableCommand")]
     #[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
     pub struct CalculatorTableAdd1D_TableCommand {
+        #[offset(48)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
     }

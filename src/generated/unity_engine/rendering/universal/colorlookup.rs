@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ColorLookup")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct ColorLookup {
+        #[offset(56)]
         #[rename(name = "texture")]
         pub texture: crate::unity_engine::rendering::textureparameter::TextureParameter,
+        #[offset(64)]
         #[rename(name = "contribution")]
         pub contribution: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

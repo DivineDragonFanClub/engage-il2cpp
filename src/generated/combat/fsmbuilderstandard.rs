@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "FSMBuilderStandard")]
     #[parent(crate::combat::fsmbuilder::FSMBuilder)]
     pub struct FSMBuilderStandard {
+        #[offset(16)]
         #[rename(name = "chainSync")]
         pub chain_sync: ::unity2::Array<crate::combat::synctoken::SyncToken>,
         #[static_field]

@@ -11,13 +11,17 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Events", name = "InvokableCallList")]
     #[parent(crate::system::object::Object)]
     pub struct InvokableCallList {
+        #[offset(16)]
         #[rename(name = "m_PersistentCalls")]
         pub m_persistent_calls:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall>,
+        #[offset(24)]
         #[rename(name = "m_RuntimeCalls")]
         pub m_runtime_calls: crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall>,
+        #[offset(32)]
         #[rename(name = "m_ExecutingCalls")]
         pub m_executing_calls: crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::baseinvokablecall::BaseInvokableCall>,
+        #[offset(40)]
         #[rename(name = "m_NeedsUpdate")]
         pub m_needs_update: bool,
     }

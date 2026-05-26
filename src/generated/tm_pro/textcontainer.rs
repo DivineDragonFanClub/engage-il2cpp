@@ -20,31 +20,43 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TextContainer")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct TextContainer {
+        #[offset(24)]
         #[rename(name = "m_hasChanged")]
         pub m_has_changed: bool,
+        #[offset(28)]
         #[rename(name = "m_pivot")]
         pub m_pivot: crate::unity_engine::vector2::Vector2,
+        #[offset(36)]
         #[rename(name = "m_anchorPosition")]
         pub m_anchor_position: crate::tm_pro::textcontaineranchors::TextContainerAnchors,
+        #[offset(40)]
         #[rename(name = "m_rect")]
         pub m_rect: crate::unity_engine::rect::Rect,
+        #[offset(56)]
         #[rename(name = "m_isDefaultWidth")]
         pub m_is_default_width: bool,
+        #[offset(57)]
         #[rename(name = "m_isDefaultHeight")]
         pub m_is_default_height: bool,
+        #[offset(58)]
         #[rename(name = "m_isAutoFitting")]
         pub m_is_auto_fitting: bool,
+        #[offset(64)]
         #[rename(name = "m_corners")]
         pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(72)]
         #[rename(name = "m_worldCorners")]
         pub m_world_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(80)]
         #[rename(name = "m_margins")]
         pub m_margins: crate::unity_engine::vector4::Vector4,
+        #[offset(96)]
         #[rename(name = "m_rectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
         #[static_field]
         #[rename(name = "k_defaultSize")]
         pub k_default_size: crate::unity_engine::vector2::Vector2,
+        #[offset(104)]
         #[rename(name = "m_textMeshPro")]
         pub m_text_mesh_pro: crate::tm_pro::textmeshpro::TextMeshPro,
     }

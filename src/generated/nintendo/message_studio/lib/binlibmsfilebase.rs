@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "BinLibmsFileBase")]
     #[parent(crate::system::object::Object)]
     pub struct BinLibmsFileBase {
+        #[offset(16)]
         #[rename(name = "m_ResourceFilePtr")]
         pub m_resource_file_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_FileObjectPtr")]
         pub m_file_object_ptr: ::unity2::IntPtr,
     }

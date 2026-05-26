@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/ioexception/IOException.md"))]
     #[::unity2::class(namespace = "System.IO", name = "IOException")]
     pub struct IOException {
+        #[offset(136)]
         #[rename(name = "_maybeFullPath")]
         pub maybe_full_path: ::unity2::Il2CppString,
     }

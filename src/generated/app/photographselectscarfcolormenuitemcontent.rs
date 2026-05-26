@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectScarfColorMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct PhotographSelectScarfColorMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_CursorObj")]
         pub m_cursor_obj: crate::unity_engine::gameobject::GameObject,
     }

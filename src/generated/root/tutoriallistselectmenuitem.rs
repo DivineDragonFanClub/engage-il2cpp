@@ -14,21 +14,28 @@ mod __types {
     #[::unity2::class(namespace = "", name = "TutorialListSelectMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct TutorialListSelectMenuItem {
+        #[offset(104)]
         #[rename(name = "m_TutorialID")]
         pub m_tutorial_id: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_TutorialData")]
         pub m_tutorial_data: crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>,
+        #[offset(120)]
         #[rename(name = "m_MainSpriteAtlas")]
         pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(128)]
         #[rename(name = "m_SubSpriteAtlas")]
         pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(136)]
         #[rename(name = "m_Root")]
         pub m_root: crate::root::tutoriallistroot::TutorialListRoot,
+        #[offset(144)]
         #[rename(name = "m_IsUnread")]
         pub m_is_unread: bool,
         #[static_field]
         #[rename(name = "FirstPage")]
         pub first_page: i32,
+        #[offset(148)]
         #[rename(name = "m_Page")]
         pub m_page: i32,
     }

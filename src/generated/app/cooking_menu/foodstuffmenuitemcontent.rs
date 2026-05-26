@@ -20,30 +20,43 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "FoodstuffMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct FoodstuffMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_FoodstuffMenuItem")]
         pub m_foodstuff_menu_item: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem,
+        #[offset(80)]
         #[rename(name = "m_Type")]
         pub m_type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
+        #[offset(88)]
         #[rename(name = "m_Cursor")]
         pub m_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_Check")]
         pub m_check: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_Food")]
         pub m_food: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_Stock")]
         pub m_stock: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_Count")]
         pub m_count: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(152)]
         #[rename(name = "m_CountText")]
         pub m_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
         #[rename(name = "m_DecideText")]
         pub m_decide_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(168)]
         #[rename(name = "m_CursorImage")]
         pub m_cursor_image: crate::unity_engine::ui::image::Image,
     }

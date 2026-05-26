@@ -18,6 +18,46 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideTargetGroup")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct DragonRideTargetGroup {
+        #[static_field]
+        #[rename(name = "cTargetPrefabPath")]
+        pub c_target_prefab_path: ::unity2::Il2CppString,
+        #[offset(28)]
+        #[rename(name = "m_BillboardType")]
+        pub m_billboard_type: crate::app::dragon_ride::billboardtypes::BillboardTypes,
+        #[offset(32)]
+        #[rename(name = "m_MapWidth")]
+        pub m_map_width: i32,
+        #[offset(36)]
+        #[rename(name = "m_MapHeight")]
+        pub m_map_height: i32,
+        #[offset(56)]
+        #[rename(name = "m_ChainIntervalTimer")]
+        pub m_chain_interval_timer: f32,
+        #[offset(64)]
+        #[rename(name = "m_GameCamera")]
+        pub m_game_camera: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
+        #[rename(name = "m_CameraScript")]
+        pub m_camera_script: crate::app::dragonridecamera::DragonRideCamera,
+        #[offset(80)]
+        #[rename(name = "m_Config")]
+        pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
+        #[offset(88)]
+        #[rename(name = "m_TargetSpace")]
+        pub m_target_space: crate::unity_engine::vector2::Vector2,
+        #[offset(96)]
+        #[rename(name = "m_ChainPlayer")]
+        pub m_chain_player:
+            crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainSEManager>,
+        #[offset(104)]
+        #[rename(name = "m_ChainChecker")]
+        pub m_chain_checker: crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainParam>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainParam.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -57,420 +97,35 @@ mod __types {
         #[static_field]
         #[rename(name = "cBigChainSE_Double")]
         pub c_big_chain_se_double: ::unity2::Il2CppString,
+        #[offset(16)]
         #[rename(name = "cLinkChainSE")]
         pub c_link_chain_se: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(24)]
         #[rename(name = "cLinkSETable")]
         pub c_link_se_table: ::unity2::Array<i32>,
+        #[offset(32)]
         #[rename(name = "m_RootID")]
         pub m_root_id: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_ChainCount")]
         pub m_chain_count: i32,
+        #[offset(44)]
         #[rename(name = "m_IsLink")]
         pub m_is_link: bool,
+        #[offset(45)]
         #[rename(name = "m_IsSpecial")]
         pub m_is_special: bool,
+        #[offset(46)]
         #[rename(name = "m_IsDoubleEx")]
         pub m_is_double_ex: bool,
+        #[offset(48)]
         #[rename(name = "m_AliveLimitCounter")]
         pub m_alive_limit_counter: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideTargetGroup")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DragonRideTargetGroup {
-        #[static_field]
-        #[rename(name = "cTargetPrefabPath")]
-        pub c_target_prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_BillboardType")]
-        pub m_billboard_type: crate::app::dragon_ride::billboardtypes::BillboardTypes,
-        #[rename(name = "m_MapWidth")]
-        pub m_map_width: i32,
-        #[rename(name = "m_MapHeight")]
-        pub m_map_height: i32,
-        #[rename(name = "m_ChainIntervalTimer")]
-        pub m_chain_interval_timer: f32,
-        #[rename(name = "m_GameCamera")]
-        pub m_game_camera: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CameraScript")]
-        pub m_camera_script: crate::app::dragonridecamera::DragonRideCamera,
-        #[rename(name = "m_Config")]
-        pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
-        #[rename(name = "m_TargetSpace")]
-        pub m_target_space: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_ChainPlayer")]
-        pub m_chain_player:
-            crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainSEManager>,
-        #[rename(name = "m_ChainChecker")]
-        pub m_chain_checker: crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainParam>,
     }
 }
 
 #[cfg(feature = "app-dragonridetargetgroup-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-dragonridetargetgroup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_alive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
-                "get_IsAlive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                        "get_IsAlive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_alive(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_alive::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_alive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
-                "set_IsAlive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                        "set_IsAlive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_alive(this: DragonRideTargetGroup_ChainSEManager, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_alive::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_chain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
-                "ResetChain",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                        "ResetChain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset_chain(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset_chain::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_chain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
-                "StartChain",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                        "StartChain",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_chain(
-        this: DragonRideTargetGroup_ChainSEManager,
-        root_id: ::unity2::Il2CppString,
-        is_link: bool,
-        is_special: bool,
-        is_double_ex: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::Il2CppString, bool, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_chain::get_method_info().method_ptr);
-        inner(this, root_id, is_link, is_special, is_double_ex, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_play_chain_se {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::dragonridetarget::DragonRideTarget as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
-                "TryPlayChainSE",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                        "TryPlayChainSE",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_play_chain_se(
-        this: DragonRideTargetGroup_ChainSEManager,
-        target_script: *mut crate::app::dragonridetarget::DragonRideTarget,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup_ChainSEManager,
-            *mut crate::app::dragonridetarget::DragonRideTarget,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_try_play_chain_se::get_method_info().method_ptr);
-        inner(this, target_script, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick_limit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
-                "TickLimit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                        "TickLimit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick_limit(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick_limit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-dragonridetargetgroup")]
-pub trait IDragonRideTargetGroup_ChainSEManagerMethods: IDragonRideTargetGroup_ChainSEManager {
-    #[doc = "`get_IsAlive()` overload"]
-    fn get_is_alive(self) -> bool {
-        unsafe {
-            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::get_is_alive(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsAlive(bool)` overload"]
-    fn set_is_alive(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::set_is_alive(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetChain()` overload"]
-    fn reset_chain(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::reset_chain(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartChain(::unity2::Il2CppString, bool, bool, bool)` overload"]
-    fn start_chain(
-        self,
-        root_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_link: impl ::core::convert::Into<bool>,
-        is_special: impl ::core::convert::Into<bool>,
-        is_double_ex: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::start_chain(
-                __receiver,
-                ::core::convert::Into::into(root_id),
-                ::core::convert::Into::into(is_link),
-                ::core::convert::Into::into(is_special),
-                ::core::convert::Into::into(is_double_ex),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TryPlayChainSE(*mutcrate::app::dragonridetarget::DragonRideTarget)` overload"]
-    fn try_play_chain_se(self) -> crate::app::dragonridetarget::DragonRideTarget {
-        unsafe {
-            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::dragonridetarget::DragonRideTarget>::uninit();
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::try_play_chain_se(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-    #[doc = "`TickLimit()` overload"]
-    fn tick_limit(self) -> () {
-        unsafe {
-            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::tick_limit(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-dragonridetargetgroup")]
-impl<__T: IDragonRideTargetGroup_ChainSEManager> IDragonRideTargetGroup_ChainSEManagerMethods for __T {}
-
-#[cfg(feature = "app-dragonridetargetgroup")]
-impl DragonRideTargetGroup_ChainSEManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideTargetGroup_ChainSEManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideTargetGroup_ChainSEManagerMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-dragonridetargetgroup")]
 #[doc(hidden)]
@@ -1964,6 +1619,369 @@ impl DragonRideTargetGroup {
             )
         });
         <Self as IDragonRideTargetGroupMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-dragonridetargetgroup")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_alive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
+                "get_IsAlive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAlive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_alive(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_alive::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_alive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
+                "set_IsAlive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "set_IsAlive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_alive(this: DragonRideTargetGroup_ChainSEManager, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_alive::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_chain {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
+                "ResetChain",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "ResetChain",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset_chain(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset_chain::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_chain {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
+                "StartChain",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "StartChain",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_chain(
+        this: DragonRideTargetGroup_ChainSEManager,
+        root_id: ::unity2::Il2CppString,
+        is_link: bool,
+        is_special: bool,
+        is_double_ex: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::Il2CppString, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_chain::get_method_info().method_ptr);
+        inner(this, root_id, is_link, is_special, is_double_ex, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_play_chain_se {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dragonridetarget::DragonRideTarget as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
+                "TryPlayChainSE",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayChainSE",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_play_chain_se(
+        this: DragonRideTargetGroup_ChainSEManager,
+        target_script: *mut crate::app::dragonridetarget::DragonRideTarget,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DragonRideTargetGroup_ChainSEManager,
+            *mut crate::app::dragonridetarget::DragonRideTarget,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_play_chain_se::get_method_info().method_ptr);
+        inner(this, target_script, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick_limit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
+                "TickLimit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "TickLimit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn tick_limit(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_tick_limit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-dragonridetargetgroup")]
+pub trait IDragonRideTargetGroup_ChainSEManagerMethods: IDragonRideTargetGroup_ChainSEManager {
+    #[doc = "`get_IsAlive()` overload"]
+    fn get_is_alive(self) -> bool {
+        unsafe {
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::get_is_alive(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsAlive(bool)` overload"]
+    fn set_is_alive(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::set_is_alive(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ResetChain()` overload"]
+    fn reset_chain(self) -> () {
+        unsafe {
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::reset_chain(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartChain(::unity2::Il2CppString, bool, bool, bool)` overload"]
+    fn start_chain(
+        self,
+        root_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_link: impl ::core::convert::Into<bool>,
+        is_special: impl ::core::convert::Into<bool>,
+        is_double_ex: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::start_chain(
+                __receiver,
+                ::core::convert::Into::into(root_id),
+                ::core::convert::Into::into(is_link),
+                ::core::convert::Into::into(is_special),
+                ::core::convert::Into::into(is_double_ex),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryPlayChainSE(*mutcrate::app::dragonridetarget::DragonRideTarget)` overload"]
+    fn try_play_chain_se(self) -> crate::app::dragonridetarget::DragonRideTarget {
+        unsafe {
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::dragonridetarget::DragonRideTarget>::uninit();
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::try_play_chain_se(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+    #[doc = "`TickLimit()` overload"]
+    fn tick_limit(self) -> () {
+        unsafe {
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::tick_limit(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-dragonridetargetgroup")]
+impl<__T: IDragonRideTargetGroup_ChainSEManager> IDragonRideTargetGroup_ChainSEManagerMethods for __T {}
+
+#[cfg(feature = "app-dragonridetargetgroup")]
+impl DragonRideTargetGroup_ChainSEManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideTargetGroup_ChainSEManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideTargetGroup_ChainSEManagerMethods>::ctor(this);
         this
     }
 }

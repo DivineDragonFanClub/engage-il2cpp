@@ -14,12 +14,15 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.AsyncOperations", name = "InitalizationObjectsOperation")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < bool >)]
     pub struct InitalizationObjectsOperation {
+        #[offset(136)]
         #[rename(name = "m_RtdOp")]
         pub m_rtd_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
             crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
         >,
+        #[offset(160)]
         #[rename(name = "m_Addressables")]
         pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        #[offset(168)]
         #[rename(name = "m_DepOp")]
         pub m_dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<

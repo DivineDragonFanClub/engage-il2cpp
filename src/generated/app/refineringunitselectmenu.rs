@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineRingUnitSelectMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct RefineRingUnitSelectMenu {
+        #[offset(200)]
         #[rename(name = "m_GodSelectRoot")]
         pub m_god_select_root: crate::app::godselectroot::GodSelectRoot,
     }

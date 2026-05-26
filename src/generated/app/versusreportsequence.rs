@@ -27,42 +27,9 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog")]
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct VersusReportSequence_ConfirmDialog {
+        #[offset(216)]
         #[rename(name = "m_CancelCallback")]
         pub m_cancel_callback: crate::system::action::Action,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
-        #[rename(name = "m_Action")]
-        pub m_action: crate::system::action::Action,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusReportSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct VersusReportSequence {
-        #[rename(name = "m_Content")]
-        pub m_content: crate::app::versusviolationtopcontent::VersusViolationTopContent,
-        #[rename(name = "m_Bg")]
-        pub m_bg: crate::app::menubg::MenuBg,
-        #[rename(name = "m_MapTexture")]
-        pub m_map_texture: crate::unity_engine::texture2d::Texture2D,
-        #[rename(name = "m_Reason")]
-        pub m_reason: ::unity2::Il2CppString,
-        #[rename(name = "m_ReasonDisplay")]
-        pub m_reason_display: ::unity2::Il2CppString,
-        #[rename(name = "m_IsReported")]
-        pub m_is_reported: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
-        #[rename(name = "m_Action")]
-        pub m_action: crate::system::action::Action,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_Label.md"))]
@@ -101,6 +68,48 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+        #[offset(112)]
+        #[rename(name = "m_Action")]
+        pub m_action: crate::system::action::Action,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusReportSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct VersusReportSequence {
+        #[offset(112)]
+        #[rename(name = "m_Content")]
+        pub m_content: crate::app::versusviolationtopcontent::VersusViolationTopContent,
+        #[offset(120)]
+        #[rename(name = "m_Bg")]
+        pub m_bg: crate::app::menubg::MenuBg,
+        #[offset(128)]
+        #[rename(name = "m_MapTexture")]
+        pub m_map_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(144)]
+        #[rename(name = "m_Reason")]
+        pub m_reason: ::unity2::Il2CppString,
+        #[offset(152)]
+        #[rename(name = "m_ReasonDisplay")]
+        pub m_reason_display: ::unity2::Il2CppString,
+        #[offset(160)]
+        #[rename(name = "m_IsReported")]
+        pub m_is_reported: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
+        #[offset(112)]
+        #[rename(name = "m_Action")]
+        pub m_action: crate::system::action::Action,
     }
 }
 

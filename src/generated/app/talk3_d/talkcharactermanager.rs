@@ -27,8 +27,10 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterManager.ProcFadeInCharacter")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct TalkCharacterManager_ProcFadeInCharacter {
+        #[offset(112)]
         #[rename(name = "m_talkCharacterController")]
         pub m_talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+        #[offset(120)]
         #[rename(name = "m_fadeTime")]
         pub m_fade_time: f32,
     }
@@ -37,8 +39,10 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterManager.ProcFadeOutCharacter")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct TalkCharacterManager_ProcFadeOutCharacter {
+        #[offset(112)]
         #[rename(name = "m_talkCharacterController")]
         pub m_talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+        #[offset(120)]
         #[rename(name = "m_fadeTime")]
         pub m_fade_time: f32,
     }
@@ -50,38 +54,55 @@ mod __types {
         #[static_field]
         #[rename(name = "PositionLocatorName")]
         pub position_locator_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_FadeTime")]
         pub m_fade_time: f32,
+        #[offset(36)]
         #[rename(name = "m_ChangeLookAtTime")]
         pub m_change_look_at_time: f32,
+        #[offset(40)]
         #[rename(name = "m_IsPlayFirstTransition")]
         pub m_is_play_first_transition: bool,
+        #[offset(44)]
         #[rename(name = "m_VoiceThresholdToLip")]
         pub m_voice_threshold_to_lip: f32,
+        #[offset(48)]
         #[rename(name = "m_VoiceMagnificationToLip")]
         pub m_voice_magnification_to_lip: f32,
+        #[offset(52)]
         #[rename(name = "m_PauseChangeCrossFadeTime")]
         pub m_pause_change_cross_fade_time: f32,
+        #[offset(56)]
         #[rename(name = "m_ModelPoolObject")]
         pub m_model_pool_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_StandPositions")]
         pub m_stand_positions: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_StandRoot")]
         pub m_stand_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_StandPositionRoot")]
         pub m_stand_position_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_FaceRoot")]
         pub m_face_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_DirectRoot")]
         pub m_direct_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_FrameCanvas")]
         pub m_frame_canvas: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_LookAtTargetRoot")]
         pub m_look_at_target_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_TopFaceCameraObject")]
         pub m_top_face_camera_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_BottomFaceCameraObject")]
         pub m_bottom_face_camera_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_LoadPidList")]
         pub m_load_pid_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }

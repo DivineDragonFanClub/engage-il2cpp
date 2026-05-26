@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PlayerPrefs_Float")]
     #[parent(crate::system::object::Object)]
     pub struct PlayerPrefs_Float {
+        #[offset(16)]
         #[rename(name = "key")]
         pub key: ::unity2::Il2CppString,
     }

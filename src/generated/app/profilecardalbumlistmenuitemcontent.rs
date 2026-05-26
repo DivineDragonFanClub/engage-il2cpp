@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ProfileCardAlbumListMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Title")]
         pub m_title: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_BackImage")]
         pub m_back_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_IsInitialized")]
         pub m_is_initialized: bool,
     }

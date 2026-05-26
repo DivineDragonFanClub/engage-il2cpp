@@ -17,10 +17,12 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRendererData")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct ScriptableRendererData {
+        #[offset(32)]
         #[rename(name = "m_RendererFeatures")]
         pub m_renderer_features: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature,
         >,
+        #[offset(40)]
         #[rename(name = "m_RendererFeatureMap")]
         pub m_renderer_feature_map: crate::system::collections::generic::list_1::List_1<i64>,
     }

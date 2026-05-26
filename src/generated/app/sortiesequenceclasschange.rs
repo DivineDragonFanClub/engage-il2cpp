@@ -17,6 +17,24 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceclasschange/SortieSequenceClassChange.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSequenceClassChange")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceclasschange :: SortieSequenceClassChange >)]
+    pub struct SortieSequenceClassChange {
+        #[static_field]
+        #[rename(name = "ResNameC")]
+        pub res_name_c: ::unity2::Il2CppString,
+        #[offset(120)]
+        #[rename(name = "m_Window")]
+        pub m_window: crate::app::classchangeroot::ClassChangeRoot,
+        #[offset(128)]
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
+        #[rename(name = "m_classChangeJobMenu")]
+        pub m_class_change_job_menu: crate::app::classchangejobmenu::ClassChangeJobMenu,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceclasschange/SortieSequenceClassChange_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -53,21 +71,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceclasschange/SortieSequenceClassChange.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequenceClassChange")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceclasschange :: SortieSequenceClassChange >)]
-    pub struct SortieSequenceClassChange {
-        #[static_field]
-        #[rename(name = "ResNameC")]
-        pub res_name_c: ::unity2::Il2CppString,
-        #[rename(name = "m_Window")]
-        pub m_window: crate::app::classchangeroot::ClassChangeRoot,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_classChangeJobMenu")]
-        pub m_class_change_job_menu: crate::app::classchangejobmenu::ClassChangeJobMenu,
     }
 }
 

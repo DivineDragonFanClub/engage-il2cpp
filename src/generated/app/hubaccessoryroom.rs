@@ -18,46 +18,31 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct HubAccessoryRoom_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for HubAccessoryRoom_Label {
-        const NAME: &'static str = "HubAccessoryRoom.Label";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HubAccessoryRoom_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl HubAccessoryRoom_Label {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn init() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn main() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 3 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]
+    #[::unity2::class(namespace = "App", name = "HubAccessoryRoom")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)]
+    pub struct HubAccessoryRoom {
+        #[offset(136)]
+        #[rename(name = "_DisableList")]
+        pub disable_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(152)]
+        #[rename(name = "m_Shop")]
+        pub m_shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+        #[offset(168)]
+        #[rename(name = "m_LastResultHash")]
+        pub m_last_result_hash: i32,
+        #[offset(176)]
+        #[rename(name = "m_Character")]
+        pub m_character: crate::combat::character::Character,
+        #[offset(184)]
+        #[rename(name = "m_LoadingAppearance")]
+        pub m_loading_appearance: crate::combat::characterappearance::CharacterAppearance,
+        #[offset(192)]
+        #[rename(name = "m_LoadingChara")]
+        pub m_loading_chara: crate::combat::character::Character,
+        #[offset(200)]
+        #[rename(name = "m_LastPID")]
+        pub m_last_pid: ::unity2::Il2CppString,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
@@ -98,26 +83,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]
-    #[::unity2::class(namespace = "App", name = "HubAccessoryRoom")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)]
-    pub struct HubAccessoryRoom {
-        #[rename(name = "_DisableList")]
-        pub disable_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_Shop")]
-        pub m_shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
-        #[rename(name = "m_LastResultHash")]
-        pub m_last_result_hash: i32,
-        #[rename(name = "m_Character")]
-        pub m_character: crate::combat::character::Character,
-        #[rename(name = "m_LoadingAppearance")]
-        pub m_loading_appearance: crate::combat::characterappearance::CharacterAppearance,
-        #[rename(name = "m_LoadingChara")]
-        pub m_loading_chara: crate::combat::character::Character,
-        #[rename(name = "m_LastPID")]
-        pub m_last_pid: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -149,6 +114,48 @@ mod __types {
 
         pub fn amiibo() -> Self {
             Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct HubAccessoryRoom_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for HubAccessoryRoom_Label {
+        const NAME: &'static str = "HubAccessoryRoom.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HubAccessoryRoom_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl HubAccessoryRoom_Label {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn init() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn main() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn exit() -> Self {
+            Self { value: 3 }
         }
     }
 }

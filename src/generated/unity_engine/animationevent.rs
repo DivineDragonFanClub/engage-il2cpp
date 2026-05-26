@@ -11,26 +11,37 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AnimationEvent")]
     #[parent(crate::system::object::Object)]
     pub struct AnimationEvent {
+        #[offset(16)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(24)]
         #[rename(name = "m_FunctionName")]
         pub m_function_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_StringParameter")]
         pub m_string_parameter: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_ObjectReferenceParameter")]
         pub m_object_reference_parameter: crate::unity_engine::object_2::Object_2,
+        #[offset(48)]
         #[rename(name = "m_FloatParameter")]
         pub m_float_parameter: f32,
+        #[offset(52)]
         #[rename(name = "m_IntParameter")]
         pub m_int_parameter: i32,
+        #[offset(56)]
         #[rename(name = "m_MessageOptions")]
         pub m_message_options: i32,
+        #[offset(60)]
         #[rename(name = "m_Source")]
         pub m_source: crate::unity_engine::animationeventsource::AnimationEventSource,
+        #[offset(64)]
         #[rename(name = "m_StateSender")]
         pub m_state_sender: crate::unity_engine::animationstate::AnimationState,
+        #[offset(72)]
         #[rename(name = "m_AnimatorStateInfo")]
         pub m_animator_state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        #[offset(108)]
         #[rename(name = "m_AnimatorClipInfo")]
         pub m_animator_clip_info: crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
     }

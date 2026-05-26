@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_ScrollbarEventHandler")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TMP_ScrollbarEventHandler {
+        #[offset(24)]
         #[rename(name = "isSelected")]
         pub is_selected: bool,
     }

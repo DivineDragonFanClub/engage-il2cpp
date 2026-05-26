@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DialogItemGmap")]
     #[parent(crate::app::basicdialogitem::BasicDialogItem)]
     pub struct DialogItemGmap {
+        #[offset(112)]
         #[rename(name = "m_func")]
         pub m_func: crate::system::action::Action,
     }

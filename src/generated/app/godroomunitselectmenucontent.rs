@@ -23,10 +23,13 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_statusWindow")]
         pub m_status_window: crate::app::shopunitselectstatus::ShopUnitSelectStatus,
+        #[offset(240)]
         #[rename(name = "m_godInfo")]
         pub m_god_info: crate::app::godroomgodinfosetter::GodRoomGodInfoSetter,
+        #[offset(248)]
         #[rename(name = "m_GodListActive")]
         pub m_god_list_active: crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>,
     }

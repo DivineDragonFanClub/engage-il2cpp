@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomCaptionMID")]
     #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
     pub struct MyRoomCaptionMID {
+        #[offset(16)]
         #[rename(name = "MID")]
         pub mid: ::unity2::Il2CppString,
     }

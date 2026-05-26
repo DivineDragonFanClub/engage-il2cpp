@@ -21,8 +21,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AnimalSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalsequence :: AnimalSequence >)]
     pub struct AnimalSequence {
+        #[offset(128)]
         #[rename(name = "AnimalList")]
         pub animal_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(136)]
         #[rename(name = "AnimalLoadingCount")]
         pub animal_loading_count: i32,
     }

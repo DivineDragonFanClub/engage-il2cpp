@@ -17,70 +17,92 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiskin/GUISkin_SkinChangedDelegate.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUISkin.SkinChangedDelegate")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GUISkin_SkinChangedDelegate {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiskin/GUISkin.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUISkin")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct GUISkin {
+        #[offset(24)]
         #[rename(name = "m_Font")]
         pub m_font: crate::unity_engine::font::Font,
+        #[offset(32)]
         #[rename(name = "m_box")]
         pub m_box: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(40)]
         #[rename(name = "m_button")]
         pub m_button: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(48)]
         #[rename(name = "m_toggle")]
         pub m_toggle: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(56)]
         #[rename(name = "m_label")]
         pub m_label: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(64)]
         #[rename(name = "m_textField")]
         pub m_text_field: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(72)]
         #[rename(name = "m_textArea")]
         pub m_text_area: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(80)]
         #[rename(name = "m_window")]
         pub m_window: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(88)]
         #[rename(name = "m_horizontalSlider")]
         pub m_horizontal_slider: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(96)]
         #[rename(name = "m_horizontalSliderThumb")]
         pub m_horizontal_slider_thumb: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(104)]
         #[rename(name = "m_horizontalSliderThumbExtent")]
         pub m_horizontal_slider_thumb_extent: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(112)]
         #[rename(name = "m_verticalSlider")]
         pub m_vertical_slider: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(120)]
         #[rename(name = "m_verticalSliderThumb")]
         pub m_vertical_slider_thumb: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(128)]
         #[rename(name = "m_verticalSliderThumbExtent")]
         pub m_vertical_slider_thumb_extent: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(136)]
         #[rename(name = "m_SliderMixed")]
         pub m_slider_mixed: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(144)]
         #[rename(name = "m_horizontalScrollbar")]
         pub m_horizontal_scrollbar: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(152)]
         #[rename(name = "m_horizontalScrollbarThumb")]
         pub m_horizontal_scrollbar_thumb: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(160)]
         #[rename(name = "m_horizontalScrollbarLeftButton")]
         pub m_horizontal_scrollbar_left_button: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(168)]
         #[rename(name = "m_horizontalScrollbarRightButton")]
         pub m_horizontal_scrollbar_right_button: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(176)]
         #[rename(name = "m_verticalScrollbar")]
         pub m_vertical_scrollbar: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(184)]
         #[rename(name = "m_verticalScrollbarThumb")]
         pub m_vertical_scrollbar_thumb: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(192)]
         #[rename(name = "m_verticalScrollbarUpButton")]
         pub m_vertical_scrollbar_up_button: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(200)]
         #[rename(name = "m_verticalScrollbarDownButton")]
         pub m_vertical_scrollbar_down_button: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(208)]
         #[rename(name = "m_ScrollView")]
         pub m_scroll_view: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(216)]
         #[rename(name = "m_CustomStyles")]
         pub m_custom_styles: ::unity2::Array<crate::unity_engine::guistyle::GUIStyle>,
+        #[offset(224)]
         #[rename(name = "m_Settings")]
         pub m_settings: crate::unity_engine::guisettings::GUISettings,
         #[static_field]
         #[rename(name = "ms_Error")]
         pub ms_error: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(232)]
         #[rename(name = "m_Styles")]
         pub m_styles:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::guistyle::GUIStyle>,
@@ -91,135 +113,15 @@ mod __types {
         #[rename(name = "current")]
         pub current: crate::unity_engine::guiskin::GUISkin,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiskin/GUISkin_SkinChangedDelegate.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUISkin.SkinChangedDelegate")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GUISkin_SkinChangedDelegate {}
 }
 
 #[cfg(feature = "unity_engine-guiskin-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-guiskin")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GUISkin_SkinChangedDelegate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GUISkin_SkinChangedDelegate,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GUISkin_SkinChangedDelegate, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: GUISkin_SkinChangedDelegate, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GUISkin_SkinChangedDelegate, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-guiskin")]
-pub trait IGUISkin_SkinChangedDelegateMethods: IGUISkin_SkinChangedDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <GUISkin_SkinChangedDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUISkin_SkinChangedDelegate_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver =
-                <GUISkin_SkinChangedDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GUISkin_SkinChangedDelegate_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-guiskin")]
-impl<__T: IGUISkin_SkinChangedDelegate> IGUISkin_SkinChangedDelegateMethods for __T {}
-
-#[cfg(feature = "unity_engine-guiskin")]
-impl GUISkin_SkinChangedDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUISkin_SkinChangedDelegate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUISkin_SkinChangedDelegateMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-guiskin")]
 #[doc(hidden)]
@@ -2660,6 +2562,131 @@ impl GUISkin {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GUISkin), ::core::stringify!(new),));
         <Self as IGUISkinMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-guiskin")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GUISkin_SkinChangedDelegate_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GUISkin_SkinChangedDelegate,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GUISkin_SkinChangedDelegate, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUISkin_SkinChangedDelegate as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: GUISkin_SkinChangedDelegate, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GUISkin_SkinChangedDelegate, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-guiskin")]
+pub trait IGUISkin_SkinChangedDelegateMethods: IGUISkin_SkinChangedDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <GUISkin_SkinChangedDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUISkin_SkinChangedDelegate_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver =
+                <GUISkin_SkinChangedDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GUISkin_SkinChangedDelegate_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-guiskin")]
+impl<__T: IGUISkin_SkinChangedDelegate> IGUISkin_SkinChangedDelegateMethods for __T {}
+
+#[cfg(feature = "unity_engine-guiskin")]
+impl GUISkin_SkinChangedDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUISkin_SkinChangedDelegate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUISkin_SkinChangedDelegateMethods>::ctor(this, object, method);
         this
     }
 }

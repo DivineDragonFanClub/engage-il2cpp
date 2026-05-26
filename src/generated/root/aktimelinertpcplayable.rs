@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkTimelineRtpcPlayable")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct AkTimelineRtpcPlayable {
+        #[offset(32)]
         #[rename(name = "setGlobally")]
         pub set_globally: bool,
+        #[offset(40)]
         #[rename(name = "template")]
         pub template: crate::root::aktimelinertpcplayablebehaviour::AkTimelineRtpcPlayableBehaviour,
     }

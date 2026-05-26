@@ -56,10 +56,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagAnimation")]
     #[parent(crate::app::talk3_d::talktag::TalkTag)]
     pub struct TalkTagAnimation {
+        #[offset(16)]
         #[rename(name = "m_TagID")]
         pub m_tag_id: crate::app::talk3_d::talktaganimation::TalkTagAnimation_TagID,
+        #[offset(24)]
         #[rename(name = "m_Pid")]
         pub m_pid: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_AnimeName")]
         pub m_anime_name: ::unity2::Il2CppString,
     }

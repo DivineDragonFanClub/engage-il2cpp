@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkillEditPoolSkillMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct SkillEditPoolSkillMenuContent {
+        #[offset(232)]
         #[rename(name = "m_titleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

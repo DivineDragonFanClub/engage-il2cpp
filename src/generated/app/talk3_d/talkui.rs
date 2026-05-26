@@ -16,96 +16,41 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: talk3_d :: talkui :: TalkUI >)]
-    pub struct TalkUI {
-        #[static_field]
-        #[rename(name = "EventPictureMax")]
-        pub event_picture_max: i32,
-        #[static_field]
-        #[rename(name = "FaceLocationName_Left")]
-        pub face_location_name_left: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FaceLocationName_Right")]
-        pub face_location_name_right: ::unity2::Il2CppString,
-        #[rename(name = "m_SystemObjects")]
-        pub m_system_objects: crate::app::talk3_d::talkui::TalkUI_SystemObjects,
-        #[rename(name = "m_StandObjects")]
-        pub m_stand_objects: crate::app::talk3_d::talkui::TalkUI_StandObjects,
-        #[rename(name = "m_FaceObjects")]
-        pub m_face_objects: crate::app::talk3_d::talkui::TalkUI_FaceObjects,
-        #[rename(name = "m_FocusTalkObjects")]
-        pub m_focus_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
-        #[rename(name = "m_ReserveFocusWindow")]
-        pub m_reserve_focus_window: ::unity2::Il2CppString,
-        #[rename(name = "m_EventPictureController")]
-        pub m_event_picture_controller: ::unity2::Array<crate::app::eventpicturecontroller::EventPictureController>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.KeyHelpObjects")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkUI_KeyHelpObjects {
-        #[rename(name = "m_rootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_talkObjects")]
-        pub m_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects_Face.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects.Face")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkUI_FaceObjects_Face {
-        #[static_field]
-        #[rename(name = "FaceSlideLength")]
-        pub face_slide_length: f32,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_ImageBaseX")]
-        pub m_image_base_x: f32,
-        #[rename(name = "m_IsDirRight")]
-        pub m_is_dir_right: bool,
-        #[rename(name = "m_material")]
-        pub m_material: crate::unity_engine::material::Material,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_StandObjects.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.StandObjects")]
-    #[parent(crate::app::talk3_d::talkui::TalkUI_SystemObjects)]
-    pub struct TalkUI_StandObjects {
-        #[rename(name = "m_NameRoot")]
-        pub m_name_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CurrentLocationName")]
-        pub m_current_location_name: ::unity2::Il2CppString,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_TalkObjects.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.TalkObjects")]
     #[parent(crate::system::object::Object)]
     pub struct TalkUI_TalkObjects {
+        #[offset(16)]
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Window")]
         pub m_window: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_WindowImage")]
         pub m_window_image: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_WindowAnimator")]
         pub m_window_animator: crate::unity_engine::animator::Animator,
+        #[offset(48)]
         #[rename(name = "m_MainTextAnimator")]
         pub m_main_text_animator: crate::unity_engine::animator::Animator,
+        #[offset(56)]
         #[rename(name = "m_MainText")]
         pub m_main_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_WaitKeyIcon")]
         pub m_wait_key_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_AutoPlayIcon")]
         pub m_auto_play_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_KeyHelpObjects")]
         pub m_key_help_objects: crate::app::talk3_d::talkui::TalkUI_KeyHelpObjects,
+        #[offset(88)]
         #[rename(name = "m_ImmediatelyAfterActivation")]
         pub m_immediately_after_activation: bool,
+        #[offset(89)]
         #[rename(name = "m_IsShowKeyWaitIcon")]
         pub m_is_show_key_wait_icon: bool,
     }
@@ -119,19 +64,2818 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects")]
     #[parent(crate::app::talk3_d::talkui::TalkUI_StandObjects)]
     pub struct TalkUI_FaceObjects {
+        #[offset(112)]
         #[rename(name = "m_Panel")]
         pub m_panel: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_PanelAnimator")]
         pub m_panel_animator: crate::unity_engine::animator::Animator,
+        #[offset(128)]
         #[rename(name = "m_FaceL")]
         pub m_face_l: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+        #[offset(136)]
         #[rename(name = "m_FaceR")]
         pub m_face_r: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_StandObjects.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.StandObjects")]
+    #[parent(crate::app::talk3_d::talkui::TalkUI_SystemObjects)]
+    pub struct TalkUI_StandObjects {
+        #[offset(96)]
+        #[rename(name = "m_NameRoot")]
+        pub m_name_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
+        #[rename(name = "m_CurrentLocationName")]
+        pub m_current_location_name: ::unity2::Il2CppString,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: talk3_d :: talkui :: TalkUI >)]
+    pub struct TalkUI {
+        #[static_field]
+        #[rename(name = "EventPictureMax")]
+        pub event_picture_max: i32,
+        #[static_field]
+        #[rename(name = "FaceLocationName_Left")]
+        pub face_location_name_left: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "FaceLocationName_Right")]
+        pub face_location_name_right: ::unity2::Il2CppString,
+        #[offset(32)]
+        #[rename(name = "m_SystemObjects")]
+        pub m_system_objects: crate::app::talk3_d::talkui::TalkUI_SystemObjects,
+        #[offset(40)]
+        #[rename(name = "m_StandObjects")]
+        pub m_stand_objects: crate::app::talk3_d::talkui::TalkUI_StandObjects,
+        #[offset(48)]
+        #[rename(name = "m_FaceObjects")]
+        pub m_face_objects: crate::app::talk3_d::talkui::TalkUI_FaceObjects,
+        #[offset(56)]
+        #[rename(name = "m_FocusTalkObjects")]
+        pub m_focus_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
+        #[offset(64)]
+        #[rename(name = "m_ReserveFocusWindow")]
+        pub m_reserve_focus_window: ::unity2::Il2CppString,
+        #[offset(72)]
+        #[rename(name = "m_EventPictureController")]
+        pub m_event_picture_controller: ::unity2::Array<crate::app::eventpicturecontroller::EventPictureController>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.KeyHelpObjects")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkUI_KeyHelpObjects {
+        #[offset(16)]
+        #[rename(name = "m_rootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
+        #[rename(name = "m_talkObjects")]
+        pub m_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects_Face.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects.Face")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkUI_FaceObjects_Face {
+        #[static_field]
+        #[rename(name = "FaceSlideLength")]
+        pub face_slide_length: f32,
+        #[offset(16)]
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(32)]
+        #[rename(name = "m_ImageBaseX")]
+        pub m_image_base_x: f32,
+        #[offset(36)]
+        #[rename(name = "m_IsDirRight")]
+        pub m_is_dir_right: bool,
+        #[offset(40)]
+        #[rename(name = "m_material")]
+        pub m_material: crate::unity_engine::material::Material,
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkui-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkUI_TalkObjects_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_window_animator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "GetWindowAnimator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "GetWindowAnimator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_window_animator(
+        this: TalkUI_TalkObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::animator::Animator {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> crate::unity_engine::animator::Animator =
+            ::core::mem::transmute(__lookup_get_window_animator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkUI_TalkObjects,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_immediately_after_activation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "SetImmediatelyAfterActivation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetImmediatelyAfterActivation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_immediately_after_activation(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_immediately_after_activation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_text_empty {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "IsTextEmpty",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "IsTextEmpty",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_text_empty(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_text_empty::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_need_text_scroll {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "IsNeedTextScroll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "IsNeedTextScroll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_need_text_scroll(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_need_text_scroll::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_letter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "AddLetter",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "AddLetter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_letter(this: TalkUI_TalkObjects, c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, u16, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_letter::get_method_info().method_ptr);
+        inner(this, c, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "AddString",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "AddString",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_string(this: TalkUI_TalkObjects, str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_string::get_method_info().method_ptr);
+        inner(this, str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "ClearText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "ClearText",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear_text(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_text::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_total_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "CalcTotalWidth",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "CalcTotalWidth",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_total_width(
+        this: TalkUI_TalkObjects,
+        mess_str: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_total_width::get_method_info().method_ptr);
+        inner(this, mess_str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_wait_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "SetupWaitIcon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetupWaitIcon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_wait_icon(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_wait_icon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_key_wait_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "ShowKeyWaitIcon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "ShowKeyWaitIcon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show_key_wait_icon(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show_key_wait_icon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide_key_wait_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "HideKeyWaitIcon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "HideKeyWaitIcon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide_key_wait_icon(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide_key_wait_icon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name_locator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "GetNameLocator",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "GetNameLocator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name_locator(
+        this: TalkUI_TalkObjects,
+        location_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            TalkUI_TalkObjects,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_get_name_locator::get_method_info().method_ptr);
+        inner(this, location_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_talker_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "SetTalkerName",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetTalkerName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_talker_name(
+        this: TalkUI_TalkObjects,
+        name: ::unity2::Il2CppString,
+        location: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_talker_name::get_method_info().method_ptr);
+        inner(this, name, location, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_focus {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "SetFocus",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetFocus",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_focus(this: TalkUI_TalkObjects, location: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_focus::get_method_info().method_ptr);
+        inner(this, location, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_talker_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "CloseTalkerName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "CloseTalkerName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_talker_name(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_talker_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "SetActive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetActive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_active(this: TalkUI_TalkObjects, is_active: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
+        inner(this, is_active, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "OpenWindow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "OpenWindow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open_window(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open_window::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_window {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "CloseWindow",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "CloseWindow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_window(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_window::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "CloseAll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "CloseAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_all(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_all::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_window_bg {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "ShowWindowBg",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "ShowWindowBg",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show_window_bg(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show_window_bg::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide_window_bg {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "HideWindowBg",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "HideWindowBg",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide_window_bg(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide_window_bg::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_playing_window_animation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "IsPlayingWindowAnimation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayingWindowAnimation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_playing_window_animation(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_playing_window_animation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_play_anime {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "TryPlayAnime",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayAnime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_play_anime(
+        animator: crate::unity_engine::animator::Animator,
+        state_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::animator::Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_play_anime::get_method_info().method_ptr);
+        inner(animator, state_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_play_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "TryPlayOpen",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayOpen",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_play_open(animator: crate::unity_engine::animator::Animator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_play_open::get_method_info().method_ptr);
+        inner(animator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_play_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "TryPlayClose",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayClose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_play_close(animator: crate::unity_engine::animator::Animator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_play_close::get_method_info().method_ptr);
+        inner(animator, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_text_scroll {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "StartTextScroll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "StartTextScroll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_text_scroll(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_text_scroll::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_text_scrolling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "IsTextScrolling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "IsTextScrolling",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_text_scrolling(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_text_scrolling::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_key_help {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "SetupKeyHelp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetupKeyHelp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_key_help(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_key_help::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_to_log {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
+                "AddToLog",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
+                        "AddToLog",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_to_log(
+        this: TalkUI_TalkObjects,
+        label: ::unity2::Il2CppString,
+        talker_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_to_log::get_method_info().method_ptr);
+        inner(this, label, talker_name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_TalkObjects {
+    #[doc = "`TryPlayAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"]
+    pub fn try_play_anime(
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __TalkUI_TalkObjects_unity2_raw::try_play_anime(
+                ::core::convert::Into::into(animator),
+                ::core::convert::Into::into(state_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`TryPlayOpen(crate::unity_engine::animator::Animator)` overload"]
+    pub fn try_play_open(animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> () {
+        unsafe { __TalkUI_TalkObjects_unity2_raw::try_play_open(::core::convert::Into::into(animator), ::core::option::Option::None) }
+    }
+
+    #[doc = "`TryPlayClose(crate::unity_engine::animator::Animator)` overload"]
+    pub fn try_play_close(animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> () {
+        unsafe { __TalkUI_TalkObjects_unity2_raw::try_play_close(::core::convert::Into::into(animator), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+pub trait ITalkUI_TalkObjectsMethods: ITalkUI_TalkObjects {
+    #[doc = "`GetWindowAnimator()` overload"]
+    fn get_window_animator(self) -> crate::unity_engine::animator::Animator {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::get_window_animator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetImmediatelyAfterActivation()` overload"]
+    fn set_immediately_after_activation(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::set_immediately_after_activation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsTextEmpty()` overload"]
+    fn is_text_empty(self) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::is_text_empty(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsNeedTextScroll()` overload"]
+    fn is_need_text_scroll(self) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::is_need_text_scroll(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddLetter(u16)` overload"]
+    fn add_letter(self, c: impl ::core::convert::Into<u16>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::add_letter(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddString(::unity2::Il2CppString)` overload"]
+    fn add_string(self, str: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::add_string(__receiver, ::core::convert::Into::into(str), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClearText()` overload"]
+    fn clear_text(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::clear_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcTotalWidth(::unity2::Il2CppString)` overload"]
+    fn calc_total_width(self, mess_str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::calc_total_width(__receiver, ::core::convert::Into::into(mess_str), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupWaitIcon()` overload"]
+    fn setup_wait_icon(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::setup_wait_icon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ShowKeyWaitIcon()` overload"]
+    fn show_key_wait_icon(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::show_key_wait_icon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HideKeyWaitIcon()` overload"]
+    fn hide_key_wait_icon(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::hide_key_wait_icon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetNameLocator(::unity2::Il2CppString)` overload"]
+    fn get_name_locator(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::get_name_locator(__receiver, ::core::convert::Into::into(location_name), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn set_talker_name(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        location: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::set_talker_name(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(location),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFocus(::unity2::Il2CppString)` overload"]
+    fn set_focus(self, location: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::set_focus(__receiver, ::core::convert::Into::into(location), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseTalkerName()` overload"]
+    fn close_talker_name(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::close_talker_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetActive(bool)` overload"]
+    fn set_active(self, is_active: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::set_active(__receiver, ::core::convert::Into::into(is_active), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpenWindow()` overload"]
+    fn open_window(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::open_window(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseWindow()` overload"]
+    fn close_window(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::close_window(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseAll()` overload"]
+    fn close_all(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ShowWindowBg()` overload"]
+    fn show_window_bg(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::show_window_bg(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HideWindowBg()` overload"]
+    fn hide_window_bg(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::hide_window_bg(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsPlayingWindowAnimation()` overload"]
+    fn is_playing_window_animation(self) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::is_playing_window_animation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartTextScroll()` overload"]
+    fn start_text_scroll(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::start_text_scroll(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsTextScrolling()` overload"]
+    fn is_text_scrolling(self) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::is_text_scrolling(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupKeyHelp()` overload"]
+    fn setup_key_help(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::setup_key_help(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn add_to_log(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_TalkObjects_unity2_raw::add_to_log(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(talker_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl<__T: ITalkUI_TalkObjects> ITalkUI_TalkObjectsMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_TalkObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_TalkObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_TalkObjectsMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkUI_SystemObjects_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkUI_SystemObjects,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_SystemObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: TalkUI_SystemObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_SystemObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_to_log {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
+                "AddToLog",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
+                        "AddToLog",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_to_log(
+        this: TalkUI_SystemObjects,
+        label: ::unity2::Il2CppString,
+        talker_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_SystemObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_to_log::get_method_info().method_ptr);
+        inner(this, label, talker_name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+pub trait ITalkUI_SystemObjectsMethods: ITalkUI_SystemObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_SystemObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_SystemObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn add_to_log(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_SystemObjects_unity2_raw::add_to_log(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(talker_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl<__T: ITalkUI_SystemObjects> ITalkUI_SystemObjectsMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_SystemObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_SystemObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_SystemObjectsMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkUI_FaceObjects_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkUI_FaceObjects,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_in_face_l {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeInFaceL",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "FadeInFaceL",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn fade_in_face_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_in_face_l::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_out_face_l {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeOutFaceL",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "FadeOutFaceL",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn fade_out_face_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_out_face_l::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_face_slide_rate_l {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "SetFaceSlideRateL",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetFaceSlideRateL",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_face_slide_rate_l(this: TalkUI_FaceObjects, face_slide_rate: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_face_slide_rate_l::get_method_info().method_ptr);
+        inner(this, face_slide_rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_silhouette_l {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "EnableSilhouetteL",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "EnableSilhouetteL",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_silhouette_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_silhouette_l::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_silhouette_l {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "DisableSilhouetteL",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "DisableSilhouetteL",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn disable_silhouette_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_silhouette_l::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_in_face_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeInFaceR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "FadeInFaceR",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn fade_in_face_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_in_face_r::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_out_face_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeOutFaceR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "FadeOutFaceR",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn fade_out_face_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_out_face_r::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_face_slide_rate_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "SetFaceSlideRateR",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetFaceSlideRateR",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_face_slide_rate_r(this: TalkUI_FaceObjects, face_slide_rate: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_face_slide_rate_r::get_method_info().method_ptr);
+        inner(this, face_slide_rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_silhouette_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "EnableSilhouetteR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "EnableSilhouetteR",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_silhouette_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_silhouette_r::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_silhouette_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "DisableSilhouetteR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "DisableSilhouetteR",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn disable_silhouette_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_silhouette_r::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_panel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "OpenPanel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "OpenPanel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open_panel(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open_panel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_panel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "ClosePanel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "ClosePanel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_panel(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_panel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "CloseAll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "CloseAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_all(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_all::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn destroy(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+pub trait ITalkUI_FaceObjectsMethods: ITalkUI_FaceObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeInFaceL()` overload"]
+    fn fade_in_face_l(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::fade_in_face_l(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeOutFaceL()` overload"]
+    fn fade_out_face_l(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::fade_out_face_l(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetFaceSlideRateL(f32)` overload"]
+    fn set_face_slide_rate_l(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_l(
+                __receiver,
+                ::core::convert::Into::into(face_slide_rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EnableSilhouetteL()` overload"]
+    fn enable_silhouette_l(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_l(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DisableSilhouetteL()` overload"]
+    fn disable_silhouette_l(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_l(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeInFaceR()` overload"]
+    fn fade_in_face_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::fade_in_face_r(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeOutFaceR()` overload"]
+    fn fade_out_face_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::fade_out_face_r(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetFaceSlideRateR(f32)` overload"]
+    fn set_face_slide_rate_r(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_r(
+                __receiver,
+                ::core::convert::Into::into(face_slide_rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EnableSilhouetteR()` overload"]
+    fn enable_silhouette_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_r(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DisableSilhouetteR()` overload"]
+    fn disable_silhouette_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_r(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpenPanel()` overload"]
+    fn open_panel(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::open_panel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClosePanel()` overload"]
+    fn close_panel(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::close_panel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseAll()` overload"]
+    fn close_all(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_FaceObjects_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl<__T: ITalkUI_FaceObjects> ITalkUI_FaceObjectsMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_FaceObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_FaceObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_FaceObjectsMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkUI_StandObjects_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_location_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "GetCurrentLocationName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "GetCurrentLocationName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current_location_name(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_current_location_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkUI_StandObjects,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_StandObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_talker_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "SetTalkerName",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetTalkerName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_talker_name(
+        this: TalkUI_StandObjects,
+        name: ::unity2::Il2CppString,
+        location_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_talker_name::get_method_info().method_ptr);
+        inner(this, name, location_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_focus {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "SetFocus",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "SetFocus",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_focus(
+        this: TalkUI_StandObjects,
+        location_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_focus::get_method_info().method_ptr);
+        inner(this, location_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_talker_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "CloseTalkerName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "CloseTalkerName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_talker_name(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_talker_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "CloseAll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "CloseAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_all(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_all::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name_locator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "GetNameLocator",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "GetNameLocator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name_locator(
+        this: TalkUI_StandObjects,
+        location_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            TalkUI_StandObjects,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_get_name_locator::get_method_info().method_ptr);
+        inner(this, location_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_playing_window_animation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "IsPlayingWindowAnimation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayingWindowAnimation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_playing_window_animation(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_playing_window_animation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_to_log {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "AddToLog",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                        "AddToLog",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_to_log(
+        this: TalkUI_StandObjects,
+        label: ::unity2::Il2CppString,
+        talker_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_to_log::get_method_info().method_ptr);
+        inner(this, label, talker_name, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+pub trait ITalkUI_StandObjectsMethods: ITalkUI_StandObjects {
+    #[doc = "`GetCurrentLocationName()` overload"]
+    fn get_current_location_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::get_current_location_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn set_talker_name(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::set_talker_name(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(location_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFocus(::unity2::Il2CppString)` overload"]
+    fn set_focus(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::set_focus(__receiver, ::core::convert::Into::into(location_name), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseTalkerName()` overload"]
+    fn close_talker_name(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::close_talker_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseAll()` overload"]
+    fn close_all(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetNameLocator(::unity2::Il2CppString)` overload"]
+    fn get_name_locator(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::get_name_locator(__receiver, ::core::convert::Into::into(location_name), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsPlayingWindowAnimation()` overload"]
+    fn is_playing_window_animation(self) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::is_playing_window_animation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn add_to_log(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkUI_StandObjects_unity2_raw::add_to_log(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(talker_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl<__T: ITalkUI_StandObjects> ITalkUI_StandObjectsMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_StandObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_StandObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_StandObjectsMethods>::ctor(this, root_object);
+        this
+    }
+}
 
 #[cfg(feature = "app-talk3_d-talkui")]
 #[doc(hidden)]
@@ -2458,2720 +5202,6 @@ impl TalkUI_FaceObjects_Face {
             )
         });
         <Self as ITalkUI_FaceObjects_FaceMethods>::ctor(this, root_object, image_name, is_dir_right);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_StandObjects_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_location_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "GetCurrentLocationName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "GetCurrentLocationName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current_location_name(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_current_location_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkUI_StandObjects,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_talker_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "SetTalkerName",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetTalkerName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_talker_name(
-        this: TalkUI_StandObjects,
-        name: ::unity2::Il2CppString,
-        location_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_talker_name::get_method_info().method_ptr);
-        inner(this, name, location_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_focus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "SetFocus",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetFocus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_focus(
-        this: TalkUI_StandObjects,
-        location_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_focus::get_method_info().method_ptr);
-        inner(this, location_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_talker_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "CloseTalkerName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "CloseTalkerName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_talker_name(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_talker_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "CloseAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "CloseAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_all(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_all::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name_locator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "GetNameLocator",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "GetNameLocator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name_locator(
-        this: TalkUI_StandObjects,
-        location_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            TalkUI_StandObjects,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_get_name_locator::get_method_info().method_ptr);
-        inner(this, location_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_playing_window_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "IsPlayingWindowAnimation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "IsPlayingWindowAnimation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_playing_window_animation(this: TalkUI_StandObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_playing_window_animation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_to_log {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "AddToLog",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                        "AddToLog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_to_log(
-        this: TalkUI_StandObjects,
-        label: ::unity2::Il2CppString,
-        talker_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_to_log::get_method_info().method_ptr);
-        inner(this, label, talker_name, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_StandObjectsMethods: ITalkUI_StandObjects {
-    #[doc = "`GetCurrentLocationName()` overload"]
-    fn get_current_location_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::get_current_location_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn set_talker_name(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::set_talker_name(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(location_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetFocus(::unity2::Il2CppString)` overload"]
-    fn set_focus(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::set_focus(__receiver, ::core::convert::Into::into(location_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseTalkerName()` overload"]
-    fn close_talker_name(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::close_talker_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseAll()` overload"]
-    fn close_all(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetNameLocator(::unity2::Il2CppString)` overload"]
-    fn get_name_locator(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::get_name_locator(__receiver, ::core::convert::Into::into(location_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsPlayingWindowAnimation()` overload"]
-    fn is_playing_window_animation(self) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::is_playing_window_animation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn add_to_log(
-        self,
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_StandObjects_unity2_raw::add_to_log(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(talker_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_StandObjects> ITalkUI_StandObjectsMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_StandObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_StandObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_StandObjectsMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_TalkObjects_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_window_animator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "GetWindowAnimator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "GetWindowAnimator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_window_animator(
-        this: TalkUI_TalkObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::animator::Animator {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> crate::unity_engine::animator::Animator =
-            ::core::mem::transmute(__lookup_get_window_animator::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkUI_TalkObjects,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_immediately_after_activation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "SetImmediatelyAfterActivation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetImmediatelyAfterActivation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_immediately_after_activation(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_immediately_after_activation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_text_empty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "IsTextEmpty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "IsTextEmpty",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_text_empty(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_text_empty::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_need_text_scroll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "IsNeedTextScroll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "IsNeedTextScroll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_need_text_scroll(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_need_text_scroll::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_letter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "AddLetter",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "AddLetter",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_letter(this: TalkUI_TalkObjects, c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_letter::get_method_info().method_ptr);
-        inner(this, c, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "AddString",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "AddString",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_string(this: TalkUI_TalkObjects, str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_string::get_method_info().method_ptr);
-        inner(this, str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "ClearText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "ClearText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear_text(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_total_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "CalcTotalWidth",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "CalcTotalWidth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_total_width(
-        this: TalkUI_TalkObjects,
-        mess_str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_total_width::get_method_info().method_ptr);
-        inner(this, mess_str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_wait_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "SetupWaitIcon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetupWaitIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_wait_icon(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_wait_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_key_wait_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "ShowKeyWaitIcon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "ShowKeyWaitIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_key_wait_icon(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_key_wait_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_key_wait_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "HideKeyWaitIcon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "HideKeyWaitIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_key_wait_icon(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_key_wait_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name_locator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "GetNameLocator",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "GetNameLocator",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name_locator(
-        this: TalkUI_TalkObjects,
-        location_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            TalkUI_TalkObjects,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_get_name_locator::get_method_info().method_ptr);
-        inner(this, location_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_talker_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "SetTalkerName",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetTalkerName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_talker_name(
-        this: TalkUI_TalkObjects,
-        name: ::unity2::Il2CppString,
-        location: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_talker_name::get_method_info().method_ptr);
-        inner(this, name, location, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_focus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "SetFocus",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetFocus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_focus(this: TalkUI_TalkObjects, location: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_set_focus::get_method_info().method_ptr);
-        inner(this, location, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_talker_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "CloseTalkerName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "CloseTalkerName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_talker_name(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_talker_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "SetActive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_active(this: TalkUI_TalkObjects, is_active: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
-        inner(this, is_active, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_window {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "OpenWindow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "OpenWindow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_window(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_window::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_window {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "CloseWindow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "CloseWindow",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_window(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_window::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "CloseAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "CloseAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_all(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_all::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_window_bg {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "ShowWindowBg",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "ShowWindowBg",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show_window_bg(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show_window_bg::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_window_bg {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "HideWindowBg",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "HideWindowBg",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide_window_bg(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide_window_bg::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_playing_window_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "IsPlayingWindowAnimation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "IsPlayingWindowAnimation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_playing_window_animation(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_playing_window_animation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_play_anime {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "TryPlayAnime",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "TryPlayAnime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_play_anime(
-        animator: crate::unity_engine::animator::Animator,
-        state_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::animator::Animator, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_play_anime::get_method_info().method_ptr);
-        inner(animator, state_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_play_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "TryPlayOpen",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "TryPlayOpen",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_play_open(animator: crate::unity_engine::animator::Animator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_play_open::get_method_info().method_ptr);
-        inner(animator, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_play_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::animator::Animator as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "TryPlayClose",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "TryPlayClose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_play_close(animator: crate::unity_engine::animator::Animator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::unity_engine::animator::Animator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_try_play_close::get_method_info().method_ptr);
-        inner(animator, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_text_scroll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "StartTextScroll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "StartTextScroll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn start_text_scroll(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_start_text_scroll::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_text_scrolling {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "IsTextScrolling",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "IsTextScrolling",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_text_scrolling(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_text_scrolling::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_key_help {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "SetupKeyHelp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetupKeyHelp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_key_help(this: TalkUI_TalkObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_setup_key_help::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_to_log {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_TalkObjects as ::unity2::ClassIdentity>::class(),
-                "AddToLog",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_TalkObjects as ::unity2::ClassIdentity>::NAME,
-                        "AddToLog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_to_log(
-        this: TalkUI_TalkObjects,
-        label: ::unity2::Il2CppString,
-        talker_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_TalkObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_to_log::get_method_info().method_ptr);
-        inner(this, label, talker_name, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_TalkObjects {
-    #[doc = "`TryPlayAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"]
-    pub fn try_play_anime(
-        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
-        state_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __TalkUI_TalkObjects_unity2_raw::try_play_anime(
-                ::core::convert::Into::into(animator),
-                ::core::convert::Into::into(state_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`TryPlayOpen(crate::unity_engine::animator::Animator)` overload"]
-    pub fn try_play_open(animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> () {
-        unsafe { __TalkUI_TalkObjects_unity2_raw::try_play_open(::core::convert::Into::into(animator), ::core::option::Option::None) }
-    }
-
-    #[doc = "`TryPlayClose(crate::unity_engine::animator::Animator)` overload"]
-    pub fn try_play_close(animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>) -> () {
-        unsafe { __TalkUI_TalkObjects_unity2_raw::try_play_close(::core::convert::Into::into(animator), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_TalkObjectsMethods: ITalkUI_TalkObjects {
-    #[doc = "`GetWindowAnimator()` overload"]
-    fn get_window_animator(self) -> crate::unity_engine::animator::Animator {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::get_window_animator(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetImmediatelyAfterActivation()` overload"]
-    fn set_immediately_after_activation(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::set_immediately_after_activation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsTextEmpty()` overload"]
-    fn is_text_empty(self) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::is_text_empty(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsNeedTextScroll()` overload"]
-    fn is_need_text_scroll(self) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::is_need_text_scroll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddLetter(u16)` overload"]
-    fn add_letter(self, c: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::add_letter(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddString(::unity2::Il2CppString)` overload"]
-    fn add_string(self, str: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::add_string(__receiver, ::core::convert::Into::into(str), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClearText()` overload"]
-    fn clear_text(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::clear_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcTotalWidth(::unity2::Il2CppString)` overload"]
-    fn calc_total_width(self, mess_str: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::calc_total_width(__receiver, ::core::convert::Into::into(mess_str), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupWaitIcon()` overload"]
-    fn setup_wait_icon(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::setup_wait_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowKeyWaitIcon()` overload"]
-    fn show_key_wait_icon(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::show_key_wait_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideKeyWaitIcon()` overload"]
-    fn hide_key_wait_icon(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::hide_key_wait_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetNameLocator(::unity2::Il2CppString)` overload"]
-    fn get_name_locator(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::get_name_locator(__receiver, ::core::convert::Into::into(location_name), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn set_talker_name(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        location: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::set_talker_name(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(location),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetFocus(::unity2::Il2CppString)` overload"]
-    fn set_focus(self, location: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::set_focus(__receiver, ::core::convert::Into::into(location), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseTalkerName()` overload"]
-    fn close_talker_name(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::close_talker_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetActive(bool)` overload"]
-    fn set_active(self, is_active: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::set_active(__receiver, ::core::convert::Into::into(is_active), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenWindow()` overload"]
-    fn open_window(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::open_window(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseWindow()` overload"]
-    fn close_window(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::close_window(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseAll()` overload"]
-    fn close_all(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowWindowBg()` overload"]
-    fn show_window_bg(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::show_window_bg(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HideWindowBg()` overload"]
-    fn hide_window_bg(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::hide_window_bg(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsPlayingWindowAnimation()` overload"]
-    fn is_playing_window_animation(self) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::is_playing_window_animation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartTextScroll()` overload"]
-    fn start_text_scroll(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::start_text_scroll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsTextScrolling()` overload"]
-    fn is_text_scrolling(self) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::is_text_scrolling(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupKeyHelp()` overload"]
-    fn setup_key_help(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::setup_key_help(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn add_to_log(
-        self,
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_TalkObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_TalkObjects_unity2_raw::add_to_log(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(talker_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_TalkObjects> ITalkUI_TalkObjectsMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_TalkObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_TalkObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_TalkObjectsMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_SystemObjects_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkUI_SystemObjects,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_SystemObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: TalkUI_SystemObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_SystemObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_to_log {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
-                "AddToLog",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
-                        "AddToLog",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_to_log(
-        this: TalkUI_SystemObjects,
-        label: ::unity2::Il2CppString,
-        talker_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_SystemObjects, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add_to_log::get_method_info().method_ptr);
-        inner(this, label, talker_name, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_SystemObjectsMethods: ITalkUI_SystemObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_SystemObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_SystemObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn add_to_log(
-        self,
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_SystemObjects_unity2_raw::add_to_log(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(talker_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_SystemObjects> ITalkUI_SystemObjectsMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_SystemObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_SystemObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_SystemObjectsMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_FaceObjects_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkUI_FaceObjects,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_in_face_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeInFaceL",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "FadeInFaceL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fade_in_face_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fade_in_face_l::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_out_face_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeOutFaceL",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "FadeOutFaceL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fade_out_face_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fade_out_face_l::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_face_slide_rate_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "SetFaceSlideRateL",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetFaceSlideRateL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_face_slide_rate_l(this: TalkUI_FaceObjects, face_slide_rate: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_face_slide_rate_l::get_method_info().method_ptr);
-        inner(this, face_slide_rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_silhouette_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "EnableSilhouetteL",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "EnableSilhouetteL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enable_silhouette_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_enable_silhouette_l::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_silhouette_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "DisableSilhouetteL",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "DisableSilhouetteL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable_silhouette_l(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable_silhouette_l::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_in_face_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeInFaceR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "FadeInFaceR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fade_in_face_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fade_in_face_r::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_out_face_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeOutFaceR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "FadeOutFaceR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn fade_out_face_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_fade_out_face_r::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_face_slide_rate_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "SetFaceSlideRateR",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "SetFaceSlideRateR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_face_slide_rate_r(this: TalkUI_FaceObjects, face_slide_rate: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_face_slide_rate_r::get_method_info().method_ptr);
-        inner(this, face_slide_rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_silhouette_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "EnableSilhouetteR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "EnableSilhouetteR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enable_silhouette_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_enable_silhouette_r::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_silhouette_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "DisableSilhouetteR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "DisableSilhouetteR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable_silhouette_r(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable_silhouette_r::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_panel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "OpenPanel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "OpenPanel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn open_panel(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_open_panel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_panel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "ClosePanel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "ClosePanel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_panel(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_panel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "CloseAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "CloseAll",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn close_all(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_close_all::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                        "Destroy",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy(this: TalkUI_FaceObjects, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_FaceObjectsMethods: ITalkUI_FaceObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeInFaceL()` overload"]
-    fn fade_in_face_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::fade_in_face_l(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeOutFaceL()` overload"]
-    fn fade_out_face_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::fade_out_face_l(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetFaceSlideRateL(f32)` overload"]
-    fn set_face_slide_rate_l(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_l(
-                __receiver,
-                ::core::convert::Into::into(face_slide_rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableSilhouetteL()` overload"]
-    fn enable_silhouette_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_l(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisableSilhouetteL()` overload"]
-    fn disable_silhouette_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_l(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeInFaceR()` overload"]
-    fn fade_in_face_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::fade_in_face_r(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeOutFaceR()` overload"]
-    fn fade_out_face_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::fade_out_face_r(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetFaceSlideRateR(f32)` overload"]
-    fn set_face_slide_rate_r(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_r(
-                __receiver,
-                ::core::convert::Into::into(face_slide_rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableSilhouetteR()` overload"]
-    fn enable_silhouette_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_r(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisableSilhouetteR()` overload"]
-    fn disable_silhouette_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_r(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenPanel()` overload"]
-    fn open_panel(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::open_panel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClosePanel()` overload"]
-    fn close_panel(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::close_panel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseAll()` overload"]
-    fn close_all(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TalkUI_FaceObjects_unity2_raw::destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_FaceObjects> ITalkUI_FaceObjectsMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_FaceObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_FaceObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_FaceObjectsMethods>::ctor(this, root_object);
         this
     }
 }

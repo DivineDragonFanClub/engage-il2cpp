@@ -23,22 +23,31 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_MenuListAnimator")]
         pub m_menu_list_animator: crate::unity_engine::animator::Animator,
+        #[offset(240)]
         #[rename(name = "m_GridSize")]
         pub m_grid_size: i32,
+        #[offset(244)]
         #[rename(name = "m_ColorPlayer")]
         pub m_color_player: crate::unity_engine::color::Color,
+        #[offset(260)]
         #[rename(name = "m_ColorEnemy")]
         pub m_color_enemy: crate::unity_engine::color::Color,
+        #[offset(276)]
         #[rename(name = "m_ColorAlly")]
         pub m_color_ally: crate::unity_engine::color::Color,
+        #[offset(296)]
         #[rename(name = "m_CostTypeColors")]
         pub m_cost_type_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[offset(304)]
         #[rename(name = "m_DifficultyFrameColorNormal")]
         pub m_difficulty_frame_color_normal: crate::unity_engine::color::Color,
+        #[offset(320)]
         #[rename(name = "m_DifficultyFrameColorHard")]
         pub m_difficulty_frame_color_hard: crate::unity_engine::color::Color,
+        #[offset(336)]
         #[rename(name = "m_DifficultyFrameColorLunatic")]
         pub m_difficulty_frame_color_lunatic: crate::unity_engine::color::Color,
     }

@@ -19,15 +19,15 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnitInfoParamSetter_ForceType {
+    pub struct UnitInfoParamSetter_GodBuffType {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for UnitInfoParamSetter_ForceType {
-        const NAME: &'static str = "UnitInfoParamSetter.ForceType";
+    impl ::unity2::ClassIdentity for UnitInfoParamSetter_GodBuffType {
+        const NAME: &'static str = "UnitInfoParamSetter.GodBuffType";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -37,32 +37,225 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for UnitInfoParamSetter_ForceType {
+    impl ::unity2::IlType for UnitInfoParamSetter_GodBuffType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl UnitInfoParamSetter_ForceType {
-        pub fn player() -> Self {
+    impl UnitInfoParamSetter_GodBuffType {
+        pub fn blue() -> Self {
             Self { value: 0 }
         }
 
-        pub fn enemy() -> Self {
+        pub fn red() -> Self {
             Self { value: 1 }
         }
 
-        pub fn ally() -> Self {
+        pub fn count() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct UnitInfoParamSetter_HPStockType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType {
+        const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnitInfoParamSetter_HPStockType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl UnitInfoParamSetter_HPStockType {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn rampage() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn player() -> Self {
             Self { value: 2 }
         }
 
-        pub fn f4th() -> Self {
+        pub fn count() -> Self {
             Self { value: 3 }
         }
+    }
 
-        pub fn count() -> Self {
-            Self { value: 4 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparamsetter/UnitInfoParamSetter.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoParamSetter")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct UnitInfoParamSetter {
+        #[offset(24)]
+        #[rename(name = "m_SubInfo")]
+        pub m_sub_info: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
+        #[rename(name = "m_IsSimpleUI")]
+        pub m_is_simple_ui: bool,
+        #[offset(40)]
+        #[rename(name = "m_FrameImage")]
+        pub m_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(48)]
+        #[rename(name = "m_WdwImage")]
+        pub m_wdw_image: crate::unity_engine::ui::image::Image,
+        #[offset(56)]
+        #[rename(name = "m_ForceSprites")]
+        pub m_force_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(64)]
+        #[rename(name = "m_WdwSprites")]
+        pub m_wdw_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(72)]
+        #[rename(name = "m_GodBuffSprites")]
+        pub m_god_buff_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(80)]
+        #[rename(name = "m_HpStockSprites")]
+        pub m_hp_stock_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(88)]
+        #[rename(name = "m_UnitIcon")]
+        pub m_unit_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
+        #[rename(name = "m_GodIcon")]
+        pub m_god_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
+        #[rename(name = "m_CharaName")]
+        pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
+        #[rename(name = "m_JobName")]
+        pub m_job_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
+        #[rename(name = "m_BattleStyleName")]
+        pub m_battle_style_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
+        #[rename(name = "m_GodNameRoot")]
+        pub m_god_name_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
+        #[rename(name = "m_GodName")]
+        pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(144)]
+        #[rename(name = "m_BondInfoRoot")]
+        pub m_bond_info_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
+        #[rename(name = "m_BondLevelValue")]
+        pub m_bond_level_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
+        #[rename(name = "m_BondLevelGauge")]
+        pub m_bond_level_gauge: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
+        #[rename(name = "m_Enchant")]
+        pub m_enchant: crate::unity_engine::gameobject::GameObject,
+        #[offset(176)]
+        #[rename(name = "m_Level")]
+        pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(184)]
+        #[rename(name = "m_GodBuffLevel")]
+        pub m_god_buff_level: crate::unity_engine::ui::image::Image,
+        #[offset(192)]
+        #[rename(name = "m_GaugeExp")]
+        pub m_gauge_exp: crate::unity_engine::gameobject::GameObject,
+        #[offset(200)]
+        #[rename(name = "m_MaxHp")]
+        pub m_max_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(208)]
+        #[rename(name = "m_Hp")]
+        pub m_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(216)]
+        #[rename(name = "m_GodBuffHp")]
+        pub m_god_buff_hp: crate::unity_engine::ui::image::Image,
+        #[offset(224)]
+        #[rename(name = "m_HpStockRoot")]
+        pub m_hp_stock_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(232)]
+        #[rename(name = "m_HpStock")]
+        pub m_hp_stock: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(240)]
+        #[rename(name = "m_Move")]
+        pub m_move: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
+        #[rename(name = "m_GodBuffMove")]
+        pub m_god_buff_move: crate::unity_engine::ui::image::Image,
+        #[offset(256)]
+        #[rename(name = "m_TitleBtlAtk")]
+        pub m_title_btl_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
+        #[rename(name = "m_BtlAtk")]
+        pub m_btl_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
+        #[rename(name = "m_GodBuffAtk")]
+        pub m_god_buff_atk: crate::unity_engine::ui::image::Image,
+        #[offset(280)]
+        #[rename(name = "m_BtlHit")]
+        pub m_btl_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
+        #[rename(name = "m_GodBuffHit")]
+        pub m_god_buff_hit: crate::unity_engine::ui::image::Image,
+        #[offset(296)]
+        #[rename(name = "m_BtlSpd")]
+        pub m_btl_spd: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(304)]
+        #[rename(name = "m_GodBuffSpd")]
+        pub m_god_buff_spd: crate::unity_engine::ui::image::Image,
+        #[offset(312)]
+        #[rename(name = "m_BtlAvo")]
+        pub m_btl_avo: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(320)]
+        #[rename(name = "m_GodBuffAvo")]
+        pub m_god_buff_avo: crate::unity_engine::ui::image::Image,
+        #[offset(328)]
+        #[rename(name = "m_BtlDef")]
+        pub m_btl_def: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(336)]
+        #[rename(name = "m_GodBuffDef")]
+        pub m_god_buff_def: crate::unity_engine::ui::image::Image,
+        #[offset(344)]
+        #[rename(name = "m_BtlRes")]
+        pub m_btl_res: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(352)]
+        #[rename(name = "m_GodBuffRes")]
+        pub m_god_buff_res: crate::unity_engine::ui::image::Image,
+        #[offset(360)]
+        #[rename(name = "m_ItemName")]
+        pub m_item_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(368)]
+        #[rename(name = "m_Items")]
+        pub m_items: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(376)]
+        #[rename(name = "m_Frames")]
+        pub m_frames: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[static_field]
+        #[rename(name = "EfficacyMax")]
+        pub efficacy_max: i32,
+        #[offset(384)]
+        #[rename(name = "m_EfficacyIcons")]
+        pub m_efficacy_icons: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[static_field]
+        #[rename(name = "SkillMax")]
+        pub skill_max: i32,
+        #[offset(392)]
+        #[rename(name = "m_SkillIcons")]
+        pub m_skill_icons: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(400)]
+        #[rename(name = "m_RelayNameRoot")]
+        pub m_relay_name_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(408)]
+        #[rename(name = "m_RelayName")]
+        pub m_relay_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_WdwType.md"))]
@@ -123,15 +316,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnitInfoParamSetter_HPStockType {
+    pub struct UnitInfoParamSetter_ForceType {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType {
-        const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
+    impl ::unity2::ClassIdentity for UnitInfoParamSetter_ForceType {
+        const NAME: &'static str = "UnitInfoParamSetter.ForceType";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -141,175 +334,31 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for UnitInfoParamSetter_HPStockType {
+    impl ::unity2::IlType for UnitInfoParamSetter_ForceType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl UnitInfoParamSetter_HPStockType {
-        pub fn normal() -> Self {
+    impl UnitInfoParamSetter_ForceType {
+        pub fn player() -> Self {
             Self { value: 0 }
         }
 
-        pub fn rampage() -> Self {
+        pub fn enemy() -> Self {
             Self { value: 1 }
         }
 
-        pub fn player() -> Self {
+        pub fn ally() -> Self {
             Self { value: 2 }
         }
 
-        pub fn count() -> Self {
+        pub fn f4th() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparamsetter/UnitInfoParamSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoParamSetter")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct UnitInfoParamSetter {
-        #[rename(name = "m_SubInfo")]
-        pub m_sub_info: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IsSimpleUI")]
-        pub m_is_simple_ui: bool,
-        #[rename(name = "m_FrameImage")]
-        pub m_frame_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_WdwImage")]
-        pub m_wdw_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ForceSprites")]
-        pub m_force_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[rename(name = "m_WdwSprites")]
-        pub m_wdw_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[rename(name = "m_GodBuffSprites")]
-        pub m_god_buff_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[rename(name = "m_HpStockSprites")]
-        pub m_hp_stock_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_GodIcon")]
-        pub m_god_icon: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CharaName")]
-        pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_JobName")]
-        pub m_job_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BattleStyleName")]
-        pub m_battle_style_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodNameRoot")]
-        pub m_god_name_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_GodName")]
-        pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BondInfoRoot")]
-        pub m_bond_info_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BondLevelValue")]
-        pub m_bond_level_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BondLevelGauge")]
-        pub m_bond_level_gauge: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Enchant")]
-        pub m_enchant: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Level")]
-        pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffLevel")]
-        pub m_god_buff_level: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_GaugeExp")]
-        pub m_gauge_exp: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_MaxHp")]
-        pub m_max_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Hp")]
-        pub m_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffHp")]
-        pub m_god_buff_hp: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_HpStockRoot")]
-        pub m_hp_stock_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_HpStock")]
-        pub m_hp_stock: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[rename(name = "m_Move")]
-        pub m_move: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffMove")]
-        pub m_god_buff_move: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_TitleBtlAtk")]
-        pub m_title_btl_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BtlAtk")]
-        pub m_btl_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffAtk")]
-        pub m_god_buff_atk: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_BtlHit")]
-        pub m_btl_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffHit")]
-        pub m_god_buff_hit: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_BtlSpd")]
-        pub m_btl_spd: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffSpd")]
-        pub m_god_buff_spd: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_BtlAvo")]
-        pub m_btl_avo: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffAvo")]
-        pub m_god_buff_avo: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_BtlDef")]
-        pub m_btl_def: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffDef")]
-        pub m_god_buff_def: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_BtlRes")]
-        pub m_btl_res: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_GodBuffRes")]
-        pub m_god_buff_res: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ItemName")]
-        pub m_item_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Items")]
-        pub m_items: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_Frames")]
-        pub m_frames: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[static_field]
-        #[rename(name = "EfficacyMax")]
-        pub efficacy_max: i32,
-        #[rename(name = "m_EfficacyIcons")]
-        pub m_efficacy_icons: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[static_field]
-        #[rename(name = "SkillMax")]
-        pub skill_max: i32,
-        #[rename(name = "m_SkillIcons")]
-        pub m_skill_icons: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[rename(name = "m_RelayNameRoot")]
-        pub m_relay_name_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RelayName")]
-        pub m_relay_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct UnitInfoParamSetter_GodBuffType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnitInfoParamSetter_GodBuffType {
-        const NAME: &'static str = "UnitInfoParamSetter.GodBuffType";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnitInfoParamSetter_GodBuffType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl UnitInfoParamSetter_GodBuffType {
-        pub fn blue() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn red() -> Self {
-            Self { value: 1 }
-        }
 
         pub fn count() -> Self {
-            Self { value: 2 }
+            Self { value: 4 }
         }
     }
 }

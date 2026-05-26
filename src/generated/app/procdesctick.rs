@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescTick")]
     #[parent(crate::app::procdesctickbase::ProcDescTickBase)]
     pub struct ProcDescTick {
+        #[offset(24)]
         #[rename(name = "m_Function")]
         pub m_function: crate::app::procvoidfunction::ProcVoidFunction,
     }

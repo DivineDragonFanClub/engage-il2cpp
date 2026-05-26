@@ -11,28 +11,40 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotPresentationRoot")]
     #[parent(crate::system::object::Object)]
     pub struct MascotPresentationRoot {
+        #[offset(16)]
         #[rename(name = "Root")]
         pub root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "MascotRoot")]
         pub mascot_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "PlayerRoot")]
         pub player_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "CameraRoot")]
         pub camera_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "PlayerReserveRoot")]
         pub player_reserve_root: crate::unity_engine::transform::Transform,
+        #[offset(56)]
         #[rename(name = "PlayerReservePosition")]
         pub player_reserve_position: crate::unity_engine::vector3::Vector3,
+        #[offset(68)]
         #[rename(name = "PlayerReserveRotationY")]
         pub player_reserve_rotation_y: f32,
+        #[offset(72)]
         #[rename(name = "MascotReserveRoot")]
         pub mascot_reserve_root: crate::unity_engine::transform::Transform,
+        #[offset(80)]
         #[rename(name = "MascotReservePosition")]
         pub mascot_reserve_position: crate::unity_engine::vector3::Vector3,
+        #[offset(92)]
         #[rename(name = "MascotReserveRotation")]
         pub mascot_reserve_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(112)]
         #[rename(name = "CameraReserveRoot")]
         pub camera_reserve_root: crate::unity_engine::transform::Transform,
+        #[offset(120)]
         #[rename(name = "m_Apply")]
         pub m_apply: bool,
     }

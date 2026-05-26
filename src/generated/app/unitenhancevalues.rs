@@ -21,6 +21,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_Values")]
         pub m_values: ::unity2::Array<i32>,
     }

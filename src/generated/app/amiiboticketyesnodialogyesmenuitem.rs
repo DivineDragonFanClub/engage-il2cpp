@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AmiiboTicketYesNoDialogYesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct AmiiboTicketYesNoDialogYesMenuItem {
+        #[offset(112)]
         #[rename(name = "m_YesEventHandler")]
         pub m_yes_event_handler: crate::system::action::Action,
     }

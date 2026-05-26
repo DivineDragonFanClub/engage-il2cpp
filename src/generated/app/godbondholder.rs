@@ -17,12 +17,16 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxUnit")]
         pub max_unit: i32,
+        #[offset(32)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::goddata::GodData,
+        #[offset(40)]
         #[rename(name = "m_RelianceS")]
         pub m_reliance_s: crate::app::godreliances::GodRelianceS,
+        #[offset(48)]
         #[rename(name = "m_Bonds")]
         pub m_bonds: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::godbond::GodBond>,
+        #[offset(56)]
         #[rename(name = "m_Pool")]
         pub m_pool: crate::app::pool::Pool_List_1<crate::app::godbond::GodBond>,
     }

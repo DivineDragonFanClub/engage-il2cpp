@@ -22,12 +22,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_ShopUnitSelectMenuObject")]
         pub m_shop_unit_select_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_UnitStatusObject")]
         pub m_unit_status_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_ShopUnitSelectStatus")]
         pub m_shop_unit_select_status: crate::app::shopunitselectstatus::ShopUnitSelectStatus,
+        #[offset(48)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler,
     }

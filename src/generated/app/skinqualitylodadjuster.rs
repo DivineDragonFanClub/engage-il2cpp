@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkinQualityLodAdjuster")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SkinQualityLodAdjuster {
+        #[offset(24)]
         #[rename(name = "quality")]
         pub quality: crate::unity_engine::skinquality::SkinQuality,
     }

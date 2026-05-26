@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayMapMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RelayMapMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

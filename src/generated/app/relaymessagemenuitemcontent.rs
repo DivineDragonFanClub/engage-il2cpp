@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayMessageMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RelayMessageMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_StampImage")]
         pub m_stamp_image: crate::unity_engine::ui::image::Image,
     }

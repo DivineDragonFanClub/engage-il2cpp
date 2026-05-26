@@ -10,13 +10,13 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_Physics2DUpdate.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_AIUpdate.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PreUpdate_Physics2DUpdate {}
+    pub struct PreUpdate_AIUpdate {}
 
-    impl ::unity2::ClassIdentity for PreUpdate_Physics2DUpdate {
-        const NAME: &'static str = "PreUpdate.Physics2DUpdate";
+    impl ::unity2::ClassIdentity for PreUpdate_AIUpdate {
+        const NAME: &'static str = "PreUpdate.AIUpdate";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -26,29 +26,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PreUpdate_Physics2DUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_CheckTexFieldInput.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PreUpdate_CheckTexFieldInput {}
-
-    impl ::unity2::ClassIdentity for PreUpdate_CheckTexFieldInput {
-        const NAME: &'static str = "PreUpdate.CheckTexFieldInput";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PreUpdate_CheckTexFieldInput {
+    impl ::unity2::IlType for PreUpdate_AIUpdate {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -76,13 +54,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_WindUpdate.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_SendMouseEvents.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PreUpdate_WindUpdate {}
+    pub struct PreUpdate_SendMouseEvents {}
 
-    impl ::unity2::ClassIdentity for PreUpdate_WindUpdate {
-        const NAME: &'static str = "PreUpdate.WindUpdate";
+    impl ::unity2::ClassIdentity for PreUpdate_SendMouseEvents {
+        const NAME: &'static str = "PreUpdate.SendMouseEvents";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -92,29 +70,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for PreUpdate_WindUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_UpdateVideo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PreUpdate_UpdateVideo {}
-
-    impl ::unity2::ClassIdentity for PreUpdate_UpdateVideo {
-        const NAME: &'static str = "PreUpdate.UpdateVideo";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PreUpdate_UpdateVideo {
+    impl ::unity2::IlType for PreUpdate_SendMouseEvents {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -142,6 +98,28 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_WindUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PreUpdate_WindUpdate {}
+
+    impl ::unity2::ClassIdentity for PreUpdate_WindUpdate {
+        const NAME: &'static str = "PreUpdate.WindUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PreUpdate_WindUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_PhysicsUpdate.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -164,50 +142,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_SendMouseEvents.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PreUpdate_SendMouseEvents {}
-
-    impl ::unity2::ClassIdentity for PreUpdate_SendMouseEvents {
-        const NAME: &'static str = "PreUpdate.SendMouseEvents";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PreUpdate_SendMouseEvents {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_AIUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct PreUpdate_AIUpdate {}
-
-    impl ::unity2::ClassIdentity for PreUpdate_AIUpdate {
-        const NAME: &'static str = "PreUpdate.AIUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PreUpdate_AIUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -225,6 +159,72 @@ mod __types {
     }
 
     impl ::unity2::IlType for PreUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_Physics2DUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PreUpdate_Physics2DUpdate {}
+
+    impl ::unity2::ClassIdentity for PreUpdate_Physics2DUpdate {
+        const NAME: &'static str = "PreUpdate.Physics2DUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PreUpdate_Physics2DUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_UpdateVideo.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PreUpdate_UpdateVideo {}
+
+    impl ::unity2::ClassIdentity for PreUpdate_UpdateVideo {
+        const NAME: &'static str = "PreUpdate.UpdateVideo";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PreUpdate_UpdateVideo {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/preupdate/PreUpdate_CheckTexFieldInput.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct PreUpdate_CheckTexFieldInput {}
+
+    impl ::unity2::ClassIdentity for PreUpdate_CheckTexFieldInput {
+        const NAME: &'static str = "PreUpdate.CheckTexFieldInput";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PreUpdate_CheckTexFieldInput {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }

@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomRelianceSelectContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct MyRoomRelianceSelectContent {
+        #[offset(232)]
         #[rename(name = "m_unitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_unitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
     }

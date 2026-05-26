@@ -19,26 +19,37 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingConfig_Base")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_Base {
+        #[offset(24)]
         #[rename(name = "m_PlayerBasePos")]
         pub m_player_base_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(36)]
         #[rename(name = "m_PlayerBaseRot")]
         pub m_player_base_rot: crate::unity_engine::vector3::Vector3,
+        #[offset(48)]
         #[rename(name = "m_SolaBasePos")]
         pub m_sola_base_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(60)]
         #[rename(name = "m_SolaBaseRot")]
         pub m_sola_base_rot: crate::unity_engine::vector3::Vector3,
+        #[offset(72)]
         #[rename(name = "m_WaterSurfaceHeight")]
         pub m_water_surface_height: f32,
+        #[offset(76)]
         #[rename(name = "m_NormalFOV")]
         pub m_normal_fov: f32,
+        #[offset(80)]
         #[rename(name = "m_WaitFOV")]
         pub m_wait_fov: f32,
+        #[offset(84)]
         #[rename(name = "m_CameraDistance")]
         pub m_camera_distance: f32,
+        #[offset(88)]
         #[rename(name = "m_CameraHeight")]
         pub m_camera_height: f32,
+        #[offset(92)]
         #[rename(name = "m_CameraOffset")]
         pub m_camera_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(104)]
         #[rename(name = "m_RodSelectCamera")]
         pub m_rod_select_camera: crate::app::fishing::config::fixcameraconfig::FixCameraConfig,
     }

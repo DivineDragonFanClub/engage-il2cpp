@@ -47,20 +47,28 @@ mod __types {
         #[static_field]
         #[rename(name = "SelectBackCursorName")]
         pub select_back_cursor_name: ::unity2::Il2CppString,
+        #[offset(240)]
         #[rename(name = "m_leftMenuItemBgImage")]
         pub m_left_menu_item_bg_image: crate::unity_engine::ui::image::Image,
+        #[offset(248)]
         #[rename(name = "m_rightMenuItemBgImage")]
         pub m_right_menu_item_bg_image: crate::unity_engine::ui::image::Image,
+        #[offset(256)]
         #[rename(name = "m_leftNameBgImage")]
         pub m_left_name_bg_image: crate::unity_engine::ui::image::Image,
+        #[offset(264)]
         #[rename(name = "m_leftNameText")]
         pub m_left_name_text: crate::unity_engine::ui::text::Text,
+        #[offset(272)]
         #[rename(name = "m_rightNameBgImage")]
         pub m_right_name_bg_image: crate::unity_engine::ui::image::Image,
+        #[offset(280)]
         #[rename(name = "m_rightNameText")]
         pub m_right_name_text: crate::unity_engine::ui::text::Text,
+        #[offset(288)]
         #[rename(name = "m_objSelectBackCursor")]
         pub m_obj_select_back_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_selectBackCursorImage")]
         pub m_select_back_cursor_image: crate::unity_engine::ui::image::Image,
     }

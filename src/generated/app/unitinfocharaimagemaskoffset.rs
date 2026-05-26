@@ -20,6 +20,63 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoCharaImageMaskOffset")]
+    # [parent (crate :: app :: singletonmonobehaviourlist_1 :: SingletonMonoBehaviourList_1 < crate :: app :: unitinfocharaimagemaskoffset :: UnitInfoCharaImageMaskOffset >)]
+    pub struct UnitInfoCharaImageMaskOffset {
+        #[static_field]
+        #[rename(name = "c_DefaultWidth")]
+        pub c_default_width: i32,
+        #[offset(24)]
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset_Type,
+        #[offset(28)]
+        #[rename(name = "m_OffsetU")]
+        pub m_offset_u: f32,
+        #[offset(32)]
+        #[rename(name = "m_MaskTexture")]
+        pub m_mask_texture: crate::unity_engine::texture::Texture,
+        #[offset(40)]
+        #[rename(name = "m_MaskTextureOld")]
+        pub m_mask_texture_old: crate::unity_engine::texture::Texture,
+        #[offset(48)]
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[offset(52)]
+        #[rename(name = "m_Offset")]
+        pub m_offset: crate::unity_engine::vector2::Vector2,
+        #[offset(64)]
+        #[rename(name = "m_CanvasManager")]
+        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
+        #[offset(72)]
+        #[rename(name = "m_RectTransform")]
+        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(80)]
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
+        #[rename(name = "m_MaterialStart")]
+        pub m_material_start: crate::unity_engine::material::Material,
+        #[offset(96)]
+        #[rename(name = "m_Material")]
+        pub m_material: crate::unity_engine::material::Material,
+        #[offset(104)]
+        #[rename(name = "m_Texture")]
+        pub m_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[offset(112)]
+        #[rename(name = "m_IsStartup")]
+        pub m_is_startup: bool,
+        #[offset(113)]
+        #[rename(name = "m_IsShow")]
+        pub m_is_show: bool,
+        #[offset(114)]
+        #[rename(name = "m_IsShowFromUnitInfo")]
+        pub m_is_show_from_unit_info: bool,
+        #[offset(115)]
+        #[rename(name = "m_IsSetAlphaForced")]
+        pub m_is_set_alpha_forced: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset_Type.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -56,47 +113,6 @@ mod __types {
         pub fn right() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoCharaImageMaskOffset")]
-    # [parent (crate :: app :: singletonmonobehaviourlist_1 :: SingletonMonoBehaviourList_1 < crate :: app :: unitinfocharaimagemaskoffset :: UnitInfoCharaImageMaskOffset >)]
-    pub struct UnitInfoCharaImageMaskOffset {
-        #[static_field]
-        #[rename(name = "c_DefaultWidth")]
-        pub c_default_width: i32,
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset_Type,
-        #[rename(name = "m_OffsetU")]
-        pub m_offset_u: f32,
-        #[rename(name = "m_MaskTexture")]
-        pub m_mask_texture: crate::unity_engine::texture::Texture,
-        #[rename(name = "m_MaskTextureOld")]
-        pub m_mask_texture_old: crate::unity_engine::texture::Texture,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_Offset")]
-        pub m_offset: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_CanvasManager")]
-        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
-        #[rename(name = "m_RectTransform")]
-        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MaterialStart")]
-        pub m_material_start: crate::unity_engine::material::Material,
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_Texture")]
-        pub m_texture: crate::unity_engine::rendertexture::RenderTexture,
-        #[rename(name = "m_IsStartup")]
-        pub m_is_startup: bool,
-        #[rename(name = "m_IsShow")]
-        pub m_is_show: bool,
-        #[rename(name = "m_IsShowFromUnitInfo")]
-        pub m_is_show_from_unit_info: bool,
-        #[rename(name = "m_IsSetAlphaForced")]
-        pub m_is_set_alpha_forced: bool,
     }
 }
 

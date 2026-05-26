@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop", name = "CharPtr")]
     #[parent(crate::system::object::Object)]
     pub struct CharPtr {
+        #[offset(16)]
         #[rename(name = "chars")]
         pub chars: ::unity2::Array<u16>,
+        #[offset(24)]
         #[rename(name = "index")]
         pub index: i32,
     }

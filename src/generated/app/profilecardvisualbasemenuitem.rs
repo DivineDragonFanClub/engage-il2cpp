@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardVisualBaseMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct ProfileCardVisualBaseMenuItem {
+        #[offset(100)]
         #[rename(name = "m_Decided")]
         pub m_decided: bool,
     }

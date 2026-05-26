@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkRoomPortalObstruction")]
     #[parent(crate::root::akobstructionocclusion::AkObstructionOcclusion)]
     pub struct AkRoomPortalObstruction {
+        #[offset(72)]
         #[rename(name = "m_portal")]
         pub m_portal: crate::root::akroomportal::AkRoomPortal,
     }

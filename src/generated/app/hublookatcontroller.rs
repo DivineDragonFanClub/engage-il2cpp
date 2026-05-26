@@ -48,22 +48,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubLookAtController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubLookAtController {
+        #[offset(32)]
         #[rename(name = "m_curve")]
         pub m_curve: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(48)]
         #[rename(name = "m_lookAtIKParam")]
         pub m_look_at_ik_param: ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam>,
+        #[offset(56)]
         #[rename(name = "m_lookAtTarget")]
         pub m_look_at_target: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_target")]
         pub m_target: crate::unity_engine::transform::Transform,
+        #[offset(72)]
         #[rename(name = "m_targetPosition")]
         pub m_target_position: crate::unity_engine::vector3::Vector3,
+        #[offset(88)]
         #[rename(name = "m_headTransform")]
         pub m_head_transform: crate::unity_engine::transform::Transform,
+        #[offset(96)]
         #[rename(name = "m_disableFollow")]
         pub m_disable_follow: bool,
+        #[offset(97)]
         #[rename(name = "m_verticalLimit")]
         pub m_vertical_limit: bool,
+        #[offset(100)]
         #[rename(name = "m_verticalLimitValue")]
         pub m_vertical_limit_value: f32,
         #[static_field]

@@ -18,6 +18,49 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialdata/TutorialData.md"))]
+    #[::unity2::class(namespace = "App", name = "TutorialData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: tutorialdata :: TutorialData >)]
+    pub struct TutorialData {
+        #[static_field]
+        #[rename(name = "FirstIndex")]
+        pub first_index: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TutorialData_SSTypes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TutorialData_SSTypes {
+        const NAME: &'static str = "TutorialData.SSTypes";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TutorialData_SSTypes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TutorialData_SSTypes {
+        pub fn common() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn by_language() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Types.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,15 +117,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 7 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialdata/TutorialData.md"))]
-    #[::unity2::class(namespace = "App", name = "TutorialData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: tutorialdata :: TutorialData >)]
-    pub struct TutorialData {
-        #[static_field]
-        #[rename(name = "FirstIndex")]
-        pub first_index: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Notices.md"))]
@@ -158,40 +192,6 @@ mod __types {
 
         pub fn read() -> Self {
             Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TutorialData_SSTypes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TutorialData_SSTypes {
-        const NAME: &'static str = "TutorialData.SSTypes";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TutorialData_SSTypes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl TutorialData_SSTypes {
-        pub fn common() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn by_language() -> Self {
-            Self { value: 1 }
         }
     }
 }

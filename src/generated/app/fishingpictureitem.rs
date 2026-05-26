@@ -14,6 +14,48 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpictureitem/FishingPictureItem.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingPictureItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct FishingPictureItem {
+        #[static_field]
+        #[rename(name = "cTextureAtlasPath")]
+        pub c_texture_atlas_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cTextureRankLarge")]
+        pub c_texture_rank_large: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cTextureRankMiddle")]
+        pub c_texture_rank_middle: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cTextureRankSmall")]
+        pub c_texture_rank_small: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cTextureGyotakuLarge")]
+        pub c_texture_gyotaku_large: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cTextureGyotakuMiddle")]
+        pub c_texture_gyotaku_middle: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cTextureGyotakuSmall")]
+        pub c_texture_gyotaku_small: ::unity2::Il2CppString,
+        #[offset(104)]
+        #[rename(name = "cTextureGyotakuList")]
+        pub c_texture_gyotaku_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(112)]
+        #[rename(name = "m_InfoWindow")]
+        pub m_info_window: crate::unity_engine::transform::Transform,
+        #[offset(120)]
+        #[rename(name = "m_Gyotaku")]
+        pub m_gyotaku: crate::unity_engine::transform::Transform,
+        #[offset(128)]
+        #[rename(name = "m_FishData")]
+        pub m_fish_data: crate::app::fishingfishdata::FishingFishData,
+        #[offset(136)]
+        #[rename(name = "m_Sprites")]
+        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpictureitem/FishingPictureItem_SpriteKind.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -50,43 +92,6 @@ mod __types {
         pub fn unknown() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpictureitem/FishingPictureItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingPictureItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct FishingPictureItem {
-        #[static_field]
-        #[rename(name = "cTextureAtlasPath")]
-        pub c_texture_atlas_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cTextureRankLarge")]
-        pub c_texture_rank_large: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cTextureRankMiddle")]
-        pub c_texture_rank_middle: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cTextureRankSmall")]
-        pub c_texture_rank_small: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cTextureGyotakuLarge")]
-        pub c_texture_gyotaku_large: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cTextureGyotakuMiddle")]
-        pub c_texture_gyotaku_middle: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cTextureGyotakuSmall")]
-        pub c_texture_gyotaku_small: ::unity2::Il2CppString,
-        #[rename(name = "cTextureGyotakuList")]
-        pub c_texture_gyotaku_list: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_InfoWindow")]
-        pub m_info_window: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_Gyotaku")]
-        pub m_gyotaku: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_FishData")]
-        pub m_fish_data: crate::app::fishingfishdata::FishingFishData,
-        #[rename(name = "m_Sprites")]
-        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
     }
 }
 

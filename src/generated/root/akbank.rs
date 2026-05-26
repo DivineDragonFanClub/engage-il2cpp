@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkBank")]
     #[parent(crate::root::aktriggerhandler::AkTriggerHandler)]
     pub struct AkBank {
+        #[offset(56)]
         #[rename(name = "decodeBank")]
         pub decode_bank: bool,
+        #[offset(57)]
         #[rename(name = "loadAsynchronous")]
         pub load_asynchronous: bool,
+        #[offset(58)]
         #[rename(name = "saveDecodedBank")]
         pub save_decoded_bank: bool,
+        #[offset(64)]
         #[rename(name = "unloadTriggerList")]
         pub unload_trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(72)]
         #[rename(name = "bankNameInternal")]
         pub bank_name_internal: ::unity2::Il2CppString,
+        #[offset(80)]
         #[rename(name = "valueGuidInternal")]
         pub value_guid_internal: ::unity2::Array<u8>,
     }

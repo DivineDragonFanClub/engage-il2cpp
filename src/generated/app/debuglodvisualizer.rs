@@ -20,13 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DebugLodVisualizer")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: debuglodvisualizer :: DebugLodVisualizer >)]
     pub struct DebugLodVisualizer {
+        #[offset(32)]
         #[rename(name = "m_Shader")]
         pub m_shader: crate::unity_engine::shader::Shader,
+        #[offset(40)]
         #[rename(name = "m_Backup")]
         pub m_backup: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::renderer::Renderer,
             ::unity2::Array<crate::unity_engine::material::Material>,
         >,
+        #[offset(48)]
         #[rename(name = "m_LodIndexProp")]
         pub m_lod_index_prop: i32,
     }

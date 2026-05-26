@@ -22,12 +22,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_PopupObject")]
         pub m_popup_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(48)]
         #[rename(name = "m_GodIcon")]
         pub m_god_icon: crate::app::uniticon::UnitIcon,
     }

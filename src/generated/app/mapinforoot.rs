@@ -19,6 +19,36 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinforoot/MapInfoRoot.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInfoRoot")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapInfoRoot {
+        #[offset(24)]
+        #[rename(name = "m_Canvas")]
+        pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[offset(32)]
+        #[rename(name = "m_CanvasGroup")]
+        pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(40)]
+        #[rename(name = "m_MapInfoUnitLocatorRoot")]
+        pub m_map_info_unit_locator_root: crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot,
+        #[offset(48)]
+        #[rename(name = "m_MapInfoGaugeMainLocatorRoot")]
+        pub m_map_info_gauge_main_locator_root: crate::app::mapinfogaugemainlocatorroot::MapInfoGaugeMainLocatorRoot,
+        #[offset(56)]
+        #[rename(name = "m_OldAlpha")]
+        pub m_old_alpha: f32,
+        #[offset(60)]
+        #[rename(name = "m_IsDisplayOutside")]
+        pub m_is_display_outside: bool,
+        #[offset(61)]
+        #[rename(name = "m_IsInfoEnable")]
+        pub m_is_info_enable: bool,
+        #[offset(64)]
+        #[rename(name = "m_NextCanvasEnabled")]
+        pub m_next_canvas_enabled: crate::app::mapinforoot::MapInfoRoot_NextCanvasEnabled,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinforoot/MapInfoRoot_NextCanvasEnabled.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -55,28 +85,6 @@ mod __types {
         pub fn disable() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinforoot/MapInfoRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapInfoRoot {
-        #[rename(name = "m_Canvas")]
-        pub m_canvas: crate::unity_engine::canvas::Canvas,
-        #[rename(name = "m_CanvasGroup")]
-        pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
-        #[rename(name = "m_MapInfoUnitLocatorRoot")]
-        pub m_map_info_unit_locator_root: crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot,
-        #[rename(name = "m_MapInfoGaugeMainLocatorRoot")]
-        pub m_map_info_gauge_main_locator_root: crate::app::mapinfogaugemainlocatorroot::MapInfoGaugeMainLocatorRoot,
-        #[rename(name = "m_OldAlpha")]
-        pub m_old_alpha: f32,
-        #[rename(name = "m_IsDisplayOutside")]
-        pub m_is_display_outside: bool,
-        #[rename(name = "m_IsInfoEnable")]
-        pub m_is_info_enable: bool,
-        #[rename(name = "m_NextCanvasEnabled")]
-        pub m_next_canvas_enabled: crate::app::mapinforoot::MapInfoRoot_NextCanvasEnabled,
     }
 }
 

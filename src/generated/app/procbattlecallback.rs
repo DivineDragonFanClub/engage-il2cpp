@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcBattleCallback")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct ProcBattleCallback {
+        #[offset(112)]
         #[rename(name = "m_Calculator")]
         pub m_calculator: crate::app::battlecalculator::BattleCalculator,
+        #[offset(120)]
         #[rename(name = "m_Completed")]
         pub m_completed: crate::system::action::Action,
+        #[offset(128)]
         #[rename(name = "m_Skipable")]
         pub m_skipable: bool,
     }

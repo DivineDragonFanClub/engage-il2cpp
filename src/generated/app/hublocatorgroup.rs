@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubLocatorGroup")]
     #[parent(crate::system::object::Object)]
     pub struct HubLocatorGroup {
+        #[offset(40)]
         #[rename(name = "m_Active")]
         pub m_active: bool,
+        #[offset(41)]
         #[rename(name = "m_SystemActive")]
         pub m_system_active: bool,
+        #[offset(42)]
         #[rename(name = "m_EventActive")]
         pub m_event_active: bool,
+        #[offset(48)]
         #[rename(name = "m_inactiveObjects")]
         pub m_inactive_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(56)]
         #[rename(name = "m_LoadingCharaCount")]
         pub m_loading_chara_count: i32,
+        #[offset(64)]
         #[rename(name = "m_hashTable")]
         pub m_hash_table: crate::system::collections::generic::list_1::List_1<i32>,
     }

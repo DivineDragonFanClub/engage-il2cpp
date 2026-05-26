@@ -10,6 +10,51 @@ mod __types {
         unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "MainLightShadowCasterPass")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct MainLightShadowCasterPass {
+        #[static_field]
+        #[rename(name = "k_MaxCascades")]
+        pub k_max_cascades: i32,
+        #[static_field]
+        #[rename(name = "k_ShadowmapBufferBits")]
+        pub k_shadowmap_buffer_bits: i32,
+        #[offset(112)]
+        #[rename(name = "m_MaxShadowDistance")]
+        pub m_max_shadow_distance: f32,
+        #[offset(116)]
+        #[rename(name = "m_ShadowmapWidth")]
+        pub m_shadowmap_width: i32,
+        #[offset(120)]
+        #[rename(name = "m_ShadowmapHeight")]
+        pub m_shadowmap_height: i32,
+        #[offset(124)]
+        #[rename(name = "m_ShadowCasterCascadesCount")]
+        pub m_shadow_caster_cascades_count: i32,
+        #[offset(128)]
+        #[rename(name = "m_SupportsBoxFilterForShadows")]
+        pub m_supports_box_filter_for_shadows: bool,
+        #[offset(136)]
+        #[rename(name = "m_MainLightShadowmap")]
+        pub m_main_light_shadowmap: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(184)]
+        #[rename(name = "m_MainLightShadowmapTexture")]
+        pub m_main_light_shadowmap_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[offset(192)]
+        #[rename(name = "m_MainLightShadowMatrices")]
+        pub m_main_light_shadow_matrices: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(200)]
+        #[rename(name = "m_CascadeSlices")]
+        pub m_cascade_slices: ::unity2::Array<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>,
+        #[offset(208)]
+        #[rename(name = "m_CascadeSplitDistances")]
+        pub m_cascade_split_distances: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[offset(216)]
+        #[rename(name = "m_ProfilingSetupSampler")]
+        pub m_profiling_setup_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass_MainLightShadowConstantBuffer.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -53,40 +98,6 @@ mod __types {
         #[static_field]
         #[rename(name = "_ShadowmapSize")]
         pub shadowmap_size: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "MainLightShadowCasterPass")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct MainLightShadowCasterPass {
-        #[static_field]
-        #[rename(name = "k_MaxCascades")]
-        pub k_max_cascades: i32,
-        #[static_field]
-        #[rename(name = "k_ShadowmapBufferBits")]
-        pub k_shadowmap_buffer_bits: i32,
-        #[rename(name = "m_MaxShadowDistance")]
-        pub m_max_shadow_distance: f32,
-        #[rename(name = "m_ShadowmapWidth")]
-        pub m_shadowmap_width: i32,
-        #[rename(name = "m_ShadowmapHeight")]
-        pub m_shadowmap_height: i32,
-        #[rename(name = "m_ShadowCasterCascadesCount")]
-        pub m_shadow_caster_cascades_count: i32,
-        #[rename(name = "m_SupportsBoxFilterForShadows")]
-        pub m_supports_box_filter_for_shadows: bool,
-        #[rename(name = "m_MainLightShadowmap")]
-        pub m_main_light_shadowmap: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_MainLightShadowmapTexture")]
-        pub m_main_light_shadowmap_texture: crate::unity_engine::rendertexture::RenderTexture,
-        #[rename(name = "m_MainLightShadowMatrices")]
-        pub m_main_light_shadow_matrices: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-        #[rename(name = "m_CascadeSlices")]
-        pub m_cascade_slices: ::unity2::Array<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>,
-        #[rename(name = "m_CascadeSplitDistances")]
-        pub m_cascade_split_distances: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_ProfilingSetupSampler")]
-        pub m_profiling_setup_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
 }
 

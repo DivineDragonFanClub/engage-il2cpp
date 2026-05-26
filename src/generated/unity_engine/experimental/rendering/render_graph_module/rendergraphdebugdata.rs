@@ -14,10 +14,12 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphDebugData")]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraphDebugData {
+        #[offset(16)]
         #[rename(name = "passList")]
         pub pass_list: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_PassDebugData,
         >,
+        #[offset(24)]
         #[rename(name = "resourceLists")]
         pub resource_lists: ::unity2::Array<
             crate::system::collections::generic::list_1::List_1<

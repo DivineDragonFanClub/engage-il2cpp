@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.IO", name = "UndisposableStream")]
     #[parent(crate::system::io::stream::Stream)]
     pub struct UndisposableStream {
+        #[offset(40)]
         #[rename(name = "m_Stream")]
         pub m_stream: crate::system::io::stream::Stream,
     }

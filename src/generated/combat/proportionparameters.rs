@@ -11,42 +11,61 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ProportionParameters")]
     #[parent(crate::system::object::Object)]
     pub struct ProportionParameters {
+        #[offset(16)]
         #[rename(name = "ScaleAll")]
         pub scale_all: f32,
+        #[offset(20)]
         #[rename(name = "ScaleHead")]
         pub scale_head: f32,
+        #[offset(24)]
         #[rename(name = "ScaleNeck")]
         pub scale_neck: f32,
+        #[offset(28)]
         #[rename(name = "ScaleTorso")]
         pub scale_torso: f32,
+        #[offset(32)]
         #[rename(name = "ScaleShoulders")]
         pub scale_shoulders: f32,
+        #[offset(36)]
         #[rename(name = "ScaleArms")]
         pub scale_arms: f32,
+        #[offset(40)]
         #[rename(name = "ScaleHands")]
         pub scale_hands: f32,
+        #[offset(44)]
         #[rename(name = "ScaleLegs")]
         pub scale_legs: f32,
+        #[offset(48)]
         #[rename(name = "ScaleFeet")]
         pub scale_feet: f32,
+        #[offset(52)]
         #[rename(name = "VolumeArms")]
         pub volume_arms: f32,
+        #[offset(56)]
         #[rename(name = "VolumeLegs")]
         pub volume_legs: f32,
+        #[offset(60)]
         #[rename(name = "VolumeBust")]
         pub volume_bust: f32,
+        #[offset(64)]
         #[rename(name = "VolumeAbdomen")]
         pub volume_abdomen: f32,
+        #[offset(68)]
         #[rename(name = "VolumeTorso")]
         pub volume_torso: f32,
+        #[offset(72)]
         #[rename(name = "HipJointHeight")]
         pub hip_joint_height: f32,
+        #[offset(76)]
         #[rename(name = "AnkleHeight")]
         pub ankle_height: f32,
+        #[offset(80)]
         #[rename(name = "targetNodes")]
         pub target_nodes: ::unity2::Array<crate::unity_engine::transform::Transform>,
+        #[offset(88)]
         #[rename(name = "proportionScales")]
         pub proportion_scales: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(96)]
         #[rename(name = "writeCount")]
         pub write_count: i32,
     }

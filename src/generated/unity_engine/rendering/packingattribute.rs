@@ -9,20 +9,28 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/packingattribute/PackingAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "PackingAttribute")]
     pub struct PackingAttribute {
+        #[offset(16)]
         #[rename(name = "displayNames")]
         pub display_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(24)]
         #[rename(name = "range")]
         pub range: ::unity2::Array<f32>,
+        #[offset(32)]
         #[rename(name = "packingScheme")]
         pub packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
+        #[offset(36)]
         #[rename(name = "offsetInSource")]
         pub offset_in_source: i32,
+        #[offset(40)]
         #[rename(name = "sizeInBits")]
         pub size_in_bits: i32,
+        #[offset(44)]
         #[rename(name = "isDirection")]
         pub is_direction: bool,
+        #[offset(45)]
         #[rename(name = "sRGBDisplay")]
         pub s_rgb_display: bool,
+        #[offset(46)]
         #[rename(name = "checkIsNormalized")]
         pub check_is_normalized: bool,
     }

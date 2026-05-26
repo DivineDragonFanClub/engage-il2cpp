@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkEventCallbackData")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct AkEventCallbackData {
+        #[offset(24)]
         #[rename(name = "callbackFlags")]
         pub callback_flags: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(32)]
         #[rename(name = "callbackFunc")]
         pub callback_func: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(40)]
         #[rename(name = "callbackGameObj")]
         pub callback_game_obj: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(48)]
         #[rename(name = "uFlags")]
         pub u_flags: i32,
     }

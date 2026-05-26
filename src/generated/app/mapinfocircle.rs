@@ -20,6 +20,48 @@ mod __types {
         },
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_MeshIndex.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapInfoCircle_MeshIndex {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapInfoCircle_MeshIndex {
+        const NAME: &'static str = "MapInfoCircle.MeshIndex";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapInfoCircle_MeshIndex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapInfoCircle_MeshIndex {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn boss() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn last_boss() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_CircleState.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -58,94 +100,176 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapInfoCircle")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfocircle :: MapInfoCircle >)]
     pub struct MapInfoCircle {
+        #[offset(32)]
         #[rename(name = "m_WarpUnitList")]
         pub m_warp_unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[offset(40)]
         #[rename(name = "m_NormalCircle")]
         pub m_normal_circle: crate::unity_engine::material::Material,
+        #[offset(48)]
         #[rename(name = "m_BossCircle")]
         pub m_boss_circle: crate::unity_engine::material::Material,
+        #[offset(56)]
         #[rename(name = "m_LastBossCircle")]
         pub m_last_boss_circle: crate::unity_engine::material::Material,
+        #[offset(64)]
         #[rename(name = "m_PlayerColor")]
         pub m_player_color: crate::unity_engine::color::Color,
+        #[offset(80)]
         #[rename(name = "m_PlayerFixedColor")]
         pub m_player_fixed_color: crate::unity_engine::color::Color,
+        #[offset(96)]
         #[rename(name = "m_EnemyColor")]
         pub m_enemy_color: crate::unity_engine::color::Color,
+        #[offset(112)]
         #[rename(name = "m_EnemyFixedColor")]
         pub m_enemy_fixed_color: crate::unity_engine::color::Color,
+        #[offset(128)]
         #[rename(name = "m_AllyColor")]
         pub m_ally_color: crate::unity_engine::color::Color,
+        #[offset(144)]
         #[rename(name = "m_AllyFixedColor")]
         pub m_ally_fixed_color: crate::unity_engine::color::Color,
+        #[offset(160)]
         #[rename(name = "m_ThirdColor")]
         pub m_third_color: crate::unity_engine::color::Color,
+        #[offset(176)]
         #[rename(name = "m_ThirdFixedColor")]
         pub m_third_fixed_color: crate::unity_engine::color::Color,
+        #[offset(192)]
         #[rename(name = "m_TimesSpeed")]
         pub m_times_speed: f32,
+        #[offset(196)]
         #[rename(name = "m_RotateSpeed")]
         pub m_rotate_speed: f32,
+        #[offset(200)]
         #[rename(name = "m_Anime")]
         pub m_anime: crate::app::mapinfocircle::MapInfoCircle_Animes,
+        #[offset(204)]
         #[rename(name = "m_SubMeshCount")]
         pub m_sub_mesh_count: i32,
+        #[offset(208)]
         #[rename(name = "m_Colors")]
         pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[offset(216)]
         #[rename(name = "m_FixedColors")]
         pub m_fixed_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[offset(224)]
         #[rename(name = "m_ActiveUnit")]
         pub m_active_unit: crate::app::unit::Unit,
+        #[offset(232)]
         #[rename(name = "m_Cells")]
         pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
+        #[offset(240)]
         #[rename(name = "m_Materials")]
         pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[offset(248)]
         #[rename(name = "m_State")]
         pub m_state: crate::app::mapinfocircle::MapInfoCircle_CircleState,
+        #[offset(252)]
         #[rename(name = "m_PropertyID")]
         pub m_property_id: i32,
+        #[offset(256)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(260)]
         #[rename(name = "m_UvRotate")]
         pub m_uv_rotate: f32,
+        #[offset(264)]
         #[rename(name = "m_IsActive")]
         pub m_is_active: bool,
+        #[offset(272)]
         #[rename(name = "m_AttackImage")]
         pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
+        #[offset(280)]
         #[rename(name = "m_RodImage")]
         pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
+        #[offset(288)]
         #[rename(name = "m_HealImage")]
         pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
+        #[offset(296)]
         #[rename(name = "m_SupportImage")]
         pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+        #[offset(304)]
         #[rename(name = "m_SupportForUnitImage")]
         pub m_support_for_unit_image: crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage,
+        #[offset(312)]
         #[rename(name = "m_InterferenceImage")]
         pub m_interference_image: crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+        #[offset(320)]
         #[rename(name = "m_ActionImage")]
         pub m_action_image: crate::app::mapdeployactionimage::MapDeployActionImage,
+        #[offset(328)]
         #[rename(name = "m_RangeImage")]
         pub m_range_image: crate::app::mapdeployrangeimage::MapDeployRangeImage,
+        #[offset(336)]
         #[rename(name = "m_OverlapImage")]
         pub m_overlap_image: crate::app::mapdeployoverlapimage::MapDeployOverlapImage,
+        #[offset(344)]
         #[rename(name = "m_DanceImage")]
         pub m_dance_image: crate::app::mapdeploydanceimage::MapDeployDanceImage,
+        #[offset(352)]
         #[rename(name = "m_CannonImage")]
         pub m_cannon_image: crate::app::mapdeploycannonimage::MapDeployCannonImage,
+        #[offset(360)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::app::map::Map_CellMesh,
+        #[offset(368)]
         #[rename(name = "m_Renderer")]
         pub m_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[offset(376)]
         #[rename(name = "m_DrawNormalCircle")]
         pub m_draw_normal_circle: crate::app::mapfor::MapFor_UnitFunction,
+        #[offset(384)]
         #[rename(name = "m_DrawBossCircle")]
         pub m_draw_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
+        #[offset(392)]
         #[rename(name = "m_DrawLastBossCircle")]
         pub m_draw_last_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
+        #[offset(400)]
         #[rename(name = "m_ResistWarpUnit")]
         pub m_resist_warp_unit: crate::app::mapfor::MapFor_UnitFunction,
+        #[offset(408)]
         #[rename(name = "m_ResistRewarpUnit")]
         pub m_resist_rewarp_unit: crate::app::mapfor::MapFor_UnitFunction,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapInfoCircle_Animes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapInfoCircle_Animes {
+        const NAME: &'static str = "MapInfoCircle.Animes";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapInfoCircle_Animes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapInfoCircle_Animes {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn low_rotate() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn high_rotate() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_CircleColor.md"))]
@@ -191,86 +315,6 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapInfoCircle_Animes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapInfoCircle_Animes {
-        const NAME: &'static str = "MapInfoCircle.Animes";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapInfoCircle_Animes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapInfoCircle_Animes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn low_rotate() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn high_rotate() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_MeshIndex.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapInfoCircle_MeshIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapInfoCircle_MeshIndex {
-        const NAME: &'static str = "MapInfoCircle.MeshIndex";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapInfoCircle_MeshIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapInfoCircle_MeshIndex {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn boss() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn last_boss() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
         }
     }
 }

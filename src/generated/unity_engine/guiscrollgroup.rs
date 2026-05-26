@@ -17,28 +17,40 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUIScrollGroup")]
     #[parent(crate::unity_engine::guilayoutgroup::GUILayoutGroup)]
     pub struct GUIScrollGroup {
+        #[offset(144)]
         #[rename(name = "calcMinWidth")]
         pub calc_min_width: f32,
+        #[offset(148)]
         #[rename(name = "calcMaxWidth")]
         pub calc_max_width: f32,
+        #[offset(152)]
         #[rename(name = "calcMinHeight")]
         pub calc_min_height: f32,
+        #[offset(156)]
         #[rename(name = "calcMaxHeight")]
         pub calc_max_height: f32,
+        #[offset(160)]
         #[rename(name = "clientWidth")]
         pub client_width: f32,
+        #[offset(164)]
         #[rename(name = "clientHeight")]
         pub client_height: f32,
+        #[offset(168)]
         #[rename(name = "allowHorizontalScroll")]
         pub allow_horizontal_scroll: bool,
+        #[offset(169)]
         #[rename(name = "allowVerticalScroll")]
         pub allow_vertical_scroll: bool,
+        #[offset(170)]
         #[rename(name = "needsHorizontalScrollbar")]
         pub needs_horizontal_scrollbar: bool,
+        #[offset(171)]
         #[rename(name = "needsVerticalScrollbar")]
         pub needs_vertical_scrollbar: bool,
+        #[offset(176)]
         #[rename(name = "horizontalScrollbar")]
         pub horizontal_scrollbar: crate::unity_engine::guistyle::GUIStyle,
+        #[offset(184)]
         #[rename(name = "verticalScrollbar")]
         pub vertical_scrollbar: crate::unity_engine::guistyle::GUIStyle,
     }

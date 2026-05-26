@@ -32,14 +32,19 @@ mod __types {
         #[static_field]
         #[rename(name = "cTextureSmall")]
         pub c_texture_small: ::unity2::Il2CppString,
+        #[offset(72)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_FishIcon")]
         pub m_fish_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_Sprite")]
         pub m_sprite: crate::unity_engine::sprite::Sprite,
     }

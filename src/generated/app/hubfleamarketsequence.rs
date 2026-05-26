@@ -14,33 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfleamarketsequence/HubFleaMarketSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "HubFleaMarketSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubFleaMarketSequence {
-        #[static_field]
-        #[rename(name = "RandomGiftCount")]
-        pub random_gift_count: i32,
-        #[rename(name = "m_ShopMenuResult")]
-        pub m_shop_menu_result: crate::app::itemshoptopmenu::ItemShopTopMenu_Result2,
-        #[rename(name = "m_ShopUnitSelectMenuResult")]
-        pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_UnitSelectRoot")]
-        pub m_unit_select_root: crate::app::shopunitselectroot::ShopUnitSelectRoot,
-        #[rename(name = "m_FleaMarketBuyRoot")]
-        pub m_flea_market_buy_root: crate::app::fleamarketbuyroot::FleaMarketBuyRoot,
-        #[rename(name = "m_ItemShopSellRoot")]
-        pub m_item_shop_sell_root: crate::app::shopsellroot::ShopSellRoot,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_UnitSelectMenuScrollIndex")]
-        pub m_unit_select_menu_scroll_index: i32,
-        #[rename(name = "m_IsEnabledVoice")]
-        pub m_is_enabled_voice: bool,
-        #[rename(name = "m_FishingPlayCountAtStart")]
-        pub m_fishing_play_count_at_start: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfleamarketsequence/HubFleaMarketSequence_Label2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -93,6 +66,42 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 6 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfleamarketsequence/HubFleaMarketSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "HubFleaMarketSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubFleaMarketSequence {
+        #[static_field]
+        #[rename(name = "RandomGiftCount")]
+        pub random_gift_count: i32,
+        #[offset(112)]
+        #[rename(name = "m_ShopMenuResult")]
+        pub m_shop_menu_result: crate::app::itemshoptopmenu::ItemShopTopMenu_Result2,
+        #[offset(116)]
+        #[rename(name = "m_ShopUnitSelectMenuResult")]
+        pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
+        #[offset(120)]
+        #[rename(name = "m_UnitSelectRoot")]
+        pub m_unit_select_root: crate::app::shopunitselectroot::ShopUnitSelectRoot,
+        #[offset(128)]
+        #[rename(name = "m_FleaMarketBuyRoot")]
+        pub m_flea_market_buy_root: crate::app::fleamarketbuyroot::FleaMarketBuyRoot,
+        #[offset(136)]
+        #[rename(name = "m_ItemShopSellRoot")]
+        pub m_item_shop_sell_root: crate::app::shopsellroot::ShopSellRoot,
+        #[offset(144)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(152)]
+        #[rename(name = "m_UnitSelectMenuScrollIndex")]
+        pub m_unit_select_menu_scroll_index: i32,
+        #[offset(156)]
+        #[rename(name = "m_IsEnabledVoice")]
+        pub m_is_enabled_voice: bool,
+        #[offset(160)]
+        #[rename(name = "m_FishingPlayCountAtStart")]
+        pub m_fishing_play_count_at_start: i32,
     }
 }
 

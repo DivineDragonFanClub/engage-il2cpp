@@ -13,20 +13,13 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources_MaterialResources.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "UniversalRenderPipelineEditorResources.MaterialResources"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct UniversalRenderPipelineEditorResources_MaterialResources {
-        #[rename(name = "lit")]
-        pub lit: crate::unity_engine::material::Material,
-        #[rename(name = "particleLit")]
-        pub particle_lit: crate::unity_engine::material::Material,
-        #[rename(name = "terrainLit")]
-        pub terrain_lit: crate::unity_engine::material::Material,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "UniversalRenderPipelineEditorResources")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct UniversalRenderPipelineEditorResources {
+# [offset (24)] # [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: universalrenderpipelineeditorresources :: UniversalRenderPipelineEditorResources_ShaderResources ,
+# [offset (32)] # [rename (name = "materials")] pub materials : crate :: unity_engine :: rendering :: universal :: universalrenderpipelineeditorresources :: UniversalRenderPipelineEditorResources_MaterialResources ,
+}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources_ShaderResources.md"))]
     #[::unity2::class(
@@ -35,31 +28,49 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct UniversalRenderPipelineEditorResources_ShaderResources {
+        #[offset(16)]
         #[rename(name = "autodeskInteractivePS")]
         pub autodesk_interactive_ps: crate::unity_engine::shader::Shader,
+        #[offset(24)]
         #[rename(name = "autodeskInteractiveTransparentPS")]
         pub autodesk_interactive_transparent_ps: crate::unity_engine::shader::Shader,
+        #[offset(32)]
         #[rename(name = "autodeskInteractiveMaskedPS")]
         pub autodesk_interactive_masked_ps: crate::unity_engine::shader::Shader,
+        #[offset(40)]
         #[rename(name = "terrainDetailLitPS")]
         pub terrain_detail_lit_ps: crate::unity_engine::shader::Shader,
+        #[offset(48)]
         #[rename(name = "terrainDetailGrassPS")]
         pub terrain_detail_grass_ps: crate::unity_engine::shader::Shader,
+        #[offset(56)]
         #[rename(name = "terrainDetailGrassBillboardPS")]
         pub terrain_detail_grass_billboard_ps: crate::unity_engine::shader::Shader,
+        #[offset(64)]
         #[rename(name = "defaultSpeedTree7PS")]
         pub default_speed_tree7_ps: crate::unity_engine::shader::Shader,
+        #[offset(72)]
         #[rename(name = "defaultSpeedTree8PS")]
         pub default_speed_tree8_ps: crate::unity_engine::shader::Shader,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "UniversalRenderPipelineEditorResources")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct UniversalRenderPipelineEditorResources {
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: universalrenderpipelineeditorresources :: UniversalRenderPipelineEditorResources_ShaderResources ,
-# [rename (name = "materials")] pub materials : crate :: unity_engine :: rendering :: universal :: universalrenderpipelineeditorresources :: UniversalRenderPipelineEditorResources_MaterialResources ,
-}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources_MaterialResources.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "UniversalRenderPipelineEditorResources.MaterialResources"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct UniversalRenderPipelineEditorResources_MaterialResources {
+        #[offset(16)]
+        #[rename(name = "lit")]
+        pub lit: crate::unity_engine::material::Material,
+        #[offset(24)]
+        #[rename(name = "particleLit")]
+        pub particle_lit: crate::unity_engine::material::Material,
+        #[offset(32)]
+        #[rename(name = "terrainLit")]
+        pub terrain_lit: crate::unity_engine::material::Material,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources-types")]
@@ -68,7 +79,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UniversalRenderPipelineEditorResources_MaterialResources_unity2_raw {
+mod __UniversalRenderPipelineEditorResources_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -77,7 +88,7 @@ mod __UniversalRenderPipelineEditorResources_MaterialResources_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalRenderPipelineEditorResources_MaterialResources as ::unity2::ClassIdentity>::class(),
+                <UniversalRenderPipelineEditorResources as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -90,7 +101,7 @@ mod __UniversalRenderPipelineEditorResources_MaterialResources_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <UniversalRenderPipelineEditorResources_MaterialResources as ::unity2::ClassIdentity>::NAME,
+                        <UniversalRenderPipelineEditorResources as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -98,41 +109,41 @@ mod __UniversalRenderPipelineEditorResources_MaterialResources_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: UniversalRenderPipelineEditorResources_MaterialResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UniversalRenderPipelineEditorResources_MaterialResources, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: UniversalRenderPipelineEditorResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalRenderPipelineEditorResources, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
-pub trait IUniversalRenderPipelineEditorResources_MaterialResourcesMethods: IUniversalRenderPipelineEditorResources_MaterialResources {
+pub trait IUniversalRenderPipelineEditorResourcesMethods: IUniversalRenderPipelineEditorResources {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <UniversalRenderPipelineEditorResources_MaterialResources as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <UniversalRenderPipelineEditorResources as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __UniversalRenderPipelineEditorResources_MaterialResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __UniversalRenderPipelineEditorResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
-impl<__T: IUniversalRenderPipelineEditorResources_MaterialResources> IUniversalRenderPipelineEditorResources_MaterialResourcesMethods for __T {}
+impl<__T: IUniversalRenderPipelineEditorResources> IUniversalRenderPipelineEditorResourcesMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
-impl UniversalRenderPipelineEditorResources_MaterialResources {
+impl UniversalRenderPipelineEditorResources {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UniversalRenderPipelineEditorResources_MaterialResources),
+                ::core::stringify!(UniversalRenderPipelineEditorResources),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUniversalRenderPipelineEditorResources_MaterialResourcesMethods>::ctor(this);
+        <Self as IUniversalRenderPipelineEditorResourcesMethods>::ctor(this);
         this
     }
 }
@@ -212,7 +223,7 @@ impl UniversalRenderPipelineEditorResources_ShaderResources {
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UniversalRenderPipelineEditorResources_unity2_raw {
+mod __UniversalRenderPipelineEditorResources_MaterialResources_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -221,7 +232,7 @@ mod __UniversalRenderPipelineEditorResources_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalRenderPipelineEditorResources as ::unity2::ClassIdentity>::class(),
+                <UniversalRenderPipelineEditorResources_MaterialResources as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -234,7 +245,7 @@ mod __UniversalRenderPipelineEditorResources_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <UniversalRenderPipelineEditorResources as ::unity2::ClassIdentity>::NAME,
+                        <UniversalRenderPipelineEditorResources_MaterialResources as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -242,41 +253,41 @@ mod __UniversalRenderPipelineEditorResources_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: UniversalRenderPipelineEditorResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UniversalRenderPipelineEditorResources, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: UniversalRenderPipelineEditorResources_MaterialResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalRenderPipelineEditorResources_MaterialResources, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
-pub trait IUniversalRenderPipelineEditorResourcesMethods: IUniversalRenderPipelineEditorResources {
+pub trait IUniversalRenderPipelineEditorResources_MaterialResourcesMethods: IUniversalRenderPipelineEditorResources_MaterialResources {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <UniversalRenderPipelineEditorResources as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <UniversalRenderPipelineEditorResources_MaterialResources as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __UniversalRenderPipelineEditorResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __UniversalRenderPipelineEditorResources_MaterialResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
-impl<__T: IUniversalRenderPipelineEditorResources> IUniversalRenderPipelineEditorResourcesMethods for __T {}
+impl<__T: IUniversalRenderPipelineEditorResources_MaterialResources> IUniversalRenderPipelineEditorResources_MaterialResourcesMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
-impl UniversalRenderPipelineEditorResources {
+impl UniversalRenderPipelineEditorResources_MaterialResources {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UniversalRenderPipelineEditorResources),
+                ::core::stringify!(UniversalRenderPipelineEditorResources_MaterialResources),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUniversalRenderPipelineEditorResourcesMethods>::ctor(this);
+        <Self as IUniversalRenderPipelineEditorResources_MaterialResourcesMethods>::ctor(this);
         this
     }
 }

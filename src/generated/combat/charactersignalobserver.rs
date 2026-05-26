@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterSignalObserver")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterSignalObserver {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "_radialBlur")]
         pub radial_blur: crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur,
+        #[offset(48)]
         #[rename(name = "pushedFootIKEnabled")]
         pub pushed_foot_ik_enabled: bool,
     }

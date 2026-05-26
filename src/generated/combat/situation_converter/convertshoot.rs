@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertShoot")]
     #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
     pub struct ConvertShoot {
+        #[offset(48)]
         #[rename(name = "CameraList")]
         pub camera_list: ::unity2::Array<crate::combat::cameraposition::CameraPosition>,
+        #[offset(56)]
         #[rename(name = "m_LastUnused")]
         pub m_last_unused: i32,
     }

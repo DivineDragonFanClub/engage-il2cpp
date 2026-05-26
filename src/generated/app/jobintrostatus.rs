@@ -23,16 +23,22 @@ mod __types {
         #[static_field]
         #[rename(name = "InfoPrefabPath")]
         pub info_prefab_path: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_TitlePrefabHandle")]
         pub m_title_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(128)]
         #[rename(name = "m_TitleGameObject")]
         pub m_title_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_TitleSetter")]
         pub m_title_setter: crate::app::jobintrotitlesetter::JobIntroTitleSetter,
+        #[offset(144)]
         #[rename(name = "m_InfoPrefabHandle")]
         pub m_info_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(152)]
         #[rename(name = "m_InfoGameObject")]
         pub m_info_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
         #[rename(name = "m_InfoSetter")]
         pub m_info_setter: crate::app::jobintroinfosetter::JobIntroInfoSetter,
     }

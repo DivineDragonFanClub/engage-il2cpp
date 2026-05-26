@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MVPRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MVPRoot {
+        #[offset(24)]
         #[rename(name = "m_MVPTitleText")]
         pub m_mvp_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_UnitText")]
         pub m_unit_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_GodObj")]
         pub m_god_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_TurnTitleText")]
         pub m_turn_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_ValueText")]
         pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

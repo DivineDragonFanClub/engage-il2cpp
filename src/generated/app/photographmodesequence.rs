@@ -18,14 +18,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographModeSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct PhotographModeSequence {
+        #[offset(112)]
         #[rename(name = "m_AllMenuContent")]
         pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+        #[offset(120)]
         #[rename(name = "m_CameraController")]
         pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
+        #[offset(128)]
         #[rename(name = "m_DisposManager")]
         pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        #[offset(136)]
         #[rename(name = "m_IsHelpVisible")]
         pub m_is_help_visible: bool,
+        #[offset(140)]
         #[rename(name = "m_ReservedLabel")]
         pub m_reserved_label: crate::app::photographmodesequence::PhotographModeSequence_Label,
     }

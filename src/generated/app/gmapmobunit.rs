@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapMobUnit")]
     #[parent(crate::system::object::Object)]
     pub struct GmapMobUnit {
+        #[offset(16)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }

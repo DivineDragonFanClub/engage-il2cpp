@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemBase")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HelpItemBase {
+        #[offset(24)]
         #[rename(name = "m_isTempGod")]
         pub m_is_temp_god: bool,
+        #[offset(32)]
         #[rename(name = "m_tempGod")]
         pub m_temp_god: crate::app::godunit::GodUnit,
+        #[offset(40)]
         #[rename(name = "m_isTempRing")]
         pub m_is_temp_ring: bool,
+        #[offset(48)]
         #[rename(name = "m_tempRing")]
         pub m_temp_ring: crate::app::unitring::UnitRing,
+        #[offset(56)]
         #[rename(name = "m_isTempUnit")]
         pub m_is_temp_unit: bool,
+        #[offset(64)]
         #[rename(name = "m_tempUnit")]
         pub m_temp_unit: crate::app::unit::Unit,
+        #[offset(72)]
         #[rename(name = "m_startItemPriority")]
         pub m_start_item_priority: i32,
+        #[offset(76)]
         #[rename(name = "m_HelpItemType")]
         pub m_help_item_type: crate::app::helpmanager::HelpManager_HelpItemType,
     }

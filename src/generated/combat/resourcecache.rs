@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ResourceCache")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: resourcecache :: ResourceCache >)]
     pub struct ResourceCache {
+        #[offset(32)]
         #[rename(name = "dic")]
         pub dic:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::resourcehandle_2::ResourceHandle_2>,

@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SpriteAtlasManager")]
     #[parent(crate::system::object::Object)]
     pub struct SpriteAtlasManager_2 {
+        #[offset(16)]
         #[rename(name = "m_Handle")]
         pub m_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+        #[offset(24)]
         #[rename(name = "m_SpriteAtlas")]
         pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(32)]
         #[rename(name = "m_CacheTable")]
         pub m_cache_table:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,

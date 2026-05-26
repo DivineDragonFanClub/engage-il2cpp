@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "NoInterpMinIntParameter")]
     # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < i32 >)]
     pub struct NoInterpMinIntParameter {
+        #[offset(24)]
         #[rename(name = "min")]
         pub min: i32,
     }

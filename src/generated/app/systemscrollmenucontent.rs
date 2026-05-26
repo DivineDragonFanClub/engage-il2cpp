@@ -23,10 +23,13 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_NoneTypeIcon")]
         pub m_none_type_icon: crate::unity_engine::sprite::Sprite,
+        #[offset(240)]
         #[rename(name = "m_GoldTypeIcon")]
         pub m_gold_type_icon: crate::unity_engine::sprite::Sprite,
+        #[offset(248)]
         #[rename(name = "m_ExpTypeIcon")]
         pub m_exp_type_icon: crate::unity_engine::sprite::Sprite,
     }

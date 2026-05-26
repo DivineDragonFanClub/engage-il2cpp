@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "Loop")]
     #[parent(crate::system::object::Object)]
     pub struct Loop {
+        #[offset(16)]
         #[rename(name = "Scope")]
         pub scope: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        #[offset(24)]
         #[rename(name = "BreakJumps")]
         pub break_jumps: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::execution::vm::instruction::Instruction>,
     }

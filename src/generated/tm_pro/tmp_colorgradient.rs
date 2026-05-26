@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_ColorGradient")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct TMP_ColorGradient {
+        #[offset(24)]
         #[rename(name = "colorMode")]
         pub color_mode: crate::tm_pro::colormode::ColorMode,
+        #[offset(28)]
         #[rename(name = "topLeft")]
         pub top_left: crate::unity_engine::color::Color,
+        #[offset(44)]
         #[rename(name = "topRight")]
         pub top_right: crate::unity_engine::color::Color,
+        #[offset(60)]
         #[rename(name = "bottomLeft")]
         pub bottom_left: crate::unity_engine::color::Color,
+        #[offset(76)]
         #[rename(name = "bottomRight")]
         pub bottom_right: crate::unity_engine::color::Color,
         #[static_field]

@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "MagicSignalTrack")]
     #[parent(crate::system::object::Object)]
     pub struct MagicSignalTrack {
+        #[offset(16)]
         #[rename(name = "m_Title")]
         pub m_title: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Help")]
         pub m_help: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_IsSubBullet")]
         pub m_is_sub_bullet: bool,
+        #[offset(40)]
         #[rename(name = "Signals")]
         pub signals: crate::system::collections::generic::list_1::List_1<crate::combat::magicsignal::MagicSignal>,
     }

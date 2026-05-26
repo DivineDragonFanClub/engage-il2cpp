@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerVBox")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
     pub struct DebugUIHandlerVBox {
+        #[offset(88)]
         #[rename(name = "m_Container")]
         pub m_container: crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer,
     }

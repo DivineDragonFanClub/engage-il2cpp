@@ -60,10 +60,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagKeyWait")]
     #[parent(crate::app::talk3_d::talktag::TalkTag)]
     pub struct TalkTagKeyWait {
+        #[offset(16)]
         #[rename(name = "m_TagID")]
         pub m_tag_id: crate::app::talk3_d::talktagkeywait::TalkTagKeyWait_TagID,
+        #[offset(20)]
         #[rename(name = "m_Sec")]
         pub m_sec: f32,
+        #[offset(24)]
         #[rename(name = "m_Result")]
         pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
     }

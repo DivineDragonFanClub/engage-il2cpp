@@ -23,12 +23,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_playStateName")]
         pub m_play_state_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_musicHelpRoot")]
         pub m_music_help_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_musicHelp")]
         pub m_music_help: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_musicNameRoot")]
         pub m_music_name_root: crate::unity_engine::gameobject::GameObject,
     }

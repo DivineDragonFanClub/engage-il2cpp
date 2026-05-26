@@ -22,8 +22,10 @@ mod __types {
         #[static_field]
         #[rename(name = "kHubCullingTag")]
         pub k_hub_culling_tag: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_EnterColliders")]
         pub m_enter_colliders: crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider>,
+        #[offset(40)]
         #[rename(name = "m_ExitColliders")]
         pub m_exit_colliders: crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider>,
     }

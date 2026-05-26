@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkSpatialAudioListener.SpatialAudioListenerList")]
     #[parent(crate::system::object::Object)]
     pub struct AkSpatialAudioListener_SpatialAudioListenerList {
+        #[offset(16)]
         #[rename(name = "listenerList")]
         pub listener_list: crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener>,
     }
@@ -33,6 +34,7 @@ mod __types {
         #[static_field]
         #[rename(name = "spatialAudioListeners")]
         pub spatial_audio_listeners: crate::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList,
+        #[offset(24)]
         #[rename(name = "AkAudioListener")]
         pub ak_audio_listener: crate::root::akaudiolistener::AkAudioListener,
     }

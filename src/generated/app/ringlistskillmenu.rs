@@ -28,6 +28,90 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_ExtraSkill")]
+    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
+    pub struct RingListSkillMenu_MenuItem_ExtraSkill {
+        #[static_field]
+        #[rename(name = "SpriteNameTable")]
+        pub sprite_name_table: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "NameMidTable")]
+        pub name_mid_table: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "HelpMidTable")]
+        pub help_mid_table: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_CancelEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.CancelEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RingListSkillMenu_CancelEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_ItemHelpWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.ItemHelpWindow")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSkillMenu_ItemHelpWindow {
+        #[offset(16)]
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
+        #[rename(name = "m_RootAnimator")]
+        pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[offset(32)]
+        #[rename(name = "m_ItemDetailSetter")]
+        pub m_item_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_EngageItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_EngageItem")]
+    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
+    pub struct RingListSkillMenu_MenuItem_EngageItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_Menu.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.Menu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RingListSkillMenu_Menu {
+        #[offset(200)]
+        #[rename(name = "m_CancelEventHandler")]
+        pub m_cancel_event_handler: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
+        #[offset(208)]
+        #[rename(name = "m_IsBindParent")]
+        pub m_is_bind_parent: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_SkillHelpWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.SkillHelpWindow")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSkillMenu_SkillHelpWindow {
+        #[offset(16)]
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
+        #[rename(name = "m_RootAnimator")]
+        pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[offset(32)]
+        #[rename(name = "m_HelpText")]
+        pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSkillMenu {
+        #[offset(16)]
+        #[rename(name = "m_Menu")]
+        pub m_menu: crate::app::ringlistskillmenu::RingListSkillMenu_Menu,
+        #[offset(24)]
+        #[rename(name = "m_menuContent")]
+        pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_Skill.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_Skill")]
+    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
+    pub struct RingListSkillMenu_MenuItem_Skill {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill_SkillType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -70,23 +154,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_ItemHelpWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.ItemHelpWindow")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSkillMenu_ItemHelpWindow {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RootAnimator")]
-        pub m_root_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_ItemDetailSetter")]
-        pub m_item_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_EngageItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_EngageItem")]
-    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
-    pub struct RingListSkillMenu_MenuItem_EngageItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_WeaponTalent.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_WeaponTalent")]
     #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
@@ -102,101 +169,610 @@ mod __types {
         pub help_mid_table: ::unity2::Array<::unity2::Il2CppString>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RingListSkillMenu_MenuItem {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::app::ringlistskillmenu::RingListSkillMenu,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_SkillHelpWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.SkillHelpWindow")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSkillMenu_SkillHelpWindow {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RootAnimator")]
-        pub m_root_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_HelpText")]
-        pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RingListSkillMenu_MenuContent {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_CancelEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.CancelEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RingListSkillMenu_CancelEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RingListSkillMenu_MenuItem {
+        #[offset(104)]
+        #[rename(name = "m_Root")]
+        pub m_root: crate::app::ringlistskillmenu::RingListSkillMenu,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItemContent.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RingListSkillMenu_MenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Level")]
         pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_LevelText")]
         pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_IconImage")]
         pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_IconFrameImage")]
         pub m_icon_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_GotCheckImage")]
         pub m_got_check_image: crate::unity_engine::ui::image::Image,
+        #[offset(120)]
         #[rename(name = "m_IsDisable")]
         pub m_is_disable: bool,
+        #[offset(121)]
         #[rename(name = "m_IsInitialized")]
         pub m_is_initialized: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_ExtraSkill")]
-    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
-    pub struct RingListSkillMenu_MenuItem_ExtraSkill {
-        #[static_field]
-        #[rename(name = "SpriteNameTable")]
-        pub sprite_name_table: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "NameMidTable")]
-        pub name_mid_table: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "HelpMidTable")]
-        pub help_mid_table: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_Skill.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.MenuItem_Skill")]
-    #[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]
-    pub struct RingListSkillMenu_MenuItem_Skill {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu_Menu.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu.Menu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RingListSkillMenu_Menu {
-        #[rename(name = "m_CancelEventHandler")]
-        pub m_cancel_event_handler: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
-        #[rename(name = "m_IsBindParent")]
-        pub m_is_bind_parent: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenu/RingListSkillMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSkillMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSkillMenu {
-        #[rename(name = "m_Menu")]
-        pub m_menu: crate::app::ringlistskillmenu::RingListSkillMenu_Menu,
-        #[rename(name = "m_menuContent")]
-        pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
     }
 }
 
 #[cfg(feature = "app-ringlistskillmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                "get_Type",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        "get_Type",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_type(
+        this: RingListSkillMenu_MenuItem_ExtraSkill,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType {
+        let inner: extern "C" fn(
+            RingListSkillMenu_MenuItem_ExtraSkill,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                "set_Type",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        "set_Type",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_type(
+        this: RingListSkillMenu_MenuItem_ExtraSkill,
+        value: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSkillMenu_MenuItem_ExtraSkill,
+            crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                "GetSprite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        "GetSprite",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sprite(
+        this: RingListSkillMenu_MenuItem_ExtraSkill,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_get_sprite::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                "GetSkillName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        "GetSkillName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill_name(
+        this: RingListSkillMenu_MenuItem_ExtraSkill,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_skill_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_help {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                "GetSkillHelp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        "GetSkillHelp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill_help(
+        this: RingListSkillMenu_MenuItem_ExtraSkill,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_skill_help::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSkillMenu_MenuItem_ExtraSkill,
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        skill_type: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
+        is_got_skill: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSkillMenu_MenuItem_ExtraSkill,
+            crate::app::ringlistskillmenu::RingListSkillMenu,
+            i32,
+            crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root, level, skill_type, is_got_skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_select(this: RingListSkillMenu_MenuItem_ExtraSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuItem_ExtraSkill {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_MenuItem_ExtraSkillMethods: IRingListSkillMenu_MenuItem_ExtraSkill {
+    #[doc = "`get_Type()` overload"]
+    fn get_type(self) -> crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_type(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Type(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)` overload"]
+    fn set_type(self, value: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType>) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::set_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSprite()` overload"]
+    fn get_sprite(self) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_sprite(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSkillName()` overload"]
+    fn get_skill_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_skill_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSkillHelp()` overload"]
+    fn get_skill_help(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_skill_help(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` overload"]
+    fn ctor(
+        self,
+        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
+        level: impl ::core::convert::Into<i32>,
+        skill_type: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType>,
+        is_got_skill: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(skill_type),
+                ::core::convert::Into::into(is_got_skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::on_select(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl<__T: IRingListSkillMenu_MenuItem_ExtraSkill> IRingListSkillMenu_MenuItem_ExtraSkillMethods for __T {}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuItem_ExtraSkill {
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` — overload selector"]
+    pub fn new(
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        skill_type: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
+        is_got_skill: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_MenuItem_ExtraSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_MenuItem_ExtraSkillMethods>::ctor(this, root, level, skill_type, is_got_skill);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSkillMenu_CancelEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSkillMenu_CancelEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSkillMenu_CancelEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RingListSkillMenu_CancelEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RingListSkillMenu_CancelEventHandler, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_CancelEventHandlerMethods: IRingListSkillMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_CancelEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RingListSkillMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_CancelEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl<__T: IRingListSkillMenu_CancelEventHandler> IRingListSkillMenu_CancelEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_CancelEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_CancelEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-ringlistskillmenu")]
 #[doc(hidden)]
@@ -649,199 +1225,21 @@ impl RingListSkillMenu_MenuItem_EngageItem {
 #[cfg(feature = "app-ringlistskillmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw {
+mod __RingListSkillMenu_Menu_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_kind_table_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
-                "get_ItemKindTableIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
-                        "get_ItemKindTableIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_kind_table_index(this: RingListSkillMenu_MenuItem_WeaponTalent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_item_kind_table_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_kind_table_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
-                "set_ItemKindTableIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
-                        "set_ItemKindTableIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item_kind_table_index(
-        this: RingListSkillMenu_MenuItem_WeaponTalent,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item_kind_table_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
-                "GetSprite",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
-                        "GetSprite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sprite(
-        this: RingListSkillMenu_MenuItem_WeaponTalent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(__lookup_get_sprite::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
-                "GetSkillName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
-                        "GetSkillName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_name(
-        this: RingListSkillMenu_MenuItem_WeaponTalent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_skill_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_help {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
-                "GetSkillHelp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
-                        "GetSkillHelp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_help(
-        this: RingListSkillMenu_MenuItem_WeaponTalent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_skill_help::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 4,
                 param_types,
@@ -854,7 +1252,7 @@ mod __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -863,66 +1261,40 @@ mod __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RingListSkillMenu_MenuItem_WeaponTalent,
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        item_kind: crate::app::itemdata::ItemData_Kinds,
-        is_got_skill: bool,
+        this: RingListSkillMenu_Menu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        cancel: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
+        is_bind_parent: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RingListSkillMenu_MenuItem_WeaponTalent,
-            crate::app::ringlistskillmenu::RingListSkillMenu,
-            i32,
-            crate::app::itemdata::ItemData_Kinds,
+            RingListSkillMenu_Menu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
             bool,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root, level, item_kind, is_got_skill, __unity2_method_info)
+        inner(this, menu_item_list, menu_content, cancel, is_bind_parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
+    pub mod __lookup_create_menu {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type(),
+                <crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: RingListSkillMenu_MenuItem_WeaponTalent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
+                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
+                "CreateMenu",
+                6,
                 param_types,
                 true,
             )
@@ -933,554 +1305,33 @@ mod __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
+                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenu",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem_WeaponTalent {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_MenuItem_WeaponTalentMethods: IRingListSkillMenu_MenuItem_WeaponTalent {
-    #[doc = "`get_ItemKindTableIndex()` overload"]
-    fn get_item_kind_table_index(self) -> i32 {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_item_kind_table_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_ItemKindTableIndex(i32)` overload"]
-    fn set_item_kind_table_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::set_item_kind_table_index(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSprite()` overload"]
-    fn get_sprite(self) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_sprite(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSkillName()` overload"]
-    fn get_skill_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_skill_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSkillHelp()` overload"]
-    fn get_skill_help(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_skill_help(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
-        level: impl ::core::convert::Into<i32>,
-        item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-        is_got_skill: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(item_kind),
-                ::core::convert::Into::into(is_got_skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_MenuItem_WeaponTalent> IRingListSkillMenu_MenuItem_WeaponTalentMethods for __T {}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem_WeaponTalent {
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` — overload selector"]
-    pub fn new(
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        item_kind: crate::app::itemdata::ItemData_Kinds,
-        is_got_skill: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItem_WeaponTalent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_MenuItem_WeaponTalentMethods>::ctor(this, root, level, item_kind, is_got_skill);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_MenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "get_Level",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_Level",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_level(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_level::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "set_Level",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "set_Level",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_level(this: RingListSkillMenu_MenuItem, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_level::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_got_s_kill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "get_IsGotSKill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsGotSKill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_got_s_kill(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_got_s_kill::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_got_s_kill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "set_IsGotSKill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "set_IsGotSKill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_got_s_kill(this: RingListSkillMenu_MenuItem, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_got_s_kill::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_enable_got_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "get_IsEnableGotIcon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsEnableGotIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_enable_got_icon(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_enable_got_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_enable_unit_got_icon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "get_IsEnableUnitGotIcon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsEnableUnitGotIcon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_enable_unit_got_icon(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_enable_unit_got_icon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_from_lv {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "get_FromLv",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "get_FromLv",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_from_lv(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_from_lv::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSkillMenu_MenuItem,
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        is_got_skill: bool,
+    pub unsafe fn create_menu(
+        super_: crate::app::procinst::ProcInst,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        ms: crate::app::basicmenuselect::BasicMenuSelect,
+        cancel: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
+        is_bind_parent: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> crate::app::ringlistskillmenu::RingListSkillMenu_Menu {
         let inner: extern "C" fn(
-            RingListSkillMenu_MenuItem,
-            crate::app::ringlistskillmenu::RingListSkillMenu,
-            i32,
+            crate::app::procinst::ProcInst,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::basicmenuselect::BasicMenuSelect,
+            crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root, level, is_got_skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "GetWidth",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetWidth",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_width(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_width::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "GetHeight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_height(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_height::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: RingListSkillMenu_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
-            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
+        ) -> crate::app::ringlistskillmenu::RingListSkillMenu_Menu = ::core::mem::transmute(__lookup_create_menu::get_method_info().method_ptr);
+        inner(super_, menu_item_list, menu_content, ms, cancel, is_bind_parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1489,7 +1340,7 @@ mod __RingListSkillMenu_MenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
                 "BCall",
                 0,
                 param_types,
@@ -1502,7 +1353,7 @@ mod __RingListSkillMenu_MenuItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
                         "BCall",
                         e
                     )
@@ -1510,150 +1361,176 @@ mod __RingListSkillMenu_MenuItem_unity2_raw {
             }
         }
     }
-    pub unsafe fn b_call(
-        this: RingListSkillMenu_MenuItem,
+    pub unsafe fn b_call(this: RingListSkillMenu_Menu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_custom_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
+                "CustomCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
+                        "CustomCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn custom_call(
+        this: RingListSkillMenu_Menu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        let inner: extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_custom_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_display_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
+                "GetDisplayIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
+                        "GetDisplayIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_display_index(this: RingListSkillMenu_Menu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_display_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_MenuItemMethods: IRingListSkillMenu_MenuItem {
-    #[doc = "`get_Level()` overload"]
-    fn get_level(self) -> i32 {
+impl RingListSkillMenu_Menu {
+    #[doc = "`CreateMenu(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::basicmenuselect::BasicMenuSelect, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]
+    pub fn create_menu(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        ms: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>,
+        cancel: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler>,
+        is_bind_parent: impl ::core::convert::Into<bool>,
+    ) -> crate::app::ringlistskillmenu::RingListSkillMenu_Menu {
         unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_level(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Level(i32)` overload"]
-    fn set_level(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::set_level(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsGotSKill()` overload"]
-    fn get_is_got_s_kill(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_is_got_s_kill(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsGotSKill(bool)` overload"]
-    fn set_is_got_s_kill(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::set_is_got_s_kill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsEnableGotIcon()` overload"]
-    fn get_is_enable_got_icon(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_is_enable_got_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsEnableUnitGotIcon()` overload"]
-    fn get_is_enable_unit_got_icon(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_is_enable_unit_got_icon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_FromLv()` overload"]
-    fn get_from_lv(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_from_lv(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
-        level: impl ::core::convert::Into<i32>,
-        is_got_skill: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(is_got_skill),
+            __RingListSkillMenu_Menu_unity2_raw::create_menu(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(ms),
+                ::core::convert::Into::into(cancel),
+                ::core::convert::Into::into(is_bind_parent),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_MenuMethods: IRingListSkillMenu_Menu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        cancel: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler>,
+        is_bind_parent: impl ::core::convert::Into<bool>,
+    ) -> () {
         unsafe {
             let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetWidth()` overload"]
-    fn get_width(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_width(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetHeight()` overload"]
-    fn get_height(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::get_height(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_Menu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(cancel),
+                ::core::convert::Into::into(is_bind_parent),
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_Menu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CustomCall()` overload"]
+    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_Menu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDisplayIndex()` overload"]
+    fn get_display_index(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_Menu_unity2_raw::get_display_index(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_MenuItem> IRingListSkillMenu_MenuItemMethods for __T {}
+impl<__T: IRingListSkillMenu_Menu> IRingListSkillMenu_MenuMethods for __T {}
 
 #[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem {
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` — overload selector"]
-    pub fn new(root: crate::app::ringlistskillmenu::RingListSkillMenu, level: i32, is_got_skill: bool) -> Self {
+impl RingListSkillMenu_Menu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        cancel: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
+        is_bind_parent: bool,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItem),
+                ::core::stringify!(RingListSkillMenu_Menu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSkillMenu_MenuItemMethods>::ctor(this, root, level, is_got_skill);
+        <Self as IRingListSkillMenu_MenuMethods>::ctor(this, menu_item_list, menu_content, cancel, is_bind_parent);
         this
     }
 }
@@ -1977,1617 +1854,6 @@ impl RingListSkillMenu_SkillHelpWindow {
             )
         });
         <Self as IRingListSkillMenu_SkillHelpWindowMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_MenuContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_w {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcW",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcW",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_w(this: RingListSkillMenu_MenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_w::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_h {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcH",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcH",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_h(this: RingListSkillMenu_MenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_h::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
-                        "CalcCursorMovedPosY",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: RingListSkillMenu_MenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(RingListSkillMenu_MenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RingListSkillMenu_MenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_MenuContentMethods: IRingListSkillMenu_MenuContent {
-    #[doc = "`CalcW()` overload"]
-    fn calc_w(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcH()` overload"]
-    fn calc_h(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_MenuContent> IRingListSkillMenu_MenuContentMethods for __T {}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_MenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_CancelEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSkillMenu_CancelEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSkillMenu_CancelEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RingListSkillMenu_CancelEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RingListSkillMenu_CancelEventHandler, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_CancelEventHandlerMethods: IRingListSkillMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_CancelEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RingListSkillMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_CancelEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_CancelEventHandler> IRingListSkillMenu_CancelEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_CancelEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_CancelEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_MenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "Build",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build(
-        this: RingListSkillMenu_MenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_by_menu_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetupByMenuItem",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetupByMenuItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup_by_menu_item(
-        this: RingListSkillMenu_MenuItemContent,
-        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSkillMenu_MenuItemContent,
-            crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup_by_menu_item::get_method_info().method_ptr);
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
-                "SetDisable",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "SetDisable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_disable(this: RingListSkillMenu_MenuItemContent, disable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_disable::get_method_info().method_ptr);
-        inner(this, disable, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
-                "BuildTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "BuildTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_text_color(this: RingListSkillMenu_MenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_build_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
-                "UpdateTextColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTextColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_text_color(this: RingListSkillMenu_MenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RingListSkillMenu_MenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_MenuItemContentMethods: IRingListSkillMenu_MenuItemContent {
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupByMenuItem(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)` overload"]
-    fn setup_by_menu_item(self, menu_item: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem>) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItemContent_unity2_raw::setup_by_menu_item(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetDisable(bool)` overload"]
-    fn set_disable(self, disable: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItemContent_unity2_raw::set_disable(
-                __receiver,
-                ::core::convert::Into::into(disable),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildTextColor()` overload"]
-    fn build_text_color(self) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_MenuItemContent> IRingListSkillMenu_MenuItemContentMethods for __T {}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_MenuItemContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                "get_Type",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        "get_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_type(
-        this: RingListSkillMenu_MenuItem_ExtraSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType {
-        let inner: extern "C" fn(
-            RingListSkillMenu_MenuItem_ExtraSkill,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType =
-            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                "set_Type",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        "set_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_type(
-        this: RingListSkillMenu_MenuItem_ExtraSkill,
-        value: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSkillMenu_MenuItem_ExtraSkill,
-            crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sprite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                "GetSprite",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        "GetSprite",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sprite(
-        this: RingListSkillMenu_MenuItem_ExtraSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
-            ::core::mem::transmute(__lookup_get_sprite::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                "GetSkillName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        "GetSkillName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_name(
-        this: RingListSkillMenu_MenuItem_ExtraSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_skill_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_help {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                "GetSkillHelp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        "GetSkillHelp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_help(
-        this: RingListSkillMenu_MenuItem_ExtraSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_skill_help::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSkillMenu_MenuItem_ExtraSkill,
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        skill_type: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
-        is_got_skill: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSkillMenu_MenuItem_ExtraSkill,
-            crate::app::ringlistskillmenu::RingListSkillMenu,
-            i32,
-            crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root, level, skill_type, is_got_skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: RingListSkillMenu_MenuItem_ExtraSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem_ExtraSkill {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_MenuItem_ExtraSkillMethods: IRingListSkillMenu_MenuItem_ExtraSkill {
-    #[doc = "`get_Type()` overload"]
-    fn get_type(self) -> crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_type(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Type(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)` overload"]
-    fn set_type(self, value: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType>) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::set_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSprite()` overload"]
-    fn get_sprite(self) -> crate::unity_engine::sprite::Sprite {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_sprite(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSkillName()` overload"]
-    fn get_skill_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_skill_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSkillHelp()` overload"]
-    fn get_skill_help(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::get_skill_help(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
-        level: impl ::core::convert::Into<i32>,
-        skill_type: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType>,
-        is_got_skill: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(skill_type),
-                ::core::convert::Into::into(is_got_skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <RingListSkillMenu_MenuItem_ExtraSkill as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_MenuItem_ExtraSkill> IRingListSkillMenu_MenuItem_ExtraSkillMethods for __T {}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem_ExtraSkill {
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` — overload selector"]
-    pub fn new(
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        skill_type: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,
-        is_got_skill: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItem_ExtraSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_MenuItem_ExtraSkillMethods>::ctor(this, root, level, skill_type, is_got_skill);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_MenuItem_Skill_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
-                "get_Skill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
-                        "get_Skill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill(
-        this: RingListSkillMenu_MenuItem_Skill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_Skill, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
-            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
-                "set_Skill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
-                        "set_Skill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_skill(
-        this: RingListSkillMenu_MenuItem_Skill,
-        value: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_Skill, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_skill::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSkillMenu_MenuItem_Skill,
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        skill_data: crate::app::skilldata::SkillData,
-        is_got_skill: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSkillMenu_MenuItem_Skill,
-            crate::app::ringlistskillmenu::RingListSkillMenu,
-            i32,
-            crate::app::skilldata::SkillData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root, level, skill_data, is_got_skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: RingListSkillMenu_MenuItem_Skill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RingListSkillMenu_MenuItem_Skill, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_MenuItem_SkillMethods: IRingListSkillMenu_MenuItem_Skill {
-    #[doc = "`get_Skill()` overload"]
-    fn get_skill(self) -> crate::app::skilldata::SkillData {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_Skill_unity2_raw::get_skill(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Skill(crate::app::skilldata::SkillData)` overload"]
-    fn set_skill(self, value: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_Skill_unity2_raw::set_skill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
-        level: impl ::core::convert::Into<i32>,
-        skill_data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        is_got_skill: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_Skill_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(skill_data),
-                ::core::convert::Into::into(is_got_skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_MenuItem_Skill_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_MenuItem_Skill> IRingListSkillMenu_MenuItem_SkillMethods for __T {}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_MenuItem_Skill {
-    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` — overload selector"]
-    pub fn new(
-        root: crate::app::ringlistskillmenu::RingListSkillMenu,
-        level: i32,
-        skill_data: crate::app::skilldata::SkillData,
-        is_got_skill: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_MenuItem_Skill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_MenuItem_SkillMethods>::ctor(this, root, level, skill_data, is_got_skill);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSkillMenu_Menu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSkillMenu_Menu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        cancel: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
-        is_bind_parent: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSkillMenu_Menu,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, cancel, is_bind_parent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type(),
-                <crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
-                "CreateMenu",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
-                        "CreateMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_menu(
-        super_: crate::app::procinst::ProcInst,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        ms: crate::app::basicmenuselect::BasicMenuSelect,
-        cancel: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
-        is_bind_parent: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringlistskillmenu::RingListSkillMenu_Menu {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::basicmenuselect::BasicMenuSelect,
-            crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringlistskillmenu::RingListSkillMenu_Menu = ::core::mem::transmute(__lookup_create_menu::get_method_info().method_ptr);
-        inner(super_, menu_item_list, menu_content, ms, cancel, is_bind_parent, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(this: RingListSkillMenu_Menu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_custom_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
-                "CustomCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
-                        "CustomCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn custom_call(
-        this: RingListSkillMenu_Menu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_custom_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_display_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::class(),
-                "GetDisplayIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RingListSkillMenu_Menu as ::unity2::ClassIdentity>::NAME,
-                        "GetDisplayIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_display_index(this: RingListSkillMenu_Menu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_display_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_Menu {
-    #[doc = "`CreateMenu(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::basicmenuselect::BasicMenuSelect, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]
-    pub fn create_menu(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        ms: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>,
-        cancel: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler>,
-        is_bind_parent: impl ::core::convert::Into<bool>,
-    ) -> crate::app::ringlistskillmenu::RingListSkillMenu_Menu {
-        unsafe {
-            __RingListSkillMenu_Menu_unity2_raw::create_menu(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(ms),
-                ::core::convert::Into::into(cancel),
-                ::core::convert::Into::into(is_bind_parent),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-pub trait IRingListSkillMenu_MenuMethods: IRingListSkillMenu_Menu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        cancel: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler>,
-        is_bind_parent: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_Menu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(cancel),
-                ::core::convert::Into::into(is_bind_parent),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_Menu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CustomCall()` overload"]
-    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_Menu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDisplayIndex()` overload"]
-    fn get_display_index(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSkillMenu_Menu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RingListSkillMenu_Menu_unity2_raw::get_display_index(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl<__T: IRingListSkillMenu_Menu> IRingListSkillMenu_MenuMethods for __T {}
-
-#[cfg(feature = "app-ringlistskillmenu")]
-impl RingListSkillMenu_Menu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        cancel: crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,
-        is_bind_parent: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSkillMenu_Menu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSkillMenu_MenuMethods>::ctor(this, menu_item_list, menu_content, cancel, is_bind_parent);
         this
     }
 }
@@ -4486,6 +2752,1759 @@ impl RingListSkillMenu {
             )
         });
         <Self as IRingListSkillMenuMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSkillMenu_MenuItem_Skill_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
+                "get_Skill",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
+                        "get_Skill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill(
+        this: RingListSkillMenu_MenuItem_Skill,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_Skill, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
+                "set_Skill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
+                        "set_Skill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_skill(
+        this: RingListSkillMenu_MenuItem_Skill,
+        value: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_Skill, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skill::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSkillMenu_MenuItem_Skill,
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        skill_data: crate::app::skilldata::SkillData,
+        is_got_skill: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSkillMenu_MenuItem_Skill,
+            crate::app::ringlistskillmenu::RingListSkillMenu,
+            i32,
+            crate::app::skilldata::SkillData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root, level, skill_data, is_got_skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_Skill as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_select(this: RingListSkillMenu_MenuItem_Skill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_Skill, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_MenuItem_SkillMethods: IRingListSkillMenu_MenuItem_Skill {
+    #[doc = "`get_Skill()` overload"]
+    fn get_skill(self) -> crate::app::skilldata::SkillData {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_Skill_unity2_raw::get_skill(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Skill(crate::app::skilldata::SkillData)` overload"]
+    fn set_skill(self, value: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_Skill_unity2_raw::set_skill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` overload"]
+    fn ctor(
+        self,
+        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
+        level: impl ::core::convert::Into<i32>,
+        skill_data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        is_got_skill: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_Skill_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(skill_data),
+                ::core::convert::Into::into(is_got_skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem_Skill as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_Skill_unity2_raw::on_select(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl<__T: IRingListSkillMenu_MenuItem_Skill> IRingListSkillMenu_MenuItem_SkillMethods for __T {}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuItem_Skill {
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` — overload selector"]
+    pub fn new(
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        skill_data: crate::app::skilldata::SkillData,
+        is_got_skill: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_MenuItem_Skill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_MenuItem_SkillMethods>::ctor(this, root, level, skill_data, is_got_skill);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_kind_table_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                "get_ItemKindTableIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemKindTableIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_kind_table_index(this: RingListSkillMenu_MenuItem_WeaponTalent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_kind_table_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_kind_table_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                "set_ItemKindTableIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        "set_ItemKindTableIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item_kind_table_index(
+        this: RingListSkillMenu_MenuItem_WeaponTalent,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item_kind_table_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                "GetSprite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        "GetSprite",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sprite(
+        this: RingListSkillMenu_MenuItem_WeaponTalent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_get_sprite::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                "GetSkillName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        "GetSkillName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill_name(
+        this: RingListSkillMenu_MenuItem_WeaponTalent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_skill_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_help {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                "GetSkillHelp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        "GetSkillHelp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill_help(
+        this: RingListSkillMenu_MenuItem_WeaponTalent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_skill_help::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSkillMenu_MenuItem_WeaponTalent,
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+        is_got_skill: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSkillMenu_MenuItem_WeaponTalent,
+            crate::app::ringlistskillmenu::RingListSkillMenu,
+            i32,
+            crate::app::itemdata::ItemData_Kinds,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root, level, item_kind, is_got_skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_select(this: RingListSkillMenu_MenuItem_WeaponTalent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuItem_WeaponTalent {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_MenuItem_WeaponTalentMethods: IRingListSkillMenu_MenuItem_WeaponTalent {
+    #[doc = "`get_ItemKindTableIndex()` overload"]
+    fn get_item_kind_table_index(self) -> i32 {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_item_kind_table_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_ItemKindTableIndex(i32)` overload"]
+    fn set_item_kind_table_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::set_item_kind_table_index(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSprite()` overload"]
+    fn get_sprite(self) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_sprite(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSkillName()` overload"]
+    fn get_skill_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_skill_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSkillHelp()` overload"]
+    fn get_skill_help(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::get_skill_help(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` overload"]
+    fn ctor(
+        self,
+        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
+        level: impl ::core::convert::Into<i32>,
+        item_kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
+        is_got_skill: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(item_kind),
+                ::core::convert::Into::into(is_got_skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItem_WeaponTalent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::on_select(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl<__T: IRingListSkillMenu_MenuItem_WeaponTalent> IRingListSkillMenu_MenuItem_WeaponTalentMethods for __T {}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuItem_WeaponTalent {
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` — overload selector"]
+    pub fn new(
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+        is_got_skill: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_MenuItem_WeaponTalent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_MenuItem_WeaponTalentMethods>::ctor(this, root, level, item_kind, is_got_skill);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSkillMenu_MenuContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_w {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcW",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcW",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_w(this: RingListSkillMenu_MenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_w::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_h {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcH",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcH",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_h(this: RingListSkillMenu_MenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_h::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_cursor_moved_pos_y {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcCursorMovedPosY",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosY",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_cursor_moved_pos_y(
+        this: RingListSkillMenu_MenuContent,
+        menu_item_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuContent, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
+        inner(this, menu_item_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSkillMenu_MenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_MenuContentMethods: IRingListSkillMenu_MenuContent {
+    #[doc = "`CalcW()` overload"]
+    fn calc_w(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcH()` overload"]
+    fn calc_h(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
+    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuContent_unity2_raw::calc_cursor_moved_pos_y(
+                __receiver,
+                ::core::convert::Into::into(menu_item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl<__T: IRingListSkillMenu_MenuContent> IRingListSkillMenu_MenuContentMethods for __T {}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_MenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_MenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSkillMenu_MenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "get_Level",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_Level",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_level(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_level::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "set_Level",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_Level",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_level(this: RingListSkillMenu_MenuItem, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_level::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_got_s_kill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "get_IsGotSKill",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsGotSKill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_got_s_kill(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_got_s_kill::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_got_s_kill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "set_IsGotSKill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_IsGotSKill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_got_s_kill(this: RingListSkillMenu_MenuItem, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_got_s_kill::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_enable_got_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "get_IsEnableGotIcon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEnableGotIcon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_enable_got_icon(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_enable_got_icon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_enable_unit_got_icon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "get_IsEnableUnitGotIcon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEnableUnitGotIcon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_enable_unit_got_icon(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_enable_unit_got_icon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_from_lv {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "get_FromLv",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_FromLv",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_from_lv(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_from_lv::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::ringlistskillmenu::RingListSkillMenu as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSkillMenu_MenuItem,
+        root: crate::app::ringlistskillmenu::RingListSkillMenu,
+        level: i32,
+        is_got_skill: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSkillMenu_MenuItem,
+            crate::app::ringlistskillmenu::RingListSkillMenu,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root, level, is_got_skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "GetWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetWidth",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_width(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_width::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "GetHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetHeight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_height(this: RingListSkillMenu_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_height::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: RingListSkillMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(
+        this: RingListSkillMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_MenuItemMethods: IRingListSkillMenu_MenuItem {
+    #[doc = "`get_Level()` overload"]
+    fn get_level(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_level(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Level(i32)` overload"]
+    fn set_level(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::set_level(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsGotSKill()` overload"]
+    fn get_is_got_s_kill(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_is_got_s_kill(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsGotSKill(bool)` overload"]
+    fn set_is_got_s_kill(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::set_is_got_s_kill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsEnableGotIcon()` overload"]
+    fn get_is_enable_got_icon(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_is_enable_got_icon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsEnableUnitGotIcon()` overload"]
+    fn get_is_enable_unit_got_icon(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_is_enable_unit_got_icon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_FromLv()` overload"]
+    fn get_from_lv(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_from_lv(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` overload"]
+    fn ctor(
+        self,
+        root: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu>,
+        level: impl ::core::convert::Into<i32>,
+        is_got_skill: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(is_got_skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetWidth()` overload"]
+    fn get_width(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetHeight()` overload"]
+    fn get_height(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::get_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <RingListSkillMenu_MenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSkillMenu_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl<__T: IRingListSkillMenu_MenuItem> IRingListSkillMenu_MenuItemMethods for __T {}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuItem {
+    #[doc = "`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` — overload selector"]
+    pub fn new(root: crate::app::ringlistskillmenu::RingListSkillMenu, level: i32, is_got_skill: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_MenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_MenuItemMethods>::ctor(this, root, level, is_got_skill);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSkillMenu_MenuItemContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "Build",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build(
+        this: RingListSkillMenu_MenuItemContent,
+        menu_item: crate::app::basicmenuitem::BasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
+        inner(this, menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_by_menu_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "SetupByMenuItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "SetupByMenuItem",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_by_menu_item(
+        this: RingListSkillMenu_MenuItemContent,
+        menu_item: crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSkillMenu_MenuItemContent,
+            crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_setup_by_menu_item::get_method_info().method_ptr);
+        inner(this, menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_disable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "SetDisable",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "SetDisable",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_disable(this: RingListSkillMenu_MenuItemContent, disable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_disable::get_method_info().method_ptr);
+        inner(this, disable, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "BuildTextColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildTextColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_text_color(this: RingListSkillMenu_MenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build_text_color::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "UpdateTextColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTextColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_text_color(this: RingListSkillMenu_MenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSkillMenu_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSkillMenu_MenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+pub trait IRingListSkillMenu_MenuItemContentMethods: IRingListSkillMenu_MenuItemContent {
+    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupByMenuItem(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)` overload"]
+    fn setup_by_menu_item(self, menu_item: impl ::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem>) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItemContent_unity2_raw::setup_by_menu_item(
+                __receiver,
+                ::core::convert::Into::into(menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetDisable(bool)` overload"]
+    fn set_disable(self, disable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItemContent_unity2_raw::set_disable(
+                __receiver,
+                ::core::convert::Into::into(disable),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildTextColor()` overload"]
+    fn build_text_color(self) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateTextColor()` overload"]
+    fn update_text_color(self) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RingListSkillMenu_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSkillMenu_MenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl<__T: IRingListSkillMenu_MenuItemContent> IRingListSkillMenu_MenuItemContentMethods for __T {}
+
+#[cfg(feature = "app-ringlistskillmenu")]
+impl RingListSkillMenu_MenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSkillMenu_MenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSkillMenu_MenuItemContentMethods>::ctor(this);
         this
     }
 }

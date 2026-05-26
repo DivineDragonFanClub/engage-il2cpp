@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkStateMonitor")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TalkStateMonitor {
+        #[offset(24)]
         #[rename(name = "m_CharaName")]
         pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_TextPid")]
         pub m_text_pid: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_TextPause")]
         pub m_text_pause: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_TextFace")]
         pub m_text_face: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_TextLook")]
         pub m_text_look: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_OffstY")]
         pub m_offst_y: i32,
     }

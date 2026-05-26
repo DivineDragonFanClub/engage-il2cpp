@@ -16,6 +16,20 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]
+    #[::unity2::class(namespace = "UnityEngine.AssetGraph", name = "AssetBundleBuildMap")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct AssetBundleBuildMap {
+        #[offset(24)]
+        #[rename(name = "m_assetBundles")]
+        pub m_asset_bundles: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry,
+        >,
+        #[static_field]
+        #[rename(name = "s_map")]
+        pub s_map: crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,33 +55,25 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AssetGraph", name = "AssetBundleBuildMap")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct AssetBundleBuildMap {
-        #[rename(name = "m_assetBundles")]
-        pub m_asset_bundles: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry,
-        >,
-        #[static_field]
-        #[rename(name = "s_map")]
-        pub s_map: crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry.md"))]
     #[::unity2::class(namespace = "UnityEngine.AssetGraph", name = "AssetBundleBuildMap.AssetBundleEntry")]
     #[parent(crate::system::object::Object)]
     pub struct AssetBundleBuildMap_AssetBundleEntry {
+        #[offset(16)]
         #[rename(name = "m_assetBundleName")]
         pub m_asset_bundle_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_assetBundleVariantName")]
         pub m_asset_bundle_variant_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_fullName")]
         pub m_full_name: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_assets")]
         pub m_assets: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry_AssetPathString,
         >,
+        #[offset(48)]
         #[rename(name = "m_registererId")]
         pub m_registerer_id: ::unity2::Il2CppString,
     }
@@ -75,64 +81,6 @@ mod __types {
 
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AssetBundleBuildMap_AssetBundleEntry_AssetPathString as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AssetBundleBuildMap_AssetBundleEntry_AssetPathString as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AssetBundleBuildMap_AssetBundleEntry_AssetPathString,
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AssetBundleBuildMap_AssetBundleEntry_AssetPathString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, s, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    pub fn ctor(self, s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
 #[doc(hidden)]
@@ -877,6 +825,64 @@ impl AssetBundleBuildMap {
         });
         <Self as IAssetBundleBuildMapMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AssetBundleBuildMap_AssetBundleEntry_AssetPathString as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssetBundleBuildMap_AssetBundleEntry_AssetPathString as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AssetBundleBuildMap_AssetBundleEntry_AssetPathString,
+        s: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AssetBundleBuildMap_AssetBundleEntry_AssetPathString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, s, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
+impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    pub fn ctor(self, s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(s),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

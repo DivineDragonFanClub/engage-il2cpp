@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ShopMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_SaleObject")]
         pub m_sale_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_BackGroundObject")]
         pub m_back_ground_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_IconNew")]
         pub m_icon_new: crate::unity_engine::gameobject::GameObject,
     }

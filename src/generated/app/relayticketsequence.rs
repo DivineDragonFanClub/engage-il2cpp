@@ -14,6 +14,11 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayTicketSequence")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayTicketSequence {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -49,11 +54,6 @@ mod __types {
     #[parent(crate::app::procinst::ProcInst)]
     pub struct RelayTicketSequence_ProcUse {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayTicketSequence")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayTicketSequence {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))]
     #[::unity2::class(namespace = "App", name = "RelayTicketSequence.ProcDaily")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -62,6 +62,92 @@ mod __types {
 
 #[cfg(feature = "app-relayticketsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relayticketsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayTicketSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_use {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayTicketSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindUse",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayTicketSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindUse",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind_use(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind_use::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_daily {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayTicketSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindDaily",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayTicketSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindDaily",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind_daily(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind_daily::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayticketsequence")]
+impl RelayTicketSequence {
+    #[doc = "`CreateBindUse(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind_use(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RelayTicketSequence_unity2_raw::create_bind_use(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateBindDaily(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind_daily(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RelayTicketSequence_unity2_raw::create_bind_daily(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-relayticketsequence")]
 #[doc(hidden)]
@@ -254,92 +340,6 @@ impl RelayTicketSequence_ProcUse {
         });
         <Self as IRelayTicketSequence_ProcUseMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-relayticketsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayTicketSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_use {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayTicketSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindUse",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayTicketSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindUse",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_use(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_use::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_daily {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayTicketSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindDaily",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayTicketSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindDaily",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_daily(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_daily::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayticketsequence")]
-impl RelayTicketSequence {
-    #[doc = "`CreateBindUse(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_use(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RelayTicketSequence_unity2_raw::create_bind_use(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindDaily(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_daily(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RelayTicketSequence_unity2_raw::create_bind_daily(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 

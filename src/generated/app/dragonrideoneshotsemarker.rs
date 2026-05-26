@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideOneShotSEMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct DragonRideOneShotSEMarker {
+        #[offset(40)]
         #[rename(name = "seLabel")]
         pub se_label: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "IsIgnoreMarker")]
         pub is_ignore_marker: bool,
     }

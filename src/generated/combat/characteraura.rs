@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterAura")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterAura {
+        #[offset(24)]
         #[rename(name = "m_AppearEffect")]
         pub m_appear_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_DisappearEffect")]
         pub m_disappear_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "AppearDuration")]
         pub appear_duration: f32,
+        #[offset(44)]
         #[rename(name = "DisappearDuration")]
         pub disappear_duration: f32,
+        #[offset(48)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(64)]
         #[rename(name = "m_IsAppear")]
         pub m_is_appear: bool,
+        #[offset(68)]
         #[rename(name = "m_DisappearDelayTime")]
         pub m_disappear_delay_time: f32,
     }

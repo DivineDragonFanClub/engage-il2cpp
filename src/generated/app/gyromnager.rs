@@ -61,12 +61,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GyroMnager")]
     #[parent(crate::system::object::Object)]
     pub struct GyroMnager {
+        #[offset(16)]
         #[rename(name = "m_IsSampling")]
         pub m_is_sampling: bool,
+        #[offset(24)]
         #[rename(name = "m_HandleList")]
         pub m_handle_list: ::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
+        #[offset(32)]
         #[rename(name = "m_HandleCoount")]
         pub m_handle_coount: i32,
+        #[offset(40)]
         #[rename(name = "m_StateList")]
         pub m_state_list: ::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>,
     }

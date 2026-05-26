@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "WindManager")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: windmanager :: WindManager >)]
     pub struct WindManager {
+        #[offset(32)]
         #[rename(name = "m_Actor")]
         pub m_actor: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Sampler")]
         pub m_sampler: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_Actors")]
         pub m_actors: crate::system::collections::generic::list_1::List_1<crate::root::windactor::WindActor>,
     }

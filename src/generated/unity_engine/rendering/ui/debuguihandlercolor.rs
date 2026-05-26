@@ -20,22 +20,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerColor")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
     pub struct DebugUIHandlerColor {
+        #[offset(88)]
         #[rename(name = "nameLabel")]
         pub name_label: crate::unity_engine::ui::text::Text,
+        #[offset(96)]
         #[rename(name = "valueToggle")]
         pub value_toggle: crate::unity_engine::rendering::ui::uifoldout::UIFoldout,
+        #[offset(104)]
         #[rename(name = "colorImage")]
         pub color_image: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "fieldR")]
         pub field_r: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[offset(120)]
         #[rename(name = "fieldG")]
         pub field_g: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[offset(128)]
         #[rename(name = "fieldB")]
         pub field_b: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[offset(136)]
         #[rename(name = "fieldA")]
         pub field_a: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[offset(144)]
         #[rename(name = "m_Field")]
         pub m_field: crate::unity_engine::rendering::debugui::DebugUI_ColorField,
+        #[offset(152)]
         #[rename(name = "m_Container")]
         pub m_container: crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer,
     }

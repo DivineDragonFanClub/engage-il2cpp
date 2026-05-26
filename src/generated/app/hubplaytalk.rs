@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubPlayTalk.CallPuppetEvent")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct HubPlayTalk_CallPuppetEvent {
+        #[offset(112)]
         #[rename(name = "File")]
         pub file: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "Mid")]
         pub mid: ::unity2::Il2CppString,
     }

@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "FunctionCallStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct FunctionCallStatement {
+        #[offset(32)]
         #[rename(name = "m_FunctionCallExpression")]
         pub m_function_call_expression: crate::moon_sharp::interpreter::tree::expressions::functioncallexpression::FunctionCallExpression,
     }

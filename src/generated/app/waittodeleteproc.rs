@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WaitToDeleteProc")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct WaitToDeleteProc {
+        #[offset(112)]
         #[rename(name = "m_WaitedProcInst")]
         pub m_waited_proc_inst: crate::app::procinst::ProcInst,
     }

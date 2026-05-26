@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "BreakStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct BreakStatement {
+        #[offset(32)]
         #[rename(name = "m_Ref")]
         pub m_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

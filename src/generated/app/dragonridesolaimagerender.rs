@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideSolaImageRender")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DragonRideSolaImageRender {
+        #[offset(24)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(32)]
         #[rename(name = "m_Sola")]
         pub m_sola: crate::combat::character::Character,
     }

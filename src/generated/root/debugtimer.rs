@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "DebugTimer")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DebugTimer {
+        #[offset(24)]
         #[rename(name = "m_StartTime")]
         pub m_start_time: f32,
+        #[offset(28)]
         #[rename(name = "m_EndTime")]
         pub m_end_time: f32,
     }

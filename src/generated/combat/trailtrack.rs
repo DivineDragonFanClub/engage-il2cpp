@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "TrailTrack")]
     #[parent(crate::system::object::Object)]
     pub struct TrailTrack {
+        #[offset(16)]
         #[rename(name = "RootX")]
         pub root_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(24)]
         #[rename(name = "RootY")]
         pub root_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(32)]
         #[rename(name = "RootZ")]
         pub root_z: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
         #[rename(name = "TipX")]
         pub tip_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(48)]
         #[rename(name = "TipY")]
         pub tip_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(56)]
         #[rename(name = "TipZ")]
         pub tip_z: crate::unity_engine::animationcurve::AnimationCurve,
     }

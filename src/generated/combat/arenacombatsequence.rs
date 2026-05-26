@@ -17,18 +17,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ArenaCombatSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: arenacombatsequence :: ArenaCombatSequence >)]
     pub struct ArenaCombatSequence {
+        #[offset(128)]
         #[rename(name = "StartTelopPath")]
         pub start_telop_path: ::unity2::Il2CppString,
+        #[offset(160)]
         #[rename(name = "m_RenderCamera")]
         pub m_render_camera: crate::unity_engine::camera::Camera,
+        #[offset(168)]
         #[rename(name = "m_RenderCameraData")]
         pub m_render_camera_data: crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData,
+        #[offset(176)]
         #[rename(name = "RenderCameraIndex_CharaMap")]
         pub render_camera_index_chara_map: i32,
+        #[offset(180)]
         #[rename(name = "RenderCameraIndex_Chara")]
         pub render_camera_index_chara: i32,
+        #[offset(184)]
         #[rename(name = "m_RelianceController")]
         pub m_reliance_controller: crate::app::reliancepopupcontroller::ReliancePopUpController,
+        #[offset(192)]
         #[rename(name = "m_BondController")]
         pub m_bond_controller: crate::app::bondpopupcontroller::BondPopUpController,
     }

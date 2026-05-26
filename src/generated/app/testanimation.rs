@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TestAnimation")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TestAnimation {
+        #[offset(24)]
         #[rename(name = "m_FileNames")]
         pub m_file_names: ::unity2::Array<::unity2::Il2CppString>,
     }

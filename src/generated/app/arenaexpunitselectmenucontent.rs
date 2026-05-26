@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ArenaExpUnitSelectMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct ArenaExpUnitSelectMenuContent {
+        #[offset(232)]
         #[rename(name = "m_ContentObject")]
         pub m_content_object: crate::unity_engine::gameobject::GameObject,
     }

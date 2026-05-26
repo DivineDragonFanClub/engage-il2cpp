@@ -11,11 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
-    #[parent(crate::system::object::Object)]
-    pub struct UISystemProfilerApi {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -49,6 +44,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
+    #[parent(crate::system::object::Object)]
+    pub struct UISystemProfilerApi {}
 }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]

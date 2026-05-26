@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapLightColorTable")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct GmapLightColorTable {
+        #[offset(24)]
         #[rename(name = "m_LightColorTable")]
         pub m_light_color_table: ::unity2::Array<crate::unity_engine::color::Color>,
     }

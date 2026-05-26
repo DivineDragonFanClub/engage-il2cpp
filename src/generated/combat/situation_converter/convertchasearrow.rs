@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertChaseArrow")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConvertChaseArrow {
+        #[offset(28)]
         #[rename(name = "m_ShootCount")]
         pub m_shoot_count: i32,
     }

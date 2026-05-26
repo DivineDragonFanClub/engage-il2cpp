@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "StringResultHandler")]
     # [parent (crate :: system :: io :: searchresulthandler_1 :: SearchResultHandler_1 < :: unity2 :: Il2CppString >)]
     pub struct StringResultHandler {
+        #[offset(16)]
         #[rename(name = "_includeFiles")]
         pub include_files: bool,
+        #[offset(17)]
         #[rename(name = "_includeDirs")]
         pub include_dirs: bool,
     }

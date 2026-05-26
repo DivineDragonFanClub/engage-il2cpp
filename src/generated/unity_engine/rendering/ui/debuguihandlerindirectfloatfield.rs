@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerIndirectFloatField")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
     pub struct DebugUIHandlerIndirectFloatField {
+        #[offset(88)]
         #[rename(name = "nameLabel")]
         pub name_label: crate::unity_engine::ui::text::Text,
+        #[offset(96)]
         #[rename(name = "valueLabel")]
         pub value_label: crate::unity_engine::ui::text::Text,
+        #[offset(104)]
         #[rename(name = "getter")]
         pub getter: crate::system::func_1::Func_1<f32>,
+        #[offset(112)]
         #[rename(name = "setter")]
         pub setter: crate::system::action_1::Action_1<f32>,
+        #[offset(120)]
         #[rename(name = "incStepGetter")]
         pub inc_step_getter: crate::system::func_1::Func_1<f32>,
+        #[offset(128)]
         #[rename(name = "incStepMultGetter")]
         pub inc_step_mult_getter: crate::system::func_1::Func_1<f32>,
+        #[offset(136)]
         #[rename(name = "decimalsGetter")]
         pub decimals_getter: crate::system::func_1::Func_1<f32>,
     }

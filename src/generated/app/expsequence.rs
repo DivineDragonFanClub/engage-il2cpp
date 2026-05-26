@@ -17,14 +17,19 @@ mod __types {
         #[static_field]
         #[rename(name = "resNameC")]
         pub res_name_c: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(120)]
         #[rename(name = "m_Exp")]
         pub m_exp: i32,
+        #[offset(124)]
         #[rename(name = "m_SkillPoint")]
         pub m_skill_point: i32,
+        #[offset(128)]
         #[rename(name = "m_isExpSe")]
         pub m_is_exp_se: bool,
+        #[offset(136)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::expsetter::ExpSetter,
     }

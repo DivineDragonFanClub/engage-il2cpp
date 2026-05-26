@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingSelectRoot.CharaPhoto")]
     #[parent(crate::system::object::Object)]
     pub struct RingSelectRoot_CharaPhoto {
+        #[offset(16)]
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_RootAnimator")]
         pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[offset(32)]
         #[rename(name = "m_CharaImage")]
         pub m_chara_image: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_FrameImage")]
         pub m_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(48)]
         #[rename(name = "m_IsSetup")]
         pub m_is_setup: bool,
     }
@@ -35,16 +40,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingSelectRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingSelectRoot {
+        #[offset(24)]
         #[rename(name = "m_RingMenu")]
         pub m_ring_menu: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_GodImageRoot")]
         pub m_god_image_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_RingModelRoot")]
         pub m_ring_model_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_UnitStatusRoot")]
         pub m_unit_status_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_Photos")]
         pub m_photos: ::unity2::Array<crate::app::ringselectroot::RingSelectRoot_CharaPhoto>,
+        #[offset(64)]
         #[rename(name = "m_PhotoIdx")]
         pub m_photo_idx: i32,
     }

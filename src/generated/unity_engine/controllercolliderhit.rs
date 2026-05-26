@@ -11,18 +11,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "ControllerColliderHit")]
     #[parent(crate::system::object::Object)]
     pub struct ControllerColliderHit {
+        #[offset(16)]
         #[rename(name = "m_Controller")]
         pub m_controller: crate::unity_engine::charactercontroller::CharacterController,
+        #[offset(24)]
         #[rename(name = "m_Collider")]
         pub m_collider: crate::unity_engine::collider::Collider,
+        #[offset(32)]
         #[rename(name = "m_Point")]
         pub m_point: crate::unity_engine::vector3::Vector3,
+        #[offset(44)]
         #[rename(name = "m_Normal")]
         pub m_normal: crate::unity_engine::vector3::Vector3,
+        #[offset(56)]
         #[rename(name = "m_MoveDirection")]
         pub m_move_direction: crate::unity_engine::vector3::Vector3,
+        #[offset(68)]
         #[rename(name = "m_MoveLength")]
         pub m_move_length: f32,
+        #[offset(72)]
         #[rename(name = "m_Push")]
         pub m_push: i32,
     }

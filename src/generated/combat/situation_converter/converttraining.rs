@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertTraining")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConvertTraining {
+        #[offset(24)]
         #[rename(name = "m_IsWinning")]
         pub m_is_winning: bool,
     }

@@ -14,10 +14,13 @@ mod __types {
         #[static_field]
         #[rename(name = "MAX_COUNT")]
         pub max_count: i32,
+        #[offset(16)]
         #[rename(name = "SIZE_OF_AKAUXSENDVALUE")]
         pub size_of_akauxsendvalue: i32,
+        #[offset(24)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::IntPtr,
+        #[offset(32)]
         #[rename(name = "m_Count")]
         pub m_count: i32,
     }

@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ColorParameter")]
     # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: color :: Color >)]
     pub struct ColorParameter {
+        #[offset(36)]
         #[rename(name = "hdr")]
         pub hdr: bool,
+        #[offset(37)]
         #[rename(name = "showAlpha")]
         pub show_alpha: bool,
+        #[offset(38)]
         #[rename(name = "showEyeDropper")]
         pub show_eye_dropper: bool,
     }

@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Deco_Skill")]
     #[parent(crate::combat::decorator::Decorator)]
     pub struct Deco_Skill {
+        #[offset(40)]
         #[rename(name = "m_Pair")]
         pub m_pair: crate::combat::skillstack::SkillStack_Packet,
+        #[offset(48)]
         #[rename(name = "m_bNameShown")]
         pub m_b_name_shown: bool,
     }

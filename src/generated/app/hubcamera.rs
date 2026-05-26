@@ -19,107 +19,157 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubCamera {
+        #[offset(24)]
         #[rename(name = "m_CameraTargetHeight")]
         pub m_camera_target_height: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(32)]
         #[rename(name = "m_OffsetCurveX")]
         pub m_offset_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
         #[rename(name = "m_DistanceCurve")]
         pub m_distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(48)]
         #[rename(name = "m_FovCurve")]
         pub m_fov_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(56)]
         #[rename(name = "m_TalkCurve")]
         pub m_talk_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(64)]
         #[rename(name = "m_NearClip")]
         pub m_near_clip: f32,
+        #[offset(68)]
         #[rename(name = "m_RotateSpeed")]
         pub m_rotate_speed: f32,
+        #[offset(72)]
         #[rename(name = "m_PitchSpeed")]
         pub m_pitch_speed: f32,
+        #[offset(76)]
         #[rename(name = "m_RotateFollowSpeed")]
         pub m_rotate_follow_speed: f32,
+        #[offset(80)]
         #[rename(name = "m_FollowRate")]
         pub m_follow_rate: f32,
+        #[offset(84)]
         #[rename(name = "m_PredictionLimitAngle")]
         pub m_prediction_limit_angle: f32,
+        #[offset(88)]
         #[rename(name = "m_SideOffsetIndex")]
         pub m_side_offset_index: f32,
         #[static_field]
         #[rename(name = "m_DefaultAngleX")]
         pub m_default_angle_x: f32,
+        #[offset(96)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(112)]
         #[rename(name = "PlayerController")]
         pub player_controller: crate::app::hubplayercontroller::HubPlayerController,
+        #[offset(120)]
         #[rename(name = "SideLength")]
         pub side_length: f32,
+        #[offset(128)]
         #[rename(name = "m_AngleX")]
         pub m_angle_x: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(136)]
         #[rename(name = "m_TargetPosition")]
         pub m_target_position: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(144)]
         #[rename(name = "m_Position")]
         pub m_position: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(152)]
         #[rename(name = "m_AngleY")]
         pub m_angle_y: crate::app::interpolatorrotation::InterpolatorRotation,
+        #[offset(160)]
         #[rename(name = "m_Distance")]
         pub m_distance: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(168)]
         #[rename(name = "m_Fov")]
         pub m_fov: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(176)]
         #[rename(name = "m_DistanceRatio")]
         pub m_distance_ratio: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(184)]
         #[rename(name = "m_HeightRatio")]
         pub m_height_ratio: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(192)]
         #[rename(name = "m_TalkTail")]
         pub m_talk_tail: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(200)]
         #[rename(name = "m_SideOffset")]
         pub m_side_offset: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(208)]
         #[rename(name = "m_PredictionPitch")]
         pub m_prediction_pitch: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(224)]
         #[rename(name = "ObjectCollisionLayerMask")]
         pub object_collision_layer_mask: i32,
+        #[offset(228)]
         #[rename(name = "HeightLayerMask")]
         pub height_layer_mask: i32,
+        #[offset(232)]
         #[rename(name = "hresults")]
         pub hresults: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        #[offset(240)]
         #[rename(name = "rayhits")]
         pub rayhits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        #[offset(248)]
         #[rename(name = "m_position")]
         pub m_position_2: crate::unity_engine::vector3::Vector3,
+        #[offset(260)]
         #[rename(name = "m_angleX")]
         pub m_angle_x_2: f32,
+        #[offset(264)]
         #[rename(name = "m_angleY")]
         pub m_angle_y_2: f32,
+        #[offset(268)]
         #[rename(name = "m_distance")]
         pub m_distance_2: f32,
+        #[offset(272)]
         #[rename(name = "m_zoom")]
         pub m_zoom: f32,
+        #[offset(276)]
         #[rename(name = "m_fov")]
         pub m_fov_2: f32,
+        #[offset(280)]
         #[rename(name = "TalkCameraMoveTime")]
         pub talk_camera_move_time: f32,
+        #[offset(284)]
         #[rename(name = "TalkCameraReturnTime")]
         pub talk_camera_return_time: f32,
+        #[offset(288)]
         #[rename(name = "NormalTalkDistanceRatio")]
         pub normal_talk_distance_ratio: f32,
+        #[offset(292)]
         #[rename(name = "NormalTalkAngleX")]
         pub normal_talk_angle_x: f32,
+        #[offset(296)]
         #[rename(name = "NormalTalkAngleY")]
         pub normal_talk_angle_y: f32,
+        #[offset(300)]
         #[rename(name = "NormalTalkZoom")]
         pub normal_talk_zoom: f32,
+        #[offset(304)]
         #[rename(name = "NormalTalkSeparateDistance")]
         pub normal_talk_separate_distance: f32,
+        #[offset(308)]
         #[rename(name = "NormalTalkOffsetY")]
         pub normal_talk_offset_y: f32,
+        #[offset(312)]
         #[rename(name = "ShopTalkDistanceRatio")]
         pub shop_talk_distance_ratio: f32,
+        #[offset(316)]
         #[rename(name = "ShopTalkAngleX")]
         pub shop_talk_angle_x: f32,
+        #[offset(320)]
         #[rename(name = "ShopTalkAngleY")]
         pub shop_talk_angle_y: f32,
+        #[offset(324)]
         #[rename(name = "ShopTalkZoom")]
         pub shop_talk_zoom: f32,
+        #[offset(328)]
         #[rename(name = "ShopTalkSeparateDistance")]
         pub shop_talk_separate_distance: f32,
+        #[offset(332)]
         #[rename(name = "ShopTalkOffsetY")]
         pub shop_talk_offset_y: f32,
     }

@@ -22,24 +22,34 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_DiscardItemMenuContent")]
         pub m_discard_item_menu_content: crate::app::discarditemmenucontent::DiscardItemMenuContent,
+        #[offset(32)]
         #[rename(name = "m_MenuHelpObject")]
         pub m_menu_help_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_MenuHelpAnimator")]
         pub m_menu_help_animator: crate::unity_engine::animator::Animator,
+        #[offset(48)]
         #[rename(name = "m_MessageText")]
         pub m_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_ItemHelpObject")]
         pub m_item_help_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_ItemHelpAnimator")]
         pub m_item_help_animator: crate::unity_engine::animator::Animator,
+        #[offset(72)]
         #[rename(name = "m_ItemMenuDetailSetter")]
         pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+        #[offset(80)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(88)]
         #[rename(name = "m_UnitItem")]
         pub m_unit_item: crate::app::unititem::UnitItem,
+        #[offset(96)]
         #[rename(name = "m_ItemDetailDisplayWithUnit")]
         pub m_item_detail_display_with_unit: bool,
     }

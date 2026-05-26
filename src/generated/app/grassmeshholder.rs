@@ -26,14 +26,19 @@ mod __types {
         #[static_field]
         #[rename(name = "CurrentVersion")]
         pub current_version: i32,
+        #[offset(24)]
         #[rename(name = "m_version")]
         pub m_version: i32,
+        #[offset(28)]
         #[rename(name = "m_splitNum")]
         pub m_split_num: i32,
+        #[offset(32)]
         #[rename(name = "m_offset")]
         pub m_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(44)]
         #[rename(name = "m_size")]
         pub m_size: crate::unity_engine::vector3::Vector3,
+        #[offset(56)]
         #[rename(name = "m_meshes")]
         pub m_meshes: crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>,
     }

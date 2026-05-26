@@ -24,6 +24,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapPanelDebug")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldebug :: MapPanelDebug >)]
     pub struct MapPanelDebug {
+        #[offset(64)]
         #[rename(name = "m_Entitys")]
         pub m_entitys: crate::system::collections::generic::list_1::List_1<crate::app::mappaneldebug::MapPanelDebug_Entity>,
     }

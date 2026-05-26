@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Profiling.Memory.Experimental", name = "MetaData")]
     #[parent(crate::system::object::Object)]
     pub struct MetaData {
+        #[offset(16)]
         #[rename(name = "content")]
         pub content: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "platform")]
         pub platform: ::unity2::Il2CppString,
     }

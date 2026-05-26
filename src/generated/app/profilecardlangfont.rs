@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardLangFont")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ProfileCardLangFont {
+        #[offset(24)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_SharedMaterial")]
         pub m_shared_material: crate::unity_engine::material::Material,
     }

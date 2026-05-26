@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "BakedMesh")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BakedMesh {
+        #[offset(24)]
         #[rename(name = "_meshFilter")]
         pub mesh_filter: crate::unity_engine::meshfilter::MeshFilter,
+        #[offset(32)]
         #[rename(name = "_meshRenderer")]
         pub mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[offset(40)]
         #[rename(name = "twice")]
         pub twice: bool,
+        #[offset(41)]
         #[rename(name = "isSkinnedMesh")]
         pub is_skinned_mesh: bool,
     }

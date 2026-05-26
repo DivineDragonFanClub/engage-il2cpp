@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "RuntimeInitializeOnLoadMethodAttribute")]
     #[parent(crate::unity_engine::scripting::preserveattribute::PreserveAttribute)]
     pub struct RuntimeInitializeOnLoadMethodAttribute {
+        #[offset(16)]
         #[rename(name = "m_LoadType")]
         pub m_load_type: crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,
     }

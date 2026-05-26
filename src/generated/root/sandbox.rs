@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "SandBox")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SandBox {
+        #[offset(24)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "m_Property")]
         pub m_property: crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
     }

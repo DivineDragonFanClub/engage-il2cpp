@@ -14,14 +14,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodUnitMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct GodUnitMenuItem {
+        #[offset(112)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+        #[offset(120)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+        #[offset(128)]
         #[rename(name = "m_IsSelected")]
         pub m_is_selected: bool,
+        #[offset(129)]
         #[rename(name = "m_IsShowRingDirtyIcon")]
         pub m_is_show_ring_dirty_icon: bool,
+        #[offset(132)]
         #[rename(name = "m_GodType")]
         pub m_god_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
     }

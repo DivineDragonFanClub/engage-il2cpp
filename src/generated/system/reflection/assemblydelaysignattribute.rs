@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydelaysignattribute/AssemblyDelaySignAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyDelaySignAttribute")]
     pub struct AssemblyDelaySignAttribute {
+        #[offset(16)]
         #[rename(name = "m_delaySign")]
         pub m_delay_sign: bool,
     }

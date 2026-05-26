@@ -14,31 +14,6 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapGodExp_KindDesc {
-        pub param_name: ::unity2::Il2CppString,
-        pub is_multi: bool,
-    }
-
-    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
-        const NAME: &'static str = "MapGodExp.KindDesc";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapGodExp_KindDesc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -93,18 +68,48 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapGodExp_KindDesc {
+        pub param_name: ::unity2::Il2CppString,
+        pub is_multi: bool,
+    }
+
+    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
+        const NAME: &'static str = "MapGodExp.KindDesc";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapGodExp_KindDesc {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
     #[::unity2::class(namespace = "App", name = "MapGodExp")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
     pub struct MapGodExp {
+        #[offset(32)]
         #[rename(name = "m_AddFlag")]
         pub m_add_flag: crate::app::bitfield32::BitField32,
+        #[offset(40)]
         #[rename(name = "m_CommitUnit")]
         pub m_commit_unit: crate::app::unit::Unit,
+        #[offset(48)]
         #[rename(name = "m_CommitGodUnit")]
         pub m_commit_god_unit: crate::app::godunit::GodUnit,
+        #[offset(56)]
         #[rename(name = "m_Exp")]
         pub m_exp: i32,
+        #[offset(60)]
         #[rename(name = "m_Dirty")]
         pub m_dirty: i32,
         #[static_field]

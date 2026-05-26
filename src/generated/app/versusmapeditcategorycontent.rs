@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VersusMapEditCategoryContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct VersusMapEditCategoryContent {
+        #[offset(24)]
         #[rename(name = "m_Num")]
         pub m_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_Highlight")]
         pub m_highlight: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::mapeditorcategorydata::MapEditorCategoryData,
+        #[offset(48)]
         #[rename(name = "m_Sprite")]
         pub m_sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(56)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
     }

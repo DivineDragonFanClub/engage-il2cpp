@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TerrainMesh")]
     #[parent(crate::app::map::Map_CellMesh)]
     pub struct TerrainMesh {
+        #[offset(112)]
         #[rename(name = "m_Size")]
         pub m_size: crate::unity_engine::vector2::Vector2,
     }

@@ -61,12 +61,16 @@ mod __types {
         #[static_field]
         #[rename(name = "VersionAll")]
         pub version_all: u8,
+        #[offset(16)]
         #[rename(name = "m_Kind")]
         pub m_kind: crate::app::relaybackupdata::RelayBackupData_Kinds,
+        #[offset(24)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::Array<u8>,
+        #[offset(32)]
         #[rename(name = "m_Stream")]
         pub m_stream: crate::app::stream_2::Stream_2,
+        #[offset(40)]
         #[rename(name = "m_SaveData")]
         pub m_save_data: crate::app::gamesavedata::GameSaveData,
     }

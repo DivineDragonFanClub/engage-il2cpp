@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "StrongNameKeyPair")]
     #[parent(crate::system::object::Object)]
     pub struct StrongNameKeyPair {
+        #[offset(16)]
         #[rename(name = "_publicKey")]
         pub public_key: ::unity2::Array<u8>,
+        #[offset(24)]
         #[rename(name = "_keyPairContainer")]
         pub key_pair_container: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "_keyPairExported")]
         pub key_pair_exported: bool,
+        #[offset(40)]
         #[rename(name = "_keyPairArray")]
         pub key_pair_array: ::unity2::Array<u8>,
     }

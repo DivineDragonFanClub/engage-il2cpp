@@ -21,8 +21,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AmiiboTopSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibotopsequence :: AmiiboTopSequence >)]
     pub struct AmiiboTopSequence {
+        #[offset(116)]
         #[rename(name = "m_menuResult")]
         pub m_menu_result: crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult,
+        #[offset(120)]
         #[rename(name = "m_AccessoryShopChangeRoot")]
         pub m_accessory_shop_change_root: crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
     }

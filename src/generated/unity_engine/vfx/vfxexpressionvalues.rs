@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXExpressionValues")]
     #[parent(crate::system::object::Object)]
     pub struct VFXExpressionValues {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
     }

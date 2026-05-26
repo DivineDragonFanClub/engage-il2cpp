@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GameCalculatorCommand")]
     #[parent(crate::app::calculatorcommand::CalculatorCommand)]
     pub struct GameCalculatorCommand {
+        #[offset(24)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
+        #[offset(32)]
         #[rename(name = "m_Header")]
         pub m_header: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_IsReverse")]
         pub m_is_reverse: bool,
     }

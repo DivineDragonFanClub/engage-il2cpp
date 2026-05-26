@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "HierarchyCache")]
     #[parent(crate::system::object::Object)]
     pub struct HierarchyCache {
+        #[offset(16)]
         #[rename(name = "dic")]
         pub dic: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::transform::Transform>,
     }

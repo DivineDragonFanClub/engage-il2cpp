@@ -14,16 +14,22 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "UnmanagedMemoryStream")]
     #[parent(crate::system::io::stream::Stream)]
     pub struct UnmanagedMemoryStream {
+        #[offset(56)]
         #[rename(name = "_length")]
         pub length_field: i64,
+        #[offset(64)]
         #[rename(name = "_capacity")]
         pub capacity: i64,
+        #[offset(72)]
         #[rename(name = "_position")]
         pub position_field: i64,
+        #[offset(80)]
         #[rename(name = "_offset")]
         pub offset: i64,
+        #[offset(88)]
         #[rename(name = "_access")]
         pub access: crate::system::io::fileaccess::FileAccess,
+        #[offset(92)]
         #[rename(name = "_isOpen")]
         pub is_open: bool,
     }

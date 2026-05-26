@@ -31,34 +31,49 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MenuObject")]
         pub m_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_UnitNameObject")]
         pub m_unit_name_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_EquipmentInfoWindowObject")]
         pub m_equipment_info_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_DetailInfoWindowObject")]
         pub m_detail_info_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_KeyHelpAllObject")]
         pub m_key_help_all_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_KeyHelpAllAnimator")]
         pub m_key_help_all_animator: crate::unity_engine::animator::Animator,
+        #[offset(80)]
         #[rename(name = "m_WatchingModeKeyHelpController")]
         pub m_watching_mode_key_help_controller: crate::app::keyhelpcontroller::KeyHelpController,
+        #[offset(88)]
         #[rename(name = "m_AccessoryShopBuyRootProc")]
         pub m_accessory_shop_buy_root_proc: crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc,
+        #[offset(96)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(104)]
         #[rename(name = "m_AccessoryShopBuyMenu")]
         pub m_accessory_shop_buy_menu: crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu,
+        #[offset(112)]
         #[rename(name = "m_AccessoryEquipmentInfoWindow")]
         pub m_accessory_equipment_info_window: crate::app::accessoryequipmentinfo::AccessoryEquipmentInfo,
+        #[offset(120)]
         #[rename(name = "m_AccessoryDetailInfoWindow")]
         pub m_accessory_detail_info_window: crate::app::accessorydetailinfowindow::AccessoryDetailInfoWindow,
+        #[offset(128)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler,
+        #[offset(136)]
         #[rename(name = "m_AccessoryData")]
         pub m_accessory_data: crate::app::accessorydata::AccessoryData,
     }

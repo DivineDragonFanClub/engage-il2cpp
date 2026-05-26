@@ -13,35 +13,77 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_UnitFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.UnitFunction")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_Unit2Function.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.Unit2Function")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_UnitFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_DestroyFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.DestroyFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_DestroyFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_RangeFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.RangeFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_RangeFunction {}
+    pub struct MapFor_Unit2Function {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_UnitSkillFunction.md"))]
     #[::unity2::class(namespace = "App", name = "MapFor.UnitSkillFunction")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MapFor_UnitSkillFunction {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_Pos2Function.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.Pos2Function")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_RangeFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.RangeFunction")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_Pos2Function {}
+    pub struct MapFor_RangeFunction {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_ForceFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.ForceFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_ForceFunction {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_Force2Function.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.Force2Function")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_Force2Function {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_PosFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.PosFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_PosFunction {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_PokeFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.PokeFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_PokeFunction {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_UnitPosFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.UnitPosFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_UnitPosFunction {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapFor {
+        #[static_field]
+        #[rename(name = "RhombusX")]
+        pub rhombus_x: ::unity2::Array<i32>,
+        #[static_field]
+        #[rename(name = "RhombusZ")]
+        pub rhombus_z: ::unity2::Array<i32>,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_Range2Function.md"))]
     #[::unity2::class(namespace = "App", name = "MapFor.Range2Function")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MapFor_Range2Function {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_Pos2Function.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.Pos2Function")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_Pos2Function {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_TargetFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.TargetFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_TargetFunction {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_UnitFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.UnitFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapFor_UnitFunction {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_Return.md"))]
     #[repr(C)]
@@ -77,52 +119,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_PosFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.PosFunction")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_DestroyFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapFor.DestroyFunction")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_PosFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_UnitPosFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.UnitPosFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_UnitPosFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_ForceFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.ForceFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_ForceFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_TargetFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.TargetFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_TargetFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_PokeFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.PokeFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_PokeFunction {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_Force2Function.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.Force2Function")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_Force2Function {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor_Unit2Function.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor.Unit2Function")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapFor_Unit2Function {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapfor/MapFor.md"))]
-    #[::unity2::class(namespace = "App", name = "MapFor")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapFor {
-        #[static_field]
-        #[rename(name = "RhombusX")]
-        pub rhombus_x: ::unity2::Array<i32>,
-        #[static_field]
-        #[rename(name = "RhombusZ")]
-        pub rhombus_z: ::unity2::Array<i32>,
-    }
+    pub struct MapFor_DestroyFunction {}
 }
 
 #[cfg(feature = "app-mapfor-types")]
@@ -131,7 +131,7 @@ pub use __types::*;
 #[cfg(feature = "app-mapfor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_UnitFunction_unity2_raw {
+mod __MapFor_Unit2Function_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -143,7 +143,7 @@ mod __MapFor_UnitFunction_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_UnitFunction as ::unity2::ClassIdentity>::class(),
+                <MapFor_Unit2Function as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -156,7 +156,7 @@ mod __MapFor_UnitFunction_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_UnitFunction as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_Unit2Function as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -165,12 +165,12 @@ mod __MapFor_UnitFunction_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapFor_UnitFunction,
+        this: MapFor_Unit2Function,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapFor_UnitFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(MapFor_Unit2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
@@ -181,7 +181,7 @@ mod __MapFor_UnitFunction_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_UnitFunction as ::unity2::ClassIdentity>::class(),
+                <MapFor_Unit2Function as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 1,
                 param_types,
@@ -194,136 +194,7 @@ mod __MapFor_UnitFunction_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_UnitFunction as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: MapFor_UnitFunction, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapFor_UnitFunction, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-pub trait IMapFor_UnitFunctionMethods: IMapFor_UnitFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <MapFor_UnitFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_UnitFunction_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    fn invoke(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MapFor_UnitFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_UnitFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_UnitFunction> IMapFor_UnitFunctionMethods for __T {}
-
-#[cfg(feature = "app-mapfor")]
-impl MapFor_UnitFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_UnitFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapFor_UnitFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_DestroyFunction_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_DestroyFunction as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_DestroyFunction as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapFor_DestroyFunction,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_DestroyFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_DestroyFunction as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_DestroyFunction as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_Unit2Function as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -332,28 +203,24 @@ mod __MapFor_DestroyFunction_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: MapFor_DestroyFunction,
-        x: i32,
-        z: i32,
-        target_x: i32,
-        target_z: i32,
-        item_index: i32,
+        this: MapFor_Unit2Function,
+        unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_DestroyFunction, i32, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+    ) -> crate::app::mapfor::MapFor_Return {
+        let inner: extern "C" fn(MapFor_Unit2Function, crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::mapfor::MapFor_Return =
             ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, x, z, target_x, target_z, item_index, __unity2_method_info)
+        inner(this, unit, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapfor")]
-pub trait IMapFor_DestroyFunctionMethods: IMapFor_DestroyFunction {
+pub trait IMapFor_Unit2FunctionMethods: IMapFor_Unit2Function {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <MapFor_DestroyFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_DestroyFunction_unity2_raw::ctor(
+                <MapFor_Unit2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Unit2Function_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -361,181 +228,31 @@ pub trait IMapFor_DestroyFunctionMethods: IMapFor_DestroyFunction {
             )
         }
     }
-    #[doc = "`Invoke(i32, i32, i32, i32, i32)` overload"]
-    fn invoke(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        target_x: impl ::core::convert::Into<i32>,
-        target_z: impl ::core::convert::Into<i32>,
-        item_index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    fn invoke(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::mapfor::MapFor_Return {
         unsafe {
             let __receiver =
-                <MapFor_DestroyFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_DestroyFunction_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(target_x),
-                ::core::convert::Into::into(target_z),
-                ::core::convert::Into::into(item_index),
-                ::core::option::Option::None,
-            )
+                <MapFor_Unit2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Unit2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_DestroyFunction> IMapFor_DestroyFunctionMethods for __T {}
+impl<__T: IMapFor_Unit2Function> IMapFor_Unit2FunctionMethods for __T {}
 
 #[cfg(feature = "app-mapfor")]
-impl MapFor_DestroyFunction {
+impl MapFor_Unit2Function {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_DestroyFunction),
+                ::core::stringify!(MapFor_Unit2Function),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapFor_DestroyFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_RangeFunction_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_RangeFunction as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_RangeFunction as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapFor_RangeFunction,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_RangeFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_RangeFunction as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_RangeFunction as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: MapFor_RangeFunction, x: i32, z: i32, range: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapFor_RangeFunction, i32, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, x, z, range, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-pub trait IMapFor_RangeFunctionMethods: IMapFor_RangeFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <MapFor_RangeFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_RangeFunction_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, i32, i32)` overload"]
-    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>, range: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <MapFor_RangeFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_RangeFunction_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(range),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_RangeFunction> IMapFor_RangeFunctionMethods for __T {}
-
-#[cfg(feature = "app-mapfor")]
-impl MapFor_RangeFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_RangeFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapFor_RangeFunctionMethods>::ctor(this, object, method);
+        <Self as IMapFor_Unit2FunctionMethods>::ctor(this, object, method);
         this
     }
 }
@@ -685,7 +402,7 @@ impl MapFor_UnitSkillFunction {
 #[cfg(feature = "app-mapfor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_Pos2Function_unity2_raw {
+mod __MapFor_RangeFunction_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -697,7 +414,7 @@ mod __MapFor_Pos2Function_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Pos2Function as ::unity2::ClassIdentity>::class(),
+                <MapFor_RangeFunction as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -710,7 +427,7 @@ mod __MapFor_Pos2Function_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_Pos2Function as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_RangeFunction as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -719,145 +436,12 @@ mod __MapFor_Pos2Function_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapFor_Pos2Function,
+        this: MapFor_RangeFunction,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapFor_Pos2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Pos2Function as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_Pos2Function as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MapFor_Pos2Function,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapfor::MapFor_Return {
-        let inner: extern "C" fn(MapFor_Pos2Function, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapfor::MapFor_Return =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-pub trait IMapFor_Pos2FunctionMethods: IMapFor_Pos2Function {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <MapFor_Pos2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Pos2Function_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, i32)` overload"]
-    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::mapfor::MapFor_Return {
-        unsafe {
-            let __receiver = <MapFor_Pos2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Pos2Function_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_Pos2Function> IMapFor_Pos2FunctionMethods for __T {}
-
-#[cfg(feature = "app-mapfor")]
-impl MapFor_Pos2Function {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_Pos2Function),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapFor_Pos2FunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_Range2Function_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Range2Function as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_Range2Function as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapFor_Range2Function,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_Range2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(MapFor_RangeFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
@@ -872,7 +456,7 @@ mod __MapFor_Range2Function_unity2_raw {
                 <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Range2Function as ::unity2::ClassIdentity>::class(),
+                <MapFor_RangeFunction as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 3,
                 param_types,
@@ -885,7 +469,7 @@ mod __MapFor_Range2Function_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_Range2Function as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_RangeFunction as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -893,27 +477,21 @@ mod __MapFor_Range2Function_unity2_raw {
             }
         }
     }
-    pub unsafe fn invoke(
-        this: MapFor_Range2Function,
-        x: i32,
-        z: i32,
-        range: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapfor::MapFor_Return {
-        let inner: extern "C" fn(MapFor_Range2Function, i32, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapfor::MapFor_Return =
+    pub unsafe fn invoke(this: MapFor_RangeFunction, x: i32, z: i32, range: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapFor_RangeFunction, i32, i32, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, x, z, range, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapfor")]
-pub trait IMapFor_Range2FunctionMethods: IMapFor_Range2Function {
+pub trait IMapFor_RangeFunctionMethods: IMapFor_RangeFunction {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <MapFor_Range2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Range2Function_unity2_raw::ctor(
+                <MapFor_RangeFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_RangeFunction_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -922,16 +500,11 @@ pub trait IMapFor_Range2FunctionMethods: IMapFor_Range2Function {
         }
     }
     #[doc = "`Invoke(i32, i32, i32)` overload"]
-    fn invoke(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        range: impl ::core::convert::Into<i32>,
-    ) -> crate::app::mapfor::MapFor_Return {
+    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>, range: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <MapFor_Range2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Range2Function_unity2_raw::invoke(
+                <MapFor_RangeFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_RangeFunction_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(x),
                 ::core::convert::Into::into(z),
@@ -943,294 +516,20 @@ pub trait IMapFor_Range2FunctionMethods: IMapFor_Range2Function {
 }
 
 #[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_Range2Function> IMapFor_Range2FunctionMethods for __T {}
+impl<__T: IMapFor_RangeFunction> IMapFor_RangeFunctionMethods for __T {}
 
 #[cfg(feature = "app-mapfor")]
-impl MapFor_Range2Function {
+impl MapFor_RangeFunction {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_Range2Function),
+                ::core::stringify!(MapFor_RangeFunction),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapFor_Range2FunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_PosFunction_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_PosFunction as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_PosFunction as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapFor_PosFunction,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_PosFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_PosFunction as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_PosFunction as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: MapFor_PosFunction, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapFor_PosFunction, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-pub trait IMapFor_PosFunctionMethods: IMapFor_PosFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <MapFor_PosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_PosFunction_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, i32)` overload"]
-    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <MapFor_PosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_PosFunction_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_PosFunction> IMapFor_PosFunctionMethods for __T {}
-
-#[cfg(feature = "app-mapfor")]
-impl MapFor_PosFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_PosFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapFor_PosFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_UnitPosFunction_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapFor_UnitPosFunction,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_UnitPosFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MapFor_UnitPosFunction,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_UnitPosFunction, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, unit, x, z, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-pub trait IMapFor_UnitPosFunctionMethods: IMapFor_UnitPosFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <MapFor_UnitPosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_UnitPosFunction_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::unit::Unit, i32, i32)` overload"]
-    fn invoke(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapFor_UnitPosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_UnitPosFunction_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_UnitPosFunction> IMapFor_UnitPosFunctionMethods for __T {}
-
-#[cfg(feature = "app-mapfor")]
-impl MapFor_UnitPosFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_UnitPosFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapFor_UnitPosFunctionMethods>::ctor(this, object, method);
+        <Self as IMapFor_RangeFunctionMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1367,7 +666,7 @@ impl MapFor_ForceFunction {
 #[cfg(feature = "app-mapfor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_TargetFunction_unity2_raw {
+mod __MapFor_Force2Function_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1379,7 +678,7 @@ mod __MapFor_TargetFunction_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_TargetFunction as ::unity2::ClassIdentity>::class(),
+                <MapFor_Force2Function as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1392,7 +691,7 @@ mod __MapFor_TargetFunction_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_TargetFunction as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_Force2Function as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1401,12 +700,12 @@ mod __MapFor_TargetFunction_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapFor_TargetFunction,
+        this: MapFor_Force2Function,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapFor_TargetFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(MapFor_Force2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
@@ -1415,19 +714,11 @@ mod __MapFor_TargetFunction_unity2_raw {
     pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_TargetFunction as ::unity2::ClassIdentity>::class(),
+                <MapFor_Force2Function as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                7,
+                1,
                 param_types,
                 false,
             )
@@ -1438,7 +729,7 @@ mod __MapFor_TargetFunction_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_TargetFunction as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_Force2Function as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -1447,49 +738,27 @@ mod __MapFor_TargetFunction_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: MapFor_TargetFunction,
-        attack_x: i32,
-        attack_z: i32,
-        target_x: i32,
-        target_z: i32,
-        target: crate::app::unit::Unit,
-        item_mask: u32,
-        specified_item: crate::app::unititem::UnitItem,
+        this: MapFor_Force2Function,
+        force_type: crate::app::force::Force_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> crate::app::mapfor::MapFor_Return {
         let inner: extern "C" fn(
-            MapFor_TargetFunction,
-            i32,
-            i32,
-            i32,
-            i32,
-            crate::app::unit::Unit,
-            u32,
-            crate::app::unititem::UnitItem,
+            MapFor_Force2Function,
+            crate::app::force::Force_Type,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(
-            this,
-            attack_x,
-            attack_z,
-            target_x,
-            target_z,
-            target,
-            item_mask,
-            specified_item,
-            __unity2_method_info,
-        )
+        ) -> crate::app::mapfor::MapFor_Return = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, force_type, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapfor")]
-pub trait IMapFor_TargetFunctionMethods: IMapFor_TargetFunction {
+pub trait IMapFor_Force2FunctionMethods: IMapFor_Force2Function {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <MapFor_TargetFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_TargetFunction_unity2_raw::ctor(
+                <MapFor_Force2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Force2Function_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1497,29 +766,138 @@ pub trait IMapFor_TargetFunctionMethods: IMapFor_TargetFunction {
             )
         }
     }
-    #[doc = "`Invoke(i32, i32, i32, i32, crate::app::unit::Unit, u32, crate::app::unititem::UnitItem)` overload"]
-    fn invoke(
-        self,
-        attack_x: impl ::core::convert::Into<i32>,
-        attack_z: impl ::core::convert::Into<i32>,
-        target_x: impl ::core::convert::Into<i32>,
-        target_z: impl ::core::convert::Into<i32>,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
-        item_mask: impl ::core::convert::Into<u32>,
-        specified_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-    ) -> () {
+    #[doc = "`Invoke(crate::app::force::Force_Type)` overload"]
+    fn invoke(self, force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> crate::app::mapfor::MapFor_Return {
         unsafe {
             let __receiver =
-                <MapFor_TargetFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_TargetFunction_unity2_raw::invoke(
+                <MapFor_Force2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Force2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(force_type), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+impl<__T: IMapFor_Force2Function> IMapFor_Force2FunctionMethods for __T {}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_Force2Function {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_Force2Function),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_Force2FunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapFor_PosFunction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_PosFunction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_PosFunction as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapFor_PosFunction,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapFor_PosFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_PosFunction as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_PosFunction as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: MapFor_PosFunction, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapFor_PosFunction, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+pub trait IMapFor_PosFunctionMethods: IMapFor_PosFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <MapFor_PosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_PosFunction_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(attack_x),
-                ::core::convert::Into::into(attack_z),
-                ::core::convert::Into::into(target_x),
-                ::core::convert::Into::into(target_z),
-                ::core::convert::Into::into(target),
-                ::core::convert::Into::into(item_mask),
-                ::core::convert::Into::into(specified_item),
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32)` overload"]
+    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <MapFor_PosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_PosFunction_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
                 ::core::option::Option::None,
             )
         }
@@ -1527,20 +905,20 @@ pub trait IMapFor_TargetFunctionMethods: IMapFor_TargetFunction {
 }
 
 #[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_TargetFunction> IMapFor_TargetFunctionMethods for __T {}
+impl<__T: IMapFor_PosFunction> IMapFor_PosFunctionMethods for __T {}
 
 #[cfg(feature = "app-mapfor")]
-impl MapFor_TargetFunction {
+impl MapFor_PosFunction {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_TargetFunction),
+                ::core::stringify!(MapFor_PosFunction),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapFor_TargetFunctionMethods>::ctor(this, object, method);
+        <Self as IMapFor_PosFunctionMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1692,7 +1070,7 @@ impl MapFor_PokeFunction {
 #[cfg(feature = "app-mapfor")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_Force2Function_unity2_raw {
+mod __MapFor_UnitPosFunction_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1704,7 +1082,7 @@ mod __MapFor_Force2Function_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Force2Function as ::unity2::ClassIdentity>::class(),
+                <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1717,7 +1095,7 @@ mod __MapFor_Force2Function_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_Force2Function as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1726,157 +1104,29 @@ mod __MapFor_Force2Function_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapFor_Force2Function,
+        this: MapFor_UnitPosFunction,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapFor_Force2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(MapFor_UnitPosFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Force2Function as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_Force2Function as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MapFor_Force2Function,
-        force_type: crate::app::force::Force_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapfor::MapFor_Return {
-        let inner: extern "C" fn(
-            MapFor_Force2Function,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapfor::MapFor_Return = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, force_type, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-pub trait IMapFor_Force2FunctionMethods: IMapFor_Force2Function {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <MapFor_Force2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Force2Function_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::force::Force_Type)` overload"]
-    fn invoke(self, force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> crate::app::mapfor::MapFor_Return {
-        unsafe {
-            let __receiver =
-                <MapFor_Force2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Force2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(force_type), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_Force2Function> IMapFor_Force2FunctionMethods for __T {}
-
-#[cfg(feature = "app-mapfor")]
-impl MapFor_Force2Function {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_Force2Function),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapFor_Force2FunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapfor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapFor_Unit2Function_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Unit2Function as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapFor_Unit2Function as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapFor_Unit2Function,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapFor_Unit2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapFor_Unit2Function as ::unity2::ClassIdentity>::class(),
+                <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                1,
+                3,
                 param_types,
                 false,
             )
@@ -1887,7 +1137,7 @@ mod __MapFor_Unit2Function_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapFor_Unit2Function as ::unity2::ClassIdentity>::NAME,
+                        <MapFor_UnitPosFunction as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -1896,24 +1146,26 @@ mod __MapFor_Unit2Function_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: MapFor_Unit2Function,
+        this: MapFor_UnitPosFunction,
         unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapfor::MapFor_Return {
-        let inner: extern "C" fn(MapFor_Unit2Function, crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::mapfor::MapFor_Return =
+    ) -> () {
+        let inner: extern "C" fn(MapFor_UnitPosFunction, crate::app::unit::Unit, i32, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
+        inner(this, unit, x, z, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapfor")]
-pub trait IMapFor_Unit2FunctionMethods: IMapFor_Unit2Function {
+pub trait IMapFor_UnitPosFunctionMethods: IMapFor_UnitPosFunction {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <MapFor_Unit2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Unit2Function_unity2_raw::ctor(
+                <MapFor_UnitPosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_UnitPosFunction_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1921,31 +1173,42 @@ pub trait IMapFor_Unit2FunctionMethods: IMapFor_Unit2Function {
             )
         }
     }
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    fn invoke(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::mapfor::MapFor_Return {
+    #[doc = "`Invoke(crate::app::unit::Unit, i32, i32)` overload"]
+    fn invoke(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> () {
         unsafe {
             let __receiver =
-                <MapFor_Unit2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapFor_Unit2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+                <MapFor_UnitPosFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_UnitPosFunction_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-mapfor")]
-impl<__T: IMapFor_Unit2Function> IMapFor_Unit2FunctionMethods for __T {}
+impl<__T: IMapFor_UnitPosFunction> IMapFor_UnitPosFunctionMethods for __T {}
 
 #[cfg(feature = "app-mapfor")]
-impl MapFor_Unit2Function {
+impl MapFor_UnitPosFunction {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapFor_Unit2Function),
+                ::core::stringify!(MapFor_UnitPosFunction),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapFor_Unit2FunctionMethods>::ctor(this, object, method);
+        <Self as IMapFor_UnitPosFunctionMethods>::ctor(this, object, method);
         this
     }
 }
@@ -3648,6 +2911,743 @@ impl MapFor {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapFor), ::core::stringify!(new),));
         <Self as IMapForMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapFor_Range2Function_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_Range2Function as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_Range2Function as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapFor_Range2Function,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapFor_Range2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_Range2Function as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_Range2Function as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MapFor_Range2Function,
+        x: i32,
+        z: i32,
+        range: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::mapfor::MapFor_Return {
+        let inner: extern "C" fn(MapFor_Range2Function, i32, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapfor::MapFor_Return =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, x, z, range, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+pub trait IMapFor_Range2FunctionMethods: IMapFor_Range2Function {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <MapFor_Range2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Range2Function_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32, i32)` overload"]
+    fn invoke(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        range: impl ::core::convert::Into<i32>,
+    ) -> crate::app::mapfor::MapFor_Return {
+        unsafe {
+            let __receiver =
+                <MapFor_Range2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Range2Function_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(range),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+impl<__T: IMapFor_Range2Function> IMapFor_Range2FunctionMethods for __T {}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_Range2Function {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_Range2Function),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_Range2FunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapFor_Pos2Function_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_Pos2Function as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_Pos2Function as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapFor_Pos2Function,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapFor_Pos2Function, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_Pos2Function as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_Pos2Function as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MapFor_Pos2Function,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::mapfor::MapFor_Return {
+        let inner: extern "C" fn(MapFor_Pos2Function, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapfor::MapFor_Return =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+pub trait IMapFor_Pos2FunctionMethods: IMapFor_Pos2Function {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <MapFor_Pos2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Pos2Function_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32)` overload"]
+    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::mapfor::MapFor_Return {
+        unsafe {
+            let __receiver = <MapFor_Pos2Function as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_Pos2Function_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+impl<__T: IMapFor_Pos2Function> IMapFor_Pos2FunctionMethods for __T {}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_Pos2Function {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_Pos2Function),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_Pos2FunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapFor_TargetFunction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_TargetFunction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_TargetFunction as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapFor_TargetFunction,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapFor_TargetFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_TargetFunction as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_TargetFunction as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MapFor_TargetFunction,
+        attack_x: i32,
+        attack_z: i32,
+        target_x: i32,
+        target_z: i32,
+        target: crate::app::unit::Unit,
+        item_mask: u32,
+        specified_item: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapFor_TargetFunction,
+            i32,
+            i32,
+            i32,
+            i32,
+            crate::app::unit::Unit,
+            u32,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(
+            this,
+            attack_x,
+            attack_z,
+            target_x,
+            target_z,
+            target,
+            item_mask,
+            specified_item,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+pub trait IMapFor_TargetFunctionMethods: IMapFor_TargetFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <MapFor_TargetFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_TargetFunction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32, i32, i32, crate::app::unit::Unit, u32, crate::app::unititem::UnitItem)` overload"]
+    fn invoke(
+        self,
+        attack_x: impl ::core::convert::Into<i32>,
+        attack_z: impl ::core::convert::Into<i32>,
+        target_x: impl ::core::convert::Into<i32>,
+        target_z: impl ::core::convert::Into<i32>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item_mask: impl ::core::convert::Into<u32>,
+        specified_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapFor_TargetFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_TargetFunction_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(attack_x),
+                ::core::convert::Into::into(attack_z),
+                ::core::convert::Into::into(target_x),
+                ::core::convert::Into::into(target_z),
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(item_mask),
+                ::core::convert::Into::into(specified_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+impl<__T: IMapFor_TargetFunction> IMapFor_TargetFunctionMethods for __T {}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_TargetFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_TargetFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_TargetFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapFor_UnitFunction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_UnitFunction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_UnitFunction as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapFor_UnitFunction,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapFor_UnitFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_UnitFunction as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_UnitFunction as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: MapFor_UnitFunction, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapFor_UnitFunction, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+pub trait IMapFor_UnitFunctionMethods: IMapFor_UnitFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <MapFor_UnitFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_UnitFunction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    fn invoke(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MapFor_UnitFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_UnitFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+impl<__T: IMapFor_UnitFunction> IMapFor_UnitFunctionMethods for __T {}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_UnitFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_UnitFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_UnitFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapFor_DestroyFunction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_DestroyFunction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_DestroyFunction as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapFor_DestroyFunction,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapFor_DestroyFunction, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapFor_DestroyFunction as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapFor_DestroyFunction as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MapFor_DestroyFunction,
+        x: i32,
+        z: i32,
+        target_x: i32,
+        target_z: i32,
+        item_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapFor_DestroyFunction, i32, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, x, z, target_x, target_z, item_index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+pub trait IMapFor_DestroyFunctionMethods: IMapFor_DestroyFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <MapFor_DestroyFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_DestroyFunction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32, i32, i32, i32)` overload"]
+    fn invoke(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        target_x: impl ::core::convert::Into<i32>,
+        target_z: impl ::core::convert::Into<i32>,
+        item_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapFor_DestroyFunction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapFor_DestroyFunction_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(target_x),
+                ::core::convert::Into::into(target_z),
+                ::core::convert::Into::into(item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapfor")]
+impl<__T: IMapFor_DestroyFunction> IMapFor_DestroyFunctionMethods for __T {}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_DestroyFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_DestroyFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_DestroyFunctionMethods>::ctor(this, object, method);
         this
     }
 }

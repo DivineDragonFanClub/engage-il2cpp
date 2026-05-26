@@ -19,22 +19,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineRingResult10RingInfoContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RefineRingResult10RingInfoContent {
+        #[offset(24)]
         #[rename(name = "m_CharacterImage")]
         pub m_character_image: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_FrameImage")]
         pub m_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_NewObject")]
         pub m_new_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_NewText")]
         pub m_new_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_RingIconImage")]
         pub m_ring_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "m_CharacterNameText")]
         pub m_character_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_RingParams")]
         pub m_ring_params: ::unity2::Array<crate::app::refineringresult10ringinfocontent::RefineRingResult10RingInfoContent_RingParam>,
+        #[offset(80)]
         #[rename(name = "m_SkillIconImage")]
         pub m_skill_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_SkillNameText")]
         pub m_skill_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
@@ -43,8 +52,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineRingResult10RingInfoContent.RingParam")]
     #[parent(crate::system::object::Object)]
     pub struct RefineRingResult10RingInfoContent_RingParam {
+        #[offset(16)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(24)]
         #[rename(name = "m_ValueText")]
         pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

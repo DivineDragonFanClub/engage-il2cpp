@@ -17,13 +17,16 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: u16,
+        #[offset(16)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::Array<u8>,
+        #[offset(24)]
         #[rename(name = "m_Stream")]
         pub m_stream: crate::app::stream_2::Stream_2,
         #[static_field]
         #[rename(name = "DataIdListSize")]
         pub data_id_list_size: i32,
+        #[offset(32)]
         #[rename(name = "m_DataIdList")]
         pub m_data_id_list: crate::system::collections::generic::list_1::List_1<u64>,
     }

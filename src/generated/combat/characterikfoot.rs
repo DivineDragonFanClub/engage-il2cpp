@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterIKFoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterIKFoot {
+        #[offset(24)]
         #[rename(name = "m_Race")]
         pub m_race: crate::combat::animname::AnimName_Race,
+        #[offset(32)]
         #[rename(name = "m_BodyIK")]
         pub m_body_ik: crate::unity_engine::behaviour::Behaviour,
+        #[offset(40)]
         #[rename(name = "m_RideIK")]
         pub m_ride_ik: crate::unity_engine::behaviour::Behaviour,
+        #[offset(48)]
         #[rename(name = "limbIKs")]
         pub limb_i_ks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::behaviour::Behaviour>,
     }

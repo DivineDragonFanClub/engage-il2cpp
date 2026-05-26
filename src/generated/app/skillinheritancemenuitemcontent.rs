@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkillInheritanceMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct SkillInheritanceMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_ImageIcon")]
         pub m_image_icon: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_TextName")]
         pub m_text_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_TextLevel")]
         pub m_text_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_ObjCost")]
         pub m_obj_cost: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_TextCost")]
         pub m_text_cost: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_ObjDone")]
         pub m_obj_done: crate::unity_engine::gameobject::GameObject,
     }

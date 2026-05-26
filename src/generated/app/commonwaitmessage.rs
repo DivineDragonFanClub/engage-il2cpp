@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CommonWaitMessage")]
     #[parent(crate::app::procwaitmessagebase::ProcWaitMessageBase)]
     pub struct CommonWaitMessage {
+        #[offset(120)]
         #[rename(name = "m_IsLoopSE")]
         pub m_is_loop_se: bool,
+        #[offset(121)]
         #[rename(name = "m_IsPlaySE")]
         pub m_is_play_se: bool,
         #[static_field]

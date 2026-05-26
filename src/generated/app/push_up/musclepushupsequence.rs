@@ -14,6 +14,68 @@ mod __types {
         },
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MusclePushupSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MusclePushupSequence_Label {
+        const NAME: &'static str = "MusclePushupSequence.Label";
+        const NAMESPACE: &'static str = "App.PushUp";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MusclePushupSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MusclePushupSequence_Label {
+        pub fn init() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn ready_count() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn tick() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn ready_finish() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn finish() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn result() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn mascot_bond() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn prize() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn r#final() -> Self {
+            Self { value: 8 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_judgeRank.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -102,11 +164,13 @@ mod __types {
         #[static_field]
         #[rename(name = "cEffectEraseBad")]
         pub c_effect_erase_bad: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "cLoadObjectList")]
         pub c_load_object_list: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "cBarTop")]
         pub c_bar_top: f32,
+        #[offset(120)]
         #[rename(name = "cAreaDisplayRadiusAdd")]
         pub c_area_display_radius_add: f32,
         #[static_field]
@@ -115,11 +179,13 @@ mod __types {
         #[static_field]
         #[rename(name = "cAnimeRoopFrame")]
         pub c_anime_roop_frame: f32,
+        #[offset(124)]
         #[rename(name = "cPlayerPos")]
         pub c_player_pos: crate::unity_engine::vector3::Vector3,
         #[static_field]
         #[rename(name = "cPlayerRotY")]
         pub c_player_rot_y: f32,
+        #[offset(136)]
         #[rename(name = "cAssistPos")]
         pub c_assist_pos: crate::unity_engine::vector3::Vector3,
         #[static_field]
@@ -134,238 +200,258 @@ mod __types {
         #[static_field]
         #[rename(name = "cResultMinimumSec")]
         pub c_result_minimum_sec: f32,
+        #[offset(160)]
         #[rename(name = "m_Window")]
         pub m_window: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_BarObj")]
         pub m_bar_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(176)]
         #[rename(name = "m_BarTrans")]
         pub m_bar_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(184)]
         #[rename(name = "m_BarImage")]
         pub m_bar_image: crate::unity_engine::ui::image::Image,
+        #[offset(192)]
         #[rename(name = "m_AreaG_Center")]
         pub m_area_g_center: f32,
+        #[offset(196)]
         #[rename(name = "m_AreaG_Radius")]
         pub m_area_g_radius: f32,
+        #[offset(200)]
         #[rename(name = "m_AreaP_Center")]
         pub m_area_p_center: f32,
+        #[offset(204)]
         #[rename(name = "m_AreaP_Radius")]
         pub m_area_p_radius: f32,
+        #[offset(208)]
         #[rename(name = "m_AButton")]
         pub m_a_button: crate::unity_engine::gameobject::GameObject,
+        #[offset(216)]
         #[rename(name = "m_AButtonAnime")]
         pub m_a_button_anime: crate::unity_engine::animator::Animator,
+        #[offset(224)]
         #[rename(name = "m_AreaPTrans")]
         pub m_area_p_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(232)]
         #[rename(name = "m_AreaGTrans")]
         pub m_area_g_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(240)]
         #[rename(name = "m_ResultWindow")]
         pub m_result_window: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_PopUpPerfect")]
         pub m_pop_up_perfect: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_PopUpGood")]
         pub m_pop_up_good: crate::unity_engine::gameobject::GameObject,
+        #[offset(264)]
         #[rename(name = "m_PopUpBad")]
         pub m_pop_up_bad: crate::unity_engine::gameobject::GameObject,
+        #[offset(272)]
         #[rename(name = "m_PopUpAssist")]
         pub m_pop_up_assist: crate::unity_engine::gameobject::GameObject,
+        #[offset(280)]
         #[rename(name = "m_PopUpAssistRectTrans")]
         pub m_pop_up_assist_rect_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(288)]
         #[rename(name = "m_AssistGlitter")]
         pub m_assist_glitter: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_SpeedUpTelop")]
         pub m_speed_up_telop: crate::unity_engine::gameobject::GameObject,
+        #[offset(304)]
         #[rename(name = "m_SpeedUpAnime")]
         pub m_speed_up_anime: crate::unity_engine::animator::Animator,
+        #[offset(312)]
         #[rename(name = "m_SpeedUpAnimeTimer")]
         pub m_speed_up_anime_timer: f32,
+        #[offset(320)]
         #[rename(name = "m_CurrentPopUp")]
         pub m_current_pop_up: crate::unity_engine::gameobject::GameObject,
+        #[offset(328)]
         #[rename(name = "m_PopupTimer")]
         pub m_popup_timer: f32,
+        #[offset(332)]
         #[rename(name = "m_PopupAssistTimer")]
         pub m_popup_assist_timer: f32,
+        #[offset(336)]
         #[rename(name = "m_PlayerRoot")]
         pub m_player_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(344)]
         #[rename(name = "m_ExerciseChara")]
         pub m_exercise_chara: crate::unity_engine::gameobject::GameObject,
+        #[offset(352)]
         #[rename(name = "m_PlayerAnimator")]
         pub m_player_animator: crate::unity_engine::animator::Animator,
+        #[offset(360)]
         #[rename(name = "m_PlayerResetPos")]
         pub m_player_reset_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(372)]
         #[rename(name = "m_PlayerResetRot")]
         pub m_player_reset_rot: crate::unity_engine::quaternion::Quaternion,
+        #[offset(388)]
         #[rename(name = "m_PlayerResetDir")]
         pub m_player_reset_dir: f32,
+        #[offset(392)]
         #[rename(name = "m_AnimeFrame")]
         pub m_anime_frame: f32,
+        #[offset(396)]
         #[rename(name = "m_NormalizedTime")]
         pub m_normalized_time: f32,
+        #[offset(400)]
         #[rename(name = "m_IsReadyPlayerModel")]
         pub m_is_ready_player_model: bool,
+        #[offset(401)]
         #[rename(name = "m_IsClear")]
         pub m_is_clear: bool,
         #[static_field]
         #[rename(name = "CameraAnimeCountMax")]
         pub camera_anime_count_max: i32,
+        #[offset(408)]
         #[rename(name = "m_UseCamera")]
         pub m_use_camera: crate::unity_engine::camera::Camera,
+        #[offset(416)]
         #[rename(name = "m_CameraAnime")]
         pub m_camera_anime: crate::unity_engine::animation::Animation,
+        #[offset(424)]
         #[rename(name = "m_UseCameraAnimeIndex")]
         pub m_use_camera_anime_index: i32,
+        #[offset(432)]
         #[rename(name = "m_CameraAnimeResouce")]
         pub m_camera_anime_resouce: ::unity2::Array<crate::app::resourcehandle_2::ResourceHandle_2>,
+        #[offset(440)]
         #[rename(name = "m_CameraResourceObjList")]
         pub m_camera_resource_obj_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(448)]
         #[rename(name = "m_Talker")]
         pub m_talker: crate::unity_engine::transform::Transform,
+        #[offset(456)]
         #[rename(name = "m_TalkChara")]
         pub m_talk_chara: crate::combat::character::Character,
+        #[offset(464)]
         #[rename(name = "m_VoiceHandle")]
         pub m_voice_handle: crate::app::gamesound::GameSound_Handle,
+        #[offset(472)]
         #[rename(name = "m_VoiceIntervalTimer")]
         pub m_voice_interval_timer: f32,
         #[static_field]
         #[rename(name = "VoiceIntervalSec")]
         pub voice_interval_sec: f32,
+        #[offset(480)]
         #[rename(name = "m_Sola")]
         pub m_sola: crate::combat::character::Character,
+        #[offset(488)]
         #[rename(name = "m_SolaAnime")]
         pub m_sola_anime: crate::unity_engine::animator::Animator,
+        #[offset(496)]
         #[rename(name = "m_SolaReaction")]
         pub m_sola_reaction: bool,
+        #[offset(500)]
         #[rename(name = "m_AssistMax")]
         pub m_assist_max: i32,
+        #[offset(504)]
         #[rename(name = "m_AssistCount")]
         pub m_assist_count: i32,
+        #[offset(508)]
         #[rename(name = "m_IsReadyAssistModel")]
         pub m_is_ready_assist_model: bool,
+        #[offset(512)]
         #[rename(name = "m_HubSolaLct")]
         pub m_hub_sola_lct: crate::unity_engine::gameobject::GameObject,
+        #[offset(520)]
         #[rename(name = "m_IsSetSolaInvisible")]
         pub m_is_set_sola_invisible: bool,
+        #[offset(524)]
         #[rename(name = "m_CountTimer")]
         pub m_count_timer: f32,
+        #[offset(528)]
         #[rename(name = "m_CountTelop")]
         pub m_count_telop: crate::unity_engine::gameobject::GameObject,
+        #[offset(536)]
         #[rename(name = "m_StopTelop")]
         pub m_stop_telop: crate::unity_engine::gameobject::GameObject,
+        #[offset(544)]
         #[rename(name = "m_CountText")]
         pub m_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(552)]
         #[rename(name = "m_PastCount")]
         pub m_past_count: i32,
+        #[offset(560)]
         #[rename(name = "m_PerfectText")]
         pub m_perfect_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(568)]
         #[rename(name = "m_GoodText")]
         pub m_good_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(576)]
         #[rename(name = "m_BadBase")]
         pub m_bad_base: crate::unity_engine::gameobject::GameObject,
+        #[offset(584)]
         #[rename(name = "m_BadAnime")]
         pub m_bad_anime: ::unity2::Array<crate::unity_engine::animator::Animator>,
+        #[offset(592)]
         #[rename(name = "m_GoodScore")]
         pub m_good_score: i32,
+        #[offset(596)]
         #[rename(name = "m_PerfectScore")]
         pub m_perfect_score: i32,
+        #[offset(600)]
         #[rename(name = "m_TargetScore")]
         pub m_target_score: i32,
+        #[offset(604)]
         #[rename(name = "m_LimitCount")]
         pub m_limit_count: i32,
+        #[offset(608)]
         #[rename(name = "m_BadCount")]
         pub m_bad_count: i32,
+        #[offset(612)]
         #[rename(name = "m_PerfectCount")]
         pub m_perfect_count: i32,
+        #[offset(616)]
         #[rename(name = "m_GoodCount")]
         pub m_good_count: i32,
+        #[offset(624)]
         #[rename(name = "m_SpeedList")]
         pub m_speed_list: crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>,
+        #[offset(632)]
         #[rename(name = "m_UseSpeedCount")]
         pub m_use_speed_count: i32,
+        #[offset(636)]
         #[rename(name = "m_SpeedLevelUpCount")]
         pub m_speed_level_up_count: i32,
+        #[offset(644)]
         #[rename(name = "m_BarPosY")]
         pub m_bar_pos_y: f32,
+        #[offset(648)]
         #[rename(name = "m_BaseSpeed")]
         pub m_base_speed: f32,
+        #[offset(652)]
         #[rename(name = "m_AnimSpeedMult")]
         pub m_anim_speed_mult: f32,
+        #[offset(656)]
         #[rename(name = "m_AheadSpeed")]
         pub m_ahead_speed: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(664)]
         #[rename(name = "m_ComebackSpeed")]
         pub m_comeback_speed: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(672)]
         #[rename(name = "m_RoopSec")]
         pub m_roop_sec: f32,
+        #[offset(676)]
         #[rename(name = "m_IsButtonBlink")]
         pub m_is_button_blink: bool,
+        #[offset(680)]
         #[rename(name = "m_RankStr")]
         pub m_rank_str: ::unity2::Il2CppString,
+        #[offset(688)]
         #[rename(name = "m_RankBonus")]
         pub m_rank_bonus: ::unity2::Il2CppString,
+        #[offset(696)]
         #[rename(name = "m_RankBond")]
         pub m_rank_bond: i32,
+        #[offset(700)]
         #[rename(name = "m_ResultTimer")]
         pub m_result_timer: f32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MusclePushupSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MusclePushupSequence_Label {
-        const NAME: &'static str = "MusclePushupSequence.Label";
-        const NAMESPACE: &'static str = "App.PushUp";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MusclePushupSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MusclePushupSequence_Label {
-        pub fn init() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn ready_count() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn tick() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ready_finish() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn finish() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn result() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn mascot_bond() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn prize() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn r#final() -> Self {
-            Self { value: 8 }
-        }
     }
 }
 

@@ -14,18 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellMap.md"))]
-    #[::unity2::class(namespace = "App", name = "MapHeight.CellMap")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapHeight_CellMap {
-        #[rename(name = "m_Cells")]
-        pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo>,
-        #[rename(name = "m_LayerMaskA")]
-        pub m_layer_mask_a: i32,
-        #[rename(name = "m_LayerMaskB")]
-        pub m_layer_mask_b: i32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight.md"))]
     #[::unity2::class(namespace = "App", name = "MapHeight")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapheight :: MapHeight >)]
@@ -42,12 +30,16 @@ mod __types {
         #[static_field]
         #[rename(name = "H")]
         pub h: i32,
+        #[offset(32)]
         #[rename(name = "m_CellMaps")]
         pub m_cell_maps: ::unity2::Array<crate::app::mapheight::MapHeight_CellMap>,
+        #[offset(40)]
         #[rename(name = "m_LayerMasksA")]
         pub m_layer_masks_a: ::unity2::Array<i32>,
+        #[offset(48)]
         #[rename(name = "m_LayerMasksB")]
         pub m_layer_masks_b: ::unity2::Array<i32>,
+        #[offset(56)]
         #[rename(name = "m_LayerMaskOver")]
         pub m_layer_mask_over: i32,
         #[static_field]
@@ -58,26 +50,84 @@ mod __types {
         pub s_edge_indexes: ::unity2::Array<crate::app::mapheight::MapHeight_EdgeIndex>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_EdgeIndex.md"))]
-    #[::unity2::class(namespace = "App", name = "MapHeight.EdgeIndex")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellMap.md"))]
+    #[::unity2::class(namespace = "App", name = "MapHeight.CellMap")]
     #[parent(crate::system::object::Object)]
-    pub struct MapHeight_EdgeIndex {
-        #[rename(name = "Index1")]
-        pub index1: i32,
-        #[rename(name = "Index2")]
-        pub index2: i32,
+    pub struct MapHeight_CellMap {
+        #[offset(16)]
+        #[rename(name = "m_Cells")]
+        pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo>,
+        #[offset(24)]
+        #[rename(name = "m_LayerMaskA")]
+        pub m_layer_mask_a: i32,
+        #[offset(28)]
+        #[rename(name = "m_LayerMaskB")]
+        pub m_layer_mask_b: i32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellInfo.md"))]
     #[::unity2::class(namespace = "App", name = "MapHeight.CellInfo")]
     #[parent(crate::system::object::Object)]
     pub struct MapHeight_CellInfo {
+        #[offset(16)]
         #[rename(name = "heights")]
         pub heights: ::unity2::Array<f32>,
+        #[offset(24)]
         #[rename(name = "normals")]
         pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(32)]
         #[rename(name = "layers")]
         pub layers: ::unity2::Array<i32>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_EdgeIndex.md"))]
+    #[::unity2::class(namespace = "App", name = "MapHeight.EdgeIndex")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapHeight_EdgeIndex {
+        #[offset(16)]
+        #[rename(name = "Index1")]
+        pub index1: i32,
+        #[offset(20)]
+        #[rename(name = "Index2")]
+        pub index2: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Layers.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapHeight_Layers {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapHeight_Layers {
+        const NAME: &'static str = "MapHeight.Layers";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapHeight_Layers {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapHeight_Layers {
+        pub fn under() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn over() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Plane.md"))]
@@ -121,543 +171,10 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Layers.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapHeight_Layers {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapHeight_Layers {
-        const NAME: &'static str = "MapHeight.Layers";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapHeight_Layers {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapHeight_Layers {
-        pub fn under() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn over() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 2 }
-        }
-    }
 }
 
 #[cfg(feature = "app-mapheight-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapheight")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapHeight_CellMap_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapHeight_CellMap, layer_mask_a: i32, layer_mask_b: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, layer_mask_a, layer_mask_b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "GetX",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "GetX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_x(this: MapHeight_CellMap, x: i32, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
-        inner(this, x, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "GetZ",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "GetZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_z(this: MapHeight_CellMap, z: i32, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
-        inner(this, z, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "GetHeight",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "GetHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_height(this: MapHeight_CellMap, x: i32, z: i32, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_height::get_method_info().method_ptr);
-        inner(this, x, z, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_max_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "GetMaxHeight",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "GetMaxHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_max_height(this: MapHeight_CellMap, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_max_height::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_min_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "GetMinHeight",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "GetMinHeight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_min_height(this: MapHeight_CellMap, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_min_height::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "Get",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(
-        this: MapHeight_CellMap,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapheight::MapHeight_CellInfo {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapheight::MapHeight_CellInfo =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "Update",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: MapHeight_CellMap, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_layer_mask {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "IsLayerMask",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "IsLayerMask",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_layer_mask(this: MapHeight_CellMap, x: i32, z: i32, layer_mask: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_layer_mask::get_method_info().method_ptr);
-        inner(this, x, z, layer_mask, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: MapHeight_CellMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapHeight_CellMap, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapheight")]
-pub trait IMapHeight_CellMapMethods: IMapHeight_CellMap {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    fn ctor(self, layer_mask_a: impl ::core::convert::Into<i32>, layer_mask_b: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(layer_mask_a),
-                ::core::convert::Into::into(layer_mask_b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetX(i32, i32)` overload"]
-    fn get_x(self, x: impl ::core::convert::Into<i32>, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::get_x(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetZ(i32, i32)` overload"]
-    fn get_z(self, z: impl ::core::convert::Into<i32>, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::get_z(
-                __receiver,
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetHeight(i32, i32, i32)` overload"]
-    fn get_height(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::get_height(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMaxHeight(i32, i32)` overload"]
-    fn get_max_height(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::get_max_height(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMinHeight(i32, i32)` overload"]
-    fn get_min_height(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::get_min_height(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Get(i32, i32)` overload"]
-    fn get(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::mapheight::MapHeight_CellInfo {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::get(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update(i32, i32)` overload"]
-    fn update(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::update(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsLayerMask(i32, i32, i32)` overload"]
-    fn is_layer_mask(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        layer_mask: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::is_layer_mask(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(layer_mask),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_CellMap_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapheight")]
-impl<__T: IMapHeight_CellMap> IMapHeight_CellMapMethods for __T {}
-
-#[cfg(feature = "app-mapheight")]
-impl MapHeight_CellMap {
-    #[doc = "`.ctor(i32, i32)` — overload selector"]
-    pub fn new(layer_mask_a: i32, layer_mask_b: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHeight_CellMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHeight_CellMapMethods>::ctor(this, layer_mask_a, layer_mask_b);
-        this
-    }
-}
 
 #[cfg(feature = "app-mapheight")]
 #[doc(hidden)]
@@ -2069,17 +1586,327 @@ impl MapHeight {
 #[cfg(feature = "app-mapheight")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapHeight_EdgeIndex_unity2_raw {
+mod __MapHeight_CellMap_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapHeight_CellMap, layer_mask_a: i32, layer_mask_b: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, layer_mask_a, layer_mask_b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "GetX",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "GetX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_x(this: MapHeight_CellMap, x: i32, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
+        inner(this, x, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "GetZ",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "GetZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_z(this: MapHeight_CellMap, z: i32, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
+        inner(this, z, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "GetHeight",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "GetHeight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_height(this: MapHeight_CellMap, x: i32, z: i32, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_height::get_method_info().method_ptr);
+        inner(this, x, z, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "GetMaxHeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxHeight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_max_height(this: MapHeight_CellMap, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_max_height::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_min_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "GetMinHeight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "GetMinHeight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_min_height(this: MapHeight_CellMap, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_min_height::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "Get",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get(
+        this: MapHeight_CellMap,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::mapheight::MapHeight_CellInfo {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> crate::app::mapheight::MapHeight_CellInfo =
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "Update",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update(this: MapHeight_CellMap, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_layer_mask {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "IsLayerMask",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "IsLayerMask",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_layer_mask(this: MapHeight_CellMap, x: i32, z: i32, layer_mask: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapHeight_CellMap, i32, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_layer_mask::get_method_info().method_ptr);
+        inner(this, x, z, layer_mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <MapHeight_CellMap as ::unity2::ClassIdentity>::class(),
+                "Clear",
                 0,
                 param_types,
                 false,
@@ -2091,47 +1918,162 @@ mod __MapHeight_EdgeIndex_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <MapHeight_CellMap as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(this: MapHeight_EdgeIndex, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapHeight_EdgeIndex, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+    pub unsafe fn clear(this: MapHeight_CellMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapHeight_CellMap, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapheight")]
-pub trait IMapHeight_EdgeIndexMethods: IMapHeight_EdgeIndex {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IMapHeight_CellMapMethods: IMapHeight_CellMap {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    fn ctor(self, layer_mask_a: impl ::core::convert::Into<i32>, layer_mask_b: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MapHeight_EdgeIndex as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapHeight_EdgeIndex_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(layer_mask_a),
+                ::core::convert::Into::into(layer_mask_b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetX(i32, i32)` overload"]
+    fn get_x(self, x: impl ::core::convert::Into<i32>, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::get_x(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetZ(i32, i32)` overload"]
+    fn get_z(self, z: impl ::core::convert::Into<i32>, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::get_z(
+                __receiver,
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetHeight(i32, i32, i32)` overload"]
+    fn get_height(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>, index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::get_height(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMaxHeight(i32, i32)` overload"]
+    fn get_max_height(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::get_max_height(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMinHeight(i32, i32)` overload"]
+    fn get_min_height(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::get_min_height(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get(i32, i32)` overload"]
+    fn get(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::mapheight::MapHeight_CellInfo {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::get(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update(i32, i32)` overload"]
+    fn update(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLayerMask(i32, i32, i32)` overload"]
+    fn is_layer_mask(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        layer_mask: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::is_layer_mask(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(layer_mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <MapHeight_CellMap as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_CellMap_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapheight")]
-impl<__T: IMapHeight_EdgeIndex> IMapHeight_EdgeIndexMethods for __T {}
+impl<__T: IMapHeight_CellMap> IMapHeight_CellMapMethods for __T {}
 
 #[cfg(feature = "app-mapheight")]
-impl MapHeight_EdgeIndex {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl MapHeight_CellMap {
+    #[doc = "`.ctor(i32, i32)` — overload selector"]
+    pub fn new(layer_mask_a: i32, layer_mask_b: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapHeight_EdgeIndex),
+                ::core::stringify!(MapHeight_CellMap),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapHeight_EdgeIndexMethods>::ctor(this);
+        <Self as IMapHeight_CellMapMethods>::ctor(this, layer_mask_a, layer_mask_b);
         this
     }
 }
@@ -2595,6 +2537,76 @@ impl MapHeight_CellInfo {
             )
         });
         <Self as IMapHeight_CellInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapheight")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapHeight_EdgeIndex_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapHeight_EdgeIndex, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapHeight_EdgeIndex, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapheight")]
+pub trait IMapHeight_EdgeIndexMethods: IMapHeight_EdgeIndex {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapHeight_EdgeIndex as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapHeight_EdgeIndex_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapheight")]
+impl<__T: IMapHeight_EdgeIndex> IMapHeight_EdgeIndexMethods for __T {}
+
+#[cfg(feature = "app-mapheight")]
+impl MapHeight_EdgeIndex {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHeight_EdgeIndex),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHeight_EdgeIndexMethods>::ctor(this);
         this
     }
 }

@@ -11,101 +11,26 @@ mod __types {
         object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "BatchRendererGroup")]
-    #[parent(crate::system::object::Object)]
-    pub struct BatchRendererGroup {
-        #[rename(name = "m_GroupHandle")]
-        pub m_group_handle: ::unity2::IntPtr,
-        #[rename(name = "m_PerformCulling")]
-        pub m_perform_culling: crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup_OnPerformCulling,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup_OnPerformCulling.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "BatchRendererGroup.OnPerformCulling")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct BatchRendererGroup_OnPerformCulling {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "BatchRendererGroup")]
+    #[parent(crate::system::object::Object)]
+    pub struct BatchRendererGroup {
+        #[offset(16)]
+        #[rename(name = "m_GroupHandle")]
+        pub m_group_handle: ::unity2::IntPtr,
+        #[offset(24)]
+        #[rename(name = "m_PerformCulling")]
+        pub m_perform_culling: crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup_OnPerformCulling,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-batchrenderergroup-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BatchRendererGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_on_perform_culling {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::lodparameters::LODParameters as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BatchRendererGroup as ::unity2::ClassIdentity>::class(),
-                "InvokeOnPerformCulling",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BatchRendererGroup as ::unity2::ClassIdentity>::NAME,
-                        "InvokeOnPerformCulling",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_on_perform_culling(
-        group: crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup,
-        context: *mut crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput,
-        lod_parameters: *mut crate::unity_engine::rendering::lodparameters::LODParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup,
-            *mut crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput,
-            *mut crate::unity_engine::rendering::lodparameters::LODParameters,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke_on_perform_culling::get_method_info().method_ptr);
-        inner(group, context, lod_parameters, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-impl BatchRendererGroup {
-    #[doc = "`InvokeOnPerformCulling(crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup, *mutcrate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput, *mutcrate::unity_engine::rendering::lodparameters::LODParameters)` overload"]
-    pub fn invoke_on_perform_culling(
-        group: impl ::core::convert::Into<crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup>,
-    ) -> (
-        crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput,
-        crate::unity_engine::rendering::lodparameters::LODParameters,
-    ) {
-        unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::lodparameters::LODParameters>::uninit();
-            __BatchRendererGroup_unity2_raw::invoke_on_perform_culling(
-                ::core::convert::Into::into(group),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-}
 
 #[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
 #[doc(hidden)]
@@ -193,6 +118,83 @@ impl BatchRendererGroup_OnPerformCulling {
         });
         <Self as IBatchRendererGroup_OnPerformCullingMethods>::ctor(this, object, method);
         this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BatchRendererGroup_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_on_perform_culling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::lodparameters::LODParameters as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BatchRendererGroup as ::unity2::ClassIdentity>::class(),
+                "InvokeOnPerformCulling",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BatchRendererGroup as ::unity2::ClassIdentity>::NAME,
+                        "InvokeOnPerformCulling",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_on_perform_culling(
+        group: crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup,
+        context: *mut crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput,
+        lod_parameters: *mut crate::unity_engine::rendering::lodparameters::LODParameters,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup,
+            *mut crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput,
+            *mut crate::unity_engine::rendering::lodparameters::LODParameters,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke_on_perform_culling::get_method_info().method_ptr);
+        inner(group, context, lod_parameters, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
+impl BatchRendererGroup {
+    #[doc = "`InvokeOnPerformCulling(crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup, *mutcrate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput, *mutcrate::unity_engine::rendering::lodparameters::LODParameters)` overload"]
+    pub fn invoke_on_perform_culling(
+        group: impl ::core::convert::Into<crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup>,
+    ) -> (
+        crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput,
+        crate::unity_engine::rendering::lodparameters::LODParameters,
+    ) {
+        unsafe {
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::lodparameters::LODParameters>::uninit();
+            __BatchRendererGroup_unity2_raw::invoke_on_perform_culling(
+                ::core::convert::Into::into(group),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
     }
 }
 

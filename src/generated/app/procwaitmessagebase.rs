@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcWaitMessageBase")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct ProcWaitMessageBase {
+        #[offset(112)]
         #[rename(name = "m_GameMessage")]
         pub m_game_message: crate::app::gamemessage::GameMessage,
     }

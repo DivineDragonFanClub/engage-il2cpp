@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomShadowData")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct CustomShadowData {
+        #[offset(24)]
         #[rename(name = "MainLightShadowmapResolution")]
         pub main_light_shadowmap_resolution: crate::unity_engine::rendering::universal::shadowresolution_2::ShadowResolution_2,
+        #[offset(28)]
         #[rename(name = "ShadowDistance")]
         pub shadow_distance: f32,
+        #[offset(32)]
         #[rename(name = "CascadeSplit1")]
         pub cascade_split1: f32,
+        #[offset(36)]
         #[rename(name = "ShadowDepthBias")]
         pub shadow_depth_bias: f32,
+        #[offset(40)]
         #[rename(name = "ShadowNormalBias")]
         pub shadow_normal_bias: f32,
     }

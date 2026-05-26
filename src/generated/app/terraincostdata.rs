@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TerrainCostData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: terraincostdata :: TerrainCostData >)]
     pub struct TerrainCostData {
+        #[offset(32)]
         #[rename(name = "Costs")]
         pub costs: ::unity2::Array<u8>,
     }

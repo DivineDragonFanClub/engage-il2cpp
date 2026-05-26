@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalEmitter")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct SignalEmitter {
+        #[offset(40)]
         #[rename(name = "m_Retroactive")]
         pub m_retroactive: bool,
+        #[offset(41)]
         #[rename(name = "m_EmitOnce")]
         pub m_emit_once: bool,
+        #[offset(48)]
         #[rename(name = "m_Asset")]
         pub m_asset: crate::unity_engine::timeline::signalasset::SignalAsset,
     }

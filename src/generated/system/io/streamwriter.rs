@@ -17,20 +17,28 @@ mod __types {
         #[static_field]
         #[rename(name = "Null")]
         pub null: crate::system::io::streamwriter::StreamWriter,
+        #[offset(40)]
         #[rename(name = "stream")]
         pub stream: crate::system::io::stream::Stream,
+        #[offset(64)]
         #[rename(name = "byteBuffer")]
         pub byte_buffer: ::unity2::Array<u8>,
+        #[offset(72)]
         #[rename(name = "charBuffer")]
         pub char_buffer: ::unity2::Array<u16>,
+        #[offset(80)]
         #[rename(name = "charPos")]
         pub char_pos: i32,
+        #[offset(84)]
         #[rename(name = "charLen")]
         pub char_len: i32,
+        #[offset(88)]
         #[rename(name = "autoFlush")]
         pub auto_flush_field: bool,
+        #[offset(89)]
         #[rename(name = "haveWrittenPreamble")]
         pub have_written_preamble: bool,
+        #[offset(90)]
         #[rename(name = "closable")]
         pub closable: bool,
     }

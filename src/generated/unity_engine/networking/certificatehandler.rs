@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Networking", name = "CertificateHandler")]
     #[parent(crate::system::object::Object)]
     pub struct CertificateHandler {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
     }

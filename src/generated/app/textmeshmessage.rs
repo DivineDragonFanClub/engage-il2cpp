@@ -57,10 +57,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TextMeshMessage")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TextMeshMessage {
+        #[offset(24)]
         #[rename(name = "m_Target")]
         pub m_target: crate::app::textmeshmessage::TextMeshMessage_Targets,
+        #[offset(32)]
         #[rename(name = "m_Label")]
         pub m_label: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_File")]
         pub m_file: ::unity2::Il2CppString,
     }

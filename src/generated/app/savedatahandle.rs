@@ -11,6 +11,11 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataHandle")]
+    #[parent(crate::system::object::Object)]
+    pub struct SaveDataHandle {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatahandle/SaveDataHandle_States.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -48,11 +53,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataHandle")]
-    #[parent(crate::system::object::Object)]
-    pub struct SaveDataHandle {}
 }
 
 #[cfg(feature = "app-savedatahandle-types")]

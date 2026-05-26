@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayUserGlobalData.ProcCleanupUnused")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct RelayUserGlobalData_ProcCleanupUnused {
+        #[offset(112)]
         #[rename(name = "m_HeaderReader")]
         pub m_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
     }
@@ -68,11 +69,14 @@ mod __types {
         #[static_field]
         #[rename(name = "InitDailyTicketCount")]
         pub init_daily_ticket_count: i32,
+        #[offset(28)]
         #[rename(name = "m_DailyTicketCount")]
         pub m_daily_ticket_count: u32,
+        #[offset(32)]
         #[rename(name = "m_TicketDict")]
         pub m_ticket_dict:
             crate::system::collections::generic::dictionary_2::Dictionary_2<u64, crate::app::relayuserglobaldata::RelayUserGlobalData_Ticket>,
+        #[offset(40)]
         #[rename(name = "m_Uncommitted")]
         pub m_uncommitted: crate::app::relayuserglobaldata::RelayUserGlobalData_Uncommitted,
     }

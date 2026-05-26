@@ -23,8 +23,10 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_HelpTitle")]
         pub m_help_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_HelpText")]
         pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

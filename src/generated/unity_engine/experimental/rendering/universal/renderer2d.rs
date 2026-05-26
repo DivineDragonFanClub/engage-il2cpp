@@ -14,37 +14,52 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "Renderer2D")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
     pub struct Renderer2D {
+        #[offset(144)]
         #[rename(name = "m_ColorGradingLutPass")]
         pub m_color_grading_lut_pass: crate::unity_engine::rendering::universal::internal::colorgradinglutpass::ColorGradingLutPass,
+        #[offset(152)]
         #[rename(name = "m_Render2DLightingPass")]
         pub m_render2_d_lighting_pass: crate::unity_engine::experimental::rendering::universal::render2dlightingpass::Render2DLightingPass,
+        #[offset(160)]
         #[rename(name = "m_PostProcessPass")]
         pub m_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[offset(168)]
         #[rename(name = "m_FinalBlitPass")]
         pub m_final_blit_pass: crate::unity_engine::rendering::universal::internal::finalblitpass::FinalBlitPass,
+        #[offset(176)]
         #[rename(name = "m_FinalPostProcessPass")]
         pub m_final_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[offset(184)]
         #[rename(name = "m_LightCullResult")]
         pub m_light_cull_result: crate::unity_engine::experimental::rendering::universal::light2dcullresult::Light2DCullResult,
         #[static_field]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(192)]
         #[rename(name = "m_UseDepthStencilBuffer")]
         pub m_use_depth_stencil_buffer: bool,
+        #[offset(193)]
         #[rename(name = "m_CreateColorTexture")]
         pub m_create_color_texture: bool,
+        #[offset(194)]
         #[rename(name = "m_CreateDepthTexture")]
         pub m_create_depth_texture: bool,
+        #[offset(200)]
         #[rename(name = "k_ColorTextureHandle")]
         pub k_color_texture_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(248)]
         #[rename(name = "k_DepthTextureHandle")]
         pub k_depth_texture_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(296)]
         #[rename(name = "k_AfterPostProcessColorHandle")]
         pub k_after_post_process_color_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(344)]
         #[rename(name = "k_ColorGradingLutHandle")]
         pub k_color_grading_lut_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(392)]
         #[rename(name = "m_BlitMaterial")]
         pub m_blit_material: crate::unity_engine::material::Material,
+        #[offset(400)]
         #[rename(name = "m_Renderer2DData")]
         pub m_renderer2_d_data: crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
     }

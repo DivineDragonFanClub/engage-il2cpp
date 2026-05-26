@@ -20,24 +20,34 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterLyingPegasus")]
     #[parent(crate::combat::characterlying::CharacterLying)]
     pub struct CharacterLyingPegasus {
+        #[offset(33)]
         #[rename(name = "m_WasHumanLanded")]
         pub m_was_human_landed: bool,
+        #[offset(34)]
         #[rename(name = "m_WasRideLanded")]
         pub m_was_ride_landed: bool,
+        #[offset(36)]
         #[rename(name = "m_HumanOrient")]
         pub m_human_orient: crate::combat::tr::TR,
+        #[offset(64)]
         #[rename(name = "m_RideOrient")]
         pub m_ride_orient: crate::combat::tr::TR,
+        #[offset(92)]
         #[rename(name = "m_SkipFrames")]
         pub m_skip_frames: i32,
+        #[offset(96)]
         #[rename(name = "m_RidePushedLocalRotation")]
         pub m_ride_pushed_local_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(112)]
         #[rename(name = "m_IsCollide")]
         pub m_is_collide: bool,
+        #[offset(116)]
         #[rename(name = "m_LastSafetyCTransXZ")]
         pub m_last_safety_c_trans_xz: crate::combat::fxz::FXZ,
+        #[offset(124)]
         #[rename(name = "m_LastLookAtRideLoc")]
         pub m_last_look_at_ride_loc: crate::combat::fxz::FXZ,
+        #[offset(136)]
         #[rename(name = "c_hip_ride_jnt")]
         pub c_hip_ride_jnt: crate::unity_engine::transform::Transform,
     }

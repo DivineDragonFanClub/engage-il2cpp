@@ -14,6 +14,21 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexLoginSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexLoginSequence {
+        #[offset(112)]
+        #[rename(name = "m_IsShowError")]
+        pub m_is_show_error: bool,
+        #[static_field]
+        #[rename(name = "s_LastResult")]
+        pub s_last_result: crate::app::nexloginsequence::NexLoginSequence_Result,
+        #[static_field]
+        #[rename(name = "s_IsGotIntegerSettings")]
+        pub s_is_got_integer_settings: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Result.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -112,20 +127,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 8 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexLoginSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexLoginSequence {
-        #[rename(name = "m_IsShowError")]
-        pub m_is_show_error: bool,
-        #[static_field]
-        #[rename(name = "s_LastResult")]
-        pub s_last_result: crate::app::nexloginsequence::NexLoginSequence_Result,
-        #[static_field]
-        #[rename(name = "s_IsGotIntegerSettings")]
-        pub s_is_got_integer_settings: bool,
     }
 }
 

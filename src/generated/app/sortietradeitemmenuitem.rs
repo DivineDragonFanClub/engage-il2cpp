@@ -17,18 +17,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieTradeItemMenuItem")]
     #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
     pub struct SortieTradeItemMenuItem {
+        #[offset(104)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(112)]
         #[rename(name = "m_recieverUnit")]
         pub m_reciever_unit: crate::app::unit::Unit,
+        #[offset(120)]
         #[rename(name = "m_itemIndex")]
         pub m_item_index: i32,
+        #[offset(124)]
         #[rename(name = "m_bDefaultSelect")]
         pub m_b_default_select: bool,
+        #[offset(125)]
         #[rename(name = "m_SelectableBlank")]
         pub m_selectable_blank: bool,
+        #[offset(126)]
         #[rename(name = "m_EnabledToSelectBlank")]
         pub m_enabled_to_select_blank: bool,
+        #[offset(127)]
         #[rename(name = "m_Disabled")]
         pub m_disabled: bool,
     }

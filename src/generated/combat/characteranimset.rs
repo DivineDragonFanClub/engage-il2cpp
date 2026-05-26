@@ -11,152 +11,226 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterAnimset")]
     #[parent(crate::system::object::Object)]
     pub struct CharacterAnimset {
+        #[offset(24)]
         #[rename(name = "BodyDAOC")]
         pub body_daoc: crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
+        #[offset(32)]
         #[rename(name = "RideDAOC")]
         pub ride_daoc: crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
+        #[offset(40)]
         #[rename(name = "Attack1")]
         pub attack1: crate::combat::animasset::AnimAsset,
+        #[offset(48)]
         #[rename(name = "Attack1R")]
         pub attack1_r: crate::combat::animasset::AnimAsset,
+        #[offset(56)]
         #[rename(name = "Attack2")]
         pub attack2: crate::combat::animasset::AnimAsset,
+        #[offset(64)]
         #[rename(name = "Attack2R")]
         pub attack2_r: crate::combat::animasset::AnimAsset,
+        #[offset(72)]
         #[rename(name = "Attack3")]
         pub attack3: crate::combat::animasset::AnimAsset,
+        #[offset(80)]
         #[rename(name = "Attack3R")]
         pub attack3_r: crate::combat::animasset::AnimAsset,
+        #[offset(88)]
         #[rename(name = "Attack4")]
         pub attack4: crate::combat::animasset::AnimAsset,
+        #[offset(96)]
         #[rename(name = "Attack4R")]
         pub attack4_r: crate::combat::animasset::AnimAsset,
+        #[offset(104)]
         #[rename(name = "Attack5")]
         pub attack5: crate::combat::animasset::AnimAsset,
+        #[offset(112)]
         #[rename(name = "Attack5R")]
         pub attack5_r: crate::combat::animasset::AnimAsset,
+        #[offset(120)]
         #[rename(name = "AttackC")]
         pub attack_c: crate::combat::animasset::AnimAsset,
+        #[offset(128)]
         #[rename(name = "AttackCR")]
         pub attack_cr: crate::combat::animasset::AnimAsset,
+        #[offset(136)]
         #[rename(name = "AttackT")]
         pub attack_t: crate::combat::animasset::AnimAsset,
+        #[offset(144)]
         #[rename(name = "AttackTR")]
         pub attack_tr: crate::combat::animasset::AnimAsset,
+        #[offset(152)]
         #[rename(name = "DamageHigh")]
         pub damage_high: crate::combat::animasset::AnimAsset,
+        #[offset(160)]
         #[rename(name = "DamageHighR")]
         pub damage_high_r: crate::combat::animasset::AnimAsset,
+        #[offset(168)]
         #[rename(name = "DamageMidB")]
         pub damage_mid_b: crate::combat::animasset::AnimAsset,
+        #[offset(176)]
         #[rename(name = "DamageMidBR")]
         pub damage_mid_br: crate::combat::animasset::AnimAsset,
+        #[offset(184)]
         #[rename(name = "DamageMidDU")]
         pub damage_mid_du: crate::combat::animasset::AnimAsset,
+        #[offset(192)]
         #[rename(name = "DamageMidDUR")]
         pub damage_mid_dur: crate::combat::animasset::AnimAsset,
+        #[offset(200)]
         #[rename(name = "DamageMidUD")]
         pub damage_mid_ud: crate::combat::animasset::AnimAsset,
+        #[offset(208)]
         #[rename(name = "DamageMidUDR")]
         pub damage_mid_udr: crate::combat::animasset::AnimAsset,
+        #[offset(216)]
         #[rename(name = "DieB")]
         pub die_b: crate::combat::animasset::AnimAsset,
+        #[offset(224)]
         #[rename(name = "DieBR")]
         pub die_br: crate::combat::animasset::AnimAsset,
+        #[offset(232)]
         #[rename(name = "DieL")]
         pub die_l: crate::combat::animasset::AnimAsset,
+        #[offset(240)]
         #[rename(name = "DieLR")]
         pub die_lr: crate::combat::animasset::AnimAsset,
+        #[offset(248)]
         #[rename(name = "DieR")]
         pub die_r: crate::combat::animasset::AnimAsset,
+        #[offset(256)]
         #[rename(name = "DieRR")]
         pub die_rr: crate::combat::animasset::AnimAsset,
+        #[offset(264)]
         #[rename(name = "Dive")]
         pub dive: crate::combat::animasset::AnimAsset,
+        #[offset(272)]
         #[rename(name = "DiveR")]
         pub dive_r: crate::combat::animasset::AnimAsset,
+        #[offset(280)]
         #[rename(name = "Engage1")]
         pub engage1: crate::combat::animasset::AnimAsset,
+        #[offset(288)]
         #[rename(name = "Engage1R")]
         pub engage1_r: crate::combat::animasset::AnimAsset,
+        #[offset(296)]
         #[rename(name = "Engage2")]
         pub engage2: crate::combat::animasset::AnimAsset,
+        #[offset(304)]
         #[rename(name = "Engage2R")]
         pub engage2_r: crate::combat::animasset::AnimAsset,
+        #[offset(312)]
         #[rename(name = "Engage3")]
         pub engage3: crate::combat::animasset::AnimAsset,
+        #[offset(320)]
         #[rename(name = "Engage3R")]
         pub engage3_r: crate::combat::animasset::AnimAsset,
+        #[offset(328)]
         #[rename(name = "EvasionB")]
         pub evasion_b: crate::combat::animasset::AnimAsset,
+        #[offset(336)]
         #[rename(name = "EvasionBR")]
         pub evasion_br: crate::combat::animasset::AnimAsset,
+        #[offset(344)]
         #[rename(name = "EvasionL")]
         pub evasion_l: crate::combat::animasset::AnimAsset,
+        #[offset(352)]
         #[rename(name = "EvasionLR")]
         pub evasion_lr: crate::combat::animasset::AnimAsset,
+        #[offset(360)]
         #[rename(name = "EvasionR")]
         pub evasion_r: crate::combat::animasset::AnimAsset,
+        #[offset(368)]
         #[rename(name = "EvasionRR")]
         pub evasion_rr: crate::combat::animasset::AnimAsset,
+        #[offset(376)]
         #[rename(name = "Guard")]
         pub guard: crate::combat::animasset::AnimAsset,
+        #[offset(384)]
         #[rename(name = "GuardR")]
         pub guard_r: crate::combat::animasset::AnimAsset,
+        #[offset(392)]
         #[rename(name = "HoveringLoop")]
         pub hovering_loop: crate::combat::animasset::AnimAsset,
+        #[offset(400)]
         #[rename(name = "HoveringLoopR")]
         pub hovering_loop_r: crate::combat::animasset::AnimAsset,
+        #[offset(408)]
         #[rename(name = "IdleDying")]
         pub idle_dying: crate::combat::animasset::AnimAsset,
+        #[offset(416)]
         #[rename(name = "IdleDyingR")]
         pub idle_dying_r: crate::combat::animasset::AnimAsset,
+        #[offset(424)]
         #[rename(name = "IdleNormal")]
         pub idle_normal: crate::combat::animasset::AnimAsset,
+        #[offset(432)]
         #[rename(name = "IdleNormalR")]
         pub idle_normal_r: crate::combat::animasset::AnimAsset,
+        #[offset(440)]
         #[rename(name = "ParryL")]
         pub parry_l: crate::combat::animasset::AnimAsset,
+        #[offset(448)]
         #[rename(name = "ParryLR")]
         pub parry_lr: crate::combat::animasset::AnimAsset,
+        #[offset(456)]
         #[rename(name = "ParryR")]
         pub parry_r: crate::combat::animasset::AnimAsset,
+        #[offset(464)]
         #[rename(name = "ParryRR")]
         pub parry_rr: crate::combat::animasset::AnimAsset,
+        #[offset(472)]
         #[rename(name = "Ready")]
         pub ready: crate::combat::animasset::AnimAsset,
+        #[offset(480)]
         #[rename(name = "ReadyR")]
         pub ready_r: crate::combat::animasset::AnimAsset,
+        #[offset(488)]
         #[rename(name = "RelaxLoop")]
         pub relax_loop: crate::combat::animasset::AnimAsset,
+        #[offset(496)]
         #[rename(name = "RelaxLoopR")]
         pub relax_loop_r: crate::combat::animasset::AnimAsset,
+        #[offset(504)]
         #[rename(name = "Repelled")]
         pub repelled: crate::combat::animasset::AnimAsset,
+        #[offset(512)]
         #[rename(name = "RepelledR")]
         pub repelled_r: crate::combat::animasset::AnimAsset,
+        #[offset(520)]
         #[rename(name = "RunLoop")]
         pub run_loop: crate::combat::animasset::AnimAsset,
+        #[offset(528)]
         #[rename(name = "RunLoopR")]
         pub run_loop_r: crate::combat::animasset::AnimAsset,
+        #[offset(536)]
         #[rename(name = "RunStart")]
         pub run_start: crate::combat::animasset::AnimAsset,
+        #[offset(544)]
         #[rename(name = "RunStartR")]
         pub run_start_r: crate::combat::animasset::AnimAsset,
+        #[offset(552)]
         #[rename(name = "Special1")]
         pub special1: crate::combat::animasset::AnimAsset,
+        #[offset(560)]
         #[rename(name = "Special1R")]
         pub special1_r: crate::combat::animasset::AnimAsset,
+        #[offset(568)]
         #[rename(name = "Start")]
         pub start: crate::combat::animasset::AnimAsset,
+        #[offset(576)]
         #[rename(name = "StartR")]
         pub start_r: crate::combat::animasset::AnimAsset,
+        #[offset(584)]
         #[rename(name = "Win")]
         pub win: crate::combat::animasset::AnimAsset,
+        #[offset(592)]
         #[rename(name = "WinR")]
         pub win_r: crate::combat::animasset::AnimAsset,
+        #[offset(600)]
         #[rename(name = "WinLoop")]
         pub win_loop: crate::combat::animasset::AnimAsset,
+        #[offset(608)]
         #[rename(name = "WinLoopR")]
         pub win_loop_r: crate::combat::animasset::AnimAsset,
     }

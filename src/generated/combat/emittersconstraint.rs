@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EmittersConstraint")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EmittersConstraint {
+        #[offset(24)]
         #[rename(name = "m_Pairs")]
         pub m_pairs: crate::system::collections::generic::list_1::List_1<crate::combat::emittersconstraint::EmittersConstraint_Pair>,
     }
@@ -27,10 +28,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EmittersConstraint.Pair")]
     #[parent(crate::system::object::Object)]
     pub struct EmittersConstraint_Pair {
+        #[offset(16)]
         #[rename(name = "ParticleSystem")]
         pub particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        #[offset(24)]
         #[rename(name = "AttachTransform")]
         pub attach_transform: crate::unity_engine::transform::Transform,
+        #[offset(32)]
         #[rename(name = "TargetBoneName")]
         pub target_bone_name: ::unity2::Il2CppString,
     }

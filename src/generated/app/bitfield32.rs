@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BitField32")]
     #[parent(crate::app::bitfieldcommon::BitFieldCommon)]
     pub struct BitField32 {
+        #[offset(16)]
         #[rename(name = "m_Value")]
         pub m_value: i32,
     }

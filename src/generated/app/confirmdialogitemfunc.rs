@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ConfirmDialogItemFunc")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct ConfirmDialogItemFunc {
+        #[offset(112)]
         #[rename(name = "m_func")]
         pub m_func: crate::system::action::Action,
     }

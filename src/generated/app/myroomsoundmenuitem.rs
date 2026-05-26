@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomSoundMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MyRoomSoundMenuItem {
+        #[offset(112)]
         #[rename(name = "m_eventName")]
         pub m_event_name: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_label")]
         pub m_label: ::unity2::Il2CppString,
+        #[offset(128)]
         #[rename(name = "m_help")]
         pub m_help: ::unity2::Il2CppString,
     }

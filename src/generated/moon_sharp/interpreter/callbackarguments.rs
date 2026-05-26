@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "CallbackArguments")]
     #[parent(crate::system::object::Object)]
     pub struct CallbackArguments {
+        #[offset(16)]
         #[rename(name = "m_Args")]
         pub m_args: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        #[offset(24)]
         #[rename(name = "m_Count")]
         pub m_count: i32,
+        #[offset(28)]
         #[rename(name = "m_LastIsTuple")]
         pub m_last_is_tuple: bool,
     }

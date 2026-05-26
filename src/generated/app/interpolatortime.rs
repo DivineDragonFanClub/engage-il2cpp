@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InterpolatorTime")]
     #[parent(crate::system::object::Object)]
     pub struct InterpolatorTime {
+        #[offset(16)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(20)]
         #[rename(name = "m_Tick")]
         pub m_tick: f32,
+        #[offset(24)]
         #[rename(name = "m_Type")]
         pub m_type: crate::app::curve::Curve_Type,
+        #[offset(28)]
         #[rename(name = "m_Num")]
         pub m_num: i32,
+        #[offset(32)]
         #[rename(name = "m_IsFirst")]
         pub m_is_first: bool,
+        #[offset(33)]
         #[rename(name = "m_IsDirty")]
         pub m_is_dirty: bool,
     }

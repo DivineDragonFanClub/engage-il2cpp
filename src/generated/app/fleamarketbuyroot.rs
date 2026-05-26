@@ -31,32 +31,46 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MenuObject")]
         pub m_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_HoldingInfoWindowObject")]
         pub m_holding_info_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(48)]
         #[rename(name = "m_FleaMarketBuyMenu")]
         pub m_flea_market_buy_menu: crate::app::itemshopbuymenu::ItemShopBuyMenu,
+        #[offset(56)]
         #[rename(name = "m_ItemHoldingInfoWindow")]
         pub m_item_holding_info_window: crate::app::itemholdinginfowindow::ItemHoldingInfoWindow,
+        #[offset(64)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::fleamarketbuyroot::FleaMarketBuyRoot_ReturnEventHandler,
+        #[offset(72)]
         #[rename(name = "m_UnitItem")]
         pub m_unit_item: crate::app::unititem::UnitItem,
+        #[offset(80)]
         #[rename(name = "m_ItemData")]
         pub m_item_data: crate::app::itemdata::ItemData,
+        #[offset(88)]
         #[rename(name = "m_IsSendingItemToTransporter")]
         pub m_is_sending_item_to_transporter: bool,
+        #[offset(89)]
         #[rename(name = "m_IsSendingUnitItem")]
         pub m_is_sending_unit_item: bool,
+        #[offset(92)]
         #[rename(name = "m_SendingUnitItemIndex")]
         pub m_sending_unit_item_index: i32,
+        #[offset(96)]
         #[rename(name = "m_IsDiscardingTransporterItem")]
         pub m_is_discarding_transporter_item: bool,
+        #[offset(100)]
         #[rename(name = "m_DiscardingTransporterItemIndex")]
         pub m_discarding_transporter_item_index: i32,
+        #[offset(104)]
         #[rename(name = "m_IsEnabledVoice")]
         pub m_is_enabled_voice: bool,
     }

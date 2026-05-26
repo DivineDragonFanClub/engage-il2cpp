@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphDefaultResources")]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraphDefaultResources {
+        #[offset(16)]
         #[rename(name = "m_IsValid")]
         pub m_is_valid: bool,
+        #[offset(24)]
         #[rename(name = "m_BlackTexture2D")]
         pub m_black_texture2_d: crate::unity_engine::rendering::rthandle::RTHandle,
+        #[offset(32)]
         #[rename(name = "m_WhiteTexture2D")]
         pub m_white_texture2_d: crate::unity_engine::rendering::rthandle::RTHandle,
     }

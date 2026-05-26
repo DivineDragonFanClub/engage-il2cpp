@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBakeOffset")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapBakeOffset {
+        #[offset(24)]
         #[rename(name = "m_Position")]
         pub m_position: crate::unity_engine::vector3::Vector3,
     }

@@ -17,101 +17,6 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Mode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapKeyHelp_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapKeyHelp_Mode {
-        const NAME: &'static str = "MapKeyHelp.Mode";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapKeyHelp_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapKeyHelp_Mode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn stay_show() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn stay_hide() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn measure() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapKeyHelp_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapKeyHelp_Label {
-        const NAME: &'static str = "MapKeyHelp.Label";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapKeyHelp_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapKeyHelp_Label {
-        pub fn stay() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn measure() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapKeyHelp")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
-    pub struct MapKeyHelp {
-        #[static_field]
-        #[rename(name = "ShowTime")]
-        pub show_time: f32,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
-        #[rename(name = "m_TemporaryHidingCount")]
-        pub m_temporary_hiding_count: i32,
-        #[rename(name = "m_LastType")]
-        pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        #[rename(name = "m_RequestType")]
-        pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        #[rename(name = "m_Progress")]
-        pub m_progress: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Types.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -235,6 +140,106 @@ mod __types {
 
         pub fn map_edit_free_on_unit() -> Self {
             Self { value: 24 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapKeyHelp_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapKeyHelp_Label {
+        const NAME: &'static str = "MapKeyHelp.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapKeyHelp_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapKeyHelp_Label {
+        pub fn stay() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn measure() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md"))]
+    #[::unity2::class(namespace = "App", name = "MapKeyHelp")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
+    pub struct MapKeyHelp {
+        #[static_field]
+        #[rename(name = "ShowTime")]
+        pub show_time: f32,
+        #[offset(116)]
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
+        #[offset(120)]
+        #[rename(name = "m_TemporaryHidingCount")]
+        pub m_temporary_hiding_count: i32,
+        #[offset(124)]
+        #[rename(name = "m_LastType")]
+        pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[offset(128)]
+        #[rename(name = "m_RequestType")]
+        pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[offset(132)]
+        #[rename(name = "m_Progress")]
+        pub m_progress: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Mode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapKeyHelp_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapKeyHelp_Mode {
+        const NAME: &'static str = "MapKeyHelp.Mode";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapKeyHelp_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapKeyHelp_Mode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn stay_show() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn stay_hide() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn measure() -> Self {
+            Self { value: 3 }
         }
     }
 }

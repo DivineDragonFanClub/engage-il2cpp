@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WeightFader")]
     #[parent(crate::system::object::Object)]
     pub struct WeightFader {
+        #[offset(16)]
         #[rename(name = "m_wgt")]
         pub m_wgt: f32,
+        #[offset(20)]
         #[rename(name = "m_wgtFrom")]
         pub m_wgt_from: f32,
+        #[offset(24)]
         #[rename(name = "m_wgtTo")]
         pub m_wgt_to: f32,
+        #[offset(28)]
         #[rename(name = "m_time")]
         pub m_time: f32,
+        #[offset(32)]
         #[rename(name = "m_duration")]
         pub m_duration: f32,
     }

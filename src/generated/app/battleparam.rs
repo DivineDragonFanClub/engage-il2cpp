@@ -65,10 +65,13 @@ mod __types {
         #[static_field]
         #[rename(name = "Clamps")]
         pub clamps: ::unity2::Array<f32>,
+        #[offset(16)]
         #[rename(name = "Add")]
         pub add: f32,
+        #[offset(20)]
         #[rename(name = "Scale")]
         pub scale: f32,
+        #[offset(24)]
         #[rename(name = "Value")]
         pub value: f32,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PlayerPrefs_Int")]
     #[parent(crate::system::object::Object)]
     pub struct PlayerPrefs_Int {
+        #[offset(16)]
         #[rename(name = "key")]
         pub key: ::unity2::Il2CppString,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Diagnostics", name = "PerformanceStatistics")]
     #[parent(crate::system::object::Object)]
     pub struct PerformanceStatistics {
+        #[offset(16)]
         #[rename(name = "m_Stopwatches")]
         pub m_stopwatches: ::unity2::Array<
             crate::moon_sharp::interpreter::diagnostics::performance_counters::iperformancestopwatch_interface::IPerformanceStopwatch_Interface,
@@ -20,6 +21,7 @@ mod __types {
         pub m_global_stopwatches: ::unity2::Array<
             crate::moon_sharp::interpreter::diagnostics::performance_counters::iperformancestopwatch_interface::IPerformanceStopwatch_Interface,
         >,
+        #[offset(24)]
         #[rename(name = "m_Enabled")]
         pub m_enabled: bool,
     }

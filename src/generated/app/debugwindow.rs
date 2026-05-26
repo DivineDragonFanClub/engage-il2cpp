@@ -25,26 +25,37 @@ mod __types {
         #[static_field]
         #[rename(name = "DigitSize")]
         pub digit_size: i32,
+        #[offset(24)]
         #[rename(name = "m_Font")]
         pub m_font: crate::unity_engine::font::Font,
+        #[offset(32)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(40)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::root::debugmesh::DebugMesh,
+        #[offset(48)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::debugmenu::DebugMenu,
+        #[offset(56)]
         #[rename(name = "m_FontMaterial")]
         pub m_font_material: crate::unity_engine::material::Material,
+        #[offset(64)]
         #[rename(name = "m_HelpMaterial")]
         pub m_help_material: crate::unity_engine::material::Material,
+        #[offset(72)]
         #[rename(name = "m_Renderer")]
         pub m_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+        #[offset(80)]
         #[rename(name = "m_MaskUV")]
         pub m_mask_uv: crate::unity_engine::vector2::Vector2,
+        #[offset(88)]
         #[rename(name = "m_FontSize")]
         pub m_font_size: i32,
+        #[offset(92)]
         #[rename(name = "m_FontScale")]
         pub m_font_scale: f32,
+        #[offset(96)]
         #[rename(name = "m_FontStyle")]
         pub m_font_style: crate::unity_engine::fontstyle::FontStyle,
         #[static_field]

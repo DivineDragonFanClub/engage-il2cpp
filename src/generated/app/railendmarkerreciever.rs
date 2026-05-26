@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RailEndMarkerReciever")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RailEndMarkerReciever {
+        #[offset(24)]
         #[rename(name = "m_CameraComponent")]
         pub m_camera_component: crate::app::dragonridecamera::DragonRideCamera,
     }

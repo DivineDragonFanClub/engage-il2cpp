@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectWeaponMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct PhotographSelectWeaponMenuItem {
+        #[offset(100)]
         #[rename(name = "m_IsCurrent")]
         pub m_is_current: bool,
+        #[offset(104)]
         #[rename(name = "m_WeaponData")]
         pub m_weapon_data: crate::app::itemdata::ItemData,
+        #[offset(112)]
         #[rename(name = "m_DisposManager")]
         pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
     }

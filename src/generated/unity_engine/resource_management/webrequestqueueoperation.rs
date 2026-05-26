@@ -11,11 +11,14 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "WebRequestQueueOperation")]
     #[parent(crate::system::object::Object)]
     pub struct WebRequestQueueOperation {
+        #[offset(16)]
         #[rename(name = "Result")]
         pub result: crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation,
+        #[offset(24)]
         #[rename(name = "OnComplete")]
         pub on_complete:
             crate::system::action_1::Action_1<crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation>,
+        #[offset(32)]
         #[rename(name = "m_WebRequest")]
         pub m_web_request: crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
     }

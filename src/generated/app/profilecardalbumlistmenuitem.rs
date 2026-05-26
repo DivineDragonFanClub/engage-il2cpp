@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct ProfileCardAlbumListMenuItem {
+        #[offset(104)]
         #[rename(name = "m_Profile")]
         pub m_profile: crate::app::profilecard::ProfileCard,
+        #[offset(112)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,
     }

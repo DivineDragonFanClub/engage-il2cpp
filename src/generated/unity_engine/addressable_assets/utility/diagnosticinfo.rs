@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Utility", name = "DiagnosticInfo")]
     #[parent(crate::system::object::Object)]
     pub struct DiagnosticInfo {
+        #[offset(16)]
         #[rename(name = "DisplayName")]
         pub display_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "ObjectId")]
         pub object_id: i32,
+        #[offset(32)]
         #[rename(name = "Dependencies")]
         pub dependencies: ::unity2::Array<i32>,
     }

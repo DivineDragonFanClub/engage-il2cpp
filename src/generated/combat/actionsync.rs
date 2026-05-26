@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionSync")]
     #[parent(crate::combat::actionbase::ActionBase)]
     pub struct ActionSync {
+        #[offset(40)]
         #[rename(name = "m_SyncToken")]
         pub m_sync_token: crate::combat::synctoken::SyncToken,
     }

@@ -26,34 +26,49 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(264)]
         #[rename(name = "m_GetTitleText")]
         pub m_get_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_GetItemListObject")]
         pub m_get_item_list_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(280)]
         #[rename(name = "m_GetItemMoneyObject")]
         pub m_get_item_money_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(288)]
         #[rename(name = "m_GetBeforeAfterObject")]
         pub m_get_before_after_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_GetItemBeforeItemObject")]
         pub m_get_item_before_item_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(304)]
         #[rename(name = "m_GetItemArrowObject")]
         pub m_get_item_arrow_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(312)]
         #[rename(name = "m_GetItemAfterItemObject")]
         pub m_get_item_after_item_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(320)]
         #[rename(name = "m_GetItemLongNameObject")]
         pub m_get_item_long_name_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(328)]
         #[rename(name = "m_GetItemNameOnlyObject")]
         pub m_get_item_name_only_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(336)]
         #[rename(name = "m_CostTitleText")]
         pub m_cost_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(344)]
         #[rename(name = "m_CostItemListObject")]
         pub m_cost_item_list_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(352)]
         #[rename(name = "m_CostItemMoneyObject")]
         pub m_cost_item_money_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(360)]
         #[rename(name = "m_CostItemNameOnlyObject")]
         pub m_cost_item_name_only_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(368)]
         #[rename(name = "m_MenuItemListParentObject")]
         pub m_menu_item_list_parent_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(376)]
         #[rename(name = "m_WaitKeyIconObject")]
         pub m_wait_key_icon_object: crate::unity_engine::gameobject::GameObject,
     }

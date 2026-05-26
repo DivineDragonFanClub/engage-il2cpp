@@ -9,22 +9,31 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/generatehlsl/GenerateHLSL.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "GenerateHLSL")]
     pub struct GenerateHLSL {
+        #[offset(16)]
         #[rename(name = "packingRules")]
         pub packing_rules: crate::unity_engine::rendering::packingrules::PackingRules,
+        #[offset(20)]
         #[rename(name = "containsPackedFields")]
         pub contains_packed_fields: bool,
+        #[offset(21)]
         #[rename(name = "needAccessors")]
         pub need_accessors: bool,
+        #[offset(22)]
         #[rename(name = "needSetters")]
         pub need_setters: bool,
+        #[offset(23)]
         #[rename(name = "needParamDebug")]
         pub need_param_debug: bool,
+        #[offset(24)]
         #[rename(name = "paramDefinesStart")]
         pub param_defines_start: i32,
+        #[offset(28)]
         #[rename(name = "omitStructDeclaration")]
         pub omit_struct_declaration: bool,
+        #[offset(29)]
         #[rename(name = "generateCBuffer")]
         pub generate_c_buffer: bool,
+        #[offset(32)]
         #[rename(name = "constantRegister")]
         pub constant_register: i32,
     }

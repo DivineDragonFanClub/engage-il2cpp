@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "DynamicExpression")]
     #[parent(crate::system::object::Object)]
     pub struct DynamicExpression {
+        #[offset(16)]
         #[rename(name = "m_Exp")]
         pub m_exp: crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression,
+        #[offset(24)]
         #[rename(name = "m_Constant")]
         pub m_constant: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(32)]
         #[rename(name = "ExpressionCode")]
         pub expression_code: ::unity2::Il2CppString,
     }

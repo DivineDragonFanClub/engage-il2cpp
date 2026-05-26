@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkSurfaceReflector")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AkSurfaceReflector {
+        #[offset(24)]
         #[rename(name = "Mesh")]
         pub mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(40)]
         #[rename(name = "OcclusionValues")]
         pub occlusion_values: ::unity2::Array<f32>,
+        #[offset(48)]
         #[rename(name = "EnableDiffraction")]
         pub enable_diffraction: bool,
+        #[offset(49)]
         #[rename(name = "EnableDiffractionOnBoundaryEdges")]
         pub enable_diffraction_on_boundary_edges: bool,
+        #[offset(56)]
         #[rename(name = "AssociatedRoom")]
         pub associated_room_field: crate::root::akroom::AkRoom,
     }

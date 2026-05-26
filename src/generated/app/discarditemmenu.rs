@@ -23,46 +23,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_DecideCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "DiscardItemMenu.DecideCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct DiscardItemMenu_DecideCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesDialogItem.md"))]
-    #[::unity2::class(namespace = "App", name = "DiscardItemMenu.ConfirmDialog.YesDialogItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct DiscardItemMenu_ConfirmDialog_YesDialogItem {
-        #[rename(name = "m_YesEventHandler")]
-        pub m_yes_event_handler: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_CancelCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "DiscardItemMenu.CancelCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct DiscardItemMenu_CancelCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DiscardItemMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct DiscardItemMenu {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_AddedUnitItem")]
-        pub m_added_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_Root")]
-        pub m_root: crate::app::discarditemroot::DiscardItemRoot,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::itemdata::ItemData_Kinds,
-        #[rename(name = "m_Selects")]
-        pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
-        #[rename(name = "m_Uncancellable")]
-        pub m_uncancellable: bool,
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback: crate::app::discarditemmenu::DiscardItemMenu_DecideCallback,
-        #[rename(name = "m_CancelCallback")]
-        pub m_cancel_callback: crate::app::discarditemmenu::DiscardItemMenu_CancelCallback,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_DiscardItemEmptyMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "DiscardItemMenu.DiscardItemEmptyMenuItem")]
     #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
@@ -73,15 +33,64 @@ mod __types {
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct DiscardItemMenu_ConfirmDialog {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DiscardItemMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct DiscardItemMenu {
+        #[offset(200)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(208)]
+        #[rename(name = "m_AddedUnitItem")]
+        pub m_added_unit_item: crate::app::unititem::UnitItem,
+        #[offset(216)]
+        #[rename(name = "m_Root")]
+        pub m_root: crate::app::discarditemroot::DiscardItemRoot,
+        #[offset(224)]
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::itemdata::ItemData_Kinds,
+        #[offset(232)]
+        #[rename(name = "m_Selects")]
+        pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(240)]
+        #[rename(name = "m_Uncancellable")]
+        pub m_uncancellable: bool,
+        #[offset(248)]
+        #[rename(name = "m_DecideCallback")]
+        pub m_decide_callback: crate::app::discarditemmenu::DiscardItemMenu_DecideCallback,
+        #[offset(256)]
+        #[rename(name = "m_CancelCallback")]
+        pub m_cancel_callback: crate::app::discarditemmenu::DiscardItemMenu_CancelCallback,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_DiscardItemMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "DiscardItemMenu.DiscardItemMenuItem")]
     #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
     pub struct DiscardItemMenu_DiscardItemMenuItem {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_DecideCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "DiscardItemMenu.DecideCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct DiscardItemMenu_DecideCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_CancelCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "DiscardItemMenu.CancelCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct DiscardItemMenu_CancelCallback {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "DiscardItemMenu.ConfirmDialog.YesEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct DiscardItemMenu_ConfirmDialog_YesEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesDialogItem.md"))]
+    #[::unity2::class(namespace = "App", name = "DiscardItemMenu.ConfirmDialog.YesDialogItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct DiscardItemMenu_ConfirmDialog_YesDialogItem {
+        #[offset(112)]
+        #[rename(name = "m_YesEventHandler")]
+        pub m_yes_event_handler: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
+    }
 }
 
 #[cfg(feature = "app-discarditemmenu-types")]
@@ -90,21 +99,18 @@ pub use __types::*;
 #[cfg(feature = "app-discarditemmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DiscardItemMenu_DecideCallback_unity2_raw {
+mod __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_build_attribute {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
                 param_types,
                 false,
             )
@@ -115,159 +121,164 @@ mod __DiscardItemMenu_DecideCallback_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(
-        this: DiscardItemMenu_DecideCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+    pub unsafe fn build_attribute(
+        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DiscardItemMenu_DecideCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: DiscardItemMenu_DecideCallback,
-        transporter_is_selected: bool,
-        transporter_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DiscardItemMenu_DecideCallback, bool, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, transporter_is_selected, transporter_item_index, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-pub trait IDiscardItemMenu_DecideCallbackMethods: IDiscardItemMenu_DecideCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <DiscardItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiscardItemMenu_DecideCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(bool, i32)` overload"]
-    fn invoke(self, transporter_is_selected: impl ::core::convert::Into<bool>, transporter_item_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <DiscardItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiscardItemMenu_DecideCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(transporter_is_selected),
-                ::core::convert::Into::into(transporter_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl<__T: IDiscardItemMenu_DecideCallback> IDiscardItemMenu_DecideCallbackMethods for __T {}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_DecideCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_DecideCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_DecideCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DiscardItemMenu_ConfirmDialog_YesDialogItem,
-        yes_event_handler: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            DiscardItemMenu_ConfirmDialog_YesDialogItem,
-            crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
+            DiscardItemMenu_DiscardItemEmptyMenuItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, yes_event_handler, __unity2_method_info)
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetUnitItem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitItem",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit_item(
+        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_unit_item::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blank_text {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetBlankText",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetBlankText",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_blank_text(
+        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_blank_text::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_visible_item_icon_on_blank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
+                "IsVisibleItemIconOnBlank",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsVisibleItemIconOnBlank",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_visible_item_icon_on_blank(
+        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_visible_item_icon_on_blank::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_select(this: DiscardItemMenu_DiscardItemEmptyMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -276,7 +287,7 @@ mod __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -289,7 +300,7 @@ mod __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
                         "ACall",
                         e
                     )
@@ -298,115 +309,22 @@ mod __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: DiscardItemMenu_ConfirmDialog_YesDialogItem,
+        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(DiscardItemMenu_ConfirmDialog_YesDialogItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
             ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-pub trait IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods: IDiscardItemMenu_ConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]
-    fn ctor(self, yes_event_handler: impl ::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>) -> () {
-        unsafe {
-            let __receiver = <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(yes_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl<__T: IDiscardItemMenu_ConfirmDialog_YesDialogItem> IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods for __T {}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_ConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` — overload selector"]
-    pub fn new(yes_event_handler: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods>::ctor(this, yes_event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DiscardItemMenu_CancelCallback_unity2_raw {
-    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DiscardItemMenu_CancelCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DiscardItemMenu_CancelCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_b_call {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
                 0,
                 param_types,
                 false,
@@ -418,61 +336,296 @@ mod __DiscardItemMenu_CancelCallback_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn invoke(this: DiscardItemMenu_CancelCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DiscardItemMenu_CancelCallback, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+    pub unsafe fn b_call(
+        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: DiscardItemMenu_DiscardItemEmptyMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-discarditemmenu")]
-pub trait IDiscardItemMenu_CancelCallbackMethods: IDiscardItemMenu_CancelCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+pub trait IDiscardItemMenu_DiscardItemEmptyMenuItemMethods: IDiscardItemMenu_DiscardItemEmptyMenuItem {
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver =
-                <DiscardItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiscardItemMenu_CancelCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
+    #[doc = "`GetUnitItem()` overload"]
+    fn get_unit_item(self) -> crate::app::unititem::UnitItem {
         unsafe {
-            let __receiver =
-                <DiscardItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiscardItemMenu_CancelCallback_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBlankText()` overload"]
+    fn get_blank_text(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::get_blank_text(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsVisibleItemIconOnBlank()` overload"]
+    fn is_visible_item_icon_on_blank(self) -> bool {
+        unsafe {
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-discarditemmenu")]
-impl<__T: IDiscardItemMenu_CancelCallback> IDiscardItemMenu_CancelCallbackMethods for __T {}
+impl<__T: IDiscardItemMenu_DiscardItemEmptyMenuItem> IDiscardItemMenu_DiscardItemEmptyMenuItemMethods for __T {}
 
 #[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_CancelCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl DiscardItemMenu_DiscardItemEmptyMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_CancelCallback),
+                ::core::stringify!(DiscardItemMenu_DiscardItemEmptyMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDiscardItemMenu_CancelCallbackMethods>::ctor(this, object, method);
+        <Self as IDiscardItemMenu_DiscardItemEmptyMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DiscardItemMenu_ConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        discarding_unit_item: crate::app::unititem::UnitItem,
+        decide_callback: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unititem::UnitItem,
+            crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, discarding_unit_item, decide_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DiscardItemMenu_ConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DiscardItemMenu_ConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        discarding_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        decide_callback: impl ::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>,
+    ) -> () {
+        unsafe {
+            __DiscardItemMenu_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(discarding_unit_item),
+                ::core::convert::Into::into(decide_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+pub trait IDiscardItemMenu_ConfirmDialogMethods: IDiscardItemMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DiscardItemMenu_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenu_ConfirmDialog_unity2_raw::ctor(__receiver, ::core::convert::Into::into(menu_item_list), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl<__T: IDiscardItemMenu_ConfirmDialog> IDiscardItemMenu_ConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
         this
     }
 }
@@ -1365,540 +1518,6 @@ impl DiscardItemMenu {
 #[cfg(feature = "app-discarditemmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            DiscardItemMenu_DiscardItemEmptyMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetUnitItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_item(
-        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
-            ::core::mem::transmute(__lookup_get_unit_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blank_text {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetBlankText",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetBlankText",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blank_text(
-        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_blank_text::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_visible_item_icon_on_blank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                "IsVisibleItemIconOnBlank",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "IsVisibleItemIconOnBlank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_visible_item_icon_on_blank(
-        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_visible_item_icon_on_blank::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: DiscardItemMenu_DiscardItemEmptyMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: DiscardItemMenu_DiscardItemEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DiscardItemMenu_DiscardItemEmptyMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DiscardItemMenu_DiscardItemEmptyMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-pub trait IDiscardItemMenu_DiscardItemEmptyMenuItemMethods: IDiscardItemMenu_DiscardItemEmptyMenuItem {
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnitItem()` overload"]
-    fn get_unit_item(self) -> crate::app::unititem::UnitItem {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetBlankText()` overload"]
-    fn get_blank_text(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::get_blank_text(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsVisibleItemIconOnBlank()` overload"]
-    fn is_visible_item_icon_on_blank(self) -> bool {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DiscardItemMenu_DiscardItemEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenu_DiscardItemEmptyMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl<__T: IDiscardItemMenu_DiscardItemEmptyMenuItem> IDiscardItemMenu_DiscardItemEmptyMenuItemMethods for __T {}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_DiscardItemEmptyMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_DiscardItemEmptyMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_DiscardItemEmptyMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DiscardItemMenu_ConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        discarding_unit_item: crate::app::unititem::UnitItem,
-        decide_callback: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unititem::UnitItem,
-            crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, discarding_unit_item, decide_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DiscardItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DiscardItemMenu_ConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DiscardItemMenu_ConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        discarding_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        decide_callback: impl ::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>,
-    ) -> () {
-        unsafe {
-            __DiscardItemMenu_ConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(discarding_unit_item),
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-pub trait IDiscardItemMenu_ConfirmDialogMethods: IDiscardItemMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DiscardItemMenu_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DiscardItemMenu_ConfirmDialog_unity2_raw::ctor(__receiver, ::core::convert::Into::into(menu_item_list), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl<__T: IDiscardItemMenu_ConfirmDialog> IDiscardItemMenu_ConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __DiscardItemMenu_DiscardItemMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2508,6 +2127,267 @@ impl DiscardItemMenu_DiscardItemMenuItem {
 #[cfg(feature = "app-discarditemmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DiscardItemMenu_DecideCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DiscardItemMenu_DecideCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DiscardItemMenu_DecideCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: DiscardItemMenu_DecideCallback,
+        transporter_is_selected: bool,
+        transporter_item_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DiscardItemMenu_DecideCallback, bool, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, transporter_is_selected, transporter_item_index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+pub trait IDiscardItemMenu_DecideCallbackMethods: IDiscardItemMenu_DecideCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <DiscardItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenu_DecideCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(bool, i32)` overload"]
+    fn invoke(self, transporter_is_selected: impl ::core::convert::Into<bool>, transporter_item_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <DiscardItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenu_DecideCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(transporter_is_selected),
+                ::core::convert::Into::into(transporter_item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl<__T: IDiscardItemMenu_DecideCallback> IDiscardItemMenu_DecideCallbackMethods for __T {}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_DecideCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_DecideCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_DecideCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DiscardItemMenu_CancelCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DiscardItemMenu_CancelCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DiscardItemMenu_CancelCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: DiscardItemMenu_CancelCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DiscardItemMenu_CancelCallback, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+pub trait IDiscardItemMenu_CancelCallbackMethods: IDiscardItemMenu_CancelCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <DiscardItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenu_CancelCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver =
+                <DiscardItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenu_CancelCallback_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl<__T: IDiscardItemMenu_CancelCallback> IDiscardItemMenu_CancelCallbackMethods for __T {}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_CancelCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_CancelCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_CancelCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __DiscardItemMenu_ConfirmDialog_YesEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2632,6 +2512,135 @@ impl DiscardItemMenu_ConfirmDialog_YesEventHandler {
             )
         });
         <Self as IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DiscardItemMenu_ConfirmDialog_YesDialogItem,
+        yes_event_handler: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DiscardItemMenu_ConfirmDialog_YesDialogItem,
+            crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, yes_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: DiscardItemMenu_ConfirmDialog_YesDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(DiscardItemMenu_ConfirmDialog_YesDialogItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+pub trait IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods: IDiscardItemMenu_ConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]
+    fn ctor(self, yes_event_handler: impl ::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>) -> () {
+        unsafe {
+            let __receiver = <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <DiscardItemMenu_ConfirmDialog_YesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DiscardItemMenu_ConfirmDialog_YesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl<__T: IDiscardItemMenu_ConfirmDialog_YesDialogItem> IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods for __T {}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_ConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` — overload selector"]
+    pub fn new(yes_event_handler: crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods>::ctor(this, yes_event_handler);
         this
     }
 }

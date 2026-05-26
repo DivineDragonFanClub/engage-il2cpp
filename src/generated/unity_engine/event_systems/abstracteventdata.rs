@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "AbstractEventData")]
     #[parent(crate::system::object::Object)]
     pub struct AbstractEventData {
+        #[offset(16)]
         #[rename(name = "m_Used")]
         pub m_used: bool,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "DressUtility")]
     #[parent(crate::system::object::Object)]
     pub struct DressUtility {
+        #[offset(16)]
         #[rename(name = "bodyCache")]
         pub body_cache: crate::combat::hierarchycache::HierarchyCache,
     }

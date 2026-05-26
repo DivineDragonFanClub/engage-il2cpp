@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayWdwPlayerList")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RelayWdwPlayerList {
+        #[offset(24)]
         #[rename(name = "m_PlayerList")]
         pub m_player_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

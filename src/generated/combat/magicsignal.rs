@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "MagicSignal")]
     #[parent(crate::system::object::Object)]
     pub struct MagicSignal {
+        #[offset(16)]
         #[rename(name = "level")]
         pub level: crate::combat::magiclevels::MagicLevels,
+        #[offset(20)]
         #[rename(name = "frame")]
         pub frame: f32,
+        #[offset(24)]
         #[rename(name = "command")]
         pub command: crate::combat::magiccommand::MagicCommand,
+        #[offset(32)]
         #[rename(name = "prefab")]
         pub prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "parentName")]
         pub parent_name: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "connect")]
         pub connect: crate::combat::particleconnect::ParticleConnect,
+        #[offset(52)]
         #[rename(name = "intParameter")]
         pub int_parameter: i32,
+        #[offset(56)]
         #[rename(name = "floatParameter")]
         pub float_parameter: f32,
+        #[offset(64)]
         #[rename(name = "stringParameter")]
         pub string_parameter: ::unity2::Il2CppString,
     }

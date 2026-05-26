@@ -26,24 +26,34 @@ mod __types {
         #[static_field]
         #[rename(name = "UIName")]
         pub ui_name: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_category1")]
         pub m_category1: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_category2")]
         pub m_category2: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_content1")]
         pub m_content1: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_content2")]
         pub m_content2: crate::unity_engine::gameobject::GameObject,
+        #[offset(264)]
         #[rename(name = "m_exchangeCursor")]
         pub m_exchange_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(272)]
         #[rename(name = "m_ChoiceAcc")]
         pub m_choice_acc: crate::unity_engine::gameobject::GameObject,
+        #[offset(280)]
         #[rename(name = "m_AccName")]
         pub m_acc_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(288)]
         #[rename(name = "m_AccIcon")]
         pub m_acc_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_AccParts")]
         pub m_acc_parts: crate::unity_engine::gameobject::GameObject,
+        #[offset(304)]
         #[rename(name = "m_AccHelp")]
         pub m_acc_help: crate::unity_engine::gameobject::GameObject,
     }

@@ -11,11 +11,14 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "BufferedRTHandleSystem")]
     #[parent(crate::system::object::Object)]
     pub struct BufferedRTHandleSystem {
+        #[offset(16)]
         #[rename(name = "m_RTHandles")]
         pub m_rt_handles:
             crate::system::collections::generic::dictionary_2::Dictionary_2<i32, ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle>>,
+        #[offset(24)]
         #[rename(name = "m_RTHandleSystem")]
         pub m_rt_handle_system: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem,
+        #[offset(32)]
         #[rename(name = "m_DisposedValue")]
         pub m_disposed_value: bool,
     }

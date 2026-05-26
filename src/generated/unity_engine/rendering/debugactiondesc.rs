@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionDesc")]
     #[parent(crate::system::object::Object)]
     pub struct DebugActionDesc {
+        #[offset(16)]
         #[rename(name = "axisTrigger")]
         pub axis_trigger: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "buttonTriggerList")]
         pub button_trigger_list: crate::system::collections::generic::list_1::List_1<::unity2::Array<::unity2::Il2CppString>>,
+        #[offset(32)]
         #[rename(name = "keyTriggerList")]
         pub key_trigger_list: crate::system::collections::generic::list_1::List_1<::unity2::Array<crate::unity_engine::keycode::KeyCode>>,
+        #[offset(40)]
         #[rename(name = "repeatMode")]
         pub repeat_mode: crate::unity_engine::rendering::debugactionrepeatmode::DebugActionRepeatMode,
+        #[offset(44)]
         #[rename(name = "repeatDelay")]
         pub repeat_delay: f32,
     }

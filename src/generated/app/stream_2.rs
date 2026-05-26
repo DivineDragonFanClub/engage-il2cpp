@@ -10,17 +10,15 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_Info.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_ReadScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Stream_Info {
-        pub position: i32,
-        pub version: i32,
-        pub size: i32,
+    pub struct Stream_ReadScope {
+        pub m_stream: crate::app::stream_2::Stream_2,
     }
 
-    impl ::unity2::ClassIdentity for Stream_Info {
-        const NAME: &'static str = "Stream.Info";
+    impl ::unity2::ClassIdentity for Stream_ReadScope {
+        const NAME: &'static str = "Stream.ReadScope";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -30,7 +28,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Stream_Info {
+    impl ::unity2::IlType for Stream_ReadScope {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -55,6 +53,32 @@ mod __types {
     }
 
     impl ::unity2::IlType for Stream_WriteScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_Info.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Stream_Info {
+        pub position: i32,
+        pub version: i32,
+        pub size: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Stream_Info {
+        const NAME: &'static str = "Stream.Info";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Stream_Info {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -85,34 +109,11 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_ReadScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Stream_ReadScope {
-        pub m_stream: crate::app::stream_2::Stream_2,
-    }
-
-    impl ::unity2::ClassIdentity for Stream_ReadScope {
-        const NAME: &'static str = "Stream.ReadScope";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Stream_ReadScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/stream_2/Stream_2.md"))]
     #[::unity2::class(namespace = "App", name = "Stream")]
     #[parent(crate::system::object::Object)]
     pub struct Stream_2 {
+        #[offset(32)]
         #[rename(name = "m_Stack")]
         pub m_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::stream_2::Stream_Info>,
         #[static_field]
@@ -132,6 +133,168 @@ mod __types {
 
 #[cfg(feature = "app-stream_2-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-stream_2")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Stream_ReadScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: Stream_ReadScope, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Stream_ReadScope, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: Stream_ReadScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Stream_ReadScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
+                "get_Version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
+                        "get_Version",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_version(this: Stream_ReadScope, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Stream_ReadScope, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
+                "set_Version",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
+                        "set_Version",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_version(this: Stream_ReadScope, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Stream_ReadScope, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_version::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-stream_2")]
+impl Stream_ReadScope {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
+    pub fn ctor(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe { __Stream_ReadScope_unity2_raw::ctor(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __Stream_ReadScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Version()` overload"]
+    pub fn get_version(self) -> i32 {
+        unsafe { __Stream_ReadScope_unity2_raw::get_version(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Version(i32)` overload"]
+    pub fn set_version(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Stream_ReadScope_unity2_raw::set_version(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-stream_2")]
 #[doc(hidden)]
@@ -332,168 +495,6 @@ impl Stream_PositionScope {
     #[doc = "`Dispose()` overload"]
     pub fn dispose(self) -> () {
         unsafe { __Stream_PositionScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-stream_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Stream_ReadScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Stream_ReadScope, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Stream_ReadScope, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: Stream_ReadScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Stream_ReadScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_version {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
-                "get_Version",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
-                        "get_Version",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_version(this: Stream_ReadScope, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Stream_ReadScope, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_version {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_ReadScope as ::unity2::ClassIdentity>::class(),
-                "set_Version",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Stream_ReadScope as ::unity2::ClassIdentity>::NAME,
-                        "set_Version",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_version(this: Stream_ReadScope, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Stream_ReadScope, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_version::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-stream_2")]
-impl Stream_ReadScope {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
-    pub fn ctor(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe { __Stream_ReadScope_unity2_raw::ctor(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __Stream_ReadScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Version()` overload"]
-    pub fn get_version(self) -> i32 {
-        unsafe { __Stream_ReadScope_unity2_raw::get_version(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Version(i32)` overload"]
-    pub fn set_version(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Stream_ReadScope_unity2_raw::set_version(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 }
 

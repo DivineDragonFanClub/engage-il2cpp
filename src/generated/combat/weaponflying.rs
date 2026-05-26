@@ -19,25 +19,34 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "WeaponFlying")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct WeaponFlying {
+        #[offset(24)]
         #[rename(name = "CP")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_Rigidbody")]
         pub m_rigidbody: crate::unity_engine::rigidbody::Rigidbody,
+        #[offset(40)]
         #[rename(name = "m_PrevPos")]
         pub m_prev_pos: crate::unity_engine::vector3::Vector3,
         #[static_field]
         #[rename(name = "InitialLife")]
         pub initial_life: f32,
+        #[offset(52)]
         #[rename(name = "m_TimeToHit")]
         pub m_time_to_hit: f32,
+        #[offset(56)]
         #[rename(name = "m_Life")]
         pub m_life: f32,
+        #[offset(60)]
         #[rename(name = "m_AngularVelocity")]
         pub m_angular_velocity: f32,
+        #[offset(64)]
         #[rename(name = "m_TrailGO")]
         pub m_trail_go: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "collided")]
         pub collided: bool,
+        #[offset(73)]
         #[rename(name = "inWater")]
         pub in_water: bool,
     }

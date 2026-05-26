@@ -11,28 +11,40 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "CallStackItem")]
     #[parent(crate::system::object::Object)]
     pub struct CallStackItem {
+        #[offset(16)]
         #[rename(name = "Debug_EntryPoint")]
         pub debug_entry_point: i32,
+        #[offset(24)]
         #[rename(name = "Debug_Symbols")]
         pub debug_symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        #[offset(32)]
         #[rename(name = "CallingSourceRef")]
         pub calling_source_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[offset(40)]
         #[rename(name = "ClrFunction")]
         pub clr_function: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+        #[offset(48)]
         #[rename(name = "Continuation")]
         pub continuation: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+        #[offset(56)]
         #[rename(name = "ErrorHandler")]
         pub error_handler: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+        #[offset(64)]
         #[rename(name = "ErrorHandlerBeforeUnwind")]
         pub error_handler_before_unwind: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(72)]
         #[rename(name = "BasePointer")]
         pub base_pointer: i32,
+        #[offset(76)]
         #[rename(name = "ReturnAddress")]
         pub return_address: i32,
+        #[offset(80)]
         #[rename(name = "LocalScope")]
         pub local_scope: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        #[offset(88)]
         #[rename(name = "ClosureScope")]
         pub closure_scope: crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext,
+        #[offset(96)]
         #[rename(name = "Flags")]
         pub flags: crate::moon_sharp::interpreter::execution::vm::callstackitemflags::CallStackItemFlags,
     }

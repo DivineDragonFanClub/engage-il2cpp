@@ -14,22 +14,31 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "MemoryStream")]
     #[parent(crate::system::io::stream::Stream)]
     pub struct MemoryStream {
+        #[offset(40)]
         #[rename(name = "_buffer")]
         pub buffer: ::unity2::Array<u8>,
+        #[offset(48)]
         #[rename(name = "_origin")]
         pub origin: i32,
+        #[offset(52)]
         #[rename(name = "_position")]
         pub position_field: i32,
+        #[offset(56)]
         #[rename(name = "_length")]
         pub length_field: i32,
+        #[offset(60)]
         #[rename(name = "_capacity")]
         pub capacity_field: i32,
+        #[offset(64)]
         #[rename(name = "_expandable")]
         pub expandable: bool,
+        #[offset(65)]
         #[rename(name = "_writable")]
         pub writable: bool,
+        #[offset(66)]
         #[rename(name = "_exposable")]
         pub exposable: bool,
+        #[offset(67)]
         #[rename(name = "_isOpen")]
         pub is_open: bool,
     }

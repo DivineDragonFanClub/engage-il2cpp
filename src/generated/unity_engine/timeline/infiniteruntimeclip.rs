@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "InfiniteRuntimeClip")]
     #[parent(crate::unity_engine::timeline::runtimeelement::RuntimeElement)]
     pub struct InfiniteRuntimeClip {
+        #[offset(24)]
         #[rename(name = "m_Playable")]
         pub m_playable: crate::unity_engine::playables::playable::Playable,
         #[static_field]

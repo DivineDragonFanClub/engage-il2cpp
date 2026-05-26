@@ -11,19 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/vcamshaker/VCamShaker.md"))]
-    #[::unity2::class(namespace = "Combat", name = "VCamShaker")]
-    pub struct VCamShaker {
-        #[rename(name = "m_Setting")]
-        pub m_setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-        #[rename(name = "m_ShakeType")]
-        pub m_shake_type: crate::combat::vcamshaker::VCamShaker_ShakeType,
-        #[rename(name = "m_Life")]
-        pub m_life: i32,
-        #[rename(name = "m_Magnitude")]
-        pub m_magnitude: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/vcamshaker/VCamShaker_ShakeType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -60,6 +47,23 @@ mod __types {
         pub fn armor_step() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/vcamshaker/VCamShaker.md"))]
+    #[::unity2::class(namespace = "Combat", name = "VCamShaker")]
+    pub struct VCamShaker {
+        #[offset(80)]
+        #[rename(name = "m_Setting")]
+        pub m_setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
+        #[offset(88)]
+        #[rename(name = "m_ShakeType")]
+        pub m_shake_type: crate::combat::vcamshaker::VCamShaker_ShakeType,
+        #[offset(92)]
+        #[rename(name = "m_Life")]
+        pub m_life: i32,
+        #[offset(96)]
+        #[rename(name = "m_Magnitude")]
+        pub m_magnitude: f32,
     }
 }
 

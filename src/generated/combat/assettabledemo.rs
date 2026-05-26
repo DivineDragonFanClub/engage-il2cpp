@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "AssetTableDemo")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct AssetTableDemo {
+        #[offset(24)]
         #[rename(name = "Items")]
         pub items: crate::system::collections::generic::list_1::List_1<crate::combat::assettableitem::AssetTableItem>,
     }

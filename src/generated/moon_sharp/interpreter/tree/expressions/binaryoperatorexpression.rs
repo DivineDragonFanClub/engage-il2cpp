@@ -42,24 +42,15 @@ mod __types {
         #[static_field]
         #[rename(name = "LOGIC_OR")]
         pub logic_or: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Operator,
+        #[offset(32)]
         #[rename(name = "m_Exp1")]
         pub m_exp1: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(40)]
         #[rename(name = "m_Exp2")]
         pub m_exp2: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(48)]
         #[rename(name = "m_Operator")]
         pub m_operator: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Operator,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_LinkedList.md"))]
-    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "BinaryOperatorExpression.LinkedList")]
-    #[parent(crate::system::object::Object)]
-    pub struct BinaryOperatorExpression_LinkedList {
-        #[rename(name = "Nodes")]
-        pub nodes: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Node,
-        #[rename(name = "Last")]
-        pub last: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Node,
-        #[rename(name = "OperatorMask")]
-        pub operator_mask: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Operator,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Operator.md"))]
@@ -152,16 +143,35 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_LinkedList.md"))]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "BinaryOperatorExpression.LinkedList")]
+    #[parent(crate::system::object::Object)]
+    pub struct BinaryOperatorExpression_LinkedList {
+        #[offset(16)]
+        #[rename(name = "Nodes")]
+        pub nodes: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Node,
+        #[offset(24)]
+        #[rename(name = "Last")]
+        pub last: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Node,
+        #[offset(32)]
+        #[rename(name = "OperatorMask")]
+        pub operator_mask: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Operator,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Node.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "BinaryOperatorExpression.Node")]
     #[parent(crate::system::object::Object)]
     pub struct BinaryOperatorExpression_Node {
+        #[offset(16)]
         #[rename(name = "Expr")]
         pub expr: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(24)]
         #[rename(name = "Op")]
         pub op: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Operator,
+        #[offset(32)]
         #[rename(name = "Prev")]
         pub prev: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Node,
+        #[offset(40)]
         #[rename(name = "Next")]
         pub next: crate::moon_sharp::interpreter::tree::expressions::binaryoperatorexpression::BinaryOperatorExpression_Node,
     }

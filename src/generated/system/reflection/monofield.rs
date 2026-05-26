@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "MonoField")]
     #[parent(crate::system::reflection::rtfieldinfo::RtFieldInfo)]
     pub struct MonoField {
+        #[offset(16)]
         #[rename(name = "klass")]
         pub klass: ::unity2::IntPtr,
+        #[offset(32)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "type")]
         pub r#type: ::unity2::SystemType,
+        #[offset(48)]
         #[rename(name = "attrs")]
         pub attrs: crate::system::reflection::fieldattributes::FieldAttributes,
     }

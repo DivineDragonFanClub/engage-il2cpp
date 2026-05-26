@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Decorator")]
     #[parent(crate::system::object::Object)]
     pub struct Decorator {
+        #[offset(16)]
         #[rename(name = "m_Side")]
         pub m_side: i32,
     }

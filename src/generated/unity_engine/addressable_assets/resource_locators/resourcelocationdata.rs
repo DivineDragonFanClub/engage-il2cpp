@@ -11,18 +11,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets.ResourceLocators", name = "ResourceLocationData")]
     #[parent(crate::system::object::Object)]
     pub struct ResourceLocationData {
+        #[offset(16)]
         #[rename(name = "m_Keys")]
         pub m_keys: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(24)]
         #[rename(name = "m_InternalId")]
         pub m_internal_id: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_Provider")]
         pub m_provider: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Dependencies")]
         pub m_dependencies: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(48)]
         #[rename(name = "m_ResourceType")]
         pub m_resource_type: crate::unity_engine::resource_management::util::serializedtype::SerializedType,
+        #[offset(80)]
         #[rename(name = "SerializedData")]
         pub serialized_data: ::unity2::Array<u8>,
+        #[offset(88)]
         #[rename(name = "_Data")]
         pub data_field: ::unity2::IlInstance,
     }

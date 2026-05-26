@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "BindMax")]
         pub bind_max: i32,
+        #[offset(16)]
         #[rename(name = "m_Bind")]
         pub m_bind: i32,
     }

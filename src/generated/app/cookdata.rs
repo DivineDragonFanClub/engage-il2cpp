@@ -18,16 +18,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cookdata/CookData.md"))]
-    #[::unity2::class(namespace = "App", name = "CookData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: cookdata :: CookData >)]
-    pub struct CookData {
-        #[rename(name = "MaskColor100")]
-        pub mask_color100: crate::unity_engine::color::Color,
-        #[rename(name = "MaskColor075")]
-        pub mask_color075: crate::unity_engine::color::Color,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cookdata/CookData_Difficulty.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -76,6 +66,18 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 5 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cookdata/CookData.md"))]
+    #[::unity2::class(namespace = "App", name = "CookData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: cookdata :: CookData >)]
+    pub struct CookData {
+        #[offset(136)]
+        #[rename(name = "MaskColor100")]
+        pub mask_color100: crate::unity_engine::color::Color,
+        #[offset(152)]
+        #[rename(name = "MaskColor075")]
+        pub mask_color075: crate::unity_engine::color::Color,
     }
 }
 

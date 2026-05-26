@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "DynamicResourceLocator")]
     #[parent(crate::system::object::Object)]
     pub struct DynamicResourceLocator {
+        #[offset(16)]
         #[rename(name = "m_Addressables")]
         pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        #[offset(24)]
         #[rename(name = "m_AtlasSpriteProviderId")]
         pub m_atlas_sprite_provider_id: ::unity2::Il2CppString,
     }

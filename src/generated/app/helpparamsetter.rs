@@ -19,114 +19,169 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpParamSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HelpParamSetter {
+        #[offset(24)]
         #[rename(name = "m_CursorObj")]
         pub m_cursor_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_WindowObj")]
         pub m_window_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_TitleRoot")]
         pub m_title_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_WeaponRoot")]
         pub m_weapon_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_MessageRoot")]
         pub m_message_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_ItemIcon")]
         pub m_item_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_SkillIcon")]
         pub m_skill_icon: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_ContentName")]
         pub m_content_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_Endurance")]
         pub m_endurance: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_TitleAtk")]
         pub m_title_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_ValueAtk")]
         pub m_value_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_IconAtk")]
         pub m_icon_atk: crate::unity_engine::ui::image::Image,
+        #[offset(120)]
         #[rename(name = "m_ValueHit")]
         pub m_value_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_IconHit")]
         pub m_icon_hit: crate::unity_engine::ui::image::Image,
+        #[offset(136)]
         #[rename(name = "m_ValueCrit")]
         pub m_value_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(144)]
         #[rename(name = "m_IconCrit")]
         pub m_icon_crit: crate::unity_engine::ui::image::Image,
+        #[offset(152)]
         #[rename(name = "m_ValueSpd")]
         pub m_value_spd: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
         #[rename(name = "m_IconSpd")]
         pub m_icon_spd: crate::unity_engine::ui::image::Image,
+        #[offset(168)]
         #[rename(name = "m_ValueAvo")]
         pub m_value_avo: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(176)]
         #[rename(name = "m_IconAvo")]
         pub m_icon_avo: crate::unity_engine::ui::image::Image,
+        #[offset(184)]
         #[rename(name = "m_ValueCritAvo")]
         pub m_value_crit_avo: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(192)]
         #[rename(name = "m_IconCritAvo")]
         pub m_icon_crit_avo: crate::unity_engine::ui::image::Image,
+        #[offset(200)]
         #[rename(name = "m_TitleRange")]
         pub m_title_range: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(208)]
         #[rename(name = "m_ValueRange")]
         pub m_value_range: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(216)]
         #[rename(name = "m_EfficacyNothing")]
         pub m_efficacy_nothing: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(224)]
         #[rename(name = "m_EfficacyIcons")]
         pub m_efficacy_icons: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(232)]
         #[rename(name = "m_TitleWeaponLevel")]
         pub m_title_weapon_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_ValueWeaponLevel")]
         pub m_value_weapon_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_IconWeaponLevel")]
         pub m_icon_weapon_level: crate::unity_engine::ui::image::Image,
+        #[offset(256)]
         #[rename(name = "m_ContentsText")]
         pub m_contents_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_ContentsEngWep")]
         pub m_contents_eng_wep: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_ContentsEnchant")]
         pub m_contents_enchant: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_ContentsSubText")]
         pub m_contents_sub_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_PrevPosition")]
         pub m_prev_position: crate::unity_engine::vector2::Vector2,
+        #[offset(296)]
         #[rename(name = "m_PrevSize")]
         pub m_prev_size: crate::unity_engine::vector2::Vector2,
+        #[offset(304)]
         #[rename(name = "m_NextPosition")]
         pub m_next_position: crate::unity_engine::vector2::Vector2,
+        #[offset(312)]
         #[rename(name = "m_NextSize")]
         pub m_next_size: crate::unity_engine::vector2::Vector2,
+        #[offset(320)]
         #[rename(name = "m_CursorMoveTimer")]
         pub m_cursor_move_timer: f32,
+        #[offset(324)]
         #[rename(name = "m_DefaultWindowPos")]
         pub m_default_window_pos: crate::unity_engine::vector2::Vector2,
+        #[offset(332)]
         #[rename(name = "m_PrevWindowPos")]
         pub m_prev_window_pos: crate::unity_engine::vector2::Vector2,
+        #[offset(340)]
         #[rename(name = "m_NextWindowPos")]
         pub m_next_window_pos: crate::unity_engine::vector2::Vector2,
+        #[offset(348)]
         #[rename(name = "m_PrevWindowPivot")]
         pub m_prev_window_pivot: crate::unity_engine::vector2::Vector2,
+        #[offset(356)]
         #[rename(name = "m_NextWindowPivot")]
         pub m_next_window_pivot: crate::unity_engine::vector2::Vector2,
+        #[offset(364)]
         #[rename(name = "m_PrevWindowAnchor")]
         pub m_prev_window_anchor: crate::unity_engine::vector2::Vector2,
+        #[offset(372)]
         #[rename(name = "m_NextWindowAnchor")]
         pub m_next_window_anchor: crate::unity_engine::vector2::Vector2,
+        #[offset(380)]
         #[rename(name = "m_CursorMoveTime")]
         pub m_cursor_move_time: f32,
+        #[offset(384)]
         #[rename(name = "m_BattleInfo")]
         pub m_battle_info: crate::app::battleinfo::BattleInfo,
+        #[offset(392)]
         #[rename(name = "m_TmpBattleInfo")]
         pub m_tmp_battle_info: crate::app::battleinfo::BattleInfo,
+        #[offset(400)]
         #[rename(name = "m_TmpCalcUnit")]
         pub m_tmp_calc_unit: crate::app::unit::Unit,
+        #[offset(408)]
         #[rename(name = "m_enhancedValue")]
         pub m_enhanced_value: ::unity2::Array<i32>,
+        #[offset(416)]
         #[rename(name = "m_enhancedTitle")]
         pub m_enhanced_title: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(424)]
         #[rename(name = "m_isGodChange")]
         pub m_is_god_change: bool,
+        #[offset(425)]
         #[rename(name = "m_isRingChange")]
         pub m_is_ring_change: bool,
+        #[offset(432)]
         #[rename(name = "m_ringSelectGod")]
         pub m_ring_select_god: crate::app::godunit::GodUnit,
+        #[offset(440)]
         #[rename(name = "m_ringSelectCommon")]
         pub m_ring_select_common: crate::app::unitring::UnitRing,
         #[static_field]

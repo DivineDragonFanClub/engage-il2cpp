@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapRanking")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapranking :: MapRanking >)]
     pub struct MapRanking {
+        #[offset(32)]
         #[rename(name = "pairs")]
         pub pairs: crate::system::collections::generic::list_1::List_1<crate::app::nexranking::NexRanking_Data>,
     }

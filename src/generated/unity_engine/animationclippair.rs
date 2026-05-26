@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AnimationClipPair")]
     #[parent(crate::system::object::Object)]
     pub struct AnimationClipPair {
+        #[offset(16)]
         #[rename(name = "originalClip")]
         pub original_clip: crate::unity_engine::animationclip::AnimationClip,
+        #[offset(24)]
         #[rename(name = "overrideClip")]
         pub override_clip: crate::unity_engine::animationclip::AnimationClip,
     }

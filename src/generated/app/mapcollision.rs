@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapCollision")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapCollision {
+        #[offset(24)]
         #[rename(name = "m_MapObject")]
         pub m_map_object: crate::app::mapobject::MapObject,
+        #[offset(32)]
         #[rename(name = "m_Renderers")]
         pub m_renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+        #[offset(40)]
         #[rename(name = "m_Alpha")]
         pub m_alpha: f32,
+        #[offset(44)]
         #[rename(name = "m_DisableCloseTransparent")]
         pub m_disable_close_transparent: bool,
     }

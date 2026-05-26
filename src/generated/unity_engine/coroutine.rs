@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "Coroutine")]
     #[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
     pub struct Coroutine {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
     }

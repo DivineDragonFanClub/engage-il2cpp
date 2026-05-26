@@ -64,14 +64,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ChallengeSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct ChallengeSequence {
+        #[offset(112)]
         #[rename(name = "m_ChallengeMapSelectRoot")]
         pub m_challenge_map_select_root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        #[offset(120)]
         #[rename(name = "m_Bg")]
         pub m_bg: crate::app::menubg::MenuBg,
+        #[offset(128)]
         #[rename(name = "m_Result")]
         pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[offset(136)]
         #[rename(name = "m_ChallengeData")]
         pub m_challenge_data: crate::app::challengedata::ChallengeData,
+        #[offset(144)]
         #[rename(name = "m_Difficulty")]
         pub m_difficulty: i32,
     }

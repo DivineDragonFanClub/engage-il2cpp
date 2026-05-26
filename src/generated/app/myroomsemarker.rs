@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomSEMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct MyRoomSEMarker {
+        #[offset(40)]
         #[rename(name = "EventName")]
         pub event_name: ::unity2::Il2CppString,
     }

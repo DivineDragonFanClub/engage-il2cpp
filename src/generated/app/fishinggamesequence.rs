@@ -18,26 +18,68 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingGameSequence_Ripple {
-        #[rename(name = "m_obj")]
-        pub m_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BasePos")]
-        pub m_base_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_SizeList")]
-        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_BaseHeight")]
-        pub m_base_height: f32,
-        #[rename(name = "m_PopIntervalBaseTime")]
-        pub m_pop_interval_base_time: f32,
-        #[rename(name = "m_PopRandomMax")]
-        pub m_pop_random_max: f32,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-        #[rename(name = "m_parentNode")]
-        pub m_parent_node: crate::unity_engine::transform::Transform,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_AnnounceType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct FishingGameSequence_AnnounceType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_AnnounceType {
+        const NAME: &'static str = "FishingGameSequence.AnnounceType";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_AnnounceType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl FishingGameSequence_AnnounceType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fast() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn slow() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_LureRoot.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct FishingGameSequence_LureRoot {
+        pub x: f32,
+        pub y: f32,
+        pub frame: f32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_LureRoot {
+        const NAME: &'static str = "FishingGameSequence.LureRoot";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_LureRoot {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence.md"))]
@@ -185,228 +227,409 @@ mod __types {
         #[static_field]
         #[rename(name = "cAtlasPath")]
         pub c_atlas_path: ::unity2::Il2CppString,
+        #[offset(136)]
         #[rename(name = "cLoadObjectPath")]
         pub c_load_object_path: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "cLoadTexturePath")]
         pub c_load_texture_path: ::unity2::Il2CppString,
+        #[offset(144)]
         #[rename(name = "m_ConfigBase")]
         pub m_config_base: crate::app::fishingconfig_base::FishingConfig_Base,
+        #[offset(152)]
         #[rename(name = "m_ConfigMoveCircle")]
         pub m_config_move_circle: crate::app::fishingconfig_movecircle::FishingConfig_MoveCircle,
+        #[offset(160)]
         #[rename(name = "m_ConfigThrowIn")]
         pub m_config_throw_in: crate::app::fishingconfig_throwin::FishingConfig_ThrowIn,
+        #[offset(168)]
         #[rename(name = "m_ConfigWaitCatch")]
         pub m_config_wait_catch: crate::app::fishingconfig_waitcatch::FishingConfig_WaitCatch,
+        #[offset(176)]
         #[rename(name = "m_ConfigWaitCancel")]
         pub m_config_wait_cancel: crate::app::fishingconfig_waitcancel::FishingConfig_WaitCancel,
+        #[offset(184)]
         #[rename(name = "m_ConfigBattle")]
         pub m_config_battle: crate::app::fishingconfig_battle::FishingConfig_Battle,
+        #[offset(192)]
         #[rename(name = "m_ConfigDefeat")]
         pub m_config_defeat: crate::app::fishingconfig_defeat::FishingConfig_Defeat,
+        #[offset(200)]
         #[rename(name = "m_ConfigResult")]
         pub m_config_result: crate::app::fishingconfig_result::FishingConfig_Result,
+        #[offset(208)]
         #[rename(name = "m_PlayerRoot")]
         pub m_player_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(216)]
         #[rename(name = "m_PlayerController")]
         pub m_player_controller: crate::app::hubunitcontroller::HubUnitController,
+        #[offset(224)]
         #[rename(name = "m_HubLookComponent")]
         pub m_hub_look_component: crate::app::hublookatcontroller::HubLookAtController,
+        #[offset(240)]
         #[rename(name = "m_RodAnimator")]
         pub m_rod_animator: crate::unity_engine::animator::Animator,
+        #[offset(248)]
         #[rename(name = "m_Sola")]
         pub m_sola: crate::combat::character::Character,
+        #[offset(256)]
         #[rename(name = "m_HubSolaLct")]
         pub m_hub_sola_lct: crate::unity_engine::gameobject::GameObject,
+        #[offset(264)]
         #[rename(name = "m_IsSetSolaInvisible")]
         pub m_is_set_sola_invisible: bool,
+        #[offset(272)]
         #[rename(name = "RodModelIDs")]
         pub rod_model_i_ds: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(280)]
         #[rename(name = "LureModelIDs")]
         pub lure_model_i_ds: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(288)]
         #[rename(name = "m_Talker")]
         pub m_talker: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_TalkerChara")]
         pub m_talker_chara: crate::combat::character::Character,
+        #[offset(304)]
         #[rename(name = "m_TalkerRotTestDir")]
         pub m_talker_rot_test_dir: f32,
+        #[offset(308)]
         #[rename(name = "m_TalkerResetPos")]
         pub m_talker_reset_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(320)]
         #[rename(name = "m_TalkerResetRot")]
         pub m_talker_reset_rot: crate::unity_engine::quaternion::Quaternion,
+        #[offset(336)]
         #[rename(name = "m_TalkerResetDir")]
         pub m_talker_reset_dir: f32,
+        #[offset(340)]
         #[rename(name = "m_Timer")]
         pub m_timer: f32,
+        #[offset(344)]
         #[rename(name = "m_ResetPos")]
         pub m_reset_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(356)]
         #[rename(name = "m_ResetRot")]
         pub m_reset_rot: crate::unity_engine::quaternion::Quaternion,
+        #[offset(372)]
         #[rename(name = "m_ResetDir")]
         pub m_reset_dir: f32,
+        #[offset(376)]
         #[rename(name = "m_CameraObj")]
         pub m_camera_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(384)]
         #[rename(name = "m_CameraComponent")]
         pub m_camera_component: crate::unity_engine::camera::Camera,
+        #[offset(392)]
         #[rename(name = "m_DefeatCamera")]
         pub m_defeat_camera: crate::unity_engine::gameobject::GameObject,
+        #[offset(400)]
         #[rename(name = "m_DefeatCameraAnim")]
         pub m_defeat_camera_anim: crate::unity_engine::animation::Animation,
+        #[offset(408)]
         #[rename(name = "m_GuideCircleObj")]
         pub m_guide_circle_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(416)]
         #[rename(name = "m_GuideEffect")]
         pub m_guide_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(424)]
         #[rename(name = "m_LureObj")]
         pub m_lure_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(432)]
         #[rename(name = "m_LureTrans")]
         pub m_lure_trans: crate::unity_engine::transform::Transform,
+        #[offset(440)]
         #[rename(name = "m_LureScript")]
         pub m_lure_script: crate::app::fishinglure::FishingLure,
+        #[offset(448)]
         #[rename(name = "m_LureModel")]
         pub m_lure_model: crate::unity_engine::gameobject::GameObject,
+        #[offset(456)]
         #[rename(name = "m_LureAnime")]
         pub m_lure_anime: crate::unity_engine::animator::Animator,
+        #[offset(464)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::gameobject::GameObject,
+        #[offset(472)]
         #[rename(name = "m_Angle")]
         pub m_angle: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(480)]
         #[rename(name = "m_ThrowDistance")]
         pub m_throw_distance: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(488)]
         #[rename(name = "m_IsPlayThrowSE")]
         pub m_is_play_throw_se: bool,
+        #[offset(489)]
         #[rename(name = "m_IsPlaySinkSE")]
         pub m_is_play_sink_se: bool,
+        #[offset(490)]
         #[rename(name = "m_IsThrowInCameraChange")]
         pub m_is_throw_in_camera_change: bool,
+        #[offset(492)]
         #[rename(name = "m_ResetDistance")]
         pub m_reset_distance: f32,
+        #[offset(496)]
         #[rename(name = "m_ResetAngle")]
         pub m_reset_angle: f32,
+        #[offset(500)]
         #[rename(name = "m_IsStopLure")]
         pub m_is_stop_lure: bool,
+        #[offset(504)]
         #[rename(name = "m_PastStickPower")]
         pub m_past_stick_power: f32,
+        #[offset(508)]
         #[rename(name = "m_lureBasePos")]
         pub m_lure_base_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(520)]
         #[rename(name = "m_StickWaitTimer")]
         pub m_stick_wait_timer: f32,
+        #[offset(524)]
         #[rename(name = "m_AttackWaitTimer")]
         pub m_attack_wait_timer: f32,
+        #[offset(528)]
         #[rename(name = "m_VoiceIntervalTimer")]
         pub m_voice_interval_timer: f32,
+        #[offset(536)]
         #[rename(name = "m_BattleRadarObj")]
         pub m_battle_radar_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(544)]
         #[rename(name = "m_RadarScript")]
         pub m_radar_script: crate::app::fishingbattlerader::FishingBattleRader,
+        #[offset(552)]
         #[rename(name = "m_HitButtonObj")]
         pub m_hit_button_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(560)]
         #[rename(name = "m_StickObj")]
         pub m_stick_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(568)]
         #[rename(name = "m_ButtonObj")]
         pub m_button_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(576)]
         #[rename(name = "m_LethalButtonObj")]
         pub m_lethal_button_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(584)]
         #[rename(name = "m_LethalButtonAnime")]
         pub m_lethal_button_anime: crate::unity_engine::animator::Animator,
+        #[offset(592)]
         #[rename(name = "m_LethalAnimePlayWait")]
         pub m_lethal_anime_play_wait: bool,
+        #[offset(593)]
         #[rename(name = "m_LethalSuccessAnimeWait")]
         pub m_lethal_success_anime_wait: bool,
+        #[offset(600)]
         #[rename(name = "m_RadicalParam")]
         pub m_radical_param: ::unity2::Array<crate::app::fishingradicalparamdata::FishingRadicalParamData_RadicalParam>,
+        #[offset(608)]
         #[rename(name = "m_UseRadicalIndex")]
         pub m_use_radical_index: i32,
+        #[offset(612)]
         #[rename(name = "m_RadicalTimer")]
         pub m_radical_timer: f32,
+        #[offset(620)]
         #[rename(name = "m_AlartSETimer")]
         pub m_alart_se_timer: f32,
         #[static_field]
         #[rename(name = "cAlartSec")]
         pub c_alart_sec: f32,
+        #[offset(624)]
         #[rename(name = "m_PlayerAnimeTimer")]
         pub m_player_anime_timer: f32,
+        #[offset(628)]
         #[rename(name = "m_PlayerState")]
         pub m_player_state: crate::app::fishinggamesequence::FishingGameSequence_FishingAngleState,
+        #[offset(632)]
         #[rename(name = "m_BattleCameraState")]
         pub m_battle_camera_state: crate::app::fishinggamesequence::FishingGameSequence_FishingAngleState,
+        #[offset(636)]
         #[rename(name = "m_BaseCameraAngle")]
         pub m_base_camera_angle: f32,
+        #[offset(640)]
         #[rename(name = "m_isRunningReverseLerp")]
         pub m_is_running_reverse_lerp: bool,
         #[static_field]
         #[rename(name = "m_RodMenuResult")]
         pub m_rod_menu_result: crate::app::fishing::sticktype::StickType,
+        #[offset(648)]
         #[rename(name = "m_FishObj")]
         pub m_fish_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(656)]
         #[rename(name = "m_FishScript")]
         pub m_fish_script: crate::app::fishingfish::FishingFish,
+        #[offset(664)]
         #[rename(name = "m_CanvasRoot")]
         pub m_canvas_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(672)]
         #[rename(name = "m_Fader")]
         pub m_fader: crate::app::fishingeventfader::FishingEventFader,
+        #[offset(680)]
         #[rename(name = "m_IsPullStick")]
         pub m_is_pull_stick: bool,
+        #[offset(681)]
         #[rename(name = "m_IsCancelFadeOut")]
         pub m_is_cancel_fade_out: bool,
+        #[offset(682)]
         #[rename(name = "m_IsCancelFadeIn")]
         pub m_is_cancel_fade_in: bool,
+        #[offset(683)]
         #[rename(name = "m_IsSelectRodWait")]
         pub m_is_select_rod_wait: bool,
+        #[offset(684)]
         #[rename(name = "m_FailType")]
         pub m_fail_type: crate::app::fishinggamesequence::FishingGameSequence_AnnounceType,
+        #[offset(688)]
         #[rename(name = "m_ThrowinHeight")]
         pub m_throwin_height: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(696)]
         #[rename(name = "m_MoveCircleHelp")]
         pub m_move_circle_help: crate::unity_engine::gameobject::GameObject,
+        #[offset(704)]
         #[rename(name = "m_RipplesRoot")]
         pub m_ripples_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(712)]
         #[rename(name = "m_Ripples")]
         pub m_ripples: ::unity2::Array<crate::app::fishinggamesequence::FishingGameSequence_Ripple>,
+        #[offset(720)]
         #[rename(name = "m_EnableRipples")]
         pub m_enable_ripples: bool,
+        #[offset(728)]
         #[rename(name = "m_ImageRenderObj")]
         pub m_image_render_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(736)]
         #[rename(name = "m_ImageRender")]
         pub m_image_render: crate::app::fishingcharaimagerender::FishingCharaImageRender,
+        #[offset(744)]
         #[rename(name = "m_LureHeight")]
         pub m_lure_height: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(752)]
         #[rename(name = "m_IsAssitBattleStart")]
         pub m_is_assit_battle_start: bool,
+        #[offset(760)]
         #[rename(name = "m_AssistPopUp")]
         pub m_assist_pop_up: crate::unity_engine::gameobject::GameObject,
+        #[offset(768)]
         #[rename(name = "m_AssistRect")]
         pub m_assist_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(776)]
         #[rename(name = "m_AssistGlitter")]
         pub m_assist_glitter: crate::unity_engine::gameobject::GameObject,
+        #[offset(784)]
         #[rename(name = "m_AssistDisplayRateX")]
         pub m_assist_display_rate_x: f32,
+        #[offset(788)]
         #[rename(name = "m_AssistDisplayRateY")]
         pub m_assist_display_rate_y: f32,
+        #[offset(792)]
         #[rename(name = "m_AssistDisplayPos")]
         pub m_assist_display_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(804)]
         #[rename(name = "m_DefeatFrame")]
         pub m_defeat_frame: f32,
+        #[offset(808)]
         #[rename(name = "m_DefeatFadeLength")]
         pub m_defeat_fade_length: f32,
+        #[offset(812)]
         #[rename(name = "m_IsShowSucessTelop")]
         pub m_is_show_sucess_telop: bool,
+        #[offset(813)]
         #[rename(name = "m_IsStartDefeatFade")]
         pub m_is_start_defeat_fade: bool,
+        #[offset(816)]
         #[rename(name = "m_ResultUI")]
         pub m_result_ui: crate::app::fishingresultui::FishingResultUI,
+        #[offset(824)]
         #[rename(name = "m_ResultGlitter")]
         pub m_result_glitter: crate::unity_engine::gameobject::GameObject,
+        #[offset(832)]
         #[rename(name = "m_IsPlayResultVoice")]
         pub m_is_play_result_voice: bool,
+        #[offset(833)]
         #[rename(name = "m_IsGetBonus")]
         pub m_is_get_bonus: bool,
         #[static_field]
         #[rename(name = "m_ContinueResult")]
         pub m_continue_result: bool,
+        #[offset(836)]
         #[rename(name = "m_AssistLevel")]
         pub m_assist_level: i32,
+        #[offset(840)]
         #[rename(name = "m_AssistDamage")]
         pub m_assist_damage: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingGameSequence_Ripple {
+        #[offset(16)]
+        #[rename(name = "m_obj")]
+        pub m_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
+        #[rename(name = "m_BasePos")]
+        pub m_base_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
+        #[rename(name = "m_SizeList")]
+        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(48)]
+        #[rename(name = "m_BaseHeight")]
+        pub m_base_height: f32,
+        #[offset(52)]
+        #[rename(name = "m_PopIntervalBaseTime")]
+        pub m_pop_interval_base_time: f32,
+        #[offset(56)]
+        #[rename(name = "m_PopRandomMax")]
+        pub m_pop_random_max: f32,
+        #[offset(60)]
+        #[rename(name = "m_Timer")]
+        pub m_timer: f32,
+        #[offset(64)]
+        #[rename(name = "m_parentNode")]
+        pub m_parent_node: crate::unity_engine::transform::Transform,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_FishingAngleState.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct FishingGameSequence_FishingAngleState {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_FishingAngleState {
+        const NAME: &'static str = "FishingGameSequence.FishingAngleState";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_FishingAngleState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl FishingGameSequence_FishingAngleState {
+        pub fn center() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn lethal() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn angle_state_count() -> Self {
+            Self { value: 4 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_Label.md"))]
@@ -518,116 +741,6 @@ mod __types {
             Self { value: 20 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_FishingAngleState.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FishingGameSequence_FishingAngleState {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_FishingAngleState {
-        const NAME: &'static str = "FishingGameSequence.FishingAngleState";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_FishingAngleState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl FishingGameSequence_FishingAngleState {
-        pub fn center() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn lethal() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn angle_state_count() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_LureRoot.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FishingGameSequence_LureRoot {
-        pub x: f32,
-        pub y: f32,
-        pub frame: f32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_LureRoot {
-        const NAME: &'static str = "FishingGameSequence.LureRoot";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_LureRoot {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_AnnounceType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FishingGameSequence_AnnounceType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_AnnounceType {
-        const NAME: &'static str = "FishingGameSequence.AnnounceType";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_AnnounceType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl FishingGameSequence_AnnounceType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fast() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn slow() -> Self {
-            Self { value: 2 }
-        }
-    }
 }
 
 #[cfg(feature = "app-fishinggamesequence-types")]
@@ -636,18 +749,22 @@ pub use __types::*;
 #[cfg(feature = "app-fishinggamesequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingGameSequence_Ripple_unity2_raw {
+mod __FishingGameSequence_LureRoot_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                3,
                 param_types,
                 false,
             )
@@ -658,7 +775,7 @@ mod __FishingGameSequence_Ripple_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                        <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -666,200 +783,37 @@ mod __FishingGameSequence_Ripple_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: FishingGameSequence_Ripple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
-                "Init",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
-                        "Init",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn init(
-        this: FishingGameSequence_Ripple,
-        pos: crate::unity_engine::vector3::Vector3,
-        size: crate::system::collections::generic::list_1::List_1<i32>,
-        base_height: f32,
-        base_interval: f32,
-        add_range: f32,
+    pub unsafe fn ctor(
+        this: FishingGameSequence_LureRoot,
+        set_x: f32,
+        set_y: f32,
+        set_frame: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingGameSequence_Ripple,
-            crate::unity_engine::vector3::Vector3,
-            crate::system::collections::generic::list_1::List_1<i32>,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
-        inner(this, pos, size, base_height, base_interval, add_range, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
-                        "Update",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update(this: FishingGameSequence_Ripple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy_obj_soon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
-                "DestroyObjSoon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
-                        "DestroyObjSoon",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn destroy_obj_soon(this: FishingGameSequence_Ripple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_destroy_obj_soon::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(FishingGameSequence_LureRoot, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, set_x, set_y, set_frame, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-fishinggamesequence")]
-pub trait IFishingGameSequence_RippleMethods: IFishingGameSequence_Ripple {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingGameSequence_Ripple_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init(crate::unity_engine::vector3::Vector3, crate::system::collections::generic::list_1::List_1<i32>, f32, f32, f32)` overload"]
-    fn init(
+impl FishingGameSequence_LureRoot {
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    pub fn ctor(
         self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        size: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
-        base_height: impl ::core::convert::Into<f32>,
-        base_interval: impl ::core::convert::Into<f32>,
-        add_range: impl ::core::convert::Into<f32>,
+        set_x: impl ::core::convert::Into<f32>,
+        set_y: impl ::core::convert::Into<f32>,
+        set_frame: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingGameSequence_Ripple_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(pos),
-                ::core::convert::Into::into(size),
-                ::core::convert::Into::into(base_height),
-                ::core::convert::Into::into(base_interval),
-                ::core::convert::Into::into(add_range),
+            __FishingGameSequence_LureRoot_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(set_x),
+                ::core::convert::Into::into(set_y),
+                ::core::convert::Into::into(set_frame),
                 ::core::option::Option::None,
             )
         }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingGameSequence_Ripple_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DestroyObjSoon()` overload"]
-    fn destroy_obj_soon(self) -> () {
-        unsafe {
-            let __receiver =
-                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __FishingGameSequence_Ripple_unity2_raw::destroy_obj_soon(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-fishinggamesequence")]
-impl<__T: IFishingGameSequence_Ripple> IFishingGameSequence_RippleMethods for __T {}
-
-#[cfg(feature = "app-fishinggamesequence")]
-impl FishingGameSequence_Ripple {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingGameSequence_Ripple),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingGameSequence_RippleMethods>::ctor(this);
-        this
     }
 }
 
@@ -4345,22 +4299,18 @@ impl FishingGameSequence {
 #[cfg(feature = "app-fishinggamesequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingGameSequence_LureRoot_unity2_raw {
+mod __FishingGameSequence_Ripple_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::class(),
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                3,
+                0,
                 param_types,
                 false,
             )
@@ -4371,7 +4321,7 @@ mod __FishingGameSequence_LureRoot_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::NAME,
+                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -4379,37 +4329,200 @@ mod __FishingGameSequence_LureRoot_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(
-        this: FishingGameSequence_LureRoot,
-        set_x: f32,
-        set_y: f32,
-        set_frame: f32,
+    pub unsafe fn ctor(this: FishingGameSequence_Ripple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<i32> as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                "Init",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn init(
+        this: FishingGameSequence_Ripple,
+        pos: crate::unity_engine::vector3::Vector3,
+        size: crate::system::collections::generic::list_1::List_1<i32>,
+        base_height: f32,
+        base_interval: f32,
+        add_range: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(FishingGameSequence_LureRoot, f32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, set_x, set_y, set_frame, __unity2_method_info)
+        let inner: extern "C" fn(
+            FishingGameSequence_Ripple,
+            crate::unity_engine::vector3::Vector3,
+            crate::system::collections::generic::list_1::List_1<i32>,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
+        inner(this, pos, size, base_height, base_interval, add_range, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update(this: FishingGameSequence_Ripple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy_obj_soon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::class(),
+                "DestroyObjSoon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingGameSequence_Ripple as ::unity2::ClassIdentity>::NAME,
+                        "DestroyObjSoon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn destroy_obj_soon(this: FishingGameSequence_Ripple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(FishingGameSequence_Ripple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy_obj_soon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-fishinggamesequence")]
-impl FishingGameSequence_LureRoot {
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    pub fn ctor(
+pub trait IFishingGameSequence_RippleMethods: IFishingGameSequence_Ripple {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingGameSequence_Ripple_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Init(crate::unity_engine::vector3::Vector3, crate::system::collections::generic::list_1::List_1<i32>, f32, f32, f32)` overload"]
+    fn init(
         self,
-        set_x: impl ::core::convert::Into<f32>,
-        set_y: impl ::core::convert::Into<f32>,
-        set_frame: impl ::core::convert::Into<f32>,
+        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        size: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32>>,
+        base_height: impl ::core::convert::Into<f32>,
+        base_interval: impl ::core::convert::Into<f32>,
+        add_range: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            __FishingGameSequence_LureRoot_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(set_x),
-                ::core::convert::Into::into(set_y),
-                ::core::convert::Into::into(set_frame),
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingGameSequence_Ripple_unity2_raw::init(
+                __receiver,
+                ::core::convert::Into::into(pos),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(base_height),
+                ::core::convert::Into::into(base_interval),
+                ::core::convert::Into::into(add_range),
                 ::core::option::Option::None,
             )
         }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingGameSequence_Ripple_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DestroyObjSoon()` overload"]
+    fn destroy_obj_soon(self) -> () {
+        unsafe {
+            let __receiver =
+                <FishingGameSequence_Ripple as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingGameSequence_Ripple_unity2_raw::destroy_obj_soon(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-fishinggamesequence")]
+impl<__T: IFishingGameSequence_Ripple> IFishingGameSequence_RippleMethods for __T {}
+
+#[cfg(feature = "app-fishinggamesequence")]
+impl FishingGameSequence_Ripple {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingGameSequence_Ripple),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingGameSequence_RippleMethods>::ctor(this);
+        this
     }
 }
 

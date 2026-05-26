@@ -19,27 +19,37 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkGameObj")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AkGameObj {
+        #[offset(24)]
         #[rename(name = "m_listeners")]
         pub m_listeners: crate::root::akgameobjlistenerlist::AkGameObjListenerList,
+        #[offset(32)]
         #[rename(name = "isEnvironmentAware")]
         pub is_environment_aware: bool,
+        #[offset(33)]
         #[rename(name = "isStaticObject")]
         pub is_static_object: bool,
+        #[offset(40)]
         #[rename(name = "m_Collider")]
         pub m_collider: crate::unity_engine::collider::Collider,
+        #[offset(48)]
         #[rename(name = "m_envData")]
         pub m_env_data: crate::root::akgameobjenvironmentdata::AkGameObjEnvironmentData,
+        #[offset(56)]
         #[rename(name = "m_posData")]
         pub m_pos_data: crate::root::akgameobjpositiondata::AkGameObjPositionData,
+        #[offset(64)]
         #[rename(name = "m_positionOffsetData")]
         pub m_position_offset_data: crate::root::akgameobjpositionoffsetdata::AkGameObjPositionOffsetData,
+        #[offset(72)]
         #[rename(name = "isRegistered")]
         pub is_registered: bool,
+        #[offset(80)]
         #[rename(name = "m_posOffsetData")]
         pub m_pos_offset_data: crate::root::akgameobjposoffsetdata::AkGameObjPosOffsetData,
         #[static_field]
         #[rename(name = "AK_NUM_LISTENERS")]
         pub ak_num_listeners: i32,
+        #[offset(88)]
         #[rename(name = "listenerMask")]
         pub listener_mask: i32,
     }

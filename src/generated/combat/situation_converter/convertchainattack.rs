@@ -14,14 +14,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertChainAttack")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConvertChainAttack {
+        #[offset(24)]
         #[rename(name = "m_LastChainAttackID")]
         pub m_last_chain_attack_id: i32,
+        #[offset(28)]
         #[rename(name = "m_IsEnemyEngageAttack")]
         pub m_is_enemy_engage_attack: bool,
+        #[offset(29)]
         #[rename(name = "m_IsChainBegun")]
         pub m_is_chain_begun: bool,
+        #[offset(30)]
         #[rename(name = "m_IsAttacking")]
         pub m_is_attacking: bool,
+        #[offset(31)]
         #[rename(name = "m_IsChainFinished")]
         pub m_is_chain_finished: bool,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections.Specialized", name = "StringDictionary")]
     #[parent(crate::system::object::Object)]
     pub struct StringDictionary {
+        #[offset(16)]
         #[rename(name = "contents")]
         pub contents: crate::system::collections::hashtable::Hashtable,
     }

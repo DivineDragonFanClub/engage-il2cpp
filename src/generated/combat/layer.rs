@@ -7,6 +7,16 @@ mod __types {
     use super::*;
     use crate::system::object::{IObject, Object};
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Layer")]
+    #[parent(crate::system::object::Object)]
+    pub struct Layer {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Mask.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Layer.Mask")]
+    #[parent(crate::system::object::Object)]
+    pub struct Layer_Mask {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Shift.md"))]
     #[::unity2::class(namespace = "Combat", name = "Layer.Shift")]
     #[parent(crate::system::object::Object)]
@@ -15,20 +25,509 @@ mod __types {
         #[rename(name = "contact")]
         pub contact: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Mask.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Layer.Mask")]
-    #[parent(crate::system::object::Object)]
-    pub struct Layer_Mask {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Layer")]
-    #[parent(crate::system::object::Object)]
-    pub struct Layer {}
 }
 
 #[cfg(feature = "combat-layer-types")]
 pub use __types::*;
+
+#[cfg(feature = "combat-layer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Layer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_collides_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Layer as ::unity2::ClassIdentity>::class(), "CollidesTo", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer as ::unity2::ClassIdentity>::NAME,
+                        "CollidesTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn collides_to(c: crate::unity_engine::collider::Collider, mask: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::collider::Collider, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_collides_to::get_method_info().method_ptr);
+        inner(c, mask, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Layer as ::unity2::ClassIdentity>::class(), "Initialize", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-layer")]
+impl Layer {
+    #[doc = "`CollidesTo(crate::unity_engine::collider::Collider, i32)` overload"]
+    pub fn collides_to(c: impl ::core::convert::Into<crate::unity_engine::collider::Collider>, mask: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            __Layer_unity2_raw::collides_to(
+                ::core::convert::Into::into(c),
+                ::core::convert::Into::into(mask),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Initialize()` overload"]
+    pub fn initialize() -> () {
+        unsafe { __Layer_unity2_raw::initialize(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "combat-layer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Layer_Mask_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_ground {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "get_Ground",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "get_Ground",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_ground(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_ground::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_ground {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "set_Ground",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "set_Ground",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_ground(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_ground::get_method_info().method_ptr);
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "get_Objects",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "get_Objects",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_objects(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_objects::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "set_Objects",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "set_Objects",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_objects(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_objects::get_method_info().method_ptr);
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_border {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "get_Border",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "get_Border",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_border(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_border::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_border {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "set_Border",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "set_Border",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_border(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_border::get_method_info().method_ptr);
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "get_Camera",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "get_Camera",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_camera(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_camera::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "set_Camera",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "set_Camera",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_camera(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_camera::get_method_info().method_ptr);
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hideable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "get_Hideable",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "get_Hideable",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_hideable(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_hideable::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hideable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "set_Hideable",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "set_Hideable",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_hideable(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_hideable::get_method_info().method_ptr);
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Layer_Mask as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-layer")]
+impl Layer_Mask {
+    #[doc = "`get_Ground()` overload"]
+    pub fn get_ground() -> i32 {
+        unsafe { __Layer_Mask_unity2_raw::get_ground(::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Ground(i32)` overload"]
+    pub fn set_ground(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Layer_Mask_unity2_raw::set_ground(::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Objects()` overload"]
+    pub fn get_objects() -> i32 {
+        unsafe { __Layer_Mask_unity2_raw::get_objects(::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Objects(i32)` overload"]
+    pub fn set_objects(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Layer_Mask_unity2_raw::set_objects(::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Border()` overload"]
+    pub fn get_border() -> i32 {
+        unsafe { __Layer_Mask_unity2_raw::get_border(::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Border(i32)` overload"]
+    pub fn set_border(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Layer_Mask_unity2_raw::set_border(::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Camera()` overload"]
+    pub fn get_camera() -> i32 {
+        unsafe { __Layer_Mask_unity2_raw::get_camera(::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Camera(i32)` overload"]
+    pub fn set_camera(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Layer_Mask_unity2_raw::set_camera(::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Hideable()` overload"]
+    pub fn get_hideable() -> i32 {
+        unsafe { __Layer_Mask_unity2_raw::get_hideable(::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Hideable(i32)` overload"]
+    pub fn set_hideable(value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Layer_Mask_unity2_raw::set_hideable(::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Initialize()` overload"]
+    pub fn initialize() -> () {
+        unsafe { __Layer_Mask_unity2_raw::initialize(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "combat-layer")]
 #[doc(hidden)]
@@ -668,505 +1167,6 @@ impl Layer_Shift {
     #[doc = "`Initialize()` overload"]
     pub fn initialize() -> () {
         unsafe { __Layer_Shift_unity2_raw::initialize(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "combat-layer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Layer_Mask_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_ground {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "get_Ground",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "get_Ground",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_ground(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_ground::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_ground {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "set_Ground",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "set_Ground",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_ground(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_ground::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_objects {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "get_Objects",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "get_Objects",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_objects(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_objects::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_objects {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "set_Objects",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "set_Objects",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_objects(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_objects::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_border {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "get_Border",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "get_Border",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_border(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_border::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_border {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "set_Border",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "set_Border",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_border(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_border::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "get_Camera",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "get_Camera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_camera(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_camera::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "set_Camera",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "set_Camera",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_camera(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_camera::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hideable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "get_Hideable",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "get_Hideable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hideable(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_hideable::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_hideable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "set_Hideable",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "set_Hideable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_hideable(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_hideable::get_method_info().method_ptr);
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Layer_Mask as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer_Mask as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "combat-layer")]
-impl Layer_Mask {
-    #[doc = "`get_Ground()` overload"]
-    pub fn get_ground() -> i32 {
-        unsafe { __Layer_Mask_unity2_raw::get_ground(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Ground(i32)` overload"]
-    pub fn set_ground(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Layer_Mask_unity2_raw::set_ground(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Objects()` overload"]
-    pub fn get_objects() -> i32 {
-        unsafe { __Layer_Mask_unity2_raw::get_objects(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Objects(i32)` overload"]
-    pub fn set_objects(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Layer_Mask_unity2_raw::set_objects(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Border()` overload"]
-    pub fn get_border() -> i32 {
-        unsafe { __Layer_Mask_unity2_raw::get_border(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Border(i32)` overload"]
-    pub fn set_border(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Layer_Mask_unity2_raw::set_border(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Camera()` overload"]
-    pub fn get_camera() -> i32 {
-        unsafe { __Layer_Mask_unity2_raw::get_camera(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Camera(i32)` overload"]
-    pub fn set_camera(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Layer_Mask_unity2_raw::set_camera(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Hideable()` overload"]
-    pub fn get_hideable() -> i32 {
-        unsafe { __Layer_Mask_unity2_raw::get_hideable(::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Hideable(i32)` overload"]
-    pub fn set_hideable(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Layer_Mask_unity2_raw::set_hideable(::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __Layer_Mask_unity2_raw::initialize(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "combat-layer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Layer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_collides_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Layer as ::unity2::ClassIdentity>::class(), "CollidesTo", 2, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer as ::unity2::ClassIdentity>::NAME,
-                        "CollidesTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn collides_to(c: crate::unity_engine::collider::Collider, mask: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(crate::unity_engine::collider::Collider, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_collides_to::get_method_info().method_ptr);
-        inner(c, mask, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<Layer as ::unity2::ClassIdentity>::class(), "Initialize", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Layer as ::unity2::ClassIdentity>::NAME,
-                        "Initialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "combat-layer")]
-impl Layer {
-    #[doc = "`CollidesTo(crate::unity_engine::collider::Collider, i32)` overload"]
-    pub fn collides_to(c: impl ::core::convert::Into<crate::unity_engine::collider::Collider>, mask: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __Layer_unity2_raw::collides_to(
-                ::core::convert::Into::into(c),
-                ::core::convert::Into::into(mask),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __Layer_unity2_raw::initialize(::core::option::Option::None) }
     }
 }
 

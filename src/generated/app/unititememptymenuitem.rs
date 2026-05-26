@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitItemEmptyMenuItem")]
     #[parent(crate::app::unititemmenuitem::UnitItemMenuItem)]
     pub struct UnitItemEmptyMenuItem {
+        #[offset(136)]
         #[rename(name = "m_EmptyUnitItem")]
         pub m_empty_unit_item: crate::app::unititem::UnitItem,
     }

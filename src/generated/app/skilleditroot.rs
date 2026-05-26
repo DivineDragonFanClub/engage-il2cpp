@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkillEditRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SkillEditRoot {
+        #[offset(24)]
         #[rename(name = "m_EquipSkillList")]
         pub m_equip_skill_list: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_PoolSkillList")]
         pub m_pool_skill_list: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_SkillInfo")]
         pub m_skill_info: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_SkillInfoRoot")]
         pub m_skill_info_root: crate::unity_engine::gameobject::GameObject,
     }

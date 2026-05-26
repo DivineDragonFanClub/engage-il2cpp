@@ -22,8 +22,10 @@ mod __types {
         #[static_field]
         #[rename(name = "s_AssetTableResult")]
         pub s_asset_table_result: crate::app::assettable::AssetTable_Result,
+        #[offset(24)]
         #[rename(name = "m_Resources")]
         pub m_resources: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::app::resourcegameobject::ResourceGameObject>,
+        #[offset(32)]
         #[rename(name = "m_GmaeObjects")]
         pub m_gmae_objects: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::unity_engine::gameobject::GameObject>,
     }

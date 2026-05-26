@@ -27,24 +27,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MuscleStartMenu.MuscleStartMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MuscleStartMenu_MuscleStartMenuItem {
+        #[offset(104)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_CommentText")]
         pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "m_RuleText")]
         pub m_rule_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_EffectText")]
         pub m_effect_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(136)]
         #[rename(name = "m_ID")]
         pub m_id: ::unity2::Il2CppString,
+        #[offset(144)]
         #[rename(name = "m_ItemName")]
         pub m_item_name: ::unity2::Il2CppString,
+        #[offset(152)]
         #[rename(name = "m_Title")]
         pub m_title: ::unity2::Il2CppString,
+        #[offset(160)]
         #[rename(name = "m_Comment")]
         pub m_comment: ::unity2::Il2CppString,
+        #[offset(168)]
         #[rename(name = "m_Rule")]
         pub m_rule: ::unity2::Il2CppString,
+        #[offset(176)]
         #[rename(name = "m_Effect")]
         pub m_effect: ::unity2::Il2CppString,
     }
@@ -53,6 +63,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MuscleStartMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct MuscleStartMenu {
+        #[offset(200)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::musclestartmenu::MuscleStartMenu_DecideEventHandler,
     }

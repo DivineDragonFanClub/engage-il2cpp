@@ -27,26 +27,35 @@ mod __types {
         #[static_field]
         #[rename(name = "multiPosEventTree")]
         pub multi_pos_event_tree: crate::system::collections::generic::dictionary_2::Dictionary_2<u32, crate::root::akmultiposevent::AkMultiPosEvent>,
+        #[offset(136)]
         #[rename(name = "MultiPositionType")]
         pub multi_position_type: crate::root::akmultipositiontype::AkMultiPositionType,
+        #[offset(140)]
         #[rename(name = "multiPositionTypeLabel")]
         pub multi_position_type_label: crate::root::multipositiontypelabel::MultiPositionTypeLabel,
+        #[offset(144)]
         #[rename(name = "LargeModePositions")]
         pub large_mode_positions: ::unity2::Array<crate::root::akambientlargemodepositioner::AkAmbientLargeModePositioner>,
         #[static_field]
         #[rename(name = "EmitterPosCountMax")]
         pub emitter_pos_count_max: u32,
+        #[offset(152)]
         #[rename(name = "EmitterPosArray")]
         pub emitter_pos_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(160)]
         #[rename(name = "EmitterFowardArray")]
         pub emitter_foward_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(168)]
         #[rename(name = "EmitterUpArray")]
         pub emitter_up_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(176)]
         #[rename(name = "PositionArray")]
         pub position_array: crate::root::akpositionarray::AkPositionArray,
+        #[offset(184)]
         #[rename(name = "ValidPositionList")]
         pub valid_position_list:
             crate::system::collections::generic::list_1::List_1<crate::root::akambientlargemodepositioner::AkAmbientLargeModePositioner>,
+        #[offset(192)]
         #[rename(name = "multiPositionArray")]
         pub multi_position_array: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
     }

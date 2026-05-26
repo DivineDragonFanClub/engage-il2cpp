@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopRefineEmptyMenuItem")]
     #[parent(crate::app::refineshoprefinebasemenuitem::RefineShopRefineBaseMenuItem)]
     pub struct RefineShopRefineEmptyMenuItem {
+        #[offset(152)]
         #[rename(name = "m_BlankTextMID")]
         pub m_blank_text_mid: ::unity2::Il2CppString,
     }

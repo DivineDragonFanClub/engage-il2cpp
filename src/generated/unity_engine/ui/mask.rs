@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Mask")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct Mask {
+        #[offset(24)]
         #[rename(name = "m_RectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(32)]
         #[rename(name = "m_ShowMaskGraphic")]
         pub m_show_mask_graphic: bool,
+        #[offset(40)]
         #[rename(name = "m_Graphic")]
         pub m_graphic: crate::unity_engine::ui::graphic::Graphic,
+        #[offset(48)]
         #[rename(name = "m_MaskMaterial")]
         pub m_mask_material: crate::unity_engine::material::Material,
+        #[offset(56)]
         #[rename(name = "m_UnmaskMaterial")]
         pub m_unmask_material: crate::unity_engine::material::Material,
     }

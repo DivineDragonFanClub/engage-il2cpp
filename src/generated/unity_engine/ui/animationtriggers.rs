@@ -26,14 +26,19 @@ mod __types {
         #[static_field]
         #[rename(name = "kDefaultDisabledAnimName")]
         pub k_default_disabled_anim_name: ::unity2::Il2CppString,
+        #[offset(16)]
         #[rename(name = "m_NormalTrigger")]
         pub m_normal_trigger: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_HighlightedTrigger")]
         pub m_highlighted_trigger: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_PressedTrigger")]
         pub m_pressed_trigger: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_SelectedTrigger")]
         pub m_selected_trigger: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_DisabledTrigger")]
         pub m_disabled_trigger: ::unity2::Il2CppString,
     }

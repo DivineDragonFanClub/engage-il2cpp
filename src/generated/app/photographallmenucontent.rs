@@ -22,6 +22,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_MenuPrefabPath")]
         pub s_menu_prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_CameraKeyHelp")]
         pub m_camera_key_help: crate::unity_engine::gameobject::GameObject,
     }

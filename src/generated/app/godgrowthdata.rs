@@ -21,6 +21,43 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_StyleItems.md"))]
+    #[::unity2::class(namespace = "App", name = "GodGrowthData.StyleItems")]
+    #[parent(crate::system::object::Object)]
+    pub struct GodGrowthData_StyleItems {
+        #[offset(16)]
+        #[rename(name = "m_Items")]
+        pub m_items: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
+        #[offset(24)]
+        #[rename(name = "m_TotalCount")]
+        pub m_total_count: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_LevelData.md"))]
+    #[::unity2::class(namespace = "App", name = "GodGrowthData.LevelData")]
+    #[parent(crate::system::object::Object)]
+    pub struct GodGrowthData_LevelData {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "GodGrowthData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: godgrowthdata :: GodGrowthData_Flags >)]
+    pub struct GodGrowthData_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData.md"))]
+    #[::unity2::class(namespace = "App", name = "GodGrowthData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godgrowthdata :: GodGrowthData >)]
+    pub struct GodGrowthData {
+        #[offset(216)]
+        #[rename(name = "m_StyleEngageItems")]
+        pub m_style_engage_items: crate::app::godgrowthdata::GodGrowthData_StyleItems,
+        #[static_field]
+        #[rename(name = "s_LevelLists")]
+        pub s_level_lists: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<crate::app::godgrowthdata::GodGrowthData_LevelData>,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godgrowthdata/GodGrowthData_Flags.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -58,44 +95,1097 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "GodGrowthData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: godgrowthdata :: GodGrowthData_Flags >)]
-    pub struct GodGrowthData_FlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData.md"))]
-    #[::unity2::class(namespace = "App", name = "GodGrowthData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godgrowthdata :: GodGrowthData >)]
-    pub struct GodGrowthData {
-        #[rename(name = "m_StyleEngageItems")]
-        pub m_style_engage_items: crate::app::godgrowthdata::GodGrowthData_StyleItems,
-        #[static_field]
-        #[rename(name = "s_LevelLists")]
-        pub s_level_lists: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<crate::app::godgrowthdata::GodGrowthData_LevelData>,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_StyleItems.md"))]
-    #[::unity2::class(namespace = "App", name = "GodGrowthData.StyleItems")]
-    #[parent(crate::system::object::Object)]
-    pub struct GodGrowthData_StyleItems {
-        #[rename(name = "m_Items")]
-        pub m_items: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
-        #[rename(name = "m_TotalCount")]
-        pub m_total_count: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_LevelData.md"))]
-    #[::unity2::class(namespace = "App", name = "GodGrowthData.LevelData")]
-    #[parent(crate::system::object::Object)]
-    pub struct GodGrowthData_LevelData {}
 }
 
 #[cfg(feature = "app-godgrowthdata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-godgrowthdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodGrowthData_StyleItems_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: GodGrowthData_StyleItems, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlestyle::BattleStyle_Types as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
+                "Add",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        this: GodGrowthData_StyleItems,
+        style: crate::app::battlestyle::BattleStyle_Types,
+        item: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodGrowthData_StyleItems,
+            crate::app::battlestyle::BattleStyle_Types,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, style, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battlestyle::BattleStyle_Types as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
+                "Add",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_2(
+        this: GodGrowthData_StyleItems,
+        style: crate::app::battlestyle::BattleStyle_Types,
+        items: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GodGrowthData_StyleItems,
+            crate::app::battlestyle::BattleStyle_Types,
+            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
+        inner(this, style, items, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: GodGrowthData_StyleItems, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item(
+        this: GodGrowthData_StyleItems,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
+        let inner: extern "C" fn(
+            GodGrowthData_StyleItems,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
+        inner(this, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battlestyle::BattleStyle_Types as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_2(
+        this: GodGrowthData_StyleItems,
+        style: crate::app::battlestyle::BattleStyle_Types,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
+        let inner: extern "C" fn(
+            GodGrowthData_StyleItems,
+            crate::app::battlestyle::BattleStyle_Types,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> =
+            ::core::mem::transmute(__lookup_get_item_2::get_method_info().method_ptr);
+        inner(this, style, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_total_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
+                "get_TotalCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
+                        "get_TotalCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_total_count(this: GodGrowthData_StyleItems, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_total_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+pub trait IGodGrowthData_StyleItemsMethods: IGodGrowthData_StyleItems {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_StyleItems_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::app::itemdata::ItemData)` overload"]
+    fn add(
+        self,
+        style: impl ::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>,
+        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_StyleItems_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]
+    fn add_2(
+        self,
+        style: impl ::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>,
+        items: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_StyleItems_unity2_raw::add_2(
+                __receiver,
+                ::core::convert::Into::into(style),
+                ::core::convert::Into::into(items),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_StyleItems_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_StyleItems_unity2_raw::get_item(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(crate::app::battlestyle::BattleStyle_Types)` overload"]
+    fn get_item_2(
+        self,
+        style: impl ::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_StyleItems_unity2_raw::get_item_2(__receiver, ::core::convert::Into::into(style), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_TotalCount()` overload"]
+    fn get_total_count(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_StyleItems_unity2_raw::get_total_count(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+impl<__T: IGodGrowthData_StyleItems> IGodGrowthData_StyleItemsMethods for __T {}
+
+#[cfg(feature = "app-godgrowthdata")]
+impl GodGrowthData_StyleItems {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodGrowthData_StyleItems),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodGrowthData_StyleItemsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GodGrowthData_LevelData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_synchro_skills {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "get_SynchroSkills",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "get_SynchroSkills",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_synchro_skills(
+        this: GodGrowthData_LevelData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skillarray::SkillArray {
+        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray =
+            ::core::mem::transmute(__lookup_get_synchro_skills::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_synchro_skills {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "set_SynchroSkills",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "set_SynchroSkills",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_synchro_skills(
+        this: GodGrowthData_LevelData,
+        value: crate::app::skillarray::SkillArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_synchro_skills::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_engaged_skills {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "get_EngagedSkills",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "get_EngagedSkills",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_engaged_skills(
+        this: GodGrowthData_LevelData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skillarray::SkillArray {
+        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray =
+            ::core::mem::transmute(__lookup_get_engaged_skills::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_engaged_skills {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "set_EngagedSkills",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "set_EngagedSkills",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_engaged_skills(
+        this: GodGrowthData_LevelData,
+        value: crate::app::skillarray::SkillArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_engaged_skills::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_engage_skills {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "get_EngageSkills",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "get_EngageSkills",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_engage_skills(
+        this: GodGrowthData_LevelData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skillarray::SkillArray {
+        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray =
+            ::core::mem::transmute(__lookup_get_engage_skills::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_engage_skills {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "set_EngageSkills",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "set_EngageSkills",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_engage_skills(
+        this: GodGrowthData_LevelData,
+        value: crate::app::skillarray::SkillArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_engage_skills::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_style_engage_items {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "get_StyleEngageItems",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "get_StyleEngageItems",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_style_engage_items(
+        this: GodGrowthData_LevelData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godgrowthdata::GodGrowthData_StyleItems {
+        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::godgrowthdata::GodGrowthData_StyleItems =
+            ::core::mem::transmute(__lookup_get_style_engage_items::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_style_engage_items {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godgrowthdata::GodGrowthData_StyleItems as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "set_StyleEngageItems",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "set_StyleEngageItems",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_style_engage_items(
+        this: GodGrowthData_LevelData,
+        value: crate::app::godgrowthdata::GodGrowthData_StyleItems,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_style_engage_items::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_aptitude {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "get_Aptitude",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "get_Aptitude",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_aptitude(this: GodGrowthData_LevelData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask {
+        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask =
+            ::core::mem::transmute(__lookup_get_aptitude::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_aptitude {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "set_Aptitude",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "set_Aptitude",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_aptitude(
+        this: GodGrowthData_LevelData,
+        value: crate::app::weaponmask::WeaponMask,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::weaponmask::WeaponMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_aptitude::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "get_Flags",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "get_Flags",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_flags(
+        this: GodGrowthData_LevelData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godgrowthdata::GodGrowthData_FlagField {
+        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::godgrowthdata::GodGrowthData_FlagField =
+            ::core::mem::transmute(__lookup_get_flags::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_flags {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godgrowthdata::GodGrowthData_FlagField as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "set_Flags",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "set_Flags",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_flags(
+        this: GodGrowthData_LevelData,
+        value: crate::app::godgrowthdata::GodGrowthData_FlagField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData_FlagField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_flags::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: GodGrowthData_LevelData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::godgrowthdata::GodGrowthData_LevelData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: GodGrowthData_LevelData,
+        src: crate::app::godgrowthdata::GodGrowthData_LevelData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData_LevelData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, src, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godgrowthdata::GodGrowthData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        this: GodGrowthData_LevelData,
+        data: crate::app::godgrowthdata::GodGrowthData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+pub trait IGodGrowthData_LevelDataMethods: IGodGrowthData_LevelData {
+    #[doc = "`get_SynchroSkills()` overload"]
+    fn get_synchro_skills(self) -> crate::app::skillarray::SkillArray {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::get_synchro_skills(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SynchroSkills(crate::app::skillarray::SkillArray)` overload"]
+    fn set_synchro_skills(self, value: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::set_synchro_skills(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_EngagedSkills()` overload"]
+    fn get_engaged_skills(self) -> crate::app::skillarray::SkillArray {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::get_engaged_skills(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_EngagedSkills(crate::app::skillarray::SkillArray)` overload"]
+    fn set_engaged_skills(self, value: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::set_engaged_skills(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_EngageSkills()` overload"]
+    fn get_engage_skills(self) -> crate::app::skillarray::SkillArray {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::get_engage_skills(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_EngageSkills(crate::app::skillarray::SkillArray)` overload"]
+    fn set_engage_skills(self, value: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::set_engage_skills(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_StyleEngageItems()` overload"]
+    fn get_style_engage_items(self) -> crate::app::godgrowthdata::GodGrowthData_StyleItems {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::get_style_engage_items(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_StyleEngageItems(crate::app::godgrowthdata::GodGrowthData_StyleItems)` overload"]
+    fn set_style_engage_items(self, value: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_StyleItems>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::set_style_engage_items(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Aptitude()` overload"]
+    fn get_aptitude(self) -> crate::app::weaponmask::WeaponMask {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::get_aptitude(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Aptitude(crate::app::weaponmask::WeaponMask)` overload"]
+    fn set_aptitude(self, value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::set_aptitude(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Flags()` overload"]
+    fn get_flags(self) -> crate::app::godgrowthdata::GodGrowthData_FlagField {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::get_flags(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Flags(crate::app::godgrowthdata::GodGrowthData_FlagField)` overload"]
+    fn set_flags(self, value: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_FlagField>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::set_flags(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` overload"]
+    fn ctor_2(self, src: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_LevelData>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::godgrowthdata::GodGrowthData)` overload"]
+    fn add(self, data: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData>) -> () {
+        unsafe {
+            let __receiver =
+                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GodGrowthData_LevelData_unity2_raw::add(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+impl<__T: IGodGrowthData_LevelData> IGodGrowthData_LevelDataMethods for __T {}
+
+#[cfg(feature = "app-godgrowthdata")]
+impl GodGrowthData_LevelData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodGrowthData_LevelData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodGrowthData_LevelDataMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` — overload selector"]
+    pub fn new_2(src: crate::app::godgrowthdata::GodGrowthData_LevelData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodGrowthData_LevelData),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IGodGrowthData_LevelDataMethods>::ctor_2(this, src);
+        this
+    }
+}
 
 #[cfg(feature = "app-godgrowthdata")]
 #[doc(hidden)]
@@ -3504,1093 +4594,6 @@ impl GodGrowthData {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GodGrowthData), ::core::stringify!(new),));
         <Self as IGodGrowthDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodGrowthData_StyleItems_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GodGrowthData_StyleItems, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlestyle::BattleStyle_Types as ::unity2::IlType>::il_type(),
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: GodGrowthData_StyleItems,
-        style: crate::app::battlestyle::BattleStyle_Types,
-        item: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GodGrowthData_StyleItems,
-            crate::app::battlestyle::BattleStyle_Types,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, style, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlestyle::BattleStyle_Types as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_2(
-        this: GodGrowthData_StyleItems,
-        style: crate::app::battlestyle::BattleStyle_Types,
-        items: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GodGrowthData_StyleItems,
-            crate::app::battlestyle::BattleStyle_Types,
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
-        inner(this, style, items, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: GodGrowthData_StyleItems, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(
-        this: GodGrowthData_StyleItems,
-        i: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
-        let inner: extern "C" fn(
-            GodGrowthData_StyleItems,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, i, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battlestyle::BattleStyle_Types as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_2(
-        this: GodGrowthData_StyleItems,
-        style: crate::app::battlestyle::BattleStyle_Types,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
-        let inner: extern "C" fn(
-            GodGrowthData_StyleItems,
-            crate::app::battlestyle::BattleStyle_Types,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> =
-            ::core::mem::transmute(__lookup_get_item_2::get_method_info().method_ptr);
-        inner(this, style, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_total_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::class(),
-                "get_TotalCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_StyleItems as ::unity2::ClassIdentity>::NAME,
-                        "get_TotalCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_total_count(this: GodGrowthData_StyleItems, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_total_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-pub trait IGodGrowthData_StyleItemsMethods: IGodGrowthData_StyleItems {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_StyleItems_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::app::itemdata::ItemData)` overload"]
-    fn add(
-        self,
-        style: impl ::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>,
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_StyleItems_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]
-    fn add_2(
-        self,
-        style: impl ::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>,
-        items: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_StyleItems_unity2_raw::add_2(
-                __receiver,
-                ::core::convert::Into::into(style),
-                ::core::convert::Into::into(items),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_StyleItems_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(i32)` overload"]
-    fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_StyleItems_unity2_raw::get_item(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(crate::app::battlestyle::BattleStyle_Types)` overload"]
-    fn get_item_2(
-        self,
-        style: impl ::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_StyleItems_unity2_raw::get_item_2(__receiver, ::core::convert::Into::into(style), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_TotalCount()` overload"]
-    fn get_total_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_StyleItems as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_StyleItems_unity2_raw::get_total_count(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-impl<__T: IGodGrowthData_StyleItems> IGodGrowthData_StyleItemsMethods for __T {}
-
-#[cfg(feature = "app-godgrowthdata")]
-impl GodGrowthData_StyleItems {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowthData_StyleItems),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodGrowthData_StyleItemsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodGrowthData_LevelData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_synchro_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "get_SynchroSkills",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "get_SynchroSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_synchro_skills(
-        this: GodGrowthData_LevelData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skillarray::SkillArray {
-        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray =
-            ::core::mem::transmute(__lookup_get_synchro_skills::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_synchro_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "set_SynchroSkills",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "set_SynchroSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_synchro_skills(
-        this: GodGrowthData_LevelData,
-        value: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_synchro_skills::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_engaged_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "get_EngagedSkills",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "get_EngagedSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_engaged_skills(
-        this: GodGrowthData_LevelData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skillarray::SkillArray {
-        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray =
-            ::core::mem::transmute(__lookup_get_engaged_skills::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_engaged_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "set_EngagedSkills",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "set_EngagedSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_engaged_skills(
-        this: GodGrowthData_LevelData,
-        value: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_engaged_skills::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_engage_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "get_EngageSkills",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "get_EngageSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_engage_skills(
-        this: GodGrowthData_LevelData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skillarray::SkillArray {
-        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray =
-            ::core::mem::transmute(__lookup_get_engage_skills::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_engage_skills {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "set_EngageSkills",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "set_EngageSkills",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_engage_skills(
-        this: GodGrowthData_LevelData,
-        value: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_engage_skills::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_style_engage_items {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "get_StyleEngageItems",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "get_StyleEngageItems",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_style_engage_items(
-        this: GodGrowthData_LevelData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godgrowthdata::GodGrowthData_StyleItems {
-        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::godgrowthdata::GodGrowthData_StyleItems =
-            ::core::mem::transmute(__lookup_get_style_engage_items::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_style_engage_items {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godgrowthdata::GodGrowthData_StyleItems as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "set_StyleEngageItems",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "set_StyleEngageItems",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_style_engage_items(
-        this: GodGrowthData_LevelData,
-        value: crate::app::godgrowthdata::GodGrowthData_StyleItems,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData_StyleItems, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_style_engage_items::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_aptitude {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "get_Aptitude",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "get_Aptitude",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_aptitude(this: GodGrowthData_LevelData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask {
-        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask =
-            ::core::mem::transmute(__lookup_get_aptitude::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_aptitude {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "set_Aptitude",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "set_Aptitude",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_aptitude(
-        this: GodGrowthData_LevelData,
-        value: crate::app::weaponmask::WeaponMask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::weaponmask::WeaponMask, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_aptitude::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "get_Flags",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "get_Flags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_flags(
-        this: GodGrowthData_LevelData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godgrowthdata::GodGrowthData_FlagField {
-        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> crate::app::godgrowthdata::GodGrowthData_FlagField =
-            ::core::mem::transmute(__lookup_get_flags::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_flags {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godgrowthdata::GodGrowthData_FlagField as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "set_Flags",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "set_Flags",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_flags(
-        this: GodGrowthData_LevelData,
-        value: crate::app::godgrowthdata::GodGrowthData_FlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData_FlagField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_flags::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GodGrowthData_LevelData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godgrowthdata::GodGrowthData_LevelData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: GodGrowthData_LevelData,
-        src: crate::app::godgrowthdata::GodGrowthData_LevelData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData_LevelData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, src, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godgrowthdata::GodGrowthData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GodGrowthData_LevelData as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GodGrowthData_LevelData as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: GodGrowthData_LevelData,
-        data: crate::app::godgrowthdata::GodGrowthData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GodGrowthData_LevelData, crate::app::godgrowthdata::GodGrowthData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-pub trait IGodGrowthData_LevelDataMethods: IGodGrowthData_LevelData {
-    #[doc = "`get_SynchroSkills()` overload"]
-    fn get_synchro_skills(self) -> crate::app::skillarray::SkillArray {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::get_synchro_skills(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_SynchroSkills(crate::app::skillarray::SkillArray)` overload"]
-    fn set_synchro_skills(self, value: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::set_synchro_skills(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_EngagedSkills()` overload"]
-    fn get_engaged_skills(self) -> crate::app::skillarray::SkillArray {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::get_engaged_skills(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_EngagedSkills(crate::app::skillarray::SkillArray)` overload"]
-    fn set_engaged_skills(self, value: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::set_engaged_skills(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_EngageSkills()` overload"]
-    fn get_engage_skills(self) -> crate::app::skillarray::SkillArray {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::get_engage_skills(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_EngageSkills(crate::app::skillarray::SkillArray)` overload"]
-    fn set_engage_skills(self, value: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::set_engage_skills(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_StyleEngageItems()` overload"]
-    fn get_style_engage_items(self) -> crate::app::godgrowthdata::GodGrowthData_StyleItems {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::get_style_engage_items(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_StyleEngageItems(crate::app::godgrowthdata::GodGrowthData_StyleItems)` overload"]
-    fn set_style_engage_items(self, value: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_StyleItems>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::set_style_engage_items(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Aptitude()` overload"]
-    fn get_aptitude(self) -> crate::app::weaponmask::WeaponMask {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::get_aptitude(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Aptitude(crate::app::weaponmask::WeaponMask)` overload"]
-    fn set_aptitude(self, value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::set_aptitude(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Flags()` overload"]
-    fn get_flags(self) -> crate::app::godgrowthdata::GodGrowthData_FlagField {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::get_flags(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Flags(crate::app::godgrowthdata::GodGrowthData_FlagField)` overload"]
-    fn set_flags(self, value: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_FlagField>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::set_flags(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` overload"]
-    fn ctor_2(self, src: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_LevelData>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::godgrowthdata::GodGrowthData)` overload"]
-    fn add(self, data: impl ::core::convert::Into<crate::app::godgrowthdata::GodGrowthData>) -> () {
-        unsafe {
-            let __receiver =
-                <GodGrowthData_LevelData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GodGrowthData_LevelData_unity2_raw::add(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-impl<__T: IGodGrowthData_LevelData> IGodGrowthData_LevelDataMethods for __T {}
-
-#[cfg(feature = "app-godgrowthdata")]
-impl GodGrowthData_LevelData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowthData_LevelData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodGrowthData_LevelDataMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` — overload selector"]
-    pub fn new_2(src: crate::app::godgrowthdata::GodGrowthData_LevelData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowthData_LevelData),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IGodGrowthData_LevelDataMethods>::ctor_2(this, src);
         this
     }
 }

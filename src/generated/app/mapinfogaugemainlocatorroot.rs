@@ -20,18 +20,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoGaugeMainLocatorRoot")]
-    #[parent(crate::app::mapinfobase::MapInfoBase)]
-    pub struct MapInfoGaugeMainLocatorRoot {
-        #[rename(name = "m_MainLocatorRoot")]
-        pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_SubLocatorRoots")]
-        pub m_sub_locator_roots: ::unity2::Array<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot>,
-        #[rename(name = "m_SubLocatorRoot")]
-        pub m_sub_locator_root: crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot_OnMapStatus.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -76,6 +64,21 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInfoGaugeMainLocatorRoot")]
+    #[parent(crate::app::mapinfobase::MapInfoBase)]
+    pub struct MapInfoGaugeMainLocatorRoot {
+        #[offset(32)]
+        #[rename(name = "m_MainLocatorRoot")]
+        pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
+        #[rename(name = "m_SubLocatorRoots")]
+        pub m_sub_locator_roots: ::unity2::Array<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot>,
+        #[offset(48)]
+        #[rename(name = "m_SubLocatorRoot")]
+        pub m_sub_locator_root: crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot,
     }
 }
 

@@ -20,41 +20,58 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_BgmHeader")]
         pub m_bgm_header: ::unity2::Il2CppString,
+        #[offset(136)]
         #[rename(name = "m_Locator")]
         pub m_locator: crate::combat::basecombatlocation::BaseCombatLocation,
+        #[offset(144)]
         #[rename(name = "m_PrefabHandle")]
         pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(152)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
         #[rename(name = "m_VolumeAlive")]
         pub m_volume_alive: crate::unity_engine::rendering::volume::Volume,
+        #[offset(168)]
         #[rename(name = "m_VolumeDead")]
         pub m_volume_dead: crate::unity_engine::rendering::volume::Volume,
+        #[offset(176)]
         #[rename(name = "m_GcMode")]
         pub m_gc_mode: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
         #[static_field]
         #[rename(name = "BgmBranch")]
         pub bgm_branch: ::unity2::Il2CppString,
+        #[offset(200)]
         #[rename(name = "m_CurrentBg")]
         pub m_current_bg: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[offset(224)]
         #[rename(name = "m_NextBg")]
         pub m_next_bg: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[offset(232)]
         #[rename(name = "m_FadeInTime")]
         pub m_fade_in_time: f32,
+        #[offset(236)]
         #[rename(name = "m_FadeOutTime")]
         pub m_fade_out_time: f32,
+        #[offset(240)]
         #[rename(name = "m_CameraCtrls")]
         pub m_camera_ctrls: ::unity2::Array<crate::combat::cameracontrollerunitdetail::CameraControllerUnitDetail>,
+        #[offset(248)]
         #[rename(name = "m_DefaultSlipSlideScales")]
         pub m_default_slip_slide_scales: ::unity2::Array<f32>,
+        #[offset(256)]
         #[rename(name = "m_SlideTime")]
         pub m_slide_time: f32,
+        #[offset(260)]
         #[rename(name = "m_SlideStart")]
         pub m_slide_start: f32,
+        #[offset(264)]
         #[rename(name = "m_SlideEnd")]
         pub m_slide_end: f32,
+        #[offset(268)]
         #[rename(name = "m_Power")]
         pub m_power: f32,
     }

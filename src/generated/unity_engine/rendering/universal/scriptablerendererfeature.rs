@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRendererFeature")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct ScriptableRendererFeature {
+        #[offset(24)]
         #[rename(name = "m_Active")]
         pub m_active: bool,
     }

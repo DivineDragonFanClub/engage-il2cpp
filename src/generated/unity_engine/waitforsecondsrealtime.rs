@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "WaitForSecondsRealtime")]
     #[parent(crate::unity_engine::customyieldinstruction::CustomYieldInstruction)]
     pub struct WaitForSecondsRealtime {
+        #[offset(20)]
         #[rename(name = "m_WaitUntilTime")]
         pub m_wait_until_time: f32,
     }

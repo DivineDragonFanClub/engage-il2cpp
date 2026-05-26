@@ -19,23 +19,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerCanvas")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DebugUIHandlerCanvas {
+        #[offset(24)]
         #[rename(name = "m_DebugTreeState")]
         pub m_debug_tree_state: i32,
+        #[offset(32)]
         #[rename(name = "m_PrefabsMap")]
         pub m_prefabs_map:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::SystemType, crate::unity_engine::transform::Transform>,
+        #[offset(40)]
         #[rename(name = "panelPrefab")]
         pub panel_prefab: crate::unity_engine::transform::Transform,
+        #[offset(48)]
         #[rename(name = "prefabs")]
         pub prefabs:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguiprefabbundle::DebugUIPrefabBundle>,
+        #[offset(56)]
         #[rename(name = "m_UIPanels")]
         pub m_ui_panels:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlerpanel::DebugUIHandlerPanel>,
+        #[offset(64)]
         #[rename(name = "m_SelectedPanel")]
         pub m_selected_panel: i32,
+        #[offset(72)]
         #[rename(name = "m_SelectedWidget")]
         pub m_selected_widget: crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
+        #[offset(80)]
         #[rename(name = "m_CurrentQueryPath")]
         pub m_current_query_path: ::unity2::Il2CppString,
     }

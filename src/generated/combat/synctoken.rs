@@ -53,6 +53,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "SyncToken")]
     #[parent(crate::system::object::Object)]
     pub struct SyncToken {
+        #[offset(16)]
         #[rename(name = "state")]
         pub state: ::unity2::Array<crate::combat::synctoken::SyncToken_State>,
     }

@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "", name = "Iron19MaterialColorChanger")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct Iron19MaterialColorChanger {
+        #[offset(24)]
         #[rename(name = "Target")]
         pub target: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "Color")]
         pub color: crate::unity_engine::color::Color,
+        #[offset(48)]
         #[rename(name = "m_colorPropertyID")]
         pub m_color_property_id: i32,
+        #[offset(52)]
         #[rename(name = "m_ditherPropertyID")]
         pub m_dither_property_id: i32,
+        #[offset(56)]
         #[rename(name = "m_aList")]
         pub m_a_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
     }

@@ -20,6 +20,30 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideDifficultSelectMenu.DifficultyItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct DragonRideDifficultSelectMenu_DifficultyItem {
+        #[offset(104)]
+        #[rename(name = "m_DifficultID")]
+        pub m_difficult_id: ::unity2::Il2CppString,
+        #[offset(112)]
+        #[rename(name = "m_IsEnable")]
+        pub m_is_enable: bool,
+        #[offset(113)]
+        #[rename(name = "m_IsExpert")]
+        pub m_is_expert: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideDifficultSelectMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct DragonRideDifficultSelectMenu {
+        #[offset(200)]
+        #[rename(name = "m_EnableChecker")]
+        pub m_enable_checker: ::unity2::Array<bool>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_Result2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -62,34 +86,199 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideDifficultSelectMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct DragonRideDifficultSelectMenu {
-        #[rename(name = "m_EnableChecker")]
-        pub m_enable_checker: ::unity2::Array<bool>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "DragonRideDifficultSelectMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct DragonRideDifficultSelectMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideDifficultSelectMenu.DifficultyItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct DragonRideDifficultSelectMenu_DifficultyItem {
-        #[rename(name = "m_DifficultID")]
-        pub m_difficult_id: ::unity2::Il2CppString,
-        #[rename(name = "m_IsEnable")]
-        pub m_is_enable: bool,
-        #[rename(name = "m_IsExpert")]
-        pub m_is_expert: bool,
-    }
 }
 
 #[cfg(feature = "app-dragonridedifficultselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-dragonridedifficultselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DragonRideDifficultSelectMenu_DifficultyItem,
+        difficult_id: ::unity2::Il2CppString,
+        enable: bool,
+        is_expert: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DragonRideDifficultSelectMenu_DifficultyItem, ::unity2::Il2CppString, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, difficult_id, enable, is_expert, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(
+        this: DragonRideDifficultSelectMenu_DifficultyItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DragonRideDifficultSelectMenu_DifficultyItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: DragonRideDifficultSelectMenu_DifficultyItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            DragonRideDifficultSelectMenu_DifficultyItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-dragonridedifficultselectmenu")]
+pub trait IDragonRideDifficultSelectMenu_DifficultyItemMethods: IDragonRideDifficultSelectMenu_DifficultyItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` overload"]
+    fn ctor(
+        self,
+        difficult_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        enable: impl ::core::convert::Into<bool>,
+        is_expert: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(difficult_id),
+                ::core::convert::Into::into(enable),
+                ::core::convert::Into::into(is_expert),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-dragonridedifficultselectmenu")]
+impl<__T: IDragonRideDifficultSelectMenu_DifficultyItem> IDragonRideDifficultSelectMenu_DifficultyItemMethods for __T {}
+
+#[cfg(feature = "app-dragonridedifficultselectmenu")]
+impl DragonRideDifficultSelectMenu_DifficultyItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` — overload selector"]
+    pub fn new(difficult_id: ::unity2::Il2CppString, enable: bool, is_expert: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideDifficultSelectMenu_DifficultyItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideDifficultSelectMenu_DifficultyItemMethods>::ctor(this, difficult_id, enable, is_expert);
+        this
+    }
+}
 
 #[cfg(feature = "app-dragonridedifficultselectmenu")]
 #[doc(hidden)]
@@ -777,191 +966,6 @@ impl DragonRideDifficultSelectMenu_DecideEventHandler {
             )
         });
         <Self as IDragonRideDifficultSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-dragonridedifficultselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DragonRideDifficultSelectMenu_DifficultyItem,
-        difficult_id: ::unity2::Il2CppString,
-        enable: bool,
-        is_expert: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DragonRideDifficultSelectMenu_DifficultyItem, ::unity2::Il2CppString, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, difficult_id, enable, is_expert, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: DragonRideDifficultSelectMenu_DifficultyItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DragonRideDifficultSelectMenu_DifficultyItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: DragonRideDifficultSelectMenu_DifficultyItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            DragonRideDifficultSelectMenu_DifficultyItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-dragonridedifficultselectmenu")]
-pub trait IDragonRideDifficultSelectMenu_DifficultyItemMethods: IDragonRideDifficultSelectMenu_DifficultyItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` overload"]
-    fn ctor(
-        self,
-        difficult_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        enable: impl ::core::convert::Into<bool>,
-        is_expert: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(difficult_id),
-                ::core::convert::Into::into(enable),
-                ::core::convert::Into::into(is_expert),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <DragonRideDifficultSelectMenu_DifficultyItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-dragonridedifficultselectmenu")]
-impl<__T: IDragonRideDifficultSelectMenu_DifficultyItem> IDragonRideDifficultSelectMenu_DifficultyItemMethods for __T {}
-
-#[cfg(feature = "app-dragonridedifficultselectmenu")]
-impl DragonRideDifficultSelectMenu_DifficultyItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool, bool)` — overload selector"]
-    pub fn new(difficult_id: ::unity2::Il2CppString, enable: bool, is_expert: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideDifficultSelectMenu_DifficultyItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideDifficultSelectMenu_DifficultyItemMethods>::ctor(this, difficult_id, enable, is_expert);
         this
     }
 }

@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopSellAccountWindow")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ShopSellAccountWindow {
+        #[offset(24)]
         #[rename(name = "m_CountTitleText")]
         pub m_count_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_CountValueText")]
         pub m_count_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_TotalTitleText")]
         pub m_total_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_TotalValueText")]
         pub m_total_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_TotalValueGText")]
         pub m_total_value_g_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
     }

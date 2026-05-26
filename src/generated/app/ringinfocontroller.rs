@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingInfoController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingInfoController {
+        #[offset(24)]
         #[rename(name = "m_RingName")]
         pub m_ring_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_RingConditionIconImage")]
         pub m_ring_condition_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_GodName")]
         pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_RingImage")]
         pub m_ring_image: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_Message")]
         pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_ConditionIcons")]
         pub m_condition_icons: crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite>,
     }

@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionDamage")]
     #[parent(crate::combat::actionbase::ActionBase)]
     pub struct ActionDamage {
+        #[offset(40)]
         #[rename(name = "m_Attacker")]
         pub m_attacker: crate::combat::character::Character,
+        #[offset(48)]
         #[rename(name = "m_Damager")]
         pub m_damager: crate::combat::character::Character,
+        #[offset(56)]
         #[rename(name = "m_HitEv")]
         pub m_hit_ev: crate::unity_engine::animationevent::AnimationEvent,
     }

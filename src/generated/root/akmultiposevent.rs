@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkMultiPosEvent")]
     #[parent(crate::system::object::Object)]
     pub struct AkMultiPosEvent {
+        #[offset(16)]
         #[rename(name = "eventIsPlaying")]
         pub event_is_playing: bool,
+        #[offset(24)]
         #[rename(name = "list")]
         pub list: crate::system::collections::generic::list_1::List_1<crate::root::akambient::AkAmbient>,
     }

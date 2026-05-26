@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "WWW")]
     #[parent(crate::unity_engine::customyieldinstruction::CustomYieldInstruction)]
     pub struct WWW {
+        #[offset(16)]
         #[rename(name = "_uwr")]
         pub uwr: crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+        #[offset(24)]
         #[rename(name = "_assetBundle")]
         pub asset_bundle: crate::unity_engine::assetbundle::AssetBundle,
+        #[offset(32)]
         #[rename(name = "_responseHeaders")]
         pub response_headers: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
     }

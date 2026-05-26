@@ -11,46 +11,67 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "FaceInfo_Legacy")]
     #[parent(crate::system::object::Object)]
     pub struct FaceInfo_Legacy {
+        #[offset(16)]
         #[rename(name = "Name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "PointSize")]
         pub point_size: f32,
+        #[offset(28)]
         #[rename(name = "Scale")]
         pub scale: f32,
+        #[offset(32)]
         #[rename(name = "CharacterCount")]
         pub character_count: i32,
+        #[offset(36)]
         #[rename(name = "LineHeight")]
         pub line_height: f32,
+        #[offset(40)]
         #[rename(name = "Baseline")]
         pub baseline: f32,
+        #[offset(44)]
         #[rename(name = "Ascender")]
         pub ascender: f32,
+        #[offset(48)]
         #[rename(name = "CapHeight")]
         pub cap_height: f32,
+        #[offset(52)]
         #[rename(name = "Descender")]
         pub descender: f32,
+        #[offset(56)]
         #[rename(name = "CenterLine")]
         pub center_line: f32,
+        #[offset(60)]
         #[rename(name = "SuperscriptOffset")]
         pub superscript_offset: f32,
+        #[offset(64)]
         #[rename(name = "SubscriptOffset")]
         pub subscript_offset: f32,
+        #[offset(68)]
         #[rename(name = "SubSize")]
         pub sub_size: f32,
+        #[offset(72)]
         #[rename(name = "Underline")]
         pub underline: f32,
+        #[offset(76)]
         #[rename(name = "UnderlineThickness")]
         pub underline_thickness: f32,
+        #[offset(80)]
         #[rename(name = "strikethrough")]
         pub strikethrough: f32,
+        #[offset(84)]
         #[rename(name = "strikethroughThickness")]
         pub strikethrough_thickness: f32,
+        #[offset(88)]
         #[rename(name = "TabWidth")]
         pub tab_width: f32,
+        #[offset(92)]
         #[rename(name = "Padding")]
         pub padding: f32,
+        #[offset(96)]
         #[rename(name = "AtlasWidth")]
         pub atlas_width: f32,
+        #[offset(100)]
         #[rename(name = "AtlasHeight")]
         pub atlas_height: f32,
     }

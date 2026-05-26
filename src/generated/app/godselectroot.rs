@@ -22,14 +22,19 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_RingInfo")]
         pub m_ring_info: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_GodListRoot")]
         pub m_god_list_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_RingInfoController")]
         pub m_ring_info_controller: crate::app::ringinfocontroller::RingInfoController,
+        #[offset(48)]
         #[rename(name = "m_RefineRingInfoWindow")]
         pub m_refine_ring_info_window: crate::app::refineringinfowindow::RefineRingInfoWindow,
+        #[offset(56)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
         #[static_field]

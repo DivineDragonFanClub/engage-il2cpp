@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemList")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HelpItemList {
+        #[offset(24)]
         #[rename(name = "m_SituationType")]
         pub m_situation_type: crate::app::helpmanager::HelpManager_SituationType,
+        #[offset(32)]
         #[rename(name = "m_List")]
         pub m_list: ::unity2::Array<crate::app::helpitembase::HelpItemBase>,
     }

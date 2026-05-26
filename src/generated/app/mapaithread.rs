@@ -53,10 +53,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapAiThread")]
     #[parent(crate::system::object::Object)]
     pub struct MapAiThread {
+        #[offset(24)]
         #[rename(name = "m_Lock")]
         pub m_lock: ::unity2::IlInstance,
+        #[offset(40)]
         #[rename(name = "m_IsFirstRun")]
         pub m_is_first_run: bool,
+        #[offset(44)]
         #[rename(name = "m_Status")]
         pub m_status: crate::app::mapaithread::MapAiThread_Status,
     }

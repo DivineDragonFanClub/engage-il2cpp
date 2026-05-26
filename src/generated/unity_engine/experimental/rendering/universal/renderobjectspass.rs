@@ -14,18 +14,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "RenderObjectsPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct RenderObjectsPass {
+        #[offset(112)]
         #[rename(name = "renderQueueType")]
         pub render_queue_type: crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType,
+        #[offset(116)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(144)]
         #[rename(name = "m_CameraSettings")]
         pub m_camera_settings: crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,
+        #[offset(152)]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(160)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(184)]
         #[rename(name = "m_ShaderTagIdList")]
         pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[offset(192)]
         #[rename(name = "m_RenderStateBlock")]
         pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
     }

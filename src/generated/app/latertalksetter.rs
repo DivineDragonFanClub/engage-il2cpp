@@ -15,68 +15,91 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitInfo")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitData.md"))]
+    #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitData")]
     #[parent(crate::system::object::Object)]
-    pub struct LaterTalkSetter_UnitInfo {
-        #[rename(name = "InfoLv")]
-        pub info_lv: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "InfoMostEmblem")]
-        pub info_most_emblem: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "Title")]
-        pub title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "Name")]
-        pub name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "Lv")]
-        pub lv: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "Job")]
-        pub job: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "BattleCount")]
-        pub battle_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "WinCount")]
-        pub win_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "MostEmblem")]
-        pub most_emblem: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+    pub struct LaterTalkSetter_UnitData {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter.md"))]
     #[::unity2::class(namespace = "App", name = "LaterTalkSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct LaterTalkSetter {
+        #[offset(24)]
         #[rename(name = "CharaSolo")]
         pub chara_solo: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "CharaPair")]
         pub chara_pair: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "Main")]
         pub main: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
+        #[offset(48)]
         #[rename(name = "PairLeft")]
         pub pair_left: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
+        #[offset(56)]
         #[rename(name = "PairRight")]
         pub pair_right: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
+        #[offset(64)]
         #[rename(name = "Symbol")]
         pub symbol: crate::unity_engine::ui::image::Image,
+        #[offset(72)]
         #[rename(name = "MainText")]
         pub main_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_BaseDispTime")]
         pub m_base_disp_time: f32,
+        #[offset(84)]
         #[rename(name = "m_OthersTime")]
         pub m_others_time: f32,
+        #[offset(88)]
         #[rename(name = "m_WaitTimeAfter")]
         pub m_wait_time_after: f32,
+        #[offset(92)]
         #[rename(name = "m_CurrentTime")]
         pub m_current_time: f32,
+        #[offset(96)]
         #[rename(name = "m_UnitData")]
         pub m_unit_data: crate::system::collections::generic::list_1::List_1<crate::app::latertalksetter::LaterTalkSetter_UnitData>,
+        #[offset(104)]
         #[rename(name = "m_UnitIndex")]
         pub m_unit_index: i32,
+        #[offset(112)]
         #[rename(name = "m_StartTime")]
         pub m_start_time: f64,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitData.md"))]
-    #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitData")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitInfo")]
     #[parent(crate::system::object::Object)]
-    pub struct LaterTalkSetter_UnitData {}
+    pub struct LaterTalkSetter_UnitInfo {
+        #[offset(16)]
+        #[rename(name = "InfoLv")]
+        pub info_lv: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(24)]
+        #[rename(name = "InfoMostEmblem")]
+        pub info_most_emblem: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
+        #[rename(name = "Title")]
+        pub title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
+        #[rename(name = "Name")]
+        pub name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
+        #[rename(name = "Lv")]
+        pub lv: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
+        #[rename(name = "Job")]
+        pub job: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
+        #[rename(name = "BattleCount")]
+        pub battle_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
+        #[rename(name = "WinCount")]
+        pub win_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
+        #[rename(name = "MostEmblem")]
+        pub most_emblem: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
 }
 
 #[cfg(feature = "app-latertalksetter-types")]
@@ -85,8 +108,470 @@ pub use __types::*;
 #[cfg(feature = "app-latertalksetter")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LaterTalkSetter_UnitInfo_unity2_raw {
+mod __LaterTalkSetter_UnitData_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "get_Unit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "get_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "set_Unit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "set_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_unit(this: LaterTalkSetter_UnitData, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_alive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "get_IsAlive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAlive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_alive(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_alive::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_alive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "set_IsAlive",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "set_IsAlive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_alive(this: LaterTalkSetter_UnitData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_alive::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_marriage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "get_Marriage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "get_Marriage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_marriage(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_marriage::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_marriage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "set_Marriage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "set_Marriage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_marriage(this: LaterTalkSetter_UnitData, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_marriage::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_map_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "get_MapName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "get_MapName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_map_name(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_map_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_map_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "set_MapName",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "set_MapName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_map_name(this: LaterTalkSetter_UnitData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_map_name::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_map_degree {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "get_MapDegree",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "get_MapDegree",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_map_degree(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_map_degree::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_map_degree {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "set_MapDegree",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "set_MapDegree",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_map_degree(this: LaterTalkSetter_UnitData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_map_degree::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_light_degree {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "get_LightDegree",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "get_LightDegree",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_light_degree(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_light_degree::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_light_degree {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "set_LightDegree",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "set_LightDegree",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_light_degree(this: LaterTalkSetter_UnitData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_light_degree::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_end_disp_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "get_EndDispTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "get_EndDispTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_end_disp_time(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_end_disp_time::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_end_disp_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                "set_EndDispTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        "set_EndDispTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_end_disp_time(this: LaterTalkSetter_UnitData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_end_disp_time::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -94,7 +579,7 @@ mod __LaterTalkSetter_UnitInfo_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::class(),
+                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -107,7 +592,7 @@ mod __LaterTalkSetter_UnitInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::NAME,
+                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -115,40 +600,152 @@ mod __LaterTalkSetter_UnitInfo_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: LaterTalkSetter_UnitInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitInfo, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-latertalksetter")]
-pub trait ILaterTalkSetter_UnitInfoMethods: ILaterTalkSetter_UnitInfo {
+pub trait ILaterTalkSetter_UnitDataMethods: ILaterTalkSetter_UnitData {
+    #[doc = "`get_Unit()` overload"]
+    fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::set_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsAlive()` overload"]
+    fn get_is_alive(self) -> bool {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::get_is_alive(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsAlive(bool)` overload"]
+    fn set_is_alive(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::set_is_alive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Marriage()` overload"]
+    fn get_marriage(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::get_marriage(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Marriage(crate::app::unit::Unit)` overload"]
+    fn set_marriage(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::set_marriage(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_MapName()` overload"]
+    fn get_map_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::get_map_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_MapName(::unity2::Il2CppString)` overload"]
+    fn set_map_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::set_map_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_MapDegree()` overload"]
+    fn get_map_degree(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::get_map_degree(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_MapDegree(i32)` overload"]
+    fn set_map_degree(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::set_map_degree(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_LightDegree()` overload"]
+    fn get_light_degree(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::get_light_degree(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_LightDegree(i32)` overload"]
+    fn set_light_degree(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::set_light_degree(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_EndDispTime()` overload"]
+    fn get_end_disp_time(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::get_end_disp_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_EndDispTime(f32)` overload"]
+    fn set_end_disp_time(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::set_end_disp_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <LaterTalkSetter_UnitInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-latertalksetter")]
-impl<__T: ILaterTalkSetter_UnitInfo> ILaterTalkSetter_UnitInfoMethods for __T {}
+impl<__T: ILaterTalkSetter_UnitData> ILaterTalkSetter_UnitDataMethods for __T {}
 
 #[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter_UnitInfo {
+impl LaterTalkSetter_UnitData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(LaterTalkSetter_UnitInfo),
+                ::core::stringify!(LaterTalkSetter_UnitData),
                 ::core::stringify!(new),
             )
         });
-        <Self as ILaterTalkSetter_UnitInfoMethods>::ctor(this);
+        <Self as ILaterTalkSetter_UnitDataMethods>::ctor(this);
         this
     }
 }
@@ -813,470 +1410,8 @@ impl LaterTalkSetter {
 #[cfg(feature = "app-latertalksetter")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LaterTalkSetter_UnitData_unity2_raw {
+mod __LaterTalkSetter_UnitInfo_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "get_Unit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "get_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "set_Unit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "set_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit(this: LaterTalkSetter_UnitData, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_alive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "get_IsAlive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "get_IsAlive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_alive(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_alive::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_alive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "set_IsAlive",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "set_IsAlive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_alive(this: LaterTalkSetter_UnitData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_alive::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_marriage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "get_Marriage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "get_Marriage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_marriage(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_marriage::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_marriage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "set_Marriage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "set_Marriage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_marriage(this: LaterTalkSetter_UnitData, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_marriage::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "get_MapName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "get_MapName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_name(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_map_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_map_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "set_MapName",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "set_MapName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_map_name(this: LaterTalkSetter_UnitData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_map_name::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_map_degree {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "get_MapDegree",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "get_MapDegree",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_map_degree(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_map_degree::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_map_degree {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "set_MapDegree",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "set_MapDegree",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_map_degree(this: LaterTalkSetter_UnitData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_map_degree::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_light_degree {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "get_LightDegree",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "get_LightDegree",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_light_degree(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_light_degree::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_light_degree {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "set_LightDegree",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "set_LightDegree",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_light_degree(this: LaterTalkSetter_UnitData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_light_degree::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_end_disp_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "get_EndDispTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "get_EndDispTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_end_disp_time(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_end_disp_time::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_end_disp_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
-                "set_EndDispTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
-                        "set_EndDispTime",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_end_disp_time(this: LaterTalkSetter_UnitData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_end_disp_time::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -1284,7 +1419,7 @@ mod __LaterTalkSetter_UnitData_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::class(),
+                <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1297,7 +1432,7 @@ mod __LaterTalkSetter_UnitData_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <LaterTalkSetter_UnitData as ::unity2::ClassIdentity>::NAME,
+                        <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1305,152 +1440,40 @@ mod __LaterTalkSetter_UnitData_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: LaterTalkSetter_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitData, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: LaterTalkSetter_UnitInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitInfo, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-latertalksetter")]
-pub trait ILaterTalkSetter_UnitDataMethods: ILaterTalkSetter_UnitData {
-    #[doc = "`get_Unit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::set_unit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsAlive()` overload"]
-    fn get_is_alive(self) -> bool {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::get_is_alive(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsAlive(bool)` overload"]
-    fn set_is_alive(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::set_is_alive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Marriage()` overload"]
-    fn get_marriage(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::get_marriage(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Marriage(crate::app::unit::Unit)` overload"]
-    fn set_marriage(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::set_marriage(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MapName()` overload"]
-    fn get_map_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::get_map_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MapName(::unity2::Il2CppString)` overload"]
-    fn set_map_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::set_map_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MapDegree()` overload"]
-    fn get_map_degree(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::get_map_degree(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MapDegree(i32)` overload"]
-    fn set_map_degree(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::set_map_degree(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_LightDegree()` overload"]
-    fn get_light_degree(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::get_light_degree(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_LightDegree(i32)` overload"]
-    fn set_light_degree(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::set_light_degree(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_EndDispTime()` overload"]
-    fn get_end_disp_time(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::get_end_disp_time(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_EndDispTime(f32)` overload"]
-    fn set_end_disp_time(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::set_end_disp_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
+pub trait ILaterTalkSetter_UnitInfoMethods: ILaterTalkSetter_UnitInfo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <LaterTalkSetter_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __LaterTalkSetter_UnitData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <LaterTalkSetter_UnitInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LaterTalkSetter_UnitInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-latertalksetter")]
-impl<__T: ILaterTalkSetter_UnitData> ILaterTalkSetter_UnitDataMethods for __T {}
+impl<__T: ILaterTalkSetter_UnitInfo> ILaterTalkSetter_UnitInfoMethods for __T {}
 
 #[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter_UnitData {
+impl LaterTalkSetter_UnitInfo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(LaterTalkSetter_UnitData),
+                ::core::stringify!(LaterTalkSetter_UnitInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as ILaterTalkSetter_UnitDataMethods>::ctor(this);
+        <Self as ILaterTalkSetter_UnitInfoMethods>::ctor(this);
         this
     }
 }

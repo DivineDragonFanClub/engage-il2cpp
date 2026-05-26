@@ -17,6 +17,44 @@ mod __types {
         },
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapSequenceHuman_NextMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapSequenceHuman_NextMode {
+        const NAME: &'static str = "MapSequenceHuman.NextMode";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSequenceHuman_NextMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapSequenceHuman_NextMode {
+        pub fn closest() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn patrol() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn order() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,38 +101,55 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequenceHuman")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)]
     pub struct MapSequenceHuman {
+        #[offset(120)]
         #[rename(name = "m_JobIntroUnit")]
         pub m_job_intro_unit: crate::app::unit::Unit,
+        #[offset(128)]
         #[rename(name = "m_JobIntroKeyHelpType")]
         pub m_job_intro_key_help_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[offset(132)]
         #[rename(name = "m_ReturnLabel")]
         pub m_return_label: crate::app::mapsequencehuman::MapSequenceHuman_Label,
+        #[offset(136)]
         #[rename(name = "m_OldUnitX")]
         pub m_old_unit_x: i32,
+        #[offset(140)]
         #[rename(name = "m_OldUnitZ")]
         pub m_old_unit_z: i32,
+        #[offset(144)]
         #[rename(name = "m_OldCursorX")]
         pub m_old_cursor_x: i32,
+        #[offset(148)]
         #[rename(name = "m_OldCursorZ")]
         pub m_old_cursor_z: i32,
+        #[offset(152)]
         #[rename(name = "m_OldPickupX")]
         pub m_old_pickup_x: i32,
+        #[offset(156)]
         #[rename(name = "m_OldPickupZ")]
         pub m_old_pickup_z: i32,
+        #[offset(160)]
         #[rename(name = "m_EngageX")]
         pub m_engage_x: i32,
+        #[offset(164)]
         #[rename(name = "m_EngageZ")]
         pub m_engage_z: i32,
+        #[offset(168)]
         #[rename(name = "m_EnterX")]
         pub m_enter_x: i32,
+        #[offset(172)]
         #[rename(name = "m_EnterZ")]
         pub m_enter_z: i32,
+        #[offset(176)]
         #[rename(name = "m_IsEnemyAttackRange")]
         pub m_is_enemy_attack_range: bool,
+        #[offset(177)]
         #[rename(name = "m_IsUpdateSupportSkill")]
         pub m_is_update_support_skill: bool,
+        #[offset(184)]
         #[rename(name = "m_UpdateSupportSkillUnit")]
         pub m_update_support_skill_unit: crate::app::unit::Unit,
+        #[offset(192)]
         #[rename(name = "m_OperateMode")]
         pub m_operate_mode: crate::app::mapsequencehuman::MapSequenceHuman_OperateMode,
         #[static_field]
@@ -112,44 +167,6 @@ mod __types {
         #[static_field]
         #[rename(name = "WaitPickFreeCursor")]
         pub wait_pick_free_cursor: f32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapSequenceHuman_NextMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapSequenceHuman_NextMode {
-        const NAME: &'static str = "MapSequenceHuman.NextMode";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSequenceHuman_NextMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapSequenceHuman_NextMode {
-        pub fn closest() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn patrol() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn order() -> Self {
-            Self { value: 2 }
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_Label.md"))]

@@ -24,11 +24,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollRectEvent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect.ScrollRectEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
-    pub struct ScrollRect_ScrollRectEvent {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollbarVisibility.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -71,78 +66,115 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct ScrollRect {
+        #[offset(24)]
         #[rename(name = "m_Content")]
         pub m_content: crate::unity_engine::recttransform::RectTransform,
+        #[offset(32)]
         #[rename(name = "m_Horizontal")]
         pub m_horizontal: bool,
+        #[offset(33)]
         #[rename(name = "m_Vertical")]
         pub m_vertical: bool,
+        #[offset(36)]
         #[rename(name = "m_MovementType")]
         pub m_movement_type: crate::unity_engine::ui::scrollrect::ScrollRect_MovementType,
+        #[offset(40)]
         #[rename(name = "m_Elasticity")]
         pub m_elasticity: f32,
+        #[offset(44)]
         #[rename(name = "m_Inertia")]
         pub m_inertia: bool,
+        #[offset(48)]
         #[rename(name = "m_DecelerationRate")]
         pub m_deceleration_rate: f32,
+        #[offset(52)]
         #[rename(name = "m_ScrollSensitivity")]
         pub m_scroll_sensitivity: f32,
+        #[offset(56)]
         #[rename(name = "m_Viewport")]
         pub m_viewport: crate::unity_engine::recttransform::RectTransform,
+        #[offset(64)]
         #[rename(name = "m_HorizontalScrollbar")]
         pub m_horizontal_scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
+        #[offset(72)]
         #[rename(name = "m_VerticalScrollbar")]
         pub m_vertical_scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
+        #[offset(80)]
         #[rename(name = "m_HorizontalScrollbarVisibility")]
         pub m_horizontal_scrollbar_visibility: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility,
+        #[offset(84)]
         #[rename(name = "m_VerticalScrollbarVisibility")]
         pub m_vertical_scrollbar_visibility: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility,
+        #[offset(88)]
         #[rename(name = "m_HorizontalScrollbarSpacing")]
         pub m_horizontal_scrollbar_spacing: f32,
+        #[offset(92)]
         #[rename(name = "m_VerticalScrollbarSpacing")]
         pub m_vertical_scrollbar_spacing: f32,
+        #[offset(96)]
         #[rename(name = "m_OnValueChanged")]
         pub m_on_value_changed: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollRectEvent,
+        #[offset(104)]
         #[rename(name = "m_PointerStartLocalCursor")]
         pub m_pointer_start_local_cursor: crate::unity_engine::vector2::Vector2,
+        #[offset(112)]
         #[rename(name = "m_ContentStartPosition")]
         pub m_content_start_position: crate::unity_engine::vector2::Vector2,
+        #[offset(120)]
         #[rename(name = "m_ViewRect")]
         pub m_view_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(128)]
         #[rename(name = "m_ContentBounds")]
         pub m_content_bounds: crate::unity_engine::bounds::Bounds,
+        #[offset(152)]
         #[rename(name = "m_ViewBounds")]
         pub m_view_bounds: crate::unity_engine::bounds::Bounds,
+        #[offset(176)]
         #[rename(name = "m_Velocity")]
         pub m_velocity: crate::unity_engine::vector2::Vector2,
+        #[offset(184)]
         #[rename(name = "m_Dragging")]
         pub m_dragging: bool,
+        #[offset(185)]
         #[rename(name = "m_Scrolling")]
         pub m_scrolling: bool,
+        #[offset(188)]
         #[rename(name = "m_PrevPosition")]
         pub m_prev_position: crate::unity_engine::vector2::Vector2,
+        #[offset(196)]
         #[rename(name = "m_PrevContentBounds")]
         pub m_prev_content_bounds: crate::unity_engine::bounds::Bounds,
+        #[offset(220)]
         #[rename(name = "m_PrevViewBounds")]
         pub m_prev_view_bounds: crate::unity_engine::bounds::Bounds,
+        #[offset(244)]
         #[rename(name = "m_HasRebuiltLayout")]
         pub m_has_rebuilt_layout: bool,
+        #[offset(245)]
         #[rename(name = "m_HSliderExpand")]
         pub m_h_slider_expand: bool,
+        #[offset(246)]
         #[rename(name = "m_VSliderExpand")]
         pub m_v_slider_expand: bool,
+        #[offset(248)]
         #[rename(name = "m_HSliderHeight")]
         pub m_h_slider_height: f32,
+        #[offset(252)]
         #[rename(name = "m_VSliderWidth")]
         pub m_v_slider_width: f32,
+        #[offset(256)]
         #[rename(name = "m_Rect")]
         pub m_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(264)]
         #[rename(name = "m_HorizontalScrollbarRect")]
         pub m_horizontal_scrollbar_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(272)]
         #[rename(name = "m_VerticalScrollbarRect")]
         pub m_vertical_scrollbar_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(280)]
         #[rename(name = "m_Tracker")]
         pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+        #[offset(288)]
         #[rename(name = "m_Corners")]
         pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
     }
@@ -184,81 +216,15 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollRectEvent.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect.ScrollRectEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
+    pub struct ScrollRect_ScrollRectEvent {}
 }
 
 #[cfg(feature = "unity_engine-ui-scrollrect-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-ui-scrollrect")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScrollRect_ScrollRectEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScrollRect_ScrollRectEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ScrollRect_ScrollRectEvent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ScrollRect_ScrollRectEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScrollRect_ScrollRectEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-scrollrect")]
-pub trait IScrollRect_ScrollRectEventMethods: IScrollRect_ScrollRectEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ScrollRect_ScrollRectEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ScrollRect_ScrollRectEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-scrollrect")]
-impl<__T: IScrollRect_ScrollRectEvent> IScrollRect_ScrollRectEventMethods for __T {}
-
-#[cfg(feature = "unity_engine-ui-scrollrect")]
-impl ScrollRect_ScrollRectEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScrollRect_ScrollRectEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScrollRect_ScrollRectEventMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-ui-scrollrect")]
 #[doc(hidden)]
@@ -4066,6 +4032,77 @@ impl ScrollRect {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ScrollRect), ::core::stringify!(new),));
         <Self as IScrollRectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScrollRect_ScrollRectEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScrollRect_ScrollRectEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScrollRect_ScrollRectEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ScrollRect_ScrollRectEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ScrollRect_ScrollRectEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+pub trait IScrollRect_ScrollRectEventMethods: IScrollRect_ScrollRectEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ScrollRect_ScrollRectEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScrollRect_ScrollRectEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+impl<__T: IScrollRect_ScrollRectEvent> IScrollRect_ScrollRectEventMethods for __T {}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+impl ScrollRect_ScrollRectEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScrollRect_ScrollRectEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScrollRect_ScrollRectEventMethods>::ctor(this);
         this
     }
 }

@@ -17,16 +17,22 @@ mod __types {
         #[static_field]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(120)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(144)]
         #[rename(name = "m_EffectTagId")]
         pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(148)]
         #[rename(name = "m_EffectFullTagId")]
         pub m_effect_full_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(152)]
         #[rename(name = "m_ShouldSetEffectDepth")]
         pub m_should_set_effect_depth: bool,
+        #[offset(160)]
         #[rename(name = "m_EffectDepthId")]
         pub m_effect_depth_id: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
     }

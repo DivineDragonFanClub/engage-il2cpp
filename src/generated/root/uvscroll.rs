@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "UVScroll")]
     #[parent(crate::root::materialbehaviour::MaterialBehaviour)]
     pub struct UVScroll {
+        #[offset(80)]
         #[rename(name = "m_Scroll")]
         pub m_scroll: crate::unity_engine::vector2::Vector2,
+        #[offset(88)]
         #[rename(name = "m_Step")]
         pub m_step: bool,
     }

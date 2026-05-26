@@ -11,76 +11,112 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubPlayerController")]
     #[parent(crate::system::object::Object)]
     pub struct HubPlayerController {
+        #[offset(40)]
         #[rename(name = "m_PlayerRoot")]
         pub m_player_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_PlayerCollider")]
         pub m_player_collider: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_GroupRoot")]
         pub m_group_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_ButtonNavi")]
         pub m_button_navi: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_LookAt")]
         pub m_look_at: crate::app::hublookatcontroller::HubLookAtController,
+        #[offset(88)]
         #[rename(name = "m_UnitController")]
         pub m_unit_controller: crate::app::hubunitcontroller::HubUnitController,
+        #[offset(96)]
         #[rename(name = "m_Colliders")]
         pub m_colliders: crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider>,
+        #[offset(104)]
         #[rename(name = "m_HubCamera")]
         pub m_hub_camera: crate::app::hubcamera::HubCamera,
+        #[offset(112)]
         #[rename(name = "m_LastAccess")]
         pub m_last_access: crate::app::hubaccess::HubAccess,
+        #[offset(120)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(128)]
         #[rename(name = "m_CharacterJoints")]
         pub m_character_joints: ::unity2::Array<crate::combat::characterjoint::CharacterJoint>,
+        #[offset(144)]
         #[rename(name = "m_Speed")]
         pub m_speed: f32,
+        #[offset(148)]
         #[rename(name = "m_MoveTarget")]
         pub m_move_target: crate::unity_engine::vector3::Vector3,
+        #[offset(160)]
         #[rename(name = "m_MoveDirection")]
         pub m_move_direction: crate::unity_engine::vector3::Vector3,
+        #[offset(172)]
         #[rename(name = "m_DashStop")]
         pub m_dash_stop: bool,
+        #[offset(176)]
         #[rename(name = "m_DashStopTime")]
         pub m_dash_stop_time: f32,
+        #[offset(180)]
         #[rename(name = "m_DashStopDelay")]
         pub m_dash_stop_delay: f32,
+        #[offset(184)]
         #[rename(name = "m_DashTime")]
         pub m_dash_time: f32,
+        #[offset(188)]
         #[rename(name = "m_TimeWithNoTarget")]
         pub m_time_with_no_target: f32,
+        #[offset(192)]
         #[rename(name = "m_QuickTurnAnimName")]
         pub m_quick_turn_anim_name: ::unity2::Il2CppString,
+        #[offset(200)]
         #[rename(name = "m_AccessDelay")]
         pub m_access_delay: f32,
+        #[offset(208)]
         #[rename(name = "m_CullingCollider")]
         pub m_culling_collider: crate::app::hubcullingplayercollider::HubCullingPlayerCollider,
+        #[offset(216)]
         #[rename(name = "m_GrassManagers")]
         pub m_grass_managers: ::unity2::Array<crate::app::grassmanager::GrassManager>,
+        #[offset(224)]
         #[rename(name = "ObjectCollisionLayerMask")]
         pub object_collision_layer_mask: i32,
+        #[offset(228)]
         #[rename(name = "GroundCollisionLayerMask")]
         pub ground_collision_layer_mask: i32,
+        #[offset(232)]
         #[rename(name = "SlopeCollisionLayerMask")]
         pub slope_collision_layer_mask: i32,
+        #[offset(240)]
         #[rename(name = "m_hash")]
         pub m_hash: i32,
+        #[offset(248)]
         #[rename(name = "results")]
         pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        #[offset(256)]
         #[rename(name = "overlapColliders")]
         pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        #[offset(264)]
         #[rename(name = "accessColliders")]
         pub access_colliders: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        #[offset(272)]
         #[rename(name = "accessCollider")]
         pub access_collider: crate::unity_engine::collider::Collider,
+        #[offset(280)]
         #[rename(name = "distanceSpeed")]
         pub distance_speed: f32,
+        #[offset(288)]
         #[rename(name = "m_procIdleCoroutin")]
         pub m_proc_idle_coroutin: crate::unity_engine::coroutine::Coroutine,
+        #[offset(296)]
         #[rename(name = "m_enableProc")]
         pub m_enable_proc: bool,
+        #[offset(300)]
         #[rename(name = "m_WallInterval")]
         pub m_wall_interval: f32,
     }

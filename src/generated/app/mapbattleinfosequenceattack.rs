@@ -19,30 +19,43 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBattleInfoSequenceAttack")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapBattleInfoSequenceAttack {
+        #[offset(24)]
         #[rename(name = "m_DefenseDamage")]
         pub m_defense_damage: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_DefenseArrow")]
         pub m_defense_arrow: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_DefenseDead")]
         pub m_defense_dead: crate::unity_engine::ui::image::Image,
+        #[offset(48)]
         #[rename(name = "m_OffenseDamage")]
         pub m_offense_damage: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_OffenseArrow")]
         pub m_offense_arrow: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "m_OffenseDead")]
         pub m_offense_dead: crate::unity_engine::ui::image::Image,
+        #[offset(72)]
         #[rename(name = "m_DefenseResult")]
         pub m_defense_result: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_OffenseResult")]
         pub m_offense_result: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_DamageMaterial")]
         pub m_damage_material: crate::unity_engine::material::Material,
+        #[offset(96)]
         #[rename(name = "m_HealMaterial")]
         pub m_heal_material: crate::unity_engine::material::Material,
+        #[offset(104)]
         #[rename(name = "m_ArrowSprite")]
         pub m_arrow_sprite: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(112)]
         #[rename(name = "m_InstDamageMaterial")]
         pub m_inst_damage_material: crate::unity_engine::material::Material,
+        #[offset(120)]
         #[rename(name = "m_InstHealMaterial")]
         pub m_inst_heal_material: crate::unity_engine::material::Material,
     }

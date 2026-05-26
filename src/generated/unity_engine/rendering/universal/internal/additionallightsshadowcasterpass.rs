@@ -10,49 +10,6 @@ mod __types {
         unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "AdditionalLightsShadowCasterPass")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct AdditionalLightsShadowCasterPass {
-        #[static_field]
-        #[rename(name = "m_AdditionalShadowsBufferId")]
-        pub m_additional_shadows_buffer_id: i32,
-        #[static_field]
-        #[rename(name = "m_AdditionalShadowsIndicesId")]
-        pub m_additional_shadows_indices_id: i32,
-        #[rename(name = "m_UseStructuredBuffer")]
-        pub m_use_structured_buffer: bool,
-        #[static_field]
-        #[rename(name = "k_ShadowmapBufferBits")]
-        pub k_shadowmap_buffer_bits: i32,
-        #[rename(name = "m_AdditionalLightsShadowmap")]
-        pub m_additional_lights_shadowmap: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_AdditionalLightsShadowmapTexture")]
-        pub m_additional_lights_shadowmap_texture: crate::unity_engine::rendertexture::RenderTexture,
-        #[rename(name = "m_ShadowmapWidth")]
-        pub m_shadowmap_width: i32,
-        #[rename(name = "m_ShadowmapHeight")]
-        pub m_shadowmap_height: i32,
-        #[rename(name = "m_AdditionalLightSlices")]
-        pub m_additional_light_slices: ::unity2::Array<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>,
-        #[rename(name = "m_AdditionalLightsWorldToShadow")]
-        pub m_additional_lights_world_to_shadow: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-        #[rename(name = "m_AdditionalLightsShadowParams")]
-        pub m_additional_lights_shadow_params: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-        #[rename(name = "m_AdditionalLightsShadowData")]
-        pub m_additional_lights_shadow_data: ::unity2::Array<crate::unity_engine::rendering::universal::shaderinput::ShaderInput_ShadowData>,
-        #[rename(name = "m_AdditionalShadowCastingLightIndices")]
-        pub m_additional_shadow_casting_light_indices: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_AdditionalShadowCastingLightIndicesMap")]
-        pub m_additional_shadow_casting_light_indices_map: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_ShadowCastingLightIndicesMap")]
-        pub m_shadow_casting_light_indices_map: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_SupportsBoxFilterForShadows")]
-        pub m_supports_box_filter_for_shadows: bool,
-        #[rename(name = "m_ProfilingSetupSampler")]
-        pub m_profiling_setup_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -81,6 +38,63 @@ mod __types {
         #[static_field]
         #[rename(name = "_AdditionalShadowmapSize")]
         pub additional_shadowmap_size: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "AdditionalLightsShadowCasterPass")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct AdditionalLightsShadowCasterPass {
+        #[static_field]
+        #[rename(name = "m_AdditionalShadowsBufferId")]
+        pub m_additional_shadows_buffer_id: i32,
+        #[static_field]
+        #[rename(name = "m_AdditionalShadowsIndicesId")]
+        pub m_additional_shadows_indices_id: i32,
+        #[offset(112)]
+        #[rename(name = "m_UseStructuredBuffer")]
+        pub m_use_structured_buffer: bool,
+        #[static_field]
+        #[rename(name = "k_ShadowmapBufferBits")]
+        pub k_shadowmap_buffer_bits: i32,
+        #[offset(120)]
+        #[rename(name = "m_AdditionalLightsShadowmap")]
+        pub m_additional_lights_shadowmap: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(168)]
+        #[rename(name = "m_AdditionalLightsShadowmapTexture")]
+        pub m_additional_lights_shadowmap_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[offset(176)]
+        #[rename(name = "m_ShadowmapWidth")]
+        pub m_shadowmap_width: i32,
+        #[offset(180)]
+        #[rename(name = "m_ShadowmapHeight")]
+        pub m_shadowmap_height: i32,
+        #[offset(184)]
+        #[rename(name = "m_AdditionalLightSlices")]
+        pub m_additional_light_slices: ::unity2::Array<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>,
+        #[offset(192)]
+        #[rename(name = "m_AdditionalLightsWorldToShadow")]
+        pub m_additional_lights_world_to_shadow: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(200)]
+        #[rename(name = "m_AdditionalLightsShadowParams")]
+        pub m_additional_lights_shadow_params: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[offset(208)]
+        #[rename(name = "m_AdditionalLightsShadowData")]
+        pub m_additional_lights_shadow_data: ::unity2::Array<crate::unity_engine::rendering::universal::shaderinput::ShaderInput_ShadowData>,
+        #[offset(216)]
+        #[rename(name = "m_AdditionalShadowCastingLightIndices")]
+        pub m_additional_shadow_casting_light_indices: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(224)]
+        #[rename(name = "m_AdditionalShadowCastingLightIndicesMap")]
+        pub m_additional_shadow_casting_light_indices_map: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(232)]
+        #[rename(name = "m_ShadowCastingLightIndicesMap")]
+        pub m_shadow_casting_light_indices_map: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(240)]
+        #[rename(name = "m_SupportsBoxFilterForShadows")]
+        pub m_supports_box_filter_for_shadows: bool,
+        #[offset(248)]
+        #[rename(name = "m_ProfilingSetupSampler")]
+        pub m_profiling_setup_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
 }
 

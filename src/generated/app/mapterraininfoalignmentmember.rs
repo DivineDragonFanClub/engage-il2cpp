@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignmentMember")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapTerrainInfoAlignmentMember {
+        #[offset(24)]
         #[rename(name = "m_Left")]
         pub m_left: f32,
+        #[offset(28)]
         #[rename(name = "m_Right")]
         pub m_right: f32,
+        #[offset(32)]
         #[rename(name = "m_Top")]
         pub m_top: f32,
+        #[offset(36)]
         #[rename(name = "m_Bottom")]
         pub m_bottom: f32,
+        #[offset(40)]
         #[rename(name = "m_Spacing")]
         pub m_spacing: f32,
     }

@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieTopMenuManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortietopmenumanager :: SortieTopMenuManager >)]
     pub struct SortieTopMenuManager {
+        #[offset(32)]
         #[rename(name = "m_MenuSelect")]
         pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
     }

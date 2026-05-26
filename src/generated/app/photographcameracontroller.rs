@@ -11,24 +11,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographCameraController")]
     #[parent(crate::system::object::Object)]
     pub struct PhotographCameraController {
+        #[offset(16)]
         #[rename(name = "m_IsEnable")]
         pub m_is_enable: bool,
+        #[offset(17)]
         #[rename(name = "m_IsPhotographMode")]
         pub m_is_photograph_mode: bool,
+        #[offset(24)]
         #[rename(name = "m_ParameterList")]
         pub m_parameter_list: crate::system::collections::generic::list_1::List_1<crate::app::photographcameraparameter::PhotographCameraParameter>,
+        #[offset(32)]
         #[rename(name = "m_CurrentParameter")]
         pub m_current_parameter: crate::app::photographcameraparameter::PhotographCameraParameter,
+        #[offset(40)]
         #[rename(name = "m_MoveX")]
         pub m_move_x: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(48)]
         #[rename(name = "m_MoveY")]
         pub m_move_y: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(56)]
         #[rename(name = "m_AngleY")]
         pub m_angle_y: crate::app::interpolatorrotation::InterpolatorRotation,
+        #[offset(64)]
         #[rename(name = "m_Fov")]
         pub m_fov: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(72)]
         #[rename(name = "m_DisposManager")]
         pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        #[offset(80)]
         #[rename(name = "flg")]
         pub flg: bool,
     }

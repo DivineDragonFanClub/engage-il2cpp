@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapPointerAnimManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapPointerAnimManager {
+        #[offset(24)]
         #[rename(name = "m_Mark")]
         pub m_mark: crate::unity_engine::transform::Transform,
     }

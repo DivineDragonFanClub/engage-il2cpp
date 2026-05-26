@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "CapturePass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CapturePass {
+        #[offset(112)]
         #[rename(name = "m_CameraColorHandle")]
         pub m_camera_color_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
         #[static_field]

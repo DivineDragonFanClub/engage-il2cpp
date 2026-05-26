@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkMusicPlaylistCallbackInfo")]
     #[parent(crate::root::akeventcallbackinfo::AkEventCallbackInfo)]
     pub struct AkMusicPlaylistCallbackInfo {
+        #[offset(40)]
         #[rename(name = "swigCPtr")]
         pub swig_c_ptr: ::unity2::IntPtr,
     }

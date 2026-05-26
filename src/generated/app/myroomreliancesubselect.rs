@@ -19,48 +19,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect.MyRoomRelianceCallSequence")]
-    # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: myroomreliancesubselect :: MyRoomRelianceSubSelect_MyRoomRelianceCallSequence >)]
-    pub struct MyRoomRelianceSubSelect_MyRoomRelianceCallSequence {
-        #[rename(name = "m_bind")]
-        pub m_bind: bool,
-        #[rename(name = "m_camera")]
-        pub m_camera: crate::unity_engine::camera::Camera,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect.MyRoomRelianceSubSelectItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
-        #[rename(name = "m_UnitL")]
-        pub m_unit_l: crate::app::unit::Unit,
-        #[rename(name = "m_UnitR")]
-        pub m_unit_r: crate::app::unit::Unit,
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MyRoomRelianceSubSelect {
-        #[rename(name = "IsRankPhase")]
-        pub is_rank_phase: bool,
-        #[rename(name = "m_MenuSelectList")]
-        pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_AmiiboBenefitSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect.AmiiboBenefitSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MyRoomRelianceSubSelect_AmiiboBenefitSequence {
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_PieceCount")]
-        pub m_piece_count: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -98,10 +56,1709 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MyRoomRelianceSubSelect {
+        #[offset(196)]
+        #[rename(name = "IsRankPhase")]
+        pub is_rank_phase: bool,
+        #[offset(200)]
+        #[rename(name = "m_MenuSelectList")]
+        pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect.MyRoomRelianceSubSelectItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
+        #[offset(104)]
+        #[rename(name = "m_UnitL")]
+        pub m_unit_l: crate::app::unit::Unit,
+        #[offset(112)]
+        #[rename(name = "m_UnitR")]
+        pub m_unit_r: crate::app::unit::Unit,
+        #[offset(120)]
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect.MyRoomRelianceCallSequence")]
+    # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: myroomreliancesubselect :: MyRoomRelianceSubSelect_MyRoomRelianceCallSequence >)]
+    pub struct MyRoomRelianceSubSelect_MyRoomRelianceCallSequence {
+        #[offset(184)]
+        #[rename(name = "m_bind")]
+        pub m_bind: bool,
+        #[offset(192)]
+        #[rename(name = "m_camera")]
+        pub m_camera: crate::unity_engine::camera::Camera,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_AmiiboBenefitSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect.AmiiboBenefitSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MyRoomRelianceSubSelect_AmiiboBenefitSequence {
+        #[offset(112)]
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[offset(120)]
+        #[rename(name = "m_PieceCount")]
+        pub m_piece_count: i32,
+    }
 }
 
 #[cfg(feature = "app-myroomreliancesubselect-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MyRoomRelianceSubSelect_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        select_unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, select_unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_menu_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "CreateMenuList",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenuList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_menu_list(
+        select_unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
+            ::core::mem::transmute(__lookup_create_menu_list::get_method_info().method_ptr);
+        inner(select_unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MyRoomRelianceSubSelect,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebuild_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "RebuildMenu",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "RebuildMenu",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn rebuild_menu(
+        this: MyRoomRelianceSubSelect,
+        select_unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rebuild_menu::get_method_info().method_ptr);
+        inner(this, select_unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_talk_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "UpdateTalkState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTalkState",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_talk_state(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_talk_state::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_after_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "AfterBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "AfterBuild",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn after_build(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "KeyUp",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "KeyUp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn key_up(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_up::get_method_info().method_ptr);
+        inner(this, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_down {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "KeyDown",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "KeyDown",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn key_down(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_down::get_method_info().method_ptr);
+        inner(this, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "KeyLeft",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "KeyLeft",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn key_left(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_left::get_method_info().method_ptr);
+        inner(this, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_key_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "KeyRight",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "KeyRight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn key_right(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_key_right::get_method_info().method_ptr);
+        inner(this, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_custom_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "CustomCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "CustomCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn custom_call(
+        this: MyRoomRelianceSubSelect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_custom_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl MyRoomRelianceSubSelect {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        select_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __MyRoomRelianceSubSelect_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(select_unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateMenuList(crate::app::unit::Unit)` overload"]
+    pub fn create_menu_list(
+        select_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
+        unsafe { __MyRoomRelianceSubSelect_unity2_raw::create_menu_list(::core::convert::Into::into(select_unit), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+pub trait IMyRoomRelianceSubSelectMethods: IMyRoomRelianceSubSelect {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RebuildMenu(crate::app::unit::Unit)` overload"]
+    fn rebuild_menu(self, select_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::rebuild_menu(__receiver, ::core::convert::Into::into(select_unit), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateTalkState()` overload"]
+    fn update_talk_state(self) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::update_talk_state(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AfterBuild()` overload"]
+    fn after_build(self) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::after_build(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KeyUp(bool)` overload"]
+    fn key_up(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KeyDown(bool)` overload"]
+    fn key_down(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KeyLeft(bool)` overload"]
+    fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KeyRight(bool)` overload"]
+    fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CustomCall()` overload"]
+    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomRelianceSubSelect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl<__T: IMyRoomRelianceSubSelect> IMyRoomRelianceSubSelectMethods for __T {}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl MyRoomRelianceSubSelect {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSubSelect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSubSelectMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_selected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "get_IsSelected",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSelected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_selected(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_selected::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_selected {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "set_IsSelected",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "set_IsSelected",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_selected(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_selected::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "get_IsTalk",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsTalk",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_talk(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_talk::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "set_IsTalk",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "set_IsTalk",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_talk(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_talk::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cursor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "get_Cursor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "get_Cursor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_cursor(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop =
+            ::core::mem::transmute(__lookup_get_cursor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_blank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "get_IsBlank",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsBlank",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_blank(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_blank::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_a_plus {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "get_IsAPlus",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAPlus",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_a_plus(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_a_plus::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sort_order {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "GetSortOrder",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "GetSortOrder",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sort_order(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_sort_order::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_command_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "GetCommandColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "GetCommandColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_command_color(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_command_color::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_open_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "GetOpenCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "GetOpenCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_open_count(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_open_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        unit_l: crate::app::unit::Unit,
+        unit_r: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit_l, unit_r, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        unit_l: crate::app::unit::Unit,
+        god_unit: crate::app::godunit::GodUnit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+            crate::app::unit::Unit,
+            crate::app::godunit::GodUnit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, unit_l, god_unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "UpdateTalk",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTalk",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_talk(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_talk::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_select(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player_god_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "GetPlayerGodLevel",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayerGodLevel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_player_god_level(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        unit_l: crate::app::unit::Unit,
+        unit_r: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_get_player_god_level::get_method_info().method_ptr);
+        inner(this, unit_l, unit_r, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_l {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "GetUnitL",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitL",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit_l(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit_l::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "GetUnitR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitR",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit_r(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit_r::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
+                "GetGodUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
+                        "GetGodUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_god_unit(
+        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
+            ::core::mem::transmute(__lookup_get_god_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+pub trait IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods: IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
+    #[doc = "`get_IsSelected()` overload"]
+    fn get_is_selected(self) -> bool {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_selected(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsSelected(bool)` overload"]
+    fn set_is_selected(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::set_is_selected(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsTalk()` overload"]
+    fn get_is_talk(self) -> bool {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_talk(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsTalk(bool)` overload"]
+    fn set_is_talk(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::set_is_talk(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Cursor()` overload"]
+    fn get_cursor(self) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_cursor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsBlank()` overload"]
+    fn get_is_blank(self) -> bool {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_blank(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsAPlus()` overload"]
+    fn get_is_a_plus(self) -> bool {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_a_plus(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSortOrder()` overload"]
+    fn get_sort_order(self) -> i32 {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_sort_order(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCommandColor()` overload"]
+    fn get_command_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_command_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetOpenCount()` overload"]
+    fn get_open_count(self) -> i32 {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_open_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn ctor(self, unit_l: impl ::core::convert::Into<crate::app::unit::Unit>, unit_r: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(unit_l),
+                ::core::convert::Into::into(unit_r),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
+    fn ctor_2(
+        self,
+        unit_l: impl ::core::convert::Into<crate::app::unit::Unit>,
+        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(unit_l),
+                ::core::convert::Into::into(god_unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTalk()` overload"]
+    fn update_talk(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::update_talk(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetPlayerGodLevel(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    fn get_player_god_level(
+        self,
+        unit_l: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_r: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_player_god_level(
+                __receiver,
+                ::core::convert::Into::into(unit_l),
+                ::core::convert::Into::into(unit_r),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnitL()` overload"]
+    fn get_unit_l(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_unit_l(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnitR()` overload"]
+    fn get_unit_r(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_unit_r(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetGodUnit()` overload"]
+    fn get_god_unit(self) -> crate::app::godunit::GodUnit {
+        unsafe {
+            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_god_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl<__T: IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem> IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods for __T {}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit_l: crate::app::unit::Unit, unit_r: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods>::ctor(this, unit_l, unit_r);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]
+    pub fn new_2(unit_l: crate::app::unit::Unit, god_unit: crate::app::godunit::GodUnit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods>::ctor_2(this, unit_l, god_unit);
+        this
+    }
+}
 
 #[cfg(feature = "app-myroomreliancesubselect")]
 #[doc(hidden)]
@@ -1806,1654 +3463,6 @@ impl MyRoomRelianceSubSelect_MyRoomRelianceCallSequence {
             )
         });
         <Self as IMyRoomRelianceSubSelect_MyRoomRelianceCallSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_selected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "get_IsSelected",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsSelected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_selected(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_selected::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_selected {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "set_IsSelected",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "set_IsSelected",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_selected(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_selected::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "get_IsTalk",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_talk(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_talk::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "set_IsTalk",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "set_IsTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_talk(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_talk::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "get_Cursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "get_Cursor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_cursor(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop =
-            ::core::mem::transmute(__lookup_get_cursor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_blank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "get_IsBlank",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsBlank",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_blank(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_blank::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_a_plus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "get_IsAPlus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "get_IsAPlus",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_a_plus(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_a_plus::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sort_order {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "GetSortOrder",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "GetSortOrder",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sort_order(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_sort_order::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_command_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "GetCommandColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "GetCommandColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_command_color(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_command_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_open_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "GetOpenCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "GetOpenCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_open_count(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_open_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        unit_l: crate::app::unit::Unit,
-        unit_r: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit_l, unit_r, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        unit_l: crate::app::unit::Unit,
-        god_unit: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-            crate::app::unit::Unit,
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, unit_l, god_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "UpdateTalk",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTalk",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_talk(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_talk::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "BuildAttribute",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "OnSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_select(this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player_god_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "GetPlayerGodLevel",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "GetPlayerGodLevel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player_god_level(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        unit_l: crate::app::unit::Unit,
-        unit_r: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_get_player_god_level::get_method_info().method_ptr);
-        inner(this, unit_l, unit_r, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "GetUnitL",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitL",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_l(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit_l::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "GetUnitR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "GetUnitR",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit_r(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit_r::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::class(),
-                "GetGodUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::ClassIdentity>::NAME,
-                        "GetGodUnit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_god_unit(
-        this: MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godunit::GodUnit {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
-            ::core::mem::transmute(__lookup_get_god_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-pub trait IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods: IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
-    #[doc = "`get_IsSelected()` overload"]
-    fn get_is_selected(self) -> bool {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_selected(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsSelected(bool)` overload"]
-    fn set_is_selected(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::set_is_selected(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsTalk()` overload"]
-    fn get_is_talk(self) -> bool {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_talk(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsTalk(bool)` overload"]
-    fn set_is_talk(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::set_is_talk(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Cursor()` overload"]
-    fn get_cursor(self) -> crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_cursor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsBlank()` overload"]
-    fn get_is_blank(self) -> bool {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_blank(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsAPlus()` overload"]
-    fn get_is_a_plus(self) -> bool {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_is_a_plus(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSortOrder()` overload"]
-    fn get_sort_order(self) -> i32 {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_sort_order(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCommandColor()` overload"]
-    fn get_command_color(self) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_command_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetOpenCount()` overload"]
-    fn get_open_count(self) -> i32 {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_open_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn ctor(self, unit_l: impl ::core::convert::Into<crate::app::unit::Unit>, unit_r: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(unit_l),
-                ::core::convert::Into::into(unit_r),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
-    fn ctor_2(
-        self,
-        unit_l: impl ::core::convert::Into<crate::app::unit::Unit>,
-        god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(unit_l),
-                ::core::convert::Into::into(god_unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateTalk()` overload"]
-    fn update_talk(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::update_talk(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPlayerGodLevel(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn get_player_god_level(
-        self,
-        unit_l: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_r: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_player_god_level(
-                __receiver,
-                ::core::convert::Into::into(unit_l),
-                ::core::convert::Into::into(unit_r),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnitL()` overload"]
-    fn get_unit_l(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_unit_l(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnitR()` overload"]
-    fn get_unit_r(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_unit_r(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGodUnit()` overload"]
-    fn get_god_unit(self) -> crate::app::godunit::GodUnit {
-        unsafe {
-            let __receiver = <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::get_god_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl<__T: IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem> IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods for __T {}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit_l: crate::app::unit::Unit, unit_r: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods>::ctor(this, unit_l, unit_r);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]
-    pub fn new_2(unit_l: crate::app::unit::Unit, god_unit: crate::app::godunit::GodUnit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods>::ctor_2(this, unit_l, god_unit);
-        this
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomRelianceSubSelect_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        select_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, select_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_menu_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "CreateMenuList",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "CreateMenuList",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_menu_list(
-        select_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
-            ::core::mem::transmute(__lookup_create_menu_list::get_method_info().method_ptr);
-        inner(select_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
-                <crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MyRoomRelianceSubSelect,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomRelianceSubSelect,
-            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-            crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rebuild_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "RebuildMenu",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "RebuildMenu",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn rebuild_menu(
-        this: MyRoomRelianceSubSelect,
-        select_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_rebuild_menu::get_method_info().method_ptr);
-        inner(this, select_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_talk_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "UpdateTalkState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "UpdateTalkState",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn update_talk_state(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_update_talk_state::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_after_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "AfterBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "AfterBuild",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn after_build(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "KeyUp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "KeyUp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_up(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_up::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "KeyDown",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "KeyDown",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_down(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_down::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "KeyLeft",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "KeyLeft",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_left(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_left::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_key_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "KeyRight",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "KeyRight",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn key_right(this: MyRoomRelianceSubSelect, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_key_right::get_method_info().method_ptr);
-        inner(this, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_custom_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "CustomCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "CustomCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn custom_call(
-        this: MyRoomRelianceSubSelect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_custom_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MyRoomRelianceSubSelect as ::unity2::ClassIdentity>::NAME,
-                        "OnDispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn on_dispose(this: MyRoomRelianceSubSelect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl MyRoomRelianceSubSelect {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        select_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            __MyRoomRelianceSubSelect_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(select_unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CreateMenuList(crate::app::unit::Unit)` overload"]
-    pub fn create_menu_list(
-        select_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
-        unsafe { __MyRoomRelianceSubSelect_unity2_raw::create_menu_list(::core::convert::Into::into(select_unit), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-pub trait IMyRoomRelianceSubSelectMethods: IMyRoomRelianceSubSelect {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
-        menu_content: impl ::core::convert::Into<crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RebuildMenu(crate::app::unit::Unit)` overload"]
-    fn rebuild_menu(self, select_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::rebuild_menu(__receiver, ::core::convert::Into::into(select_unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTalkState()` overload"]
-    fn update_talk_state(self) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::update_talk_state(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AfterBuild()` overload"]
-    fn after_build(self) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::after_build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyUp(bool)` overload"]
-    fn key_up(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyDown(bool)` overload"]
-    fn key_down(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyLeft(bool)` overload"]
-    fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KeyRight(bool)` overload"]
-    fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CustomCall()` overload"]
-    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomRelianceSubSelect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MyRoomRelianceSubSelect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl<__T: IMyRoomRelianceSubSelect> IMyRoomRelianceSubSelectMethods for __T {}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl MyRoomRelianceSubSelect {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSubSelect),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomRelianceSubSelectMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

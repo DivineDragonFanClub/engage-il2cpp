@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Events", name = "UnityEvent")]
     #[parent(crate::unity_engine::events::unityeventbase::UnityEventBase)]
     pub struct UnityEvent {
+        #[offset(40)]
         #[rename(name = "m_InvokeArray")]
         pub m_invoke_array: ::unity2::Array<crate::system::object::Object>,
     }

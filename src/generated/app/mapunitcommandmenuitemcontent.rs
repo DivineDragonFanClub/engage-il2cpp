@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapUnitCommandMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct MapUnitCommandMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Title")]
         pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_Help")]
         pub m_help: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

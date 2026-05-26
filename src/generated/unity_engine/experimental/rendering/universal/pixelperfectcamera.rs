@@ -19,26 +19,37 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "PixelPerfectCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct PixelPerfectCamera {
+        #[offset(24)]
         #[rename(name = "m_AssetsPPU")]
         pub m_assets_ppu: i32,
+        #[offset(28)]
         #[rename(name = "m_RefResolutionX")]
         pub m_ref_resolution_x: i32,
+        #[offset(32)]
         #[rename(name = "m_RefResolutionY")]
         pub m_ref_resolution_y: i32,
+        #[offset(36)]
         #[rename(name = "m_UpscaleRT")]
         pub m_upscale_rt: bool,
+        #[offset(37)]
         #[rename(name = "m_PixelSnapping")]
         pub m_pixel_snapping: bool,
+        #[offset(38)]
         #[rename(name = "m_CropFrameX")]
         pub m_crop_frame_x: bool,
+        #[offset(39)]
         #[rename(name = "m_CropFrameY")]
         pub m_crop_frame_y: bool,
+        #[offset(40)]
         #[rename(name = "m_StretchFill")]
         pub m_stretch_fill: bool,
+        #[offset(48)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(56)]
         #[rename(name = "m_Internal")]
         pub m_internal: crate::unity_engine::experimental::rendering::universal::pixelperfectcamerainternal::PixelPerfectCameraInternal,
+        #[offset(64)]
         #[rename(name = "m_CinemachineCompatibilityMode")]
         pub m_cinemachine_compatibility_mode: bool,
     }

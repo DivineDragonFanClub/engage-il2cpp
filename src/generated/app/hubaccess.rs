@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubAccess")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubAccess {
+        #[offset(24)]
         #[rename(name = "AID")]
         pub aid: ::unity2::Il2CppString,
+        #[offset(96)]
         #[rename(name = "m_accessData")]
         pub m_access_data: crate::app::hubaccessdata::HubAccessData,
     }

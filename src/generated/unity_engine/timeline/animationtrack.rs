@@ -15,6 +15,11 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationtrack/AnimationTrack_AnimationTrackUpgrade.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationTrack.AnimationTrackUpgrade")]
+    #[parent(crate::system::object::Object)]
+    pub struct AnimationTrack_AnimationTrackUpgrade {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationtrack/AnimationTrack.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationTrack")]
     #[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]
@@ -25,55 +30,216 @@ mod __types {
         #[static_field]
         #[rename(name = "k_DefaultRecordableClipName")]
         pub k_default_recordable_clip_name: ::unity2::Il2CppString,
+        #[offset(160)]
         #[rename(name = "m_InfiniteClipPreExtrapolation")]
         pub m_infinite_clip_pre_extrapolation: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        #[offset(164)]
         #[rename(name = "m_InfiniteClipPostExtrapolation")]
         pub m_infinite_clip_post_extrapolation: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        #[offset(168)]
         #[rename(name = "m_InfiniteClipOffsetPosition")]
         pub m_infinite_clip_offset_position: crate::unity_engine::vector3::Vector3,
+        #[offset(180)]
         #[rename(name = "m_InfiniteClipOffsetEulerAngles")]
         pub m_infinite_clip_offset_euler_angles: crate::unity_engine::vector3::Vector3,
+        #[offset(192)]
         #[rename(name = "m_InfiniteClipTimeOffset")]
         pub m_infinite_clip_time_offset: f64,
+        #[offset(200)]
         #[rename(name = "m_InfiniteClipRemoveOffset")]
         pub m_infinite_clip_remove_offset: bool,
+        #[offset(201)]
         #[rename(name = "m_InfiniteClipApplyFootIK")]
         pub m_infinite_clip_apply_foot_ik: bool,
+        #[offset(204)]
         #[rename(name = "mInfiniteClipLoop")]
         pub m_infinite_clip_loop: crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode,
+        #[offset(208)]
         #[rename(name = "m_MatchTargetFields")]
         pub m_match_target_fields: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
+        #[offset(212)]
         #[rename(name = "m_Position")]
         pub m_position: crate::unity_engine::vector3::Vector3,
+        #[offset(224)]
         #[rename(name = "m_EulerAngles")]
         pub m_euler_angles: crate::unity_engine::vector3::Vector3,
+        #[offset(240)]
         #[rename(name = "m_AvatarMask")]
         pub m_avatar_mask: crate::unity_engine::avatarmask::AvatarMask,
+        #[offset(248)]
         #[rename(name = "m_ApplyAvatarMask")]
         pub m_apply_avatar_mask: bool,
+        #[offset(252)]
         #[rename(name = "m_TrackOffset")]
         pub m_track_offset: crate::unity_engine::timeline::trackoffset::TrackOffset,
+        #[offset(256)]
         #[rename(name = "m_InfiniteClip")]
         pub m_infinite_clip: crate::unity_engine::animationclip::AnimationClip,
         #[static_field]
         #[rename(name = "s_CachedQueue")]
         pub s_cached_queue: crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::transform::Transform>,
+        #[offset(264)]
         #[rename(name = "m_OpenClipOffsetRotation")]
         pub m_open_clip_offset_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(280)]
         #[rename(name = "m_Rotation")]
         pub m_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(296)]
         #[rename(name = "m_ApplyOffsets")]
         pub m_apply_offsets: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationtrack/AnimationTrack_AnimationTrackUpgrade.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationTrack.AnimationTrackUpgrade")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimationTrack_AnimationTrackUpgrade {}
 }
 
 #[cfg(feature = "unity_engine-timeline-animationtrack-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationTrack_AnimationTrackUpgrade_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_rotations_to_euler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::animationtrack::AnimationTrack as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
+                "ConvertRotationsToEuler",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
+                        "ConvertRotationsToEuler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn convert_rotations_to_euler(
+        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::timeline::animationtrack::AnimationTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_convert_rotations_to_euler::get_method_info().method_ptr);
+        inner(track, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_root_motion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::animationtrack::AnimationTrack as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
+                "ConvertRootMotion",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
+                        "ConvertRootMotion",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn convert_root_motion(
+        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::timeline::animationtrack::AnimationTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_convert_root_motion::get_method_info().method_ptr);
+        inner(track, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_infinite_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::animationtrack::AnimationTrack as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
+                "ConvertInfiniteTrack",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
+                        "ConvertInfiniteTrack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn convert_infinite_track(
+        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::timeline::animationtrack::AnimationTrack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_convert_infinite_track::get_method_info().method_ptr);
+        inner(track, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+impl AnimationTrack_AnimationTrackUpgrade {
+    #[doc = "`ConvertRotationsToEuler(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    pub fn convert_rotations_to_euler(track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>) -> () {
+        unsafe {
+            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_rotations_to_euler(
+                ::core::convert::Into::into(track),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`ConvertRootMotion(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    pub fn convert_root_motion(track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>) -> () {
+        unsafe {
+            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_root_motion(::core::convert::Into::into(track), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`ConvertInfiniteTrack(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    pub fn convert_infinite_track(track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>) -> () {
+        unsafe {
+            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_infinite_track(
+                ::core::convert::Into::into(track),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-timeline-animationtrack")]
 #[doc(hidden)]
@@ -4038,154 +4204,6 @@ impl AnimationTrack {
         });
         <Self as IAnimationTrackMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-animationtrack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimationTrack_AnimationTrackUpgrade_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_convert_rotations_to_euler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::timeline::animationtrack::AnimationTrack as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
-                "ConvertRotationsToEuler",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
-                        "ConvertRotationsToEuler",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn convert_rotations_to_euler(
-        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::timeline::animationtrack::AnimationTrack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_convert_rotations_to_euler::get_method_info().method_ptr);
-        inner(track, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_convert_root_motion {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::timeline::animationtrack::AnimationTrack as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
-                "ConvertRootMotion",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
-                        "ConvertRootMotion",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn convert_root_motion(
-        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::timeline::animationtrack::AnimationTrack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_convert_root_motion::get_method_info().method_ptr);
-        inner(track, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_convert_infinite_track {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::timeline::animationtrack::AnimationTrack as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::class(),
-                "ConvertInfiniteTrack",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AnimationTrack_AnimationTrackUpgrade as ::unity2::ClassIdentity>::NAME,
-                        "ConvertInfiniteTrack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn convert_infinite_track(
-        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::timeline::animationtrack::AnimationTrack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_convert_infinite_track::get_method_info().method_ptr);
-        inner(track, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-animationtrack")]
-impl AnimationTrack_AnimationTrackUpgrade {
-    #[doc = "`ConvertRotationsToEuler(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    pub fn convert_rotations_to_euler(track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>) -> () {
-        unsafe {
-            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_rotations_to_euler(
-                ::core::convert::Into::into(track),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`ConvertRootMotion(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    pub fn convert_root_motion(track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>) -> () {
-        unsafe {
-            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_root_motion(::core::convert::Into::into(track), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`ConvertInfiniteTrack(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    pub fn convert_infinite_track(track: impl ::core::convert::Into<crate::unity_engine::timeline::animationtrack::AnimationTrack>) -> () {
-        unsafe {
-            __AnimationTrack_AnimationTrackUpgrade_unity2_raw::convert_infinite_track(
-                ::core::convert::Into::into(track),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

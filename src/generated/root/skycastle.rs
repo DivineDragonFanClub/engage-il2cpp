@@ -24,22 +24,31 @@ mod __types {
     #[::unity2::class(namespace = "", name = "SkyCastle")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: skycastle :: SkyCastle >)]
     pub struct SkyCastle {
+        #[offset(32)]
         #[rename(name = "m_LeftSkyCastleObject")]
         pub m_left_sky_castle_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_RightSkyCastleObject")]
         pub m_right_sky_castle_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_LeftSkyCastleAnimator")]
         pub m_left_sky_castle_animator: crate::unity_engine::animator::Animator,
+        #[offset(56)]
         #[rename(name = "m_RightSkyCastleAnimator")]
         pub m_right_sky_castle_animator: crate::unity_engine::animator::Animator,
+        #[offset(64)]
         #[rename(name = "m_SkyCastleEffect")]
         pub m_sky_castle_effect: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(72)]
         #[rename(name = "m_Now")]
         pub m_now: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(80)]
         #[rename(name = "m_Old")]
         pub m_old: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(88)]
         #[rename(name = "m_Vec")]
         pub m_vec: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(96)]
         #[rename(name = "m_IsUpdate")]
         pub m_is_update: ::unity2::Array<bool>,
     }

@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapCamera.InterpolatorShake")]
     #[parent(crate::system::object::Object)]
     pub struct MapCamera_InterpolatorShake {
+        #[offset(16)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(20)]
         #[rename(name = "m_Magnitude")]
         pub m_magnitude: f32,
+        #[offset(24)]
         #[rename(name = "m_Offset")]
         pub m_offset: crate::unity_engine::vector3::Vector3,
     }
@@ -26,16 +29,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapCamera")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcamera :: MapCamera >)]
     pub struct MapCamera {
+        #[offset(32)]
         #[rename(name = "m_Position")]
         pub m_position: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(40)]
         #[rename(name = "m_Rotation")]
         pub m_rotation: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(48)]
         #[rename(name = "m_Distance")]
         pub m_distance: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(56)]
         #[rename(name = "m_EffectShake")]
         pub m_effect_shake: crate::app::mapcamera::MapCamera_InterpolatorShake,
+        #[offset(64)]
         #[rename(name = "m_ActionShake")]
         pub m_action_shake: crate::app::mapcamera::MapCamera_InterpolatorShake,
+        #[offset(72)]
         #[rename(name = "m_Fov")]
         pub m_fov: f32,
     }

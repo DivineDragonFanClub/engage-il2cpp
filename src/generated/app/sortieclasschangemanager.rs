@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieClassChangeManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieclasschangemanager :: SortieClassChangeManager >)]
     pub struct SortieClassChangeManager {
+        #[offset(32)]
         #[rename(name = "m_jobData")]
         pub m_job_data: crate::app::classchange::ClassChange_ChangeJobData,
     }

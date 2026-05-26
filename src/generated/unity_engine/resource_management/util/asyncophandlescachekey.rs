@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "AsyncOpHandlesCacheKey")]
     #[parent(crate::system::object::Object)]
     pub struct AsyncOpHandlesCacheKey {
+        #[offset(16)]
         #[rename(name = "m_Handles")]
         pub m_handles: crate::system::collections::generic::hashset_1::HashSet_1<
             crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,

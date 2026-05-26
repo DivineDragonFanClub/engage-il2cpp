@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PostProcessManager")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: postprocessmanager :: PostProcessManager >)]
     pub struct PostProcessManager {
+        #[offset(32)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::rendering::volume::Volume,
+        #[offset(40)]
         #[rename(name = "m_Bmap")]
         pub m_bmap: crate::unity_engine::rendering::volume::Volume,
+        #[offset(48)]
         #[rename(name = "m_Combat")]
         pub m_combat: crate::unity_engine::rendering::volume::Volume,
+        #[offset(56)]
         #[rename(name = "BmapCombatChangeTime")]
         pub bmap_combat_change_time: f32,
+        #[offset(64)]
         #[rename(name = "CurveInterpolate")]
         pub curve_interpolate: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(72)]
         #[rename(name = "CurveBlur")]
         pub curve_blur: crate::unity_engine::animationcurve::AnimationCurve,
     }

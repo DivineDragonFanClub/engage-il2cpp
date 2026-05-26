@@ -23,6 +23,7 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxRankingCount")]
         pub max_ranking_count: i32,
+        #[offset(32)]
         #[rename(name = "m_RankingData")]
         pub m_ranking_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
     }

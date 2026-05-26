@@ -16,6 +16,11 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct ClassChange_ChangeJobData {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
+    #[::unity2::class(namespace = "App", name = "ClassChange")]
+    #[parent(crate::system::object::Object)]
+    pub struct ClassChange {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,11 +62,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
-    #[::unity2::class(namespace = "App", name = "ClassChange")]
-    #[parent(crate::system::object::Object)]
-    pub struct ClassChange {}
 }
 
 #[cfg(feature = "app-classchange-types")]

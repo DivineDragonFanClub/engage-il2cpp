@@ -18,16 +18,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterIdleSMB")]
     #[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]
     pub struct CharacterIdleSMB {
+        #[offset(24)]
         #[rename(name = "initialized")]
         pub initialized: bool,
+        #[offset(25)]
         #[rename(name = "available")]
         pub available: bool,
+        #[offset(32)]
         #[rename(name = "CP")]
         pub cp: crate::combat::character::Character,
+        #[offset(40)]
         #[rename(name = "GS")]
         pub gs: crate::combat::charactergamestatus::CharacterGameStatus,
+        #[offset(48)]
         #[rename(name = "TransitionCurve")]
         pub transition_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(56)]
         #[rename(name = "m_Elapsed")]
         pub m_elapsed: f32,
     }

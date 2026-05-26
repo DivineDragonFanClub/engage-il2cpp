@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectCharacterMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct PhotographSelectCharacterMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_UnitSetter")]
         pub m_unit_setter: crate::app::unitmenuitemsetter::UnitMenuItemSetter,
     }

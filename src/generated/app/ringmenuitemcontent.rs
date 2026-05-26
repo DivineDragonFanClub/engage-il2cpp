@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RingMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_FixedCursorObject")]
         pub m_fixed_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_FixedCursorFrameObject")]
         pub m_fixed_cursor_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_IconImage")]
         pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_EquipImage")]
         pub m_equip_image: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_CountXObject")]
         pub m_count_x_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_CountValueText")]
         pub m_count_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

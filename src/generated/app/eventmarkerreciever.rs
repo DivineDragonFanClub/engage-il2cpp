@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EventMarkerReciever")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EventMarkerReciever {
+        #[offset(24)]
         #[rename(name = "m_CameraComponent")]
         pub m_camera_component: crate::app::dragonridecamera::DragonRideCamera,
     }

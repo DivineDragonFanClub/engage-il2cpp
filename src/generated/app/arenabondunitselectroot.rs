@@ -22,12 +22,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MenuContent")]
         pub m_menu_content: crate::app::arenabondunitselectmenucontent::ArenaBondUnitSelectMenuContent,
+        #[offset(32)]
         #[rename(name = "m_GodInfo")]
         pub m_god_info: crate::app::godroomgodinfosetter::GodRoomGodInfoSetter,
+        #[offset(40)]
         #[rename(name = "m_Status")]
         pub m_status: crate::app::arenaunitselectstatus::ArenaUnitSelectStatus,
+        #[offset(48)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::arenabondunitselectmenu::ArenaBondUnitSelectMenu_DecideEventHandler,
     }

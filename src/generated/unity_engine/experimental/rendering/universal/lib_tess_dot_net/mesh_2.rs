@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet", name = "Mesh")]
     # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: mesh_2 :: Mesh_2 >)]
     pub struct Mesh_2 {
+        #[offset(16)]
         #[rename(name = "_vHead")]
         pub v_head: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        #[offset(24)]
         #[rename(name = "_fHead")]
         pub f_head: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        #[offset(32)]
         #[rename(name = "_eHead")]
         pub e_head: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        #[offset(40)]
         #[rename(name = "_eHeadSym")]
         pub e_head_sym: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
     }

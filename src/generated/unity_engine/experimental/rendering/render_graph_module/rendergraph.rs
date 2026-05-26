@@ -20,6 +20,94 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RenderGraph_OnGraphRegisteredDelegate {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraph")]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderGraph {
+        #[static_field]
+        #[rename(name = "kMaxMRTCount")]
+        pub k_max_mrt_count: i32,
+        #[offset(16)]
+        #[rename(name = "m_Resources")]
+        pub m_resources: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourceregistry::RenderGraphResourceRegistry,
+        #[offset(24)]
+        #[rename(name = "m_RenderGraphPool")]
+        pub m_render_graph_pool: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,
+        #[offset(32)]
+        #[rename(name = "m_RenderPasses")]
+        pub m_render_passes: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass,
+        >,
+        #[offset(40)]
+        #[rename(name = "m_RendererLists")]
+        pub m_renderer_lists: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle,
+        >,
+        #[offset(48)]
+        #[rename(name = "m_DebugParameters")]
+        pub m_debug_parameters: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugparams::RenderGraphDebugParams,
+        #[offset(56)]
+        #[rename(name = "m_Logger")]
+        pub m_logger: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger,
+        #[offset(64)]
+        #[rename(name = "m_DefaultResources")]
+        pub m_default_resources:
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdefaultresources::RenderGraphDefaultResources,
+        #[offset(72)]
+        #[rename(name = "m_DefaultProfilingSamplers")]
+        pub m_default_profiling_samplers:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::unity_engine::rendering::profilingsampler::ProfilingSampler>,
+        #[offset(80)]
+        #[rename(name = "m_ExecutionExceptionWasRaised")]
+        pub m_execution_exception_was_raised: bool,
+        #[offset(88)]
+        #[rename(name = "m_RenderGraphContext")]
+        pub m_render_graph_context: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext,
+        #[offset(96)]
+        #[rename(name = "m_PreviousCommandBuffer")]
+        pub m_previous_command_buffer: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        #[offset(104)]
+        #[rename(name = "m_CurrentImmediatePassIndex")]
+        pub m_current_immediate_pass_index: i32,
+        #[offset(112)]
+        #[rename(name = "m_ImmediateModeResourceList")]
+        pub m_immediate_mode_resource_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
+        #[offset(120)]
+        #[rename(name = "m_CompiledResourcesInfos")]
+        pub m_compiled_resources_infos: ::unity2::Array<
+            crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<
+                crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo,
+            >,
+        >,
+        #[offset(128)]
+        #[rename(name = "m_CompiledPassInfos")]
+        pub m_compiled_pass_infos: crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo,
+        >,
+        #[offset(136)]
+        #[rename(name = "m_CullingStack")]
+        pub m_culling_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
+        #[offset(144)]
+        #[rename(name = "m_ExecutionCount")]
+        pub m_execution_count: i32,
+        #[offset(152)]
+        #[rename(name = "m_RenderGraphDebugData")]
+        pub m_render_graph_debug_data: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData,
+        #[static_field]
+        #[rename(name = "s_RegisteredGraphs")]
+        pub s_registered_graphs: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,
+        >,
+        #[static_field]
+        #[rename(name = "onGraphRegistered")]
+        pub on_graph_registered:
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate,
+        #[static_field]
+        #[rename(name = "onGraphUnregistered")]
+        pub on_graph_unregistered:
+            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_ProfilingScopePassData.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
@@ -27,6 +115,7 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraph_ProfilingScopePassData {
+        #[offset(16)]
         #[rename(name = "sampler")]
         pub sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
@@ -56,76 +145,6 @@ mod __types {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraph")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraph {
-        #[static_field]
-        #[rename(name = "kMaxMRTCount")]
-        pub k_max_mrt_count: i32,
-        #[rename(name = "m_Resources")]
-        pub m_resources: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourceregistry::RenderGraphResourceRegistry,
-        #[rename(name = "m_RenderGraphPool")]
-        pub m_render_graph_pool: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,
-        #[rename(name = "m_RenderPasses")]
-        pub m_render_passes: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass,
-        >,
-        #[rename(name = "m_RendererLists")]
-        pub m_renderer_lists: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle,
-        >,
-        #[rename(name = "m_DebugParameters")]
-        pub m_debug_parameters: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugparams::RenderGraphDebugParams,
-        #[rename(name = "m_Logger")]
-        pub m_logger: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger,
-        #[rename(name = "m_DefaultResources")]
-        pub m_default_resources:
-            crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdefaultresources::RenderGraphDefaultResources,
-        #[rename(name = "m_DefaultProfilingSamplers")]
-        pub m_default_profiling_samplers:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::unity_engine::rendering::profilingsampler::ProfilingSampler>,
-        #[rename(name = "m_ExecutionExceptionWasRaised")]
-        pub m_execution_exception_was_raised: bool,
-        #[rename(name = "m_RenderGraphContext")]
-        pub m_render_graph_context: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext,
-        #[rename(name = "m_PreviousCommandBuffer")]
-        pub m_previous_command_buffer: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        #[rename(name = "m_CurrentImmediatePassIndex")]
-        pub m_current_immediate_pass_index: i32,
-        #[rename(name = "m_ImmediateModeResourceList")]
-        pub m_immediate_mode_resource_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
-        #[rename(name = "m_CompiledResourcesInfos")]
-        pub m_compiled_resources_infos: ::unity2::Array<
-            crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<
-                crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo,
-            >,
-        >,
-        #[rename(name = "m_CompiledPassInfos")]
-        pub m_compiled_pass_infos: crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<
-            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo,
-        >,
-        #[rename(name = "m_CullingStack")]
-        pub m_culling_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
-        #[rename(name = "m_ExecutionCount")]
-        pub m_execution_count: i32,
-        #[rename(name = "m_RenderGraphDebugData")]
-        pub m_render_graph_debug_data: crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData,
-        #[static_field]
-        #[rename(name = "s_RegisteredGraphs")]
-        pub s_registered_graphs: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,
-        >,
-        #[static_field]
-        #[rename(name = "onGraphRegistered")]
-        pub on_graph_registered:
-            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate,
-        #[static_field]
-        #[rename(name = "onGraphUnregistered")]
-        pub on_graph_unregistered:
-            crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_CompiledPassInfo.md"))]
@@ -305,126 +324,6 @@ impl RenderGraph_OnGraphRegisteredDelegate {
         });
         <Self as IRenderGraph_OnGraphRegisteredDelegateMethods>::ctor(this, object, method);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderGraph_ProfilingScopePassData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraph_ProfilingScopePassData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraph_ProfilingScopePassData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RenderGraph_ProfilingScopePassData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraph_ProfilingScopePassData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-pub trait IRenderGraph_ProfilingScopePassDataMethods: IRenderGraph_ProfilingScopePassData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RenderGraph_ProfilingScopePassData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RenderGraph_ProfilingScopePassData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl<__T: IRenderGraph_ProfilingScopePassData> IRenderGraph_ProfilingScopePassDataMethods for __T {}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_ProfilingScopePassData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraph_ProfilingScopePassData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderGraph_ProfilingScopePassDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderGraph_CompiledResourceInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderGraph_CompiledResourceInfo as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RenderGraph_CompiledResourceInfo as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: RenderGraph_CompiledResourceInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RenderGraph_CompiledResourceInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
-impl RenderGraph_CompiledResourceInfo {
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __RenderGraph_CompiledResourceInfo_unity2_raw::reset(self, ::core::option::Option::None) }
     }
 }
 
@@ -3640,6 +3539,126 @@ impl RenderGraph {
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RenderGraph), ::core::stringify!(new),));
         <Self as IRenderGraphMethods>::ctor(this, name);
         this
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraph_ProfilingScopePassData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_ProfilingScopePassData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderGraph_ProfilingScopePassData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RenderGraph_ProfilingScopePassData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RenderGraph_ProfilingScopePassData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+pub trait IRenderGraph_ProfilingScopePassDataMethods: IRenderGraph_ProfilingScopePassData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RenderGraph_ProfilingScopePassData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RenderGraph_ProfilingScopePassData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl<__T: IRenderGraph_ProfilingScopePassData> IRenderGraph_ProfilingScopePassDataMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl RenderGraph_ProfilingScopePassData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderGraph_ProfilingScopePassData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderGraph_ProfilingScopePassDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderGraph_CompiledResourceInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderGraph_CompiledResourceInfo as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderGraph_CompiledResourceInfo as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: RenderGraph_CompiledResourceInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RenderGraph_CompiledResourceInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
+impl RenderGraph_CompiledResourceInfo {
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe { __RenderGraph_CompiledResourceInfo_unity2_raw::reset(self, ::core::option::Option::None) }
     }
 }
 

@@ -22,32 +22,46 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_WeaponModelObject")]
         pub m_weapon_model_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_GodSymbolFront")]
         pub m_god_symbol_front: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_GodSymbolBack")]
         pub m_god_symbol_back: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_GodSymbolEff")]
         pub m_god_symbol_eff: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_EffLight")]
         pub m_eff_light: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_WeaponIconFrameBefore")]
         pub m_weapon_icon_frame_before: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_WeaponNameTextBefore")]
         pub m_weapon_name_text_before: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_WeaponIconFrameAfter")]
         pub m_weapon_icon_frame_after: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_WeaponNameTextAfter")]
         pub m_weapon_name_text_after: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_RefineShopEngraveDemo")]
         pub m_refine_shop_engrave_demo: crate::app::refineshopengravedemo::RefineShopEngraveDemo,
+        #[offset(104)]
         #[rename(name = "m_ShopWeaponModelRenderer")]
         pub m_shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        #[offset(112)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(120)]
         #[rename(name = "m_UnitItem")]
         pub m_unit_item: crate::app::unititem::UnitItem,
+        #[offset(128)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
     }

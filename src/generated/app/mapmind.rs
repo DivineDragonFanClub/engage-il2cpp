@@ -20,28 +20,17 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_CommandStack.md"))]
-    #[::unity2::class(namespace = "App", name = "MapMind.CommandStack")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapMind_CommandStack {
-        #[rename(name = "m_Statck")]
-        pub m_statck: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record_Value.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapMind_Record_Value {
-        pub unit: crate::app::unit::Unit,
-        pub x: i32,
-        pub z: i32,
-        pub is_changed: bool,
-        pub engage_count: i32,
-        pub unit_item: crate::app::unititem::UnitItem,
+    pub struct MapMind_Record {
+        pub r#type: crate::app::mapmind::MapMind_Type,
+        pub main: crate::app::mapmind::MapMind_Record_Value,
+        pub link: crate::app::mapmind::MapMind_Record_Value,
     }
 
-    impl ::unity2::ClassIdentity for MapMind_Record_Value {
-        const NAME: &'static str = "MapMind.Record.Value";
+    impl ::unity2::ClassIdentity for MapMind_Record {
+        const NAME: &'static str = "MapMind.Record";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -51,16 +40,20 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MapMind_Record_Value {
+    impl ::unity2::IlType for MapMind_Record {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_DoneField.md"))]
-    #[::unity2::class(namespace = "App", name = "MapMind.DoneField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapmind :: MapMind_Done >)]
-    pub struct MapMind_DoneField {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_CommandStack.md"))]
+    #[::unity2::class(namespace = "App", name = "MapMind.CommandStack")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapMind_CommandStack {
+        #[offset(16)]
+        #[rename(name = "m_Statck")]
+        pub m_statck: crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record>,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Target.md"))]
     #[repr(C)]
@@ -89,6 +82,11 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_DoneField.md"))]
+    #[::unity2::class(namespace = "App", name = "MapMind.DoneField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapmind :: MapMind_Done >)]
+    pub struct MapMind_DoneField {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind.md"))]
     #[::unity2::class(namespace = "App", name = "MapMind")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapmind :: MapMind >)]
@@ -96,88 +94,90 @@ mod __types {
         #[static_field]
         #[rename(name = "RouteMax")]
         pub route_max: i32,
+        #[offset(25)]
         #[rename(name = "m_UnitIndex")]
         pub m_unit_index: u8,
+        #[offset(26)]
         #[rename(name = "m_FirstUnitIndex")]
         pub m_first_unit_index: u8,
+        #[offset(27)]
         #[rename(name = "m_FirstX")]
         pub m_first_x: i8,
+        #[offset(28)]
         #[rename(name = "m_FirstZ")]
         pub m_first_z: i8,
+        #[offset(29)]
         #[rename(name = "m_UnitShowX")]
         pub m_unit_show_x: i8,
+        #[offset(30)]
         #[rename(name = "m_UnitShowZ")]
         pub m_unit_show_z: i8,
+        #[offset(31)]
         #[rename(name = "m_X")]
         pub m_x: i8,
+        #[offset(32)]
         #[rename(name = "m_Z")]
         pub m_z: i8,
+        #[offset(36)]
         #[rename(name = "m_Mind")]
         pub m_mind: crate::app::mapmind::MapMind_Type,
+        #[offset(40)]
         #[rename(name = "m_AttackX")]
         pub m_attack_x: i8,
+        #[offset(41)]
         #[rename(name = "m_AttackZ")]
         pub m_attack_z: i8,
+        #[offset(42)]
         #[rename(name = "m_ItemIndex")]
         pub m_item_index: i8,
+        #[offset(43)]
         #[rename(name = "m_TargetUnitIndex")]
         pub m_target_unit_index: u8,
+        #[offset(44)]
         #[rename(name = "m_TargetX")]
         pub m_target_x: i8,
+        #[offset(45)]
         #[rename(name = "m_TargetZ")]
         pub m_target_z: i8,
+        #[offset(46)]
         #[rename(name = "m_FocusX")]
         pub m_focus_x: i8,
+        #[offset(47)]
         #[rename(name = "m_FocusZ")]
         pub m_focus_z: i8,
+        #[offset(48)]
         #[rename(name = "m_TargetArgument")]
         pub m_target_argument: i16,
+        #[offset(50)]
         #[rename(name = "m_TradeUnitIndex")]
         pub m_trade_unit_index: u8,
+        #[offset(51)]
         #[rename(name = "m_EventUnitIndex")]
         pub m_event_unit_index: u8,
+        #[offset(56)]
         #[rename(name = "m_Done")]
         pub m_done: crate::app::mapmind::MapMind_DoneField,
+        #[offset(64)]
         #[rename(name = "m_MovePower")]
         pub m_move_power: u8,
+        #[offset(66)]
         #[rename(name = "m_TransporterIndex")]
         pub m_transporter_index: i16,
+        #[offset(72)]
         #[rename(name = "m_CommandSkill")]
         pub m_command_skill: crate::app::skilldata::SkillData,
+        #[offset(80)]
         #[rename(name = "m_SpecifiedItem")]
         pub m_specified_item: crate::app::itemdata::ItemData,
+        #[offset(88)]
         #[rename(name = "m_AIEngageRewarpX")]
         pub m_ai_engage_rewarp_x: i8,
+        #[offset(89)]
         #[rename(name = "m_AIEngageRewarpZ")]
         pub m_ai_engage_rewarp_z: i8,
+        #[offset(96)]
         #[rename(name = "m_Routes")]
         pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapMind_Record {
-        pub r#type: crate::app::mapmind::MapMind_Type,
-        pub main: crate::app::mapmind::MapMind_Record_Value,
-        pub link: crate::app::mapmind::MapMind_Record_Value,
-    }
-
-    impl ::unity2::ClassIdentity for MapMind_Record {
-        const NAME: &'static str = "MapMind.Record";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapMind_Record {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Type.md"))]
@@ -484,10 +484,153 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapMind.MultiTargets")]
     # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapmind :: MapMind_Target >)]
     pub struct MapMind_MultiTargets {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record_Value.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapMind_Record_Value {
+        pub unit: crate::app::unit::Unit,
+        pub x: i32,
+        pub z: i32,
+        pub is_changed: bool,
+        pub engage_count: i32,
+        pub unit_item: crate::app::unititem::UnitItem,
+    }
+
+    impl ::unity2::ClassIdentity for MapMind_Record_Value {
+        const NAME: &'static str = "MapMind.Record.Value";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapMind_Record_Value {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-mapmind-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapmind")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapMind_Record_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::mapmind::MapMind_Type as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapMind_Record as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapMind_Record as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapMind_Record,
+        r#type: crate::app::mapmind::MapMind_Type,
+        unit: crate::app::unit::Unit,
+        link: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapMind_Record,
+            crate::app::mapmind::MapMind_Type,
+            crate::app::unit::Unit,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, r#type, unit, link, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cancel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapMind_Record as ::unity2::ClassIdentity>::class(),
+                "Cancel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapMind_Record as ::unity2::ClassIdentity>::NAME,
+                        "Cancel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cancel(this: MapMind_Record, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapMind_Record, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cancel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+impl MapMind_Record {
+    #[doc = "`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    pub fn ctor(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::mapmind::MapMind_Type>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        link: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __MapMind_Record_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(link),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Cancel()` overload"]
+    pub fn cancel(self) -> () {
+        unsafe { __MapMind_Record_unity2_raw::cancel(self, ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-mapmind")]
 #[doc(hidden)]
@@ -893,202 +1036,6 @@ impl MapMind_CommandStack {
 #[cfg(feature = "app-mapmind")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapMind_Record_Value_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapMind_Record_Value as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapMind_Record_Value as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapMind_Record_Value, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapMind_Record_Value, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapMind_Record_Value as ::unity2::ClassIdentity>::class(),
-                "Cancel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapMind_Record_Value as ::unity2::ClassIdentity>::NAME,
-                        "Cancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cancel(this: MapMind_Record_Value, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapMind_Record_Value, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cancel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-impl MapMind_Record_Value {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    pub fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __MapMind_Record_Value_unity2_raw::ctor(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Cancel()` overload"]
-    pub fn cancel(self) -> () {
-        unsafe { __MapMind_Record_Value_unity2_raw::cancel(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapMind_DoneField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapmind::MapMind_Done as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapMind_DoneField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapMind_DoneField as ::unity2::ClassIdentity>::NAME,
-                        "ToInt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_int(this: MapMind_DoneField, value: crate::app::mapmind::MapMind_Done, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(MapMind_DoneField, crate::app::mapmind::MapMind_Done, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapMind_DoneField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapMind_DoneField as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapMind_DoneField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapMind_DoneField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-pub trait IMapMind_DoneFieldMethods: IMapMind_DoneField {
-    #[doc = "`ToInt(crate::app::mapmind::MapMind_Done)` overload"]
-    fn to_int(self, value: impl ::core::convert::Into<crate::app::mapmind::MapMind_Done>) -> i32 {
-        unsafe {
-            let __receiver = <MapMind_DoneField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapMind_DoneField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapMind_DoneField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapMind_DoneField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-impl<__T: IMapMind_DoneField> IMapMind_DoneFieldMethods for __T {}
-
-#[cfg(feature = "app-mapmind")]
-impl MapMind_DoneField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapMind_DoneField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapMind_DoneFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapMind_Target_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1207,6 +1154,116 @@ impl MapMind_Target {
     #[doc = "`get_Position()` overload"]
     pub fn get_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe { __MapMind_Target_unity2_raw::get_position(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapMind_DoneField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapmind::MapMind_Done as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapMind_DoneField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapMind_DoneField as ::unity2::ClassIdentity>::NAME,
+                        "ToInt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_int(this: MapMind_DoneField, value: crate::app::mapmind::MapMind_Done, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MapMind_DoneField, crate::app::mapmind::MapMind_Done, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapMind_DoneField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapMind_DoneField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapMind_DoneField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapMind_DoneField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+pub trait IMapMind_DoneFieldMethods: IMapMind_DoneField {
+    #[doc = "`ToInt(crate::app::mapmind::MapMind_Done)` overload"]
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::mapmind::MapMind_Done>) -> i32 {
+        unsafe {
+            let __receiver = <MapMind_DoneField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapMind_DoneField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapMind_DoneField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapMind_DoneField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+impl<__T: IMapMind_DoneField> IMapMind_DoneFieldMethods for __T {}
+
+#[cfg(feature = "app-mapmind")]
+impl MapMind_DoneField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapMind_DoneField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapMind_DoneFieldMethods>::ctor(this);
+        this
     }
 }
 
@@ -4193,120 +4250,6 @@ impl MapMind {
 #[cfg(feature = "app-mapmind")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapMind_Record_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapmind::MapMind_Type as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapMind_Record as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapMind_Record as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapMind_Record,
-        r#type: crate::app::mapmind::MapMind_Type,
-        unit: crate::app::unit::Unit,
-        link: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapMind_Record,
-            crate::app::mapmind::MapMind_Type,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, r#type, unit, link, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cancel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapMind_Record as ::unity2::ClassIdentity>::class(),
-                "Cancel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapMind_Record as ::unity2::ClassIdentity>::NAME,
-                        "Cancel",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cancel(this: MapMind_Record, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapMind_Record, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_cancel::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-impl MapMind_Record {
-    #[doc = "`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    pub fn ctor(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::mapmind::MapMind_Type>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        link: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            __MapMind_Record_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(link),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Cancel()` overload"]
-    pub fn cancel(self) -> () {
-        unsafe { __MapMind_Record_unity2_raw::cancel(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapMind_MultiTargets_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -4990,6 +4933,92 @@ impl MapMind_MultiTargets {
         });
         <Self as IMapMind_MultiTargetsMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapMind_Record_Value_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapMind_Record_Value as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapMind_Record_Value as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapMind_Record_Value, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapMind_Record_Value, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cancel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapMind_Record_Value as ::unity2::ClassIdentity>::class(),
+                "Cancel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapMind_Record_Value as ::unity2::ClassIdentity>::NAME,
+                        "Cancel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cancel(this: MapMind_Record_Value, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapMind_Record_Value, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cancel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+impl MapMind_Record_Value {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    pub fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __MapMind_Record_Value_unity2_raw::ctor(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Cancel()` overload"]
+    pub fn cancel(self) -> () {
+        unsafe { __MapMind_Record_Value_unity2_raw::cancel(self, ::core::option::Option::None) }
     }
 }
 

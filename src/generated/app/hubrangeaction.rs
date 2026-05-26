@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubRangeAction")]
     #[parent(crate::system::object::Object)]
     pub struct HubRangeAction {
+        #[offset(36)]
         #[rename(name = "m_time")]
         pub m_time: f32,
+        #[offset(40)]
         #[rename(name = "m_triggerIn")]
         pub m_trigger_in: bool,
+        #[offset(41)]
         #[rename(name = "m_triggerOut")]
         pub m_trigger_out: bool,
+        #[offset(48)]
         #[rename(name = "m_funcInRange")]
         pub m_func_in_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
+        #[offset(56)]
         #[rename(name = "m_funcOutRange")]
         pub m_func_out_range: crate::system::action_1::Action_1<crate::app::hubunitcontroller::HubUnitController>,
     }

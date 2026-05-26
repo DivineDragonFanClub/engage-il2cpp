@@ -10,6 +10,18 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]
+    #[::unity2::class(namespace = "App", name = "AIInterruptAttack.CandidateList")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIInterruptAttack_CandidateList {
+        #[offset(16)]
+        #[rename(name = "m_Pool")]
+        pub m_pool: crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate>,
+        #[offset(24)]
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiinterruptattack/AIInterruptAttack_AttackScoreResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -45,40 +57,58 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxCandidate")]
         pub max_candidate: i32,
+        #[offset(16)]
         #[rename(name = "m_Original")]
         pub m_original: crate::app::unit::Unit,
+        #[offset(24)]
         #[rename(name = "m_OriginalMoveX")]
         pub m_original_move_x: i32,
+        #[offset(28)]
         #[rename(name = "m_OriginalMoveZ")]
         pub m_original_move_z: i32,
+        #[offset(32)]
         #[rename(name = "m_OriginalAttackX")]
         pub m_original_attack_x: i32,
+        #[offset(36)]
         #[rename(name = "m_OriginalAttackZ")]
         pub m_original_attack_z: i32,
+        #[offset(40)]
         #[rename(name = "m_OriginalItemIndex")]
         pub m_original_item_index: i32,
+        #[offset(44)]
         #[rename(name = "m_OriginalBulletPattern")]
         pub m_original_bullet_pattern: i32,
+        #[offset(48)]
         #[rename(name = "m_Target")]
         pub m_target: crate::app::unit::Unit,
+        #[offset(56)]
         #[rename(name = "m_TargetBaseX")]
         pub m_target_base_x: i32,
+        #[offset(60)]
         #[rename(name = "m_TargetBaseZ")]
         pub m_target_base_z: i32,
+        #[offset(64)]
         #[rename(name = "m_TargetX")]
         pub m_target_x: i32,
+        #[offset(68)]
         #[rename(name = "m_TargetZ")]
         pub m_target_z: i32,
+        #[offset(72)]
         #[rename(name = "m_Candidates")]
         pub m_candidates: crate::app::aiinterruptattack::AIInterruptAttack_CandidateList,
+        #[offset(80)]
         #[rename(name = "m_AttackCount")]
         pub m_attack_count: i32,
+        #[offset(84)]
         #[rename(name = "m_MaxAttackCount")]
         pub m_max_attack_count: i32,
+        #[offset(88)]
         #[rename(name = "m_IsDecidedAttacker")]
         pub m_is_decided_attacker: bool,
+        #[offset(96)]
         #[rename(name = "m_BattleSimulator")]
         pub m_battle_simulator: crate::app::aibattlesimulator::AIBattleSimulator,
+        #[offset(104)]
         #[rename(name = "m_ASResult")]
         pub m_as_result: crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,
     }
@@ -87,20 +117,405 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AIInterruptAttack.Candidate")]
     #[parent(crate::system::object::Object)]
     pub struct AIInterruptAttack_Candidate {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]
-    #[::unity2::class(namespace = "App", name = "AIInterruptAttack.CandidateList")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIInterruptAttack_CandidateList {
-        #[rename(name = "m_Pool")]
-        pub m_pool: crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate>,
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate>,
-    }
 }
 
 #[cfg(feature = "app-aiinterruptattack-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-aiinterruptattack")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIInterruptAttack_CandidateList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "Add",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        this: AIInterruptAttack_CandidateList,
+        unit: crate::app::unit::Unit,
+        is_think_break: bool,
+        is_think_chain: bool,
+        dist: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, crate::app::unit::Unit, bool, bool, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, unit, is_think_break, is_think_chain, dist, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "Sort",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "Sort",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn sort(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sort::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_attacker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "HasAttacker",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "HasAttacker",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn has_attacker(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_has_attacker::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attacker {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "GetAttacker",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "GetAttacker",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attacker(
+        this: AIInterruptAttack_CandidateList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        let inner: extern "C" fn(
+            AIInterruptAttack_CandidateList,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(__lookup_get_attacker::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item(
+        this: AIInterruptAttack_CandidateList,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        let inner: extern "C" fn(
+            AIInterruptAttack_CandidateList,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+pub trait IAIInterruptAttack_CandidateListMethods: IAIInterruptAttack_CandidateList {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]
+    fn add(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        is_think_break: impl ::core::convert::Into<bool>,
+        is_think_chain: impl ::core::convert::Into<bool>,
+        dist: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(is_think_break),
+                ::core::convert::Into::into(is_think_chain),
+                ::core::convert::Into::into(dist),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Sort()` overload"]
+    fn sort(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::sort(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HasAttacker()` overload"]
+    fn has_attacker(self) -> bool {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::has_attacker(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetAttacker()` overload"]
+    fn get_attacker(self) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::get_attacker(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Item(i32)` overload"]
+    fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
+        unsafe {
+            let __receiver =
+                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIInterruptAttack_CandidateList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+impl<__T: IAIInterruptAttack_CandidateList> IAIInterruptAttack_CandidateListMethods for __T {}
+
+#[cfg(feature = "app-aiinterruptattack")]
+impl AIInterruptAttack_CandidateList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIInterruptAttack_CandidateList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIInterruptAttack_CandidateListMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-aiinterruptattack")]
 #[doc(hidden)]
@@ -2750,401 +3165,6 @@ impl AIInterruptAttack_Candidate {
             )
         });
         <Self as IAIInterruptAttack_CandidateMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIInterruptAttack_CandidateList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "Add",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: AIInterruptAttack_CandidateList,
-        unit: crate::app::unit::Unit,
-        is_think_break: bool,
-        is_think_chain: bool,
-        dist: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, crate::app::unit::Unit, bool, bool, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, unit, is_think_break, is_think_chain, dist, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sort {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "Sort",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        "Sort",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn sort(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_sort::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_attacker {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "HasAttacker",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        "HasAttacker",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn has_attacker(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_has_attacker::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attacker {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "GetAttacker",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        "GetAttacker",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attacker(
-        this: AIInterruptAttack_CandidateList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        let inner: extern "C" fn(
-            AIInterruptAttack_CandidateList,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(__lookup_get_attacker::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: AIInterruptAttack_CandidateList, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIInterruptAttack_CandidateList, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIInterruptAttack_CandidateList as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(
-        this: AIInterruptAttack_CandidateList,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        let inner: extern "C" fn(
-            AIInterruptAttack_CandidateList,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate = ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-pub trait IAIInterruptAttack_CandidateListMethods: IAIInterruptAttack_CandidateList {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]
-    fn add(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        is_think_break: impl ::core::convert::Into<bool>,
-        is_think_chain: impl ::core::convert::Into<bool>,
-        dist: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(is_think_break),
-                ::core::convert::Into::into(is_think_chain),
-                ::core::convert::Into::into(dist),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Sort()` overload"]
-    fn sort(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::sort(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`HasAttacker()` overload"]
-    fn has_attacker(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::has_attacker(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetAttacker()` overload"]
-    fn get_attacker(self) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::get_attacker(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::get_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Item(i32)` overload"]
-    fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate {
-        unsafe {
-            let __receiver =
-                <AIInterruptAttack_CandidateList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIInterruptAttack_CandidateList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-impl<__T: IAIInterruptAttack_CandidateList> IAIInterruptAttack_CandidateListMethods for __T {}
-
-#[cfg(feature = "app-aiinterruptattack")]
-impl AIInterruptAttack_CandidateList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIInterruptAttack_CandidateList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIInterruptAttack_CandidateListMethods>::ctor(this);
         this
     }
 }

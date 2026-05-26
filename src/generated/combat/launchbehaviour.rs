@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "LaunchBehaviour")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct LaunchBehaviour {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
     }

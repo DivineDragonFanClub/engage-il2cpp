@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "NoInterpMaxFloatParameter")]
     # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < f32 >)]
     pub struct NoInterpMaxFloatParameter {
+        #[offset(24)]
         #[rename(name = "max")]
         pub max: f32,
     }

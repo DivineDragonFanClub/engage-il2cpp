@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCleaningGaugeController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingCleaningGaugeController {
+        #[offset(24)]
         #[rename(name = "GaugeObject")]
         pub gauge_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "ConditionIcon")]
         pub condition_icon_field: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "DirtyTextureCurve")]
         pub dirty_texture_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(56)]
         #[rename(name = "MaxGaugeWidth")]
         pub max_gauge_width: f32,
+        #[offset(64)]
         #[rename(name = "m_InterpolatorWidth")]
         pub m_interpolator_width: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(72)]
         #[rename(name = "m_ConditionIcon")]
         pub m_condition_icon: crate::app::ringcleaningconditionicon::RingCleaningConditionIcon,
     }

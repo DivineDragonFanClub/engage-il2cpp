@@ -11,24 +11,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CharacterIdSet")]
     #[parent(crate::system::object::Object)]
     pub struct CharacterIdSet {
+        #[offset(16)]
         #[rename(name = "Pid")]
         pub pid: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "Jid")]
         pub jid: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "Sid")]
         pub sid: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "Iid")]
         pub iid: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "Position")]
         pub position: ::unity2::Array<i32>,
+        #[offset(56)]
         #[rename(name = "Lv")]
         pub lv: i32,
+        #[offset(60)]
         #[rename(name = "Hp")]
         pub hp: f32,
+        #[offset(64)]
         #[rename(name = "Exp")]
         pub exp: i32,
+        #[offset(68)]
         #[rename(name = "IsEngage")]
         pub is_engage: bool,
+        #[offset(69)]
         #[rename(name = "IsMale")]
         pub is_male: bool,
     }

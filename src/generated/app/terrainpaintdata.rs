@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TerrainPaintData")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct TerrainPaintData {
+        #[offset(24)]
         #[rename(name = "SplitCount")]
         pub split_count_field: i32,
+        #[offset(28)]
         #[rename(name = "TerrainSize")]
         pub terrain_size_field: crate::unity_engine::vector2::Vector2,
+        #[offset(40)]
         #[rename(name = "Name")]
         pub name_field: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(48)]
         #[rename(name = "Index")]
         pub index_field: ::unity2::Array<i32>,
     }

@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxCount")]
         pub max_count: i32,
+        #[offset(16)]
         #[rename(name = "m_Images")]
         pub m_images: ::unity2::Array<u32>,
         #[static_field]

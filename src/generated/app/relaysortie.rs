@@ -14,24 +14,34 @@ mod __types {
         #[static_field]
         #[rename(name = "NearbyFriendsThreshold")]
         pub nearby_friends_threshold: i32,
+        #[offset(16)]
         #[rename(name = "m_MaxTotalCount")]
         pub m_max_total_count: i32,
+        #[offset(20)]
         #[rename(name = "m_ReqMyCount")]
         pub m_req_my_count: i32,
+        #[offset(24)]
         #[rename(name = "m_ReqTotalCountNoClamp")]
         pub m_req_total_count_no_clamp: i32,
+        #[offset(28)]
         #[rename(name = "m_ReqTotalCount")]
         pub m_req_total_count: i32,
+        #[offset(32)]
         #[rename(name = "m_TotalCount")]
         pub m_total_count: i32,
+        #[offset(36)]
         #[rename(name = "m_MyCount")]
         pub m_my_count: i32,
+        #[offset(40)]
         #[rename(name = "m_OtherCount")]
         pub m_other_count: i32,
+        #[offset(48)]
         #[rename(name = "m_OtherPids")]
         pub m_other_pids: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        #[offset(56)]
         #[rename(name = "m_OtherPos")]
         pub m_other_pos: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::app::mappos::MapPos>,
+        #[offset(64)]
         #[rename(name = "m_NearbyFriendsScores")]
         pub m_nearby_friends_scores: ::unity2::Array<i32>,
     }

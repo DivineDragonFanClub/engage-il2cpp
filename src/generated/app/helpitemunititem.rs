@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemUnitItem")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemUnitItem {
+        #[offset(80)]
         #[rename(name = "m_IsOutsideSetup")]
         pub m_is_outside_setup: bool,
+        #[offset(84)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
+        #[offset(88)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(96)]
         #[rename(name = "m_UnitItem")]
         pub m_unit_item: crate::app::unititem::UnitItem,
+        #[offset(104)]
         #[rename(name = "m_IsUseEnchant")]
         pub m_is_use_enchant: bool,
     }

@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EatUnitsSelectMenuRelianceListContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EatUnitsSelectMenuRelianceListContent {
+        #[offset(24)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(32)]
         #[rename(name = "m_RankObject")]
         pub m_rank_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_C_Object")]
         pub m_c_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_B_Object")]
         pub m_b_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_A_Object")]
         pub m_a_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_S_Object")]
         pub m_s_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_NoneObject")]
         pub m_none_object: crate::unity_engine::gameobject::GameObject,
     }

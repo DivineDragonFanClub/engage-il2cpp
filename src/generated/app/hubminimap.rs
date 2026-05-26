@@ -19,6 +19,165 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap_IconData.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMiniMap.IconData")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubMiniMap_IconData {
+        #[offset(16)]
+        #[rename(name = "access")]
+        pub access: crate::app::hubaccess::HubAccess,
+        #[offset(24)]
+        #[rename(name = "iconS")]
+        pub icon_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
+        #[rename(name = "iconL")]
+        pub icon_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
+        #[rename(name = "iconSRect")]
+        pub icon_s_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(48)]
+        #[rename(name = "iconLRect")]
+        pub icon_l_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(56)]
+        #[rename(name = "imageS")]
+        pub image_s: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
+        #[rename(name = "imageL")]
+        pub image_l: crate::unity_engine::ui::image::Image,
+        #[offset(72)]
+        #[rename(name = "talkS")]
+        pub talk_s: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
+        #[rename(name = "talkL")]
+        pub talk_l: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
+        #[rename(name = "m_active")]
+        pub m_active: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMiniMap")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubMiniMap {
+        #[offset(40)]
+        #[rename(name = "m_initialized")]
+        pub m_initialized: bool,
+        #[offset(48)]
+        #[rename(name = "m_res")]
+        pub m_res: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[offset(56)]
+        #[rename(name = "m_image")]
+        pub m_image: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[offset(64)]
+        #[rename(name = "m_prevMapMode")]
+        pub m_prev_map_mode: crate::app::hubminimap::HubMiniMap_MapMode,
+        #[offset(72)]
+        #[rename(name = "m_icon")]
+        pub m_icon: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+        #[offset(80)]
+        #[rename(name = "m_gameRoot")]
+        pub m_game_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
+        #[rename(name = "m_root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
+        #[rename(name = "m_iconPoint")]
+        pub m_icon_point: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
+        #[rename(name = "m_iconLueur")]
+        pub m_icon_lueur: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
+        #[rename(name = "m_iconItem")]
+        pub m_icon_item: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
+        #[rename(name = "m_iconUnit")]
+        pub m_icon_unit: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
+        #[rename(name = "m_cameraArea")]
+        pub m_camera_area: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
+        #[rename(name = "m_mapS")]
+        pub m_map_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
+        #[rename(name = "m_rotate")]
+        pub m_rotate: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
+        #[rename(name = "m_imageS")]
+        pub m_image_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
+        #[rename(name = "m_playerMarkerS")]
+        pub m_player_marker_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
+        #[rename(name = "m_playerCameraS")]
+        pub m_player_camera_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(176)]
+        #[rename(name = "m_mascotMarkerS")]
+        pub m_mascot_marker_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(184)]
+        #[rename(name = "m_mapL")]
+        pub m_map_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(192)]
+        #[rename(name = "m_imageL")]
+        pub m_image_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(200)]
+        #[rename(name = "m_playerMarkerL")]
+        pub m_player_marker_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(208)]
+        #[rename(name = "m_playerCameraL")]
+        pub m_player_camera_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(216)]
+        #[rename(name = "m_mascotMarkerL")]
+        pub m_mascot_marker_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(224)]
+        #[rename(name = "m_cafeS")]
+        pub m_cafe_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(232)]
+        #[rename(name = "m_cafeL")]
+        pub m_cafe_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
+        #[rename(name = "m_caveS")]
+        pub m_cave_s: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
+        #[rename(name = "m_caveL")]
+        pub m_cave_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
+        #[rename(name = "m_talkReliance")]
+        pub m_talk_reliance: crate::unity_engine::sprite::Sprite,
+        #[offset(264)]
+        #[rename(name = "m_talkStory")]
+        pub m_talk_story: crate::unity_engine::sprite::Sprite,
+        #[offset(272)]
+        #[rename(name = "m_center")]
+        pub m_center: crate::unity_engine::vector3::Vector3,
+        #[offset(284)]
+        #[rename(name = "m_size")]
+        pub m_size: crate::unity_engine::vector3::Vector3,
+        #[offset(296)]
+        #[rename(name = "m_reverse")]
+        pub m_reverse: bool,
+        #[offset(304)]
+        #[rename(name = "m_rt")]
+        pub m_rt: crate::unity_engine::recttransform::RectTransform,
+        #[offset(312)]
+        #[rename(name = "m_uv")]
+        pub m_uv: crate::unity_engine::rect::Rect,
+        #[offset(328)]
+        #[rename(name = "m_offsetX")]
+        pub m_offset_x: f32,
+        #[offset(332)]
+        #[rename(name = "m_offsetY")]
+        pub m_offset_y: f32,
+        #[offset(336)]
+        #[rename(name = "m_systemShow")]
+        pub m_system_show: bool,
+        #[offset(344)]
+        #[rename(name = "m_Layer")]
+        pub m_layer: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(352)]
+        #[rename(name = "m_iconList")]
+        pub m_icon_list: crate::system::collections::generic::list_1::List_1<crate::app::hubminimap::HubMiniMap_IconData>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_MapMode.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -55,116 +214,6 @@ mod __types {
         pub fn large() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap_IconData.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMiniMap.IconData")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubMiniMap_IconData {
-        #[rename(name = "access")]
-        pub access: crate::app::hubaccess::HubAccess,
-        #[rename(name = "iconS")]
-        pub icon_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "iconL")]
-        pub icon_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "iconSRect")]
-        pub icon_s_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "iconLRect")]
-        pub icon_l_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "imageS")]
-        pub image_s: crate::unity_engine::ui::image::Image,
-        #[rename(name = "imageL")]
-        pub image_l: crate::unity_engine::ui::image::Image,
-        #[rename(name = "talkS")]
-        pub talk_s: crate::unity_engine::ui::image::Image,
-        #[rename(name = "talkL")]
-        pub talk_l: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_active")]
-        pub m_active: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimap/HubMiniMap.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMiniMap")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubMiniMap {
-        #[rename(name = "m_initialized")]
-        pub m_initialized: bool,
-        #[rename(name = "m_res")]
-        pub m_res: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[rename(name = "m_image")]
-        pub m_image: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[rename(name = "m_prevMapMode")]
-        pub m_prev_map_mode: crate::app::hubminimap::HubMiniMap_MapMode,
-        #[rename(name = "m_icon")]
-        pub m_icon: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
-        #[rename(name = "m_gameRoot")]
-        pub m_game_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_iconPoint")]
-        pub m_icon_point: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_iconLueur")]
-        pub m_icon_lueur: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_iconItem")]
-        pub m_icon_item: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_iconUnit")]
-        pub m_icon_unit: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_cameraArea")]
-        pub m_camera_area: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_mapS")]
-        pub m_map_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_rotate")]
-        pub m_rotate: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_imageS")]
-        pub m_image_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_playerMarkerS")]
-        pub m_player_marker_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_playerCameraS")]
-        pub m_player_camera_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_mascotMarkerS")]
-        pub m_mascot_marker_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_mapL")]
-        pub m_map_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_imageL")]
-        pub m_image_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_playerMarkerL")]
-        pub m_player_marker_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_playerCameraL")]
-        pub m_player_camera_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_mascotMarkerL")]
-        pub m_mascot_marker_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_cafeS")]
-        pub m_cafe_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_cafeL")]
-        pub m_cafe_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_caveS")]
-        pub m_cave_s: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_caveL")]
-        pub m_cave_l: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_talkReliance")]
-        pub m_talk_reliance: crate::unity_engine::sprite::Sprite,
-        #[rename(name = "m_talkStory")]
-        pub m_talk_story: crate::unity_engine::sprite::Sprite,
-        #[rename(name = "m_center")]
-        pub m_center: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_size")]
-        pub m_size: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_reverse")]
-        pub m_reverse: bool,
-        #[rename(name = "m_rt")]
-        pub m_rt: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_uv")]
-        pub m_uv: crate::unity_engine::rect::Rect,
-        #[rename(name = "m_offsetX")]
-        pub m_offset_x: f32,
-        #[rename(name = "m_offsetY")]
-        pub m_offset_y: f32,
-        #[rename(name = "m_systemShow")]
-        pub m_system_show: bool,
-        #[rename(name = "m_Layer")]
-        pub m_layer: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_iconList")]
-        pub m_icon_list: crate::system::collections::generic::list_1::List_1<crate::app::hubminimap::HubMiniMap_IconData>,
     }
 }
 

@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "TrailMesh")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TrailMesh {
+        #[offset(48)]
         #[rename(name = "NumberOfJoints__ReadOnly")]
         pub number_of_joints_read_only: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "JointsRoot")]
         pub joints_root: crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform>,
+        #[offset(64)]
         #[rename(name = "JointsTip")]
         pub joints_tip: crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform>,
+        #[offset(72)]
         #[rename(name = "m_Renderer")]
         pub m_renderer: crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+        #[offset(80)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(88)]
         #[rename(name = "m_HashColor")]
         pub m_hash_color: i32,
     }

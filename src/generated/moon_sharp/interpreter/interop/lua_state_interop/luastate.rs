@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop", name = "LuaState")]
     #[parent(crate::system::object::Object)]
     pub struct LuaState {
+        #[offset(16)]
         #[rename(name = "m_Stack")]
         pub m_stack: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     }

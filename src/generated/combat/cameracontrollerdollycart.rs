@@ -24,10 +24,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerDollyCart")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerDollyCart {
+        #[offset(168)]
         #[rename(name = "FrameCount")]
         pub frame_count: i32,
+        #[offset(172)]
         #[rename(name = "m_LastHeight")]
         pub m_last_height: f32,
+        #[offset(176)]
         #[rename(name = "m_State")]
         pub m_state: crate::combat::cameracontrollerdollycart::CameraControllerDollyCart_State,
     }

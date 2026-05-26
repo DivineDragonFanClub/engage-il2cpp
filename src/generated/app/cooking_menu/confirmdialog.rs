@@ -27,6 +27,7 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "ConfirmDialog.ConfirmDialogItemYes")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct ConfirmDialog_ConfirmDialogItemYes {
+        #[offset(112)]
         #[rename(name = "m_Action")]
         pub m_action: crate::system::action::Action,
     }

@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapCursorColor")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapCursorColor {
+        #[offset(24)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_AlphaPropertyID")]
         pub m_alpha_property_id: i32,
+        #[offset(36)]
         #[rename(name = "m_ColorPropertyID")]
         pub m_color_property_id: i32,
     }

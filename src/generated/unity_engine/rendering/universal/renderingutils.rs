@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "RenderingUtils.StereoConstants")]
     #[parent(crate::system::object::Object)]
     pub struct RenderingUtils_StereoConstants {
+        #[offset(16)]
         #[rename(name = "viewProjMatrix")]
         pub view_proj_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(24)]
         #[rename(name = "invViewMatrix")]
         pub inv_view_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(32)]
         #[rename(name = "invProjMatrix")]
         pub inv_proj_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(40)]
         #[rename(name = "invViewProjMatrix")]
         pub inv_view_proj_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(48)]
         #[rename(name = "invCameraProjMatrix")]
         pub inv_camera_proj_matrix: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(56)]
         #[rename(name = "worldSpaceCameraPos")]
         pub world_space_camera_pos: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
     }

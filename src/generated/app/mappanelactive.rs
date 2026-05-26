@@ -28,6 +28,135 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelActive")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelactive :: MapPanelActive >)]
+    pub struct MapPanelActive {
+        #[offset(64)]
+        #[rename(name = "m_ImageList")]
+        pub m_image_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mappanelactive::MapPanelActive_MeshIndex>>,
+        #[offset(72)]
+        #[rename(name = "m_MoveImage")]
+        pub m_move_image: crate::unity_engine::material::Material,
+        #[offset(80)]
+        #[rename(name = "m_AttackImage")]
+        pub m_attack_image: crate::unity_engine::material::Material,
+        #[offset(88)]
+        #[rename(name = "m_HealImage")]
+        pub m_heal_image: crate::unity_engine::material::Material,
+        #[offset(96)]
+        #[rename(name = "m_SupportImage")]
+        pub m_support_image: crate::unity_engine::material::Material,
+        #[offset(104)]
+        #[rename(name = "m_InterferenceImage")]
+        pub m_interference_image: crate::unity_engine::material::Material,
+        #[offset(112)]
+        #[rename(name = "m_DanceImage")]
+        pub m_dance_image: crate::unity_engine::material::Material,
+        #[offset(120)]
+        #[rename(name = "m_ActionImage")]
+        pub m_action_image: crate::unity_engine::material::Material,
+        #[offset(128)]
+        #[rename(name = "m_RangeImage")]
+        pub m_range_image: crate::unity_engine::material::Material,
+        #[offset(136)]
+        #[rename(name = "m_OverlapImage")]
+        pub m_overlap_image: crate::unity_engine::material::Material,
+        #[offset(144)]
+        #[rename(name = "m_Mind")]
+        pub m_mind: crate::app::mapmind::MapMind_Type,
+        #[offset(148)]
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
+        #[offset(152)]
+        #[rename(name = "m_Flag")]
+        pub m_flag: crate::app::mappanelactive::MapPanelActive_FlagField,
+        #[offset(160)]
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[offset(168)]
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(176)]
+        #[rename(name = "m_MoveColor")]
+        pub m_move_color: crate::unity_engine::color::Color,
+        #[offset(192)]
+        #[rename(name = "m_AttackColor")]
+        pub m_attack_color: crate::unity_engine::color::Color,
+        #[offset(208)]
+        #[rename(name = "m_HealColor")]
+        pub m_heal_color: crate::unity_engine::color::Color,
+        #[offset(224)]
+        #[rename(name = "m_SupportColor")]
+        pub m_support_color: crate::unity_engine::color::Color,
+        #[offset(240)]
+        #[rename(name = "m_InterferenceColor")]
+        pub m_interference_color: crate::unity_engine::color::Color,
+        #[offset(256)]
+        #[rename(name = "m_DanceColor")]
+        pub m_dance_color: crate::unity_engine::color::Color,
+        #[offset(272)]
+        #[rename(name = "m_ActionColor")]
+        pub m_action_color: crate::unity_engine::color::Color,
+        #[offset(288)]
+        #[rename(name = "m_DragonVeinColor")]
+        pub m_dragon_vein_color: crate::unity_engine::color::Color,
+        #[offset(304)]
+        #[rename(name = "m_OverlapColor")]
+        pub m_overlap_color: crate::unity_engine::color::Color,
+        #[offset(320)]
+        #[rename(name = "m_AttackRangeColor")]
+        pub m_attack_range_color: crate::unity_engine::color::Color,
+        #[offset(336)]
+        #[rename(name = "m_HealRangeColor")]
+        pub m_heal_range_color: crate::unity_engine::color::Color,
+        #[offset(352)]
+        #[rename(name = "m_SupportRangeColor")]
+        pub m_support_range_color: crate::unity_engine::color::Color,
+        #[offset(368)]
+        #[rename(name = "m_InterferenceRangeColor")]
+        pub m_interference_range_color: crate::unity_engine::color::Color,
+        #[offset(384)]
+        #[rename(name = "m_WarpRangeColor")]
+        pub m_warp_range_color: crate::unity_engine::color::Color,
+        #[offset(400)]
+        #[rename(name = "m_DanceRangeColor")]
+        pub m_dance_range_color: crate::unity_engine::color::Color,
+        #[offset(416)]
+        #[rename(name = "m_ActionRangeColor")]
+        pub m_action_range_color: crate::unity_engine::color::Color,
+        #[offset(432)]
+        #[rename(name = "m_RangeColor")]
+        pub m_range_color: crate::unity_engine::color::Color,
+        #[offset(448)]
+        #[rename(name = "m_DisplayColor")]
+        pub m_display_color: crate::unity_engine::color::Color,
+        #[offset(464)]
+        #[rename(name = "m_TempImage")]
+        pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[offset(472)]
+        #[rename(name = "m_MovingAlpha")]
+        pub m_moving_alpha: crate::app::gamecurve::GameCurve,
+        #[offset(480)]
+        #[rename(name = "m_StoppedAlpha")]
+        pub m_stopped_alpha: crate::app::gamecurve::GameCurve,
+        #[offset(488)]
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[offset(496)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[static_field]
+        #[rename(name = "AROUND")]
+        pub around: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int>,
+        #[static_field]
+        #[rename(name = "ROTATION")]
+        pub rotation: ::unity2::Array<i32>,
+        #[static_field]
+        #[rename(name = "FLAG")]
+        pub flag_field: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))]
     #[::unity2::class(namespace = "App", name = "MapPanelActive.TargetFunc")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -99,97 +228,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelActive")]
-    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelactive :: MapPanelActive >)]
-    pub struct MapPanelActive {
-        #[rename(name = "m_ImageList")]
-        pub m_image_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mappanelactive::MapPanelActive_MeshIndex>>,
-        #[rename(name = "m_MoveImage")]
-        pub m_move_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackImage")]
-        pub m_attack_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_HealImage")]
-        pub m_heal_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_SupportImage")]
-        pub m_support_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_InterferenceImage")]
-        pub m_interference_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_DanceImage")]
-        pub m_dance_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_ActionImage")]
-        pub m_action_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_RangeImage")]
-        pub m_range_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_OverlapImage")]
-        pub m_overlap_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_Mind")]
-        pub m_mind: crate::app::mapmind::MapMind_Type,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
-        #[rename(name = "m_Flag")]
-        pub m_flag: crate::app::mappanelactive::MapPanelActive_FlagField,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_MoveColor")]
-        pub m_move_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AttackColor")]
-        pub m_attack_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_HealColor")]
-        pub m_heal_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_SupportColor")]
-        pub m_support_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_InterferenceColor")]
-        pub m_interference_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_DanceColor")]
-        pub m_dance_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_ActionColor")]
-        pub m_action_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_DragonVeinColor")]
-        pub m_dragon_vein_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_OverlapColor")]
-        pub m_overlap_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AttackRangeColor")]
-        pub m_attack_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_HealRangeColor")]
-        pub m_heal_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_SupportRangeColor")]
-        pub m_support_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_InterferenceRangeColor")]
-        pub m_interference_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_WarpRangeColor")]
-        pub m_warp_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_DanceRangeColor")]
-        pub m_dance_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_ActionRangeColor")]
-        pub m_action_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_RangeColor")]
-        pub m_range_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_DisplayColor")]
-        pub m_display_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_TempImage")]
-        pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_MovingAlpha")]
-        pub m_moving_alpha: crate::app::gamecurve::GameCurve,
-        #[rename(name = "m_StoppedAlpha")]
-        pub m_stopped_alpha: crate::app::gamecurve::GameCurve,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[static_field]
-        #[rename(name = "AROUND")]
-        pub around: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int>,
-        #[static_field]
-        #[rename(name = "ROTATION")]
-        pub rotation: ::unity2::Array<i32>,
-        #[static_field]
-        #[rename(name = "FLAG")]
-        pub flag_field: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_FlagField.md"))]
     #[::unity2::class(namespace = "App", name = "MapPanelActive.FlagField")]
     # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)]
@@ -198,136 +236,6 @@ mod __types {
 
 #[cfg(feature = "app-mappanelactive-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mappanelactive")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapPanelActive_TargetFunc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapPanelActive_TargetFunc,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapPanelActive_TargetFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: MapPanelActive_TargetFunc, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapPanelActive_TargetFunc, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mappanelactive")]
-pub trait IMapPanelActive_TargetFuncMethods: IMapPanelActive_TargetFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelActive_TargetFunc_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, i32)` overload"]
-    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver =
-                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapPanelActive_TargetFunc_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mappanelactive")]
-impl<__T: IMapPanelActive_TargetFunc> IMapPanelActive_TargetFuncMethods for __T {}
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_TargetFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPanelActive_TargetFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPanelActive_TargetFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-mappanelactive")]
 #[doc(hidden)]
@@ -2270,6 +2178,136 @@ impl MapPanelActive {
             )
         });
         <Self as IMapPanelActiveMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mappanelactive")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapPanelActive_TargetFunc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapPanelActive_TargetFunc,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapPanelActive_TargetFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: MapPanelActive_TargetFunc, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapPanelActive_TargetFunc, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mappanelactive")]
+pub trait IMapPanelActive_TargetFuncMethods: IMapPanelActive_TargetFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelActive_TargetFunc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32)` overload"]
+    fn invoke(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver =
+                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapPanelActive_TargetFunc_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mappanelactive")]
+impl<__T: IMapPanelActive_TargetFunc> IMapPanelActive_TargetFuncMethods for __T {}
+
+#[cfg(feature = "app-mappanelactive")]
+impl MapPanelActive_TargetFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelActive_TargetFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelActive_TargetFuncMethods>::ctor(this, object, method);
         this
     }
 }

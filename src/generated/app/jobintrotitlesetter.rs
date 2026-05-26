@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "JobIntroTitleSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct JobIntroTitleSetter {
+        #[offset(24)]
         #[rename(name = "JobName")]
         pub job_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "ReadyTime1")]
         pub ready_time1: f32,
+        #[offset(36)]
         #[rename(name = "ReadyTime2")]
         pub ready_time2: f32,
     }

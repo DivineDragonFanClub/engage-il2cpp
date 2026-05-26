@@ -22,6 +22,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_AnimTime")]
         pub s_anim_time: f32,
+        #[offset(40)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
     }

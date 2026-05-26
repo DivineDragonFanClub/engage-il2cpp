@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TalkCharacterSignal")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TalkCharacterSignal {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
         #[static_field]

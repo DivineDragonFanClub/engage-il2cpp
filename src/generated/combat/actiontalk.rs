@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionTalk")]
     #[parent(crate::combat::actionbase::ActionBase)]
     pub struct ActionTalk {
+        #[offset(40)]
         #[rename(name = "isEnd")]
         pub is_end: bool,
+        #[offset(48)]
         #[rename(name = "calc")]
         pub calc: crate::app::battlecalculator::BattleCalculator,
     }

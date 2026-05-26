@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "AssetLabelReference")]
     #[parent(crate::system::object::Object)]
     pub struct AssetLabelReference {
+        #[offset(16)]
         #[rename(name = "m_LabelString")]
         pub m_label_string: ::unity2::Il2CppString,
     }

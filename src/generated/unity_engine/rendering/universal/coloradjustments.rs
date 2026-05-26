@@ -18,14 +18,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ColorAdjustments")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct ColorAdjustments {
+        #[offset(56)]
         #[rename(name = "postExposure")]
         pub post_exposure: crate::unity_engine::rendering::floatparameter::FloatParameter,
+        #[offset(64)]
         #[rename(name = "contrast")]
         pub contrast: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "colorFilter")]
         pub color_filter: crate::unity_engine::rendering::colorparameter::ColorParameter,
+        #[offset(80)]
         #[rename(name = "hueShift")]
         pub hue_shift: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "saturation")]
         pub saturation: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

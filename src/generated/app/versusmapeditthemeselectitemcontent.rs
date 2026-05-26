@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VersusMapEditThemeSelectItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct VersusMapEditThemeSelectItemContent {
+        #[offset(72)]
         #[rename(name = "m_Name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_Cursor")]
         pub m_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_CursorImage")]
         pub m_cursor_image: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_FrameImage")]
         pub m_frame_image: crate::unity_engine::ui::image::Image,
     }

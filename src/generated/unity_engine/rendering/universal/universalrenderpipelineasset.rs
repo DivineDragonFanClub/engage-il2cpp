@@ -18,94 +18,139 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "UniversalRenderPipelineAsset")]
     #[parent(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset)]
     pub struct UniversalRenderPipelineAsset {
+        #[offset(24)]
         #[rename(name = "m_DefaultShader")]
         pub m_default_shader: crate::unity_engine::shader::Shader,
+        #[offset(32)]
         #[rename(name = "m_Renderers")]
         pub m_renderers: ::unity2::Array<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>,
+        #[offset(40)]
         #[rename(name = "k_AssetVersion")]
         pub k_asset_version: i32,
+        #[offset(44)]
         #[rename(name = "k_AssetPreviousVersion")]
         pub k_asset_previous_version: i32,
+        #[offset(48)]
         #[rename(name = "m_RendererType")]
         pub m_renderer_type: crate::unity_engine::rendering::universal::renderertype::RendererType,
+        #[offset(56)]
         #[rename(name = "m_RendererData")]
         pub m_renderer_data: crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData,
+        #[offset(64)]
         #[rename(name = "m_RendererDataList")]
         pub m_renderer_data_list: ::unity2::Array<crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData>,
+        #[offset(72)]
         #[rename(name = "m_DefaultRendererIndex")]
         pub m_default_renderer_index: i32,
+        #[offset(76)]
         #[rename(name = "m_RequireDepthTexture")]
         pub m_require_depth_texture: bool,
+        #[offset(77)]
         #[rename(name = "m_RequireOpaqueTexture")]
         pub m_require_opaque_texture: bool,
+        #[offset(80)]
         #[rename(name = "m_OpaqueDownsampling")]
         pub m_opaque_downsampling: crate::unity_engine::rendering::universal::downsampling::Downsampling,
+        #[offset(84)]
         #[rename(name = "m_SupportsTerrainHoles")]
         pub m_supports_terrain_holes: bool,
+        #[offset(85)]
         #[rename(name = "m_SupportsHDR")]
         pub m_supports_hdr: bool,
+        #[offset(88)]
         #[rename(name = "m_MSAA")]
         pub m_msaa: crate::unity_engine::rendering::universal::msaaquality::MsaaQuality,
+        #[offset(92)]
         #[rename(name = "m_RenderScale")]
         pub m_render_scale: f32,
+        #[offset(96)]
         #[rename(name = "m_MainLightRenderingMode")]
         pub m_main_light_rendering_mode: crate::unity_engine::rendering::universal::lightrenderingmode::LightRenderingMode,
+        #[offset(100)]
         #[rename(name = "m_MainLightShadowsSupported")]
         pub m_main_light_shadows_supported: bool,
+        #[offset(104)]
         #[rename(name = "m_MainLightShadowmapResolution")]
         pub m_main_light_shadowmap_resolution: crate::unity_engine::rendering::universal::shadowresolution_2::ShadowResolution_2,
+        #[offset(108)]
         #[rename(name = "m_AdditionalLightsRenderingMode")]
         pub m_additional_lights_rendering_mode: crate::unity_engine::rendering::universal::lightrenderingmode::LightRenderingMode,
+        #[offset(112)]
         #[rename(name = "m_AdditionalLightsPerObjectLimit")]
         pub m_additional_lights_per_object_limit: i32,
+        #[offset(116)]
         #[rename(name = "m_AdditionalLightShadowsSupported")]
         pub m_additional_light_shadows_supported: bool,
+        #[offset(120)]
         #[rename(name = "m_AdditionalLightsShadowmapResolution")]
         pub m_additional_lights_shadowmap_resolution: crate::unity_engine::rendering::universal::shadowresolution_2::ShadowResolution_2,
+        #[offset(124)]
         #[rename(name = "m_ShadowDistance")]
         pub m_shadow_distance: f32,
+        #[offset(128)]
         #[rename(name = "m_ShadowCascadeCount")]
         pub m_shadow_cascade_count: i32,
+        #[offset(132)]
         #[rename(name = "m_Cascade2Split")]
         pub m_cascade2_split: f32,
+        #[offset(136)]
         #[rename(name = "m_Cascade3Split")]
         pub m_cascade3_split: crate::unity_engine::vector2::Vector2,
+        #[offset(144)]
         #[rename(name = "m_Cascade4Split")]
         pub m_cascade4_split: crate::unity_engine::vector3::Vector3,
+        #[offset(156)]
         #[rename(name = "m_ShadowDepthBias")]
         pub m_shadow_depth_bias: f32,
+        #[offset(160)]
         #[rename(name = "m_ShadowNormalBias")]
         pub m_shadow_normal_bias: f32,
+        #[offset(164)]
         #[rename(name = "m_SoftShadowsSupported")]
         pub m_soft_shadows_supported: bool,
+        #[offset(165)]
         #[rename(name = "m_UseSRPBatcher")]
         pub m_use_srp_batcher: bool,
+        #[offset(166)]
         #[rename(name = "m_SupportsDynamicBatching")]
         pub m_supports_dynamic_batching: bool,
+        #[offset(167)]
         #[rename(name = "m_MixedLightingSupported")]
         pub m_mixed_lighting_supported: bool,
+        #[offset(168)]
         #[rename(name = "m_DebugLevel")]
         pub m_debug_level: crate::unity_engine::rendering::universal::pipelinedebuglevel::PipelineDebugLevel,
+        #[offset(172)]
         #[rename(name = "m_UseAdaptivePerformance")]
         pub m_use_adaptive_performance: bool,
+        #[offset(176)]
         #[rename(name = "m_ColorGradingMode")]
         pub m_color_grading_mode: crate::unity_engine::rendering::universal::colorgradingmode::ColorGradingMode,
+        #[offset(180)]
         #[rename(name = "m_ColorGradingLutSize")]
         pub m_color_grading_lut_size: i32,
+        #[offset(184)]
         #[rename(name = "m_ShadowType")]
         pub m_shadow_type: crate::unity_engine::rendering::universal::shadowquality::ShadowQuality,
+        #[offset(188)]
         #[rename(name = "m_LocalShadowsSupported")]
         pub m_local_shadows_supported: bool,
+        #[offset(192)]
         #[rename(name = "m_LocalShadowsAtlasResolution")]
         pub m_local_shadows_atlas_resolution: crate::unity_engine::rendering::universal::shadowresolution_2::ShadowResolution_2,
+        #[offset(196)]
         #[rename(name = "m_MaxPixelLights")]
         pub m_max_pixel_lights: i32,
+        #[offset(200)]
         #[rename(name = "m_ShadowAtlasResolution")]
         pub m_shadow_atlas_resolution: crate::unity_engine::rendering::universal::shadowresolution_2::ShadowResolution_2,
+        #[offset(204)]
         #[rename(name = "m_ShaderVariantLogLevel")]
         pub m_shader_variant_log_level: crate::unity_engine::rendering::universal::shadervariantloglevel::ShaderVariantLogLevel,
+        #[offset(208)]
         #[rename(name = "m_CustomShadowDataList")]
         pub m_custom_shadow_data_list: ::unity2::Array<crate::unity_engine::rendering::universal::custom::customshadowdata::CustomShadowData>,
+        #[offset(216)]
         #[rename(name = "m_SharpenFilter")]
         pub m_sharpen_filter: bool,
         #[static_field]
@@ -120,6 +165,7 @@ mod __types {
         #[static_field]
         #[rename(name = "k_ShadowCascadeMaxCount")]
         pub k_shadow_cascade_max_count: i32,
+        #[offset(232)]
         #[rename(name = "m_ShadowCascades")]
         pub m_shadow_cascades: crate::unity_engine::rendering::universal::shadowcascadesoption::ShadowCascadesOption,
     }

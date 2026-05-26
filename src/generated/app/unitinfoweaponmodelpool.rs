@@ -11,9 +11,11 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitInfoWeaponModelPool")]
     #[parent(crate::system::object::Object)]
     pub struct UnitInfoWeaponModelPool {
+        #[offset(16)]
         #[rename(name = "m_LeftWeaponDictionary")]
         pub m_left_weapon_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::combat::characterasset::CharacterAsset>,
+        #[offset(24)]
         #[rename(name = "m_RightWeaponDictionary")]
         pub m_right_weapon_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::combat::characterasset::CharacterAsset>,

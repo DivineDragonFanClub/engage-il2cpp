@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapImageHistory")]
     #[parent(crate::system::object::Object)]
     pub struct MapImageHistory {
+        #[offset(16)]
         #[rename(name = "UnitMap")]
         pub unit_map: crate::app::mapimagehistory::MapImageHistory_HeatMap,
+        #[offset(24)]
         #[rename(name = "BattleMap")]
         pub battle_map: crate::app::mapimagehistory::MapImageHistory_HeatMap,
+        #[offset(32)]
         #[rename(name = "DeadMap")]
         pub dead_map: crate::app::mapimagehistory::MapImageHistory_HeatMap,
+        #[offset(40)]
         #[rename(name = "m_Cells")]
         pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
     }
@@ -25,6 +29,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapImageHistory.HeatMap")]
     #[parent(crate::system::object::Object)]
     pub struct MapImageHistory_HeatMap {
+        #[offset(16)]
         #[rename(name = "m_Maps")]
         pub m_maps: ::unity2::Array<crate::app::mapimagecorebyte::MapImageCoreByte>,
     }

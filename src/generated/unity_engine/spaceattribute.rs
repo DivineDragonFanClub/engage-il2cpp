@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "SpaceAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct SpaceAttribute {
+        #[offset(16)]
         #[rename(name = "height")]
         pub height: f32,
     }

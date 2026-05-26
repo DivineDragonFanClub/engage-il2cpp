@@ -19,192 +19,286 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterJoint")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterJoint {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(33)]
         #[rename(name = "usePositionCache")]
         pub use_position_cache: bool,
+        #[offset(256)]
         #[rename(name = "_c_trans")]
         pub c_trans: crate::unity_engine::transform::Transform,
+        #[offset(264)]
         #[rename(name = "cached_c_trans")]
         pub cached_c_trans: bool,
+        #[offset(272)]
         #[rename(name = "_c_trans_ride")]
         pub c_trans_ride: crate::unity_engine::transform::Transform,
+        #[offset(280)]
         #[rename(name = "cached_c_trans_ride")]
         pub cached_c_trans_ride: bool,
+        #[offset(288)]
         #[rename(name = "_c_hip_jnt")]
         pub c_hip_jnt: crate::unity_engine::transform::Transform,
+        #[offset(296)]
         #[rename(name = "cached_c_hip_jnt")]
         pub cached_c_hip_jnt: bool,
+        #[offset(304)]
         #[rename(name = "_c_head_loc")]
         pub c_head_loc: crate::unity_engine::transform::Transform,
+        #[offset(312)]
         #[rename(name = "cached_c_head_loc")]
         pub cached_c_head_loc: bool,
+        #[offset(320)]
         #[rename(name = "_c_ride_loc")]
         pub c_ride_loc: crate::unity_engine::transform::Transform,
+        #[offset(328)]
         #[rename(name = "cached_c_ride_loc")]
         pub cached_c_ride_loc: bool,
+        #[offset(336)]
         #[rename(name = "_l_wpn1_loc")]
         pub l_wpn1_loc: crate::unity_engine::transform::Transform,
+        #[offset(344)]
         #[rename(name = "cached_l_wpn1_loc")]
         pub cached_l_wpn1_loc: bool,
+        #[offset(352)]
         #[rename(name = "_r_wpn1_loc")]
         pub r_wpn1_loc: crate::unity_engine::transform::Transform,
+        #[offset(360)]
         #[rename(name = "cached_r_wpn1_loc")]
         pub cached_r_wpn1_loc: bool,
+        #[offset(368)]
         #[rename(name = "_hand01_jnt")]
         pub hand01_jnt: crate::unity_engine::transform::Transform,
+        #[offset(376)]
         #[rename(name = "cached_hand01_jnt")]
         pub cached_hand01_jnt: bool,
+        #[offset(384)]
         #[rename(name = "_l_leg_loc")]
         pub l_leg_loc: crate::unity_engine::transform::Transform,
+        #[offset(392)]
         #[rename(name = "cached_l_leg_loc")]
         pub cached_l_leg_loc: bool,
+        #[offset(400)]
         #[rename(name = "_r_leg_loc")]
         pub r_leg_loc: crate::unity_engine::transform::Transform,
+        #[offset(408)]
         #[rename(name = "cached_r_leg_loc")]
         pub cached_r_leg_loc: bool,
+        #[offset(416)]
         #[rename(name = "_l_limbF_loc")]
         pub l_limb_f_loc: crate::unity_engine::transform::Transform,
+        #[offset(424)]
         #[rename(name = "cached_l_limbF_loc")]
         pub cached_l_limb_f_loc: bool,
+        #[offset(432)]
         #[rename(name = "_l_limbR_loc")]
         pub l_limb_r_loc: crate::unity_engine::transform::Transform,
+        #[offset(440)]
         #[rename(name = "cached_l_limbR_loc")]
         pub cached_l_limb_r_loc: bool,
+        #[offset(448)]
         #[rename(name = "_r_limbF_loc")]
         pub r_limb_f_loc: crate::unity_engine::transform::Transform,
+        #[offset(456)]
         #[rename(name = "cached_r_limbF_loc")]
         pub cached_r_limb_f_loc: bool,
+        #[offset(464)]
         #[rename(name = "_r_limbR_loc")]
         pub r_limb_r_loc: crate::unity_engine::transform::Transform,
+        #[offset(472)]
         #[rename(name = "cached_r_limbR_loc")]
         pub cached_r_limb_r_loc: bool,
+        #[offset(480)]
         #[rename(name = "_camLookAt_loc")]
         pub cam_look_at_loc: crate::unity_engine::transform::Transform,
+        #[offset(488)]
         #[rename(name = "cached_camLookAt_loc")]
         pub cached_cam_look_at_loc: bool,
+        #[offset(496)]
         #[rename(name = "_camFollow_loc")]
         pub cam_follow_loc: crate::unity_engine::transform::Transform,
+        #[offset(504)]
         #[rename(name = "cached_camFollow_loc")]
         pub cached_cam_follow_loc: bool,
+        #[offset(512)]
         #[rename(name = "_lookAt_loc")]
         pub look_at_loc: crate::unity_engine::transform::Transform,
+        #[offset(520)]
         #[rename(name = "cached_lookAt_loc")]
         pub cached_look_at_loc: bool,
+        #[offset(528)]
         #[rename(name = "_lookAt_ride_loc")]
         pub look_at_ride_loc: crate::unity_engine::transform::Transform,
+        #[offset(536)]
         #[rename(name = "cached_lookAt_ride_loc")]
         pub cached_look_at_ride_loc: bool,
+        #[offset(544)]
         #[rename(name = "_c_neck_jnt")]
         pub c_neck_jnt: crate::unity_engine::transform::Transform,
+        #[offset(552)]
         #[rename(name = "cached_c_neck_jnt")]
         pub cached_c_neck_jnt: bool,
+        #[offset(560)]
         #[rename(name = "_c_head_jnt")]
         pub c_head_jnt: crate::unity_engine::transform::Transform,
+        #[offset(568)]
         #[rename(name = "cached_c_head_jnt")]
         pub cached_c_head_jnt: bool,
+        #[offset(576)]
         #[rename(name = "_c_spine1_jnt")]
         pub c_spine1_jnt: crate::unity_engine::transform::Transform,
+        #[offset(584)]
         #[rename(name = "cached_c_spine1_jnt")]
         pub cached_c_spine1_jnt: bool,
+        #[offset(592)]
         #[rename(name = "_c_spine2_jnt")]
         pub c_spine2_jnt: crate::unity_engine::transform::Transform,
+        #[offset(600)]
         #[rename(name = "cached_c_spine2_jnt")]
         pub cached_c_spine2_jnt: bool,
+        #[offset(608)]
         #[rename(name = "_l_cla_jnt")]
         pub l_cla_jnt: crate::unity_engine::transform::Transform,
+        #[offset(616)]
         #[rename(name = "cached_l_cla_jnt")]
         pub cached_l_cla_jnt: bool,
+        #[offset(624)]
         #[rename(name = "_r_cla_jnt")]
         pub r_cla_jnt: crate::unity_engine::transform::Transform,
+        #[offset(632)]
         #[rename(name = "cached_r_cla_jnt")]
         pub cached_r_cla_jnt: bool,
+        #[offset(640)]
         #[rename(name = "_l_arm1_jnt")]
         pub l_arm1_jnt: crate::unity_engine::transform::Transform,
+        #[offset(648)]
         #[rename(name = "cached_l_arm1_jnt")]
         pub cached_l_arm1_jnt: bool,
+        #[offset(656)]
         #[rename(name = "_r_arm1_jnt")]
         pub r_arm1_jnt: crate::unity_engine::transform::Transform,
+        #[offset(664)]
         #[rename(name = "cached_r_arm1_jnt")]
         pub cached_r_arm1_jnt: bool,
+        #[offset(672)]
         #[rename(name = "_l_arm3_jnt")]
         pub l_arm3_jnt: crate::unity_engine::transform::Transform,
+        #[offset(680)]
         #[rename(name = "cached_l_arm3_jnt")]
         pub cached_l_arm3_jnt: bool,
+        #[offset(688)]
         #[rename(name = "_r_arm3_jnt")]
         pub r_arm3_jnt: crate::unity_engine::transform::Transform,
+        #[offset(696)]
         #[rename(name = "cached_r_arm3_jnt")]
         pub cached_r_arm3_jnt: bool,
+        #[offset(704)]
         #[rename(name = "_l_leg1_jnt")]
         pub l_leg1_jnt: crate::unity_engine::transform::Transform,
+        #[offset(712)]
         #[rename(name = "cached_l_leg1_jnt")]
         pub cached_l_leg1_jnt: bool,
+        #[offset(720)]
         #[rename(name = "_r_leg1_jnt")]
         pub r_leg1_jnt: crate::unity_engine::transform::Transform,
+        #[offset(728)]
         #[rename(name = "cached_r_leg1_jnt")]
         pub cached_r_leg1_jnt: bool,
+        #[offset(736)]
         #[rename(name = "_l_leg3_jnt")]
         pub l_leg3_jnt: crate::unity_engine::transform::Transform,
+        #[offset(744)]
         #[rename(name = "cached_l_leg3_jnt")]
         pub cached_l_leg3_jnt: bool,
+        #[offset(752)]
         #[rename(name = "_r_leg3_jnt")]
         pub r_leg3_jnt: crate::unity_engine::transform::Transform,
+        #[offset(760)]
         #[rename(name = "cached_r_leg3_jnt")]
         pub cached_r_leg3_jnt: bool,
+        #[offset(768)]
         #[rename(name = "_l_shldrArmr_jnt")]
         pub l_shldr_armr_jnt: crate::unity_engine::transform::Transform,
+        #[offset(776)]
         #[rename(name = "cached_l_shldrArmr_jnt")]
         pub cached_l_shldr_armr_jnt: bool,
+        #[offset(784)]
         #[rename(name = "_r_shldrArmr_jnt")]
         pub r_shldr_armr_jnt: crate::unity_engine::transform::Transform,
+        #[offset(792)]
         #[rename(name = "cached_r_shldrArmr_jnt")]
         pub cached_r_shldr_armr_jnt: bool,
+        #[offset(800)]
         #[rename(name = "_l_arm1vol_jnt")]
         pub l_arm1vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(808)]
         #[rename(name = "cached_l_arm1vol_jnt")]
         pub cached_l_arm1vol_jnt: bool,
+        #[offset(816)]
         #[rename(name = "_r_arm1vol_jnt")]
         pub r_arm1vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(824)]
         #[rename(name = "cached_r_arm1vol_jnt")]
         pub cached_r_arm1vol_jnt: bool,
+        #[offset(832)]
         #[rename(name = "_l_arm2vol_jnt")]
         pub l_arm2vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(840)]
         #[rename(name = "cached_l_arm2vol_jnt")]
         pub cached_l_arm2vol_jnt: bool,
+        #[offset(848)]
         #[rename(name = "_r_arm2vol_jnt")]
         pub r_arm2vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(856)]
         #[rename(name = "cached_r_arm2vol_jnt")]
         pub cached_r_arm2vol_jnt: bool,
+        #[offset(864)]
         #[rename(name = "_l_leg1vol_jnt")]
         pub l_leg1vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(872)]
         #[rename(name = "cached_l_leg1vol_jnt")]
         pub cached_l_leg1vol_jnt: bool,
+        #[offset(880)]
         #[rename(name = "_r_leg1vol_jnt")]
         pub r_leg1vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(888)]
         #[rename(name = "cached_r_leg1vol_jnt")]
         pub cached_r_leg1vol_jnt: bool,
+        #[offset(896)]
         #[rename(name = "_l_leg2vol_jnt")]
         pub l_leg2vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(904)]
         #[rename(name = "cached_l_leg2vol_jnt")]
         pub cached_l_leg2vol_jnt: bool,
+        #[offset(912)]
         #[rename(name = "_r_leg2vol_jnt")]
         pub r_leg2vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(920)]
         #[rename(name = "cached_r_leg2vol_jnt")]
         pub cached_r_leg2vol_jnt: bool,
+        #[offset(928)]
         #[rename(name = "_l_bust_jnt")]
         pub l_bust_jnt: crate::unity_engine::transform::Transform,
+        #[offset(936)]
         #[rename(name = "cached_l_bust_jnt")]
         pub cached_l_bust_jnt: bool,
+        #[offset(944)]
         #[rename(name = "_r_bust_jnt")]
         pub r_bust_jnt: crate::unity_engine::transform::Transform,
+        #[offset(952)]
         #[rename(name = "cached_r_bust_jnt")]
         pub cached_r_bust_jnt: bool,
+        #[offset(960)]
         #[rename(name = "_c_spine1vol_jnt")]
         pub c_spine1vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(968)]
         #[rename(name = "cached_c_spine1vol_jnt")]
         pub cached_c_spine1vol_jnt: bool,
+        #[offset(976)]
         #[rename(name = "_c_spine2vol_jnt")]
         pub c_spine2vol_jnt: crate::unity_engine::transform::Transform,
+        #[offset(984)]
         #[rename(name = "cached_c_spine2vol_jnt")]
         pub cached_c_spine2vol_jnt: bool,
     }

@@ -14,16 +14,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "ColorUsageAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct ColorUsageAttribute {
+        #[offset(16)]
         #[rename(name = "showAlpha")]
         pub show_alpha: bool,
+        #[offset(17)]
         #[rename(name = "hdr")]
         pub hdr: bool,
+        #[offset(20)]
         #[rename(name = "minBrightness")]
         pub min_brightness: f32,
+        #[offset(24)]
         #[rename(name = "maxBrightness")]
         pub max_brightness: f32,
+        #[offset(28)]
         #[rename(name = "minExposureValue")]
         pub min_exposure_value: f32,
+        #[offset(32)]
         #[rename(name = "maxExposureValue")]
         pub max_exposure_value: f32,
     }

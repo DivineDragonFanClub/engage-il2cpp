@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopRefineTargetEvolveMenuItem")]
     #[parent(crate::app::refineshoprefinetargetbasemenuitem::RefineShopRefineTargetBaseMenuItem)]
     pub struct RefineShopRefineTargetEvolveMenuItem {
+        #[offset(144)]
         #[rename(name = "m_EvolvedUnitItem")]
         pub m_evolved_unit_item: crate::app::unititem::UnitItem,
+        #[offset(152)]
         #[rename(name = "m_EvolveIndex")]
         pub m_evolve_index: i32,
+        #[offset(160)]
         #[rename(name = "m_EvolveData")]
         pub m_evolve_data: crate::app::itemevolvedata::ItemEvolveData,
+        #[offset(168)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,
+        #[offset(176)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler,
     }

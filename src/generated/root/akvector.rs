@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkVector")]
     #[parent(crate::system::object::Object)]
     pub struct AkVector {
+        #[offset(16)]
         #[rename(name = "Vector")]
         pub vector: crate::unity_engine::vector3::Vector3,
     }

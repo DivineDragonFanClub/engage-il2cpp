@@ -19,49 +19,184 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akevent/AkEvent.md"))]
-    #[::unity2::class(namespace = "", name = "AkEvent")]
-    #[parent(crate::root::akdragdroptriggerhandler::AkDragDropTriggerHandler)]
-    pub struct AkEvent {
-        #[rename(name = "actionOnEventType")]
-        pub action_on_event_type: crate::root::akactiononeventtype::AkActionOnEventType,
-        #[rename(name = "curveInterpolation")]
-        pub curve_interpolation: crate::root::akcurveinterpolation::AkCurveInterpolation,
-        #[rename(name = "enableActionOnEvent")]
-        pub enable_action_on_event: bool,
-        #[rename(name = "useCallbacks")]
-        pub use_callbacks: bool,
-        #[rename(name = "Callbacks")]
-        pub callbacks: crate::system::collections::generic::list_1::List_1<crate::root::akevent::AkEvent_CallbackData>,
-        #[rename(name = "playingId")]
-        pub playing_id: u32,
-        #[rename(name = "soundEmitterObject")]
-        pub sound_emitter_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "transitionDuration")]
-        pub transition_duration: f32,
-        #[rename(name = "EventCallbackMsg")]
-        pub event_callback_msg: crate::root::akeventcallbackmsg::AkEventCallbackMsg,
-        #[rename(name = "eventIdInternal")]
-        pub event_id_internal: i32,
-        #[rename(name = "valueGuidInternal")]
-        pub value_guid_internal: ::unity2::Array<u8>,
-        #[rename(name = "m_callbackDataInternal")]
-        pub m_callback_data_internal: crate::root::akeventcallbackdata::AkEventCallbackData,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akevent/AkEvent_CallbackData.md"))]
     #[::unity2::class(namespace = "", name = "AkEvent.CallbackData")]
     #[parent(crate::system::object::Object)]
     pub struct AkEvent_CallbackData {
+        #[offset(24)]
         #[rename(name = "FunctionName")]
         pub function_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "GameObject")]
         pub game_object: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akevent/AkEvent.md"))]
+    #[::unity2::class(namespace = "", name = "AkEvent")]
+    #[parent(crate::root::akdragdroptriggerhandler::AkDragDropTriggerHandler)]
+    pub struct AkEvent {
+        #[offset(44)]
+        #[rename(name = "actionOnEventType")]
+        pub action_on_event_type: crate::root::akactiononeventtype::AkActionOnEventType,
+        #[offset(48)]
+        #[rename(name = "curveInterpolation")]
+        pub curve_interpolation: crate::root::akcurveinterpolation::AkCurveInterpolation,
+        #[offset(52)]
+        #[rename(name = "enableActionOnEvent")]
+        pub enable_action_on_event: bool,
+        #[offset(64)]
+        #[rename(name = "useCallbacks")]
+        pub use_callbacks: bool,
+        #[offset(72)]
+        #[rename(name = "Callbacks")]
+        pub callbacks: crate::system::collections::generic::list_1::List_1<crate::root::akevent::AkEvent_CallbackData>,
+        #[offset(80)]
+        #[rename(name = "playingId")]
+        pub playing_id: u32,
+        #[offset(88)]
+        #[rename(name = "soundEmitterObject")]
+        pub sound_emitter_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
+        #[rename(name = "transitionDuration")]
+        pub transition_duration: f32,
+        #[offset(104)]
+        #[rename(name = "EventCallbackMsg")]
+        pub event_callback_msg: crate::root::akeventcallbackmsg::AkEventCallbackMsg,
+        #[offset(112)]
+        #[rename(name = "eventIdInternal")]
+        pub event_id_internal: i32,
+        #[offset(120)]
+        #[rename(name = "valueGuidInternal")]
+        pub value_guid_internal: ::unity2::Array<u8>,
+        #[offset(128)]
+        #[rename(name = "m_callbackDataInternal")]
+        pub m_callback_data_internal: crate::root::akeventcallbackdata::AkEventCallbackData,
     }
 }
 
 #[cfg(feature = "root-akevent-types")]
 pub use __types::*;
+
+#[cfg(feature = "root-akevent")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkEvent_CallbackData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_call_function {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akeventcallbackmsg::AkEventCallbackMsg as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkEvent_CallbackData as ::unity2::ClassIdentity>::class(),
+                "CallFunction",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkEvent_CallbackData as ::unity2::ClassIdentity>::NAME,
+                        "CallFunction",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn call_function(
+        this: AkEvent_CallbackData,
+        event_callback_msg: crate::root::akeventcallbackmsg::AkEventCallbackMsg,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AkEvent_CallbackData, crate::root::akeventcallbackmsg::AkEventCallbackMsg, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_call_function::get_method_info().method_ptr);
+        inner(this, event_callback_msg, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkEvent_CallbackData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkEvent_CallbackData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AkEvent_CallbackData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkEvent_CallbackData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akevent")]
+pub trait IAkEvent_CallbackDataMethods: IAkEvent_CallbackData {
+    #[doc = "`CallFunction(crate::root::akeventcallbackmsg::AkEventCallbackMsg)` overload"]
+    fn call_function(self, event_callback_msg: impl ::core::convert::Into<crate::root::akeventcallbackmsg::AkEventCallbackMsg>) -> () {
+        unsafe {
+            let __receiver =
+                <AkEvent_CallbackData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkEvent_CallbackData_unity2_raw::call_function(
+                __receiver,
+                ::core::convert::Into::into(event_callback_msg),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AkEvent_CallbackData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkEvent_CallbackData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-akevent")]
+impl<__T: IAkEvent_CallbackData> IAkEvent_CallbackDataMethods for __T {}
+
+#[cfg(feature = "root-akevent")]
+impl AkEvent_CallbackData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkEvent_CallbackData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkEvent_CallbackDataMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "root-akevent")]
 #[doc(hidden)]
@@ -422,127 +557,6 @@ impl AkEvent {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkEvent), ::core::stringify!(new),));
         <Self as IAkEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-akevent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkEvent_CallbackData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call_function {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akeventcallbackmsg::AkEventCallbackMsg as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEvent_CallbackData as ::unity2::ClassIdentity>::class(),
-                "CallFunction",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEvent_CallbackData as ::unity2::ClassIdentity>::NAME,
-                        "CallFunction",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn call_function(
-        this: AkEvent_CallbackData,
-        event_callback_msg: crate::root::akeventcallbackmsg::AkEventCallbackMsg,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkEvent_CallbackData, crate::root::akeventcallbackmsg::AkEventCallbackMsg, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_call_function::get_method_info().method_ptr);
-        inner(this, event_callback_msg, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkEvent_CallbackData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkEvent_CallbackData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkEvent_CallbackData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkEvent_CallbackData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akevent")]
-pub trait IAkEvent_CallbackDataMethods: IAkEvent_CallbackData {
-    #[doc = "`CallFunction(crate::root::akeventcallbackmsg::AkEventCallbackMsg)` overload"]
-    fn call_function(self, event_callback_msg: impl ::core::convert::Into<crate::root::akeventcallbackmsg::AkEventCallbackMsg>) -> () {
-        unsafe {
-            let __receiver =
-                <AkEvent_CallbackData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEvent_CallbackData_unity2_raw::call_function(
-                __receiver,
-                ::core::convert::Into::into(event_callback_msg),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkEvent_CallbackData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkEvent_CallbackData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-akevent")]
-impl<__T: IAkEvent_CallbackData> IAkEvent_CallbackDataMethods for __T {}
-
-#[cfg(feature = "root-akevent")]
-impl AkEvent_CallbackData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkEvent_CallbackData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkEvent_CallbackDataMethods>::ctor(this);
         this
     }
 }

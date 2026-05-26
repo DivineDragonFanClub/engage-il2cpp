@@ -20,36 +20,52 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopExchangeCountMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefineShopExchangeCountMenuContent {
+        #[offset(232)]
         #[rename(name = "m_HelpText")]
         pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_SourceCaptionText")]
         pub m_source_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_SourceIconImage")]
         pub m_source_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(256)]
         #[rename(name = "m_SourceNameText")]
         pub m_source_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_SourceValueText")]
         pub m_source_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_TargetCaptionText")]
         pub m_target_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_TargetIconImage")]
         pub m_target_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(288)]
         #[rename(name = "m_TargetNameText")]
         pub m_target_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(296)]
         #[rename(name = "m_TargetValueText")]
         pub m_target_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(304)]
         #[rename(name = "m_ArrowLeft")]
         pub m_arrow_left: crate::unity_engine::gameobject::GameObject,
+        #[offset(312)]
         #[rename(name = "m_ArrowRignt")]
         pub m_arrow_rignt: crate::unity_engine::gameobject::GameObject,
+        #[offset(320)]
         #[rename(name = "m_CountUpDownText")]
         pub m_count_up_down_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(328)]
         #[rename(name = "m_DecideText")]
         pub m_decide_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(336)]
         #[rename(name = "m_MenuItemContent")]
         pub m_menu_item_content: crate::app::basicmenuitemcontent::BasicMenuItemContent,
+        #[offset(344)]
         #[rename(name = "m_textBaseColor")]
         pub m_text_base_color: crate::unity_engine::color::Color,
+        #[offset(360)]
         #[rename(name = "m_NotEnnoughColor")]
         pub m_not_ennough_color: crate::unity_engine::color::Color,
     }

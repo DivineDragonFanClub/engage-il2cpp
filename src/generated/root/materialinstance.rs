@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MaterialInstance")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MaterialInstance {
+        #[offset(24)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_MainTexture")]
         pub m_main_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(40)]
         #[rename(name = "m_NormalMap")]
         pub m_normal_map: crate::unity_engine::texture2d::Texture2D,
+        #[offset(48)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(64)]
         #[rename(name = "m_Clone")]
         pub m_clone: crate::unity_engine::material::Material,
+        #[offset(72)]
         #[rename(name = "m_Original")]
         pub m_original: crate::unity_engine::material::Material,
     }

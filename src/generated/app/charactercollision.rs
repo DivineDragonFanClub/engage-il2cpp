@@ -61,12 +61,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CharacterCollision")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterCollision {
+        #[offset(24)]
         #[rename(name = "m_Kinds")]
         pub m_kinds: crate::app::charactercollision::CharacterCollision_Kinds,
+        #[offset(28)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(44)]
         #[rename(name = "m_Radius")]
         pub m_radius: f32,
+        #[offset(48)]
         #[rename(name = "m_Result")]
         pub m_result: f32,
     }

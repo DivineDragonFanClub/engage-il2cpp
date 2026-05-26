@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopExchangeTargetMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefineShopExchangeTargetMenuContent {
+        #[offset(232)]
         #[rename(name = "m_HelpText")]
         pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_NoticeText")]
         pub m_notice_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

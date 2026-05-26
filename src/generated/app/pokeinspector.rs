@@ -17,18 +17,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PokeInspector")]
     #[parent(crate::app::mapinspector::MapInspector)]
     pub struct PokeInspector {
+        #[offset(48)]
         #[rename(name = "m_X")]
         pub m_x: i32,
+        #[offset(52)]
         #[rename(name = "m_Z")]
         pub m_z: i32,
+        #[offset(56)]
         #[rename(name = "m_W")]
         pub m_w: i32,
+        #[offset(60)]
         #[rename(name = "m_H")]
         pub m_h: i32,
+        #[offset(64)]
         #[rename(name = "m_MaxHp")]
         pub m_max_hp: i32,
+        #[offset(68)]
         #[rename(name = "m_Person")]
         pub m_person: i32,
+        #[offset(72)]
         #[rename(name = "m_HpLabel")]
         pub m_hp_label: ::unity2::Il2CppString,
     }

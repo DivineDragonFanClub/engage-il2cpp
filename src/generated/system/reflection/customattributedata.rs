@@ -7,111 +7,46 @@ mod __types {
     use super::*;
     use crate::system::object::{IObject, Object};
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/customattributedata/CustomAttributeData_LazyCAttrData.md"))]
-    #[::unity2::class(namespace = "System.Reflection", name = "CustomAttributeData.LazyCAttrData")]
-    #[parent(crate::system::object::Object)]
-    pub struct CustomAttributeData_LazyCAttrData {
-        #[rename(name = "assembly")]
-        pub assembly: crate::system::reflection::assembly::Assembly,
-        #[rename(name = "data")]
-        pub data: ::unity2::IntPtr,
-        #[rename(name = "data_length")]
-        pub data_length: u32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/customattributedata/CustomAttributeData.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "CustomAttributeData")]
     #[parent(crate::system::object::Object)]
     pub struct CustomAttributeData {
+        #[offset(16)]
         #[rename(name = "ctorInfo")]
         pub ctor_info: crate::system::reflection::constructorinfo::ConstructorInfo,
+        #[offset(24)]
         #[rename(name = "ctorArgs")]
         pub ctor_args: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
             crate::system::reflection::customattributetypedargument::CustomAttributeTypedArgument,
         >,
+        #[offset(32)]
         #[rename(name = "namedArgs")]
         pub named_args: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
             crate::system::reflection::customattributenamedargument::CustomAttributeNamedArgument,
         >,
+        #[offset(40)]
         #[rename(name = "lazyData")]
         pub lazy_data: crate::system::reflection::customattributedata::CustomAttributeData_LazyCAttrData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/customattributedata/CustomAttributeData_LazyCAttrData.md"))]
+    #[::unity2::class(namespace = "System.Reflection", name = "CustomAttributeData.LazyCAttrData")]
+    #[parent(crate::system::object::Object)]
+    pub struct CustomAttributeData_LazyCAttrData {
+        #[offset(16)]
+        #[rename(name = "assembly")]
+        pub assembly: crate::system::reflection::assembly::Assembly,
+        #[offset(24)]
+        #[rename(name = "data")]
+        pub data: ::unity2::IntPtr,
+        #[offset(32)]
+        #[rename(name = "data_length")]
+        pub data_length: u32,
     }
 }
 
 #[cfg(feature = "system-reflection-customattributedata-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-reflection-customattributedata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CustomAttributeData_LazyCAttrData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: CustomAttributeData_LazyCAttrData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CustomAttributeData_LazyCAttrData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-reflection-customattributedata")]
-pub trait ICustomAttributeData_LazyCAttrDataMethods: ICustomAttributeData_LazyCAttrData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <CustomAttributeData_LazyCAttrData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomAttributeData_LazyCAttrData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "system-reflection-customattributedata")]
-impl<__T: ICustomAttributeData_LazyCAttrData> ICustomAttributeData_LazyCAttrDataMethods for __T {}
-
-#[cfg(feature = "system-reflection-customattributedata")]
-impl CustomAttributeData_LazyCAttrData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CustomAttributeData_LazyCAttrData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICustomAttributeData_LazyCAttrDataMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "system-reflection-customattributedata")]
 #[doc(hidden)]
@@ -986,6 +921,78 @@ impl CustomAttributeData {
             )
         });
         <Self as ICustomAttributeDataMethods>::ctor_2(this, ctor_info, assembly, data, data_length);
+        this
+    }
+}
+
+#[cfg(feature = "system-reflection-customattributedata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CustomAttributeData_LazyCAttrData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomAttributeData_LazyCAttrData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: CustomAttributeData_LazyCAttrData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CustomAttributeData_LazyCAttrData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-reflection-customattributedata")]
+pub trait ICustomAttributeData_LazyCAttrDataMethods: ICustomAttributeData_LazyCAttrData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CustomAttributeData_LazyCAttrData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CustomAttributeData_LazyCAttrData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-reflection-customattributedata")]
+impl<__T: ICustomAttributeData_LazyCAttrData> ICustomAttributeData_LazyCAttrDataMethods for __T {}
+
+#[cfg(feature = "system-reflection-customattributedata")]
+impl CustomAttributeData_LazyCAttrData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomAttributeData_LazyCAttrData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomAttributeData_LazyCAttrDataMethods>::ctor(this);
         this
     }
 }

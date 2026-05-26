@@ -11,26 +11,37 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GodWeaponRefineLevels")]
     #[parent(crate::system::object::Object)]
     pub struct GodWeaponRefineLevels {
+        #[offset(16)]
         #[rename(name = "m_Capacity")]
         pub m_capacity: u8,
+        #[offset(17)]
         #[rename(name = "m_Power")]
         pub m_power: u8,
+        #[offset(18)]
         #[rename(name = "m_Hit")]
         pub m_hit: u8,
+        #[offset(19)]
         #[rename(name = "m_Critical")]
         pub m_critical: u8,
+        #[offset(20)]
         #[rename(name = "m_Avoid")]
         pub m_avoid: u8,
+        #[offset(21)]
         #[rename(name = "m_Secure")]
         pub m_secure: u8,
+        #[offset(22)]
         #[rename(name = "m_Tech")]
         pub m_tech: u8,
+        #[offset(23)]
         #[rename(name = "m_Quick")]
         pub m_quick: u8,
+        #[offset(24)]
         #[rename(name = "m_Def")]
         pub m_def: u8,
+        #[offset(25)]
         #[rename(name = "m_Mdef")]
         pub m_mdef: u8,
+        #[offset(32)]
         #[rename(name = "m_Sid")]
         pub m_sid: ::unity2::Il2CppString,
     }

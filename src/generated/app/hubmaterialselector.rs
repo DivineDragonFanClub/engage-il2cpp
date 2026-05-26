@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubMaterialSelector")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubMaterialSelector {
+        #[offset(24)]
         #[rename(name = "m_target")]
         pub m_target: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_lods")]
         pub m_lods: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(40)]
         #[rename(name = "m_submeshNo")]
         pub m_submesh_no: u32,
+        #[offset(48)]
         #[rename(name = "m_materialMorning")]
         pub m_material_morning: crate::unity_engine::material::Material,
+        #[offset(56)]
         #[rename(name = "m_materialDay")]
         pub m_material_day: crate::unity_engine::material::Material,
+        #[offset(64)]
         #[rename(name = "m_materialEvening")]
         pub m_material_evening: crate::unity_engine::material::Material,
+        #[offset(72)]
         #[rename(name = "m_materialNight")]
         pub m_material_night: crate::unity_engine::material::Material,
+        #[offset(80)]
         #[rename(name = "m_renderers")]
         pub m_renderers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer>,
     }

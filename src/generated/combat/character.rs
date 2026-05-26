@@ -19,104 +19,154 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Character")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct Character {
+        #[offset(48)]
         #[rename(name = "_observable")]
         pub observable: crate::combat::characterobservable::CharacterObservable,
+        #[offset(64)]
         #[rename(name = "FSM")]
         pub fsm: crate::combat::fsm::FSM,
+        #[offset(72)]
         #[rename(name = "m_Brain")]
         pub m_brain: crate::combat::grandewbrain::GrandewBrain,
+        #[offset(80)]
         #[rename(name = "_gs")]
         pub gs: crate::combat::charactergamestatus::CharacterGameStatus,
+        #[offset(112)]
         #[rename(name = "m_EnemySide")]
         pub m_enemy_side: i32,
+        #[offset(132)]
         #[rename(name = "rushDir")]
         pub rush_dir: crate::combat::fxz::FXZ,
+        #[offset(152)]
         #[rename(name = "_bodyAnimator")]
         pub body_animator: crate::unity_engine::animator::Animator,
+        #[offset(160)]
         #[rename(name = "_rideAnimator")]
         pub ride_animator: crate::unity_engine::animator::Animator,
+        #[offset(168)]
         #[rename(name = "_faceAnimator")]
         pub face_animator: crate::unity_engine::animator::Animator,
+        #[offset(176)]
         #[rename(name = "Play直後Idle誤判断防止フレーム数")]
         pub play直後_idle誤判断防止フレーム数: i32,
+        #[offset(180)]
         #[rename(name = "同じアニメ再生時の前回の再生時刻")]
         pub 同じアニメ再生時の前回の再生時刻: f32,
+        #[offset(208)]
         #[rename(name = "m_PlayEndWorldPos")]
         pub m_play_end_world_pos: crate::combat::fxz::FXZ,
+        #[offset(216)]
         #[rename(name = "_DitherFade")]
         pub dither_fade: crate::root::iron19characterfader::Iron19CharacterFader,
+        #[offset(224)]
         #[rename(name = "cached_DitherFade")]
         pub cached_dither_fade: bool,
+        #[offset(232)]
         #[rename(name = "_MaterialEngage")]
         pub material_engage: crate::root::iron19charactersuperengage::Iron19CharacterSuperEngage,
+        #[offset(240)]
         #[rename(name = "cached_MaterialEngage")]
         pub cached_material_engage: bool,
+        #[offset(248)]
         #[rename(name = "_Signal")]
         pub signal: crate::combat::charactersignal::CharacterSignal,
+        #[offset(256)]
         #[rename(name = "_Lying")]
         pub lying: crate::combat::characterlying::CharacterLying,
+        #[offset(264)]
         #[rename(name = "_Joint")]
         pub joint: crate::combat::characterjoint::CharacterJoint,
+        #[offset(272)]
         #[rename(name = "cached_Joint")]
         pub cached_joint: bool,
+        #[offset(280)]
         #[rename(name = "_Proportion")]
         pub proportion: crate::combat::characterproportion::CharacterProportion,
+        #[offset(288)]
         #[rename(name = "cached_Proportion")]
         pub cached_proportion: bool,
+        #[offset(296)]
         #[rename(name = "_Config")]
         pub config: crate::combat::characterconfig::CharacterConfig,
+        #[offset(304)]
         #[rename(name = "cached_Config")]
         pub cached_config: bool,
+        #[offset(312)]
         #[rename(name = "_Move")]
         pub r#move: crate::combat::charactermove::CharacterMove,
+        #[offset(320)]
         #[rename(name = "cached_Move")]
         pub cached_move: bool,
+        #[offset(328)]
         #[rename(name = "_Turn")]
         pub turn: crate::combat::characterturn::CharacterTurn,
+        #[offset(336)]
         #[rename(name = "cached_Turn")]
         pub cached_turn: bool,
+        #[offset(344)]
         #[rename(name = "_Timespace")]
         pub timespace: crate::combat::charactertimespace::CharacterTimespace,
+        #[offset(352)]
         #[rename(name = "cached_Timespace")]
         pub cached_timespace: bool,
+        #[offset(360)]
         #[rename(name = "_HUD")]
         pub hud: crate::combat::characterhud::CharacterHUD,
+        #[offset(368)]
         #[rename(name = "cached_HUD")]
         pub cached_hud: bool,
+        #[offset(376)]
         #[rename(name = "_Sound")]
         pub sound: crate::combat::charactersound::CharacterSound,
+        #[offset(384)]
         #[rename(name = "cached_Sound")]
         pub cached_sound: bool,
+        #[offset(392)]
         #[rename(name = "_Builder")]
         pub builder: crate::combat::characterbuilder::CharacterBuilder,
+        #[offset(400)]
         #[rename(name = "cached_Builder")]
         pub cached_builder: bool,
+        #[offset(408)]
         #[rename(name = "_Aura")]
         pub aura: crate::combat::characteraura::CharacterAura,
+        #[offset(416)]
         #[rename(name = "cached_Aura")]
         pub cached_aura: bool,
+        #[offset(424)]
         #[rename(name = "_Illusion")]
         pub illusion: crate::combat::characterillusion::CharacterIllusion,
+        #[offset(432)]
         #[rename(name = "cached_Illusion")]
         pub cached_illusion: bool,
+        #[offset(440)]
         #[rename(name = "_IKFoot")]
         pub ik_foot: crate::combat::characterikfoot::CharacterIKFoot,
+        #[offset(448)]
         #[rename(name = "cached_IKFoot")]
         pub cached_ik_foot: bool,
+        #[offset(456)]
         #[rename(name = "_IKLookAt")]
         pub ik_look_at: crate::combat::characteriklookat::CharacterIKLookAt,
+        #[offset(464)]
         #[rename(name = "cached_IKLookAt")]
         pub cached_ik_look_at: bool,
+        #[offset(472)]
         #[rename(name = "_IKAim")]
         pub ik_aim: crate::combat::characterikaim::CharacterIKAim,
+        #[offset(480)]
         #[rename(name = "cached_IKAim")]
         pub cached_ik_aim: bool,
+        #[offset(488)]
         #[rename(name = "_Weapon")]
         pub weapon: crate::combat::characterweapon::CharacterWeapon,
+        #[offset(496)]
         #[rename(name = "cached_Weapon")]
         pub cached_weapon: bool,
+        #[offset(504)]
         #[rename(name = "_SignalObserver")]
         pub signal_observer: crate::combat::charactersignalobserver::CharacterSignalObserver,
+        #[offset(512)]
         #[rename(name = "cached_SignalObserver")]
         pub cached_signal_observer: bool,
     }

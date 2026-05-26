@@ -20,22 +20,31 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerOrbital")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerOrbital {
+        #[offset(168)]
         #[rename(name = "Target")]
         pub target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+        #[offset(172)]
         #[rename(name = "Distance")]
         pub distance: f32,
+        #[offset(176)]
         #[rename(name = "StartDegree")]
         pub start_degree: f32,
+        #[offset(180)]
         #[rename(name = "RotateSpeed")]
         pub rotate_speed: f32,
+        #[offset(184)]
         #[rename(name = "CameraHeight")]
         pub camera_height: f32,
+        #[offset(188)]
         #[rename(name = "FOVWalk")]
         pub fov_walk: f32,
+        #[offset(192)]
         #[rename(name = "FOVRide")]
         pub fov_ride: f32,
+        #[offset(196)]
         #[rename(name = "m_Rotate")]
         pub m_rotate: f32,
+        #[offset(200)]
         #[rename(name = "m_LookAt")]
         pub m_look_at: crate::combat::fxz::FXZ,
     }

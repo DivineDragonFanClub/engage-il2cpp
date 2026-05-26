@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters", name = "PerformanceStopwatch")]
     #[parent(crate::system::object::Object)]
     pub struct PerformanceStopwatch {
+        #[offset(24)]
         #[rename(name = "m_Count")]
         pub m_count: i32,
+        #[offset(28)]
         #[rename(name = "m_Reentrant")]
         pub m_reentrant: i32,
+        #[offset(32)]
         #[rename(name = "m_Counter")]
         pub m_counter: crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
     }

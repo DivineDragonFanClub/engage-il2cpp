@@ -20,32 +20,46 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponParamMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RefineGodWeaponParamMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_ParamNameText")]
         pub m_param_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_NothingNameText")]
         pub m_nothing_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_LevelParentObject")]
         pub m_level_parent_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_LevelBeforeCaptionText")]
         pub m_level_before_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_LevelBeforeValueText")]
         pub m_level_before_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_LevelArrowText")]
         pub m_level_arrow_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "m_LevelAfterCaptionText")]
         pub m_level_after_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_LevelAfterValueText")]
         pub m_level_after_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(136)]
         #[rename(name = "m_ParamsParentObject")]
         pub m_params_parent_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_BuildUpValueCaptionText")]
         pub m_build_up_value_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(152)]
         #[rename(name = "m_BuildUpValueText")]
         pub m_build_up_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
         #[rename(name = "m_MaterialIcon")]
         pub m_material_icon: crate::unity_engine::ui::image::Image,
+        #[offset(168)]
         #[rename(name = "m_MaterialNameText")]
         pub m_material_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(176)]
         #[rename(name = "m_MaterialValueText")]
         pub m_material_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

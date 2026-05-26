@@ -11,18 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))]
-    #[::unity2::class(namespace = "App", name = "MapActor")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapActor {
-        #[static_field]
-        #[rename(name = "MoveTime")]
-        pub move_time: f32,
-        #[static_field]
-        #[rename(name = "StickMargin")]
-        pub stick_margin: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor_MoveResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -59,6 +47,18 @@ mod __types {
         pub fn hit() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))]
+    #[::unity2::class(namespace = "App", name = "MapActor")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapActor {
+        #[static_field]
+        #[rename(name = "MoveTime")]
+        pub move_time: f32,
+        #[static_field]
+        #[rename(name = "StickMargin")]
+        pub stick_margin: f32,
     }
 }
 

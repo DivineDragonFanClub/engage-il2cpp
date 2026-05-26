@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VersusEditMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct VersusEditMenuItem {
+        #[offset(104)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::mapeditorobjectdata::MapEditorObjectData,
+        #[offset(136)]
         #[rename(name = "m_Category")]
         pub m_category: crate::app::mapeditorcategorydata::MapEditorCategoryData,
+        #[offset(144)]
         #[rename(name = "m_OnSelectCallback")]
         pub m_on_select_callback: crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>,
     }

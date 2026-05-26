@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AISimulatorBase")]
     #[parent(crate::system::object::Object)]
     pub struct AISimulatorBase {
+        #[offset(16)]
         #[rename(name = "m_Offense")]
         pub m_offense: crate::app::unit::Unit,
+        #[offset(24)]
         #[rename(name = "m_OffenseIndex")]
         pub m_offense_index: i32,
+        #[offset(32)]
         #[rename(name = "m_Defense")]
         pub m_defense: crate::app::unit::Unit,
+        #[offset(40)]
         #[rename(name = "m_BattleInfo")]
         pub m_battle_info: crate::app::battleinfo::BattleInfo,
+        #[offset(48)]
         #[rename(name = "m_Score")]
         pub m_score: u32,
     }

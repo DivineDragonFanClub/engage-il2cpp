@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Compatibility.Frameworks", name = "FrameworkClrBase")]
     #[parent(crate::moon_sharp::interpreter::compatibility::frameworks::frameworkreflectionbase::FrameworkReflectionBase)]
     pub struct FrameworkClrBase {
+        #[offset(16)]
         #[rename(name = "BINDINGFLAGS_MEMBER")]
         pub bindingflags_member: crate::system::reflection::bindingflags::BindingFlags,
+        #[offset(20)]
         #[rename(name = "BINDINGFLAGS_INNERCLASS")]
         pub bindingflags_innerclass: crate::system::reflection::bindingflags::BindingFlags,
     }

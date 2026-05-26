@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemBondLevel")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemBondLevel {
+        #[offset(80)]
         #[rename(name = "m_MID")]
         pub m_mid: ::unity2::Il2CppString,
     }

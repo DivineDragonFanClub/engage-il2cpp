@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: combatsequence :: CombatSequence >)]
     pub struct CombatSequence {
+        #[offset(136)]
         #[rename(name = "m_MapCamera")]
         pub m_map_camera: crate::unity_engine::camera::Camera,
     }

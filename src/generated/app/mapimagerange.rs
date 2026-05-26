@@ -42,8 +42,10 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_Image")]
         pub m_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[offset(24)]
         #[rename(name = "m_Poss")]
         pub m_poss: crate::system::collections::generic::list_1::List_1<crate::app::mapimagerange::MapImageRange_Pos>,
     }

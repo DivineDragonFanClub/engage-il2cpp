@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponParamMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RefineGodWeaponParamMenuItem {
+        #[offset(148)]
         #[rename(name = "m_RefineOrReset")]
         pub m_refine_or_reset: bool,
+        #[offset(152)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler,
+        #[offset(160)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_DecideEventHandler,
+        #[offset(168)]
         #[rename(name = "m_RequestCloseEventHandler")]
         pub m_request_close_event_handler: crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler,
     }

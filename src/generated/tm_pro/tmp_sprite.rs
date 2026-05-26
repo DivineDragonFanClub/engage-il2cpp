@@ -14,14 +14,19 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_Sprite")]
     #[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]
     pub struct TMP_Sprite {
+        #[offset(56)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "hashCode")]
         pub hash_code: i32,
+        #[offset(68)]
         #[rename(name = "unicode")]
         pub unicode: i32,
+        #[offset(72)]
         #[rename(name = "pivot")]
         pub pivot: crate::unity_engine::vector2::Vector2,
+        #[offset(80)]
         #[rename(name = "sprite")]
         pub sprite: crate::unity_engine::sprite::Sprite,
     }

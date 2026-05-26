@@ -19,11 +19,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "", name = "TutorialListSelectMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TutorialListSelectMenu_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_Page.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -58,23 +53,35 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "", name = "TutorialListSelectMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TutorialListSelectMenu_DecideEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu.md"))]
     #[::unity2::class(namespace = "", name = "TutorialListSelectMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct TutorialListSelectMenu {
+        #[offset(200)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::root::tutoriallistselectmenu::TutorialListSelectMenu_DecideEventHandler,
+        #[offset(208)]
         #[rename(name = "m_CategoryList")]
         pub m_category_list:
             crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>,
+        #[offset(216)]
         #[rename(name = "m_SelectCategory")]
         pub m_select_category: crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType,
+        #[offset(224)]
         #[rename(name = "m_Root")]
         pub m_root: crate::root::tutoriallistroot::TutorialListRoot,
+        #[offset(232)]
         #[rename(name = "m_MenuSelectList")]
         pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(240)]
         #[rename(name = "m_CategoryIndex")]
         pub m_category_index: i32,
+        #[offset(244)]
         #[rename(name = "m_IsGetAllTutorial")]
         pub m_is_get_all_tutorial: bool,
     }

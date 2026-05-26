@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EditorPrefs_Float")]
     #[parent(crate::system::object::Object)]
     pub struct EditorPrefs_Float {
+        #[offset(16)]
         #[rename(name = "key")]
         pub key: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "defaultValue")]
         pub default_value: f32,
     }

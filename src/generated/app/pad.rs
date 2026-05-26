@@ -123,12 +123,16 @@ mod __types {
         #[static_field]
         #[rename(name = "SpeedUp")]
         pub speed_up: crate::nn::hid::npadbutton::NpadButton,
+        #[offset(28)]
         #[rename(name = "m_NpadId")]
         pub m_npad_id: crate::nn::hid::npadid::NpadId,
+        #[offset(32)]
         #[rename(name = "m_NpadStyle")]
         pub m_npad_style: crate::nn::hid::npadstyle::NpadStyle,
+        #[offset(40)]
         #[rename(name = "m_NpadState")]
         pub m_npad_state: crate::nn::hid::npadstate::NpadState,
+        #[offset(88)]
         #[rename(name = "m_OldButtons")]
         pub m_old_buttons: crate::nn::hid::npadbutton::NpadButton,
         #[static_field]
@@ -137,18 +141,25 @@ mod __types {
         #[static_field]
         #[rename(name = "REPAT_CONTINUE")]
         pub repat_continue: i32,
+        #[offset(96)]
         #[rename(name = "m_RepeatButtons")]
         pub m_repeat_buttons: crate::nn::hid::npadbutton::NpadButton,
+        #[offset(104)]
         #[rename(name = "m_RepeatCount")]
         pub m_repeat_count: i32,
+        #[offset(108)]
         #[rename(name = "m_HoldCount")]
         pub m_hold_count: i32,
+        #[offset(112)]
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::pad::Pad_Mode,
+        #[offset(120)]
         #[rename(name = "m_Vibration")]
         pub m_vibration: crate::app::vibrationmanager::VibrationManager,
+        #[offset(128)]
         #[rename(name = "m_ControllerSupportApplet")]
         pub m_controller_support_applet: crate::app::controllersupportapplet::ControllerSupportApplet,
+        #[offset(136)]
         #[rename(name = "m_GyroMnager")]
         pub m_gyro_mnager: crate::app::gyromnager::GyroMnager,
     }

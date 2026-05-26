@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GiftMenuItemSub")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct GiftMenuItemSub {
+        #[offset(104)]
         #[rename(name = "m_Item")]
         pub m_item: crate::app::itemdata::ItemData,
+        #[offset(112)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(120)]
         #[rename(name = "m_Value")]
         pub m_value: i32,
     }

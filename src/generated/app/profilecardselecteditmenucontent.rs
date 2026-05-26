@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardSelectEditMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct ProfileCardSelectEditMenuContent {
+        #[offset(232)]
         #[rename(name = "m_CaptionText")]
         pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

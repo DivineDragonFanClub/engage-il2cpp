@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "DebugMenuRender")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DebugMenuRender {
+        #[offset(24)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::debugmenu::DebugMenu,
     }

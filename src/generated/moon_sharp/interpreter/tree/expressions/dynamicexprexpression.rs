@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "DynamicExprExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct DynamicExprExpression {
+        #[offset(32)]
         #[rename(name = "m_Exp")]
         pub m_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
     }

@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubResource")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: hubresource :: HubResource >)]
     pub struct HubResource {
+        #[offset(32)]
         #[rename(name = "resources")]
         pub resources:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::resourcehandle_2::ResourceHandle_2>,

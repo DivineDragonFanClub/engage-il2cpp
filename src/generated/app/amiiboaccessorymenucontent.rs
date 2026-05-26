@@ -23,20 +23,28 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_HelpObj")]
         pub m_help_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_HelpAccessoryName")]
         pub m_help_accessory_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_HelpAccessoryHelp")]
         pub m_help_accessory_help: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_HelpPartsIcon")]
         pub m_help_parts_icon: crate::unity_engine::ui::image::Image,
+        #[offset(264)]
         #[rename(name = "m_HelpPartsName")]
         pub m_help_parts_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_HelpNgObj")]
         pub m_help_ng_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(280)]
         #[rename(name = "m_TicketValue")]
         pub m_ticket_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

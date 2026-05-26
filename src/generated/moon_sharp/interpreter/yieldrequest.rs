@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "YieldRequest")]
     #[parent(crate::system::object::Object)]
     pub struct YieldRequest {
+        #[offset(16)]
         #[rename(name = "ReturnValues")]
         pub return_values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     }

@@ -20,20 +20,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct WeaponShopBuyMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_KindFrameObject")]
         pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_KindIconObject")]
         pub m_kind_icon_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_NameObject")]
         pub m_name_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_StockValueObject")]
         pub m_stock_value_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_PriceValueObject")]
         pub m_price_value_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_PriceGObject")]
         pub m_price_g_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_NewIconObject")]
         pub m_new_icon_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_textBaseColor2")]
         pub m_text_base_color2: crate::unity_engine::color::Color,
     }

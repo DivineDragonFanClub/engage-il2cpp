@@ -32,55 +32,79 @@ mod __types {
         #[static_field]
         #[rename(name = "s_CustomLodFadeBiasPropID")]
         pub s_custom_lod_fade_bias_prop_id: i32,
+        #[offset(144)]
         #[rename(name = "m_CopyDepthPass")]
         pub m_copy_depth_pass: crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass,
+        #[offset(152)]
         #[rename(name = "m_CopyColorPass")]
         pub m_copy_color_pass: crate::unity_engine::rendering::universal::internal::copycolorpass::CopyColorPass,
+        #[offset(160)]
         #[rename(name = "m_CustomBaseOpaquePass")]
         pub m_custom_base_opaque_pass: crate::unity_engine::rendering::universal::custom::internal::custombaseopaquepass::CustomBaseOpaquePass,
+        #[offset(168)]
         #[rename(name = "m_CustomCharaOpaquePass")]
         pub m_custom_chara_opaque_pass: crate::unity_engine::rendering::universal::custom::internal::customcharaopaquepass::CustomCharaOpaquePass,
+        #[offset(176)]
         #[rename(name = "m_RenderTransparentForwardPass")]
         pub m_render_transparent_forward_pass:
             crate::unity_engine::rendering::universal::custom::internal::custombasetransparentpass::CustomBaseTransparentPass,
+        #[offset(184)]
         #[rename(name = "m_CustomTransCharaMaskPass")]
         pub m_custom_trans_chara_mask_pass:
             crate::unity_engine::rendering::universal::custom::internal::customtranscharamaskpass::CustomTransCharaMaskPass,
+        #[offset(192)]
         #[rename(name = "m_PostProcessPass")]
         pub m_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[offset(200)]
         #[rename(name = "m_FinalPostProcessPass")]
         pub m_final_post_process_pass: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass,
+        #[offset(208)]
         #[rename(name = "m_FinalBlitPass")]
         pub m_final_blit_pass: crate::unity_engine::rendering::universal::internal::finalblitpass::FinalBlitPass,
+        #[offset(216)]
         #[rename(name = "m_CustomMixedResolutionPass")]
         pub m_custom_mixed_resolution_pass:
             crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass,
+        #[offset(224)]
         #[rename(name = "m_ActiveCameraColorAttachment")]
         pub m_active_camera_color_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(272)]
         #[rename(name = "m_ActiveCameraDepthAttachment")]
         pub m_active_camera_depth_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(320)]
         #[rename(name = "m_CameraColorAttachment")]
         pub m_camera_color_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(368)]
         #[rename(name = "m_CameraDepthAttachment")]
         pub m_camera_depth_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(416)]
         #[rename(name = "m_DepthTexture")]
         pub m_depth_texture: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(464)]
         #[rename(name = "m_OpaqueColor")]
         pub m_opaque_color: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(512)]
         #[rename(name = "m_AfterPostProcessColor")]
         pub m_after_post_process_color: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(560)]
         #[rename(name = "m_ColorGradingLut")]
         pub m_color_grading_lut: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(608)]
         #[rename(name = "m_ForwardLights")]
         pub m_forward_lights: crate::unity_engine::rendering::universal::internal::forwardlights::ForwardLights,
+        #[offset(616)]
         #[rename(name = "m_BlitMaterial")]
         pub m_blit_material: crate::unity_engine::material::Material,
+        #[offset(624)]
         #[rename(name = "m_CopyDepthMaterial")]
         pub m_copy_depth_material: crate::unity_engine::material::Material,
+        #[offset(632)]
         #[rename(name = "m_SamplingMaterial")]
         pub m_sampling_material: crate::unity_engine::material::Material,
+        #[offset(640)]
         #[rename(name = "m_DownsampleDepthMaterial")]
         pub m_downsample_depth_material: crate::unity_engine::material::Material,
+        #[offset(648)]
         #[rename(name = "m_HalfResoCompositeMaterial")]
         pub m_half_reso_composite_material: crate::unity_engine::material::Material,
     }

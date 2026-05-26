@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TurnCommonInspector")]
     #[parent(crate::app::mapinspector::MapInspector)]
     pub struct TurnCommonInspector {
+        #[offset(48)]
         #[rename(name = "m_Min")]
         pub m_min: i32,
+        #[offset(52)]
         #[rename(name = "m_Max")]
         pub m_max: i32,
+        #[offset(56)]
         #[rename(name = "m_Force")]
         pub m_force: i32,
     }

@@ -18,49 +18,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfoSide")]
-    #[parent(crate::system::object::Object)]
-    pub struct BattleInfoSide {
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_SideType")]
-        pub m_side_type: crate::app::battleside::BattleSide_Type,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_UnitItem")]
-        pub m_unit_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_SpecifiedItem")]
-        pub m_specified_item: crate::app::unititem::UnitItem,
-        #[rename(name = "m_X")]
-        pub m_x: i32,
-        #[rename(name = "m_Z")]
-        pub m_z: i32,
-        #[rename(name = "m_Terrain")]
-        pub m_terrain: crate::app::terraindata_2::TerrainData_2,
-        #[rename(name = "m_Overlap")]
-        pub m_overlap: crate::app::terraindata_2::TerrainData_2,
-        #[rename(name = "m_Status")]
-        pub m_status: crate::app::battleinfoside::BattleInfoSide_BitFieldStatus,
-        #[rename(name = "m_Detail")]
-        pub m_detail: crate::app::battledetail::BattleDetail,
-        #[rename(name = "m_Hierarchy")]
-        pub m_hierarchy: crate::app::pool::Pool_Hierarchy_1<crate::app::battledetail::BattleDetail>,
-        #[rename(name = "m_Support")]
-        pub m_support: crate::app::supportcalculator::SupportCalculator,
-        #[rename(name = "m_Parent")]
-        pub m_parent: crate::app::battleinfoside::BattleInfoSide,
-        #[rename(name = "m_Reverse")]
-        pub m_reverse: crate::app::battleinfoside::BattleInfoSide,
-        #[rename(name = "m_Destroy")]
-        pub m_destroy: crate::app::battledestory::BattleDestory,
-        #[rename(name = "m_MaskSkill")]
-        pub m_mask_skill: crate::app::skillarray::SkillArray,
-        #[static_field]
-        #[rename(name = "ContinueCondition")]
-        pub continue_condition: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoside/BattleInfoSide_Status.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -221,6 +178,66 @@ mod __types {
         pub fn mask_chain() -> Self {
             Self { value: 12 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfoSide")]
+    #[parent(crate::system::object::Object)]
+    pub struct BattleInfoSide {
+        #[offset(16)]
+        #[rename(name = "m_Info")]
+        pub m_info: crate::app::battleinfo::BattleInfo,
+        #[offset(24)]
+        #[rename(name = "m_SideType")]
+        pub m_side_type: crate::app::battleside::BattleSide_Type,
+        #[offset(32)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(40)]
+        #[rename(name = "m_UnitItem")]
+        pub m_unit_item: crate::app::unititem::UnitItem,
+        #[offset(48)]
+        #[rename(name = "m_SpecifiedItem")]
+        pub m_specified_item: crate::app::unititem::UnitItem,
+        #[offset(56)]
+        #[rename(name = "m_X")]
+        pub m_x: i32,
+        #[offset(60)]
+        #[rename(name = "m_Z")]
+        pub m_z: i32,
+        #[offset(64)]
+        #[rename(name = "m_Terrain")]
+        pub m_terrain: crate::app::terraindata_2::TerrainData_2,
+        #[offset(72)]
+        #[rename(name = "m_Overlap")]
+        pub m_overlap: crate::app::terraindata_2::TerrainData_2,
+        #[offset(80)]
+        #[rename(name = "m_Status")]
+        pub m_status: crate::app::battleinfoside::BattleInfoSide_BitFieldStatus,
+        #[offset(88)]
+        #[rename(name = "m_Detail")]
+        pub m_detail: crate::app::battledetail::BattleDetail,
+        #[offset(96)]
+        #[rename(name = "m_Hierarchy")]
+        pub m_hierarchy: crate::app::pool::Pool_Hierarchy_1<crate::app::battledetail::BattleDetail>,
+        #[offset(104)]
+        #[rename(name = "m_Support")]
+        pub m_support: crate::app::supportcalculator::SupportCalculator,
+        #[offset(112)]
+        #[rename(name = "m_Parent")]
+        pub m_parent: crate::app::battleinfoside::BattleInfoSide,
+        #[offset(120)]
+        #[rename(name = "m_Reverse")]
+        pub m_reverse: crate::app::battleinfoside::BattleInfoSide,
+        #[offset(128)]
+        #[rename(name = "m_Destroy")]
+        pub m_destroy: crate::app::battledestory::BattleDestory,
+        #[offset(136)]
+        #[rename(name = "m_MaskSkill")]
+        pub m_mask_skill: crate::app::skillarray::SkillArray,
+        #[static_field]
+        #[rename(name = "ContinueCondition")]
+        pub continue_condition: i32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]

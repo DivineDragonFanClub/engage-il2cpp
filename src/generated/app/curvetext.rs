@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CurveText")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CurveText {
+        #[offset(24)]
         #[rename(name = "m_TextComponent")]
         pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
+        #[offset(32)]
         #[rename(name = "VertexCurve")]
         pub vertex_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
         #[rename(name = "m_CurveScale")]
         pub m_curve_scale: f32,
+        #[offset(44)]
         #[rename(name = "m_IsRotate")]
         pub m_is_rotate: bool,
+        #[offset(45)]
         #[rename(name = "m_UseRectWidth")]
         pub m_use_rect_width: bool,
+        #[offset(46)]
         #[rename(name = "m_IsDistort")]
         pub m_is_distort: bool,
     }

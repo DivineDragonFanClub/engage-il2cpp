@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "FinalBlitPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct FinalBlitPass {
+        #[offset(112)]
         #[rename(name = "m_Source")]
         pub m_source: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(160)]
         #[rename(name = "m_BlitMaterial")]
         pub m_blit_material: crate::unity_engine::material::Material,
+        #[offset(168)]
         #[rename(name = "m_CustomFinalMonoColor")]
         pub m_custom_final_mono_color: crate::unity_engine::vector4::Vector4,
         #[static_field]

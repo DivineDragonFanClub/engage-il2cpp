@@ -23,8 +23,10 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_help")]
         pub m_help: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_helpRoot")]
         pub m_help_root: crate::unity_engine::gameobject::GameObject,
     }

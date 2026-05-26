@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotColorChangeItemContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MascotColorChangeItemContent {
+        #[offset(24)]
         #[rename(name = "m_Check")]
         pub m_check: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Frm")]
         pub m_frm: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_IsSelect")]
         pub m_is_select: bool,
+        #[offset(41)]
         #[rename(name = "m_IsCheck")]
         pub m_is_check: bool,
     }

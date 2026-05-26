@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "Light")]
     #[parent(crate::unity_engine::behaviour::Behaviour)]
     pub struct Light {
+        #[offset(24)]
         #[rename(name = "m_BakedIndex")]
         pub m_baked_index: i32,
     }

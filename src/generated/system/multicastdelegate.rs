@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "System", name = "MulticastDelegate")]
     #[parent(crate::system::delegate::Delegate)]
     pub struct MulticastDelegate {
+        #[offset(104)]
         #[rename(name = "delegates")]
         pub delegates: ::unity2::Array<crate::system::delegate::Delegate>,
     }

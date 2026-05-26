@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EvasionSpeed")]
     #[parent(crate::system::object::Object)]
     pub struct EvasionSpeed {
+        #[offset(16)]
         #[rename(name = "m_EvasionSpeedCurve")]
         pub m_evasion_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(24)]
         #[rename(name = "t")]
         pub t: f32,
     }

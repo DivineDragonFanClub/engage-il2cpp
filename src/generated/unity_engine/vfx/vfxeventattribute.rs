@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXEventAttribute")]
     #[parent(crate::system::object::Object)]
     pub struct VFXEventAttribute {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_Owner")]
         pub m_owner: bool,
+        #[offset(32)]
         #[rename(name = "m_VfxAsset")]
         pub m_vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
     }

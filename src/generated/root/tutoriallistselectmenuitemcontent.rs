@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "TutorialListSelectMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct TutorialListSelectMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_UnreadIcon")]
         pub m_unread_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_IconAnimator")]
         pub m_icon_animator: crate::unity_engine::animator::Animator,
     }

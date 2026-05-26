@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapSoundLabel")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct MapSoundLabel {
+        #[offset(24)]
         #[rename(name = "起動音")]
         pub 起動音: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "停止音")]
         pub 停止音: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "破壊音")]
         pub 破壊音: ::unity2::Il2CppString,
     }

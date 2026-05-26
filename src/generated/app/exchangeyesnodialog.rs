@@ -14,16 +14,29 @@ mod __types {
         system::object::{IObject, Object},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]
+    #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.MoneyParam")]
+    #[parent(crate::system::object::Object)]
+    pub struct ExchangeYesNoDialog_MoneyParam {
+        #[offset(16)]
+        #[rename(name = "num")]
+        pub num: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_ItemParam.md"))]
     #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.ItemParam")]
     #[parent(crate::system::object::Object)]
     pub struct ExchangeYesNoDialog_ItemParam {
+        #[offset(16)]
         #[rename(name = "sprite")]
         pub sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(24)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "num")]
         pub num: i32,
+        #[offset(36)]
         #[rename(name = "enabledNum")]
         pub enabled_num: bool,
     }
@@ -32,23 +45,88 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog")]
     #[parent(crate::app::basicdialog::BasicDialog)]
     pub struct ExchangeYesNoDialog {
+        #[offset(288)]
         #[rename(name = "m_DisposeEventHandler")]
         pub m_dispose_event_handler: crate::system::action::Action,
+        #[offset(296)]
         #[rename(name = "m_IsForWell")]
         pub m_is_for_well: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]
-    #[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.MoneyParam")]
-    #[parent(crate::system::object::Object)]
-    pub struct ExchangeYesNoDialog_MoneyParam {
-        #[rename(name = "num")]
-        pub num: i32,
     }
 }
 
 #[cfg(feature = "app-exchangeyesnodialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ExchangeYesNoDialog_MoneyParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExchangeYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExchangeYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ExchangeYesNoDialog_MoneyParam, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ExchangeYesNoDialog_MoneyParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+pub trait IExchangeYesNoDialog_MoneyParamMethods: IExchangeYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ExchangeYesNoDialog_MoneyParam as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ExchangeYesNoDialog_MoneyParam_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl<__T: IExchangeYesNoDialog_MoneyParam> IExchangeYesNoDialog_MoneyParamMethods for __T {}
+
+#[cfg(feature = "app-exchangeyesnodialog")]
+impl ExchangeYesNoDialog_MoneyParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExchangeYesNoDialog_MoneyParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExchangeYesNoDialog_MoneyParamMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-exchangeyesnodialog")]
 #[doc(hidden)]
@@ -2722,77 +2800,6 @@ impl ExchangeYesNoDialog {
             cost_item_title,
             cost_item_name,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ExchangeYesNoDialog_MoneyParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExchangeYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ExchangeYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ExchangeYesNoDialog_MoneyParam, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ExchangeYesNoDialog_MoneyParam, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-pub trait IExchangeYesNoDialog_MoneyParamMethods: IExchangeYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ExchangeYesNoDialog_MoneyParam as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ExchangeYesNoDialog_MoneyParam_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-impl<__T: IExchangeYesNoDialog_MoneyParam> IExchangeYesNoDialog_MoneyParamMethods for __T {}
-
-#[cfg(feature = "app-exchangeyesnodialog")]
-impl ExchangeYesNoDialog_MoneyParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeYesNoDialog_MoneyParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExchangeYesNoDialog_MoneyParamMethods>::ctor(this);
         this
     }
 }

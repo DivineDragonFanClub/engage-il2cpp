@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubEffectArea")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubEffectArea {
+        #[offset(24)]
         #[rename(name = "m_ShowEffects")]
         pub m_show_effects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
     }

@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagLocalize")]
     #[parent(crate::app::talk3_d::talktag::TalkTag)]
     pub struct TalkTagLocalize {
+        #[offset(16)]
         #[rename(name = "m_TagID")]
         pub m_tag_id: crate::app::mess::Mess_TagID_Localize,
+        #[offset(24)]
         #[rename(name = "m_ReplaceStr0")]
         pub m_replace_str0: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_ReplaceStr1")]
         pub m_replace_str1: ::unity2::Il2CppString,
     }

@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopExchangeResultPopup")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RefineShopExchangeResultPopup {
+        #[offset(24)]
         #[rename(name = "m_TargetIconImage")]
         pub m_target_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_TargetNameText")]
         pub m_target_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_TargetValueText")]
         pub m_target_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_SourceIconImage")]
         pub m_source_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(56)]
         #[rename(name = "m_SourceNameText")]
         pub m_source_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_SourceValueText")]
         pub m_source_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
     }

@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Deco_RodWarp")]
     #[parent(crate::combat::deco_rod::Deco_Rod)]
     pub struct Deco_RodWarp {
+        #[offset(40)]
         #[rename(name = "m_Use")]
         pub m_use: crate::app::itemdata::ItemData_UseTypes,
+        #[offset(48)]
         #[rename(name = "m_Target")]
         pub m_target: crate::combat::character::Character,
+        #[offset(56)]
         #[rename(name = "m_FinalAlpha")]
         pub m_final_alpha: f32,
     }

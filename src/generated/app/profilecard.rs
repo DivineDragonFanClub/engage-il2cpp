@@ -10,86 +10,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecard/ProfileCard.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCard")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCard {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[static_field]
-        #[rename(name = "MessageMax")]
-        pub message_max: i32,
-        #[static_field]
-        #[rename(name = "StampMax")]
-        pub stamp_max: i32,
-        #[static_field]
-        #[rename(name = "SortieCountMax")]
-        pub sortie_count_max: i32,
-        #[static_field]
-        #[rename(name = "PageCount")]
-        pub page_count: i32,
-        #[static_field]
-        #[rename(name = "StampMaxVer5")]
-        pub stamp_max_ver5: i32,
-        #[rename(name = "m_UserName")]
-        pub m_user_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Lang")]
-        pub m_lang: crate::app::language::Language_Langs,
-        #[rename(name = "m_Title")]
-        pub m_title: crate::app::profilecardtitledata::ProfileCardTitleData,
-        #[rename(name = "m_Bg")]
-        pub m_bg: crate::app::profilecardbgdata::ProfileCardBgData,
-        #[rename(name = "m_Frame")]
-        pub m_frame: crate::app::profilecardframedata::ProfileCardFrameData,
-        #[rename(name = "m_TextDeco")]
-        pub m_text_deco: crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        #[rename(name = "m_TextColor")]
-        pub m_text_color: crate::app::profilecardtextcolordata::ProfileCardTextColorData,
-        #[rename(name = "m_CharacterStamp")]
-        pub m_character_stamp: crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-        #[rename(name = "m_Comment")]
-        pub m_comment: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData>,
-        #[rename(name = "m_CommentString")]
-        pub m_comment_string: ::unity2::Il2CppString,
-        #[rename(name = "m_PlayTime")]
-        pub m_play_time: f32,
-        #[rename(name = "m_BirthMonth")]
-        pub m_birth_month: u8,
-        #[rename(name = "m_BirthDay")]
-        pub m_birth_day: u8,
-        #[rename(name = "m_Difficulty")]
-        pub m_difficulty: crate::app::difficulty::Difficulty,
-        #[rename(name = "m_GameMode")]
-        pub m_game_mode: crate::app::gamemode::GameMode,
-        #[rename(name = "m_Gender")]
-        pub m_gender: crate::app::gender::Gender,
-        #[rename(name = "m_FavoriteCharacter")]
-        pub m_favorite_character: crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
-        #[rename(name = "m_FavoriteMap")]
-        pub m_favorite_map: crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        #[rename(name = "m_RelayPlayingCount")]
-        pub m_relay_playing_count: u32,
-        #[rename(name = "m_VersusThemeOfEditMap")]
-        pub m_versus_theme_of_edit_map: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-        #[rename(name = "m_VersusRate")]
-        pub m_versus_rate: i32,
-        #[rename(name = "m_VersusPlayingCount")]
-        pub m_versus_playing_count: u32,
-        #[rename(name = "m_OwnerID")]
-        pub m_owner_id: u64,
-        #[rename(name = "m_IsPublic")]
-        pub m_is_public: bool,
-        #[rename(name = "m_FreeStamp")]
-        pub m_free_stamp: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>,
-        #[rename(name = "m_SortieCount")]
-        pub m_sortie_count: ::unity2::Array<crate::app::profilecard::ProfileCard_SortieCount>,
-        #[rename(name = "m_Achievements")]
-        pub m_achievements: ::unity2::Array<crate::app::profilecard::ProfileCard_Achievement>,
-        #[rename(name = "m_Images")]
-        pub m_images: ::unity2::Array<u8>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecard/ProfileCard_Achievement.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -145,23 +65,824 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCard.FreeStamp")]
     #[parent(crate::system::object::Object)]
     pub struct ProfileCard_FreeStamp {
+        #[offset(16)]
         #[rename(name = "m_Stamp")]
         pub m_stamp: crate::app::profilecardstampdata::ProfileCardStampData,
+        #[offset(24)]
         #[rename(name = "m_X")]
         pub m_x: i32,
+        #[offset(28)]
         #[rename(name = "m_Y")]
         pub m_y: i32,
+        #[offset(32)]
         #[rename(name = "m_Rotation")]
         pub m_rotation: f32,
+        #[offset(36)]
         #[rename(name = "m_ScaleX")]
         pub m_scale_x: f32,
+        #[offset(40)]
         #[rename(name = "m_ScaleY")]
         pub m_scale_y: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecard/ProfileCard.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCard")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCard {
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[static_field]
+        #[rename(name = "MessageMax")]
+        pub message_max: i32,
+        #[static_field]
+        #[rename(name = "StampMax")]
+        pub stamp_max: i32,
+        #[static_field]
+        #[rename(name = "SortieCountMax")]
+        pub sortie_count_max: i32,
+        #[static_field]
+        #[rename(name = "PageCount")]
+        pub page_count: i32,
+        #[static_field]
+        #[rename(name = "StampMaxVer5")]
+        pub stamp_max_ver5: i32,
+        #[offset(16)]
+        #[rename(name = "m_UserName")]
+        pub m_user_name: ::unity2::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "m_Lang")]
+        pub m_lang: crate::app::language::Language_Langs,
+        #[offset(32)]
+        #[rename(name = "m_Title")]
+        pub m_title: crate::app::profilecardtitledata::ProfileCardTitleData,
+        #[offset(40)]
+        #[rename(name = "m_Bg")]
+        pub m_bg: crate::app::profilecardbgdata::ProfileCardBgData,
+        #[offset(48)]
+        #[rename(name = "m_Frame")]
+        pub m_frame: crate::app::profilecardframedata::ProfileCardFrameData,
+        #[offset(56)]
+        #[rename(name = "m_TextDeco")]
+        pub m_text_deco: crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
+        #[offset(64)]
+        #[rename(name = "m_TextColor")]
+        pub m_text_color: crate::app::profilecardtextcolordata::ProfileCardTextColorData,
+        #[offset(72)]
+        #[rename(name = "m_CharacterStamp")]
+        pub m_character_stamp: crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
+        #[offset(80)]
+        #[rename(name = "m_Comment")]
+        pub m_comment: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData>,
+        #[offset(88)]
+        #[rename(name = "m_CommentString")]
+        pub m_comment_string: ::unity2::Il2CppString,
+        #[offset(96)]
+        #[rename(name = "m_PlayTime")]
+        pub m_play_time: f32,
+        #[offset(100)]
+        #[rename(name = "m_BirthMonth")]
+        pub m_birth_month: u8,
+        #[offset(101)]
+        #[rename(name = "m_BirthDay")]
+        pub m_birth_day: u8,
+        #[offset(104)]
+        #[rename(name = "m_Difficulty")]
+        pub m_difficulty: crate::app::difficulty::Difficulty,
+        #[offset(108)]
+        #[rename(name = "m_GameMode")]
+        pub m_game_mode: crate::app::gamemode::GameMode,
+        #[offset(112)]
+        #[rename(name = "m_Gender")]
+        pub m_gender: crate::app::gender::Gender,
+        #[offset(120)]
+        #[rename(name = "m_FavoriteCharacter")]
+        pub m_favorite_character: crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
+        #[offset(128)]
+        #[rename(name = "m_FavoriteMap")]
+        pub m_favorite_map: crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
+        #[offset(136)]
+        #[rename(name = "m_RelayPlayingCount")]
+        pub m_relay_playing_count: u32,
+        #[offset(144)]
+        #[rename(name = "m_VersusThemeOfEditMap")]
+        pub m_versus_theme_of_edit_map: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
+        #[offset(152)]
+        #[rename(name = "m_VersusRate")]
+        pub m_versus_rate: i32,
+        #[offset(156)]
+        #[rename(name = "m_VersusPlayingCount")]
+        pub m_versus_playing_count: u32,
+        #[offset(160)]
+        #[rename(name = "m_OwnerID")]
+        pub m_owner_id: u64,
+        #[offset(168)]
+        #[rename(name = "m_IsPublic")]
+        pub m_is_public: bool,
+        #[offset(176)]
+        #[rename(name = "m_FreeStamp")]
+        pub m_free_stamp: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>,
+        #[offset(184)]
+        #[rename(name = "m_SortieCount")]
+        pub m_sortie_count: ::unity2::Array<crate::app::profilecard::ProfileCard_SortieCount>,
+        #[offset(192)]
+        #[rename(name = "m_Achievements")]
+        pub m_achievements: ::unity2::Array<crate::app::profilecard::ProfileCard_Achievement>,
+        #[offset(200)]
+        #[rename(name = "m_Images")]
+        pub m_images: ::unity2::Array<u8>,
     }
 }
 
 #[cfg(feature = "app-profilecard-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-profilecard")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCard_Achievement_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_Achievement as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_Achievement as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: ProfileCard_Achievement, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCard_Achievement, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_Achievement as ::unity2::ClassIdentity>::class(),
+                "Serialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_Achievement as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn serialize(
+        this: ProfileCard_Achievement,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCard_Achievement, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_Achievement as ::unity2::ClassIdentity>::class(),
+                "Deserialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_Achievement as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn deserialize(
+        this: ProfileCard_Achievement,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCard_Achievement, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
+        inner(this, stream, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+impl ProfileCard_Achievement {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __ProfileCard_Achievement_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    pub fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe { __ProfileCard_Achievement_unity2_raw::serialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    pub fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe { __ProfileCard_Achievement_unity2_raw::deserialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCard_SortieCount_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_SortieCount as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_SortieCount as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: ProfileCard_SortieCount, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCard_SortieCount, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_SortieCount as ::unity2::ClassIdentity>::class(),
+                "Serialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_SortieCount as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn serialize(
+        this: ProfileCard_SortieCount,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCard_SortieCount, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_SortieCount as ::unity2::ClassIdentity>::class(),
+                "Deserialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_SortieCount as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn deserialize(
+        this: ProfileCard_SortieCount,
+        stream: crate::app::stream_2::Stream_2,
+        version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCard_SortieCount, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
+        inner(this, stream, version, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+impl ProfileCard_SortieCount {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __ProfileCard_SortieCount_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    pub fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe { __ProfileCard_SortieCount_unity2_raw::serialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    pub fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __ProfileCard_SortieCount_unity2_raw::deserialize(
+                self,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCard_FreeStamp_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ProfileCard_FreeStamp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCard_FreeStamp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecard::ProfileCard_FreeStamp as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: ProfileCard_FreeStamp,
+        free_stamp: crate::app::profilecard::ProfileCard_FreeStamp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCard_FreeStamp, crate::app::profilecard::ProfileCard_FreeStamp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, free_stamp, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: ProfileCard_FreeStamp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCard_FreeStamp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardstampdata::ProfileCardStampData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
+                "Add",
+                7,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        free_stamp_list: crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
+        stamp_data: crate::app::profilecardstampdata::ProfileCardStampData,
+        x: i32,
+        y: i32,
+        rotation: f32,
+        scale_x: f32,
+        scale_y: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
+            crate::app::profilecardstampdata::ProfileCardStampData,
+            i32,
+            i32,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::profilecard::ProfileCard_FreeStamp = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(free_stamp_list, stamp_data, x, y, rotation, scale_x, scale_y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard_FreeStamp as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
+                "Add",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_2(
+        free_stamp_list: crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
+        free_stamp: crate::app::profilecard::ProfileCard_FreeStamp,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
+            crate::app::profilecard::ProfileCard_FreeStamp,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
+        inner(free_stamp_list, free_stamp, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
+                "Serialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn serialize(
+        this: ProfileCard_FreeStamp,
+        stream: crate::app::stream_2::Stream_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCard_FreeStamp, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
+                "Deserialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn deserialize(
+        this: ProfileCard_FreeStamp,
+        stream: crate::app::stream_2::Stream_2,
+        version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCard_FreeStamp, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
+        inner(this, stream, version, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+impl ProfileCard_FreeStamp {
+    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>, crate::app::profilecardstampdata::ProfileCardStampData, i32, i32, f32, f32, f32)` overload"]
+    pub fn add(
+        free_stamp_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>,
+        stamp_data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>,
+        x: impl ::core::convert::Into<i32>,
+        y: impl ::core::convert::Into<i32>,
+        rotation: impl ::core::convert::Into<f32>,
+        scale_x: impl ::core::convert::Into<f32>,
+        scale_y: impl ::core::convert::Into<f32>,
+    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
+        unsafe {
+            __ProfileCard_FreeStamp_unity2_raw::add(
+                ::core::convert::Into::into(free_stamp_list),
+                ::core::convert::Into::into(stamp_data),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::convert::Into::into(rotation),
+                ::core::convert::Into::into(scale_x),
+                ::core::convert::Into::into(scale_y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>, crate::app::profilecard::ProfileCard_FreeStamp)` overload"]
+    pub fn add_2(
+        free_stamp_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>,
+        free_stamp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard_FreeStamp>,
+    ) -> bool {
+        unsafe {
+            __ProfileCard_FreeStamp_unity2_raw::add_2(
+                ::core::convert::Into::into(free_stamp_list),
+                ::core::convert::Into::into(free_stamp),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+pub trait IProfileCard_FreeStampMethods: IProfileCard_FreeStamp {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCard_FreeStamp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::profilecard::ProfileCard_FreeStamp)` overload"]
+    fn ctor_2(self, free_stamp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard_FreeStamp>) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCard_FreeStamp_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(free_stamp), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCard_FreeStamp_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCard_FreeStamp_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCard_FreeStamp_unity2_raw::deserialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+impl<__T: IProfileCard_FreeStamp> IProfileCard_FreeStampMethods for __T {}
+
+#[cfg(feature = "app-profilecard")]
+impl ProfileCard_FreeStamp {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCard_FreeStamp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCard_FreeStampMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::profilecard::ProfileCard_FreeStamp)` — overload selector"]
+    pub fn new_2(free_stamp: crate::app::profilecard::ProfileCard_FreeStamp) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCard_FreeStamp),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IProfileCard_FreeStampMethods>::ctor_2(this, free_stamp);
+        this
+    }
+}
 
 #[cfg(feature = "app-profilecard")]
 #[doc(hidden)]
@@ -3697,693 +4418,6 @@ impl ProfileCard {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ProfileCard), ::core::stringify!(new_2),));
         <Self as IProfileCardMethods>::ctor_2(this, src);
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCard_Achievement_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_Achievement as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_Achievement as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: ProfileCard_Achievement, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCard_Achievement, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_Achievement as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_Achievement as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(
-        this: ProfileCard_Achievement,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCard_Achievement, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_Achievement as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_Achievement as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(
-        this: ProfileCard_Achievement,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCard_Achievement, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-impl ProfileCard_Achievement {
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __ProfileCard_Achievement_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    pub fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe { __ProfileCard_Achievement_unity2_raw::serialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    pub fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe { __ProfileCard_Achievement_unity2_raw::deserialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCard_SortieCount_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_SortieCount as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_SortieCount as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: ProfileCard_SortieCount, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCard_SortieCount, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_SortieCount as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_SortieCount as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(
-        this: ProfileCard_SortieCount,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCard_SortieCount, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_SortieCount as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_SortieCount as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(
-        this: ProfileCard_SortieCount,
-        stream: crate::app::stream_2::Stream_2,
-        version: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCard_SortieCount, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, stream, version, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-impl ProfileCard_SortieCount {
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __ProfileCard_SortieCount_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    pub fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe { __ProfileCard_SortieCount_unity2_raw::serialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    pub fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __ProfileCard_SortieCount_unity2_raw::deserialize(
-                self,
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(version),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCard_FreeStamp_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ProfileCard_FreeStamp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCard_FreeStamp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::profilecard::ProfileCard_FreeStamp as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: ProfileCard_FreeStamp,
-        free_stamp: crate::app::profilecard::ProfileCard_FreeStamp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCard_FreeStamp, crate::app::profilecard::ProfileCard_FreeStamp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, free_stamp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: ProfileCard_FreeStamp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ProfileCard_FreeStamp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> as ::unity2::IlType>::il_type(),
-                <crate::app::profilecardstampdata::ProfileCardStampData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
-                "Add",
-                7,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        free_stamp_list: crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
-        stamp_data: crate::app::profilecardstampdata::ProfileCardStampData,
-        x: i32,
-        y: i32,
-        rotation: f32,
-        scale_x: f32,
-        scale_y: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
-            crate::app::profilecardstampdata::ProfileCardStampData,
-            i32,
-            i32,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::profilecard::ProfileCard_FreeStamp = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(free_stamp_list, stamp_data, x, y, rotation, scale_x, scale_y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> as ::unity2::IlType>::il_type(),
-                <crate::app::profilecard::ProfileCard_FreeStamp as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add_2(
-        free_stamp_list: crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
-        free_stamp: crate::app::profilecard::ProfileCard_FreeStamp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>,
-            crate::app::profilecard::ProfileCard_FreeStamp,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
-        inner(free_stamp_list, free_stamp, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
-                "Serialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
-                        "Serialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn serialize(
-        this: ProfileCard_FreeStamp,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCard_FreeStamp, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::class(),
-                "Deserialize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ProfileCard_FreeStamp as ::unity2::ClassIdentity>::NAME,
-                        "Deserialize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn deserialize(
-        this: ProfileCard_FreeStamp,
-        stream: crate::app::stream_2::Stream_2,
-        version: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCard_FreeStamp, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
-        inner(this, stream, version, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-impl ProfileCard_FreeStamp {
-    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>, crate::app::profilecardstampdata::ProfileCardStampData, i32, i32, f32, f32, f32)` overload"]
-    pub fn add(
-        free_stamp_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>,
-        stamp_data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>,
-        x: impl ::core::convert::Into<i32>,
-        y: impl ::core::convert::Into<i32>,
-        rotation: impl ::core::convert::Into<f32>,
-        scale_x: impl ::core::convert::Into<f32>,
-        scale_y: impl ::core::convert::Into<f32>,
-    ) -> crate::app::profilecard::ProfileCard_FreeStamp {
-        unsafe {
-            __ProfileCard_FreeStamp_unity2_raw::add(
-                ::core::convert::Into::into(free_stamp_list),
-                ::core::convert::Into::into(stamp_data),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::convert::Into::into(rotation),
-                ::core::convert::Into::into(scale_x),
-                ::core::convert::Into::into(scale_y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>, crate::app::profilecard::ProfileCard_FreeStamp)` overload"]
-    pub fn add_2(
-        free_stamp_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp>>,
-        free_stamp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard_FreeStamp>,
-    ) -> bool {
-        unsafe {
-            __ProfileCard_FreeStamp_unity2_raw::add_2(
-                ::core::convert::Into::into(free_stamp_list),
-                ::core::convert::Into::into(free_stamp),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-pub trait IProfileCard_FreeStampMethods: IProfileCard_FreeStamp {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCard_FreeStamp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::app::profilecard::ProfileCard_FreeStamp)` overload"]
-    fn ctor_2(self, free_stamp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard_FreeStamp>) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCard_FreeStamp_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(free_stamp), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCard_FreeStamp_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCard_FreeStamp_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCard_FreeStamp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ProfileCard_FreeStamp_unity2_raw::deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(version),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-impl<__T: IProfileCard_FreeStamp> IProfileCard_FreeStampMethods for __T {}
-
-#[cfg(feature = "app-profilecard")]
-impl ProfileCard_FreeStamp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCard_FreeStamp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCard_FreeStampMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::profilecard::ProfileCard_FreeStamp)` — overload selector"]
-    pub fn new_2(free_stamp: crate::app::profilecard::ProfileCard_FreeStamp) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCard_FreeStamp),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IProfileCard_FreeStampMethods>::ctor_2(this, free_stamp);
         this
     }
 }

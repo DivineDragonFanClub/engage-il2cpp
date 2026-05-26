@@ -26,43 +26,61 @@ mod __types {
         #[static_field]
         #[rename(name = "m_ProfilerTag4")]
         pub m_profiler_tag4: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(120)]
         #[rename(name = "m_ProfilingSampler2")]
         pub m_profiling_sampler2: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(128)]
         #[rename(name = "m_ProfilingSampler3")]
         pub m_profiling_sampler3: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(136)]
         #[rename(name = "m_ProfilingSampler4")]
         pub m_profiling_sampler4: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "s_DrawObjectPassDataPropID")]
         pub s_draw_object_pass_data_prop_id: i32,
+        #[offset(144)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(168)]
         #[rename(name = "m_BaseShaderTagId")]
         pub m_base_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(172)]
         #[rename(name = "m_HairShaderTagId")]
         pub m_hair_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(176)]
         #[rename(name = "m_EyeShaderTagId")]
         pub m_eye_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(180)]
         #[rename(name = "m_BrowShadowShaderTagId")]
         pub m_brow_shadow_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(184)]
         #[rename(name = "m_OpaqueBlendShaderTagId")]
         pub m_opaque_blend_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(188)]
         #[rename(name = "m_OutlineShaderTagId")]
         pub m_outline_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(192)]
         #[rename(name = "m_SilhouetteShaderTagId")]
         pub m_silhouette_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(196)]
         #[rename(name = "m_DepthOnlyShaderTagId")]
         pub m_depth_only_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(200)]
         #[rename(name = "m_OverrideRenderStateBlock")]
         pub m_override_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+        #[offset(308)]
         #[rename(name = "m_OverrideDepthState")]
         pub m_override_depth_state: crate::unity_engine::rendering::depthstate::DepthState,
+        #[offset(314)]
         #[rename(name = "m_CustomViewport")]
         pub m_custom_viewport: bool,
+        #[offset(316)]
         #[rename(name = "m_CustomViewportRect")]
         pub m_custom_viewport_rect: crate::unity_engine::rect::Rect,
+        #[offset(332)]
         #[rename(name = "m_OriginalViewportRect")]
         pub m_original_viewport_rect: crate::unity_engine::rect::Rect,
     }

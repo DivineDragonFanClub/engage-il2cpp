@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideLocatorSetting")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DragonRideLocatorSetting {
+        #[offset(24)]
         #[rename(name = "m_PatternType")]
         pub m_pattern_type: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_BillboardTypes")]
         pub m_billboard_types: crate::app::dragon_ride::billboardtypes::BillboardTypes,
     }

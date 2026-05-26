@@ -17,24 +17,34 @@ mod __types {
         #[static_field]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(120)]
         #[rename(name = "m_OpaqueFilter")]
         pub m_opaque_filter: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(144)]
         #[rename(name = "m_AlphaTestFilter")]
         pub m_alpha_test_filter: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(168)]
         #[rename(name = "m_ShaderTagId")]
         pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(176)]
         #[rename(name = "m_ShaderTagIdList")]
         pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[offset(184)]
         #[rename(name = "m_MapCustomDepthShaderTagId")]
         pub m_map_custom_depth_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(188)]
         #[rename(name = "m_MapLeafDepthShaderTagId")]
         pub m_map_leaf_depth_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(192)]
         #[rename(name = "m_OverrideMaterial")]
         pub m_override_material: crate::unity_engine::material::Material,
+        #[offset(200)]
         #[rename(name = "m_IsOverrideEnabled")]
         pub m_is_override_enabled: bool,
+        #[offset(204)]
         #[rename(name = "m_SortingCriteria")]
         pub m_sorting_criteria: crate::unity_engine::rendering::sortingcriteria::SortingCriteria,
     }

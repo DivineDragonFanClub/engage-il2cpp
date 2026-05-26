@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCollider")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingCollider {
+        #[offset(24)]
         #[rename(name = "m_Colliders")]
         pub m_colliders: crate::system::collections::generic::list_1::List_1<crate::unity_engine::capsulecollider::CapsuleCollider>,
+        #[offset(32)]
         #[rename(name = "m_Radius")]
         pub m_radius: f32,
+        #[offset(36)]
         #[rename(name = "m_Height")]
         pub m_height: f32,
+        #[offset(40)]
         #[rename(name = "m_ColliderRadius")]
         pub m_collider_radius: f32,
     }

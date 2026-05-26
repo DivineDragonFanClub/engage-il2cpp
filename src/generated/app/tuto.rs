@@ -22,6 +22,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "Tuto.ProcDescTutorial")]
     #[parent(crate::app::procdescuser::ProcDescUser)]
     pub struct Tuto_ProcDescTutorial {
+        #[offset(24)]
         #[rename(name = "m_Tid")]
         pub m_tid: ::unity2::Il2CppString,
     }

@@ -86,14 +86,19 @@ mod __types {
         #[static_field]
         #[rename(name = "ResNameC")]
         pub res_name_c: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_menuL")]
         pub m_menu_l: crate::app::sortietradeitemmenu::SortieTradeItemMenu,
+        #[offset(136)]
         #[rename(name = "m_menuR")]
         pub m_menu_r: crate::app::sortietradeitemmenu::SortieTradeItemMenu,
+        #[offset(144)]
         #[rename(name = "m_bSelectLeft")]
         pub m_b_select_left: bool,
+        #[offset(152)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::traderoot::TradeRoot,
         #[static_field]
@@ -120,8 +125,10 @@ mod __types {
         #[static_field]
         #[rename(name = "m_IsFirstSelectedOnInit")]
         pub m_is_first_selected_on_init: bool,
+        #[offset(160)]
         #[rename(name = "m_CharaImage")]
         pub m_chara_image: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_CharaImageRight")]
         pub m_chara_image_right: crate::unity_engine::gameobject::GameObject,
     }

@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EventCharacterAnimController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EventCharacterAnimController {
+        #[offset(24)]
         #[rename(name = "m_character")]
         pub m_character: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_simpleAnimation")]
         pub m_simple_animation: crate::app::eventcharactersimpleanimation::EventCharacterSimpleAnimation,
+        #[offset(40)]
         #[rename(name = "m_animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(48)]
         #[rename(name = "m_curBodyAnimName")]
         pub m_cur_body_anim_name: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_resHandleDictionary")]
         pub m_res_handle_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,

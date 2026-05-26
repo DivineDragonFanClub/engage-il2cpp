@@ -12,11 +12,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder_Func.md"))]
-    #[::unity2::class(namespace = "App", name = "AIOrder.Func")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AIOrder_Func {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder.md"))]
     #[::unity2::class(namespace = "App", name = "AIOrder")]
     #[parent(crate::system::object::Object)]
@@ -34,27 +29,42 @@ mod __types {
         #[static_field]
         #[rename(name = "UnitMax")]
         pub unit_max: i32,
+        #[offset(16)]
         #[rename(name = "m_aUnitPriority")]
         pub m_a_unit_priority: ::unity2::Array<crate::app::aiorder::AIOrder_UnitPriority>,
+        #[offset(24)]
         #[rename(name = "m_Num")]
         pub m_num: i32,
+        #[offset(28)]
         #[rename(name = "m_Seq")]
         pub m_seq: i32,
+        #[offset(32)]
         #[rename(name = "m_Current")]
         pub m_current: i32,
+        #[offset(36)]
         #[rename(name = "m_EngageOrGodChange")]
         pub m_engage_or_god_change: i32,
+        #[offset(40)]
         #[rename(name = "m_Remove")]
         pub m_remove: i32,
+        #[offset(44)]
         #[rename(name = "m_Remagic")]
         pub m_remagic: i32,
+        #[offset(48)]
         #[rename(name = "m_Rerewarp")]
         pub m_rerewarp: i32,
+        #[offset(52)]
         #[rename(name = "m_MoveOver")]
         pub m_move_over: i32,
+        #[offset(56)]
         #[rename(name = "m_IsAllowIdle")]
         pub m_is_allow_idle: bool,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder_Func.md"))]
+    #[::unity2::class(namespace = "App", name = "AIOrder.Func")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AIOrder_Func {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
     #[repr(C)]
@@ -84,112 +94,6 @@ mod __types {
 
 #[cfg(feature = "app-aiorder-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-aiorder")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIOrder_Func_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder_Func as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AIOrder_Func,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder_Func, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder_Func as ::unity2::ClassIdentity>::class(), "Invoke", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(this: AIOrder_Func, order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder_Func, crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, order, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-pub trait IAIOrder_FuncMethods: IAIOrder_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIOrder_Func_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::aiorder::AIOrder)` overload"]
-    fn invoke(self, order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
-        unsafe {
-            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIOrder_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(order), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-impl<__T: IAIOrder_Func> IAIOrder_FuncMethods for __T {}
-
-#[cfg(feature = "app-aiorder")]
-impl AIOrder_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AIOrder_Func), ::core::stringify!(new),));
-        <Self as IAIOrder_FuncMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-aiorder")]
 #[doc(hidden)]
@@ -3038,6 +2942,112 @@ impl AIOrder {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AIOrder), ::core::stringify!(new),));
         <Self as IAIOrderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIOrder_Func_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder_Func as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AIOrder_Func,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIOrder_Func, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder_Func as ::unity2::ClassIdentity>::class(), "Invoke", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: AIOrder_Func, order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder_Func, crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, order, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+pub trait IAIOrder_FuncMethods: IAIOrder_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_Func_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::aiorder::AIOrder)` overload"]
+    fn invoke(self, order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe {
+            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(order), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+impl<__T: IAIOrder_Func> IAIOrder_FuncMethods for __T {}
+
+#[cfg(feature = "app-aiorder")]
+impl AIOrder_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AIOrder_Func), ::core::stringify!(new),));
+        <Self as IAIOrder_FuncMethods>::ctor(this, object, method);
         this
     }
 }

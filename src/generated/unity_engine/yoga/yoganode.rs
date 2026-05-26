@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Yoga", name = "YogaNode")]
     #[parent(crate::system::object::Object)]
     pub struct YogaNode {
+        #[offset(16)]
         #[rename(name = "_ygNode")]
         pub yg_node: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "_measureFunction")]
         pub measure_function: crate::unity_engine::yoga::measurefunction::MeasureFunction,
+        #[offset(32)]
         #[rename(name = "_baselineFunction")]
         pub baseline_function: crate::unity_engine::yoga::baselinefunction::BaselineFunction,
     }

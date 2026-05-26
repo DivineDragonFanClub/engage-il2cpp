@@ -11,20 +11,28 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "MagicBulletSettings")]
     #[parent(crate::system::object::Object)]
     pub struct MagicBulletSettings {
+        #[offset(16)]
         #[rename(name = "HomeNodeName")]
         pub home_node_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "TargetNodeName")]
         pub target_node_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "DecayFrame")]
         pub decay_frame: f32,
+        #[offset(36)]
         #[rename(name = "ArrivalType")]
         pub arrival_type: crate::combat::magicarrivaltype::MagicArrivalType,
+        #[offset(40)]
         #[rename(name = "MoveSpeed")]
         pub move_speed: f32,
+        #[offset(44)]
         #[rename(name = "EaseType")]
         pub ease_type: crate::app::curve::Curve_Type,
+        #[offset(48)]
         #[rename(name = "EasePower")]
         pub ease_power: i32,
+        #[offset(52)]
         #[rename(name = "ConstantArrivalFrame")]
         pub constant_arrival_frame: f32,
     }

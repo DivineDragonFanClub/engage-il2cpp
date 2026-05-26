@@ -11,6 +11,11 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshoputility/AccessoryShopUtility.md"))]
+    #[::unity2::class(namespace = "App", name = "AccessoryShopUtility")]
+    #[parent(crate::system::object::Object)]
+    pub struct AccessoryShopUtility {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshoputility/AccessoryShopUtility_Female.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -48,11 +53,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshoputility/AccessoryShopUtility.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryShopUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct AccessoryShopUtility {}
 }
 
 #[cfg(feature = "app-accessoryshoputility-types")]

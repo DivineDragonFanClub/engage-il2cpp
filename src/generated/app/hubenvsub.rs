@@ -19,48 +19,70 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubEnvSub")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubEnvSub {
+        #[offset(24)]
         #[rename(name = "m_EditTimezoneType")]
         pub m_edit_timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
+        #[offset(28)]
         #[rename(name = "m_MorningFogColor")]
         pub m_morning_fog_color: crate::unity_engine::color::Color,
+        #[offset(44)]
         #[rename(name = "m_MorningFogStart")]
         pub m_morning_fog_start: f32,
+        #[offset(48)]
         #[rename(name = "m_MorningFogEnd")]
         pub m_morning_fog_end: f32,
+        #[offset(52)]
         #[rename(name = "m_DayFogColor")]
         pub m_day_fog_color: crate::unity_engine::color::Color,
+        #[offset(68)]
         #[rename(name = "m_DayFogStart")]
         pub m_day_fog_start: f32,
+        #[offset(72)]
         #[rename(name = "m_DayFogEnd")]
         pub m_day_fog_end: f32,
+        #[offset(76)]
         #[rename(name = "m_EveningFogColor")]
         pub m_evening_fog_color: crate::unity_engine::color::Color,
+        #[offset(92)]
         #[rename(name = "m_EveningFogStart")]
         pub m_evening_fog_start: f32,
+        #[offset(96)]
         #[rename(name = "m_EveningFogEnd")]
         pub m_evening_fog_end: f32,
+        #[offset(100)]
         #[rename(name = "m_NightFogColor")]
         pub m_night_fog_color: crate::unity_engine::color::Color,
+        #[offset(116)]
         #[rename(name = "m_NightFogStart")]
         pub m_night_fog_start: f32,
+        #[offset(120)]
         #[rename(name = "m_NightFogEnd")]
         pub m_night_fog_end: f32,
+        #[offset(128)]
         #[rename(name = "m_Morning")]
         pub m_morning: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_Day")]
         pub m_day: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_Evening")]
         pub m_evening: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
         #[rename(name = "m_Night")]
         pub m_night: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
         #[rename(name = "m_TimezoneType")]
         pub m_timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
+        #[offset(164)]
         #[rename(name = "m_PrevDepth")]
         pub m_prev_depth: i32,
+        #[offset(168)]
         #[rename(name = "m_PrevFogColor")]
         pub m_prev_fog_color: crate::unity_engine::color::Color,
+        #[offset(184)]
         #[rename(name = "m_PrevFogStart")]
         pub m_prev_fog_start: f32,
+        #[offset(188)]
         #[rename(name = "m_PrevFogEnd")]
         pub m_prev_fog_end: f32,
     }

@@ -14,32 +14,44 @@ mod __types {
         #[static_field]
         #[rename(name = "kCatalogAddress")]
         pub k_catalog_address: ::unity2::Il2CppString,
+        #[offset(16)]
         #[rename(name = "m_buildTarget")]
         pub m_build_target: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_SettingsHash")]
         pub m_settings_hash: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_CatalogLocations")]
         pub m_catalog_locations: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::addressable_assets::resource_locators::resourcelocationdata::ResourceLocationData,
         >,
+        #[offset(40)]
         #[rename(name = "m_ProfileEvents")]
         pub m_profile_events: bool,
+        #[offset(41)]
         #[rename(name = "m_LogResourceManagerExceptions")]
         pub m_log_resource_manager_exceptions: bool,
+        #[offset(48)]
         #[rename(name = "m_ExtraInitializationData")]
         pub m_extra_initialization_data: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData,
         >,
+        #[offset(56)]
         #[rename(name = "m_DisableCatalogUpdateOnStart")]
         pub m_disable_catalog_update_on_start: bool,
+        #[offset(57)]
         #[rename(name = "m_IsLocalCatalogInBundle")]
         pub m_is_local_catalog_in_bundle: bool,
+        #[offset(64)]
         #[rename(name = "m_CertificateHandlerType")]
         pub m_certificate_handler_type: crate::unity_engine::resource_management::util::serializedtype::SerializedType,
+        #[offset(96)]
         #[rename(name = "m_AddressablesVersion")]
         pub m_addressables_version: ::unity2::Il2CppString,
+        #[offset(104)]
         #[rename(name = "m_maxConcurrentWebRequests")]
         pub m_max_concurrent_web_requests: i32,
+        #[offset(108)]
         #[rename(name = "m_CatalogRequestsTimeout")]
         pub m_catalog_requests_timeout: i32,
     }

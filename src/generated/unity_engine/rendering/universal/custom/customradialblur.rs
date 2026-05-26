@@ -18,16 +18,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomRadialBlur")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct CustomRadialBlur {
+        #[offset(56)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(64)]
         #[rename(name = "centerU")]
         pub center_u: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "centerV")]
         pub center_v: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "beginAlpha")]
         pub begin_alpha: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "endAlpha")]
         pub end_alpha: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(96)]
         #[rename(name = "sampleCount")]
         pub sample_count: crate::unity_engine::rendering::clampedintparameter::ClampedIntParameter,
     }

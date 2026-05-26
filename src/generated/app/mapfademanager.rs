@@ -23,28 +23,40 @@ mod __types {
         #[static_field]
         #[rename(name = "Max")]
         pub max: i32,
+        #[offset(32)]
         #[rename(name = "m_Transparents")]
         pub m_transparents: crate::system::collections::generic::list_1::List_1<crate::app::charactercollision::CharacterCollision>,
+        #[offset(40)]
         #[rename(name = "m_Destructions")]
         pub m_destructions: crate::system::collections::generic::list_1::List_1<crate::app::charactercollision::CharacterCollision>,
+        #[offset(48)]
         #[rename(name = "m_Transparented")]
         pub m_transparented: crate::system::collections::generic::list_1::List_1<crate::app::mapcollision::MapCollision>,
+        #[offset(56)]
         #[rename(name = "m_TempCollisions")]
         pub m_temp_collisions: crate::system::collections::generic::list_1::List_1<crate::app::mapcollision::MapCollision>,
+        #[offset(64)]
         #[rename(name = "m_AlphaCollisions")]
         pub m_alpha_collisions: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mapcollision::MapCollision, f32>,
+        #[offset(72)]
         #[rename(name = "m_FadeObjects")]
         pub m_fade_objects: crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject>,
+        #[offset(80)]
         #[rename(name = "m_Colliders")]
         pub m_colliders: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        #[offset(88)]
         #[rename(name = "m_LayerDestructionMask")]
         pub m_layer_destruction_mask: i32,
+        #[offset(92)]
         #[rename(name = "m_LayerTransparentMask")]
         pub m_layer_transparent_mask: i32,
+        #[offset(96)]
         #[rename(name = "m_CameraPosition")]
         pub m_camera_position: crate::unity_engine::vector3::Vector3,
+        #[offset(108)]
         #[rename(name = "m_CameraRotation")]
         pub m_camera_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(124)]
         #[rename(name = "m_FadeSpeed")]
         pub m_fade_speed: f32,
     }

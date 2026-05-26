@@ -14,44 +14,64 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutGroup")]
     #[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]
     pub struct GUILayoutGroup {
+        #[offset(72)]
         #[rename(name = "entries")]
         pub entries: crate::system::collections::generic::list_1::List_1<crate::unity_engine::guilayoutentry::GUILayoutEntry>,
+        #[offset(80)]
         #[rename(name = "isVertical")]
         pub is_vertical: bool,
+        #[offset(81)]
         #[rename(name = "resetCoords")]
         pub reset_coords: bool,
+        #[offset(84)]
         #[rename(name = "spacing")]
         pub spacing: f32,
+        #[offset(88)]
         #[rename(name = "sameSize")]
         pub same_size: bool,
+        #[offset(89)]
         #[rename(name = "isWindow")]
         pub is_window: bool,
+        #[offset(92)]
         #[rename(name = "windowID")]
         pub window_id: i32,
+        #[offset(96)]
         #[rename(name = "m_Cursor")]
         pub m_cursor: i32,
+        #[offset(100)]
         #[rename(name = "m_StretchableCountX")]
         pub m_stretchable_count_x: i32,
+        #[offset(104)]
         #[rename(name = "m_StretchableCountY")]
         pub m_stretchable_count_y: i32,
+        #[offset(108)]
         #[rename(name = "m_UserSpecifiedWidth")]
         pub m_user_specified_width: bool,
+        #[offset(109)]
         #[rename(name = "m_UserSpecifiedHeight")]
         pub m_user_specified_height: bool,
+        #[offset(112)]
         #[rename(name = "m_ChildMinWidth")]
         pub m_child_min_width: f32,
+        #[offset(116)]
         #[rename(name = "m_ChildMaxWidth")]
         pub m_child_max_width: f32,
+        #[offset(120)]
         #[rename(name = "m_ChildMinHeight")]
         pub m_child_min_height: f32,
+        #[offset(124)]
         #[rename(name = "m_ChildMaxHeight")]
         pub m_child_max_height: f32,
+        #[offset(128)]
         #[rename(name = "m_MarginLeft")]
         pub m_margin_left: i32,
+        #[offset(132)]
         #[rename(name = "m_MarginRight")]
         pub m_margin_right: i32,
+        #[offset(136)]
         #[rename(name = "m_MarginTop")]
         pub m_margin_top: i32,
+        #[offset(140)]
         #[rename(name = "m_MarginBottom")]
         pub m_margin_bottom: i32,
         #[static_field]

@@ -24,8 +24,10 @@ mod __types {
         #[static_field]
         #[rename(name = "ResNameC")]
         pub res_name_c: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::skilleditroot::SkillEditRoot,
+        #[offset(128)]
         #[rename(name = "m_BackInheriteCallback")]
         pub m_back_inherite_callback: crate::system::action::Action,
     }

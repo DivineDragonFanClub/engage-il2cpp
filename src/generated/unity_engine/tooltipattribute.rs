@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "TooltipAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct TooltipAttribute {
+        #[offset(16)]
         #[rename(name = "tooltip")]
         pub tooltip: ::unity2::Il2CppString,
     }

@@ -14,20 +14,28 @@ mod __types {
         #[static_field]
         #[rename(name = "k_NormalStyle")]
         pub k_normal_style: crate::tm_pro::tmp_style::TMP_Style,
+        #[offset(16)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_HashCode")]
         pub m_hash_code: i32,
+        #[offset(32)]
         #[rename(name = "m_OpeningDefinition")]
         pub m_opening_definition: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_ClosingDefinition")]
         pub m_closing_definition: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_OpeningTagArray")]
         pub m_opening_tag_array: ::unity2::Array<i32>,
+        #[offset(56)]
         #[rename(name = "m_ClosingTagArray")]
         pub m_closing_tag_array: ::unity2::Array<i32>,
+        #[offset(64)]
         #[rename(name = "m_OpeningTagUnicodeArray")]
         pub m_opening_tag_unicode_array: ::unity2::Array<u32>,
+        #[offset(72)]
         #[rename(name = "m_ClosingTagUnicodeArray")]
         pub m_closing_tag_unicode_array: ::unity2::Array<u32>,
     }

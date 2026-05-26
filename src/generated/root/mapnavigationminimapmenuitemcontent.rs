@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapNavigationMiniMapMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct MapNavigationMiniMapMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_MiniMapText")]
         pub m_mini_map_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

@@ -11,24 +11,28 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphPass")]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraphPass {
+        #[offset(80)]
         #[rename(name = "resourceReadLists")]
         pub resource_read_lists: ::unity2::Array<
             crate::system::collections::generic::list_1::List_1<
                 crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle,
             >,
         >,
+        #[offset(88)]
         #[rename(name = "resourceWriteLists")]
         pub resource_write_lists: ::unity2::Array<
             crate::system::collections::generic::list_1::List_1<
                 crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle,
             >,
         >,
+        #[offset(96)]
         #[rename(name = "transientResourceList")]
         pub transient_resource_list: ::unity2::Array<
             crate::system::collections::generic::list_1::List_1<
                 crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle,
             >,
         >,
+        #[offset(104)]
         #[rename(name = "usedRendererListList")]
         pub used_renderer_list_list: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle,

@@ -23,16 +23,22 @@ mod __types {
         #[static_field]
         #[rename(name = "AnimHashIsTransparent")]
         pub anim_hash_is_transparent: i32,
+        #[offset(16)]
         #[rename(name = "m_PrefabHandle")]
         pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(24)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_AnimatorStatus")]
         pub m_animator_status: crate::unity_engine::animator::Animator,
+        #[offset(48)]
         #[rename(name = "m_CharaImageMask")]
         pub m_chara_image_mask: crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset,
+        #[offset(56)]
         #[rename(name = "m_IsValid")]
         pub m_is_valid: bool,
     }

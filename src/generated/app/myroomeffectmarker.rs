@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomEffectMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct MyRoomEffectMarker {
+        #[offset(40)]
         #[rename(name = "EffectName")]
         pub effect_name: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "duration")]
         pub duration: f32,
     }

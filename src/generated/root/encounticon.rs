@@ -25,16 +25,22 @@ mod __types {
         #[static_field]
         #[rename(name = "s_IsVisible")]
         pub s_is_visible: bool,
+        #[offset(24)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(32)]
         #[rename(name = "m_IsColliderHit")]
         pub m_is_collider_hit: bool,
+        #[offset(40)]
         #[rename(name = "m_GmapSpot")]
         pub m_gmap_spot: crate::app::gmapspot::GmapSpot,
+        #[offset(48)]
         #[rename(name = "m_RectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(56)]
         #[rename(name = "m_ChildObjects")]
         pub m_child_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(64)]
         #[rename(name = "m_Initialized")]
         pub m_initialized: bool,
     }

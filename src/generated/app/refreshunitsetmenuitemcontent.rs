@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefreshUnitSetMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RefreshUnitSetMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(80)]
         #[rename(name = "m_Text")]
         pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_FixedCursorObject")]
         pub m_fixed_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_FixedCursorImage")]
         pub m_fixed_cursor_image: crate::unity_engine::ui::image::Image,
     }

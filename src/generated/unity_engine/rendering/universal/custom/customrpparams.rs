@@ -11,32 +11,46 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomRPParams")]
     #[parent(crate::system::object::Object)]
     pub struct CustomRPParams {
+        #[offset(16)]
         #[rename(name = "blurEnabled")]
         pub blur_enabled: bool,
+        #[offset(20)]
         #[rename(name = "blurLevels")]
         pub blur_levels: i32,
+        #[offset(24)]
         #[rename(name = "captureEnabled")]
         pub capture_enabled: bool,
+        #[offset(28)]
         #[rename(name = "finalMonoColor")]
         pub final_mono_color: crate::unity_engine::color::Color,
+        #[offset(44)]
         #[rename(name = "finalMonoColorRate")]
         pub final_mono_color_rate: f32,
+        #[offset(48)]
         #[rename(name = "specialFilterEnabled")]
         pub special_filter_enabled: bool,
+        #[offset(52)]
         #[rename(name = "specialFilterColor")]
         pub special_filter_color: crate::unity_engine::color::Color,
+        #[offset(68)]
         #[rename(name = "specialFilterSaturation")]
         pub special_filter_saturation: f32,
+        #[offset(72)]
         #[rename(name = "specialFilterRate")]
         pub special_filter_rate: f32,
+        #[offset(76)]
         #[rename(name = "specialFilterWhiteRate")]
         pub special_filter_white_rate: f32,
+        #[offset(80)]
         #[rename(name = "specialFilterWhitePoint")]
         pub special_filter_white_point: f32,
+        #[offset(88)]
         #[rename(name = "silhouetteColors")]
         pub silhouette_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[offset(96)]
         #[rename(name = "exposures")]
         pub exposures: ::unity2::Array<f32>,
+        #[offset(104)]
         #[rename(name = "lodFadeBias")]
         pub lod_fade_bias: f32,
     }

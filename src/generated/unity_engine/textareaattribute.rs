@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "TextAreaAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct TextAreaAttribute {
+        #[offset(16)]
         #[rename(name = "minLines")]
         pub min_lines: i32,
+        #[offset(20)]
         #[rename(name = "maxLines")]
         pub max_lines: i32,
     }

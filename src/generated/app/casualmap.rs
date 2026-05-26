@@ -18,24 +18,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CasualMap")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: casualmap :: CasualMap >)]
     pub struct CasualMap {
+        #[offset(24)]
         #[rename(name = "m_CasualEditData1")]
         pub m_casual_edit_data1: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(32)]
         #[rename(name = "m_CasualEditData2")]
         pub m_casual_edit_data2: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(40)]
         #[rename(name = "m_CasualEditData3")]
         pub m_casual_edit_data3: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(48)]
         #[rename(name = "m_CasualEditData4")]
         pub m_casual_edit_data4: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(56)]
         #[rename(name = "m_CasualEditData5")]
         pub m_casual_edit_data5: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(64)]
         #[rename(name = "m_CasualEditData6")]
         pub m_casual_edit_data6: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(72)]
         #[rename(name = "m_CasualEditData7")]
         pub m_casual_edit_data7: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(80)]
         #[rename(name = "m_CasualEditData8")]
         pub m_casual_edit_data8: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(88)]
         #[rename(name = "m_CasualEditData9")]
         pub m_casual_edit_data9: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
+        #[offset(96)]
         #[rename(name = "m_CasualEditData10")]
         pub m_casual_edit_data10: crate::system::collections::generic::list_1::List_1<crate::app::casualmap::CasualMap_ObjectData>,
     }
@@ -44,12 +54,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CasualMap.ObjectData")]
     #[parent(crate::system::object::Object)]
     pub struct CasualMap_ObjectData {
+        #[offset(16)]
         #[rename(name = "x")]
         pub x: i32,
+        #[offset(20)]
         #[rename(name = "z")]
         pub z: i32,
+        #[offset(24)]
         #[rename(name = "id")]
         pub id: i32,
+        #[offset(28)]
         #[rename(name = "rotate")]
         pub rotate: i32,
     }

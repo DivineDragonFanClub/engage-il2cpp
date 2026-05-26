@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterAssetForm")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterAssetForm {
+        #[offset(24)]
         #[rename(name = "Appearance")]
         pub appearance: crate::combat::characterappearance::CharacterAppearance,
+        #[offset(32)]
         #[rename(name = "m_bSelfAppearance")]
         pub m_b_self_appearance: bool,
+        #[offset(36)]
         #[rename(name = "ViewerPresetIndex")]
         pub viewer_preset_index: i32,
+        #[offset(40)]
         #[rename(name = "ViewerPersonIndex")]
         pub viewer_person_index: i32,
+        #[offset(44)]
         #[rename(name = "ViewerJobIndex")]
         pub viewer_job_index: i32,
+        #[offset(48)]
         #[rename(name = "ViewerWeaponIndex")]
         pub viewer_weapon_index: i32,
+        #[offset(54)]
         #[rename(name = "isBuilding_WatchFromCharacterAssetForm")]
         pub is_building_watch_from_character_asset_form: bool,
     }

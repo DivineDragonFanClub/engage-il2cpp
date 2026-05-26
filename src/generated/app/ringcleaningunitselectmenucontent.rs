@@ -23,10 +23,13 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_BondSetter")]
         pub m_bond_setter: crate::app::menubondsetter::MenuBondSetter,
+        #[offset(240)]
         #[rename(name = "m_HelpMessage")]
         pub m_help_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_GodInfo")]
         pub m_god_info: crate::app::godroomgodinfosetter::GodRoomGodInfoSetter,
         #[static_field]

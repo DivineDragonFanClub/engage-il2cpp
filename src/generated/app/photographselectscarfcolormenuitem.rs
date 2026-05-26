@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectScarfColorMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct PhotographSelectScarfColorMenuItem {
+        #[offset(100)]
         #[rename(name = "m_IsCurrent")]
         pub m_is_current: bool,
+        #[offset(104)]
         #[rename(name = "m_DisposManager")]
         pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        #[offset(112)]
         #[rename(name = "m_ColorIdx")]
         pub m_color_idx: i32,
+        #[offset(116)]
         #[rename(name = "m_ColorIdxOld")]
         pub m_color_idx_old: i32,
     }

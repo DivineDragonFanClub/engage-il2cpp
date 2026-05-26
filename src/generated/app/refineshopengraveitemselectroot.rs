@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveItemSelectRoot")]
     #[parent(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot)]
     pub struct RefineShopEngraveItemSelectRoot {
+        #[offset(120)]
         #[rename(name = "m_RefineShopEngraveItemSelectMenu")]
         pub m_refine_shop_engrave_item_select_menu: crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu,
+        #[offset(128)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
     }

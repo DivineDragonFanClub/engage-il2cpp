@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "EngageParameters")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EngageParameters {
+        #[offset(24)]
         #[rename(name = "ReferenceHeight")]
         pub reference_height: f32,
+        #[offset(28)]
         #[rename(name = "LowerLimit")]
         pub lower_limit: f32,
+        #[offset(32)]
         #[rename(name = "UpperLimit")]
         pub upper_limit: f32,
     }

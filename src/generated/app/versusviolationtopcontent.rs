@@ -22,24 +22,34 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_CaptureImage")]
         pub m_capture_image: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_CategoryText")]
         pub m_category_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_ReasonText")]
         pub m_reason_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_CaptureTitle")]
         pub m_capture_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_CategoryTitle")]
         pub m_category_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_ReasonTitle")]
         pub m_reason_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_CategoryWindow")]
         pub m_category_window: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_ReasonWindow")]
         pub m_reason_window: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "EnableAlpha")]
         pub enable_alpha: f32,
+        #[offset(92)]
         #[rename(name = "DisableAlpha")]
         pub disable_alpha: f32,
     }

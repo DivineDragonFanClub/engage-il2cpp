@@ -14,60 +14,6 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_EventKind.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SaveData_Manager_EventKind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SaveData_Manager_EventKind {
-        const NAME: &'static str = "SaveData.Manager.EventKind";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SaveData_Manager_EventKind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl SaveData_Manager_EventKind {
-        pub fn cleanup() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn task() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveData")]
-    #[parent(crate::system::object::Object)]
-    pub struct SaveData {
-        #[static_field]
-        #[rename(name = "MountName")]
-        pub mount_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "MountNameWithColon")]
-        pub mount_name_with_colon: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_IsMounted")]
-        pub s_is_mounted: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager_Task.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveData.Manager.Task")]
-    #[parent(crate::system::object::Object)]
-    pub struct SaveData_Manager_Task {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_TaskKind.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -110,600 +56,72 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_EventKind.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct SaveData_Manager_EventKind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SaveData_Manager_EventKind {
+        const NAME: &'static str = "SaveData.Manager.EventKind";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SaveData_Manager_EventKind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl SaveData_Manager_EventKind {
+        pub fn cleanup() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn task() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager_Task.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveData.Manager.Task")]
+    #[parent(crate::system::object::Object)]
+    pub struct SaveData_Manager_Task {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager.md"))]
     #[::unity2::class(namespace = "App", name = "SaveData.Manager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: savedata :: SaveData_Manager >)]
     pub struct SaveData_Manager {
+        #[offset(48)]
         #[rename(name = "m_Tasks")]
         pub m_tasks: crate::system::collections::generic::queue_1::Queue_1<crate::app::savedata::SaveData_Manager_Task>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveData")]
+    #[parent(crate::system::object::Object)]
+    pub struct SaveData {
+        #[static_field]
+        #[rename(name = "MountName")]
+        pub mount_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "MountNameWithColon")]
+        pub mount_name_with_colon: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_IsMounted")]
+        pub s_is_mounted: bool,
     }
 }
 
 #[cfg(feature = "app-savedata-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-savedata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SaveData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Setup", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cleanup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Cleanup", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "Cleanup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cleanup(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cleanup::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pause_exit_app {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveData as ::unity2::ClassIdentity>::class(),
-                "PauseExitApp",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "PauseExitApp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn pause_exit_app(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_pause_exit_app::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resume_exit_app {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveData as ::unity2::ClassIdentity>::class(),
-                "ResumeExitApp",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "ResumeExitApp",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn resume_exit_app(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_resume_exit_app::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "ReadAsync", 4, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "ReadAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read_async(
-        path: ::unity2::Il2CppString,
-        offset: i64,
-        data: ::unity2::Array<u8>,
-        size: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::savedatareadhandle::SaveDataReadHandle {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            i64,
-            ::unity2::Array<u8>,
-            i64,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::savedatareadhandle::SaveDataReadHandle = ::core::mem::transmute(__lookup_read_async::get_method_info().method_ptr);
-        inner(path, offset, data, size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "WriteAsync", 5, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "WriteAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write_async(
-        path: ::unity2::Il2CppString,
-        offset: i64,
-        data: ::unity2::Array<u8>,
-        size: i64,
-        is_enable_resize: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::savedatahandle::SaveDataHandle {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            i64,
-            ::unity2::Array<u8>,
-            i64,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::savedatahandle::SaveDataHandle = ::core::mem::transmute(__lookup_write_async::get_method_info().method_ptr);
-        inner(path, offset, data, size, is_enable_resize, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "DeleteAsync", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "DeleteAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn delete_async(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::savedatahandle::SaveDataHandle {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::savedatahandle::SaveDataHandle =
-            ::core::mem::transmute(__lookup_delete_async::get_method_info().method_ptr);
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Commit", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "Commit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit(mount_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
-        inner(mount_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "CommitAsync", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "CommitAsync",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit_async(
-        mount_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::savedatahandle::SaveDataHandle {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::savedatahandle::SaveDataHandle =
-            ::core::mem::transmute(__lookup_commit_async::get_method_info().method_ptr);
-        inner(mount_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "IsExist", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "IsExist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exist(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_file_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "GetFileSize", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "GetFileSize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_file_size(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(__lookup_get_file_size::get_method_info().method_ptr);
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dump {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Dump", 1, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <SaveData as ::unity2::ClassIdentity>::NAME, "Dump", e),
-            }
-        }
-    }
-    pub unsafe fn dump(root_path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
-        inner(root_path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_mounted {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SaveData as ::unity2::ClassIdentity>::class(),
-                "get_IsMounted",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        "get_IsMounted",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_mounted(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_mounted::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SaveData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SaveData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SaveData as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-savedata")]
-impl SaveData {
-    #[doc = "`Setup()` overload"]
-    pub fn setup() -> () {
-        unsafe { __SaveData_unity2_raw::setup(::core::option::Option::None) }
-    }
-
-    #[doc = "`Cleanup()` overload"]
-    pub fn cleanup() -> () {
-        unsafe { __SaveData_unity2_raw::cleanup(::core::option::Option::None) }
-    }
-
-    #[doc = "`PauseExitApp()` overload"]
-    pub fn pause_exit_app() -> () {
-        unsafe { __SaveData_unity2_raw::pause_exit_app(::core::option::Option::None) }
-    }
-
-    #[doc = "`ResumeExitApp()` overload"]
-    pub fn resume_exit_app() -> () {
-        unsafe { __SaveData_unity2_raw::resume_exit_app(::core::option::Option::None) }
-    }
-
-    #[doc = "`ReadAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64)` overload"]
-    pub fn read_async(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        offset: impl ::core::convert::Into<i64>,
-        data: impl ::core::convert::Into<::unity2::Array<u8>>,
-        size: impl ::core::convert::Into<i64>,
-    ) -> crate::app::savedatareadhandle::SaveDataReadHandle {
-        unsafe {
-            __SaveData_unity2_raw::read_async(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(offset),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`WriteAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64, bool)` overload"]
-    pub fn write_async(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        offset: impl ::core::convert::Into<i64>,
-        data: impl ::core::convert::Into<::unity2::Array<u8>>,
-        size: impl ::core::convert::Into<i64>,
-        is_enable_resize: impl ::core::convert::Into<bool>,
-    ) -> crate::app::savedatahandle::SaveDataHandle {
-        unsafe {
-            __SaveData_unity2_raw::write_async(
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(offset),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(size),
-                ::core::convert::Into::into(is_enable_resize),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`DeleteAsync(::unity2::Il2CppString)` overload"]
-    pub fn delete_async(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::savedatahandle::SaveDataHandle {
-        unsafe { __SaveData_unity2_raw::delete_async(::core::convert::Into::into(path), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Commit(::unity2::Il2CppString)` overload"]
-    pub fn commit(mount_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __SaveData_unity2_raw::commit(::core::convert::Into::into(mount_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CommitAsync(::unity2::Il2CppString)` overload"]
-    pub fn commit_async(mount_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::savedatahandle::SaveDataHandle {
-        unsafe { __SaveData_unity2_raw::commit_async(::core::convert::Into::into(mount_name), ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsExist(::unity2::Il2CppString)` overload"]
-    pub fn is_exist(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __SaveData_unity2_raw::is_exist(::core::convert::Into::into(path), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetFileSize(::unity2::Il2CppString)` overload"]
-    pub fn get_file_size(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> i64 {
-        unsafe { __SaveData_unity2_raw::get_file_size(::core::convert::Into::into(path), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dump(::unity2::Il2CppString)` overload"]
-    pub fn dump(root_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __SaveData_unity2_raw::dump(::core::convert::Into::into(root_path), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_IsMounted()` overload"]
-    pub fn get_is_mounted() -> bool {
-        unsafe { __SaveData_unity2_raw::get_is_mounted(::core::option::Option::None) }
-    }
-
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __SaveData_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-savedata")]
-pub trait ISaveDataMethods: ISaveData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SaveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SaveData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-savedata")]
-impl<__T: ISaveData> ISaveDataMethods for __T {}
-
-#[cfg(feature = "app-savedata")]
-impl SaveData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SaveData), ::core::stringify!(new),));
-        <Self as ISaveDataMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-savedata")]
 #[doc(hidden)]
@@ -2181,6 +1599,589 @@ impl SaveData_Manager {
             )
         });
         <Self as ISaveData_ManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-savedata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SaveData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Setup", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cleanup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Cleanup", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "Cleanup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cleanup(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cleanup::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pause_exit_app {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveData as ::unity2::ClassIdentity>::class(),
+                "PauseExitApp",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "PauseExitApp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn pause_exit_app(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_pause_exit_app::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resume_exit_app {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveData as ::unity2::ClassIdentity>::class(),
+                "ResumeExitApp",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "ResumeExitApp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn resume_exit_app(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_resume_exit_app::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i64 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "ReadAsync", 4, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "ReadAsync",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn read_async(
+        path: ::unity2::Il2CppString,
+        offset: i64,
+        data: ::unity2::Array<u8>,
+        size: i64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::savedatareadhandle::SaveDataReadHandle {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            i64,
+            ::unity2::Array<u8>,
+            i64,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::savedatareadhandle::SaveDataReadHandle = ::core::mem::transmute(__lookup_read_async::get_method_info().method_ptr);
+        inner(path, offset, data, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i64 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i64 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "WriteAsync", 5, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "WriteAsync",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn write_async(
+        path: ::unity2::Il2CppString,
+        offset: i64,
+        data: ::unity2::Array<u8>,
+        size: i64,
+        is_enable_resize: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::savedatahandle::SaveDataHandle {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            i64,
+            ::unity2::Array<u8>,
+            i64,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::savedatahandle::SaveDataHandle = ::core::mem::transmute(__lookup_write_async::get_method_info().method_ptr);
+        inner(path, offset, data, size, is_enable_resize, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "DeleteAsync", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "DeleteAsync",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_async(
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::savedatahandle::SaveDataHandle {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::savedatahandle::SaveDataHandle =
+            ::core::mem::transmute(__lookup_delete_async::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Commit", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit(mount_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
+        inner(mount_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "CommitAsync", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "CommitAsync",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit_async(
+        mount_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::savedatahandle::SaveDataHandle {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::savedatahandle::SaveDataHandle =
+            ::core::mem::transmute(__lookup_commit_async::get_method_info().method_ptr);
+        inner(mount_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "IsExist", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exist(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_file_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "GetFileSize", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "GetFileSize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_file_size(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i64 =
+            ::core::mem::transmute(__lookup_get_file_size::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), "Dump", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <SaveData as ::unity2::ClassIdentity>::NAME, "Dump", e),
+            }
+        }
+    }
+    pub unsafe fn dump(root_path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
+        inner(root_path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_mounted {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SaveData as ::unity2::ClassIdentity>::class(),
+                "get_IsMounted",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsMounted",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_mounted(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_mounted::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SaveData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SaveData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<SaveData as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveData as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-savedata")]
+impl SaveData {
+    #[doc = "`Setup()` overload"]
+    pub fn setup() -> () {
+        unsafe { __SaveData_unity2_raw::setup(::core::option::Option::None) }
+    }
+
+    #[doc = "`Cleanup()` overload"]
+    pub fn cleanup() -> () {
+        unsafe { __SaveData_unity2_raw::cleanup(::core::option::Option::None) }
+    }
+
+    #[doc = "`PauseExitApp()` overload"]
+    pub fn pause_exit_app() -> () {
+        unsafe { __SaveData_unity2_raw::pause_exit_app(::core::option::Option::None) }
+    }
+
+    #[doc = "`ResumeExitApp()` overload"]
+    pub fn resume_exit_app() -> () {
+        unsafe { __SaveData_unity2_raw::resume_exit_app(::core::option::Option::None) }
+    }
+
+    #[doc = "`ReadAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64)` overload"]
+    pub fn read_async(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        offset: impl ::core::convert::Into<i64>,
+        data: impl ::core::convert::Into<::unity2::Array<u8>>,
+        size: impl ::core::convert::Into<i64>,
+    ) -> crate::app::savedatareadhandle::SaveDataReadHandle {
+        unsafe {
+            __SaveData_unity2_raw::read_async(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(offset),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(size),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`WriteAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64, bool)` overload"]
+    pub fn write_async(
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        offset: impl ::core::convert::Into<i64>,
+        data: impl ::core::convert::Into<::unity2::Array<u8>>,
+        size: impl ::core::convert::Into<i64>,
+        is_enable_resize: impl ::core::convert::Into<bool>,
+    ) -> crate::app::savedatahandle::SaveDataHandle {
+        unsafe {
+            __SaveData_unity2_raw::write_async(
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(offset),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(size),
+                ::core::convert::Into::into(is_enable_resize),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`DeleteAsync(::unity2::Il2CppString)` overload"]
+    pub fn delete_async(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::savedatahandle::SaveDataHandle {
+        unsafe { __SaveData_unity2_raw::delete_async(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Commit(::unity2::Il2CppString)` overload"]
+    pub fn commit(mount_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __SaveData_unity2_raw::commit(::core::convert::Into::into(mount_name), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CommitAsync(::unity2::Il2CppString)` overload"]
+    pub fn commit_async(mount_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::savedatahandle::SaveDataHandle {
+        unsafe { __SaveData_unity2_raw::commit_async(::core::convert::Into::into(mount_name), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsExist(::unity2::Il2CppString)` overload"]
+    pub fn is_exist(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __SaveData_unity2_raw::is_exist(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetFileSize(::unity2::Il2CppString)` overload"]
+    pub fn get_file_size(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> i64 {
+        unsafe { __SaveData_unity2_raw::get_file_size(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dump(::unity2::Il2CppString)` overload"]
+    pub fn dump(root_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __SaveData_unity2_raw::dump(::core::convert::Into::into(root_path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_IsMounted()` overload"]
+    pub fn get_is_mounted() -> bool {
+        unsafe { __SaveData_unity2_raw::get_is_mounted(::core::option::Option::None) }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __SaveData_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-savedata")]
+pub trait ISaveDataMethods: ISaveData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SaveData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-savedata")]
+impl<__T: ISaveData> ISaveDataMethods for __T {}
+
+#[cfg(feature = "app-savedata")]
+impl SaveData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SaveData), ::core::stringify!(new),));
+        <Self as ISaveDataMethods>::ctor(this);
         this
     }
 }

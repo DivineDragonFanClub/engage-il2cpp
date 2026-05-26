@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "MagicSubLinear")]
     #[parent(crate::combat::magicsub::MagicSub)]
     pub struct MagicSubLinear {
+        #[offset(80)]
         #[rename(name = "m_TargetNode")]
         pub m_target_node: crate::unity_engine::transform::Transform,
+        #[offset(88)]
         #[rename(name = "m_StartPos")]
         pub m_start_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(100)]
         #[rename(name = "m_EndPos")]
         pub m_end_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(112)]
         #[rename(name = "m_Forward")]
         pub m_forward: crate::unity_engine::vector3::Vector3,
+        #[offset(124)]
         #[rename(name = "m_Distance")]
         pub m_distance: f32,
+        #[offset(128)]
         #[rename(name = "m_FlyingTime")]
         pub m_flying_time: f32,
+        #[offset(132)]
         #[rename(name = "m_Elapsed")]
         pub m_elapsed: f32,
     }

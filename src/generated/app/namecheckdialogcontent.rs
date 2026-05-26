@@ -26,6 +26,7 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(264)]
         #[rename(name = "m_InputName")]
         pub m_input_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

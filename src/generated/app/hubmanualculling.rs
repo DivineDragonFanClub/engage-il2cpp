@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubManualCulling")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubManualCulling {
+        #[offset(24)]
         #[rename(name = "m_CullGroupTargetList")]
         pub m_cull_group_target_list: ::unity2::Array<bool>,
     }

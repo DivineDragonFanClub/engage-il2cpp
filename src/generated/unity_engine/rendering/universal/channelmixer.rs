@@ -18,22 +18,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ChannelMixer")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct ChannelMixer {
+        #[offset(56)]
         #[rename(name = "redOutRedIn")]
         pub red_out_red_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(64)]
         #[rename(name = "redOutGreenIn")]
         pub red_out_green_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "redOutBlueIn")]
         pub red_out_blue_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "greenOutRedIn")]
         pub green_out_red_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "greenOutGreenIn")]
         pub green_out_green_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(96)]
         #[rename(name = "greenOutBlueIn")]
         pub green_out_blue_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(104)]
         #[rename(name = "blueOutRedIn")]
         pub blue_out_red_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(112)]
         #[rename(name = "blueOutGreenIn")]
         pub blue_out_green_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(120)]
         #[rename(name = "blueOutBlueIn")]
         pub blue_out_blue_in: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

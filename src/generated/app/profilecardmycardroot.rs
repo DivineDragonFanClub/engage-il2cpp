@@ -22,22 +22,31 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_ProfileCardRoot")]
         pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[offset(32)]
         #[rename(name = "m_SelectEditMenuContent")]
         pub m_select_edit_menu_content: crate::app::profilecardselecteditmenucontent::ProfileCardSelectEditMenuContent,
+        #[offset(40)]
         #[rename(name = "m_MessageSelectMenuContent")]
         pub m_message_select_menu_content: crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
+        #[offset(48)]
         #[rename(name = "m_MessageListMenuContent")]
         pub m_message_list_menu_content: crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
+        #[offset(56)]
         #[rename(name = "m_TextListMenuContent")]
         pub m_text_list_menu_content: crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent,
+        #[offset(64)]
         #[rename(name = "m_VisualMenuContent")]
         pub m_visual_menu_content: crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent,
+        #[offset(72)]
         #[rename(name = "m_StampRoot")]
         pub m_stamp_root: crate::app::profilecardstamproot::ProfileCardStampRoot,
+        #[offset(80)]
         #[rename(name = "m_StampListMenuContent")]
         pub m_stamp_list_menu_content: crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent,
+        #[offset(88)]
         #[rename(name = "m_PlayTime")]
         pub m_play_time: f32,
     }

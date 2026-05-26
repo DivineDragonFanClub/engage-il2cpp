@@ -22,14 +22,19 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_ProfileCardTopMenuContent")]
         pub m_profile_card_top_menu_content: crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent,
+        #[offset(32)]
         #[rename(name = "m_InfoWindowAnimator")]
         pub m_info_window_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_InfoWindowCaptionText")]
         pub m_info_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_InfoWindowDescriptionText")]
         pub m_info_window_description_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_InfoWindowWarningText")]
         pub m_info_window_warning_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

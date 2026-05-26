@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct MyRoomWakeupSelectMenu {
+        #[offset(196)]
         #[rename(name = "IsRankPhase")]
         pub is_rank_phase: bool,
+        #[offset(200)]
         #[rename(name = "m_MenuSelectList")]
         pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(208)]
         #[rename(name = "m_OldLevel")]
         pub m_old_level: crate::app::reliancedata::RelianceData_Level,
+        #[offset(212)]
         #[rename(name = "m_OldPattern")]
         pub m_old_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
     }

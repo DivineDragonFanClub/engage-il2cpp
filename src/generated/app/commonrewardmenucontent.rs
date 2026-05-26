@@ -23,14 +23,19 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_GaugeSpeedDefault")]
         pub m_gauge_speed_default: i32,
+        #[offset(236)]
         #[rename(name = "m_GaugeSpeedSkip")]
         pub m_gauge_speed_skip: i32,
+        #[offset(240)]
         #[rename(name = "m_ScrollStart")]
         pub m_scroll_start: i32,
+        #[offset(244)]
         #[rename(name = "m_WaitTimeStart")]
         pub m_wait_time_start: f32,
+        #[offset(248)]
         #[rename(name = "m_WaitTimeEnd")]
         pub m_wait_time_end: f32,
     }

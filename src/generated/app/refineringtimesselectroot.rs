@@ -22,6 +22,7 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_RefineRingTimesSelectMenuContentObject")]
         pub m_refine_ring_times_select_menu_content_object: crate::unity_engine::gameobject::GameObject,
     }

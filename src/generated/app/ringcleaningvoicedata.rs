@@ -18,6 +18,15 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]
+    #[::unity2::class(namespace = "App", name = "RingCleaningVoiceData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)]
+    pub struct RingCleaningVoiceData {
+        #[static_field]
+        #[rename(name = "EventNames")]
+        pub event_names: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -152,15 +161,6 @@ mod __types {
         pub fn thank03() -> Self {
             Self { value: 15 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCleaningVoiceData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)]
-    pub struct RingCleaningVoiceData {
-        #[static_field]
-        #[rename(name = "EventNames")]
-        pub event_names: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 

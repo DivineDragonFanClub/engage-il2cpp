@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardStampObject")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ProfileCardStampObject {
+        #[offset(24)]
         #[rename(name = "m_RectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(32)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_FrameObject")]
         pub m_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_InitialSize")]
         pub m_initial_size: crate::unity_engine::vector2::Vector2,
+        #[offset(56)]
         #[rename(name = "m_Scale")]
         pub m_scale: crate::unity_engine::vector2::Vector2,
     }

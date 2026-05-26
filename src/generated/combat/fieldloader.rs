@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "FieldLoader")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FieldLoader {
+        #[offset(32)]
         #[rename(name = "m_MapHandle")]
         pub m_map_handle: crate::app::resourcehandle_2::ResourceHandle_2,
     }

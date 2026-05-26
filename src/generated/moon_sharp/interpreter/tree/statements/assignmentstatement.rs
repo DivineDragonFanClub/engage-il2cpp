@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "AssignmentStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct AssignmentStatement {
+        #[offset(32)]
         #[rename(name = "m_LValues")]
         pub m_l_values: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::ivariable::IVariable>,
+        #[offset(40)]
         #[rename(name = "m_RValues")]
         pub m_r_values: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression>,
+        #[offset(48)]
         #[rename(name = "m_Ref")]
         pub m_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

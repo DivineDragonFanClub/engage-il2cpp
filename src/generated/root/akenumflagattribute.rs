@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkEnumFlagAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct AkEnumFlagAttribute {
+        #[offset(16)]
         #[rename(name = "Type")]
         pub r#type: ::unity2::SystemType,
     }

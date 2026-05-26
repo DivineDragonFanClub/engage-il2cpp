@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ArenaBondUnitSelectMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct ArenaBondUnitSelectMenuItem {
+        #[offset(104)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::arenabondunitselectmenu::ArenaBondUnitSelectMenu_DecideEventHandler,
+        #[offset(112)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::arenabondunitselectmenu::ArenaBondUnitSelectMenu_SelectEventHandler,
+        #[offset(128)]
         #[rename(name = "IsSelectableUnit")]
         pub is_selectable_unit: bool,
     }

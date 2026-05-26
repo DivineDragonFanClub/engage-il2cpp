@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections.Specialized", name = "HybridDictionary")]
     #[parent(crate::system::object::Object)]
     pub struct HybridDictionary {
+        #[offset(16)]
         #[rename(name = "list")]
         pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
+        #[offset(24)]
         #[rename(name = "hashtable")]
         pub hashtable: crate::system::collections::hashtable::Hashtable,
+        #[offset(32)]
         #[rename(name = "caseInsensitive")]
         pub case_insensitive: bool,
     }

@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagAddLetter")]
     #[parent(crate::app::talk3_d::talktag::TalkTag)]
     pub struct TalkTagAddLetter {
+        #[offset(16)]
         #[rename(name = "m_IsLineFeedEnable")]
         pub m_is_line_feed_enable: bool,
+        #[offset(18)]
         #[rename(name = "m_AddLetter")]
         pub m_add_letter: u16,
+        #[offset(20)]
         #[rename(name = "m_Result")]
         pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
     }

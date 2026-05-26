@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "BundledAssetProvider.InternalOp")]
     #[parent(crate::system::object::Object)]
     pub struct BundledAssetProvider_InternalOp {
+        #[offset(16)]
         #[rename(name = "m_RequestOperation")]
         pub m_request_operation: crate::unity_engine::assetbundlerequest::AssetBundleRequest,
+        #[offset(24)]
         #[rename(name = "m_Result")]
         pub m_result: ::unity2::IlInstance,
+        #[offset(32)]
         #[rename(name = "m_ProvideHandle")]
         pub m_provide_handle: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
+        #[offset(56)]
         #[rename(name = "subObjectName")]
         pub sub_object_name: ::unity2::Il2CppString,
     }

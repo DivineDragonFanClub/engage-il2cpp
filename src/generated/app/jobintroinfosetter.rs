@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "JobIntroInfoSetter.WeaponSetter")]
     #[parent(crate::system::object::Object)]
     pub struct JobIntroInfoSetter_WeaponSetter {
+        #[offset(16)]
         #[rename(name = "Weapon")]
         pub weapon: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "Weapon0")]
         pub weapon0: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "SlashWeapon1")]
         pub slash_weapon1: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "Weapon1")]
         pub weapon1: crate::unity_engine::ui::image::Image,
+        #[offset(48)]
         #[rename(name = "SlashWeapon2")]
         pub slash_weapon2: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "Weapon2")]
         pub weapon2: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "WeaponText")]
         pub weapon_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
@@ -39,22 +46,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "JobIntroInfoSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct JobIntroInfoSetter {
+        #[offset(24)]
         #[rename(name = "Icon")]
         pub icon: crate::app::uniticon::UnitIcon,
+        #[offset(32)]
         #[rename(name = "JobName")]
         pub job_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "Style")]
         pub style: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "Category")]
         pub category: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "Weapons")]
         pub weapons: ::unity2::Array<crate::app::jobintroinfosetter::JobIntroInfoSetter_WeaponSetter>,
+        #[offset(64)]
         #[rename(name = "Message")]
         pub message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "StyleInfo")]
         pub style_info: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "CategoryInfo")]
         pub category_info: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "WeaponInfo")]
         pub weapon_info: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

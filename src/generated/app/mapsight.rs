@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSight")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsight :: MapSight >)]
     pub struct MapSight {
+        #[offset(32)]
         #[rename(name = "m_ImagePlayer")]
         pub m_image_player: crate::app::mapimagesight::MapImageSight,
+        #[offset(40)]
         #[rename(name = "m_ImageEnemy")]
         pub m_image_enemy: crate::app::mapimagesight::MapImageSight,
+        #[offset(48)]
         #[rename(name = "m_ImageAlly")]
         pub m_image_ally: crate::app::mapimagesight::MapImageSight,
+        #[offset(56)]
         #[rename(name = "m_IsUsable")]
         pub m_is_usable: bool,
     }

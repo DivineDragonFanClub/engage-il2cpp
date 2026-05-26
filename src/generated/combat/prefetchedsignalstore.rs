@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PrefetchedSignalStore")]
     #[parent(crate::system::object::Object)]
     pub struct PrefetchedSignalStore {
+        #[offset(16)]
         #[rename(name = "dic")]
         pub dic: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::combat::prefetchedsignal::PrefetchedSignal>,
+        #[offset(24)]
         #[rename(name = "lastHash")]
         pub last_hash: i32,
+        #[offset(32)]
         #[rename(name = "lastSignal")]
         pub last_signal: crate::combat::prefetchedsignal::PrefetchedSignal,
         #[static_field]
@@ -23,6 +26,7 @@ mod __types {
         #[static_field]
         #[rename(name = "attackHashes")]
         pub attack_hashes: ::unity2::Array<i32>,
+        #[offset(40)]
         #[rename(name = "items")]
         pub items: ::unity2::Array<crate::combat::prefetchedsignal::PrefetchedSignal>,
     }

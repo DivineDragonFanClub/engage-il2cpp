@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapNavigationStatusBasicMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MapNavigationStatusBasicMenuItem {
+        #[offset(104)]
         #[rename(name = "m_StatusTitle")]
         pub m_status_title: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_UnitInfoTitle")]
         pub m_unit_info_title: ::unity2::Il2CppString,
     }

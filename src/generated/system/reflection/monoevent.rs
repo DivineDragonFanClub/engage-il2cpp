@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "MonoEvent")]
     #[parent(crate::system::reflection::runtimeeventinfo::RuntimeEventInfo)]
     pub struct MonoEvent {
+        #[offset(24)]
         #[rename(name = "klass")]
         pub klass: ::unity2::IntPtr,
+        #[offset(32)]
         #[rename(name = "handle")]
         pub handle: ::unity2::IntPtr,
     }

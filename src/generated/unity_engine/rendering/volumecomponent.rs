@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "VolumeComponent")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct VolumeComponent {
+        #[offset(24)]
         #[rename(name = "active")]
         pub active: bool,
+        #[offset(48)]
         #[rename(name = "m_AdvancedMode")]
         pub m_advanced_mode: bool,
     }

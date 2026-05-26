@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AnimatorControllerParameter")]
     #[parent(crate::system::object::Object)]
     pub struct AnimatorControllerParameter {
+        #[offset(16)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Type")]
         pub m_type: crate::unity_engine::animatorcontrollerparametertype::AnimatorControllerParameterType,
+        #[offset(28)]
         #[rename(name = "m_DefaultFloat")]
         pub m_default_float: f32,
+        #[offset(32)]
         #[rename(name = "m_DefaultInt")]
         pub m_default_int: i32,
+        #[offset(36)]
         #[rename(name = "m_DefaultBool")]
         pub m_default_bool: bool,
     }

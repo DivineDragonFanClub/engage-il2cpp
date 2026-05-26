@@ -11,13 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "PropertyTableAssigner")]
     #[parent(crate::system::object::Object)]
     pub struct PropertyTableAssigner {
+        #[offset(16)]
         #[rename(name = "m_Type")]
         pub m_type: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "m_PropertyMap")]
         pub m_property_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             crate::system::reflection::propertyinfo::PropertyInfo,
         >,
+        #[offset(32)]
         #[rename(name = "m_SubAssigners")]
         pub m_sub_assigners: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::SystemType,

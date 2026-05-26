@@ -26,16 +26,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectPauseMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct PhotographSelectPauseMenu {
+        #[offset(200)]
         #[rename(name = "m_DisposManager")]
         pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        #[offset(208)]
         #[rename(name = "m_PauseDataOld")]
         pub m_pause_data_old: crate::app::photographpausedata::PhotographPauseData,
+        #[offset(216)]
         #[rename(name = "m_CategoryList")]
         pub m_category_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(224)]
         #[rename(name = "m_CurCategoryIdx")]
         pub m_cur_category_idx: i32,
+        #[offset(232)]
         #[rename(name = "m_MenuSelectList")]
         pub m_menu_select_list: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(240)]
         #[rename(name = "m_UpdateUIObjHandler")]
         pub m_update_ui_obj_handler: crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler,
     }

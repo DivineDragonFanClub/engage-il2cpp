@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MuscleExerciseSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MuscleExerciseSequence {
+        #[offset(112)]
         #[rename(name = "m_RootPrefab")]
         pub m_root_prefab: crate::app::muscleexerciseprefab::MuscleExercisePrefab,
     }

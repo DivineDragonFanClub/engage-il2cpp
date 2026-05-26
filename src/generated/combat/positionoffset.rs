@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PositionOffset")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct PositionOffset {
+        #[offset(24)]
         #[rename(name = "Radius")]
         pub radius: f32,
     }

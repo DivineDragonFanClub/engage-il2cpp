@@ -20,40 +20,58 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct AccessoryShopBuyMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_KindIconObject")]
         pub m_kind_icon_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_KindIconImage")]
         pub m_kind_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_NameObject")]
         pub m_name_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_IronObject")]
         pub m_iron_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_IronIconImage")]
         pub m_iron_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(120)]
         #[rename(name = "m_IronValueText")]
         pub m_iron_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_SteelObject")]
         pub m_steel_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_SteelIconImage")]
         pub m_steel_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(144)]
         #[rename(name = "m_SteelValueText")]
         pub m_steel_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(152)]
         #[rename(name = "m_SilverObject")]
         pub m_silver_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
         #[rename(name = "m_SilverIconImage")]
         pub m_silver_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(168)]
         #[rename(name = "m_SilverValueText")]
         pub m_silver_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(176)]
         #[rename(name = "m_PriceObject")]
         pub m_price_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(184)]
         #[rename(name = "m_PriceIconImage")]
         pub m_price_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(192)]
         #[rename(name = "m_PriceValueText")]
         pub m_price_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(200)]
         #[rename(name = "m_PriceGText")]
         pub m_price_g_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(208)]
         #[rename(name = "m_NewIconObject")]
         pub m_new_icon_object: crate::unity_engine::gameobject::GameObject,
     }

@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapPointerLocatorRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapPointerLocatorRoot {
+        #[offset(24)]
         #[rename(name = "m_Pointer")]
         pub m_pointer: crate::unity_engine::transform::Transform,
+        #[offset(32)]
         #[rename(name = "m_Attack")]
         pub m_attack: crate::unity_engine::transform::Transform,
+        #[offset(40)]
         #[rename(name = "m_Rod")]
         pub m_rod: crate::unity_engine::transform::Transform,
+        #[offset(48)]
         #[rename(name = "m_Dance")]
         pub m_dance: crate::unity_engine::transform::Transform,
+        #[offset(56)]
         #[rename(name = "m_Cannon")]
         pub m_cannon: crate::unity_engine::transform::Transform,
+        #[offset(64)]
         #[rename(name = "m_Color")]
         pub m_color: crate::root::mapcursorcolor::MapCursorColor,
     }

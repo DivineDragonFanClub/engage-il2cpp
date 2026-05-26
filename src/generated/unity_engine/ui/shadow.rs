@@ -21,10 +21,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Shadow")]
     #[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]
     pub struct Shadow {
+        #[offset(32)]
         #[rename(name = "m_EffectColor")]
         pub m_effect_color: crate::unity_engine::color::Color,
+        #[offset(48)]
         #[rename(name = "m_EffectDistance")]
         pub m_effect_distance: crate::unity_engine::vector2::Vector2,
+        #[offset(56)]
         #[rename(name = "m_UseGraphicAlpha")]
         pub m_use_graphic_alpha: bool,
         #[static_field]

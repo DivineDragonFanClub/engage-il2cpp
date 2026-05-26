@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guitargetattribute/GUITargetAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUITargetAttribute")]
     pub struct GUITargetAttribute {
+        #[offset(16)]
         #[rename(name = "displayMask")]
         pub display_mask: i32,
     }

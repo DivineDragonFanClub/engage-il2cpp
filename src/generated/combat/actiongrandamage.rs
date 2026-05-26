@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionGranDamage")]
     #[parent(crate::combat::actiongranbase::ActionGranBase)]
     pub struct ActionGranDamage {
+        #[offset(64)]
         #[rename(name = "m_TimeToEraseInAir")]
         pub m_time_to_erase_in_air: f32,
     }

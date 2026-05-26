@@ -11,11 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talk_2/Talk_2.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "Talk")]
-    #[parent(crate::system::object::Object)]
-    pub struct Talk_2 {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talk_2/Talk_TalkType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -65,6 +60,11 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talk_2/Talk_2.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "Talk")]
+    #[parent(crate::system::object::Object)]
+    pub struct Talk_2 {}
 }
 
 #[cfg(feature = "app-talk3_d-talk_2-types")]

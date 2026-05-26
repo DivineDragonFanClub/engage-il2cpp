@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "BaseCameraController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BaseCameraController {
+        #[offset(72)]
         #[rename(name = "LookupDegree")]
         pub lookup_degree: f32,
+        #[offset(76)]
         #[rename(name = "TripodHeight")]
         pub tripod_height: f32,
+        #[offset(80)]
         #[rename(name = "MoveSpeedCurve")]
         pub move_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(88)]
         #[rename(name = "ChaseSpeedCurve")]
         pub chase_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(96)]
         #[rename(name = "IsShakable")]
         pub is_shakable: bool,
+        #[offset(97)]
         #[rename(name = "Controlable")]
         pub controlable: bool,
+        #[offset(100)]
         #[rename(name = "CameraBackByEmblem")]
         pub camera_back_by_emblem: f32,
+        #[offset(104)]
         #[rename(name = "ImmobileCamera")]
         pub immobile_camera: bool,
     }

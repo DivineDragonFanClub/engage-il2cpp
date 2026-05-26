@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitSelectRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UnitSelectRoot {
+        #[offset(24)]
         #[rename(name = "m_UnitListRoot")]
         pub m_unit_list_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_GodImageObject")]
         pub m_god_image_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::unit::Unit,
     }

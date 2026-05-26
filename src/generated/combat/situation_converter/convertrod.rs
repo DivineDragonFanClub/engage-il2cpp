@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertRod")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConvertRod {
+        #[offset(24)]
         #[rename(name = "m_CamPos")]
         pub m_cam_pos: crate::combat::cameraposition::CameraPosition,
+        #[offset(28)]
         #[rename(name = "m_IsCrossCut")]
         pub m_is_cross_cut: bool,
+        #[offset(32)]
         #[rename(name = "m_Target")]
         pub m_target: i32,
     }

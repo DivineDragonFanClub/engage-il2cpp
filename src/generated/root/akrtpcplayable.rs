@@ -18,12 +18,16 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkRTPCPlayable")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct AkRTPCPlayable {
+        #[offset(24)]
         #[rename(name = "overrideTrackObject")]
         pub override_track_object: bool,
+        #[offset(32)]
         #[rename(name = "RTPCObject")]
         pub rtpc_object: crate::unity_engine::exposedreference_1::ExposedReference_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(48)]
         #[rename(name = "setRTPCGlobally")]
         pub set_rtpc_globally: bool,
+        #[offset(56)]
         #[rename(name = "template")]
         pub template: crate::root::akrtpcplayablebehaviour::AkRTPCPlayableBehaviour,
     }

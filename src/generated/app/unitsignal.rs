@@ -23,14 +23,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitSignal")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UnitSignal {
+        #[offset(24)]
         #[rename(name = "m_Model")]
         pub m_model: crate::app::unitmodel::UnitModel,
+        #[offset(32)]
         #[rename(name = "m_HitCallback")]
         pub m_hit_callback: crate::app::unitsignal::UnitSignal_Func,
+        #[offset(40)]
         #[rename(name = "m_ShootCallback")]
         pub m_shoot_callback: crate::app::unitsignal::UnitSignal_Func,
+        #[offset(48)]
         #[rename(name = "m_AvoidCallback")]
         pub m_avoid_callback: crate::app::unitsignal::UnitSignal_Func,
+        #[offset(56)]
         #[rename(name = "m_Arg")]
         pub m_arg: ::unity2::IlInstance,
     }

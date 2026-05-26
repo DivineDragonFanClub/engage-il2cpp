@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopContent")]
     #[parent(crate::system::object::Object)]
     pub struct ShopContent {
+        #[offset(16)]
         #[rename(name = "m_Iid")]
         pub m_iid: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_StockNum")]
         pub m_stock_num: i32,
+        #[offset(28)]
         #[rename(name = "m_NewArrival")]
         pub m_new_arrival: bool,
     }

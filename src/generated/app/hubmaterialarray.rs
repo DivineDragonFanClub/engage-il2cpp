@@ -18,6 +18,24 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMaterialArray")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubMaterialArray {
+        #[offset(24)]
+        #[rename(name = "m_objectTag")]
+        pub m_object_tag: ::unity2::Il2CppString,
+        #[offset(32)]
+        #[rename(name = "m_activeMaterial")]
+        pub m_active_material: ::unity2::Il2CppString,
+        #[offset(40)]
+        #[rename(name = "m_materials")]
+        pub m_materials: ::unity2::Array<crate::app::hubmaterialarray::HubMaterialArray_MaterialInfo>,
+        #[offset(48)]
+        #[rename(name = "m_renderer")]
+        pub m_renderer: crate::unity_engine::renderer::Renderer,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmaterialarray/HubMaterialArray_MaterialInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,20 +59,6 @@ mod __types {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMaterialArray")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubMaterialArray {
-        #[rename(name = "m_objectTag")]
-        pub m_object_tag: ::unity2::Il2CppString,
-        #[rename(name = "m_activeMaterial")]
-        pub m_active_material: ::unity2::Il2CppString,
-        #[rename(name = "m_materials")]
-        pub m_materials: ::unity2::Array<crate::app::hubmaterialarray::HubMaterialArray_MaterialInfo>,
-        #[rename(name = "m_renderer")]
-        pub m_renderer: crate::unity_engine::renderer::Renderer,
     }
 }
 

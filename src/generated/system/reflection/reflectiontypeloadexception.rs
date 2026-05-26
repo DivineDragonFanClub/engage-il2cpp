@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/reflectiontypeloadexception/ReflectionTypeLoadException.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "ReflectionTypeLoadException")]
     pub struct ReflectionTypeLoadException {
+        #[offset(136)]
         #[rename(name = "_classes")]
         pub classes: ::unity2::Array<::unity2::SystemType>,
     }

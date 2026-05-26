@@ -23,18 +23,25 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "AutoCamera")]
     #[parent(crate::combat::autocamerabase::AutoCameraBase)]
     pub struct AutoCamera {
+        #[offset(216)]
         #[rename(name = "BirdsViewRatio")]
         pub birds_view_ratio: f32,
+        #[offset(220)]
         #[rename(name = "DeltaLongitudeScale")]
         pub delta_longitude_scale: f32,
+        #[offset(224)]
         #[rename(name = "DeltaLatitudeScale")]
         pub delta_latitude_scale: f32,
+        #[offset(228)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(232)]
         #[rename(name = "m_DeltaLongitude")]
         pub m_delta_longitude: f32,
+        #[offset(236)]
         #[rename(name = "m_DeltaLatitude")]
         pub m_delta_latitude: f32,
+        #[offset(240)]
         #[rename(name = "m_IsBirdsView")]
         pub m_is_birds_view: bool,
     }

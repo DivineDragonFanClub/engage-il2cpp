@@ -14,17 +14,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomTransparentsLayerPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CustomTransparentsLayerPass {
+        #[offset(112)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(136)]
         #[rename(name = "m_ShaderTagId")]
         pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(144)]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(152)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "s_DrawObjectPassDataPropID")]
         pub s_draw_object_pass_data_prop_id: i32,
+        #[offset(160)]
         #[rename(name = "m_DrawObjectPassData")]
         pub m_draw_object_pass_data: crate::unity_engine::vector4::Vector4,
     }

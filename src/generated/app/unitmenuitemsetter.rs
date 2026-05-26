@@ -61,18 +61,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitMenuItemSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UnitMenuItemSetter {
+        #[offset(24)]
         #[rename(name = "m_SelectBg")]
         pub m_select_bg: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_SubFrame")]
         pub m_sub_frame: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_Face")]
         pub m_face: crate::unity_engine::ui::image::Image,
+        #[offset(56)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "m_IconCheck")]
         pub m_icon_check: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_Message")]
         pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

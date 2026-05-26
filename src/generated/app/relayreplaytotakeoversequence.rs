@@ -17,14 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayToTakeOverSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayreplaytotakeoversequence :: RelayReplayToTakeOverSequence >)]
-    pub struct RelayReplayToTakeOverSequence {
-        #[rename(name = "m_SetupFieldFunc")]
-        pub m_setup_field_func: crate::system::action::Action,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,6 +49,15 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayToTakeOverSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayreplaytotakeoversequence :: RelayReplayToTakeOverSequence >)]
+    pub struct RelayReplayToTakeOverSequence {
+        #[offset(120)]
+        #[rename(name = "m_SetupFieldFunc")]
+        pub m_setup_field_func: crate::system::action::Action,
     }
 }
 

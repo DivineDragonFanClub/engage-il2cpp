@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkillEditEquipSkillMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct SkillEditEquipSkillMenuContent {
+        #[offset(232)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_SkillNgObj")]
         pub m_skill_ng_obj: crate::unity_engine::gameobject::GameObject,
     }

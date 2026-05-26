@@ -23,6 +23,7 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_objFrmContent")]
         pub m_obj_frm_content: crate::unity_engine::gameobject::GameObject,
     }

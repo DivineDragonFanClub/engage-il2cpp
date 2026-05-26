@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescMArgS")]
     #[parent(crate::app::procdesccallbase::ProcDescCallBase)]
     pub struct ProcDescMArgS {
+        #[offset(24)]
         #[rename(name = "m_Method")]
         pub m_method: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+        #[offset(32)]
         #[rename(name = "m_Arg")]
         pub m_arg: ::unity2::Il2CppString,
     }

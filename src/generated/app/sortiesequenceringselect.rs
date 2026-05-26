@@ -27,10 +27,13 @@ mod __types {
         #[static_field]
         #[rename(name = "HelpPrefabPath")]
         pub help_prefab_path: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::ringselectroot::RingSelectRoot,
+        #[offset(136)]
         #[rename(name = "m_RingMenu")]
         pub m_ring_menu: crate::app::ringselectmenu::RingSelectMenu,
     }

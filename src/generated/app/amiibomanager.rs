@@ -21,18 +21,25 @@ mod __types {
         #[static_field]
         #[rename(name = "DeviceCountMax")]
         pub device_count_max: i32,
+        #[offset(40)]
         #[rename(name = "m_DeviceCount")]
         pub m_device_count: i32,
+        #[offset(44)]
         #[rename(name = "m_SelectDeviceIndex")]
         pub m_select_device_index: i32,
+        #[offset(48)]
         #[rename(name = "m_Sequence")]
         pub m_sequence: crate::app::amiibomanager::AmiiboManager_Sequence,
+        #[offset(52)]
         #[rename(name = "m_ActivateEventIndex")]
         pub m_activate_event_index: u32,
+        #[offset(56)]
         #[rename(name = "m_DeactivateEventIndex")]
         pub m_deactivate_event_index: u32,
+        #[offset(60)]
         #[rename(name = "m_AttachedEvent")]
         pub m_attached_event: bool,
+        #[offset(64)]
         #[rename(name = "m_NpadId")]
         pub m_npad_id: crate::nn::hid::npadid::NpadId,
     }

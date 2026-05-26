@@ -31,26 +31,37 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_RefineShopRefineTargetMenuObject")]
         pub m_refine_shop_refine_target_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_ItemDetailWindowBase")]
         pub m_item_detail_window_base: crate::app::refineitemdetailwindow::RefineItemDetailWindow,
+        #[offset(40)]
         #[rename(name = "m_ItemDetailWindowTarget")]
         pub m_item_detail_window_target: crate::app::refineitemdetailwindow::RefineItemDetailWindow,
+        #[offset(48)]
         #[rename(name = "m_ArrowObject")]
         pub m_arrow_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot_ReturnEventHandler,
+        #[offset(64)]
         #[rename(name = "m_RefineShopRefineTargetMenu")]
         pub m_refine_shop_refine_target_menu: crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu,
+        #[offset(72)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(80)]
         #[rename(name = "m_ItemIndex")]
         pub m_item_index: i32,
+        #[offset(88)]
         #[rename(name = "m_BaseUnitItem")]
         pub m_base_unit_item: crate::app::unititem::UnitItem,
+        #[offset(96)]
         #[rename(name = "m_RefineLevel")]
         pub m_refine_level: i32,
+        #[offset(100)]
         #[rename(name = "m_EvolveIndex")]
         pub m_evolve_index: i32,
     }

@@ -11,6 +11,45 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip.TimelineClipUpgrade")]
+    #[parent(crate::system::object::Object)]
+    pub struct TimelineClip_TimelineClipUpgrade {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TimelineClip_BlendCurveMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TimelineClip_BlendCurveMode {
+        const NAME: &'static str = "TimelineClip.BlendCurveMode";
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TimelineClip_BlendCurveMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TimelineClip_BlendCurveMode {
+        pub fn auto() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn manual() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip")]
     #[parent(crate::system::object::Object)]
@@ -18,6 +57,7 @@ mod __types {
         #[static_field]
         #[rename(name = "k_LatestVersion")]
         pub k_latest_version: i32,
+        #[offset(16)]
         #[rename(name = "m_Version")]
         pub m_version: i32,
         #[static_field]
@@ -41,48 +81,70 @@ mod __types {
         #[static_field]
         #[rename(name = "kMaxTimeValue")]
         pub k_max_time_value: f64,
+        #[offset(24)]
         #[rename(name = "m_Start")]
         pub m_start: f64,
+        #[offset(32)]
         #[rename(name = "m_ClipIn")]
         pub m_clip_in: f64,
+        #[offset(40)]
         #[rename(name = "m_Asset")]
         pub m_asset: crate::unity_engine::object_2::Object_2,
+        #[offset(48)]
         #[rename(name = "m_Duration")]
         pub m_duration: f64,
+        #[offset(56)]
         #[rename(name = "m_TimeScale")]
         pub m_time_scale: f64,
+        #[offset(64)]
         #[rename(name = "m_ParentTrack")]
         pub m_parent_track: crate::unity_engine::timeline::trackasset::TrackAsset,
+        #[offset(72)]
         #[rename(name = "m_EaseInDuration")]
         pub m_ease_in_duration: f64,
+        #[offset(80)]
         #[rename(name = "m_EaseOutDuration")]
         pub m_ease_out_duration: f64,
+        #[offset(88)]
         #[rename(name = "m_BlendInDuration")]
         pub m_blend_in_duration: f64,
+        #[offset(96)]
         #[rename(name = "m_BlendOutDuration")]
         pub m_blend_out_duration: f64,
+        #[offset(104)]
         #[rename(name = "m_MixInCurve")]
         pub m_mix_in_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(112)]
         #[rename(name = "m_MixOutCurve")]
         pub m_mix_out_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(120)]
         #[rename(name = "m_BlendInCurveMode")]
         pub m_blend_in_curve_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
+        #[offset(124)]
         #[rename(name = "m_BlendOutCurveMode")]
         pub m_blend_out_curve_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
+        #[offset(128)]
         #[rename(name = "m_ExposedParameterNames")]
         pub m_exposed_parameter_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(136)]
         #[rename(name = "m_AnimationCurves")]
         pub m_animation_curves: crate::unity_engine::animationclip::AnimationClip,
+        #[offset(144)]
         #[rename(name = "m_Recordable")]
         pub m_recordable: bool,
+        #[offset(148)]
         #[rename(name = "m_PostExtrapolationMode")]
         pub m_post_extrapolation_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        #[offset(152)]
         #[rename(name = "m_PreExtrapolationMode")]
         pub m_pre_extrapolation_mode: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        #[offset(160)]
         #[rename(name = "m_PostExtrapolationTime")]
         pub m_post_extrapolation_time: f64,
+        #[offset(168)]
         #[rename(name = "m_PreExtrapolationTime")]
         pub m_pre_extrapolation_time: f64,
+        #[offset(176)]
         #[rename(name = "m_DisplayName")]
         pub m_display_name: ::unity2::Il2CppString,
     }
@@ -132,49 +194,67 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip.TimelineClipUpgrade")]
-    #[parent(crate::system::object::Object)]
-    pub struct TimelineClip_TimelineClipUpgrade {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TimelineClip_BlendCurveMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TimelineClip_BlendCurveMode {
-        const NAME: &'static str = "TimelineClip.BlendCurveMode";
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TimelineClip_BlendCurveMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl TimelineClip_BlendCurveMode {
-        pub fn auto() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn manual() -> Self {
-            Self { value: 1 }
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineclip-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TimelineClip_TimelineClipUpgrade_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upgrade_clip_in_from_global_to_local {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::class(),
+                "UpgradeClipInFromGlobalToLocal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::NAME,
+                        "UpgradeClipInFromGlobalToLocal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn upgrade_clip_in_from_global_to_local(
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_upgrade_clip_in_from_global_to_local::get_method_info().method_ptr);
+        inner(clip, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+impl TimelineClip_TimelineClipUpgrade {
+    #[doc = "`UpgradeClipInFromGlobalToLocal(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
+    pub fn upgrade_clip_in_from_global_to_local(clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> () {
+        unsafe {
+            __TimelineClip_TimelineClipUpgrade_unity2_raw::upgrade_clip_in_from_global_to_local(
+                ::core::convert::Into::into(clip),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-timeline-timelineclip")]
 #[doc(hidden)]
@@ -2657,63 +2737,6 @@ impl TimelineClip {
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TimelineClip), ::core::stringify!(new),));
         <Self as ITimelineClipMethods>::ctor(this, parent);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-timelineclip")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TimelineClip_TimelineClipUpgrade_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upgrade_clip_in_from_global_to_local {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::timeline::timelineclip::TimelineClip as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::class(),
-                "UpgradeClipInFromGlobalToLocal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TimelineClip_TimelineClipUpgrade as ::unity2::ClassIdentity>::NAME,
-                        "UpgradeClipInFromGlobalToLocal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn upgrade_clip_in_from_global_to_local(
-        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_upgrade_clip_in_from_global_to_local::get_method_info().method_ptr);
-        inner(clip, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-timelineclip")]
-impl TimelineClip_TimelineClipUpgrade {
-    #[doc = "`UpgradeClipInFromGlobalToLocal(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    pub fn upgrade_clip_in_from_global_to_local(clip: impl ::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>) -> () {
-        unsafe {
-            __TimelineClip_TimelineClipUpgrade_unity2_raw::upgrade_clip_in_from_global_to_local(
-                ::core::convert::Into::into(clip),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

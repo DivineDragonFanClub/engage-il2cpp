@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ItemListDialogItemContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ItemListDialogItemContent {
+        #[offset(24)]
         #[rename(name = "m_IconImage")]
         pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_CountObject")]
         pub m_count_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_CountText")]
         pub m_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_CountGText")]
         pub m_count_g_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

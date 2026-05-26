@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "DecalOcclusionParams")]
     #[parent(crate::system::object::Object)]
     pub struct DecalOcclusionParams {
+        #[offset(16)]
         #[rename(name = "isOcclusionCasterEnabled")]
         pub is_occlusion_caster_enabled: bool,
+        #[offset(20)]
         #[rename(name = "strength")]
         pub strength: f32,
+        #[offset(24)]
         #[rename(name = "blackToAlbedo")]
         pub black_to_albedo: f32,
     }

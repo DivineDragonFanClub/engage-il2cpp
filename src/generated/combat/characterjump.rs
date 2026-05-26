@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterJump")]
     #[parent(crate::system::object::Object)]
     pub struct CharacterJump {
+        #[offset(16)]
         #[rename(name = "m_Chr")]
         pub m_chr: crate::combat::character::Character,
+        #[offset(24)]
         #[rename(name = "m_Target")]
         pub m_target: crate::unity_engine::transform::Transform,
+        #[offset(32)]
         #[rename(name = "m_StartPos")]
         pub m_start_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(44)]
         #[rename(name = "m_GoalPos")]
         pub m_goal_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(56)]
         #[rename(name = "m_PullOffset")]
         pub m_pull_offset: f32,
+        #[offset(60)]
         #[rename(name = "m_Elapsed")]
         pub m_elapsed: f32,
+        #[offset(64)]
         #[rename(name = "m_Duration")]
         pub m_duration: f32,
+        #[offset(68)]
         #[rename(name = "m_CurveType")]
         pub m_curve_type: crate::app::curve::Curve_Type,
+        #[offset(72)]
         #[rename(name = "m_bGrounding")]
         pub m_b_grounding: bool,
     }

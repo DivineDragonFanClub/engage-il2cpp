@@ -11,20 +11,28 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkGameObjEnvironmentData")]
     #[parent(crate::system::object::Object)]
     pub struct AkGameObjEnvironmentData {
+        #[offset(16)]
         #[rename(name = "activeEnvironments")]
         pub active_environments: crate::system::collections::generic::list_1::List_1<crate::root::akenvironment::AkEnvironment>,
+        #[offset(24)]
         #[rename(name = "activeEnvironmentsFromPortals")]
         pub active_environments_from_portals: crate::system::collections::generic::list_1::List_1<crate::root::akenvironment::AkEnvironment>,
+        #[offset(32)]
         #[rename(name = "activePortals")]
         pub active_portals: crate::system::collections::generic::list_1::List_1<crate::root::akenvironmentportal::AkEnvironmentPortal>,
+        #[offset(40)]
         #[rename(name = "auxSendValues")]
         pub aux_send_values: crate::root::akauxsendarray::AkAuxSendArray,
+        #[offset(48)]
         #[rename(name = "lastPosition")]
         pub last_position: crate::unity_engine::vector3::Vector3,
+        #[offset(60)]
         #[rename(name = "hasEnvironmentListChanged")]
         pub has_environment_list_changed: bool,
+        #[offset(61)]
         #[rename(name = "hasActivePortalListChanged")]
         pub has_active_portal_list_changed: bool,
+        #[offset(62)]
         #[rename(name = "hasSentZero")]
         pub has_sent_zero: bool,
     }

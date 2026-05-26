@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkGameObjPosOffsetData")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct AkGameObjPosOffsetData {
+        #[offset(24)]
         #[rename(name = "positionOffset")]
         pub position_offset: crate::unity_engine::vector3::Vector3,
     }

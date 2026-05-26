@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RefineShopEngraveGodMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_GodSymbolImage")]
         pub m_god_symbol_image: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_GodWordText")]
         pub m_god_word_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_GodUnitIcon")]
         pub m_god_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(96)]
         #[rename(name = "m_BondsIconObject")]
         pub m_bonds_icon_object: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_BondsValueText")]
         pub m_bonds_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

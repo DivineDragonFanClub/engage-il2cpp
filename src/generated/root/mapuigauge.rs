@@ -50,6 +50,127 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapuigauge/MapUIGauge.md"))]
+    #[::unity2::class(namespace = "", name = "MapUIGauge")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapuigauge :: MapUIGauge >)]
+    pub struct MapUIGauge {
+        #[static_field]
+        #[rename(name = "IconNames")]
+        pub icon_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(32)]
+        #[rename(name = "m_AlphaCurve")]
+        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
+        #[rename(name = "m_ShineCurve")]
+        pub m_shine_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(48)]
+        #[rename(name = "m_CanBreakCurve")]
+        pub m_can_break_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(56)]
+        #[rename(name = "m_CountMaxScaleCurve")]
+        pub m_count_max_scale_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(64)]
+        #[rename(name = "m_CountMaxAlphaCurve")]
+        pub m_count_max_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(72)]
+        #[rename(name = "m_SpriteAtlas")]
+        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(80)]
+        #[rename(name = "m_WaitFrameForAfterEvent")]
+        pub m_wait_frame_for_after_event: i32,
+        #[offset(88)]
+        #[rename(name = "m_Sprites")]
+        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(96)]
+        #[rename(name = "m_Dictionary")]
+        pub m_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,
+        #[offset(104)]
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[offset(108)]
+        #[rename(name = "m_WaitFrame")]
+        pub m_wait_frame: f32,
+        #[offset(112)]
+        #[rename(name = "m_IsVisible")]
+        pub m_is_visible: bool,
+        #[offset(116)]
+        #[rename(name = "m_SuppressFlag")]
+        pub m_suppress_flag: crate::root::mapuigauge::MapUIGauge_SuppressType,
+        #[offset(120)]
+        #[rename(name = "m_IsExec")]
+        pub m_is_exec: bool,
+        #[offset(121)]
+        #[rename(name = "m_IsCalc")]
+        pub m_is_calc: bool,
+        #[offset(122)]
+        #[rename(name = "m_IsForceQuit")]
+        pub m_is_force_quit: bool,
+        #[offset(123)]
+        #[rename(name = "m_NeedsForecastOneself")]
+        pub m_needs_forecast_oneself: bool,
+        #[offset(128)]
+        #[rename(name = "m_BattleInfo")]
+        pub m_battle_info: crate::app::battleinfo::BattleInfo,
+        #[offset(136)]
+        #[rename(name = "m_BattleCalc")]
+        pub m_battle_calc: crate::app::battlecalculator::BattleCalculator,
+        #[offset(144)]
+        #[rename(name = "m_Performer")]
+        pub m_performer: crate::app::unit::Unit,
+        #[offset(152)]
+        #[rename(name = "m_ReserveUnit")]
+        pub m_reserve_unit: crate::app::unit::Unit,
+        #[offset(160)]
+        #[rename(name = "m_PerformerHpDiff")]
+        pub m_performer_hp_diff: i32,
+        #[offset(164)]
+        #[rename(name = "m_IsDoomed")]
+        pub m_is_doomed: bool,
+        #[offset(168)]
+        #[rename(name = "m_Mind")]
+        pub m_mind: crate::app::mapmind::MapMind_Type,
+        #[offset(176)]
+        #[rename(name = "m_CommandSkill")]
+        pub m_command_skill: crate::app::skilldata::SkillData,
+        #[offset(184)]
+        #[rename(name = "m_HpAfterBattle")]
+        pub m_hp_after_battle: i32,
+        #[offset(192)]
+        #[rename(name = "m_TargetList")]
+        pub m_target_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[offset(200)]
+        #[rename(name = "m_InfluencerList")]
+        pub m_influencer_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[offset(208)]
+        #[rename(name = "m_TempList")]
+        pub m_temp_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[offset(216)]
+        #[rename(name = "m_InitList")]
+        pub m_init_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        #[offset(224)]
+        #[rename(name = "m_TargetIndex")]
+        pub m_target_index: i32,
+        #[offset(228)]
+        #[rename(name = "m_IsPriorWeaponRange")]
+        pub m_is_prior_weapon_range: bool,
+        #[offset(232)]
+        #[rename(name = "m_MoveImage")]
+        pub m_move_image: crate::app::mapimagecoresbyte::MapImageCoreSbyte,
+        #[offset(240)]
+        #[rename(name = "m_AttackImage")]
+        pub m_attack_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[offset(248)]
+        #[rename(name = "m_HealImage")]
+        pub m_heal_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[offset(256)]
+        #[rename(name = "m_RangeImage")]
+        pub m_range_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[offset(264)]
+        #[rename(name = "m_CannonImage")]
+        pub m_cannon_image: crate::app::mapimagecorebit::MapImageCoreBit,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuigauge/MapUIGauge_IconIndex.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -746,90 +867,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 167 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapuigauge/MapUIGauge.md"))]
-    #[::unity2::class(namespace = "", name = "MapUIGauge")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapuigauge :: MapUIGauge >)]
-    pub struct MapUIGauge {
-        #[static_field]
-        #[rename(name = "IconNames")]
-        pub icon_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_AlphaCurve")]
-        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_ShineCurve")]
-        pub m_shine_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_CanBreakCurve")]
-        pub m_can_break_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_CountMaxScaleCurve")]
-        pub m_count_max_scale_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_CountMaxAlphaCurve")]
-        pub m_count_max_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_SpriteAtlas")]
-        pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[rename(name = "m_WaitFrameForAfterEvent")]
-        pub m_wait_frame_for_after_event: i32,
-        #[rename(name = "m_Sprites")]
-        pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
-        #[rename(name = "m_Dictionary")]
-        pub m_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_WaitFrame")]
-        pub m_wait_frame: f32,
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-        #[rename(name = "m_SuppressFlag")]
-        pub m_suppress_flag: crate::root::mapuigauge::MapUIGauge_SuppressType,
-        #[rename(name = "m_IsExec")]
-        pub m_is_exec: bool,
-        #[rename(name = "m_IsCalc")]
-        pub m_is_calc: bool,
-        #[rename(name = "m_IsForceQuit")]
-        pub m_is_force_quit: bool,
-        #[rename(name = "m_NeedsForecastOneself")]
-        pub m_needs_forecast_oneself: bool,
-        #[rename(name = "m_BattleInfo")]
-        pub m_battle_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_BattleCalc")]
-        pub m_battle_calc: crate::app::battlecalculator::BattleCalculator,
-        #[rename(name = "m_Performer")]
-        pub m_performer: crate::app::unit::Unit,
-        #[rename(name = "m_ReserveUnit")]
-        pub m_reserve_unit: crate::app::unit::Unit,
-        #[rename(name = "m_PerformerHpDiff")]
-        pub m_performer_hp_diff: i32,
-        #[rename(name = "m_IsDoomed")]
-        pub m_is_doomed: bool,
-        #[rename(name = "m_Mind")]
-        pub m_mind: crate::app::mapmind::MapMind_Type,
-        #[rename(name = "m_CommandSkill")]
-        pub m_command_skill: crate::app::skilldata::SkillData,
-        #[rename(name = "m_HpAfterBattle")]
-        pub m_hp_after_battle: i32,
-        #[rename(name = "m_TargetList")]
-        pub m_target_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_InfluencerList")]
-        pub m_influencer_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_TempList")]
-        pub m_temp_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_InitList")]
-        pub m_init_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        #[rename(name = "m_TargetIndex")]
-        pub m_target_index: i32,
-        #[rename(name = "m_IsPriorWeaponRange")]
-        pub m_is_prior_weapon_range: bool,
-        #[rename(name = "m_MoveImage")]
-        pub m_move_image: crate::app::mapimagecoresbyte::MapImageCoreSbyte,
-        #[rename(name = "m_AttackImage")]
-        pub m_attack_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_HealImage")]
-        pub m_heal_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_RangeImage")]
-        pub m_range_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_CannonImage")]
-        pub m_cannon_image: crate::app::mapimagecorebit::MapImageCoreBit,
     }
 }
 

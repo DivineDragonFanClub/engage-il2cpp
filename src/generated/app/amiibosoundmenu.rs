@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AmiiboSoundMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct AmiiboSoundMenu {
+        #[offset(200)]
         #[rename(name = "m_handle")]
         pub m_handle: crate::app::gamesound::GameSound_Handle,
     }

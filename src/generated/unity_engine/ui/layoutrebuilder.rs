@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "LayoutRebuilder")]
     #[parent(crate::system::object::Object)]
     pub struct LayoutRebuilder {
+        #[offset(16)]
         #[rename(name = "m_ToRebuild")]
         pub m_to_rebuild: crate::unity_engine::recttransform::RectTransform,
+        #[offset(24)]
         #[rename(name = "m_CachedHashFromTransform")]
         pub m_cached_hash_from_transform: i32,
         #[static_field]

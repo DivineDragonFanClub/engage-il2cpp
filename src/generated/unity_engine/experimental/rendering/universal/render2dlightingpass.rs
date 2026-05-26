@@ -59,6 +59,7 @@ mod __types {
         #[static_field]
         #[rename(name = "m_ProfilingSamplerUnlit")]
         pub m_profiling_sampler_unlit: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(112)]
         #[rename(name = "m_Renderer2DData")]
         pub m_renderer2_d_data: crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
     }

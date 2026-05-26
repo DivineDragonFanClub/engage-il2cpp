@@ -19,24 +19,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DishResultDialogContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DishResultDialogContent {
+        #[offset(24)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(32)]
         #[rename(name = "m_DishText")]
         pub m_dish_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_GradeTitle")]
         pub m_grade_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_GradeList")]
         pub m_grade_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(56)]
         #[rename(name = "m_CondText")]
         pub m_cond_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_EnhanceObjectList")]
         pub m_enhance_object_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(72)]
         #[rename(name = "m_NothingObject")]
         pub m_nothing_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_EnhanceBonus")]
         pub m_enhance_bonus: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_BonusObjectList")]
         pub m_bonus_object_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(96)]
         #[rename(name = "m_EveryoneText")]
         pub m_everyone_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

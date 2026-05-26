@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequenceMove")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencemove :: MapSequenceMove >)]
     pub struct MapSequenceMove {
+        #[offset(120)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }

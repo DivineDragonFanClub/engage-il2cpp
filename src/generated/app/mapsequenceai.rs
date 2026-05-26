@@ -24,10 +24,13 @@ mod __types {
         #[static_field]
         #[rename(name = "s_AiThread")]
         pub s_ai_thread: crate::app::mapaithread::MapAiThread,
+        #[offset(116)]
         #[rename(name = "m_LastMindX")]
         pub m_last_mind_x: i32,
+        #[offset(120)]
         #[rename(name = "m_LastMindZ")]
         pub m_last_mind_z: i32,
+        #[offset(124)]
         #[rename(name = "m_IsOrderUnitEngageOrGodChange")]
         pub m_is_order_unit_engage_or_god_change: bool,
     }

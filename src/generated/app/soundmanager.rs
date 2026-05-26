@@ -16,22 +16,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundmanager/SoundManager_ParamFader.md"))]
-    #[::unity2::class(namespace = "App", name = "SoundManager.ParamFader")]
-    #[parent(crate::system::object::Object)]
-    pub struct SoundManager_ParamFader {
-        #[rename(name = "m_now")]
-        pub m_now: f32,
-        #[rename(name = "m_from")]
-        pub m_from: f32,
-        #[rename(name = "m_to")]
-        pub m_to: f32,
-        #[rename(name = "m_time")]
-        pub m_time: f32,
-        #[rename(name = "m_duration")]
-        pub m_duration: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundmanager/SoundManager.md"))]
     #[::unity2::class(namespace = "App", name = "SoundManager")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: soundmanager :: SoundManager >)]
@@ -51,296 +35,98 @@ mod __types {
         #[static_field]
         #[rename(name = "EventSeGameParamName")]
         pub event_se_game_param_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_isInitialized")]
         pub m_is_initialized: bool,
+        #[offset(40)]
         #[rename(name = "m_masterBaseBgmVolume")]
         pub m_master_base_bgm_volume: crate::app::soundmanager::SoundManager_ParamFader,
+        #[offset(48)]
         #[rename(name = "m_masterBaseSeVolume")]
         pub m_master_base_se_volume: crate::app::soundmanager::SoundManager_ParamFader,
+        #[offset(56)]
         #[rename(name = "m_masterBaseEnvVolume")]
         pub m_master_base_env_volume: crate::app::soundmanager::SoundManager_ParamFader,
+        #[offset(64)]
         #[rename(name = "m_masterBaseVoiceVolume")]
         pub m_master_base_voice_volume: crate::app::soundmanager::SoundManager_ParamFader,
+        #[offset(72)]
         #[rename(name = "m_masterBgmVolumeOld")]
         pub m_master_bgm_volume_old: f32,
+        #[offset(76)]
         #[rename(name = "m_masterSeVolumeOld")]
         pub m_master_se_volume_old: f32,
+        #[offset(80)]
         #[rename(name = "m_masterEnvVolumeOld")]
         pub m_master_env_volume_old: f32,
+        #[offset(84)]
         #[rename(name = "m_masterVoiceVolumeOld")]
         pub m_master_voice_volume_old: f32,
+        #[offset(88)]
         #[rename(name = "m_configBgmVolumeOld")]
         pub m_config_bgm_volume_old: f32,
+        #[offset(92)]
         #[rename(name = "m_configSeVolumeOld")]
         pub m_config_se_volume_old: f32,
+        #[offset(96)]
         #[rename(name = "m_configEnvVolumeOld")]
         pub m_config_env_volume_old: f32,
+        #[offset(100)]
         #[rename(name = "m_configVoiceVolumeOld")]
         pub m_config_voice_volume_old: f32,
+        #[offset(104)]
         #[rename(name = "m_mapCameraHeightRateOld")]
         pub m_map_camera_height_rate_old: f32,
+        #[offset(108)]
         #[rename(name = "m_eventSeVolume")]
         pub m_event_se_volume: f32,
+        #[offset(152)]
         #[rename(name = "m_soundHandleList")]
         pub m_sound_handle_list: crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle>,
+        #[offset(160)]
         #[rename(name = "m_deleteSoundHandleList")]
         pub m_delete_sound_handle_list: crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle>,
+        #[offset(168)]
         #[rename(name = "m_GlobalEnumParamStack_MapOrCombat")]
         pub m_global_enum_param_stack_map_or_combat: crate::system::collections::generic::stack_1::Stack_1<u32>,
+        #[offset(176)]
         #[rename(name = "m_TimeCounterForUpdateOutput")]
         pub m_time_counter_for_update_output: f32,
+        #[offset(180)]
         #[rename(name = "m_isMuteByGameSkip")]
         pub m_is_mute_by_game_skip: bool,
+        #[offset(184)]
         #[rename(name = "m_lipSyncDataFileDictionary")]
         pub m_lip_sync_data_file_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::Il2CppString,
             crate::app::soundsystem::SoundSystem_LipSyncDataFile,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundmanager/SoundManager_ParamFader.md"))]
+    #[::unity2::class(namespace = "App", name = "SoundManager.ParamFader")]
+    #[parent(crate::system::object::Object)]
+    pub struct SoundManager_ParamFader {
+        #[offset(16)]
+        #[rename(name = "m_now")]
+        pub m_now: f32,
+        #[offset(20)]
+        #[rename(name = "m_from")]
+        pub m_from: f32,
+        #[offset(24)]
+        #[rename(name = "m_to")]
+        pub m_to: f32,
+        #[offset(28)]
+        #[rename(name = "m_time")]
+        pub m_time: f32,
+        #[offset(32)]
+        #[rename(name = "m_duration")]
+        pub m_duration: f32,
+    }
 }
 
 #[cfg(feature = "app-soundmanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-soundmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SoundManager_ParamFader_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
-                "Get",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                        "Get",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(this: SoundManager_ParamFader, param: f32, msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SoundManager_ParamFader, f32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, param, msec, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-soundmanager")]
-pub trait ISoundManager_ParamFaderMethods: ISoundManager_ParamFader {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SoundManager_ParamFader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SoundManager_ParamFader_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Get()` overload"]
-    fn get(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SoundManager_ParamFader_unity2_raw::get(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Set(f32, i32)` overload"]
-    fn set(self, param: impl ::core::convert::Into<f32>, msec: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SoundManager_ParamFader_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(param),
-                ::core::convert::Into::into(msec),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __SoundManager_ParamFader_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-soundmanager")]
-impl<__T: ISoundManager_ParamFader> ISoundManager_ParamFaderMethods for __T {}
-
-#[cfg(feature = "app-soundmanager")]
-impl SoundManager_ParamFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundManager_ParamFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundManager_ParamFaderMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-soundmanager")]
 #[doc(hidden)]
@@ -6495,6 +6281,246 @@ impl SoundManager {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SoundManager), ::core::stringify!(new),));
         <Self as ISoundManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-soundmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SoundManager_ParamFader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
+                "Get",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set(this: SoundManager_ParamFader, param: f32, msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager_ParamFader, f32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
+        inner(this, param, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn tick(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-soundmanager")]
+pub trait ISoundManager_ParamFaderMethods: ISoundManager_ParamFader {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_ParamFader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_ParamFader_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Get()` overload"]
+    fn get(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_ParamFader_unity2_raw::get(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Set(f32, i32)` overload"]
+    fn set(self, param: impl ::core::convert::Into<f32>, msec: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_ParamFader_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(param),
+                ::core::convert::Into::into(msec),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_ParamFader_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-soundmanager")]
+impl<__T: ISoundManager_ParamFader> ISoundManager_ParamFaderMethods for __T {}
+
+#[cfg(feature = "app-soundmanager")]
+impl SoundManager_ParamFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundManager_ParamFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundManager_ParamFaderMethods>::ctor(this);
         this
     }
 }

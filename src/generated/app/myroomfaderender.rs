@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomFadeRender")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MyRoomFadeRender {
+        #[offset(24)]
         #[rename(name = "m_color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "m_layer")]
         pub m_layer: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_image")]
         pub m_image: crate::unity_engine::ui::image::Image,
     }

@@ -22,14 +22,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequence")]
     # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mapsequence :: MapSequence >)]
     pub struct MapSequence {
+        #[offset(132)]
         #[rename(name = "m_IsCompleted")]
         pub m_is_completed: bool,
+        #[offset(133)]
         #[rename(name = "m_IsSortieCancel")]
         pub m_is_sortie_cancel: bool,
+        #[offset(134)]
         #[rename(name = "m_IsCallangeFailer")]
         pub m_is_callange_failer: bool,
+        #[offset(136)]
         #[rename(name = "m_PreloadHandles")]
         pub m_preload_handles: crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2>,
+        #[offset(144)]
         #[rename(name = "m_Time")]
         pub m_time: f64,
     }

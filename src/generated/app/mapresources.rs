@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapResources")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapresources :: MapResources >)]
     pub struct MapResources {
+        #[offset(32)]
         #[rename(name = "m_DangerImageIterator")]
         pub m_danger_image_iterator: crate::system::collections::ienumerator::IEnumerator,
+        #[offset(40)]
         #[rename(name = "m_HpForecastIterator")]
         pub m_hp_forecast_iterator: crate::system::collections::ienumerator::IEnumerator,
     }

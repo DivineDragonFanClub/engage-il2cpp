@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup")]
     #[parent(crate::system::object::Object)]
     pub struct CullingGroup {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_OnStateChanged")]
         pub m_on_state_changed: crate::unity_engine::cullinggroup::CullingGroup_StateChanged,
     }

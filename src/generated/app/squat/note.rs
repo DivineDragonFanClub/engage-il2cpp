@@ -89,40 +89,58 @@ mod __types {
         #[static_field]
         #[rename(name = "DisplayHeight")]
         pub display_height: f32,
+        #[offset(16)]
         #[rename(name = "m_NodeImage")]
         pub m_node_image: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_ImageAnime")]
         pub m_image_anime: crate::unity_engine::animator::Animator,
+        #[offset(32)]
         #[rename(name = "m_ImageTrans")]
         pub m_image_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(40)]
         #[rename(name = "m_StickImageTrans")]
         pub m_stick_image_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(48)]
         #[rename(name = "m_BaseTrans")]
         pub m_base_trans: crate::unity_engine::transform::Transform,
+        #[offset(56)]
         #[rename(name = "m_BaseHeightPerFrame")]
         pub m_base_height_per_frame: f32,
+        #[offset(60)]
         #[rename(name = "m_BaseDiffLength")]
         pub m_base_diff_length: f32,
+        #[offset(64)]
         #[rename(name = "m_StickRangeMult")]
         pub m_stick_range_mult: f32,
+        #[offset(80)]
         #[rename(name = "m_Timer")]
         pub m_timer: f32,
+        #[offset(84)]
         #[rename(name = "m_ClockwiseTimer")]
         pub m_clockwise_timer: f32,
+        #[offset(88)]
         #[rename(name = "m_TimeMult")]
         pub m_time_mult: f32,
+        #[offset(92)]
         #[rename(name = "m_IsPlayClockwiseInputAnime")]
         pub m_is_play_clockwise_input_anime: bool,
+        #[offset(96)]
         #[rename(name = "m_FirstP")]
         pub m_first_p: f32,
+        #[offset(100)]
         #[rename(name = "m_FirstG")]
         pub m_first_g: f32,
+        #[offset(104)]
         #[rename(name = "m_FirstB")]
         pub m_first_b: f32,
+        #[offset(108)]
         #[rename(name = "m_LatterP")]
         pub m_latter_p: f32,
+        #[offset(112)]
         #[rename(name = "m_LatterG")]
         pub m_latter_g: f32,
+        #[offset(116)]
         #[rename(name = "m_LatterB")]
         pub m_latter_b: f32,
     }

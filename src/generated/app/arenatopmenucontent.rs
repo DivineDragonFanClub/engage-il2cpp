@@ -23,10 +23,13 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "LastCountRoot")]
         pub last_count_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "LastCount")]
         pub last_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "GodBondHelpRoot")]
         pub god_bond_help_root: crate::unity_engine::gameobject::GameObject,
     }

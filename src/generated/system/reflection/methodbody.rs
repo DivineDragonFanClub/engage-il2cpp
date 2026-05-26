@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "MethodBody")]
     #[parent(crate::system::object::Object)]
     pub struct MethodBody {
+        #[offset(16)]
         #[rename(name = "clauses")]
         pub clauses: ::unity2::Array<crate::system::reflection::exceptionhandlingclause::ExceptionHandlingClause>,
+        #[offset(24)]
         #[rename(name = "locals")]
         pub locals: ::unity2::Array<crate::system::reflection::localvariableinfo::LocalVariableInfo>,
+        #[offset(32)]
         #[rename(name = "il")]
         pub il: ::unity2::Array<u8>,
+        #[offset(40)]
         #[rename(name = "init_locals")]
         pub init_locals: bool,
+        #[offset(44)]
         #[rename(name = "sig_token")]
         pub sig_token: i32,
+        #[offset(48)]
         #[rename(name = "max_stack")]
         pub max_stack: i32,
     }

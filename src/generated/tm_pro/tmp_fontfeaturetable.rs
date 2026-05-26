@@ -11,9 +11,11 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_FontFeatureTable")]
     #[parent(crate::system::object::Object)]
     pub struct TMP_FontFeatureTable {
+        #[offset(16)]
         #[rename(name = "m_GlyphPairAdjustmentRecords")]
         pub m_glyph_pair_adjustment_records:
             crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>,
+        #[offset(24)]
         #[rename(name = "m_GlyphPairAdjustmentRecordLookupDictionary")]
         pub m_glyph_pair_adjustment_record_lookup_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
             u32,

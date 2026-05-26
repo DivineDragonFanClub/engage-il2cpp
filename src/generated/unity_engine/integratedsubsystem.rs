@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "IntegratedSubsystem")]
     #[parent(crate::system::object::Object)]
     pub struct IntegratedSubsystem {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_SubsystemDescriptor")]
         pub m_subsystem_descriptor: crate::unity_engine::isubsystemdescriptor_interface::ISubsystemDescriptor_Interface,
     }

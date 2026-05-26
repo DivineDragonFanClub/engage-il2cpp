@@ -17,9 +17,11 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "LabelStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct LabelStatement {
+        #[offset(80)]
         #[rename(name = "m_Gotos")]
         pub m_gotos:
             crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement>,
+        #[offset(88)]
         #[rename(name = "m_StackFrame")]
         pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
     }

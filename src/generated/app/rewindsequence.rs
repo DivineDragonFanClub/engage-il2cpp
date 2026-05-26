@@ -82,14 +82,19 @@ mod __types {
         #[static_field]
         #[rename(name = "EffectForCancelRewind_Sec")]
         pub effect_for_cancel_rewind_sec: f32,
+        #[offset(114)]
         #[rename(name = "m_IsRewindToPhaseBegin")]
         pub m_is_rewind_to_phase_begin: bool,
+        #[offset(116)]
         #[rename(name = "m_WaitTime")]
         pub m_wait_time: f32,
+        #[offset(120)]
         #[rename(name = "m_EffectForStartObject")]
         pub m_effect_for_start_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_CursorInitX")]
         pub m_cursor_init_x: i32,
+        #[offset(132)]
         #[rename(name = "m_CursorInitZ")]
         pub m_cursor_init_z: i32,
     }

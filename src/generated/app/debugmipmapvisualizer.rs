@@ -20,15 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DebugMipmapVisualizer")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: debugmipmapvisualizer :: DebugMipmapVisualizer >)]
     pub struct DebugMipmapVisualizer {
+        #[offset(32)]
         #[rename(name = "m_Shader")]
         pub m_shader: crate::unity_engine::shader::Shader,
+        #[offset(40)]
         #[rename(name = "m_MipmapTexture")]
         pub m_mipmap_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(48)]
         #[rename(name = "m_Backup")]
         pub m_backup: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::renderer::Renderer,
             ::unity2::Array<crate::unity_engine::material::Material>,
         >,
+        #[offset(56)]
         #[rename(name = "m_MipmapTextureIndexProp")]
         pub m_mipmap_texture_index_prop: i32,
     }

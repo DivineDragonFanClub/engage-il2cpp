@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerWidget")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DebugUIHandlerWidget {
+        #[offset(24)]
         #[rename(name = "colorDefault")]
         pub color_default: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "colorSelected")]
         pub color_selected: crate::unity_engine::color::Color,
+        #[offset(80)]
         #[rename(name = "m_Widget")]
         pub m_widget: crate::unity_engine::rendering::debugui::DebugUI_Widget,
     }

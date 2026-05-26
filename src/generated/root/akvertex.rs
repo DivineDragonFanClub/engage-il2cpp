@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkVertex")]
     #[parent(crate::system::object::Object)]
     pub struct AkVertex {
+        #[offset(16)]
         #[rename(name = "Vector")]
         pub vector: crate::unity_engine::vector3::Vector3,
     }

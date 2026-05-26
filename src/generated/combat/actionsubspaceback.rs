@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionSubspaceBack")]
     #[parent(crate::combat::state::State)]
     pub struct ActionSubspaceBack {
+        #[offset(20)]
         #[rename(name = "m_Side")]
         pub m_side: i32,
+        #[offset(24)]
         #[rename(name = "m_IsLastBossDead")]
         pub m_is_last_boss_dead: bool,
     }

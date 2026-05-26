@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App.Gmap", name = "GmapPathCollection")]
     #[parent(crate::system::object::Object)]
     pub struct GmapPathCollection {
+        #[offset(16)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_PathList")]
         pub m_path_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

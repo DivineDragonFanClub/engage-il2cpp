@@ -11,12 +11,17 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_ValueCollection.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedDictionary`2.ValueCollection")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedDictionary`2")]
     #[parent(crate::system::object::Object)]
-    pub struct SortedDictionary_2_ValueCollection<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-        #[rename(name = "_dictionary")]
-        pub dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>,
+    pub struct SortedDictionary_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+        #[rename(name = "_keys")]
+        pub keys: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2_KeyCollection<T0, T1>,
+        #[rename(name = "_values")]
+        pub values: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2_ValueCollection<T0, T1>,
+        #[rename(name = "_set")]
+        pub set:
+            crate::system::collections::generic::treeset_1::TreeSet_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<T0, T1>>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_ValueCollection_Enumerator.md"))]
@@ -45,55 +50,6 @@ mod __types {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_KeyCollection_Enumerator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
-        pub _phantom: ::core::marker::PhantomData<(T0, T1)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::ClassIdentity for SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
-        const NAME: &'static str = "SortedDictionary`2.KeyCollection.Enumerator";
-        const NAMESPACE: &'static str = "System.Collections.Generic";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| {
-                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class(), <T1 as ::unity2::ClassIdentity>::class()])
-                    .expect("generic instantiation")
-            })
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType for SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_KeyCollection.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedDictionary`2.KeyCollection")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortedDictionary_2_KeyCollection<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-        #[rename(name = "_dictionary")]
-        pub dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedDictionary`2")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortedDictionary_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-        #[rename(name = "_keys")]
-        pub keys: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2_KeyCollection<T0, T1>,
-        #[rename(name = "_values")]
-        pub values: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2_ValueCollection<T0, T1>,
-        #[rename(name = "_set")]
-        pub set:
-            crate::system::collections::generic::treeset_1::TreeSet_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<T0, T1>>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_Enumerator.md"))]
@@ -132,162 +88,54 @@ mod __types {
         #[rename(name = "keyComparer")]
         pub key_comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_ValueCollection.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedDictionary`2.ValueCollection")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortedDictionary_2_ValueCollection<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+        #[rename(name = "_dictionary")]
+        pub dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_KeyCollection.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedDictionary`2.KeyCollection")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortedDictionary_2_KeyCollection<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+        #[rename(name = "_dictionary")]
+        pub dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/sorteddictionary_2/SortedDictionary_2_KeyCollection_Enumerator.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
+        pub _phantom: ::core::marker::PhantomData<(T0, T1)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::ClassIdentity for SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
+        const NAME: &'static str = "SortedDictionary`2.KeyCollection.Enumerator";
+        const NAMESPACE: &'static str = "System.Collections.Generic";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| {
+                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class(), <T1 as ::unity2::ClassIdentity>::class()])
+                    .expect("generic instantiation")
+            })
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType for SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "system-collections-generic-sorteddictionary_2-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_ValueCollection<T0, T1> {
-    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`CopyTo(::unity2::Array<T1>, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::Array<T1>, index: i32) -> ();
-
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-}
-
-#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_ValueCollection<T0, T1> {
-    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` — overload selector"]
-    pub fn new(dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortedDictionary_2_ValueCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortedDictionary_2_ValueCollectionMethods<T0, T1>>::ctor(this, dictionary);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_ValueCollection_Enumerator<T0, T1> {
-    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T1;
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
-    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_KeyCollection<T0, T1> {
-    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::Array<T0>, index: i32) -> ();
-
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-}
-
-#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_KeyCollection<T0, T1> {
-    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` — overload selector"]
-    pub fn new(dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortedDictionary_2_KeyCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortedDictionary_2_KeyCollectionMethods<T0, T1>>::ctor(this, dictionary);
-        this
-    }
-}
 
 #[cfg(feature = "system-collections-generic-sorteddictionary_2")]
 #[::unity2::methods]
@@ -444,6 +292,34 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_
 
 #[cfg(feature = "system-collections-generic-sorteddictionary_2")]
 #[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_ValueCollection_Enumerator<T0, T1> {
+    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T1;
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
+#[::unity2::methods(value)]
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_Enumerator<T0, T1> {
     #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>, i32)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -524,6 +400,130 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_
         <Self as ISortedDictionary_2_KeyValuePairComparerMethods<T0, T1>>::ctor(this, key_comparer);
         this
     }
+}
+
+#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_ValueCollection<T0, T1> {
+    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`CopyTo(::unity2::Array<T1>, i32)` overload"]
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::Array<T1>, index: i32) -> ();
+
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+}
+
+#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_ValueCollection<T0, T1> {
+    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` — overload selector"]
+    pub fn new(dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortedDictionary_2_ValueCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortedDictionary_2_ValueCollectionMethods<T0, T1>>::ctor(this, dictionary);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_KeyCollection<T0, T1> {
+    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"]
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::Array<T0>, index: i32) -> ();
+
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+}
+
+#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_KeyCollection<T0, T1> {
+    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` — overload selector"]
+    pub fn new(dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortedDictionary_2_KeyCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortedDictionary_2_KeyCollectionMethods<T0, T1>>::ctor(this, dictionary);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-generic-sorteddictionary_2")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SortedDictionary_2_KeyCollection_Enumerator<T0, T1> {
+    #[doc = "`.ctor(crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0,T1>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, dictionary: crate::system::collections::generic::sorteddictionary_2::SortedDictionary_2<T0, T1>) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
 }
 
 #[cfg(feature = "system-collections-generic-sorteddictionary_2")]

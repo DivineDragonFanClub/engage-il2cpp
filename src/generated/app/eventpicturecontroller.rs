@@ -22,10 +22,13 @@ mod __types {
         #[static_field]
         #[rename(name = "AssetRootPath")]
         pub asset_root_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::rawimage::RawImage,
+        #[offset(32)]
         #[rename(name = "m_Animation")]
         pub m_animation: crate::unity_engine::animation::Animation,
+        #[offset(40)]
         #[rename(name = "m_PictureTextureHandle")]
         pub m_picture_texture_handle: crate::app::resourcehandle_2::ResourceHandle_2,
     }

@@ -14,16 +14,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatLocationSolo")]
     #[parent(crate::combat::basecombatlocation::BaseCombatLocation)]
     pub struct CombatLocationSolo {
+        #[offset(140)]
         #[rename(name = "m_TargetSide")]
         pub m_target_side: i32,
+        #[offset(144)]
         #[rename(name = "m_IsBigDragon")]
         pub m_is_big_dragon: bool,
+        #[offset(145)]
         #[rename(name = "m_IsLastBoss")]
         pub m_is_last_boss: bool,
+        #[offset(146)]
         #[rename(name = "m_IsEnemy")]
         pub m_is_enemy: bool,
+        #[offset(147)]
         #[rename(name = "m_IsReCalc")]
         pub m_is_re_calc: bool,
+        #[offset(156)]
         #[rename(name = "m_IsDLCLastBoss")]
         pub m_is_dlc_last_boss: bool,
     }

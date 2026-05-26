@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingConfig_Defeat")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_Defeat {
+        #[offset(24)]
         #[rename(name = "m_SolaDefeatRot")]
         pub m_sola_defeat_rot: crate::unity_engine::vector3::Vector3,
+        #[offset(36)]
         #[rename(name = "m_DefeatFadeOutType")]
         pub m_defeat_fade_out_type: crate::app::fishing::fadetype::FadeType,
+        #[offset(40)]
         #[rename(name = "m_DefeatAnimeFrame")]
         pub m_defeat_anime_frame: f32,
+        #[offset(44)]
         #[rename(name = "m_SuccessStartFrame")]
         pub m_success_start_frame: f32,
+        #[offset(48)]
         #[rename(name = "m_DefeatFadeStartFrame")]
         pub m_defeat_fade_start_frame: f32,
     }

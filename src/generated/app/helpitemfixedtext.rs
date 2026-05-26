@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemFixedText")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemFixedText {
+        #[offset(80)]
         #[rename(name = "m_MID")]
         pub m_mid: ::unity2::Il2CppString,
     }

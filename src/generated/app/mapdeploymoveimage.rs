@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapDeployMoveImage")]
     #[parent(crate::app::mapimagecoresbyte::MapImageCoreSbyte)]
     pub struct MapDeployMoveImage {
+        #[offset(24)]
         #[rename(name = "m_Display")]
         pub m_display: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>,
     }

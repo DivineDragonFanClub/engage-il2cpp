@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "FileNotFoundException")]
     #[parent(crate::system::io::ioexception::IOException)]
     pub struct FileNotFoundException {
+        #[offset(144)]
         #[rename(name = "_fileName")]
         pub file_name: ::unity2::Il2CppString,
+        #[offset(152)]
         #[rename(name = "_fusionLog")]
         pub fusion_log: ::unity2::Il2CppString,
     }

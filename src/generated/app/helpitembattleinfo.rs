@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemBattleInfo")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemBattleInfo {
+        #[offset(80)]
         #[rename(name = "m_MID")]
         pub m_mid: ::unity2::Il2CppString,
+        #[offset(88)]
         #[rename(name = "m_Type")]
         pub m_type: crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
     }

@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterTurn")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterTurn {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_StartDir")]
         pub m_start_dir: crate::combat::fxz::FXZ,
+        #[offset(40)]
         #[rename(name = "m_TargetDir")]
         pub m_target_dir: crate::combat::fxz::FXZ,
+        #[offset(48)]
         #[rename(name = "m_Ratio")]
         pub m_ratio: f32,
     }

@@ -14,6 +14,15 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turneffect/TurnEffect.md"))]
+    #[::unity2::class(namespace = "App", name = "TurnEffect")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TurnEffect {
+        #[offset(112)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/turneffect/TurnEffect_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -50,14 +59,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turneffect/TurnEffect.md"))]
-    #[::unity2::class(namespace = "App", name = "TurnEffect")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TurnEffect {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
     }
 }
 

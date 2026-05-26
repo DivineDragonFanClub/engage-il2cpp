@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Loaders", name = "InvalidScriptLoader")]
     #[parent(crate::system::object::Object)]
     pub struct InvalidScriptLoader {
+        #[offset(16)]
         #[rename(name = "m_Error")]
         pub m_error: ::unity2::Il2CppString,
     }

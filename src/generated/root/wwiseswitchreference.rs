@@ -21,6 +21,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "WwiseSwitchReference")]
     #[parent(crate::root::wwisegroupvalueobjectreference::WwiseGroupValueObjectReference)]
     pub struct WwiseSwitchReference {
+        #[offset(48)]
         #[rename(name = "WwiseSwitchGroupReference")]
         pub wwise_switch_group_reference: crate::root::wwiseswitchgroupreference::WwiseSwitchGroupReference,
     }

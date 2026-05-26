@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "RenderGraphLogger")]
     #[parent(crate::system::object::Object)]
     pub struct RenderGraphLogger {
+        #[offset(24)]
         #[rename(name = "m_CurrentIndentation")]
         pub m_current_indentation: i32,
     }

@@ -23,62 +23,91 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GrassManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct GrassManager {
+        #[offset(24)]
         #[rename(name = "m_grassData")]
         pub m_grass_data: crate::app::grassdata::GrassData,
+        #[offset(32)]
         #[rename(name = "m_referenceTransform")]
         pub m_reference_transform: crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform>,
+        #[offset(40)]
         #[rename(name = "m_grassMaterials")]
         pub m_grass_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
+        #[offset(48)]
         #[rename(name = "m_grassTexture")]
         pub m_grass_texture: crate::unity_engine::texture::Texture,
+        #[offset(56)]
         #[rename(name = "m_enableCustomGroundTexture")]
         pub m_enable_custom_ground_texture: bool,
+        #[offset(64)]
         #[rename(name = "m_groundTextures")]
         pub m_ground_textures: crate::system::collections::generic::list_1::List_1<crate::unity_engine::texture2d::Texture2D>,
+        #[offset(72)]
         #[rename(name = "m_cutoff")]
         pub m_cutoff: f32,
+        #[offset(76)]
         #[rename(name = "m_drawDistance")]
         pub m_draw_distance: f32,
+        #[offset(80)]
         #[rename(name = "m_isDistanceClipScaleFading")]
         pub m_is_distance_clip_scale_fading: bool,
+        #[offset(84)]
         #[rename(name = "m_distanceClipScale")]
         pub m_distance_clip_scale: crate::unity_engine::vector2::Vector2,
+        #[offset(92)]
         #[rename(name = "m_isOverrideDownParams")]
         pub m_is_override_down_params: bool,
+        #[offset(96)]
         #[rename(name = "m_nearClipDistance")]
         pub m_near_clip_distance: f32,
+        #[offset(100)]
         #[rename(name = "m_nearDownDistance")]
         pub m_near_down_distance: f32,
+        #[offset(104)]
         #[rename(name = "m_nearDownOffset")]
         pub m_near_down_offset: f32,
+        #[offset(108)]
         #[rename(name = "m_groundColorWindRatio")]
         pub m_ground_color_wind_ratio: f32,
+        #[offset(112)]
         #[rename(name = "m_waveTintColor")]
         pub m_wave_tint_color: crate::unity_engine::color::Color,
+        #[offset(128)]
         #[rename(name = "m_waveSpeed")]
         pub m_wave_speed: f32,
+        #[offset(132)]
         #[rename(name = "m_waveSize")]
         pub m_wave_size: f32,
+        #[offset(136)]
         #[rename(name = "m_waveBlending")]
         pub m_wave_blending: f32,
+        #[offset(140)]
         #[rename(name = "m_grassBrightness")]
         pub m_grass_brightness: f32,
+        #[offset(144)]
         #[rename(name = "m_grassTintColor")]
         pub m_grass_tint_color: crate::unity_engine::color::Color,
+        #[offset(160)]
         #[rename(name = "m_groundColorCoefficient")]
         pub m_ground_color_coefficient: f32,
+        #[offset(164)]
         #[rename(name = "m_groundColorGradationScale")]
         pub m_ground_color_gradation_scale: f32,
+        #[offset(168)]
         #[rename(name = "m_groundColorMixType")]
         pub m_ground_color_mix_type: crate::app::grassmanager::GrassManager_MixType,
+        #[offset(172)]
         #[rename(name = "m_lightingMin")]
         pub m_lighting_min: f32,
+        #[offset(176)]
         #[rename(name = "m_interactionRadius")]
         pub m_interaction_radius: f32,
+        #[offset(180)]
         #[rename(name = "m_interactionAngle")]
         pub m_interaction_angle: i32,
+        #[offset(184)]
         #[rename(name = "m_interactionHeightCorrection")]
         pub m_interaction_height_correction: f32,
+        #[offset(188)]
         #[rename(name = "m_interactionCenterPropertyId")]
         pub m_interaction_center_property_id: i32,
         #[static_field]

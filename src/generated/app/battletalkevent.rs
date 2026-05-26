@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BattleTalkEvent")]
     #[parent(crate::app::procbattlecallback::ProcBattleCallback)]
     pub struct BattleTalkEvent {
+        #[offset(136)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(144)]
         #[rename(name = "m_Target")]
         pub m_target: crate::app::unit::Unit,
     }

@@ -19,62 +19,91 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EndRollSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EndRollSetter {
+        #[offset(24)]
         #[rename(name = "PictureSide0")]
         pub picture_side0: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "PictureSide1")]
         pub picture_side1: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "PictureLarge")]
         pub picture_large: crate::unity_engine::ui::image::Image,
+        #[offset(48)]
         #[rename(name = "CreditRoot")]
         pub credit_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "PrefabTitlePosition")]
         pub prefab_title_position: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "PrefabTitleCompany")]
         pub prefab_title_company: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "Prefab1Lines")]
         pub prefab1_lines: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "Prefab2Lines")]
         pub prefab2_lines: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "Prefab3Lines")]
         pub prefab3_lines: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "PrefabVoiceActor")]
         pub prefab_voice_actor: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_Pictures")]
         pub m_pictures: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(112)]
         #[rename(name = "m_StartPos")]
         pub m_start_pos: f32,
+        #[offset(116)]
         #[rename(name = "m_IllustFadeTime")]
         pub m_illust_fade_time: f32,
+        #[offset(120)]
         #[rename(name = "m_ScrollTime")]
         pub m_scroll_time: f32,
+        #[offset(124)]
         #[rename(name = "m_WaitTimeAfterStop")]
         pub m_wait_time_after_stop: f32,
+        #[offset(128)]
         #[rename(name = "m_FadeOutTime")]
         pub m_fade_out_time: f32,
+        #[offset(132)]
         #[rename(name = "m_LastPicWaitTime")]
         pub m_last_pic_wait_time: f32,
+        #[offset(136)]
         #[rename(name = "m_LastPicFadeIn")]
         pub m_last_pic_fade_in: f32,
+        #[offset(140)]
         #[rename(name = "m_LastPicDisplay")]
         pub m_last_pic_display: f32,
+        #[offset(144)]
         #[rename(name = "m_LastPicFadeOut")]
         pub m_last_pic_fade_out: f32,
+        #[offset(148)]
         #[rename(name = "m_ScrolledTime")]
         pub m_scrolled_time: f32,
+        #[offset(152)]
         #[rename(name = "m_ScrollLength")]
         pub m_scroll_length: f32,
+        #[offset(160)]
         #[rename(name = "m_LastObject")]
         pub m_last_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_CreditList")]
         pub m_credit_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform>,
+        #[offset(176)]
         #[rename(name = "m_IllustList")]
         pub m_illust_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(184)]
         #[rename(name = "m_IllustFade")]
         pub m_illust_fade: f32,
+        #[offset(192)]
         #[rename(name = "m_StartTime")]
         pub m_start_time: f64,
+        #[offset(200)]
         #[rename(name = "m_Phase")]
         pub m_phase: i32,
+        #[offset(208)]
         #[rename(name = "seqIllust")]
         pub seq_illust: ::unity2::Array<i32>,
     }

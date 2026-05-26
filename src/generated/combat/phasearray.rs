@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PhaseArray")]
     # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: phase :: Phase >)]
     pub struct PhaseArray {
+        #[offset(40)]
         #[rename(name = "m_CurrentIndex")]
         pub m_current_index: i32,
     }

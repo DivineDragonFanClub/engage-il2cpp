@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AreaInspector")]
     #[parent(crate::app::mapinspector::MapInspector)]
     pub struct AreaInspector {
+        #[offset(48)]
         #[rename(name = "m_X1")]
         pub m_x1: i32,
+        #[offset(52)]
         #[rename(name = "m_Z1")]
         pub m_z1: i32,
+        #[offset(56)]
         #[rename(name = "m_X2")]
         pub m_x2: i32,
+        #[offset(60)]
         #[rename(name = "m_Z2")]
         pub m_z2: i32,
+        #[offset(64)]
         #[rename(name = "m_Force")]
         pub m_force: i32,
     }

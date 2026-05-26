@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "StringReader")]
     #[parent(crate::system::io::textreader::TextReader)]
     pub struct StringReader {
+        #[offset(24)]
         #[rename(name = "_s")]
         pub s: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "_pos")]
         pub pos: i32,
+        #[offset(36)]
         #[rename(name = "_length")]
         pub length: i32,
     }

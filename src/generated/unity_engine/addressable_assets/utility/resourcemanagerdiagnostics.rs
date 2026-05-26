@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Utility", name = "ResourceManagerDiagnostics")]
     #[parent(crate::system::object::Object)]
     pub struct ResourceManagerDiagnostics {
+        #[offset(16)]
         #[rename(name = "m_ResourceManager")]
         pub m_resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        #[offset(24)]
         #[rename(name = "m_cachedDiagnosticInfo")]
         pub m_cached_diagnostic_info: crate::system::collections::generic::dictionary_2::Dictionary_2<
             i32,

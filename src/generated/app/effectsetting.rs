@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EffectSetting")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EffectSetting {
+        #[offset(24)]
         #[rename(name = "m_RandomTime")]
         pub m_random_time: f32,
+        #[offset(28)]
         #[rename(name = "m_RandomSpeed")]
         pub m_random_speed: f32,
+        #[offset(32)]
         #[rename(name = "m_OnStartEffect")]
         pub m_on_start_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_OnStopEffect")]
         pub m_on_stop_effect: crate::unity_engine::gameobject::GameObject,
     }

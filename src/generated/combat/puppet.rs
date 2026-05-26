@@ -15,24 +15,34 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Puppet")]
     #[parent(crate::system::object::Object)]
     pub struct Puppet {
+        #[offset(16)]
         #[rename(name = "m_BodyInst")]
         pub m_body_inst: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_RideInst")]
         pub m_ride_inst: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_BodyAnim")]
         pub m_body_anim: crate::unity_engine::animationclip::AnimationClip,
+        #[offset(40)]
         #[rename(name = "m_RideAnim")]
         pub m_ride_anim: crate::unity_engine::animationclip::AnimationClip,
+        #[offset(48)]
         #[rename(name = "m_Joint")]
         pub m_joint: crate::combat::characterjoint::CharacterJoint,
+        #[offset(56)]
         #[rename(name = "m_Proportion")]
         pub m_proportion: crate::combat::proportionparameters::ProportionParameters,
+        #[offset(64)]
         #[rename(name = "m_InitialTransform")]
         pub m_initial_transform: crate::combat::tr::TR,
+        #[offset(92)]
         #[rename(name = "m_LastEvalTime")]
         pub m_last_eval_time: f32,
+        #[offset(96)]
         #[rename(name = "m_DestroyableGOs")]
         pub m_destroyable_g_os: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(104)]
         #[rename(name = "m_trailSlots")]
         pub m_trail_slots: ::unity2::Array<crate::unity_engine::transform::Transform>,
     }

@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubPlayerCollider")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubPlayerCollider {
+        #[offset(24)]
         #[rename(name = "m_isFront")]
         pub m_is_front: bool,
+        #[offset(32)]
         #[rename(name = "m_Notification")]
         pub m_notification: crate::app::hubplayercontroller::HubPlayerController,
+        #[offset(40)]
         #[rename(name = "m_EnterColliders")]
         pub m_enter_colliders: crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider>,
+        #[offset(48)]
         #[rename(name = "m_ExitColliders")]
         pub m_exit_colliders: crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::collider::Collider>,
     }

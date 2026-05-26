@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkRTPCPlayableBehaviour")]
     #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
     pub struct AkRTPCPlayableBehaviour {
+        #[offset(16)]
         #[rename(name = "RTPCValue")]
         pub rtpc_value: f32,
     }

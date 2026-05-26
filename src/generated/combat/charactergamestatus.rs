@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterGameStatus")]
     #[parent(crate::system::object::Object)]
     pub struct CharacterGameStatus {
+        #[offset(16)]
         #[rename(name = "Appearance")]
         pub appearance: crate::combat::characterappearance::CharacterAppearance,
+        #[offset(32)]
         #[rename(name = "m_Side")]
         pub m_side: i32,
+        #[offset(36)]
         #[rename(name = "m_bStun")]
         pub m_b_stun: bool,
     }

@@ -25,16 +25,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitIcon")]
     #[parent(crate::unity_engine::ui::image::Image)]
     pub struct UnitIcon {
+        #[offset(264)]
         #[rename(name = "m_IndexAtlas")]
         pub m_index_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(272)]
         #[rename(name = "m_PalleteAtlas")]
         pub m_pallete_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(280)]
         #[rename(name = "m_PalleteSprite")]
         pub m_pallete_sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(288)]
         #[rename(name = "m_IconName")]
         pub m_icon_name: ::unity2::Il2CppString,
+        #[offset(296)]
         #[rename(name = "m_PalleteName")]
         pub m_pallete_name: ::unity2::Il2CppString,
+        #[offset(304)]
         #[rename(name = "m_Brightness")]
         pub m_brightness: f32,
         #[static_field]
@@ -56,6 +62,7 @@ mod __types {
         #[static_field]
         #[rename(name = "DARKNESS_ID")]
         pub darkness_id: ::unity2::Il2CppString,
+        #[offset(312)]
         #[rename(name = "m_MaterialInst")]
         pub m_material_inst: crate::unity_engine::material::Material,
     }

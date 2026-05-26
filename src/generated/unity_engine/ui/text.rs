@@ -24,19 +24,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Text")]
     #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
     pub struct Text {
+        #[offset(208)]
         #[rename(name = "m_FontData")]
         pub m_font_data: crate::unity_engine::ui::fontdata::FontData,
+        #[offset(216)]
         #[rename(name = "m_Text")]
         pub m_text: ::unity2::Il2CppString,
+        #[offset(224)]
         #[rename(name = "m_TextCache")]
         pub m_text_cache: crate::unity_engine::textgenerator::TextGenerator,
+        #[offset(232)]
         #[rename(name = "m_TextCacheForLayout")]
         pub m_text_cache_for_layout: crate::unity_engine::textgenerator::TextGenerator,
         #[static_field]
         #[rename(name = "s_DefaultText")]
         pub s_default_text: crate::unity_engine::material::Material,
+        #[offset(240)]
         #[rename(name = "m_DisableFontTextureRebuiltCallback")]
         pub m_disable_font_texture_rebuilt_callback: bool,
+        #[offset(248)]
         #[rename(name = "m_TempVerts")]
         pub m_temp_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex>,
     }

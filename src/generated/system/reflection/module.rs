@@ -17,18 +17,25 @@ mod __types {
         #[static_field]
         #[rename(name = "FilterTypeNameIgnoreCase")]
         pub filter_type_name_ignore_case: crate::system::reflection::typefilter::TypeFilter,
+        #[offset(16)]
         #[rename(name = "_impl")]
         pub r#impl: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "assembly")]
         pub assembly: crate::system::reflection::assembly::Assembly,
+        #[offset(32)]
         #[rename(name = "fqname")]
         pub fqname: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "scopename")]
         pub scopename: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "is_resource")]
         pub is_resource_field: bool,
+        #[offset(60)]
         #[rename(name = "token")]
         pub token: i32,
         #[static_field]

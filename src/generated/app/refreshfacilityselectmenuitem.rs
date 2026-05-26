@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefreshFacilitySelectMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RefreshFacilitySelectMenuItem {
+        #[offset(104)]
         #[rename(name = "m_FacilityData")]
         pub m_facility_data: crate::app::hubfacilitydata::HubFacilityData,
+        #[offset(112)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,
+        #[offset(120)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,
     }

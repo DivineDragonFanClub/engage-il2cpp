@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkGameObjListenerList")]
     #[parent(crate::root::akaudiolistener::AkAudioListener_BaseListenerList)]
     pub struct AkGameObjListenerList {
+        #[offset(32)]
         #[rename(name = "akGameObj")]
         pub ak_game_obj: crate::root::akgameobj::AkGameObj,
+        #[offset(40)]
         #[rename(name = "initialListenerList")]
         pub initial_listener_list: crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>,
+        #[offset(48)]
         #[rename(name = "useDefaultListeners")]
         pub use_default_listeners_field: bool,
     }

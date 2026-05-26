@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DishResultDialogParamContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DishResultDialogParamContent {
+        #[offset(24)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_ValueObject")]
         pub m_value_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_UpObject")]
         pub m_up_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_DownObject")]
         pub m_down_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_NothingObject")]
         pub m_nothing_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_ValueText")]
         pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

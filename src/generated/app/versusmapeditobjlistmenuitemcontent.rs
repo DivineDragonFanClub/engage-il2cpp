@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VersusMapEditObjListMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct VersusMapEditObjListMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_ThumbImage")]
         pub m_thumb_image: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_CategoryImage")]
         pub m_category_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_Anim")]
         pub m_anim: crate::unity_engine::animator::Animator,
+        #[offset(96)]
         #[rename(name = "m_SelectBgImage")]
         pub m_select_bg_image: crate::unity_engine::ui::image::Image,
+        #[offset(104)]
         #[rename(name = "m_IsMax")]
         pub m_is_max: bool,
+        #[offset(112)]
         #[rename(name = "m_ThumbSprite")]
         pub m_thumb_sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(120)]
         #[rename(name = "m_CategorySprite")]
         pub m_category_sprite: crate::unity_engine::sprite::Sprite,
     }

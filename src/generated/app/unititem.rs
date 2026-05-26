@@ -11,38 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititem/UnitItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitItem")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitItem {
-        #[static_field]
-        #[rename(name = "NoItemIndex")]
-        pub no_item_index: i32,
-        #[static_field]
-        #[rename(name = "EngageStockIndex")]
-        pub engage_stock_index: i32,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-        #[rename(name = "m_Item")]
-        pub m_item: crate::app::itemdata::ItemData,
-        #[rename(name = "m_Endurance")]
-        pub m_endurance: u8,
-        #[rename(name = "m_RefineLevel")]
-        pub m_refine_level: u8,
-        #[rename(name = "m_Flags")]
-        pub m_flags: crate::app::unititem::UnitItem_Flags,
-        #[rename(name = "m_Engrave")]
-        pub m_engrave: crate::app::goddata::GodData,
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[static_field]
-        #[rename(name = "s_EnchantHash")]
-        pub s_enchant_hash: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unititem/UnitItem_Flags.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,6 +47,45 @@ mod __types {
         pub fn skip_log() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititem/UnitItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitItem")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitItem {
+        #[static_field]
+        #[rename(name = "NoItemIndex")]
+        pub no_item_index: i32,
+        #[static_field]
+        #[rename(name = "EngageStockIndex")]
+        pub engage_stock_index: i32,
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[offset(16)]
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+        #[offset(24)]
+        #[rename(name = "m_Item")]
+        pub m_item: crate::app::itemdata::ItemData,
+        #[offset(32)]
+        #[rename(name = "m_Endurance")]
+        pub m_endurance: u8,
+        #[offset(33)]
+        #[rename(name = "m_RefineLevel")]
+        pub m_refine_level: u8,
+        #[offset(36)]
+        #[rename(name = "m_Flags")]
+        pub m_flags: crate::app::unititem::UnitItem_Flags,
+        #[offset(40)]
+        #[rename(name = "m_Engrave")]
+        pub m_engrave: crate::app::goddata::GodData,
+        #[offset(48)]
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[static_field]
+        #[rename(name = "s_EnchantHash")]
+        pub s_enchant_hash: i32,
     }
 }
 

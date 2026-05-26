@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "SceneRenderPipeline")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SceneRenderPipeline {
+        #[offset(24)]
         #[rename(name = "renderPipelineAsset")]
         pub render_pipeline_asset: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
     }

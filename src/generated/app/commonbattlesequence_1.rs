@@ -17,23 +17,11 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)]
-    #[parent(crate::app::procinst::ProcInst)]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md"))]
+    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1.RelianceList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_Reliance < T0 > >)]
     #[parent(crate::system::object::Object)]
-    pub struct CommonBattleSequence_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_SimInfo")]
-        pub m_sim_info: crate::app::battleinfo::BattleInfo,
-        #[rename(name = "m_Calculator")]
-        pub m_calculator: crate::app::battlecalculator::BattleCalculator,
-        #[rename(name = "m_SimCalculator")]
-        pub m_sim_calculator: crate::app::battlecalculator::BattleCalculator,
-        #[rename(name = "m_Reliances")]
-        pub m_reliances: crate::app::commonbattlesequence_1::CommonBattleSequence_1_RelianceList<T0>,
-    }
+    pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity> {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonbattlesequence_1/CommonBattleSequence_1_Reliance.md"))]
     #[repr(C)]
@@ -63,15 +51,55 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1.RelianceList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1_Reliance < T0 > >)]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonbattlesequence_1/CommonBattleSequence_1.md"))]
+    #[::unity2::class(namespace = "App", name = "CommonBattleSequence`1")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < T0 >)]
+    #[parent(crate::app::procinst::ProcInst)]
     #[parent(crate::system::object::Object)]
-    pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity> {}
+    pub struct CommonBattleSequence_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Info")]
+        pub m_info: crate::app::battleinfo::BattleInfo,
+        #[rename(name = "m_SimInfo")]
+        pub m_sim_info: crate::app::battleinfo::BattleInfo,
+        #[rename(name = "m_Calculator")]
+        pub m_calculator: crate::app::battlecalculator::BattleCalculator,
+        #[rename(name = "m_SimCalculator")]
+        pub m_sim_calculator: crate::app::battlecalculator::BattleCalculator,
+        #[rename(name = "m_Reliances")]
+        pub m_reliances: crate::app::commonbattlesequence_1::CommonBattleSequence_1_RelianceList<T0>,
+    }
 }
 
 #[cfg(feature = "app-commonbattlesequence_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
+    #[doc = "`TryAdd(crate::app::unit::Unit, crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "TryAdd", args = 3)]
+    pub fn try_add(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit, exp: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonBattleSequence_1_RelianceList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonBattleSequence_1_RelianceListMethods<T0>>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-commonbattlesequence_1")]
 #[::unity2::methods]
@@ -173,34 +201,6 @@ impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1<T0> {
             )
         });
         <Self as ICommonBattleSequence_1Methods<T0>>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-commonbattlesequence_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
-    #[doc = "`TryAdd(crate::app::unit::Unit, crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "TryAdd", args = 3)]
-    pub fn try_add(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit, exp: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-commonbattlesequence_1")]
-impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CommonBattleSequence_1_RelianceList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICommonBattleSequence_1_RelianceListMethods<T0>>::ctor(this);
         this
     }
 }

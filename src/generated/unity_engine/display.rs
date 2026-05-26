@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "Display")]
     #[parent(crate::system::object::Object)]
     pub struct Display {
+        #[offset(16)]
         #[rename(name = "nativeDisplay")]
         pub native_display: ::unity2::IntPtr,
         #[static_field]

@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Networking.PlayerConnection", name = "MessageEventArgs")]
     #[parent(crate::system::object::Object)]
     pub struct MessageEventArgs {
+        #[offset(16)]
         #[rename(name = "playerId")]
         pub player_id: i32,
+        #[offset(24)]
         #[rename(name = "data")]
         pub data: ::unity2::Array<u8>,
     }

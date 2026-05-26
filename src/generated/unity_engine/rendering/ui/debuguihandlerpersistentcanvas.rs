@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerPersistentCanvas")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DebugUIHandlerPersistentCanvas {
+        #[offset(24)]
         #[rename(name = "panel")]
         pub panel: crate::unity_engine::recttransform::RectTransform,
+        #[offset(32)]
         #[rename(name = "valuePrefab")]
         pub value_prefab: crate::unity_engine::recttransform::RectTransform,
+        #[offset(40)]
         #[rename(name = "m_Items")]
         pub m_items:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlervalue::DebugUIHandlerValue>,

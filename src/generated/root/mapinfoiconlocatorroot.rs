@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapInfoIconLocatorRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapInfoIconLocatorRoot {
+        #[offset(24)]
         #[rename(name = "m_CannonStock")]
         pub m_cannon_stock: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Hp")]
         pub m_hp: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_ValueText")]
         pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_Baloon")]
         pub m_baloon: crate::unity_engine::ui::image::Image,
+        #[offset(56)]
         #[rename(name = "m_HpGauge")]
         pub m_hp_gauge: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "m_LocatorRoot")]
         pub m_locator_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_BaseScale")]
         pub m_base_scale: crate::unity_engine::vector2::Vector2,
+        #[offset(80)]
         #[rename(name = "m_Shell")]
         pub m_shell: i32,
     }

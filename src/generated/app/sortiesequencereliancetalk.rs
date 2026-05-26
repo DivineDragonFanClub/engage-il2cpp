@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieSequenceRelianceTalk")]
     #[parent(crate::app::commonreliancetalksequence::CommonRelianceTalkSequence)]
     pub struct SortieSequenceRelianceTalk {
+        #[offset(128)]
         #[rename(name = "m_UnitA")]
         pub m_unit_a: crate::app::unit::Unit,
+        #[offset(136)]
         #[rename(name = "m_AsciiNameA")]
         pub m_ascii_name_a: ::unity2::Il2CppString,
+        #[offset(144)]
         #[rename(name = "m_UnitB")]
         pub m_unit_b: crate::app::unit::Unit,
+        #[offset(152)]
         #[rename(name = "m_AsciiNameB")]
         pub m_ascii_name_b: ::unity2::Il2CppString,
     }

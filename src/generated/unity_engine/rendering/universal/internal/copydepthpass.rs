@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "CopyDepthPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CopyDepthPass {
+        #[offset(216)]
         #[rename(name = "m_CopyDepthMaterial")]
         pub m_copy_depth_material: crate::unity_engine::material::Material,
     }

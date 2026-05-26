@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "HitStop")]
     #[parent(crate::system::object::Object)]
     pub struct HitStop {
+        #[offset(16)]
         #[rename(name = "m_HitStopSpeedCurve")]
         pub m_hit_stop_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(32)]
         #[rename(name = "m_NormalizedScale")]
         pub m_normalized_scale: f32,
+        #[offset(36)]
         #[rename(name = "m_LastSpeed")]
         pub m_last_speed: f32,
+        #[offset(40)]
         #[rename(name = "m_bHitStopEndCalled")]
         pub m_b_hit_stop_end_called: bool,
+        #[offset(44)]
         #[rename(name = "m_HitStopStart")]
         pub m_hit_stop_start: f32,
     }

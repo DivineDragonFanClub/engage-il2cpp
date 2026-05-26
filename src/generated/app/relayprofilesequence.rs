@@ -19,23 +19,51 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayProfileSequence")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayProfileSequence {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayProfileSequence.UploadSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RelayProfileSequence_UploadSequence {
+        #[offset(112)]
+        #[rename(name = "m_Profile")]
+        pub m_profile: crate::app::profilecard::ProfileCard,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayProfileSequence.DownloadSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RelayProfileSequence_DownloadSequence {
+        #[offset(112)]
+        #[rename(name = "m_PrincipalId")]
+        pub m_principal_id: u64,
+        #[offset(120)]
+        #[rename(name = "m_PlayerIds")]
+        pub m_player_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        #[offset(128)]
+        #[rename(name = "m_PlayerIdIndex")]
+        pub m_player_id_index: i32,
+        #[offset(136)]
+        #[rename(name = "m_Profiles")]
+        pub m_profiles: crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog.YesItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
+        #[offset(112)]
+        #[rename(name = "m_DecideCallback")]
+        pub m_decide_callback: crate::system::action::Action,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog.md"))]
     #[::unity2::class(namespace = "App", name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog")]
     #[parent(crate::system::object::Object)]
     pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog.YesItem")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback: crate::system::action::Action,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayProfileSequence")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayProfileSequence {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_Label.md"))]
     #[repr(C)]
@@ -78,529 +106,10 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayProfileSequence.UploadSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RelayProfileSequence_UploadSequence {
-        #[rename(name = "m_Profile")]
-        pub m_profile: crate::app::profilecard::ProfileCard,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayProfileSequence.DownloadSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RelayProfileSequence_DownloadSequence {
-        #[rename(name = "m_PrincipalId")]
-        pub m_principal_id: u64,
-        #[rename(name = "m_PlayerIds")]
-        pub m_player_ids: crate::system::collections::generic::list_1::List_1<u64>,
-        #[rename(name = "m_PlayerIdIndex")]
-        pub m_player_id_index: i32,
-        #[rename(name = "m_Profiles")]
-        pub m_profiles: crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard>,
-    }
 }
 
 #[cfg(feature = "app-relayprofilesequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayProfileSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_upload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindUpload",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindUpload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_upload(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_upload::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_download {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBindDownload",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBindDownload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind_download(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind_download::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_principal_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
-                "GetPrincipalId",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetPrincipalId",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_principal_id(__unity2_method_info: ::unity2::OptionalMethod) -> u64 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u64 = ::core::mem::transmute(__lookup_get_principal_id::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player_ids {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
-                "GetPlayerIds",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
-                        "GetPlayerIds",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_player_ids(__unity2_method_info: ::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<u64> {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<u64> =
-            ::core::mem::transmute(__lookup_get_player_ids::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RelayProfileSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayProfileSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence {
-    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_upload(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RelayProfileSequence_unity2_raw::create_bind_upload(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_download(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RelayProfileSequence_unity2_raw::create_bind_download(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPrincipalId()` overload"]
-    pub fn get_principal_id() -> u64 {
-        unsafe { __RelayProfileSequence_unity2_raw::get_principal_id(::core::option::Option::None) }
-    }
-
-    #[doc = "`GetPlayerIds()` overload"]
-    pub fn get_player_ids() -> crate::system::collections::generic::list_1::List_1<u64> {
-        unsafe { __RelayProfileSequence_unity2_raw::get_player_ids(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-pub trait IRelayProfileSequenceMethods: IRelayProfileSequence {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayProfileSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RelayProfileSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl<__T: IRelayProfileSequence> IRelayProfileSequenceMethods for __T {}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayProfileSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        mess: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, mess, decide_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RelayProfileSequence_DownloadSequence_DownloadYesNoDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        mess: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide_callback: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
-        unsafe {
-            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(mess),
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods: IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl<__T: IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog> IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods for __T {}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
-        decide_callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, decide_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods:
-    IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem
-{
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, decide_callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl<__T: IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem>
-    IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(decide_callback: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods>::ctor(this, decide_callback);
-        this
-    }
-}
 
 #[cfg(feature = "app-relayprofilesequence")]
 #[doc(hidden)]
@@ -1205,6 +714,503 @@ impl RelayProfileSequence_DownloadSequence {
             )
         });
         <Self as IRelayProfileSequence_DownloadSequenceMethods>::ctor(this, principal_id, player_ids);
+        this
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
+        decide_callback: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, decide_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods:
+    IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem
+{
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    fn ctor(self, decide_callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
+        unsafe {
+            let __receiver = <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(decide_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl<__T: IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem>
+    IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(decide_callback: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods>::ctor(this, decide_callback);
+        this
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        mess: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, mess, decide_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RelayProfileSequence_DownloadSequence_DownloadYesNoDialog, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        mess: impl ::core::convert::Into<::unity2::Il2CppString>,
+        decide_callback: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(mess),
+                ::core::convert::Into::into(decide_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods: IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl<__T: IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog> IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods for __T {}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayProfileSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindUpload",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindUpload",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind_upload(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind_upload::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBindDownload",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindDownload",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind_download(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind_download::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_principal_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
+                "GetPrincipalId",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetPrincipalId",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_principal_id(__unity2_method_info: ::unity2::OptionalMethod) -> u64 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> u64 = ::core::mem::transmute(__lookup_get_principal_id::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player_ids {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
+                "GetPlayerIds",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayerIds",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_player_ids(__unity2_method_info: ::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<u64> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::system::collections::generic::list_1::List_1<u64> =
+            ::core::mem::transmute(__lookup_get_player_ids::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayProfileSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayProfileSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RelayProfileSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayProfileSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence {
+    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind_upload(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RelayProfileSequence_unity2_raw::create_bind_upload(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind_download(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RelayProfileSequence_unity2_raw::create_bind_download(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetPrincipalId()` overload"]
+    pub fn get_principal_id() -> u64 {
+        unsafe { __RelayProfileSequence_unity2_raw::get_principal_id(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetPlayerIds()` overload"]
+    pub fn get_player_ids() -> crate::system::collections::generic::list_1::List_1<u64> {
+        unsafe { __RelayProfileSequence_unity2_raw::get_player_ids(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+pub trait IRelayProfileSequenceMethods: IRelayProfileSequence {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelayProfileSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayProfileSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl<__T: IRelayProfileSequence> IRelayProfileSequenceMethods for __T {}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayProfileSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequenceMethods>::ctor(this);
         this
     }
 }

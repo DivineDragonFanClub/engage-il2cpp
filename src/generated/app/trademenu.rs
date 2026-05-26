@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TradeMenu")]
     #[parent(crate::app::gridmenu::GridMenu)]
     pub struct TradeMenu {
+        #[offset(212)]
         #[rename(name = "m_selectItemIndex")]
         pub m_select_item_index: i32,
+        #[offset(216)]
         #[rename(name = "m_CanLeftUnitAutoEquipBefore")]
         pub m_can_left_unit_auto_equip_before: bool,
+        #[offset(217)]
         #[rename(name = "m_CanRightUnitAutoEquipBefore")]
         pub m_can_right_unit_auto_equip_before: bool,
     }

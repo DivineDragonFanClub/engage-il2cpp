@@ -18,85 +18,123 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_FontAsset")]
     #[parent(crate::tm_pro::tmp_asset::TMP_Asset)]
     pub struct TMP_FontAsset {
+        #[offset(48)]
         #[rename(name = "m_Version")]
         pub m_version: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_SourceFontFileGUID")]
         pub m_source_font_file_guid: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_SourceFontFile")]
         pub m_source_font_file: crate::unity_engine::font::Font,
+        #[offset(72)]
         #[rename(name = "m_AtlasPopulationMode")]
         pub m_atlas_population_mode: crate::tm_pro::atlaspopulationmode::AtlasPopulationMode,
+        #[offset(80)]
         #[rename(name = "m_FaceInfo")]
         pub m_face_info: crate::unity_engine::text_core::faceinfo::FaceInfo,
+        #[offset(176)]
         #[rename(name = "m_GlyphTable")]
         pub m_glyph_table: crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyph::Glyph>,
+        #[offset(184)]
         #[rename(name = "m_GlyphLookupDictionary")]
         pub m_glyph_lookup_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<u32, crate::unity_engine::text_core::glyph::Glyph>,
+        #[offset(192)]
         #[rename(name = "m_CharacterTable")]
         pub m_character_table: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_character::TMP_Character>,
+        #[offset(200)]
         #[rename(name = "m_CharacterLookupDictionary")]
         pub m_character_lookup_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<u32, crate::tm_pro::tmp_character::TMP_Character>,
+        #[offset(208)]
         #[rename(name = "m_AtlasTexture")]
         pub m_atlas_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(216)]
         #[rename(name = "m_AtlasTextures")]
         pub m_atlas_textures: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
+        #[offset(224)]
         #[rename(name = "m_AtlasTextureIndex")]
         pub m_atlas_texture_index: i32,
+        #[offset(228)]
         #[rename(name = "m_IsMultiAtlasTexturesEnabled")]
         pub m_is_multi_atlas_textures_enabled: bool,
+        #[offset(229)]
         #[rename(name = "m_ClearDynamicDataOnBuild")]
         pub m_clear_dynamic_data_on_build: bool,
+        #[offset(232)]
         #[rename(name = "m_UsedGlyphRects")]
         pub m_used_glyph_rects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        #[offset(240)]
         #[rename(name = "m_FreeGlyphRects")]
         pub m_free_glyph_rects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        #[offset(248)]
         #[rename(name = "m_fontInfo")]
         pub m_font_info: crate::tm_pro::faceinfo_legacy::FaceInfo_Legacy,
+        #[offset(256)]
         #[rename(name = "atlas")]
         pub atlas: crate::unity_engine::texture2d::Texture2D,
+        #[offset(264)]
         #[rename(name = "m_AtlasWidth")]
         pub m_atlas_width: i32,
+        #[offset(268)]
         #[rename(name = "m_AtlasHeight")]
         pub m_atlas_height: i32,
+        #[offset(272)]
         #[rename(name = "m_AtlasPadding")]
         pub m_atlas_padding: i32,
+        #[offset(276)]
         #[rename(name = "m_AtlasRenderMode")]
         pub m_atlas_render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        #[offset(280)]
         #[rename(name = "m_glyphInfoList")]
         pub m_glyph_info_list: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyph::TMP_Glyph>,
+        #[offset(288)]
         #[rename(name = "m_KerningTable")]
         pub m_kerning_table: crate::tm_pro::kerningtable::KerningTable,
+        #[offset(296)]
         #[rename(name = "m_FontFeatureTable")]
         pub m_font_feature_table: crate::tm_pro::tmp_fontfeaturetable::TMP_FontFeatureTable,
+        #[offset(304)]
         #[rename(name = "fallbackFontAssets")]
         pub fallback_font_assets: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        #[offset(312)]
         #[rename(name = "m_FallbackFontAssetTable")]
         pub m_fallback_font_asset_table: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        #[offset(320)]
         #[rename(name = "m_CreationSettings")]
         pub m_creation_settings: crate::tm_pro::fontassetcreationsettings::FontAssetCreationSettings,
+        #[offset(408)]
         #[rename(name = "m_FontWeightTable")]
         pub m_font_weight_table: ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>,
+        #[offset(416)]
         #[rename(name = "fontWeights")]
         pub font_weights: ::unity2::Array<crate::tm_pro::tmp_fontweightpair::TMP_FontWeightPair>,
+        #[offset(424)]
         #[rename(name = "normalStyle")]
         pub normal_style: f32,
+        #[offset(428)]
         #[rename(name = "normalSpacingOffset")]
         pub normal_spacing_offset: f32,
+        #[offset(432)]
         #[rename(name = "boldStyle")]
         pub bold_style: f32,
+        #[offset(436)]
         #[rename(name = "boldSpacing")]
         pub bold_spacing: f32,
+        #[offset(440)]
         #[rename(name = "italicStyle")]
         pub italic_style: u8,
+        #[offset(441)]
         #[rename(name = "tabSize")]
         pub tab_size: u8,
+        #[offset(442)]
         #[rename(name = "IsFontAssetLookupTablesDirty")]
         pub is_font_asset_lookup_tables_dirty: bool,
         #[static_field]
         #[rename(name = "s_DefaultMaterialSuffix")]
         pub s_default_material_suffix: ::unity2::Il2CppString,
+        #[offset(448)]
         #[rename(name = "FallbackSearchQueryLookup")]
         pub fallback_search_query_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
         #[static_field]
@@ -116,24 +154,34 @@ mod __types {
         #[static_field]
         #[rename(name = "k_FontAssets_AtlasTexturesUpdateQueueLookup")]
         pub k_font_assets_atlas_textures_update_queue_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        #[offset(456)]
         #[rename(name = "m_GlyphsToRender")]
         pub m_glyphs_to_render: crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyph::Glyph>,
+        #[offset(464)]
         #[rename(name = "m_GlyphsRendered")]
         pub m_glyphs_rendered: crate::system::collections::generic::list_1::List_1<crate::unity_engine::text_core::glyph::Glyph>,
+        #[offset(472)]
         #[rename(name = "m_GlyphIndexList")]
         pub m_glyph_index_list: crate::system::collections::generic::list_1::List_1<u32>,
+        #[offset(480)]
         #[rename(name = "m_GlyphIndexListNewlyAdded")]
         pub m_glyph_index_list_newly_added: crate::system::collections::generic::list_1::List_1<u32>,
+        #[offset(488)]
         #[rename(name = "m_GlyphsToAdd")]
         pub m_glyphs_to_add: crate::system::collections::generic::list_1::List_1<u32>,
+        #[offset(496)]
         #[rename(name = "m_GlyphsToAddLookup")]
         pub m_glyphs_to_add_lookup: crate::system::collections::generic::hashset_1::HashSet_1<u32>,
+        #[offset(504)]
         #[rename(name = "m_CharactersToAdd")]
         pub m_characters_to_add: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_character::TMP_Character>,
+        #[offset(512)]
         #[rename(name = "m_CharactersToAddLookup")]
         pub m_characters_to_add_lookup: crate::system::collections::generic::hashset_1::HashSet_1<u32>,
+        #[offset(520)]
         #[rename(name = "s_MissingCharacterList")]
         pub s_missing_character_list: crate::system::collections::generic::list_1::List_1<u32>,
+        #[offset(528)]
         #[rename(name = "m_MissingUnicodesFromFontFile")]
         pub m_missing_unicodes_from_font_file: crate::system::collections::generic::hashset_1::HashSet_1<u32>,
         #[static_field]

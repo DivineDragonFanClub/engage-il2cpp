@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionPlay")]
     #[parent(crate::combat::actionbase::ActionBase)]
     pub struct ActionPlay {
+        #[offset(40)]
         #[rename(name = "m_Hash")]
         pub m_hash: i32,
+        #[offset(44)]
         #[rename(name = "m_WaitIdle")]
         pub m_wait_idle: bool,
+        #[offset(48)]
         #[rename(name = "m_StartTime")]
         pub m_start_time: f32,
     }

@@ -14,12 +14,16 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::unity_engine::rendering::debugshapes::DebugShapes,
+        #[offset(16)]
         #[rename(name = "m_sphereMesh")]
         pub m_sphere_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(24)]
         #[rename(name = "m_boxMesh")]
         pub m_box_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(32)]
         #[rename(name = "m_coneMesh")]
         pub m_cone_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(40)]
         #[rename(name = "m_pyramidMesh")]
         pub m_pyramid_mesh: crate::unity_engine::mesh::Mesh,
     }

@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BoundingBoxDrawer")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BoundingBoxDrawer {
+        #[offset(24)]
         #[rename(name = "m_OnlySelected")]
         pub m_only_selected: bool,
+        #[offset(28)]
         #[rename(name = "m_Alpha")]
         pub m_alpha: f32,
     }

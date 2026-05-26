@@ -11,19 +11,25 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "KerningPair")]
     #[parent(crate::system::object::Object)]
     pub struct KerningPair {
+        #[offset(16)]
         #[rename(name = "m_FirstGlyph")]
         pub m_first_glyph: u32,
+        #[offset(20)]
         #[rename(name = "m_FirstGlyphAdjustments")]
         pub m_first_glyph_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+        #[offset(36)]
         #[rename(name = "m_SecondGlyph")]
         pub m_second_glyph: u32,
+        #[offset(40)]
         #[rename(name = "m_SecondGlyphAdjustments")]
         pub m_second_glyph_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+        #[offset(56)]
         #[rename(name = "xOffset")]
         pub x_offset: f32,
         #[static_field]
         #[rename(name = "empty")]
         pub empty: crate::tm_pro::kerningpair::KerningPair,
+        #[offset(60)]
         #[rename(name = "m_IgnoreSpacingAdjustments")]
         pub m_ignore_spacing_adjustments: bool,
     }

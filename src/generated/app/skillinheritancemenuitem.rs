@@ -17,6 +17,7 @@ mod __types {
         #[static_field]
         #[rename(name = "c_ReleaseLevel")]
         pub c_release_level: i32,
+        #[offset(128)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::system::action_1::Action_1<crate::app::unit::Unit>,
     }

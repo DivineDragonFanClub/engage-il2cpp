@@ -20,34 +20,49 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerBehindLastBoss")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerBehindLastBoss {
+        #[offset(168)]
         #[rename(name = "FollowVectorH")]
         pub follow_vector_h: crate::unity_engine::vector3::Vector3,
+        #[offset(180)]
         #[rename(name = "LookAtVectorH")]
         pub look_at_vector_h: crate::unity_engine::vector3::Vector3,
+        #[offset(192)]
         #[rename(name = "FOVH")]
         pub fovh: f32,
+        #[offset(196)]
         #[rename(name = "FollowVectorL")]
         pub follow_vector_l: crate::unity_engine::vector3::Vector3,
+        #[offset(208)]
         #[rename(name = "LookAtVectorL")]
         pub look_at_vector_l: crate::unity_engine::vector3::Vector3,
+        #[offset(220)]
         #[rename(name = "FOVL")]
         pub fovl: f32,
+        #[offset(224)]
         #[rename(name = "FollowVectorD")]
         pub follow_vector_d: crate::unity_engine::vector3::Vector3,
+        #[offset(236)]
         #[rename(name = "SpeedThresholdUp")]
         pub speed_threshold_up: f32,
+        #[offset(240)]
         #[rename(name = "SpeedThresholdDown")]
         pub speed_threshold_down: f32,
+        #[offset(244)]
         #[rename(name = "FollowVectorMulti")]
         pub follow_vector_multi: crate::unity_engine::vector3::Vector3,
+        #[offset(256)]
         #[rename(name = "LookAtVectorMulti")]
         pub look_at_vector_multi: crate::unity_engine::vector3::Vector3,
+        #[offset(268)]
         #[rename(name = "m_IsHeadHigh")]
         pub m_is_head_high: bool,
+        #[offset(272)]
         #[rename(name = "m_HeadHight")]
         pub m_head_hight: ::unity2::Array<f32>,
+        #[offset(280)]
         #[rename(name = "m_WorldTime")]
         pub m_world_time: ::unity2::Array<f32>,
+        #[offset(288)]
         #[rename(name = "m_IsCharacterLoaded")]
         pub m_is_character_loaded: bool,
     }

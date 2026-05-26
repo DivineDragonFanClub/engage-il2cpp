@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Loaders", name = "UnityAssetsScriptLoader")]
     #[parent(crate::moon_sharp::interpreter::loaders::scriptloaderbase::ScriptLoaderBase)]
     pub struct UnityAssetsScriptLoader {
+        #[offset(32)]
         #[rename(name = "m_Resources")]
         pub m_resources: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, ::unity2::Il2CppString>,
         #[static_field]

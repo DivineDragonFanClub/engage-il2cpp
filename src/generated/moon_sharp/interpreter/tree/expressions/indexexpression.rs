@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "IndexExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct IndexExpression {
+        #[offset(32)]
         #[rename(name = "m_BaseExp")]
         pub m_base_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(40)]
         #[rename(name = "m_IndexExp")]
         pub m_index_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(48)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
     }

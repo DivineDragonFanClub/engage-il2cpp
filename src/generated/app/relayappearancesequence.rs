@@ -17,6 +17,24 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayappearancesequence/RelayAppearanceSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayAppearanceSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayappearancesequence :: RelayAppearanceSequence >)]
+    pub struct RelayAppearanceSequence {
+        #[offset(116)]
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+        #[offset(120)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(128)]
+        #[rename(name = "m_ReplayAppearanceIndexes")]
+        pub m_replay_appearance_indexes: ::unity2::Array<i32>,
+        #[offset(136)]
+        #[rename(name = "m_ReplayLeavingIndexes")]
+        pub m_replay_leaving_indexes: ::unity2::Array<i32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -61,20 +79,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayappearancesequence/RelayAppearanceSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAppearanceSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayappearancesequence :: RelayAppearanceSequence >)]
-    pub struct RelayAppearanceSequence {
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_ReplayAppearanceIndexes")]
-        pub m_replay_appearance_indexes: ::unity2::Array<i32>,
-        #[rename(name = "m_ReplayLeavingIndexes")]
-        pub m_replay_leaving_indexes: ::unity2::Array<i32>,
     }
 }
 

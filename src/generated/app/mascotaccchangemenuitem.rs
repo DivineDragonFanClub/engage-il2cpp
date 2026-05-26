@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotAccChangeMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MascotAccChangeMenuItem {
+        #[offset(104)]
         #[rename(name = "m_mascotData")]
         pub m_mascot_data: crate::app::mascotaccdata::MascotAccData,
+        #[offset(112)]
         #[rename(name = "m_accData")]
         pub m_acc_data: crate::app::accessorydata::AccessoryData,
     }

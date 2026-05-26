@@ -17,14 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalaccesssequence/AnimalAccessSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalAccessSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalaccesssequence :: AnimalAccessSequence >)]
-    pub struct AnimalAccessSequence {
-        #[rename(name = "m_AnimalCamera")]
-        pub m_animal_camera: crate::app::animalaccesscamera::AnimalAccessCamera,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalaccesssequence/AnimalAccessSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,6 +49,15 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalaccesssequence/AnimalAccessSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalAccessSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalaccesssequence :: AnimalAccessSequence >)]
+    pub struct AnimalAccessSequence {
+        #[offset(136)]
+        #[rename(name = "m_AnimalCamera")]
+        pub m_animal_camera: crate::app::animalaccesscamera::AnimalAccessCamera,
     }
 }
 

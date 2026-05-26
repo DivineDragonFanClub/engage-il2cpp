@@ -7,6 +7,24 @@ mod __types {
     use super::*;
     use crate::system::object::{IObject, Object};
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "BitArray.BitArrayEnumeratorSimple")]
+    #[parent(crate::system::object::Object)]
+    pub struct BitArray_BitArrayEnumeratorSimple {
+        #[offset(16)]
+        #[rename(name = "bitarray")]
+        pub bitarray: crate::system::collections::bitarray::BitArray,
+        #[offset(24)]
+        #[rename(name = "index")]
+        pub index: i32,
+        #[offset(28)]
+        #[rename(name = "version")]
+        pub version: i32,
+        #[offset(32)]
+        #[rename(name = "currentElement")]
+        pub current_element: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "BitArray")]
     #[parent(crate::system::object::Object)]
@@ -20,36 +38,274 @@ mod __types {
         #[static_field]
         #[rename(name = "BitsPerByte")]
         pub bits_per_byte: i32,
+        #[offset(16)]
         #[rename(name = "m_array")]
         pub m_array: ::unity2::Array<i32>,
+        #[offset(24)]
         #[rename(name = "m_length")]
         pub m_length: i32,
+        #[offset(28)]
         #[rename(name = "_version")]
         pub version: i32,
+        #[offset(32)]
         #[rename(name = "_syncRoot")]
         pub sync_root: ::unity2::IlInstance,
         #[static_field]
         #[rename(name = "_ShrinkThreshold")]
         pub shrink_threshold: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "BitArray.BitArrayEnumeratorSimple")]
-    #[parent(crate::system::object::Object)]
-    pub struct BitArray_BitArrayEnumeratorSimple {
-        #[rename(name = "bitarray")]
-        pub bitarray: crate::system::collections::bitarray::BitArray,
-        #[rename(name = "index")]
-        pub index: i32,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "currentElement")]
-        pub current_element: bool,
-    }
 }
 
 #[cfg(feature = "system-collections-bitarray-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-bitarray")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BitArray_BitArrayEnumeratorSimple_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::bitarray::BitArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BitArray_BitArrayEnumeratorSimple,
+        bitarray: crate::system::collections::bitarray::BitArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, crate::system::collections::bitarray::BitArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, bitarray, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clone {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "Clone",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clone(this: BitArray_BitArrayEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn move_next(this: BitArray_BitArrayEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current(
+        this: BitArray_BitArrayEnumeratorSimple,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: BitArray_BitArrayEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+pub trait IBitArray_BitArrayEnumeratorSimpleMethods: IBitArray_BitArrayEnumeratorSimple {
+    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` overload"]
+    fn ctor(self, bitarray: impl ::core::convert::Into<crate::system::collections::bitarray::BitArray>) -> () {
+        unsafe {
+            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BitArray_BitArrayEnumeratorSimple_unity2_raw::ctor(__receiver, ::core::convert::Into::into(bitarray), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clone()` overload"]
+    fn clone(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BitArray_BitArrayEnumeratorSimple_unity2_raw::clone(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MoveNext()` overload"]
+    fn move_next(self) -> bool {
+        unsafe {
+            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BitArray_BitArrayEnumeratorSimple_unity2_raw::move_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Current()` overload"]
+    fn get_current(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BitArray_BitArrayEnumeratorSimple_unity2_raw::get_current(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BitArray_BitArrayEnumeratorSimple_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+impl<__T: IBitArray_BitArrayEnumeratorSimple> IBitArray_BitArrayEnumeratorSimpleMethods for __T {}
+
+#[cfg(feature = "system-collections-bitarray")]
+impl BitArray_BitArrayEnumeratorSimple {
+    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"]
+    pub fn new(bitarray: crate::system::collections::bitarray::BitArray) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitArray_BitArrayEnumeratorSimple),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBitArray_BitArrayEnumeratorSimpleMethods>::ctor(this, bitarray);
+        this
+    }
+}
 
 #[cfg(feature = "system-collections-bitarray")]
 #[doc(hidden)]
@@ -637,254 +893,6 @@ impl BitArray {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BitArray), ::core::stringify!(new_3),));
         <Self as IBitArrayMethods>::ctor_3(this, values);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-bitarray")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BitArray_BitArrayEnumeratorSimple_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::bitarray::BitArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BitArray_BitArrayEnumeratorSimple,
-        bitarray: crate::system::collections::bitarray::BitArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, crate::system::collections::bitarray::BitArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, bitarray, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clone {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "Clone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "Clone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clone(this: BitArray_BitArrayEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
-        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: BitArray_BitArrayEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(
-        this: BitArray_BitArrayEnumeratorSimple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BitArray_BitArrayEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: BitArray_BitArrayEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BitArray_BitArrayEnumeratorSimple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-collections-bitarray")]
-pub trait IBitArray_BitArrayEnumeratorSimpleMethods: IBitArray_BitArrayEnumeratorSimple {
-    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` overload"]
-    fn ctor(self, bitarray: impl ::core::convert::Into<crate::system::collections::bitarray::BitArray>) -> () {
-        unsafe {
-            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitArray_BitArrayEnumeratorSimple_unity2_raw::ctor(__receiver, ::core::convert::Into::into(bitarray), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clone()` overload"]
-    fn clone(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitArray_BitArrayEnumeratorSimple_unity2_raw::clone(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MoveNext()` overload"]
-    fn move_next(self) -> bool {
-        unsafe {
-            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitArray_BitArrayEnumeratorSimple_unity2_raw::move_next(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Current()` overload"]
-    fn get_current(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitArray_BitArrayEnumeratorSimple_unity2_raw::get_current(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <BitArray_BitArrayEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitArray_BitArrayEnumeratorSimple_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-bitarray")]
-impl<__T: IBitArray_BitArrayEnumeratorSimple> IBitArray_BitArrayEnumeratorSimpleMethods for __T {}
-
-#[cfg(feature = "system-collections-bitarray")]
-impl BitArray_BitArrayEnumeratorSimple {
-    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"]
-    pub fn new(bitarray: crate::system::collections::bitarray::BitArray) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BitArray_BitArrayEnumeratorSimple),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBitArray_BitArrayEnumeratorSimpleMethods>::ctor(this, bitarray);
         this
     }
 }

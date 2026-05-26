@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "FadeRender")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FadeRender {
+        #[offset(24)]
         #[rename(name = "m_Layers")]
         pub m_layers: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
     }

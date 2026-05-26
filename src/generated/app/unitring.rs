@@ -17,10 +17,13 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxStockCount")]
         pub max_stock_count: i32,
+        #[offset(32)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::ringdata::RingData,
+        #[offset(40)]
         #[rename(name = "m_Owner")]
         pub m_owner: crate::app::unit::Unit,
+        #[offset(48)]
         #[rename(name = "m_StockCount")]
         pub m_stock_count: u8,
     }

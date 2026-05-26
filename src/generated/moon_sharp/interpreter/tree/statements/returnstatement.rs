@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "ReturnStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct ReturnStatement {
+        #[offset(32)]
         #[rename(name = "m_Expression")]
         pub m_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(40)]
         #[rename(name = "m_Ref")]
         pub m_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

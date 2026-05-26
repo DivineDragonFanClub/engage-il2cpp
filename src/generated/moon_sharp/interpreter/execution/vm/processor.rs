@@ -11,33 +11,46 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "Processor")]
     #[parent(crate::system::object::Object)]
     pub struct Processor {
+        #[offset(16)]
         #[rename(name = "m_RootChunk")]
         pub m_root_chunk: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        #[offset(24)]
         #[rename(name = "m_ValueStack")]
         pub m_value_stack: crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        #[offset(32)]
         #[rename(name = "m_ExecutionStack")]
         pub m_execution_stack: crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<
             crate::moon_sharp::interpreter::execution::vm::callstackitem::CallStackItem,
         >,
+        #[offset(40)]
         #[rename(name = "m_CoroutinesStack")]
         pub m_coroutines_stack:
             crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::execution::vm::processor::Processor>,
+        #[offset(48)]
         #[rename(name = "m_GlobalTable")]
         pub m_global_table: crate::moon_sharp::interpreter::table::Table,
+        #[offset(56)]
         #[rename(name = "m_Script")]
         pub m_script: crate::moon_sharp::interpreter::script::Script,
+        #[offset(64)]
         #[rename(name = "m_Parent")]
         pub m_parent: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+        #[offset(72)]
         #[rename(name = "m_State")]
         pub m_state: crate::moon_sharp::interpreter::coroutinestate::CoroutineState,
+        #[offset(76)]
         #[rename(name = "m_CanYield")]
         pub m_can_yield: bool,
+        #[offset(80)]
         #[rename(name = "m_SavedInstructionPtr")]
         pub m_saved_instruction_ptr: i32,
+        #[offset(88)]
         #[rename(name = "m_Debug")]
         pub m_debug: crate::moon_sharp::interpreter::execution::vm::processor::Processor_DebugContext,
+        #[offset(96)]
         #[rename(name = "m_OwningThreadID")]
         pub m_owning_thread_id: i32,
+        #[offset(100)]
         #[rename(name = "m_ExecutionNesting")]
         pub m_execution_nesting: i32,
         #[static_field]
@@ -49,6 +62,7 @@ mod __types {
         #[static_field]
         #[rename(name = "YIELD_SPECIAL_TRAP")]
         pub yield_special_trap: i32,
+        #[offset(112)]
         #[rename(name = "AutoYieldCounter")]
         pub auto_yield_counter: i64,
     }
@@ -57,20 +71,28 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "Processor.DebugContext")]
     #[parent(crate::system::object::Object)]
     pub struct Processor_DebugContext {
+        #[offset(16)]
         #[rename(name = "DebuggerEnabled")]
         pub debugger_enabled: bool,
+        #[offset(24)]
         #[rename(name = "DebuggerAttached")]
         pub debugger_attached: crate::moon_sharp::interpreter::debugging::idebugger::IDebugger,
+        #[offset(32)]
         #[rename(name = "DebuggerCurrentAction")]
         pub debugger_current_action: crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction_ActionType,
+        #[offset(36)]
         #[rename(name = "DebuggerCurrentActionTarget")]
         pub debugger_current_action_target: i32,
+        #[offset(40)]
         #[rename(name = "LastHlRef")]
         pub last_hl_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[offset(48)]
         #[rename(name = "ExStackDepthAtStep")]
         pub ex_stack_depth_at_step: i32,
+        #[offset(56)]
         #[rename(name = "BreakPoints")]
         pub break_points: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
+        #[offset(64)]
         #[rename(name = "LineBasedBreakPoints")]
         pub line_based_break_points: bool,
     }

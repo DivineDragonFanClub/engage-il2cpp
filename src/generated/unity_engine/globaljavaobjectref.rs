@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GlobalJavaObjectRef")]
     #[parent(crate::system::object::Object)]
     pub struct GlobalJavaObjectRef {
+        #[offset(16)]
         #[rename(name = "m_disposed")]
         pub m_disposed: bool,
+        #[offset(24)]
         #[rename(name = "m_jobject")]
         pub m_jobject: ::unity2::IntPtr,
     }

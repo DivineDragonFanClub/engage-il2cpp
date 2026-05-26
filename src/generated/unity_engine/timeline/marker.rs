@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "Marker")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct Marker {
+        #[offset(24)]
         #[rename(name = "m_Time")]
         pub m_time: f64,
     }

@@ -28,12 +28,16 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Releases")]
         pub s_releases: crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2>,
+        #[offset(112)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_Mode")]
         pub m_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        #[offset(128)]
         #[rename(name = "m_Empty")]
         pub m_empty: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[offset(136)]
         #[rename(name = "m_Handle")]
         pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
     }

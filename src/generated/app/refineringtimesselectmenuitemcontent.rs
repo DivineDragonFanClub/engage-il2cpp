@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineRingTimesSelectMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RefineRingTimesSelectMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_TimesText")]
         pub m_times_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_BondValueText")]
         pub m_bond_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_BondIconImage")]
         pub m_bond_icon_image: crate::unity_engine::ui::image::Image,
     }

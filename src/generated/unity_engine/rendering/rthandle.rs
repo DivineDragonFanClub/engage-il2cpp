@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandle")]
     #[parent(crate::system::object::Object)]
     pub struct RTHandle {
+        #[offset(16)]
         #[rename(name = "m_Owner")]
         pub m_owner: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem,
+        #[offset(24)]
         #[rename(name = "m_RT")]
         pub m_rt: crate::unity_engine::rendertexture::RenderTexture,
+        #[offset(32)]
         #[rename(name = "m_ExternalTexture")]
         pub m_external_texture: crate::unity_engine::texture::Texture,
+        #[offset(40)]
         #[rename(name = "m_NameID")]
         pub m_name_id: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        #[offset(80)]
         #[rename(name = "m_EnableMSAA")]
         pub m_enable_msaa: bool,
+        #[offset(81)]
         #[rename(name = "m_EnableRandomWrite")]
         pub m_enable_random_write: bool,
+        #[offset(82)]
         #[rename(name = "m_EnableHWDynamicScale")]
         pub m_enable_hw_dynamic_scale: bool,
+        #[offset(88)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(104)]
         #[rename(name = "scaleFunc")]
         pub scale_func: crate::unity_engine::rendering::scalefunc::ScaleFunc,
     }

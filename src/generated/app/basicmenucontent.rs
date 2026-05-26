@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicMenuContent.Scroll")]
     #[parent(crate::system::object::Object)]
     pub struct BasicMenuContent_Scroll {
+        #[offset(16)]
         #[rename(name = "m_menuContent")]
         pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        #[offset(24)]
         #[rename(name = "m_objScrollBar")]
         pub m_obj_scroll_bar: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_scrollBar")]
         pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
+        #[offset(40)]
         #[rename(name = "m_scrollNow")]
         pub m_scroll_now: f32,
+        #[offset(44)]
         #[rename(name = "m_scrollOld")]
         pub m_scroll_old: f32,
+        #[offset(48)]
         #[rename(name = "m_scrollFrom")]
         pub m_scroll_from: f32,
+        #[offset(52)]
         #[rename(name = "m_scrollTick")]
         pub m_scroll_tick: f32,
+        #[offset(56)]
         #[rename(name = "m_scrollFrame")]
         pub m_scroll_frame: f32,
     }
@@ -41,58 +49,85 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicMenuContent.Cursor")]
     #[parent(crate::system::object::Object)]
     pub struct BasicMenuContent_Cursor {
+        #[offset(16)]
         #[rename(name = "m_menuContent")]
         pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        #[offset(24)]
         #[rename(name = "m_objFrontCursor")]
         pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_objBackCursor")]
         pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_objFrontCursorBase")]
         pub m_obj_front_cursor_base: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_backCursorRect")]
         pub m_back_cursor_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(56)]
         #[rename(name = "m_backCursorImage")]
         pub m_back_cursor_image: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "m_backCursorAnimator")]
         pub m_back_cursor_animator: crate::unity_engine::animator::Animator,
+        #[offset(72)]
         #[rename(name = "m_frontCursorAnimator")]
         pub m_front_cursor_animator: crate::unity_engine::animator::Animator,
+        #[offset(80)]
         #[rename(name = "m_frontCursorBaseRect")]
         pub m_front_cursor_base_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(88)]
         #[rename(name = "m_frontCursorBaseParentRect")]
         pub m_front_cursor_base_parent_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(96)]
         #[rename(name = "m_posX")]
         pub m_pos_x: f32,
+        #[offset(100)]
         #[rename(name = "m_posY")]
         pub m_pos_y: f32,
+        #[offset(104)]
         #[rename(name = "m_fromX")]
         pub m_from_x: f32,
+        #[offset(108)]
         #[rename(name = "m_fromY")]
         pub m_from_y: f32,
+        #[offset(112)]
         #[rename(name = "m_fromW")]
         pub m_from_w: f32,
+        #[offset(116)]
         #[rename(name = "m_fromH")]
         pub m_from_h: f32,
+        #[offset(120)]
         #[rename(name = "m_moveTick")]
         pub m_move_tick: f32,
+        #[offset(124)]
         #[rename(name = "m_moveFrame")]
         pub m_move_frame: f32,
+        #[offset(128)]
         #[rename(name = "m_fixed")]
         pub m_fixed: bool,
+        #[offset(129)]
         #[rename(name = "m_fixedWH")]
         pub m_fixed_wh: bool,
+        #[offset(130)]
         #[rename(name = "m_firstTick")]
         pub m_first_tick: bool,
+        #[offset(131)]
         #[rename(name = "m_lastVisibility")]
         pub m_last_visibility: bool,
+        #[offset(132)]
         #[rename(name = "m_frontCursorVisibility")]
         pub m_front_cursor_visibility: bool,
+        #[offset(136)]
         #[rename(name = "m_frontCursorMoveTick")]
         pub m_front_cursor_move_tick: f32,
+        #[offset(140)]
         #[rename(name = "m_frontCursorMoveFrame")]
         pub m_front_cursor_move_frame: f32,
+        #[offset(144)]
         #[rename(name = "m_frontCursorFromX")]
         pub m_front_cursor_from_x: f32,
+        #[offset(148)]
         #[rename(name = "m_frontCursorFromY")]
         pub m_front_cursor_from_y: f32,
     }
@@ -104,54 +139,79 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_srcMaterial")]
         pub m_src_material: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(40)]
         #[rename(name = "m_menu")]
         pub m_menu: crate::app::basicmenu::BasicMenu,
+        #[offset(48)]
         #[rename(name = "m_winAnimator")]
         pub m_win_animator: crate::unity_engine::animator::Animator,
+        #[offset(56)]
         #[rename(name = "m_objMenu")]
         pub m_obj_menu: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_objFrontCursor")]
         pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_objBackCursor")]
         pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_objViewport")]
         pub m_obj_viewport: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_objVerticalScrollBar")]
         pub m_obj_vertical_scroll_bar: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_objScrollBarHandle")]
         pub m_obj_scroll_bar_handle: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_objContent")]
         pub m_obj_content: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_objSubMenuBase")]
         pub m_obj_sub_menu_base: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_backContent")]
         pub m_back_content: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_cursor")]
         pub m_cursor: crate::app::basicmenucontent::BasicMenuContent_Cursor,
+        #[offset(136)]
         #[rename(name = "m_scroll")]
         pub m_scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll,
+        #[offset(144)]
         #[rename(name = "m_pos")]
         pub m_pos: crate::unity_engine::vector2::Vector2,
+        #[offset(152)]
         #[rename(name = "m_posOld")]
         pub m_pos_old: crate::unity_engine::vector2::Vector2,
+        #[offset(160)]
         #[rename(name = "m_anchorType")]
         pub m_anchor_type: crate::app::basicmenu::BasicMenu_AnchorType,
+        #[offset(164)]
         #[rename(name = "m_anchoredPosOriginal")]
         pub m_anchored_pos_original: crate::unity_engine::vector2::Vector2,
+        #[offset(172)]
         #[rename(name = "m_anchorMinOriginal")]
         pub m_anchor_min_original: crate::unity_engine::vector2::Vector2,
+        #[offset(180)]
         #[rename(name = "m_anchorMaxOriginal")]
         pub m_anchor_max_original: crate::unity_engine::vector2::Vector2,
+        #[offset(188)]
         #[rename(name = "m_objContentBaseLocalPos")]
         pub m_obj_content_base_local_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(200)]
         #[rename(name = "m_backContentBaseLocalPos")]
         pub m_back_content_base_local_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(212)]
         #[rename(name = "m_color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(228)]
         #[rename(name = "m_requestAdjust")]
         pub m_request_adjust: bool,
     }

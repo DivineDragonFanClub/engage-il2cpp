@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "HUDPopup")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HUDPopup {
+        #[offset(24)]
         #[rename(name = "m_RectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(32)]
         #[rename(name = "m_WorldPos")]
         pub m_world_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(44)]
         #[rename(name = "m_Offset2D")]
         pub m_offset2_d: crate::unity_engine::vector2::Vector2,
     }

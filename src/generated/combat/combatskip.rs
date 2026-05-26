@@ -19,6 +19,18 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatskip/CombatSkip.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CombatSkip")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CombatSkip {
+        #[offset(24)]
+        #[rename(name = "state")]
+        pub state: crate::combat::combatskip::CombatSkip_State,
+        #[offset(28)]
+        #[rename(name = "isSoundSkipEnable")]
+        pub is_sound_skip_enable: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatskip/CombatSkip_State.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,16 +87,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 7 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatskip/CombatSkip.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CombatSkip")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CombatSkip {
-        #[rename(name = "state")]
-        pub state: crate::combat::combatskip::CombatSkip_State,
-        #[rename(name = "isSoundSkipEnable")]
-        pub is_sound_skip_enable: bool,
     }
 }
 

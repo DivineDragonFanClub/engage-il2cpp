@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "PaniniProjection")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct PaniniProjection {
+        #[offset(56)]
         #[rename(name = "distance")]
         pub distance: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(64)]
         #[rename(name = "cropToFit")]
         pub crop_to_fit: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

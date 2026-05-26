@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TelopInstance")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TelopInstance {
+        #[offset(24)]
         #[rename(name = "m_IsKeyWait")]
         pub m_is_key_wait: bool,
+        #[offset(32)]
         #[rename(name = "m_StartSoundEvent")]
         pub m_start_sound_event: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_KeySoundEvent")]
         pub m_key_sound_event: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_SkipableTime")]
         pub m_skipable_time: f32,
+        #[offset(52)]
         #[rename(name = "m_MvpWaitTime")]
         pub m_mvp_wait_time: f32,
         #[static_field]
@@ -41,18 +46,25 @@ mod __types {
         #[static_field]
         #[rename(name = "FadeTime")]
         pub fade_time: f32,
+        #[offset(56)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(64)]
         #[rename(name = "m_CanvasGroup")]
         pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(72)]
         #[rename(name = "m_FadeTime")]
         pub m_fade_time: f32,
+        #[offset(76)]
         #[rename(name = "m_ElapsedTime")]
         pub m_elapsed_time: f32,
+        #[offset(80)]
         #[rename(name = "m_MVPRoot")]
         pub m_mvp_root: crate::root::mvproot::MVPRoot,
+        #[offset(88)]
         #[rename(name = "m_IsKeyLock")]
         pub m_is_key_lock: bool,
+        #[offset(89)]
         #[rename(name = "m_IsForcedPlayOut")]
         pub m_is_forced_play_out: bool,
     }

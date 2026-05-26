@@ -19,65 +19,94 @@ mod __types {
     #[::unity2::class(namespace = "", name = "Iron19CharacterFader")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct Iron19CharacterFader {
+        #[offset(24)]
         #[rename(name = "m_isInitialized")]
         pub m_is_initialized: bool,
+        #[offset(28)]
         #[rename(name = "m_FadeAlpha")]
         pub m_fade_alpha: f32,
+        #[offset(32)]
         #[rename(name = "m_CameraAlpha")]
         pub m_camera_alpha: f32,
+        #[offset(36)]
         #[rename(name = "m_MergeAlpha")]
         pub m_merge_alpha: f32,
+        #[offset(40)]
         #[rename(name = "m_CameraOutline")]
         pub m_camera_outline: f32,
+        #[offset(44)]
         #[rename(name = "m_MergeOutline")]
         pub m_merge_outline: f32,
+        #[offset(48)]
         #[rename(name = "m_TargetLayer")]
         pub m_target_layer: i32,
+        #[offset(52)]
         #[rename(name = "m_SkinQuality")]
         pub m_skin_quality: crate::unity_engine::skinquality::SkinQuality,
+        #[offset(56)]
         #[rename(name = "m_PreSkinQuality")]
         pub m_pre_skin_quality: crate::unity_engine::skinquality::SkinQuality,
+        #[offset(60)]
         #[rename(name = "m_Radius")]
         pub m_radius: f32,
+        #[offset(64)]
         #[rename(name = "m_Distance")]
         pub m_distance: f32,
+        #[offset(68)]
         #[rename(name = "m_Outline")]
         pub m_outline: f32,
+        #[offset(72)]
         #[rename(name = "m_EditAlpha")]
         pub m_edit_alpha: f32,
+        #[offset(76)]
         #[rename(name = "m_EditOutline")]
         pub m_edit_outline: f32,
+        #[offset(80)]
         #[rename(name = "m_SpringControl")]
         pub m_spring_control: bool,
+        #[offset(81)]
         #[rename(name = "m_SolverControl")]
         pub m_solver_control: bool,
+        #[offset(82)]
         #[rename(name = "m_ProportionControl")]
         pub m_proportion_control: bool,
+        #[offset(83)]
         #[rename(name = "m_MouthControl")]
         pub m_mouth_control: bool,
+        #[offset(84)]
         #[rename(name = "m_AnimatorControl")]
         pub m_animator_control: bool,
+        #[offset(88)]
         #[rename(name = "m_Renderers")]
         pub m_renderers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer>,
+        #[offset(96)]
         #[rename(name = "m_Materials")]
         pub m_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
+        #[offset(104)]
         #[rename(name = "m_Particles")]
         pub m_particles: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
+        #[offset(112)]
         #[rename(name = "m_Animators")]
         pub m_animators: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animator::Animator>,
+        #[offset(120)]
         #[rename(name = "m_SkinnedMeshRenderers")]
         pub m_skinned_mesh_renderers:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
+        #[offset(144)]
         #[rename(name = "m_Proportions")]
         pub m_proportions: crate::system::collections::generic::list_1::List_1<crate::combat::characterproportion::CharacterProportion>,
+        #[offset(152)]
         #[rename(name = "m_MouthControllers")]
         pub m_mouth_controllers:
             crate::system::collections::generic::list_1::List_1<crate::app::eventcharactermouthcontroller::EventCharacterMouthController>,
+        #[offset(160)]
         #[rename(name = "m_SkinQualityLodAdjusters")]
         pub m_skin_quality_lod_adjusters:
             crate::system::collections::generic::list_1::List_1<crate::app::skinqualitylodadjuster::SkinQualityLodAdjuster>,
+        #[offset(168)]
         #[rename(name = "m_Character")]
         pub m_character: crate::combat::character::Character,
+        #[offset(176)]
         #[rename(name = "m_OutlineMaterialDisableProp")]
         pub m_outline_material_disable_prop: i32,
     }

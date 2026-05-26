@@ -29,16 +29,22 @@ mod __types {
         #[static_field]
         #[rename(name = "s_ShaderTagUniversalMaterialType")]
         pub s_shader_tag_universal_material_type: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(112)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(120)]
         #[rename(name = "m_DeferredLights")]
         pub m_deferred_lights: crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,
+        #[offset(128)]
         #[rename(name = "m_ShaderTagValues")]
         pub m_shader_tag_values: ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[offset(136)]
         #[rename(name = "m_RenderStateBlocks")]
         pub m_render_state_blocks: ::unity2::Array<crate::unity_engine::rendering::renderstateblock::RenderStateBlock>,
+        #[offset(144)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(168)]
         #[rename(name = "m_RenderStateBlock")]
         pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
     }

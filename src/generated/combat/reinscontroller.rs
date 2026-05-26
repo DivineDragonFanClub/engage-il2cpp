@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ReinsController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ReinsController {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_bInitialized")]
         pub m_b_initialized: bool,
+        #[offset(36)]
         #[rename(name = "m_LastPos")]
         pub m_last_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(48)]
         #[rename(name = "names")]
         pub names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(56)]
         #[rename(name = "Weight")]
         pub weight_field: f32,
+        #[offset(64)]
         #[rename(name = "transforms")]
         pub transforms: ::unity2::Array<crate::unity_engine::transform::Transform>,
+        #[offset(72)]
         #[rename(name = "WorldOffset")]
         pub world_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(84)]
         #[rename(name = "FrameLatencyCompensation")]
         pub frame_latency_compensation: bool,
     }

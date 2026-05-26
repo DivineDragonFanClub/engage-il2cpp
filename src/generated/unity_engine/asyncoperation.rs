@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AsyncOperation")]
     #[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
     pub struct AsyncOperation {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_completeCallback")]
         pub m_complete_callback: crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>,
     }

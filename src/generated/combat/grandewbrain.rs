@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "GrandewBrain")]
     #[parent(crate::system::object::Object)]
     pub struct GrandewBrain {
+        #[offset(16)]
         #[rename(name = "CP")]
         pub cp: crate::combat::character::Character,
+        #[offset(24)]
         #[rename(name = "m_Master")]
         pub m_master: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_Enemy")]
         pub m_enemy: crate::combat::character::Character,
     }

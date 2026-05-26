@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicDialogItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct BasicDialogItem {
+        #[offset(104)]
         #[rename(name = "m_Text")]
         pub m_text: ::unity2::Il2CppString,
     }

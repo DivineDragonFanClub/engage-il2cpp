@@ -18,26 +18,37 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "DepthOfField")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct DepthOfField {
+        #[offset(56)]
         #[rename(name = "mode")]
         pub mode: crate::unity_engine::rendering::universal::depthoffieldmodeparameter::DepthOfFieldModeParameter,
+        #[offset(64)]
         #[rename(name = "gaussianStart")]
         pub gaussian_start: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(72)]
         #[rename(name = "gaussianEnd")]
         pub gaussian_end: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(80)]
         #[rename(name = "gaussianMaxRadius")]
         pub gaussian_max_radius: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "highQualitySampling")]
         pub high_quality_sampling: crate::unity_engine::rendering::boolparameter::BoolParameter,
+        #[offset(96)]
         #[rename(name = "focusDistance")]
         pub focus_distance: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(104)]
         #[rename(name = "aperture")]
         pub aperture: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(112)]
         #[rename(name = "focalLength")]
         pub focal_length: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(120)]
         #[rename(name = "bladeCount")]
         pub blade_count: crate::unity_engine::rendering::clampedintparameter::ClampedIntParameter,
+        #[offset(128)]
         #[rename(name = "bladeCurvature")]
         pub blade_curvature: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(136)]
         #[rename(name = "bladeRotation")]
         pub blade_rotation: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

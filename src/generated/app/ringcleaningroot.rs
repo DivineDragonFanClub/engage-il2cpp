@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCleaningRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingCleaningRoot {
+        #[offset(24)]
         #[rename(name = "m_ConditionIcon")]
         pub m_condition_icon: crate::app::ringcleaningconditionicon::RingCleaningConditionIcon,
+        #[offset(32)]
         #[rename(name = "m_GaugeController")]
         pub m_gauge_controller: crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController,
+        #[offset(40)]
         #[rename(name = "m_Cloth")]
         pub m_cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+        #[offset(48)]
         #[rename(name = "m_Ring")]
         pub m_ring: crate::app::ringcleaningringcontroller::RingCleaningRingController,
     }

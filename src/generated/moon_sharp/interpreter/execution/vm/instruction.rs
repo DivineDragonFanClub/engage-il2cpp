@@ -11,20 +11,28 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "Instruction")]
     #[parent(crate::system::object::Object)]
     pub struct Instruction {
+        #[offset(16)]
         #[rename(name = "OpCode")]
         pub op_code: crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
+        #[offset(24)]
         #[rename(name = "Symbol")]
         pub symbol: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(32)]
         #[rename(name = "SymbolList")]
         pub symbol_list: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        #[offset(40)]
         #[rename(name = "Name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "Value")]
         pub value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(56)]
         #[rename(name = "NumVal")]
         pub num_val: i32,
+        #[offset(60)]
         #[rename(name = "NumVal2")]
         pub num_val2: i32,
+        #[offset(64)]
         #[rename(name = "SourceCodeRef")]
         pub source_code_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

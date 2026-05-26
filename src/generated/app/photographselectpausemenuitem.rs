@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectPauseMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct PhotographSelectPauseMenuItem {
+        #[offset(104)]
         #[rename(name = "m_PauseData")]
         pub m_pause_data: crate::app::photographpausedata::PhotographPauseData,
+        #[offset(112)]
         #[rename(name = "m_DisposManager")]
         pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        #[offset(120)]
         #[rename(name = "m_IsCurrentPause")]
         pub m_is_current_pause: bool,
+        #[offset(128)]
         #[rename(name = "m_CharacterId")]
         pub m_character_id: ::unity2::Il2CppString,
     }

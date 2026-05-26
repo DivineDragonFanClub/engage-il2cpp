@@ -19,22 +19,31 @@ mod __types {
     #[::unity2::class(namespace = "", name = "WdwTutorialLocatorRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct WdwTutorialLocatorRoot {
+        #[offset(24)]
         #[rename(name = "m_RightArrow")]
         pub m_right_arrow: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_LeftArrow")]
         pub m_left_arrow: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_TutorialTitleText")]
         pub m_tutorial_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_MessageText")]
         pub m_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_Page0Text")]
         pub m_page0_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_Page1Text")]
         pub m_page1_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_CaptureImage")]
         pub m_capture_image: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_WdwTutorialAnimator")]
         pub m_wdw_tutorial_animator: crate::unity_engine::animator::Animator,
+        #[offset(88)]
         #[rename(name = "m_Sprite")]
         pub m_sprite: crate::unity_engine::sprite::Sprite,
     }

@@ -20,41 +20,62 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct BattleInfo {
-        #[static_field]
-        #[rename(name = "CriticalFactor")]
-        pub critical_factor: i32,
-        #[rename(name = "m_Flag")]
-        pub m_flag: crate::app::battleinfo::BattleInfo_FlagField,
-        #[rename(name = "m_Sides")]
-        pub m_sides: crate::app::battleinfo::BattleInfo_BattleInfoSideArray,
-        #[rename(name = "m_Supports")]
-        pub m_supports: crate::app::battleinfo::BattleInfo_SupportList,
-        #[rename(name = "m_MainUnitEnum")]
-        pub m_main_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_WholeUnitEnum")]
-        pub m_whole_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_ChainOffenseEnum")]
-        pub m_chain_offense_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_ChainDefenseEnum")]
-        pub m_chain_defense_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_ChainUnitEnum")]
-        pub m_chain_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
-        #[rename(name = "m_TempSkills")]
-        pub m_temp_skills: crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
-        #[rename(name = "m_GuardSide")]
-        pub m_guard_side: crate::app::battleside::BattleSide_Type,
-        #[rename(name = "m_GuardFunc")]
-        pub m_guard_func: crate::app::mapfor::MapFor_RangeFunction,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SetupScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct BattleInfo_SetupScope {
+        pub m_info: crate::app::battleinfo::BattleInfo,
+        pub m_offense: crate::app::unit::Unit,
+        pub m_defense: crate::app::unit::Unit,
+        pub m_updated: u8,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfo.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfo :: BattleInfo_Flags >)]
-    pub struct BattleInfo_FlagField {}
+    impl ::unity2::ClassIdentity for BattleInfo_SetupScope {
+        const NAME: &'static str = "BattleInfo.SetupScope";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BattleInfo_SetupScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SupportData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct BattleInfo_SupportData {
+        pub unit: crate::app::unit::Unit,
+        pub status: crate::app::battleinfoside::BattleInfoSide_Status,
+    }
+
+    impl ::unity2::ClassIdentity for BattleInfo_SupportData {
+        const NAME: &'static str = "BattleInfo.SupportData";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BattleInfo_SupportData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfo.BattleInfoSideArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < crate :: app :: battleinfoside :: BattleInfoSide >)]
+    pub struct BattleInfo_BattleInfoSideArray {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_Flags.md"))]
     #[repr(C)]
@@ -202,75 +223,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SupportData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct BattleInfo_SupportData {
-        pub unit: crate::app::unit::Unit,
-        pub status: crate::app::battleinfoside::BattleInfoSide_Status,
-    }
-
-    impl ::unity2::ClassIdentity for BattleInfo_SupportData {
-        const NAME: &'static str = "BattleInfo.SupportData";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BattleInfo_SupportData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SetupScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct BattleInfo_SetupScope {
-        pub m_info: crate::app::battleinfo::BattleInfo,
-        pub m_offense: crate::app::unit::Unit,
-        pub m_defense: crate::app::unit::Unit,
-        pub m_updated: u8,
-    }
-
-    impl ::unity2::ClassIdentity for BattleInfo_SetupScope {
-        const NAME: &'static str = "BattleInfo.SetupScope";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BattleInfo_SetupScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfo.BattleInfoSideArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < crate :: app :: battleinfoside :: BattleInfoSide >)]
-    pub struct BattleInfo_BattleInfoSideArray {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_SupportList.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfo.SupportList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: battleinfo :: BattleInfo_SupportData >)]
-    pub struct BattleInfo_SupportList {
-        #[rename(name = "m_Offense")]
-        pub m_offense: crate::app::unit::Unit,
-        #[rename(name = "m_Defense")]
-        pub m_defense: crate::app::unit::Unit,
-        #[rename(name = "m_Compare")]
-        pub m_compare: crate::system::comparison_1::Comparison_1<crate::app::battleinfo::BattleInfo_SupportData>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_MindScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -296,10 +248,567 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct BattleInfo {
+        #[static_field]
+        #[rename(name = "CriticalFactor")]
+        pub critical_factor: i32,
+        #[offset(16)]
+        #[rename(name = "m_Flag")]
+        pub m_flag: crate::app::battleinfo::BattleInfo_FlagField,
+        #[offset(24)]
+        #[rename(name = "m_Sides")]
+        pub m_sides: crate::app::battleinfo::BattleInfo_BattleInfoSideArray,
+        #[offset(32)]
+        #[rename(name = "m_Supports")]
+        pub m_supports: crate::app::battleinfo::BattleInfo_SupportList,
+        #[offset(40)]
+        #[rename(name = "m_MainUnitEnum")]
+        pub m_main_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[offset(64)]
+        #[rename(name = "m_WholeUnitEnum")]
+        pub m_whole_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[offset(88)]
+        #[rename(name = "m_ChainOffenseEnum")]
+        pub m_chain_offense_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[offset(112)]
+        #[rename(name = "m_ChainDefenseEnum")]
+        pub m_chain_defense_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[offset(136)]
+        #[rename(name = "m_ChainUnitEnum")]
+        pub m_chain_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+        #[offset(160)]
+        #[rename(name = "m_TempSkills")]
+        pub m_temp_skills: crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
+        #[offset(216)]
+        #[rename(name = "m_GuardSide")]
+        pub m_guard_side: crate::app::battleside::BattleSide_Type,
+        #[offset(224)]
+        #[rename(name = "m_GuardFunc")]
+        pub m_guard_func: crate::app::mapfor::MapFor_RangeFunction,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfo.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfo :: BattleInfo_Flags >)]
+    pub struct BattleInfo_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_SupportList.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfo.SupportList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: battleinfo :: BattleInfo_SupportData >)]
+    pub struct BattleInfo_SupportList {
+        #[offset(40)]
+        #[rename(name = "m_Offense")]
+        pub m_offense: crate::app::unit::Unit,
+        #[offset(48)]
+        #[rename(name = "m_Defense")]
+        pub m_defense: crate::app::unit::Unit,
+        #[offset(56)]
+        #[rename(name = "m_Compare")]
+        pub m_compare: crate::system::comparison_1::Comparison_1<crate::app::battleinfo::BattleInfo_SupportData>,
+    }
 }
 
 #[cfg(feature = "app-battleinfo-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-battleinfo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleInfo_SetupScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_side {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_SetupScope as ::unity2::ClassIdentity>::class(),
+                "GetSide",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_SetupScope as ::unity2::ClassIdentity>::NAME,
+                        "GetSide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_side(
+        this: BattleInfo_SetupScope,
+        side: crate::app::battleside::BattleSide_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleinfoside::BattleInfoSide {
+        let inner: extern "C" fn(
+            BattleInfo_SetupScope,
+            crate::app::battleside::BattleSide_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(__lookup_get_side::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_SetupScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_SetupScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleInfo_SetupScope,
+        info: crate::app::battleinfo::BattleInfo,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        defense: crate::app::unit::Unit,
+        revenge_item: crate::app::unititem::UnitItem,
+        attack_x: i32,
+        attack_z: i32,
+        target_x: i32,
+        target_z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleInfo_SetupScope,
+            crate::app::battleinfo::BattleInfo,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(
+            this,
+            info,
+            offense,
+            unit_item,
+            defense,
+            revenge_item,
+            attack_x,
+            attack_z,
+            target_x,
+            target_z,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_SetupScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_SetupScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: BattleInfo_SetupScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleInfo_SetupScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_SetupScope {
+    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
+    pub fn get_side(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> crate::app::battleinfoside::BattleInfoSide {
+        unsafe { __BattleInfo_SetupScope_unity2_raw::get_side(self, ::core::convert::Into::into(side), ::core::option::Option::None) }
+    }
+
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
+    pub fn ctor(
+        self,
+        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
+        offense: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        defense: impl ::core::convert::Into<crate::app::unit::Unit>,
+        revenge_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        attack_x: impl ::core::convert::Into<i32>,
+        attack_z: impl ::core::convert::Into<i32>,
+        target_x: impl ::core::convert::Into<i32>,
+        target_z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __BattleInfo_SetupScope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(offense),
+                ::core::convert::Into::into(unit_item),
+                ::core::convert::Into::into(defense),
+                ::core::convert::Into::into(revenge_item),
+                ::core::convert::Into::into(attack_x),
+                ::core::convert::Into::into(attack_z),
+                ::core::convert::Into::into(target_x),
+                ::core::convert::Into::into(target_z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __BattleInfo_SetupScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleInfo_SupportData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_SupportData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_SupportData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: BattleInfo_SupportData, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleInfo_SupportData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide_Status as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_SupportData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_SupportData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: BattleInfo_SupportData,
+        unit: crate::app::unit::Unit,
+        status: crate::app::battleinfoside::BattleInfoSide_Status,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleInfo_SupportData,
+            crate::app::unit::Unit,
+            crate::app::battleinfoside::BattleInfoSide_Status,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, unit, status, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_SupportData {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    pub fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __BattleInfo_SupportData_unity2_raw::ctor(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
+    pub fn ctor_2(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        status: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide_Status>,
+    ) -> () {
+        unsafe {
+            __BattleInfo_SupportData_unity2_raw::ctor_2(
+                self,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(status),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleInfo_BattleInfoSideArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_BattleInfoSideArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_BattleInfoSideArray as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: BattleInfo_BattleInfoSideArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleInfo_BattleInfoSideArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+pub trait IBattleInfo_BattleInfoSideArrayMethods: IBattleInfo_BattleInfoSideArray {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleInfo_BattleInfoSideArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleInfo_BattleInfoSideArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl<__T: IBattleInfo_BattleInfoSideArray> IBattleInfo_BattleInfoSideArrayMethods for __T {}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_BattleInfoSideArray {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo_BattleInfoSideArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfo_BattleInfoSideArrayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleInfo_MindScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::mapmind::MapMind_Type as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_MindScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_MindScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleInfo_MindScope,
+        unit: crate::app::unit::Unit,
+        mind: crate::app::mapmind::MapMind_Type,
+        skill: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleInfo_MindScope,
+            crate::app::unit::Unit,
+            crate::app::mapmind::MapMind_Type,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, mind, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleInfo_MindScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleInfo_MindScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: BattleInfo_MindScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleInfo_MindScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_MindScope {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]
+    pub fn ctor(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        mind: impl ::core::convert::Into<crate::app::mapmind::MapMind_Type>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> () {
+        unsafe {
+            __BattleInfo_MindScope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(mind),
+                ::core::convert::Into::into(skill),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __BattleInfo_MindScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-battleinfo")]
 #[doc(hidden)]
@@ -4418,387 +4927,6 @@ impl BattleInfo_FlagField {
 #[cfg(feature = "app-battleinfo")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleInfo_SupportData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_SupportData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_SupportData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BattleInfo_SupportData, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleInfo_SupportData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide_Status as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_SupportData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_SupportData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: BattleInfo_SupportData,
-        unit: crate::app::unit::Unit,
-        status: crate::app::battleinfoside::BattleInfoSide_Status,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleInfo_SupportData,
-            crate::app::unit::Unit,
-            crate::app::battleinfoside::BattleInfoSide_Status,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, unit, status, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-impl BattleInfo_SupportData {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    pub fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __BattleInfo_SupportData_unity2_raw::ctor(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
-    pub fn ctor_2(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        status: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide_Status>,
-    ) -> () {
-        unsafe {
-            __BattleInfo_SupportData_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(status),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleInfo_SetupScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_side {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_SetupScope as ::unity2::ClassIdentity>::class(),
-                "GetSide",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_SetupScope as ::unity2::ClassIdentity>::NAME,
-                        "GetSide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_side(
-        this: BattleInfo_SetupScope,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleinfoside::BattleInfoSide {
-        let inner: extern "C" fn(
-            BattleInfo_SetupScope,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfoside::BattleInfoSide = ::core::mem::transmute(__lookup_get_side::get_method_info().method_ptr);
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_SetupScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                9,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_SetupScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleInfo_SetupScope,
-        info: crate::app::battleinfo::BattleInfo,
-        offense: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-        defense: crate::app::unit::Unit,
-        revenge_item: crate::app::unititem::UnitItem,
-        attack_x: i32,
-        attack_z: i32,
-        target_x: i32,
-        target_z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleInfo_SetupScope,
-            crate::app::battleinfo::BattleInfo,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(
-            this,
-            info,
-            offense,
-            unit_item,
-            defense,
-            revenge_item,
-            attack_x,
-            attack_z,
-            target_x,
-            target_z,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_SetupScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_SetupScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: BattleInfo_SetupScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleInfo_SetupScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-impl BattleInfo_SetupScope {
-    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
-    pub fn get_side(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> crate::app::battleinfoside::BattleInfoSide {
-        unsafe { __BattleInfo_SetupScope_unity2_raw::get_side(self, ::core::convert::Into::into(side), ::core::option::Option::None) }
-    }
-
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
-    pub fn ctor(
-        self,
-        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
-        offense: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        defense: impl ::core::convert::Into<crate::app::unit::Unit>,
-        revenge_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        attack_x: impl ::core::convert::Into<i32>,
-        attack_z: impl ::core::convert::Into<i32>,
-        target_x: impl ::core::convert::Into<i32>,
-        target_z: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __BattleInfo_SetupScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(offense),
-                ::core::convert::Into::into(unit_item),
-                ::core::convert::Into::into(defense),
-                ::core::convert::Into::into(revenge_item),
-                ::core::convert::Into::into(attack_x),
-                ::core::convert::Into::into(attack_z),
-                ::core::convert::Into::into(target_x),
-                ::core::convert::Into::into(target_z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __BattleInfo_SetupScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleInfo_BattleInfoSideArray_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_BattleInfoSideArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_BattleInfoSideArray as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: BattleInfo_BattleInfoSideArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleInfo_BattleInfoSideArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-pub trait IBattleInfo_BattleInfoSideArrayMethods: IBattleInfo_BattleInfoSideArray {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleInfo_BattleInfoSideArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __BattleInfo_BattleInfoSideArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-impl<__T: IBattleInfo_BattleInfoSideArray> IBattleInfo_BattleInfoSideArrayMethods for __T {}
-
-#[cfg(feature = "app-battleinfo")]
-impl BattleInfo_BattleInfoSideArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleInfo_BattleInfoSideArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleInfo_BattleInfoSideArrayMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __BattleInfo_SupportList_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -5083,120 +5211,6 @@ impl BattleInfo_SupportList {
         });
         <Self as IBattleInfo_SupportListMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleInfo_MindScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::mapmind::MapMind_Type as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_MindScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_MindScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleInfo_MindScope,
-        unit: crate::app::unit::Unit,
-        mind: crate::app::mapmind::MapMind_Type,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleInfo_MindScope,
-            crate::app::unit::Unit,
-            crate::app::mapmind::MapMind_Type,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, mind, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleInfo_MindScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <BattleInfo_MindScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: BattleInfo_MindScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleInfo_MindScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-impl BattleInfo_MindScope {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]
-    pub fn ctor(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        mind: impl ::core::convert::Into<crate::app::mapmind::MapMind_Type>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> () {
-        unsafe {
-            __BattleInfo_MindScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(mind),
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __BattleInfo_MindScope_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 }
 

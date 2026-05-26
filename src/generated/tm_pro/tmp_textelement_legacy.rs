@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_TextElement_Legacy")]
     #[parent(crate::system::object::Object)]
     pub struct TMP_TextElement_Legacy {
+        #[offset(16)]
         #[rename(name = "id")]
         pub id: i32,
+        #[offset(20)]
         #[rename(name = "x")]
         pub x: f32,
+        #[offset(24)]
         #[rename(name = "y")]
         pub y: f32,
+        #[offset(28)]
         #[rename(name = "width")]
         pub width: f32,
+        #[offset(32)]
         #[rename(name = "height")]
         pub height: f32,
+        #[offset(36)]
         #[rename(name = "xOffset")]
         pub x_offset: f32,
+        #[offset(40)]
         #[rename(name = "yOffset")]
         pub y_offset: f32,
+        #[offset(44)]
         #[rename(name = "xAdvance")]
         pub x_advance: f32,
+        #[offset(48)]
         #[rename(name = "scale")]
         pub scale: f32,
     }

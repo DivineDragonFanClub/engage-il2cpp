@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackcliptypeattribute/TrackClipTypeAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackClipTypeAttribute")]
     pub struct TrackClipTypeAttribute {
+        #[offset(16)]
         #[rename(name = "inspectedType")]
         pub inspected_type: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "allowAutoCreate")]
         pub allow_auto_create: bool,
     }

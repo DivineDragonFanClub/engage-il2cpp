@@ -37,6 +37,7 @@ mod __types {
         #[static_field]
         #[rename(name = "cEffectRootPath")]
         pub c_effect_root_path: ::unity2::Il2CppString,
+        #[offset(136)]
         #[rename(name = "cLoadEffectList")]
         pub c_load_effect_list: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
@@ -54,6 +55,7 @@ mod __types {
         #[static_field]
         #[rename(name = "cUIInstructionPath")]
         pub c_ui_instruction_path: ::unity2::Il2CppString,
+        #[offset(144)]
         #[rename(name = "cLoadUIList")]
         pub c_load_ui_list: ::unity2::Array<::unity2::Il2CppString>,
         #[static_field]
@@ -65,34 +67,49 @@ mod __types {
         #[static_field]
         #[rename(name = "cFinishTelopPath")]
         pub c_finish_telop_path: ::unity2::Il2CppString,
+        #[offset(168)]
         #[rename(name = "m_CameraComponent")]
         pub m_camera_component: crate::app::dragonridecamera::DragonRideCamera,
+        #[offset(176)]
         #[rename(name = "m_TargetGroupList")]
         pub m_target_group_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(184)]
         #[rename(name = "m_Level")]
         pub m_level: i32,
+        #[offset(188)]
         #[rename(name = "m_ResultCloseTimer")]
         pub m_result_close_timer: f32,
+        #[offset(192)]
         #[rename(name = "m_ResultUI")]
         pub m_result_ui: crate::app::dragonrideresultui::DragonRideResultUI,
+        #[offset(200)]
         #[rename(name = "m_ScoreUI")]
         pub m_score_ui: crate::unity_engine::gameobject::GameObject,
+        #[offset(208)]
         #[rename(name = "m_ScoreText")]
         pub m_score_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(216)]
         #[rename(name = "m_PrevScore")]
         pub m_prev_score: i32,
+        #[offset(224)]
         #[rename(name = "m_Config")]
         pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
+        #[offset(232)]
         #[rename(name = "m_TargetGroupResource")]
         pub m_target_group_resource: crate::app::resourcegameobject::ResourceGameObject,
+        #[offset(240)]
         #[rename(name = "m_AssistTargetPosList")]
         pub m_assist_target_pos_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(248)]
         #[rename(name = "m_HubSolaLct")]
         pub m_hub_sola_lct: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_IsSetSolaInvisible")]
         pub m_is_set_sola_invisible: bool,
+        #[offset(264)]
         #[rename(name = "m_PlayerCtrl")]
         pub m_player_ctrl: crate::app::hubplayercontroller::HubPlayerController,
+        #[offset(272)]
         #[rename(name = "m_WalkThroughCount")]
         pub m_walk_through_count: i32,
     }

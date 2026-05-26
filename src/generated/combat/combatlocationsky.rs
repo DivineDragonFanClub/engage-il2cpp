@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatLocationSky")]
     #[parent(crate::combat::basecombatlocation::BaseCombatLocation)]
     pub struct CombatLocationSky {
+        #[offset(144)]
         #[rename(name = "RotateTable")]
         pub rotate_table: ::unity2::Array<i32>,
     }

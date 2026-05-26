@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotAccChangeMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct MascotAccChangeMenu {
+        #[offset(200)]
         #[rename(name = "m_MenuSelectList")]
         pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
     }

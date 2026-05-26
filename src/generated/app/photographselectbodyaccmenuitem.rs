@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectBodyAccMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct PhotographSelectBodyAccMenuItem {
+        #[offset(100)]
         #[rename(name = "m_IsCurrent")]
         pub m_is_current: bool,
+        #[offset(101)]
         #[rename(name = "m_IsMascot")]
         pub m_is_mascot: bool,
+        #[offset(104)]
         #[rename(name = "m_BodyAccData")]
         pub m_body_acc_data: crate::app::accessorydata::AccessoryData,
+        #[offset(112)]
         #[rename(name = "m_DisposManager")]
         pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
     }

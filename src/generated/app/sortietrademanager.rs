@@ -14,6 +14,11 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieTradeManager.Side")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieTradeManager_Side {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -52,21 +57,20 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieTradeManager.Side")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieTradeManager_Side {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTradeManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortietrademanager :: SortieTradeManager >)]
     pub struct SortieTradeManager {
+        #[offset(32)]
         #[rename(name = "m_From")]
         pub m_from: crate::app::sortietrademanager::SortieTradeManager_Side,
+        #[offset(40)]
         #[rename(name = "m_To")]
         pub m_to: crate::app::sortietrademanager::SortieTradeManager_Side,
+        #[offset(48)]
         #[rename(name = "m_SelectSide")]
         pub m_select_side: crate::app::sortietrademanager::SortieTradeManager_SideId,
+        #[offset(52)]
         #[rename(name = "m_IsFirstSelected")]
         pub m_is_first_selected: bool,
     }

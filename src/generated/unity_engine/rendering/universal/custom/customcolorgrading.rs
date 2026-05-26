@@ -18,12 +18,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomColorGrading")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct CustomColorGrading {
+        #[offset(56)]
         #[rename(name = "begin")]
         pub begin: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(64)]
         #[rename(name = "end")]
         pub end: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(72)]
         #[rename(name = "expLevel")]
         pub exp_level: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "debugFlag")]
         pub debug_flag: crate::unity_engine::rendering::boolparameter::BoolParameter,
     }

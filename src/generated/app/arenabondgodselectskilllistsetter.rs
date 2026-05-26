@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectSkillListSetter.AddAbility")]
     #[parent(crate::system::object::Object)]
     pub struct ArenaBondGodSelectSkillListSetter_AddAbility {
+        #[offset(16)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_LvValue")]
         pub m_lv_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_TalkRoot")]
         pub m_talk_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Abilitys")]
         pub m_abilitys: ::unity2::Array<crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent>,
     }
@@ -33,10 +37,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectSkillListSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ArenaBondGodSelectSkillListSetter {
+        #[offset(24)]
         #[rename(name = "m_MessageRoot")]
         pub m_message_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Message")]
         pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_AddAbilitys")]
         pub m_add_abilitys: ::unity2::Array<crate::app::arenabondgodselectskilllistsetter::ArenaBondGodSelectSkillListSetter_AddAbility>,
     }

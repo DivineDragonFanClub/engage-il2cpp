@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerSide")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerSide {
+        #[offset(168)]
         #[rename(name = "DistanceCurve")]
         pub distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(176)]
         #[rename(name = "CameraHeight")]
         pub camera_height: f32,
+        #[offset(180)]
         #[rename(name = "CameraHeighWithTarget")]
         pub camera_heigh_with_target: bool,
     }

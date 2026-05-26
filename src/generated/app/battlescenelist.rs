@@ -20,8 +20,10 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxTimes")]
         pub max_times: i32,
+        #[offset(32)]
         #[rename(name = "m_Info")]
         pub m_info: crate::app::battleinfo::BattleInfo,
+        #[offset(40)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
     }

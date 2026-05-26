@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkMIDIPost")]
     #[parent(crate::root::akmidievent::AkMIDIEvent)]
     pub struct AkMIDIPost {
+        #[offset(32)]
         #[rename(name = "swigCPtr")]
         pub swig_c_ptr: ::unity2::IntPtr,
     }

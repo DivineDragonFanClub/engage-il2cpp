@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequenceEngageConfirm")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceengageconfirm :: MapSequenceEngageConfirm >)]
     pub struct MapSequenceEngageConfirm {
+        #[offset(120)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
     }

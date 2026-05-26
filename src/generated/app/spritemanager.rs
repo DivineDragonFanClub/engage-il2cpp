@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SpriteManager")]
     #[parent(crate::system::object::Object)]
     pub struct SpriteManager {
+        #[offset(16)]
         #[rename(name = "m_Sprites")]
         pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(24)]
         #[rename(name = "m_Dictionary")]
         pub m_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,

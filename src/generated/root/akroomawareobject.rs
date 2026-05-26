@@ -25,8 +25,10 @@ mod __types {
             crate::unity_engine::collider::Collider,
             crate::root::akroomawareobject::AkRoomAwareObject,
         >,
+        #[offset(24)]
         #[rename(name = "m_Collider")]
         pub m_collider: crate::unity_engine::collider::Collider,
+        #[offset(32)]
         #[rename(name = "roomPriorityList")]
         pub room_priority_list: crate::root::akroom::AkRoom_PriorityList,
     }

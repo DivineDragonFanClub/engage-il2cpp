@@ -17,6 +17,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: u16,
+        #[offset(40)]
         #[rename(name = "m_EditData")]
         pub m_edit_data: crate::app::mapeditdata::MapEditData,
     }

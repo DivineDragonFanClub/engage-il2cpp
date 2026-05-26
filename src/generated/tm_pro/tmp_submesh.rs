@@ -19,30 +19,43 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_SubMesh")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TMP_SubMesh {
+        #[offset(24)]
         #[rename(name = "m_fontAsset")]
         pub m_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[offset(32)]
         #[rename(name = "m_spriteAsset")]
         pub m_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        #[offset(40)]
         #[rename(name = "m_material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(48)]
         #[rename(name = "m_sharedMaterial")]
         pub m_shared_material: crate::unity_engine::material::Material,
+        #[offset(56)]
         #[rename(name = "m_fallbackMaterial")]
         pub m_fallback_material: crate::unity_engine::material::Material,
+        #[offset(64)]
         #[rename(name = "m_fallbackSourceMaterial")]
         pub m_fallback_source_material: crate::unity_engine::material::Material,
+        #[offset(72)]
         #[rename(name = "m_isDefaultMaterial")]
         pub m_is_default_material: bool,
+        #[offset(76)]
         #[rename(name = "m_padding")]
         pub m_padding: f32,
+        #[offset(80)]
         #[rename(name = "m_renderer")]
         pub m_renderer: crate::unity_engine::renderer::Renderer,
+        #[offset(88)]
         #[rename(name = "m_meshFilter")]
         pub m_mesh_filter: crate::unity_engine::meshfilter::MeshFilter,
+        #[offset(96)]
         #[rename(name = "m_mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(104)]
         #[rename(name = "m_TextComponent")]
         pub m_text_component: crate::tm_pro::textmeshpro::TextMeshPro,
+        #[offset(112)]
         #[rename(name = "m_isRegisteredForEvents")]
         pub m_is_registered_for_events: bool,
     }

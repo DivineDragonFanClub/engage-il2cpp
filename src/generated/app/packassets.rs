@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PackAssets")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct PackAssets {
+        #[offset(24)]
         #[rename(name = "m_Objects")]
         pub m_objects: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
     }

@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomRelianceSelectItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct MyRoomRelianceSelectItemContent {
+        #[offset(72)]
         #[rename(name = "m_Setter")]
         pub m_setter: crate::app::unitmenuitemsetter::UnitMenuItemSetter,
+        #[offset(80)]
         #[rename(name = "m_TalkIcon")]
         pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
     }

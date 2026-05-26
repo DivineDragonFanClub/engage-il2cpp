@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "UnaryOperatorExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct UnaryOperatorExpression {
+        #[offset(32)]
         #[rename(name = "m_Exp")]
         pub m_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(40)]
         #[rename(name = "m_OpText")]
         pub m_op_text: ::unity2::Il2CppString,
     }

@@ -61,34 +61,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactermove/CharacterMove.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterMove")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterMove {
-        #[rename(name = "_cp")]
-        pub cp: crate::combat::character::Character,
-        #[rename(name = "MaxRunSpeedKMPS")]
-        pub max_run_speed_kmps: f32,
-        #[rename(name = "TimeToMaxSpeed")]
-        pub time_to_max_speed: f32,
-        #[rename(name = "TimeToZero")]
-        pub time_to_zero: f32,
-        #[rename(name = "HeightSmoothRatio")]
-        pub height_smooth_ratio: f32,
-        #[rename(name = "StairInterpolationLimit")]
-        pub stair_interpolation_limit: f32,
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::charactermove::CharacterMove_State,
-        #[rename(name = "m_Goal")]
-        pub m_goal: crate::combat::fxz::FXZ,
-        #[rename(name = "m_Velocity")]
-        pub m_velocity: f32,
-        #[rename(name = "m_PrevY")]
-        pub m_prev_y: f32,
-        #[rename(name = "m_Jump")]
-        pub m_jump: crate::combat::characterjump::CharacterJump,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_StartMode.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -125,6 +97,45 @@ mod __types {
         pub fn from_max_speed() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactermove/CharacterMove.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CharacterMove")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CharacterMove {
+        #[offset(24)]
+        #[rename(name = "_cp")]
+        pub cp: crate::combat::character::Character,
+        #[offset(32)]
+        #[rename(name = "MaxRunSpeedKMPS")]
+        pub max_run_speed_kmps: f32,
+        #[offset(36)]
+        #[rename(name = "TimeToMaxSpeed")]
+        pub time_to_max_speed: f32,
+        #[offset(40)]
+        #[rename(name = "TimeToZero")]
+        pub time_to_zero: f32,
+        #[offset(44)]
+        #[rename(name = "HeightSmoothRatio")]
+        pub height_smooth_ratio: f32,
+        #[offset(48)]
+        #[rename(name = "StairInterpolationLimit")]
+        pub stair_interpolation_limit: f32,
+        #[offset(56)]
+        #[rename(name = "m_State")]
+        pub m_state: crate::combat::charactermove::CharacterMove_State,
+        #[offset(60)]
+        #[rename(name = "m_Goal")]
+        pub m_goal: crate::combat::fxz::FXZ,
+        #[offset(68)]
+        #[rename(name = "m_Velocity")]
+        pub m_velocity: f32,
+        #[offset(72)]
+        #[rename(name = "m_PrevY")]
+        pub m_prev_y: f32,
+        #[offset(80)]
+        #[rename(name = "m_Jump")]
+        pub m_jump: crate::combat::characterjump::CharacterJump,
     }
 }
 

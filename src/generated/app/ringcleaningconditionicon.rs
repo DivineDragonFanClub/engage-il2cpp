@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCleaningConditionIcon")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingCleaningConditionIcon {
+        #[offset(24)]
         #[rename(name = "Gauge")]
         pub gauge: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_GaugeAnimator")]
         pub m_gauge_animator: crate::unity_engine::animator::Animator,
+        #[offset(48)]
         #[rename(name = "m_GaugeController")]
         pub m_gauge_controller: crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController,
     }

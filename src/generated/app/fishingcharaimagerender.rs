@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingCharaImageRender")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingCharaImageRender {
+        #[offset(24)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(32)]
         #[rename(name = "m_Chara")]
         pub m_chara: crate::combat::character::Character,
+        #[offset(40)]
         #[rename(name = "m_Sola")]
         pub m_sola: crate::combat::character::Character,
+        #[offset(48)]
         #[rename(name = "m_Lure")]
         pub m_lure: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_IsPlayingHitAnime")]
         pub m_is_playing_hit_anime: bool,
     }

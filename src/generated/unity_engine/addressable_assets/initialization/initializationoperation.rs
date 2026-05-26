@@ -14,20 +14,26 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Initialization", name = "InitializationOperation")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >)]
     pub struct InitializationOperation {
+        #[offset(136)]
         #[rename(name = "m_rtdOp")]
         pub m_rtd_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
             crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData,
         >,
+        #[offset(160)]
         #[rename(name = "m_loadCatalogOp")]
         pub m_load_catalog_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
             crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,
         >,
+        #[offset(184)]
         #[rename(name = "m_ProviderSuffix")]
         pub m_provider_suffix: ::unity2::Il2CppString,
+        #[offset(192)]
         #[rename(name = "m_Addressables")]
         pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        #[offset(200)]
         #[rename(name = "m_Diagnostics")]
         pub m_diagnostics: crate::unity_engine::addressable_assets::utility::resourcemanagerdiagnostics::ResourceManagerDiagnostics,
+        #[offset(208)]
         #[rename(name = "m_InitGroupOps")]
         pub m_init_group_ops:
             crate::unity_engine::resource_management::async_operations::initalizationobjectsoperation::InitalizationObjectsOperation,

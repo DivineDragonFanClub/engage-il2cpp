@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkAudioListener.BaseListenerList")]
     #[parent(crate::system::object::Object)]
     pub struct AkAudioListener_BaseListenerList {
+        #[offset(16)]
         #[rename(name = "listenerIdList")]
         pub listener_id_list: crate::system::collections::generic::list_1::List_1<u64>,
+        #[offset(24)]
         #[rename(name = "listenerList")]
         pub listener_list: crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>,
     }
@@ -32,14 +34,19 @@ mod __types {
         #[static_field]
         #[rename(name = "defaultListeners")]
         pub default_listeners: crate::root::akaudiolistener::AkAudioListener_DefaultListenerList,
+        #[offset(24)]
         #[rename(name = "akGameObjectID")]
         pub ak_game_object_id: u64,
+        #[offset(32)]
         #[rename(name = "EmittersToStartListeningTo")]
         pub emitters_to_start_listening_to: crate::system::collections::generic::list_1::List_1<crate::root::akgameobj::AkGameObj>,
+        #[offset(40)]
         #[rename(name = "EmittersToStopListeningTo")]
         pub emitters_to_stop_listening_to: crate::system::collections::generic::list_1::List_1<crate::root::akgameobj::AkGameObj>,
+        #[offset(48)]
         #[rename(name = "isDefaultListener")]
         pub is_default_listener_field: bool,
+        #[offset(52)]
         #[rename(name = "listenerId")]
         pub listener_id: i32,
     }

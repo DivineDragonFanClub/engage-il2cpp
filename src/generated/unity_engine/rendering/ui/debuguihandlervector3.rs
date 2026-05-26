@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerVector3")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
     pub struct DebugUIHandlerVector3 {
+        #[offset(88)]
         #[rename(name = "nameLabel")]
         pub name_label: crate::unity_engine::ui::text::Text,
+        #[offset(96)]
         #[rename(name = "valueToggle")]
         pub value_toggle: crate::unity_engine::rendering::ui::uifoldout::UIFoldout,
+        #[offset(104)]
         #[rename(name = "fieldX")]
         pub field_x: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[offset(112)]
         #[rename(name = "fieldY")]
         pub field_y: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[offset(120)]
         #[rename(name = "fieldZ")]
         pub field_z: crate::unity_engine::rendering::ui::debuguihandlerindirectfloatfield::DebugUIHandlerIndirectFloatField,
+        #[offset(128)]
         #[rename(name = "m_Field")]
         pub m_field: crate::unity_engine::rendering::debugui::DebugUI_Vector3Field,
+        #[offset(136)]
         #[rename(name = "m_Container")]
         pub m_container: crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer,
     }

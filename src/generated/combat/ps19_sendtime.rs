@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PS19_SendTime")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct PS19_SendTime {
+        #[offset(24)]
         #[rename(name = "m_UniformNameID")]
         pub m_uniform_name_id: i32,
+        #[offset(32)]
         #[rename(name = "m_Chr")]
         pub m_chr: crate::combat::character::Character,
+        #[offset(40)]
         #[rename(name = "m_Now")]
         pub m_now: f32,
+        #[offset(44)]
         #[rename(name = "m_EndTime")]
         pub m_end_time: f32,
+        #[offset(48)]
         #[rename(name = "PS19List")]
         pub ps19_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
     }

@@ -14,6 +14,11 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingsequence/FortuneTellingSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "FortuneTellingSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct FortuneTellingSequence {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingsequence/FortuneTellingSequence_Label2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -55,11 +60,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingsequence/FortuneTellingSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "FortuneTellingSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct FortuneTellingSequence {}
 }
 
 #[cfg(feature = "app-fortunetellingsequence-types")]

@@ -24,6 +24,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "Physics2DRaycaster")]
     #[parent(crate::unity_engine::event_systems::physicsraycaster::PhysicsRaycaster)]
     pub struct Physics2DRaycaster {
+        #[offset(64)]
         #[rename(name = "m_Hits")]
         pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
     }

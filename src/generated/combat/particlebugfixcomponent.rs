@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ParticleBugfixComponent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ParticleBugfixComponent {
+        #[offset(24)]
         #[rename(name = "targetNode")]
         pub target_node: crate::unity_engine::transform::Transform,
     }

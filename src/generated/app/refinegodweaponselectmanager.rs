@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponSelectManager")]
     #[parent(crate::system::object::Object)]
     pub struct RefineGodWeaponSelectManager {
+        #[offset(16)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::refinegodweaponselectmanager::RefineGodWeaponSelectManager_ReturnEventHandler,
+        #[offset(24)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::refinegodweaponselectmenu::RefineGodWeaponSelectMenu,
+        #[offset(32)]
         #[rename(name = "m_Root")]
         pub m_root: crate::app::refinegodweaponroot::RefineGodWeaponRoot,
     }

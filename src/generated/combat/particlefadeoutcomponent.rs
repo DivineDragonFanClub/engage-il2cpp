@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ParticleFadeoutComponent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ParticleFadeoutComponent {
+        #[offset(24)]
         #[rename(name = "m_NameID")]
         pub m_name_id: i32,
+        #[offset(28)]
         #[rename(name = "m_Elapsed")]
         pub m_elapsed: f32,
+        #[offset(32)]
         #[rename(name = "m_Duration")]
         pub m_duration: f32,
+        #[offset(40)]
         #[rename(name = "m_Materials")]
         pub m_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
     }

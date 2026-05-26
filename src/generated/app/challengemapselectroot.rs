@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.RewardInfoItem")]
     #[parent(crate::system::object::Object)]
     pub struct ChallengeMapSelectRoot_RewardInfoItem {
+        #[offset(16)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_IconImage")]
         pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_MinText")]
         pub m_min_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_Tilde")]
         pub m_tilde: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_MaxText")]
         pub m_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_FrmImage")]
         pub m_frm_image: crate::unity_engine::ui::image::Image,
     }
@@ -45,36 +52,52 @@ mod __types {
         #[static_field]
         #[rename(name = "SpriteAtlasPath")]
         pub sprite_atlas_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_SpriteAtlas")]
         pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(32)]
         #[rename(name = "m_MapSelectMenuContent")]
         pub m_map_select_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        #[offset(40)]
         #[rename(name = "m_DifficultySelectMenu")]
         pub m_difficulty_select_menu: crate::app::basicmenucontent::BasicMenuContent,
+        #[offset(48)]
         #[rename(name = "m_MapHelpObj")]
         pub m_map_help_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_MapTitleText")]
         pub m_map_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_BattleCountText")]
         pub m_battle_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_MapImage")]
         pub m_map_image: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_DifficultyValueText")]
         pub m_difficulty_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_TurnCountValueText")]
         pub m_turn_count_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_RewardInfoItem")]
         pub m_reward_info_item: ::unity2::Array<crate::app::challengemapselectroot::ChallengeMapSelectRoot_RewardInfoItem>,
+        #[offset(104)]
         #[rename(name = "m_ExpTextList")]
         pub m_exp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[offset(112)]
         #[rename(name = "m_SpRoot")]
         pub m_sp_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_SpTextList")]
         pub m_sp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[offset(128)]
         #[rename(name = "m_SelectChallengeData")]
         pub m_select_challenge_data: crate::app::challengedata::ChallengeData,
+        #[offset(136)]
         #[rename(name = "m_MapImageSprite")]
         pub m_map_image_sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(144)]
         #[rename(name = "m_RootAnim")]
         pub m_root_anim: crate::unity_engine::animator::Animator,
     }

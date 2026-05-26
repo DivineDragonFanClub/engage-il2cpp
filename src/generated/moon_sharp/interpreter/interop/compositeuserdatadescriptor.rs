@@ -11,9 +11,11 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "CompositeUserDataDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct CompositeUserDataDescriptor {
+        #[offset(16)]
         #[rename(name = "m_Descriptors")]
         pub m_descriptors:
             crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
+        #[offset(24)]
         #[rename(name = "m_Type")]
         pub m_type: ::unity2::SystemType,
     }

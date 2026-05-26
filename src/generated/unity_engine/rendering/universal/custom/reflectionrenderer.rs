@@ -38,21 +38,29 @@ mod __types {
         #[static_field]
         #[rename(name = "s_CustomReflectionBaseYvPropID")]
         pub s_custom_reflection_base_yv_prop_id: i32,
+        #[offset(144)]
         #[rename(name = "m_CustomBaseOpaquePass")]
         pub m_custom_base_opaque_pass: crate::unity_engine::rendering::universal::custom::internal::custombaseopaquepass::CustomBaseOpaquePass,
+        #[offset(152)]
         #[rename(name = "m_CustomCharaOpaquePass")]
         pub m_custom_chara_opaque_pass: crate::unity_engine::rendering::universal::custom::internal::customcharaopaquepass::CustomCharaOpaquePass,
+        #[offset(160)]
         #[rename(name = "m_CustomSpecialReflectionPass")]
         pub m_custom_special_reflection_pass:
             crate::unity_engine::rendering::universal::custom::internal::customspecialreflectionpass::CustomSpecialReflectionPass,
+        #[offset(168)]
         #[rename(name = "m_UseCustomBaseOpaquePass")]
         pub m_use_custom_base_opaque_pass: bool,
+        #[offset(169)]
         #[rename(name = "m_UseSpecialReflectionPass")]
         pub m_use_special_reflection_pass: bool,
+        #[offset(176)]
         #[rename(name = "m_ActiveCameraColorAttachment")]
         pub m_active_camera_color_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(224)]
         #[rename(name = "m_ActiveCameraDepthAttachment")]
         pub m_active_camera_depth_attachment: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(272)]
         #[rename(name = "m_ForwardLights")]
         pub m_forward_lights: crate::unity_engine::rendering::universal::internal::forwardlights::ForwardLights,
     }

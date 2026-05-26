@@ -28,22 +28,31 @@ mod __types {
         #[static_field]
         #[rename(name = "SpriteAtlasCategoryPath")]
         pub sprite_atlas_category_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_ThumbSpriteAtlas")]
         pub m_thumb_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(32)]
         #[rename(name = "m_ThumbSprite")]
         pub m_thumb_sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(40)]
         #[rename(name = "m_CategorySpriteAtlas")]
         pub m_category_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[offset(48)]
         #[rename(name = "m_CategorySprite")]
         pub m_category_sprite: crate::unity_engine::sprite::Sprite,
+        #[offset(56)]
         #[rename(name = "m_ThumbImage")]
         pub m_thumb_image: crate::unity_engine::ui::image::Image,
+        #[offset(64)]
         #[rename(name = "m_CategoryImage")]
         pub m_category_image: crate::unity_engine::ui::image::Image,
+        #[offset(72)]
         #[rename(name = "m_HelpNum")]
         pub m_help_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_Anim")]
         pub m_anim: crate::unity_engine::animator::Animator,
+        #[offset(88)]
         #[rename(name = "m_CategoryItems")]
         pub m_category_items:
             crate::system::collections::generic::list_1::List_1<crate::app::versusmapeditcategorycontent::VersusMapEditCategoryContent>,

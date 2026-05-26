@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionWaitFunc")]
     #[parent(crate::combat::actionbase::ActionBase)]
     pub struct ActionWaitFunc {
+        #[offset(40)]
         #[rename(name = "m_Func")]
         pub m_func: crate::system::func_2::Func_2<crate::combat::character::Character, bool>,
     }

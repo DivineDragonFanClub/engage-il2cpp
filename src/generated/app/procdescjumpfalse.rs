@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescJumpFalse")]
     #[parent(crate::app::procdescjumpfunc::ProcDescJumpFunc)]
     pub struct ProcDescJumpFalse {
+        #[offset(24)]
         #[rename(name = "m_Function")]
         pub m_function: crate::app::procboolfunction::ProcBoolFunction,
     }

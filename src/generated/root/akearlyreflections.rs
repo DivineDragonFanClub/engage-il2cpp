@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkEarlyReflections")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AkEarlyReflections {
+        #[offset(32)]
         #[rename(name = "reflectionsVolume")]
         pub reflections_volume: f32,
     }

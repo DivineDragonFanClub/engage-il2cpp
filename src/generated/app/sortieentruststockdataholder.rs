@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieEntrustStockDataHolder")]
     #[parent(crate::system::object::Object)]
     pub struct SortieEntrustStockDataHolder {
+        #[offset(16)]
         #[rename(name = "m_Kinds")]
         pub m_kinds: ::unity2::Array<crate::app::sortieentruststockkinddata::SortieEntrustStockKindData>,
     }

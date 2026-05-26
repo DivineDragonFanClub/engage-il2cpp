@@ -15,32 +15,23 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialbehaviour/MaterialBehaviour_TextureInfo.md"))]
-    #[::unity2::class(namespace = "", name = "MaterialBehaviour.TextureInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct MaterialBehaviour_TextureInfo {
-        #[rename(name = "Name")]
-        pub name: ::unity2::Il2CppString,
-        #[rename(name = "Attr")]
-        pub attr: ::unity2::Il2CppString,
-        #[rename(name = "Tiling")]
-        pub tiling: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "Offset")]
-        pub offset: crate::unity_engine::vector2::Vector2,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialbehaviour/MaterialBehaviour.md"))]
     #[::unity2::class(namespace = "", name = "MaterialBehaviour")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MaterialBehaviour {
+        #[offset(24)]
         #[rename(name = "m_Speed")]
         pub m_speed: f32,
+        #[offset(28)]
         #[rename(name = "m_Random")]
         pub m_random: bool,
+        #[offset(32)]
         #[rename(name = "m_Props")]
         pub m_props: crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
+        #[offset(40)]
         #[rename(name = "m_Render")]
         pub m_render: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[offset(48)]
         #[rename(name = "m_Elapsed")]
         pub m_elapsed: f32,
         #[static_field]
@@ -52,109 +43,38 @@ mod __types {
         #[static_field]
         #[rename(name = "TIME_MONTH")]
         pub time_month: f32,
+        #[offset(56)]
         #[rename(name = "MainTex")]
         pub main_tex: crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,
+        #[offset(64)]
         #[rename(name = "BumpMap")]
         pub bump_map: crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,
+        #[offset(72)]
         #[rename(name = "MultiMap")]
         pub multi_map: crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialbehaviour/MaterialBehaviour_TextureInfo.md"))]
+    #[::unity2::class(namespace = "", name = "MaterialBehaviour.TextureInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct MaterialBehaviour_TextureInfo {
+        #[offset(16)]
+        #[rename(name = "Name")]
+        pub name: ::unity2::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "Attr")]
+        pub attr: ::unity2::Il2CppString,
+        #[offset(32)]
+        #[rename(name = "Tiling")]
+        pub tiling: crate::unity_engine::vector2::Vector2,
+        #[offset(40)]
+        #[rename(name = "Offset")]
+        pub offset: crate::unity_engine::vector2::Vector2,
     }
 }
 
 #[cfg(feature = "root-materialbehaviour-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-materialbehaviour")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MaterialBehaviour_TextureInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MaterialBehaviour_TextureInfo,
-        material: crate::unity_engine::material::Material,
-        names: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour_TextureInfo,
-            crate::unity_engine::material::Material,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, material, names, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-materialbehaviour")]
-pub trait IMaterialBehaviour_TextureInfoMethods: IMaterialBehaviour_TextureInfo {
-    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn ctor(
-        self,
-        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-        names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MaterialBehaviour_TextureInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MaterialBehaviour_TextureInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(material),
-                ::core::convert::Into::into(names),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-materialbehaviour")]
-impl<__T: IMaterialBehaviour_TextureInfo> IMaterialBehaviour_TextureInfoMethods for __T {}
-
-#[cfg(feature = "root-materialbehaviour")]
-impl MaterialBehaviour_TextureInfo {
-    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(material: crate::unity_engine::material::Material, names: ::unity2::Array<::unity2::Il2CppString>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MaterialBehaviour_TextureInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMaterialBehaviour_TextureInfoMethods>::ctor(this, material, names);
-        this
-    }
-}
 
 #[cfg(feature = "root-materialbehaviour")]
 #[doc(hidden)]
@@ -880,6 +800,98 @@ impl MaterialBehaviour {
             )
         });
         <Self as IMaterialBehaviourMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-materialbehaviour")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MaterialBehaviour_TextureInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MaterialBehaviour_TextureInfo,
+        material: crate::unity_engine::material::Material,
+        names: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialBehaviour_TextureInfo,
+            crate::unity_engine::material::Material,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, material, names, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-materialbehaviour")]
+pub trait IMaterialBehaviour_TextureInfoMethods: IMaterialBehaviour_TextureInfo {
+    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn ctor(
+        self,
+        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialBehaviour_TextureInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialBehaviour_TextureInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(material),
+                ::core::convert::Into::into(names),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-materialbehaviour")]
+impl<__T: IMaterialBehaviour_TextureInfo> IMaterialBehaviour_TextureInfoMethods for __T {}
+
+#[cfg(feature = "root-materialbehaviour")]
+impl MaterialBehaviour_TextureInfo {
+    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new(material: crate::unity_engine::material::Material, names: ::unity2::Array<::unity2::Il2CppString>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaterialBehaviour_TextureInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialBehaviour_TextureInfoMethods>::ctor(this, material, names);
         this
     }
 }

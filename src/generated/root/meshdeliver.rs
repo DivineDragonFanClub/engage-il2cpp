@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MeshDeliver")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MeshDeliver {
+        #[offset(24)]
         #[rename(name = "m_SMRs")]
         pub m_sm_rs: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
+        #[offset(32)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(40)]
         #[rename(name = "m_mf")]
         pub m_mf: crate::unity_engine::meshfilter::MeshFilter,
+        #[offset(48)]
         #[rename(name = "m_Meshes")]
         pub m_meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+        #[offset(56)]
         #[rename(name = "m_MaterialsBB")]
         pub m_materials_bb: ::unity2::Array<crate::unity_engine::material::Material>,
     }

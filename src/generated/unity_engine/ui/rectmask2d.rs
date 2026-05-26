@@ -20,28 +20,40 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "RectMask2D")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct RectMask2D {
+        #[offset(24)]
         #[rename(name = "m_VertexClipper")]
         pub m_vertex_clipper: crate::unity_engine::ui::rectangularvertexclipper::RectangularVertexClipper,
+        #[offset(32)]
         #[rename(name = "m_RectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(40)]
         #[rename(name = "m_MaskableTargets")]
         pub m_maskable_targets: crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::ui::maskablegraphic::MaskableGraphic>,
+        #[offset(48)]
         #[rename(name = "m_ClipTargets")]
         pub m_clip_targets: crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::ui::iclippable::IClippable>,
+        #[offset(56)]
         #[rename(name = "m_ShouldRecalculateClipRects")]
         pub m_should_recalculate_clip_rects: bool,
+        #[offset(64)]
         #[rename(name = "m_Clippers")]
         pub m_clippers: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>,
+        #[offset(72)]
         #[rename(name = "m_LastClipRectCanvasSpace")]
         pub m_last_clip_rect_canvas_space: crate::unity_engine::rect::Rect,
+        #[offset(88)]
         #[rename(name = "m_ForceClip")]
         pub m_force_clip: bool,
+        #[offset(92)]
         #[rename(name = "m_Padding")]
         pub m_padding: crate::unity_engine::vector4::Vector4,
+        #[offset(108)]
         #[rename(name = "m_Softness")]
         pub m_softness: crate::unity_engine::vector2int::Vector2Int,
+        #[offset(120)]
         #[rename(name = "m_Canvas")]
         pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[offset(128)]
         #[rename(name = "m_Corners")]
         pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
     }

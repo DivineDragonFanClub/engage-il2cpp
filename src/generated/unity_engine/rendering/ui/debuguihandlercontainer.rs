@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerContainer")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DebugUIHandlerContainer {
+        #[offset(24)]
         #[rename(name = "contentHolder")]
         pub content_holder: crate::unity_engine::recttransform::RectTransform,
     }

@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.AnimalInfo")]
     #[parent(crate::system::object::Object)]
     pub struct InvestmentNationDataMenu_AnimalInfo {
+        #[offset(16)]
         #[rename(name = "m_root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_icon")]
         pub m_icon: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_checkEnable")]
         pub m_check_enable: crate::unity_engine::gameobject::GameObject,
     }
@@ -33,40 +37,57 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct InvestmentNationDataMenu {
+        #[offset(24)]
         #[rename(name = "m_nationTitle")]
         pub m_nation_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_arrowL")]
         pub m_arrow_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_arrowR")]
         pub m_arrow_r: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_bgSymbol")]
         pub m_bg_symbol: crate::unity_engine::ui::image::Image,
+        #[offset(56)]
         #[rename(name = "m_materialTitle")]
         pub m_material_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_foodTitle")]
         pub m_food_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_animalTitle")]
         pub m_animal_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_ironData")]
         pub m_iron_data: crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo,
+        #[offset(88)]
         #[rename(name = "m_steelData")]
         pub m_steel_data: crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo,
+        #[offset(96)]
         #[rename(name = "m_silverData")]
         pub m_silver_data: crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo,
+        #[offset(104)]
         #[rename(name = "m_pieceOfBondData")]
         pub m_piece_of_bond_data: crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo,
+        #[offset(112)]
         #[rename(name = "m_foodstuffData")]
         pub m_foodstuff_data:
             crate::system::collections::generic::list_1::List_1<crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo>,
+        #[offset(120)]
         #[rename(name = "m_animalData")]
         pub m_animal_data:
             crate::system::collections::generic::list_1::List_1<crate::app::investmentnationdatamenu::InvestmentNationDataMenu_AnimalInfo>,
+        #[offset(128)]
         #[rename(name = "m_pageIcon")]
         pub m_page_icon: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(136)]
         #[rename(name = "m_index")]
         pub m_index: i32,
+        #[offset(140)]
         #[rename(name = "m_investmentEnableCnt")]
         pub m_investment_enable_cnt: i32,
+        #[offset(144)]
         #[rename(name = "m_isClose")]
         pub m_is_close: bool,
     }
@@ -75,12 +96,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.ItemInfo")]
     #[parent(crate::system::object::Object)]
     pub struct InvestmentNationDataMenu_ItemInfo {
+        #[offset(16)]
         #[rename(name = "m_root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_icon")]
         pub m_icon: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_itemName")]
         pub m_item_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_itemNum")]
         pub m_item_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

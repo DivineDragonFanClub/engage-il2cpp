@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "RadialBlurComponent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RadialBlurComponent {
+        #[offset(24)]
         #[rename(name = "_radialBlur")]
         pub radial_blur: crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur,
+        #[offset(32)]
         #[rename(name = "RadialBlurCurve")]
         pub radial_blur_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
         #[rename(name = "m_ElapsedTime")]
         pub m_elapsed_time: f32,
     }

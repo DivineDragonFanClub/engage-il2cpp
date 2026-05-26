@@ -51,13 +51,17 @@ mod __types {
         #[static_field]
         #[rename(name = "VersionForOnline")]
         pub version_for_online: i32,
+        #[offset(16)]
         #[rename(name = "m_Capacity")]
         pub m_capacity: i32,
+        #[offset(24)]
         #[rename(name = "m_Dictionary")]
         pub m_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::gamevariable::GameVariable_Value>,
+        #[offset(32)]
         #[rename(name = "m_Rewindable")]
         pub m_rewindable: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        #[offset(40)]
         #[rename(name = "m_Monitors")]
         pub m_monitors: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }

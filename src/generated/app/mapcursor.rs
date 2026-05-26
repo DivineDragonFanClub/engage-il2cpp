@@ -53,6 +53,108 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor.md"))]
+    #[::unity2::class(namespace = "App", name = "MapCursor")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcursor :: MapCursor >)]
+    pub struct MapCursor {
+        #[static_field]
+        #[rename(name = "MapCursorMoveOffset")]
+        pub map_cursor_move_offset: f32,
+        #[static_field]
+        #[rename(name = "MOVE_WAIT_FRAME")]
+        pub move_wait_frame: i32,
+        #[static_field]
+        #[rename(name = "MOVE_CENTER_FRAME")]
+        pub move_center_frame: i32,
+        #[offset(28)]
+        #[rename(name = "m_Pos")]
+        pub m_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
+        #[rename(name = "m_OldPos")]
+        pub m_old_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(52)]
+        #[rename(name = "m_OrigPos")]
+        pub m_orig_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(64)]
+        #[rename(name = "m_Rotate")]
+        pub m_rotate: crate::unity_engine::vector3::Vector3,
+        #[offset(76)]
+        #[rename(name = "m_Move")]
+        pub m_move: crate::unity_engine::vector3::Vector3,
+        #[offset(88)]
+        #[rename(name = "m_EnterPos")]
+        pub m_enter_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(100)]
+        #[rename(name = "m_MoveCount")]
+        pub m_move_count: i32,
+        #[offset(104)]
+        #[rename(name = "m_IsRotateXSoundPlaying")]
+        pub m_is_rotate_x_sound_playing: bool,
+        #[static_field]
+        #[rename(name = "m_CursorTop")]
+        pub m_cursor_top: crate::app::mapcursor::MapCursor_CursorTopType,
+        #[static_field]
+        #[rename(name = "m_CursorTopAnim")]
+        pub m_cursor_top_anim: crate::app::mapcursor::MapCursor_AnimType,
+        #[static_field]
+        #[rename(name = "m_CursorBottomAnim")]
+        pub m_cursor_bottom_anim: crate::app::mapcursor::MapCursor_AnimType,
+        #[offset(112)]
+        #[rename(name = "m_CursorIconBill")]
+        pub m_cursor_icon_bill: crate::unity_engine::transform::Transform,
+        #[offset(120)]
+        #[rename(name = "m_DistanceDir")]
+        pub m_distance_dir: i32,
+        #[offset(124)]
+        #[rename(name = "m_AnalogCount")]
+        pub m_analog_count: i32,
+        #[offset(128)]
+        #[rename(name = "m_CenterCount")]
+        pub m_center_count: i32,
+        #[offset(132)]
+        #[rename(name = "m_DistanceScale")]
+        pub m_distance_scale: f32,
+        #[offset(136)]
+        #[rename(name = "m_MapCursorMoveType")]
+        pub m_map_cursor_move_type: crate::app::gameconfig::GameConfig_MapCursorMoveTyep,
+        #[offset(140)]
+        #[rename(name = "m_IsLockMoveType")]
+        pub m_is_lock_move_type: bool,
+        #[offset(144)]
+        #[rename(name = "m_CursorTopObj")]
+        pub m_cursor_top_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
+        #[rename(name = "m_CursorBottomObj")]
+        pub m_cursor_bottom_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
+        #[rename(name = "m_CursorTopMgr")]
+        pub m_cursor_top_mgr: crate::root::mappointeranimmanager::MapPointerAnimManager,
+        #[offset(168)]
+        #[rename(name = "m_CursorBottomMgr")]
+        pub m_cursor_bottom_mgr: crate::root::mapcursoranimmanager::MapCursorAnimManager,
+        #[static_field]
+        #[rename(name = "m_MapPointerLocatorRoot")]
+        pub m_map_pointer_locator_root: crate::root::mappointerlocatorroot::MapPointerLocatorRoot,
+        #[static_field]
+        #[rename(name = "m_MapCursorLocatorRoot")]
+        pub m_map_cursor_locator_root: crate::root::mapcursorlocatorroot::MapCursorLocatorRoot,
+        #[offset(176)]
+        #[rename(name = "m_PositionTop")]
+        pub m_position_top: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(184)]
+        #[rename(name = "m_PositionBottom")]
+        pub m_position_bottom: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(192)]
+        #[rename(name = "m_CursorMind")]
+        pub m_cursor_mind: crate::app::mapmind::MapMind_Type,
+        #[offset(196)]
+        #[rename(name = "m_Color")]
+        pub m_color: crate::unity_engine::color::Color,
+        #[offset(216)]
+        #[rename(name = "m_Flags")]
+        pub m_flags: crate::app::mapcursor::MapCursor_FlagField,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_CursorTopType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -107,43 +209,10 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_DistanceMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct MapCursor_DistanceMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapCursor_DistanceMode {
-        const NAME: &'static str = "MapCursor.DistanceMode";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapCursor_DistanceMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl MapCursor_DistanceMode {
-        pub fn near() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn middle() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn far() -> Self {
-            Self { value: 2 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "MapCursor.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapcursor :: MapCursor_Flag >)]
+    pub struct MapCursor_FlagField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_AnimType.md"))]
     #[repr(C)]
@@ -183,206 +252,47 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "MapCursor.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapcursor :: MapCursor_Flag >)]
-    pub struct MapCursor_FlagField {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_DistanceMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapCursor_DistanceMode {
+        pub value: i32,
+    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor.md"))]
-    #[::unity2::class(namespace = "App", name = "MapCursor")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcursor :: MapCursor >)]
-    pub struct MapCursor {
-        #[static_field]
-        #[rename(name = "MapCursorMoveOffset")]
-        pub map_cursor_move_offset: f32,
-        #[static_field]
-        #[rename(name = "MOVE_WAIT_FRAME")]
-        pub move_wait_frame: i32,
-        #[static_field]
-        #[rename(name = "MOVE_CENTER_FRAME")]
-        pub move_center_frame: i32,
-        #[rename(name = "m_Pos")]
-        pub m_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_OldPos")]
-        pub m_old_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_OrigPos")]
-        pub m_orig_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_Rotate")]
-        pub m_rotate: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_Move")]
-        pub m_move: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_EnterPos")]
-        pub m_enter_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_MoveCount")]
-        pub m_move_count: i32,
-        #[rename(name = "m_IsRotateXSoundPlaying")]
-        pub m_is_rotate_x_sound_playing: bool,
-        #[static_field]
-        #[rename(name = "m_CursorTop")]
-        pub m_cursor_top: crate::app::mapcursor::MapCursor_CursorTopType,
-        #[static_field]
-        #[rename(name = "m_CursorTopAnim")]
-        pub m_cursor_top_anim: crate::app::mapcursor::MapCursor_AnimType,
-        #[static_field]
-        #[rename(name = "m_CursorBottomAnim")]
-        pub m_cursor_bottom_anim: crate::app::mapcursor::MapCursor_AnimType,
-        #[rename(name = "m_CursorIconBill")]
-        pub m_cursor_icon_bill: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_DistanceDir")]
-        pub m_distance_dir: i32,
-        #[rename(name = "m_AnalogCount")]
-        pub m_analog_count: i32,
-        #[rename(name = "m_CenterCount")]
-        pub m_center_count: i32,
-        #[rename(name = "m_DistanceScale")]
-        pub m_distance_scale: f32,
-        #[rename(name = "m_MapCursorMoveType")]
-        pub m_map_cursor_move_type: crate::app::gameconfig::GameConfig_MapCursorMoveTyep,
-        #[rename(name = "m_IsLockMoveType")]
-        pub m_is_lock_move_type: bool,
-        #[rename(name = "m_CursorTopObj")]
-        pub m_cursor_top_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CursorBottomObj")]
-        pub m_cursor_bottom_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CursorTopMgr")]
-        pub m_cursor_top_mgr: crate::root::mappointeranimmanager::MapPointerAnimManager,
-        #[rename(name = "m_CursorBottomMgr")]
-        pub m_cursor_bottom_mgr: crate::root::mapcursoranimmanager::MapCursorAnimManager,
-        #[static_field]
-        #[rename(name = "m_MapPointerLocatorRoot")]
-        pub m_map_pointer_locator_root: crate::root::mappointerlocatorroot::MapPointerLocatorRoot,
-        #[static_field]
-        #[rename(name = "m_MapCursorLocatorRoot")]
-        pub m_map_cursor_locator_root: crate::root::mapcursorlocatorroot::MapCursorLocatorRoot,
-        #[rename(name = "m_PositionTop")]
-        pub m_position_top: crate::app::interpolatorvector3::InterpolatorVector3,
-        #[rename(name = "m_PositionBottom")]
-        pub m_position_bottom: crate::app::interpolatorvector3::InterpolatorVector3,
-        #[rename(name = "m_CursorMind")]
-        pub m_cursor_mind: crate::app::mapmind::MapMind_Type,
-        #[rename(name = "m_Color")]
-        pub m_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_Flags")]
-        pub m_flags: crate::app::mapcursor::MapCursor_FlagField,
+    impl ::unity2::ClassIdentity for MapCursor_DistanceMode {
+        const NAME: &'static str = "MapCursor.DistanceMode";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapCursor_DistanceMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapCursor_DistanceMode {
+        pub fn near() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn middle() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn far() -> Self {
+            Self { value: 2 }
+        }
     }
 }
 
 #[cfg(feature = "app-mapcursor-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapcursor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapCursor_FlagField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapcursor::MapCursor_Flag as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursor_FlagField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursor_FlagField as ::unity2::ClassIdentity>::NAME,
-                        "ToInt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_int(
-        this: MapCursor_FlagField,
-        value: crate::app::mapcursor::MapCursor_Flag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapCursor_FlagField, crate::app::mapcursor::MapCursor_Flag, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCursor_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapCursor_FlagField as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapCursor_FlagField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCursor_FlagField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapcursor")]
-pub trait IMapCursor_FlagFieldMethods: IMapCursor_FlagField {
-    #[doc = "`ToInt(crate::app::mapcursor::MapCursor_Flag)` overload"]
-    fn to_int(self, value: impl ::core::convert::Into<crate::app::mapcursor::MapCursor_Flag>) -> i32 {
-        unsafe {
-            let __receiver = <MapCursor_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursor_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapCursor_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapCursor_FlagField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapcursor")]
-impl<__T: IMapCursor_FlagField> IMapCursor_FlagFieldMethods for __T {}
-
-#[cfg(feature = "app-mapcursor")]
-impl MapCursor_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapCursor_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapCursor_FlagFieldMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-mapcursor")]
 #[doc(hidden)]
@@ -4262,6 +4172,120 @@ impl MapCursor {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapCursor), ::core::stringify!(new),));
         <Self as IMapCursorMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapcursor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapCursor_FlagField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapcursor::MapCursor_Flag as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCursor_FlagField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCursor_FlagField as ::unity2::ClassIdentity>::NAME,
+                        "ToInt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_int(
+        this: MapCursor_FlagField,
+        value: crate::app::mapcursor::MapCursor_Flag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(MapCursor_FlagField, crate::app::mapcursor::MapCursor_Flag, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapCursor_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCursor_FlagField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapCursor_FlagField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapCursor_FlagField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapcursor")]
+pub trait IMapCursor_FlagFieldMethods: IMapCursor_FlagField {
+    #[doc = "`ToInt(crate::app::mapcursor::MapCursor_Flag)` overload"]
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::mapcursor::MapCursor_Flag>) -> i32 {
+        unsafe {
+            let __receiver = <MapCursor_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCursor_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapCursor_FlagField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCursor_FlagField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapcursor")]
+impl<__T: IMapCursor_FlagField> IMapCursor_FlagFieldMethods for __T {}
+
+#[cfg(feature = "app-mapcursor")]
+impl MapCursor_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapCursor_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapCursor_FlagFieldMethods>::ctor(this);
         this
     }
 }

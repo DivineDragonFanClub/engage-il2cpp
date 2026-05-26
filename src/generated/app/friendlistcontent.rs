@@ -24,10 +24,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FriendListContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FriendListContent {
+        #[offset(32)]
         #[rename(name = "m_FriendContentArray")]
         pub m_friend_content_array: ::unity2::Array<crate::app::friendlistcontent::FriendListContent_FriendContent>,
+        #[offset(40)]
         #[rename(name = "m_ActiveFriendContentIndex")]
         pub m_active_friend_content_index: i32,
+        #[offset(48)]
         #[rename(name = "m_IndexAnimatorArray")]
         pub m_index_animator_array: ::unity2::Array<crate::unity_engine::animator::Animator>,
     }

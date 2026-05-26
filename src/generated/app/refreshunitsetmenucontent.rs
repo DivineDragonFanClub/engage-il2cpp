@@ -20,22 +20,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefreshUnitSetMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefreshUnitSetMenuContent {
+        #[offset(232)]
         #[rename(name = "m_DecideMenuContent")]
         pub m_decide_menu_content: crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent,
+        #[offset(240)]
         #[rename(name = "m_FacilityNameText")]
         pub m_facility_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_PageIconImage")]
         pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(256)]
         #[rename(name = "m_RelianceCaptionText")]
         pub m_reliance_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_RelianceRankCImage")]
         pub m_reliance_rank_c_image: crate::unity_engine::ui::image::Image,
+        #[offset(272)]
         #[rename(name = "m_RelianceRankBImage")]
         pub m_reliance_rank_b_image: crate::unity_engine::ui::image::Image,
+        #[offset(280)]
         #[rename(name = "m_RelianceRankAImage")]
         pub m_reliance_rank_a_image: crate::unity_engine::ui::image::Image,
+        #[offset(288)]
         #[rename(name = "m_RelianceRankSImage")]
         pub m_reliance_rank_s_image: crate::unity_engine::ui::image::Image,
+        #[offset(296)]
         #[rename(name = "m_RelianceNoneImage")]
         pub m_reliance_none_image: crate::unity_engine::ui::image::Image,
     }

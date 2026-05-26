@@ -20,35 +20,49 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkLog")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: talk3_d :: talklog :: TalkLog >)]
     pub struct TalkLog {
+        #[offset(32)]
         #[rename(name = "m_Bases")]
         pub m_bases: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(40)]
         #[rename(name = "m_LogPageMax")]
         pub m_log_page_max: i32,
         #[static_field]
         #[rename(name = "ViewWindowMax")]
         pub view_window_max: i32,
+        #[offset(48)]
         #[rename(name = "m_Cursor")]
         pub m_cursor: crate::app::talk3_d::talklogui::TalkLogUI_Cursor,
+        #[offset(56)]
         #[rename(name = "m_WindowList")]
         pub m_window_list: ::unity2::Array<crate::app::talk3_d::talklogui::TalkLogUI_Window>,
+        #[offset(64)]
         #[rename(name = "m_ScrollBar")]
         pub m_scroll_bar: crate::app::talk3_d::talklogui::TalkLogUI_ScrollBar,
+        #[offset(72)]
         #[rename(name = "m_LabelList")]
         pub m_label_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(80)]
         #[rename(name = "m_TalkerNameList")]
         pub m_talker_name_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(88)]
         #[rename(name = "m_MessList")]
         pub m_mess_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(96)]
         #[rename(name = "m_VoiceEventList")]
         pub m_voice_event_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(104)]
         #[rename(name = "m_ScenarioSoundBankNameList")]
         pub m_scenario_sound_bank_name_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(112)]
         #[rename(name = "m_LogAddCount")]
         pub m_log_add_count: i32,
+        #[offset(116)]
         #[rename(name = "m_LogNum")]
         pub m_log_num: i32,
+        #[offset(120)]
         #[rename(name = "m_CursorIndex")]
         pub m_cursor_index: i32,
+        #[offset(124)]
         #[rename(name = "m_ScrollIndex")]
         pub m_scroll_index: i32,
     }

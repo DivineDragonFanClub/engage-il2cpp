@@ -26,32 +26,46 @@ mod __types {
         #[static_field]
         #[rename(name = "s_WhiteTexture")]
         pub s_white_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(24)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(48)]
         #[rename(name = "m_SkipLayoutUpdate")]
         pub m_skip_layout_update: bool,
+        #[offset(49)]
         #[rename(name = "m_SkipMaterialUpdate")]
         pub m_skip_material_update: bool,
+        #[offset(50)]
         #[rename(name = "m_RaycastTarget")]
         pub m_raycast_target: bool,
+        #[offset(52)]
         #[rename(name = "m_RaycastPadding")]
         pub m_raycast_padding: crate::unity_engine::vector4::Vector4,
+        #[offset(72)]
         #[rename(name = "m_RectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(80)]
         #[rename(name = "m_CanvasRenderer")]
         pub m_canvas_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+        #[offset(88)]
         #[rename(name = "m_Canvas")]
         pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[offset(96)]
         #[rename(name = "m_VertsDirty")]
         pub m_verts_dirty: bool,
+        #[offset(97)]
         #[rename(name = "m_MaterialDirty")]
         pub m_material_dirty: bool,
+        #[offset(104)]
         #[rename(name = "m_OnDirtyLayoutCallback")]
         pub m_on_dirty_layout_callback: crate::unity_engine::events::unityaction::UnityAction,
+        #[offset(112)]
         #[rename(name = "m_OnDirtyVertsCallback")]
         pub m_on_dirty_verts_callback: crate::unity_engine::events::unityaction::UnityAction,
+        #[offset(120)]
         #[rename(name = "m_OnDirtyMaterialCallback")]
         pub m_on_dirty_material_callback: crate::unity_engine::events::unityaction::UnityAction,
         #[static_field]
@@ -60,10 +74,13 @@ mod __types {
         #[static_field]
         #[rename(name = "s_VertexHelper")]
         pub s_vertex_helper: crate::unity_engine::ui::vertexhelper::VertexHelper,
+        #[offset(128)]
         #[rename(name = "m_CachedMesh")]
         pub m_cached_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(136)]
         #[rename(name = "m_CachedUvs")]
         pub m_cached_uvs: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        #[offset(144)]
         #[rename(name = "m_ColorTweenRunner")]
         pub m_color_tween_runner:
             crate::unity_engine::ui::coroutine_tween::tweenrunner_1::TweenRunner_1<crate::unity_engine::ui::coroutine_tween::colortween::ColorTween>,

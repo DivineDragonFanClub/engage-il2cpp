@@ -26,6 +26,7 @@ mod __types {
         #[static_field]
         #[rename(name = "HDegree")]
         pub h_degree: f32,
+        #[offset(168)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
     }

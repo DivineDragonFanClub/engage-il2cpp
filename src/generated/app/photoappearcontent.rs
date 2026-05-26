@@ -69,16 +69,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotoAppearContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct PhotoAppearContent {
+        #[offset(24)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(32)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_Progress")]
         pub m_progress: f32,
+        #[offset(48)]
         #[rename(name = "m_MaterialInst")]
         pub m_material_inst: crate::unity_engine::material::Material,
+        #[offset(56)]
         #[rename(name = "m_State")]
         pub m_state: crate::app::photoappearcontent::PhotoAppearContent_State,
+        #[offset(60)]
         #[rename(name = "m_NextState")]
         pub m_next_state: crate::app::photoappearcontent::PhotoAppearContent_State,
     }

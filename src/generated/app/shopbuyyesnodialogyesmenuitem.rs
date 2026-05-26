@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopBuyYesNoDialogYesMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct ShopBuyYesNoDialogYesMenuItem {
+        #[offset(112)]
         #[rename(name = "m_YesEventHandler")]
         pub m_yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
     }

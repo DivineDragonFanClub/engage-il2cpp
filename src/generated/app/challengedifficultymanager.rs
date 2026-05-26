@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ChallengeDifficultyManager")]
     #[parent(crate::system::object::Object)]
     pub struct ChallengeDifficultyManager {
+        #[offset(16)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
+        #[offset(24)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::challengedifficultymenu::ChallengeDifficultyMenu,
+        #[offset(32)]
         #[rename(name = "m_ChallengeData")]
         pub m_challenge_data: crate::app::challengedata::ChallengeData,
+        #[offset(40)]
         #[rename(name = "m_Difficulty")]
         pub m_difficulty: i32,
     }

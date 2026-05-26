@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "k_DebuggerDisplay")]
         pub k_debugger_display: ::unity2::Il2CppString,
+        #[offset(16)]
         #[rename(name = "m_OverrideState")]
         pub m_override_state: bool,
     }

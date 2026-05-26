@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationOutputWeightProcessor")]
     #[parent(crate::system::object::Object)]
     pub struct AnimationOutputWeightProcessor {
+        #[offset(16)]
         #[rename(name = "m_Output")]
         pub m_output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
+        #[offset(32)]
         #[rename(name = "m_Mixers")]
         pub m_mixers: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::timeline::animationoutputweightprocessor::AnimationOutputWeightProcessor_WeightInfo,

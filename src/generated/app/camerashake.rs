@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CameraShake")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CameraShake {
+        #[offset(24)]
         #[rename(name = "m_Delay")]
         pub m_delay: f32,
+        #[offset(28)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(32)]
         #[rename(name = "m_Magnitude")]
         pub m_magnitude: f32,
     }

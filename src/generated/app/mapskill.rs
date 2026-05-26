@@ -13,160 +13,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_HistoryScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapSkill_HistoryScope {
-        pub m_unit: crate::app::unit::Unit,
-        pub m_prev_hp: i32,
-        pub m_prev_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapSkill_HistoryScope {
-        const NAME: &'static str = "MapSkill.HistoryScope";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSkill_HistoryScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_Results.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapSkill_Results {
-        pub skill: crate::app::skilldata::SkillData,
-        pub current: crate::app::mapskill::MapSkill_Result,
-        pub reverse: crate::app::mapskill::MapSkill_Result,
-    }
-
-    impl ::unity2::ClassIdentity for MapSkill_Results {
-        const NAME: &'static str = "MapSkill.Results";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSkill_Results {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_TerrainFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSkill.TerrainFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapSkill_TerrainFunc {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapSkill_AroundCalculator {
-        pub m_side: crate::app::battleinfoside::BattleInfoSide,
-        pub m_results: crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result>,
-    }
-
-    impl ::unity2::ClassIdentity for MapSkill_AroundCalculator {
-        const NAME: &'static str = "MapSkill.AroundCalculator";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSkill_AroundCalculator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_SkillCalculator_UnitList.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSkill.SkillCalculator.UnitList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
-    pub struct MapSkill_SkillCalculator_UnitList {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator_Result.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapSkill_AroundCalculator_Result {
-        pub target: crate::app::unit::Unit,
-        pub skill: crate::app::skilldata::SkillData,
-    }
-
-    impl ::unity2::ClassIdentity for MapSkill_AroundCalculator_Result {
-        const NAME: &'static str = "MapSkill.AroundCalculator.Result";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSkill_AroundCalculator_Result {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_SkillCalculator.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapSkill_SkillCalculator {
-        pub m_unit: crate::app::unit::Unit,
-        pub m_target: crate::app::unit::Unit,
-        pub m_skill: crate::app::skilldata::SkillData,
-        pub m_arounds: crate::app::mapskill::MapSkill_SkillCalculator_UnitList,
-    }
-
-    impl ::unity2::ClassIdentity for MapSkill_SkillCalculator {
-        const NAME: &'static str = "MapSkill.SkillCalculator";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSkill_SkillCalculator {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSkill")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapSkill {
-        #[static_field]
-        #[rename(name = "WaitTime")]
-        pub wait_time: f32,
-        #[static_field]
-        #[rename(name = "BeginWaitTime")]
-        pub begin_wait_time: f32,
-        #[static_field]
-        #[rename(name = "EndWaitTime")]
-        pub end_wait_time: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_Result.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -199,6 +45,103 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MapSkill_UnitFunc {}
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_HistoryScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapSkill_HistoryScope {
+        pub m_unit: crate::app::unit::Unit,
+        pub m_prev_hp: i32,
+        pub m_prev_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapSkill_HistoryScope {
+        const NAME: &'static str = "MapSkill.HistoryScope";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSkill_HistoryScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSkill")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapSkill {
+        #[static_field]
+        #[rename(name = "WaitTime")]
+        pub wait_time: f32,
+        #[static_field]
+        #[rename(name = "BeginWaitTime")]
+        pub begin_wait_time: f32,
+        #[static_field]
+        #[rename(name = "EndWaitTime")]
+        pub end_wait_time: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_Results.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapSkill_Results {
+        pub skill: crate::app::skilldata::SkillData,
+        pub current: crate::app::mapskill::MapSkill_Result,
+        pub reverse: crate::app::mapskill::MapSkill_Result,
+    }
+
+    impl ::unity2::ClassIdentity for MapSkill_Results {
+        const NAME: &'static str = "MapSkill.Results";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSkill_Results {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator_Result.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapSkill_AroundCalculator_Result {
+        pub target: crate::app::unit::Unit,
+        pub skill: crate::app::skilldata::SkillData,
+    }
+
+    impl ::unity2::ClassIdentity for MapSkill_AroundCalculator_Result {
+        const NAME: &'static str = "MapSkill.AroundCalculator.Result";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSkill_AroundCalculator_Result {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_TerrainFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSkill.TerrainFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapSkill_TerrainFunc {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_FixedCalculator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -224,10 +167,259 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_SkillCalculator.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapSkill_SkillCalculator {
+        pub m_unit: crate::app::unit::Unit,
+        pub m_target: crate::app::unit::Unit,
+        pub m_skill: crate::app::skilldata::SkillData,
+        pub m_arounds: crate::app::mapskill::MapSkill_SkillCalculator_UnitList,
+    }
+
+    impl ::unity2::ClassIdentity for MapSkill_SkillCalculator {
+        const NAME: &'static str = "MapSkill.SkillCalculator";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSkill_SkillCalculator {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapSkill_AroundCalculator {
+        pub m_side: crate::app::battleinfoside::BattleInfoSide,
+        pub m_results: crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result>,
+    }
+
+    impl ::unity2::ClassIdentity for MapSkill_AroundCalculator {
+        const NAME: &'static str = "MapSkill.AroundCalculator";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSkill_AroundCalculator {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_SkillCalculator_UnitList.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSkill.SkillCalculator.UnitList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+    pub struct MapSkill_SkillCalculator_UnitList {}
 }
 
 #[cfg(feature = "app-mapskill-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapskill")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSkill_Result_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_Result as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_Result as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: MapSkill_Result, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSkill_Result, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_Result {
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe { __MapSkill_Result_unity2_raw::reset(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSkill_UnitFunc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_UnitFunc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_UnitFunc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSkill_UnitFunc,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSkill_UnitFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_UnitFunc as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_UnitFunc as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MapSkill_UnitFunc,
+        x: i32,
+        z: i32,
+        target: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSkill_UnitFunc, i32, i32, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, x, z, target, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+pub trait IMapSkill_UnitFuncMethods: IMapSkill_UnitFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <MapSkill_UnitFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSkill_UnitFunc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32, crate::app::unit::Unit)` overload"]
+    fn invoke(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapSkill_UnitFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSkill_UnitFunc_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+impl<__T: IMapSkill_UnitFunc> IMapSkill_UnitFuncMethods for __T {}
+
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_UnitFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSkill_UnitFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSkill_UnitFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapskill")]
 #[doc(hidden)]
@@ -312,778 +504,6 @@ impl MapSkill_HistoryScope {
     #[doc = "`Dispose()` overload"]
     pub fn dispose(self) -> () {
         unsafe { __MapSkill_HistoryScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_Results_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_Results as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_Results as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: MapSkill_Results, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSkill_Results, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_Results as ::unity2::ClassIdentity>::class(),
-                "IsEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_Results as ::unity2::ClassIdentity>::NAME,
-                        "IsEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_enable(this: MapSkill_Results, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(MapSkill_Results, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_Results {
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __MapSkill_Results_unity2_raw::reset(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`IsEnable()` overload"]
-    pub fn is_enable(self) -> bool {
-        unsafe { __MapSkill_Results_unity2_raw::is_enable(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_TerrainFunc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSkill_TerrainFunc,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSkill_TerrainFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MapSkill_TerrainFunc,
-        x: i32,
-        z: i32,
-        terrain: crate::app::terraindata_2::TerrainData_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSkill_TerrainFunc, i32, i32, crate::app::terraindata_2::TerrainData_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, x, z, terrain, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-pub trait IMapSkill_TerrainFuncMethods: IMapSkill_TerrainFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <MapSkill_TerrainFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSkill_TerrainFunc_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]
-    fn invoke(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        terrain: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_2>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapSkill_TerrainFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSkill_TerrainFunc_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(terrain),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-impl<__T: IMapSkill_TerrainFunc> IMapSkill_TerrainFuncMethods for __T {}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_TerrainFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSkill_TerrainFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSkill_TerrainFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_AroundCalculator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSkill_AroundCalculator,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSkill_AroundCalculator, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Frequencies as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
-                "Enumerate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
-                        "Enumerate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enumerate(
-        this: MapSkill_AroundCalculator,
-        frequency: crate::app::skilldata::SkillData_Frequencies,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSkill_AroundCalculator, crate::app::skilldata::SkillData_Frequencies, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_enumerate::get_method_info().method_ptr);
-        inner(this, frequency, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapSkill_AroundCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSkill_AroundCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_results {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
-                "get_Results",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
-                        "get_Results",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_results(
-        this: MapSkill_AroundCalculator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result> {
-        let inner: extern "C" fn(
-            MapSkill_AroundCalculator,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result> =
-            ::core::mem::transmute(__lookup_get_results::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_AroundCalculator {
-    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    pub fn ctor(self, side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> () {
-        unsafe { __MapSkill_AroundCalculator_unity2_raw::ctor(self, ::core::convert::Into::into(side), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]
-    pub fn enumerate(self, frequency: impl ::core::convert::Into<crate::app::skilldata::SkillData_Frequencies>) -> bool {
-        unsafe { __MapSkill_AroundCalculator_unity2_raw::enumerate(self, ::core::convert::Into::into(frequency), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapSkill_AroundCalculator_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Results()` overload"]
-    pub fn get_results(self) -> crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result> {
-        unsafe { __MapSkill_AroundCalculator_unity2_raw::get_results(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_SkillCalculator_UnitList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::class(),
-                "TryAdd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::NAME,
-                        "TryAdd",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_add(
-        this: MapSkill_SkillCalculator_UnitList,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSkill_SkillCalculator_UnitList, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_try_add::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapSkill_SkillCalculator_UnitList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSkill_SkillCalculator_UnitList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-pub trait IMapSkill_SkillCalculator_UnitListMethods: IMapSkill_SkillCalculator_UnitList {
-    #[doc = "`TryAdd(crate::app::unit::Unit)` overload"]
-    fn try_add(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            let __receiver = <MapSkill_SkillCalculator_UnitList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapSkill_SkillCalculator_UnitList_unity2_raw::try_add(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapSkill_SkillCalculator_UnitList as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapSkill_SkillCalculator_UnitList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-impl<__T: IMapSkill_SkillCalculator_UnitList> IMapSkill_SkillCalculator_UnitListMethods for __T {}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_SkillCalculator_UnitList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSkill_SkillCalculator_UnitList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSkill_SkillCalculator_UnitListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_AroundCalculator_Result_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_AroundCalculator_Result as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_AroundCalculator_Result as ::unity2::ClassIdentity>::NAME,
-                        "Commit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit(this: MapSkill_AroundCalculator_Result, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSkill_AroundCalculator_Result, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_AroundCalculator_Result {
-    #[doc = "`Commit(crate::app::unit::Unit)` overload"]
-    pub fn commit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __MapSkill_AroundCalculator_Result_unity2_raw::commit(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_SkillCalculator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSkill_SkillCalculator,
-        unit: crate::app::unit::Unit,
-        skill: crate::app::skilldata::SkillData,
-        target: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSkill_SkillCalculator,
-            crate::app::unit::Unit,
-            crate::app::skilldata::SkillData,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, skill, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Frequencies as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
-                "Enumerate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
-                        "Enumerate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enumerate(
-        this: MapSkill_SkillCalculator,
-        frequency: crate::app::skilldata::SkillData_Frequencies,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSkill_SkillCalculator, crate::app::skilldata::SkillData_Frequencies, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_enumerate::get_method_info().method_ptr);
-        inner(this, frequency, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_commit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
-                        "Commit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn commit(this: MapSkill_SkillCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSkill_SkillCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapSkill_SkillCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSkill_SkillCalculator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_SkillCalculator {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData, crate::app::unit::Unit)` overload"]
-    pub fn ctor(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            __MapSkill_SkillCalculator_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(skill),
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]
-    pub fn enumerate(self, frequency: impl ::core::convert::Into<crate::app::skilldata::SkillData_Frequencies>) -> bool {
-        unsafe { __MapSkill_SkillCalculator_unity2_raw::enumerate(self, ::core::convert::Into::into(frequency), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Commit()` overload"]
-    pub fn commit(self) -> () {
-        unsafe { __MapSkill_SkillCalculator_unity2_raw::commit(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapSkill_SkillCalculator_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 }
 
@@ -2470,7 +1890,7 @@ impl MapSkill {
 #[cfg(feature = "app-mapskill")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_Result_unity2_raw {
+mod __MapSkill_Results_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2479,7 +1899,7 @@ mod __MapSkill_Result_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_Result as ::unity2::ClassIdentity>::class(),
+                <MapSkill_Results as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -2492,7 +1912,7 @@ mod __MapSkill_Result_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapSkill_Result as ::unity2::ClassIdentity>::NAME,
+                        <MapSkill_Results as ::unity2::ClassIdentity>::NAME,
                         "Reset",
                         e
                     )
@@ -2500,25 +1920,111 @@ mod __MapSkill_Result_unity2_raw {
             }
         }
     }
-    pub unsafe fn reset(this: MapSkill_Result, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapSkill_Result, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn reset(this: MapSkill_Results, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSkill_Results, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_Results as ::unity2::ClassIdentity>::class(),
+                "IsEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_Results as ::unity2::ClassIdentity>::NAME,
+                        "IsEnable",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_enable(this: MapSkill_Results, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapSkill_Results, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapskill")]
-impl MapSkill_Result {
+impl MapSkill_Results {
     #[doc = "`Reset()` overload"]
     pub fn reset(self) -> () {
-        unsafe { __MapSkill_Result_unity2_raw::reset(self, ::core::option::Option::None) }
+        unsafe { __MapSkill_Results_unity2_raw::reset(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsEnable()` overload"]
+    pub fn is_enable(self) -> bool {
+        unsafe { __MapSkill_Results_unity2_raw::is_enable(self, ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-mapskill")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSkill_UnitFunc_unity2_raw {
+mod __MapSkill_AroundCalculator_Result_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_AroundCalculator_Result as ::unity2::ClassIdentity>::class(),
+                "Commit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_AroundCalculator_Result as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit(this: MapSkill_AroundCalculator_Result, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSkill_AroundCalculator_Result, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_AroundCalculator_Result {
+    #[doc = "`Commit(crate::app::unit::Unit)` overload"]
+    pub fn commit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __MapSkill_AroundCalculator_Result_unity2_raw::commit(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSkill_TerrainFunc_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2530,7 +2036,7 @@ mod __MapSkill_UnitFunc_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_UnitFunc as ::unity2::ClassIdentity>::class(),
+                <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -2543,7 +2049,7 @@ mod __MapSkill_UnitFunc_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapSkill_UnitFunc as ::unity2::ClassIdentity>::NAME,
+                        <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -2552,12 +2058,12 @@ mod __MapSkill_UnitFunc_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapSkill_UnitFunc,
+        this: MapSkill_TerrainFunc,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapSkill_UnitFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(MapSkill_TerrainFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
@@ -2569,10 +2075,10 @@ mod __MapSkill_UnitFunc_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSkill_UnitFunc as ::unity2::ClassIdentity>::class(),
+                <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 3,
                 param_types,
@@ -2585,7 +2091,7 @@ mod __MapSkill_UnitFunc_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <MapSkill_UnitFunc as ::unity2::ClassIdentity>::NAME,
+                        <MapSkill_TerrainFunc as ::unity2::ClassIdentity>::NAME,
                         "Invoke",
                         e
                     )
@@ -2594,25 +2100,26 @@ mod __MapSkill_UnitFunc_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: MapSkill_UnitFunc,
+        this: MapSkill_TerrainFunc,
         x: i32,
         z: i32,
-        target: crate::app::unit::Unit,
+        terrain: crate::app::terraindata_2::TerrainData_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapSkill_UnitFunc, i32, i32, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(MapSkill_TerrainFunc, i32, i32, crate::app::terraindata_2::TerrainData_2, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, x, z, target, __unity2_method_info)
+        inner(this, x, z, terrain, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapskill")]
-pub trait IMapSkill_UnitFuncMethods: IMapSkill_UnitFunc {
+pub trait IMapSkill_TerrainFuncMethods: IMapSkill_TerrainFunc {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <MapSkill_UnitFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSkill_UnitFunc_unity2_raw::ctor(
+            let __receiver =
+                <MapSkill_TerrainFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSkill_TerrainFunc_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -2620,20 +2127,21 @@ pub trait IMapSkill_UnitFuncMethods: IMapSkill_UnitFunc {
             )
         }
     }
-    #[doc = "`Invoke(i32, i32, crate::app::unit::Unit)` overload"]
+    #[doc = "`Invoke(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]
     fn invoke(
         self,
         x: impl ::core::convert::Into<i32>,
         z: impl ::core::convert::Into<i32>,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+        terrain: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_2>,
     ) -> () {
         unsafe {
-            let __receiver = <MapSkill_UnitFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __MapSkill_UnitFunc_unity2_raw::invoke(
+            let __receiver =
+                <MapSkill_TerrainFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSkill_TerrainFunc_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(x),
                 ::core::convert::Into::into(z),
-                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(terrain),
                 ::core::option::Option::None,
             )
         }
@@ -2641,20 +2149,20 @@ pub trait IMapSkill_UnitFuncMethods: IMapSkill_UnitFunc {
 }
 
 #[cfg(feature = "app-mapskill")]
-impl<__T: IMapSkill_UnitFunc> IMapSkill_UnitFuncMethods for __T {}
+impl<__T: IMapSkill_TerrainFunc> IMapSkill_TerrainFuncMethods for __T {}
 
 #[cfg(feature = "app-mapskill")]
-impl MapSkill_UnitFunc {
+impl MapSkill_TerrainFunc {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSkill_UnitFunc),
+                ::core::stringify!(MapSkill_TerrainFunc),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSkill_UnitFuncMethods>::ctor(this, object, method);
+        <Self as IMapSkill_TerrainFuncMethods>::ctor(this, object, method);
         this
     }
 }
@@ -2925,6 +2433,498 @@ impl MapSkill_FixedCalculator {
     #[doc = "`Dispose()` overload"]
     pub fn dispose(self) -> () {
         unsafe { __MapSkill_FixedCalculator_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSkill_SkillCalculator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSkill_SkillCalculator,
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+        target: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapSkill_SkillCalculator,
+            crate::app::unit::Unit,
+            crate::app::skilldata::SkillData,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, skill, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::skilldata::SkillData_Frequencies as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
+                "Enumerate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
+                        "Enumerate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate(
+        this: MapSkill_SkillCalculator,
+        frequency: crate::app::skilldata::SkillData_Frequencies,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapSkill_SkillCalculator, crate::app::skilldata::SkillData_Frequencies, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_enumerate::get_method_info().method_ptr);
+        inner(this, frequency, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_commit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
+                "Commit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn commit(this: MapSkill_SkillCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSkill_SkillCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_SkillCalculator as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: MapSkill_SkillCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSkill_SkillCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_SkillCalculator {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData, crate::app::unit::Unit)` overload"]
+    pub fn ctor(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+        target: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __MapSkill_SkillCalculator_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(skill),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]
+    pub fn enumerate(self, frequency: impl ::core::convert::Into<crate::app::skilldata::SkillData_Frequencies>) -> bool {
+        unsafe { __MapSkill_SkillCalculator_unity2_raw::enumerate(self, ::core::convert::Into::into(frequency), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Commit()` overload"]
+    pub fn commit(self) -> () {
+        unsafe { __MapSkill_SkillCalculator_unity2_raw::commit(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __MapSkill_SkillCalculator_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSkill_AroundCalculator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSkill_AroundCalculator,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSkill_AroundCalculator, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::skilldata::SkillData_Frequencies as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
+                "Enumerate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
+                        "Enumerate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate(
+        this: MapSkill_AroundCalculator,
+        frequency: crate::app::skilldata::SkillData_Frequencies,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapSkill_AroundCalculator, crate::app::skilldata::SkillData_Frequencies, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_enumerate::get_method_info().method_ptr);
+        inner(this, frequency, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: MapSkill_AroundCalculator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSkill_AroundCalculator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_results {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::class(),
+                "get_Results",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_AroundCalculator as ::unity2::ClassIdentity>::NAME,
+                        "get_Results",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_results(
+        this: MapSkill_AroundCalculator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result> {
+        let inner: extern "C" fn(
+            MapSkill_AroundCalculator,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result> =
+            ::core::mem::transmute(__lookup_get_results::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_AroundCalculator {
+    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    pub fn ctor(self, side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> () {
+        unsafe { __MapSkill_AroundCalculator_unity2_raw::ctor(self, ::core::convert::Into::into(side), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]
+    pub fn enumerate(self, frequency: impl ::core::convert::Into<crate::app::skilldata::SkillData_Frequencies>) -> bool {
+        unsafe { __MapSkill_AroundCalculator_unity2_raw::enumerate(self, ::core::convert::Into::into(frequency), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __MapSkill_AroundCalculator_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Results()` overload"]
+    pub fn get_results(self) -> crate::system::collections::generic::list_1::List_1<crate::app::mapskill::MapSkill_AroundCalculator_Result> {
+        unsafe { __MapSkill_AroundCalculator_unity2_raw::get_results(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSkill_SkillCalculator_UnitList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::class(),
+                "TryAdd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::NAME,
+                        "TryAdd",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_add(
+        this: MapSkill_SkillCalculator_UnitList,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapSkill_SkillCalculator_UnitList, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_try_add::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSkill_SkillCalculator_UnitList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapSkill_SkillCalculator_UnitList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSkill_SkillCalculator_UnitList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+pub trait IMapSkill_SkillCalculator_UnitListMethods: IMapSkill_SkillCalculator_UnitList {
+    #[doc = "`TryAdd(crate::app::unit::Unit)` overload"]
+    fn try_add(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
+        unsafe {
+            let __receiver = <MapSkill_SkillCalculator_UnitList as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSkill_SkillCalculator_UnitList_unity2_raw::try_add(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapSkill_SkillCalculator_UnitList as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSkill_SkillCalculator_UnitList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+impl<__T: IMapSkill_SkillCalculator_UnitList> IMapSkill_SkillCalculator_UnitListMethods for __T {}
+
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_SkillCalculator_UnitList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSkill_SkillCalculator_UnitList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSkill_SkillCalculator_UnitListMethods>::ctor(this);
+        this
     }
 }
 

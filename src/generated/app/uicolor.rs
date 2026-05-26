@@ -18,12 +18,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UiColor")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: uicolor :: UiColor >)]
     pub struct UiColor {
+        #[offset(24)]
         #[rename(name = "紋章士アイコン_出撃")]
         pub 紋章士アイコン_出撃: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "紋章士アイコン_非出撃")]
         pub 紋章士アイコン_非出撃: crate::unity_engine::color::Color,
+        #[offset(56)]
         #[rename(name = "ユニット選択_ユニット顔絵_出撃")]
         pub ユニット選択_ユニット顔絵_出撃: crate::unity_engine::color::Color,
+        #[offset(72)]
         #[rename(name = "ユニット選択_ユニット顔絵_非出撃")]
         pub ユニット選択_ユニット顔絵_非出撃: crate::unity_engine::color::Color,
     }

@@ -17,11 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRidePresetParamData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData >)]
-    pub struct DragonRidePresetParamData {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridepresetparamdata/DragonRidePresetParamData_CourseData.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -47,6 +42,11 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRidePresetParamData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData >)]
+    pub struct DragonRidePresetParamData {}
 }
 
 #[cfg(feature = "app-dragonridepresetparamdata-types")]

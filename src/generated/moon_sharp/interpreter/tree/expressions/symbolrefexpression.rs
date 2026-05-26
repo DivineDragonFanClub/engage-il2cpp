@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "SymbolRefExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct SymbolRefExpression {
+        #[offset(32)]
         #[rename(name = "m_Ref")]
         pub m_ref: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+        #[offset(40)]
         #[rename(name = "m_VarName")]
         pub m_var_name: ::unity2::Il2CppString,
     }

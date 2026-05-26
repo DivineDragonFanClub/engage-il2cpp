@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "CustomConvertersCollection")]
     #[parent(crate::system::object::Object)]
     pub struct CustomConvertersCollection {
+        #[offset(16)]
         #[rename(name = "m_Script2Clr")]
         pub m_script2_clr: ::unity2::Array<
             crate::system::collections::generic::dictionary_2::Dictionary_2<
@@ -18,6 +19,7 @@ mod __types {
                 crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, crate::system::object::Object>,
             >,
         >,
+        #[offset(24)]
         #[rename(name = "m_Clr2Script")]
         pub m_clr2_script: crate::system::collections::generic::dictionary_2::Dictionary_2<
             ::unity2::SystemType,

@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkGameObjPositionData")]
     #[parent(crate::system::object::Object)]
     pub struct AkGameObjPositionData {
+        #[offset(16)]
         #[rename(name = "forward")]
         pub forward: crate::unity_engine::vector3::Vector3,
+        #[offset(28)]
         #[rename(name = "position")]
         pub position: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "up")]
         pub up: crate::unity_engine::vector3::Vector3,
     }

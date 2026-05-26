@@ -17,6 +17,20 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Setting.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Setting")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_Setting {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu_PCMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.CategoriesMenu.PCMenuItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct DebugPathMenu_CategoriesMenu_PCMenuItem {
+        #[offset(32)]
+        #[rename(name = "m_Setting")]
+        pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugpathmenu/DebugPathMenu_Categories.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -55,15 +69,36 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.CategoriesMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_CategoriesMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_PCDriveMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.PCDriveMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_PCDriveMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Path.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Path")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_Path {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryData.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryData")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugPathMenu_EntryData {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryMenu.md"))]
     #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryMenu")]
     #[parent(crate::system::object::Object)]
     pub struct DebugPathMenu_EntryMenu {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu_PCMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.CategoriesMenu.PCMenuItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct DebugPathMenu_CategoriesMenu_PCMenuItem {
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct DebugPathMenu {
+        #[offset(112)]
         #[rename(name = "m_Setting")]
         pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
     }
@@ -72,6 +107,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DebugPathMenu.CategoriesMenu.AssetsMenuItem")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct DebugPathMenu_CategoriesMenu_AssetsMenuItem {
+        #[offset(32)]
         #[rename(name = "m_Setting")]
         pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
     }
@@ -110,56 +146,19 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryData.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryData")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_EntryData {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Setting.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Setting")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Setting {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Path.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Path")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Path {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_ShowError.md"))]
     #[::unity2::class(namespace = "App", name = "DebugPathMenu.ShowError")]
     #[parent(crate::system::object::Object)]
     pub struct DebugPathMenu_ShowError {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory_EnumResult.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory.EnumResult")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Directory_EnumResult {
-        #[rename(name = "Entries")]
-        pub entries: crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>,
-        #[rename(name = "ErrorMessage")]
-        pub error_message: ::unity2::Il2CppString,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_ShowError_ErrorMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "DebugPathMenu.ShowError.ErrorMenuItem")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct DebugPathMenu_ShowError_ErrorMenuItem {
+        #[offset(32)]
         #[rename(name = "m_Error")]
         pub m_error: ::unity2::Il2CppString,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct DebugPathMenu {
-        #[rename(name = "m_Setting")]
-        pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_Directory {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_EntryMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "DebugPathMenu.EntryMenuItem")]
@@ -168,757 +167,37 @@ mod __types {
         #[static_field]
         #[rename(name = "MinWidth")]
         pub min_width: f32,
+        #[offset(32)]
         #[rename(name = "m_Setting")]
         pub m_setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        #[offset(40)]
         #[rename(name = "m_CurrentPath")]
         pub m_current_path: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_EntryData")]
         pub m_entry_data: crate::app::debugpathmenu::DebugPathMenu_EntryData,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.CategoriesMenu")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory_EnumResult.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory.EnumResult")]
     #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_CategoriesMenu {}
+    pub struct DebugPathMenu_Directory_EnumResult {
+        #[offset(16)]
+        #[rename(name = "Entries")]
+        pub entries: crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>,
+        #[offset(24)]
+        #[rename(name = "ErrorMessage")]
+        pub error_message: ::unity2::Il2CppString,
+    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_PCDriveMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugPathMenu.PCDriveMenu")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugpathmenu/DebugPathMenu_Directory.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugPathMenu.Directory")]
     #[parent(crate::system::object::Object)]
-    pub struct DebugPathMenu_PCDriveMenu {}
+    pub struct DebugPathMenu_Directory {}
 }
 
 #[cfg(feature = "app-debugpathmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-debugpathmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_EntryMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        parent_path: ::unity2::Il2CppString,
-        is_root: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::debugpathmenu::DebugPathMenu_Setting,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, setting, parent_path, is_root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: DebugPathMenu_EntryMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugPathMenu_EntryMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_EntryMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString, bool)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
-        parent_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_root: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __DebugPathMenu_EntryMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(setting),
-                ::core::convert::Into::into(parent_path),
-                ::core::convert::Into::into(is_root),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_EntryMenuMethods: IDebugPathMenu_EntryMenu {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DebugPathMenu_EntryMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_EntryMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_EntryMenu> IDebugPathMenu_EntryMenuMethods for __T {}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_EntryMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_EntryMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_EntryMenuMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugPathMenu_CategoriesMenu_PCMenuItem,
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugPathMenu_CategoriesMenu_PCMenuItem,
-            crate::app::debugpathmenu::DebugPathMenu_Setting,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, setting, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: DebugPathMenu_CategoriesMenu_PCMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: DebugPathMenu_CategoriesMenu_PCMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_CategoriesMenu_PCMenuItemMethods: IDebugPathMenu_CategoriesMenu_PCMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    fn ctor(self, setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>) -> () {
-        unsafe {
-            let __receiver = <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(setting), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver = <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_CategoriesMenu_PCMenuItem> IDebugPathMenu_CategoriesMenu_PCMenuItemMethods for __T {}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_CategoriesMenu_PCMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
-    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_CategoriesMenu_PCMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_CategoriesMenu_PCMenuItemMethods>::ctor(this, setting);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugPathMenu_CategoriesMenu_AssetsMenuItem,
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugPathMenu_CategoriesMenu_AssetsMenuItem,
-            crate::app::debugpathmenu::DebugPathMenu_Setting,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, setting, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(
-        this: DebugPathMenu_CategoriesMenu_AssetsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: DebugPathMenu_CategoriesMenu_AssetsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods: IDebugPathMenu_CategoriesMenu_AssetsMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    fn ctor(self, setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>) -> () {
-        unsafe {
-            let __receiver = <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(setting),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver = <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_CategoriesMenu_AssetsMenuItem> IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods for __T {}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_CategoriesMenu_AssetsMenuItem {
-    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
-    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_CategoriesMenu_AssetsMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods>::ctor(this, setting);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_EntryData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugPathMenu_EntryData,
-        is_directory: bool,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugPathMenu_EntryData, bool, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, is_directory, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_directory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
-                "get_IsDirectory",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
-                        "get_IsDirectory",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_directory(this: DebugPathMenu_EntryData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DebugPathMenu_EntryData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_directory::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_directory {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
-                "set_IsDirectory",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
-                        "set_IsDirectory",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_directory(this: DebugPathMenu_EntryData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugPathMenu_EntryData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_directory::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
-                        "get_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: DebugPathMenu_EntryData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DebugPathMenu_EntryData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
-                "set_Name",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
-                        "set_Name",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_name(this: DebugPathMenu_EntryData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugPathMenu_EntryData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_EntryDataMethods: IDebugPathMenu_EntryData {
-    #[doc = "`.ctor(bool, ::unity2::Il2CppString)` overload"]
-    fn ctor(self, is_directory: impl ::core::convert::Into<bool>, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_EntryData_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(is_directory),
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsDirectory()` overload"]
-    fn get_is_directory(self) -> bool {
-        unsafe {
-            let __receiver =
-                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_EntryData_unity2_raw::get_is_directory(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsDirectory(bool)` overload"]
-    fn set_is_directory(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_EntryData_unity2_raw::set_is_directory(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Name()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_EntryData_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
-    fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_EntryData_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_EntryData> IDebugPathMenu_EntryDataMethods for __T {}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_EntryData {
-    #[doc = "`.ctor(bool, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(is_directory: bool, name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_EntryData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_EntryDataMethods>::ctor(this, is_directory, name);
-        this
-    }
-}
 
 #[cfg(feature = "app-debugpathmenu")]
 #[doc(hidden)]
@@ -1432,6 +711,429 @@ impl DebugPathMenu_Setting {
 #[cfg(feature = "app-debugpathmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugPathMenu_CategoriesMenu_PCMenuItem,
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugPathMenu_CategoriesMenu_PCMenuItem,
+            crate::app::debugpathmenu::DebugPathMenu_Setting,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, setting, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: DebugPathMenu_CategoriesMenu_PCMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: DebugPathMenu_CategoriesMenu_PCMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+pub trait IDebugPathMenu_CategoriesMenu_PCMenuItemMethods: IDebugPathMenu_CategoriesMenu_PCMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    fn ctor(self, setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>) -> () {
+        unsafe {
+            let __receiver = <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(setting), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver = <DebugPathMenu_CategoriesMenu_PCMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl<__T: IDebugPathMenu_CategoriesMenu_PCMenuItem> IDebugPathMenu_CategoriesMenu_PCMenuItemMethods for __T {}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_CategoriesMenu_PCMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
+    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_CategoriesMenu_PCMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_CategoriesMenu_PCMenuItemMethods>::ctor(this, setting);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugPathMenu_CategoriesMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, setting, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: DebugPathMenu_CategoriesMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_CategoriesMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
+    ) -> () {
+        unsafe {
+            __DebugPathMenu_CategoriesMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(setting),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+pub trait IDebugPathMenu_CategoriesMenuMethods: IDebugPathMenu_CategoriesMenu {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DebugPathMenu_CategoriesMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_CategoriesMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl<__T: IDebugPathMenu_CategoriesMenu> IDebugPathMenu_CategoriesMenuMethods for __T {}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_CategoriesMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_CategoriesMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_CategoriesMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugPathMenu_PCDriveMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, setting, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: DebugPathMenu_PCDriveMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugPathMenu_PCDriveMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_PCDriveMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
+    ) -> () {
+        unsafe {
+            __DebugPathMenu_PCDriveMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(setting),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+pub trait IDebugPathMenu_PCDriveMenuMethods: IDebugPathMenu_PCDriveMenu {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DebugPathMenu_PCDriveMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_PCDriveMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl<__T: IDebugPathMenu_PCDriveMenu> IDebugPathMenu_PCDriveMenuMethods for __T {}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_PCDriveMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_PCDriveMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_PCDriveMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __DebugPathMenu_Path_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1748,7 +1450,255 @@ impl DebugPathMenu_Path {
 #[cfg(feature = "app-debugpathmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_ShowError_unity2_raw {
+mod __DebugPathMenu_EntryData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugPathMenu_EntryData,
+        is_directory: bool,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugPathMenu_EntryData, bool, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, is_directory, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_directory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
+                "get_IsDirectory",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDirectory",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_directory(this: DebugPathMenu_EntryData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DebugPathMenu_EntryData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_directory::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_directory {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
+                "set_IsDirectory",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
+                        "set_IsDirectory",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_directory(this: DebugPathMenu_EntryData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugPathMenu_EntryData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_directory::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
+                "get_Name",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: DebugPathMenu_EntryData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DebugPathMenu_EntryData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::class(),
+                "set_Name",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_EntryData as ::unity2::ClassIdentity>::NAME,
+                        "set_Name",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_name(this: DebugPathMenu_EntryData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugPathMenu_EntryData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+pub trait IDebugPathMenu_EntryDataMethods: IDebugPathMenu_EntryData {
+    #[doc = "`.ctor(bool, ::unity2::Il2CppString)` overload"]
+    fn ctor(self, is_directory: impl ::core::convert::Into<bool>, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_EntryData_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(is_directory),
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsDirectory()` overload"]
+    fn get_is_directory(self) -> bool {
+        unsafe {
+            let __receiver =
+                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_EntryData_unity2_raw::get_is_directory(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsDirectory(bool)` overload"]
+    fn set_is_directory(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_EntryData_unity2_raw::set_is_directory(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_EntryData_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
+    fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <DebugPathMenu_EntryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_EntryData_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl<__T: IDebugPathMenu_EntryData> IDebugPathMenu_EntryDataMethods for __T {}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_EntryData {
+    #[doc = "`.ctor(bool, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(is_directory: bool, name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_EntryData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_EntryDataMethods>::ctor(this, is_directory, name);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugPathMenu_EntryMenu_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1757,12 +1707,14 @@ mod __DebugPathMenu_ShowError_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::class(),
+                <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                2,
+                4,
                 param_types,
                 true,
             )
@@ -1773,7 +1725,7 @@ mod __DebugPathMenu_ShowError_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::NAME,
+                        <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::NAME,
                         "CreateBind",
                         e
                     )
@@ -1783,12 +1735,19 @@ mod __DebugPathMenu_ShowError_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        parent_path: ::unity2::Il2CppString,
+        is_root: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, message, __unity2_method_info)
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::debugpathmenu::DebugPathMenu_Setting,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, setting, parent_path, is_root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1797,7 +1756,7 @@ mod __DebugPathMenu_ShowError_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::class(),
+                <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1810,7 +1769,7 @@ mod __DebugPathMenu_ShowError_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::NAME,
+                        <DebugPathMenu_EntryMenu as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1818,24 +1777,28 @@ mod __DebugPathMenu_ShowError_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: DebugPathMenu_ShowError, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugPathMenu_ShowError, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: DebugPathMenu_EntryMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugPathMenu_EntryMenu, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_ShowError {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+impl DebugPathMenu_EntryMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString, bool)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
+        parent_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_root: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            __DebugPathMenu_ShowError_unity2_raw::create_bind(
+            __DebugPathMenu_EntryMenu_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(setting),
+                ::core::convert::Into::into(parent_path),
+                ::core::convert::Into::into(is_root),
                 ::core::option::Option::None,
             )
         }
@@ -1843,429 +1806,32 @@ impl DebugPathMenu_ShowError {
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_ShowErrorMethods: IDebugPathMenu_ShowError {
+pub trait IDebugPathMenu_EntryMenuMethods: IDebugPathMenu_EntryMenu {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DebugPathMenu_ShowError as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_ShowError_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <DebugPathMenu_EntryMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_EntryMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_ShowError> IDebugPathMenu_ShowErrorMethods for __T {}
+impl<__T: IDebugPathMenu_EntryMenu> IDebugPathMenu_EntryMenuMethods for __T {}
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_ShowError {
+impl DebugPathMenu_EntryMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_ShowError),
+                ::core::stringify!(DebugPathMenu_EntryMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugPathMenu_ShowErrorMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_Directory_EnumResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
-                crate::app::debugpathmenu::DebugPathMenu_EntryData,
-            > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugPathMenu_Directory_EnumResult,
-        entries: crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugPathMenu_Directory_EnumResult,
-            crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, entries, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: DebugPathMenu_Directory_EnumResult,
-        error_message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugPathMenu_Directory_EnumResult, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
-        inner(this, error_message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_failure {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::class(),
-                "IsFailure",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::NAME,
-                        "IsFailure",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_failure(this: DebugPathMenu_Directory_EnumResult, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(DebugPathMenu_Directory_EnumResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_failure::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_Directory_EnumResultMethods: IDebugPathMenu_Directory_EnumResult {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` overload"]
-    fn ctor(
-        self,
-        entries: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <DebugPathMenu_Directory_EnumResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_Directory_EnumResult_unity2_raw::ctor(__receiver, ::core::convert::Into::into(entries), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor_2(self, error_message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <DebugPathMenu_Directory_EnumResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_Directory_EnumResult_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(error_message),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsFailure()` overload"]
-    fn is_failure(self) -> bool {
-        unsafe {
-            let __receiver = <DebugPathMenu_Directory_EnumResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_Directory_EnumResult_unity2_raw::is_failure(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_Directory_EnumResult> IDebugPathMenu_Directory_EnumResultMethods for __T {}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_Directory_EnumResult {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` — overload selector"]
-    pub fn new(entries: crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor(this, entries);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new_2(error_message: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor_2(this, error_message);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugPathMenu_ShowError_ErrorMenuItem,
-        error: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, error, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "GetName",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_name(this: DebugPathMenu_ShowError_ErrorMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: DebugPathMenu_ShowError_ErrorMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
-                        "BCall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn b_call(
-        this: DebugPathMenu_ShowError_ErrorMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
-        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
-            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_ShowError_ErrorMenuItemMethods: IDebugPathMenu_ShowError_ErrorMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, error: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(error), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_ShowError_ErrorMenuItem> IDebugPathMenu_ShowError_ErrorMenuItemMethods for __T {}
-
-#[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_ShowError_ErrorMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(error: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_ShowError_ErrorMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugPathMenu_ShowError_ErrorMenuItemMethods>::ctor(this, error);
+        <Self as IDebugPathMenu_EntryMenuMethods>::ctor(this);
         this
     }
 }
@@ -2587,64 +2153,21 @@ impl DebugPathMenu {
 #[cfg(feature = "app-debugpathmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_Directory_unity2_raw {
+mod __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_enum_entries {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "EnumEntries",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "EnumEntries",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enum_entries(
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
-        let inner: extern "C" fn(
-            crate::app::debugpathmenu::DebugPathMenu_Setting,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult =
-            ::core::mem::transmute(__lookup_enum_entries::get_method_info().method_ptr);
-        inner(setting, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exists {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "IsExists",
+                <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 1,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -2653,75 +2176,171 @@ mod __DebugPathMenu_Directory_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "IsExists",
+                        <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn is_exists(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exists::get_method_info().method_ptr);
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enum_entries_nx {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "EnumEntriesNX",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "EnumEntriesNX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enum_entries_nx(
+    pub unsafe fn ctor(
+        this: DebugPathMenu_CategoriesMenu_AssetsMenuItem,
         setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        path: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
+    ) -> () {
         let inner: extern "C" fn(
+            DebugPathMenu_CategoriesMenu_AssetsMenuItem,
             crate::app::debugpathmenu::DebugPathMenu_Setting,
-            ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult =
-            ::core::mem::transmute(__lookup_enum_entries_nx::get_method_info().method_ptr);
-        inner(setting, path, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, setting, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_make_entry_data_nx {
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(
+        this: DebugPathMenu_CategoriesMenu_AssetsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: DebugPathMenu_CategoriesMenu_AssetsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+pub trait IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods: IDebugPathMenu_CategoriesMenu_AssetsMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
+    fn ctor(self, setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>) -> () {
+        unsafe {
+            let __receiver = <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(setting),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver = <DebugPathMenu_CategoriesMenu_AssetsMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl<__T: IDebugPathMenu_CategoriesMenu_AssetsMenuItem> IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods for __T {}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_CategoriesMenu_AssetsMenuItem {
+    #[doc = "`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]
+    pub fn new(setting: crate::app::debugpathmenu::DebugPathMenu_Setting) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_CategoriesMenu_AssetsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods>::ctor(this, setting);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugPathMenu_ShowError_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "MakeEntryDataNX",
+                <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
                 2,
                 param_types,
                 true,
@@ -2733,172 +2352,22 @@ mod __DebugPathMenu_Directory_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "MakeEntryDataNX",
+                        <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn make_entry_data_nx(
-        is_directory: bool,
-        entry_name: ::unity2::Il2CppString,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
-        let inner: extern "C" fn(bool, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::debugpathmenu::DebugPathMenu_EntryData =
-            ::core::mem::transmute(__lookup_make_entry_data_nx::get_method_info().method_ptr);
-        inner(is_directory, entry_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exists_nx {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "IsExistsNX",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "IsExistsNX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exists_nx(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exists_nx::get_method_info().method_ptr);
-        inner(path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enum_entries_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "EnumEntriesWin",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "EnumEntriesWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn enum_entries_win(
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
-        let inner: extern "C" fn(
-            crate::app::debugpathmenu::DebugPathMenu_Setting,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult =
-            ::core::mem::transmute(__lookup_enum_entries_win::get_method_info().method_ptr);
-        inner(setting, path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_entry_data_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "MakeEntryDataWin",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "MakeEntryDataWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn make_entry_data_win(
-        is_directory: bool,
-        full_path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
-        let inner: extern "C" fn(bool, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::debugpathmenu::DebugPathMenu_EntryData =
-            ::core::mem::transmute(__lookup_make_entry_data_win::get_method_info().method_ptr);
-        inner(is_directory, full_path, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exists_win {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
-                "IsExistsWin",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
-                        "IsExistsWin",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_exists_win(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_exists_win::get_method_info().method_ptr);
-        inner(path, __unity2_method_info)
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, message, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2907,7 +2376,7 @@ mod __DebugPathMenu_Directory_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -2920,7 +2389,7 @@ mod __DebugPathMenu_Directory_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        <DebugPathMenu_ShowError as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -2928,128 +2397,265 @@ mod __DebugPathMenu_Directory_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: DebugPathMenu_Directory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugPathMenu_Directory, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: DebugPathMenu_ShowError, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugPathMenu_ShowError, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_Directory {
-    #[doc = "`EnumEntries(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
-    pub fn enum_entries(
-        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
+impl DebugPathMenu_ShowError {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
         unsafe {
-            __DebugPathMenu_Directory_unity2_raw::enum_entries(
-                ::core::convert::Into::into(setting),
-                ::core::convert::Into::into(path),
+            __DebugPathMenu_ShowError_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(message),
                 ::core::option::Option::None,
             )
         }
-    }
-
-    #[doc = "`IsExists(::unity2::Il2CppString)` overload"]
-    pub fn is_exists(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __DebugPathMenu_Directory_unity2_raw::is_exists(::core::convert::Into::into(path), ::core::option::Option::None) }
-    }
-
-    #[doc = "`EnumEntriesNX(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
-    pub fn enum_entries_nx(
-        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
-        unsafe {
-            __DebugPathMenu_Directory_unity2_raw::enum_entries_nx(
-                ::core::convert::Into::into(setting),
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`MakeEntryDataNX(bool, ::unity2::Il2CppString)` overload"]
-    pub fn make_entry_data_nx(
-        is_directory: impl ::core::convert::Into<bool>,
-        entry_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
-        unsafe {
-            __DebugPathMenu_Directory_unity2_raw::make_entry_data_nx(
-                ::core::convert::Into::into(is_directory),
-                ::core::convert::Into::into(entry_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsExistsNX(::unity2::Il2CppString)` overload"]
-    pub fn is_exists_nx(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __DebugPathMenu_Directory_unity2_raw::is_exists_nx(::core::convert::Into::into(path), ::core::option::Option::None) }
-    }
-
-    #[doc = "`EnumEntriesWin(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
-    pub fn enum_entries_win(
-        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
-        unsafe {
-            __DebugPathMenu_Directory_unity2_raw::enum_entries_win(
-                ::core::convert::Into::into(setting),
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`MakeEntryDataWin(bool, ::unity2::Il2CppString)` overload"]
-    pub fn make_entry_data_win(
-        is_directory: impl ::core::convert::Into<bool>,
-        full_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
-        unsafe {
-            __DebugPathMenu_Directory_unity2_raw::make_entry_data_win(
-                ::core::convert::Into::into(is_directory),
-                ::core::convert::Into::into(full_path),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`IsExistsWin(::unity2::Il2CppString)` overload"]
-    pub fn is_exists_win(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe { __DebugPathMenu_Directory_unity2_raw::is_exists_win(::core::convert::Into::into(path), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_DirectoryMethods: IDebugPathMenu_Directory {
+pub trait IDebugPathMenu_ShowErrorMethods: IDebugPathMenu_ShowError {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DebugPathMenu_Directory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_Directory_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <DebugPathMenu_ShowError as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_ShowError_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_Directory> IDebugPathMenu_DirectoryMethods for __T {}
+impl<__T: IDebugPathMenu_ShowError> IDebugPathMenu_ShowErrorMethods for __T {}
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_Directory {
+impl DebugPathMenu_ShowError {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_Directory),
+                ::core::stringify!(DebugPathMenu_ShowError),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugPathMenu_DirectoryMethods>::ctor(this);
+        <Self as IDebugPathMenu_ShowErrorMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugPathMenu_ShowError_ErrorMenuItem,
+        error: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, error, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: DebugPathMenu_ShowError_ErrorMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: DebugPathMenu_ShowError_ErrorMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(
+        this: DebugPathMenu_ShowError_ErrorMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod) -> crate::app::menuitem::MenuItem_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+pub trait IDebugPathMenu_ShowError_ErrorMenuItemMethods: IDebugPathMenu_ShowError_ErrorMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, error: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(error), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver = <DebugPathMenu_ShowError_ErrorMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl<__T: IDebugPathMenu_ShowError_ErrorMenuItem> IDebugPathMenu_ShowError_ErrorMenuItemMethods for __T {}
+
+#[cfg(feature = "app-debugpathmenu")]
+impl DebugPathMenu_ShowError_ErrorMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(error: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_ShowError_ErrorMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugPathMenu_ShowError_ErrorMenuItemMethods>::ctor(this, error);
         this
     }
 }
@@ -3574,23 +3180,22 @@ impl DebugPathMenu_EntryMenuItem {
 #[cfg(feature = "app-debugpathmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_CategoriesMenu_unity2_raw {
+mod __DebugPathMenu_Directory_EnumResult_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::debugpathmenu::DebugPathMenu_EntryData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
+                <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -3599,32 +3204,72 @@ mod __DebugPathMenu_CategoriesMenu_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
+                        <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+    pub unsafe fn ctor(
+        this: DebugPathMenu_Directory_EnumResult,
+        entries: crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, setting, __unity2_method_info)
+        let inner: extern "C" fn(
+            DebugPathMenu_Directory_EnumResult,
+            crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, entries, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: DebugPathMenu_Directory_EnumResult,
+        error_message: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DebugPathMenu_Directory_EnumResult, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, error_message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_failure {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::class(),
+                "IsFailure",
                 0,
                 param_types,
                 false,
@@ -3636,65 +3281,87 @@ mod __DebugPathMenu_CategoriesMenu_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_CategoriesMenu as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <DebugPathMenu_Directory_EnumResult as ::unity2::ClassIdentity>::NAME,
+                        "IsFailure",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(this: DebugPathMenu_CategoriesMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugPathMenu_CategoriesMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+    pub unsafe fn is_failure(this: DebugPathMenu_Directory_EnumResult, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DebugPathMenu_Directory_EnumResult, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_failure::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_CategoriesMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
+pub trait IDebugPathMenu_Directory_EnumResultMethods: IDebugPathMenu_Directory_EnumResult {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` overload"]
+    fn ctor(
+        self,
+        entries: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>>,
     ) -> () {
         unsafe {
-            __DebugPathMenu_CategoriesMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(setting),
+            let __receiver = <DebugPathMenu_Directory_EnumResult as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_Directory_EnumResult_unity2_raw::ctor(__receiver, ::core::convert::Into::into(entries), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor_2(self, error_message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <DebugPathMenu_Directory_EnumResult as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_Directory_EnumResult_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(error_message),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_CategoriesMenuMethods: IDebugPathMenu_CategoriesMenu {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`IsFailure()` overload"]
+    fn is_failure(self) -> bool {
         unsafe {
-            let __receiver =
-                <DebugPathMenu_CategoriesMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_CategoriesMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver = <DebugPathMenu_Directory_EnumResult as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugPathMenu_Directory_EnumResult_unity2_raw::is_failure(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_CategoriesMenu> IDebugPathMenu_CategoriesMenuMethods for __T {}
+impl<__T: IDebugPathMenu_Directory_EnumResult> IDebugPathMenu_Directory_EnumResultMethods for __T {}
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_CategoriesMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl DebugPathMenu_Directory_EnumResult {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` — overload selector"]
+    pub fn new(entries: crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_CategoriesMenu),
+                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugPathMenu_CategoriesMenuMethods>::ctor(this);
+        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor(this, entries);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new_2(error_message: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugPathMenu_Directory_EnumResult),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDebugPathMenu_Directory_EnumResultMethods>::ctor_2(this, error_message);
         this
     }
 }
@@ -3702,20 +3369,20 @@ impl DebugPathMenu_CategoriesMenu {
 #[cfg(feature = "app-debugpathmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugPathMenu_PCDriveMenu_unity2_raw {
+mod __DebugPathMenu_Directory_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_enum_entries {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "EnumEntries",
                 2,
                 param_types,
                 true,
@@ -3727,22 +3394,293 @@ mod __DebugPathMenu_PCDriveMenu_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "EnumEntries",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
+    pub unsafe fn enum_entries(
         setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        path: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, setting, __unity2_method_info)
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
+        let inner: extern "C" fn(
+            crate::app::debugpathmenu::DebugPathMenu_Setting,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult =
+            ::core::mem::transmute(__lookup_enum_entries::get_method_info().method_ptr);
+        inner(setting, path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exists {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "IsExists",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "IsExists",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exists(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exists::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enum_entries_nx {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "EnumEntriesNX",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "EnumEntriesNX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enum_entries_nx(
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
+        let inner: extern "C" fn(
+            crate::app::debugpathmenu::DebugPathMenu_Setting,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult =
+            ::core::mem::transmute(__lookup_enum_entries_nx::get_method_info().method_ptr);
+        inner(setting, path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_entry_data_nx {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "MakeEntryDataNX",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "MakeEntryDataNX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn make_entry_data_nx(
+        is_directory: bool,
+        entry_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
+        let inner: extern "C" fn(bool, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::debugpathmenu::DebugPathMenu_EntryData =
+            ::core::mem::transmute(__lookup_make_entry_data_nx::get_method_info().method_ptr);
+        inner(is_directory, entry_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exists_nx {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "IsExistsNX",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "IsExistsNX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exists_nx(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exists_nx::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enum_entries_win {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::debugpathmenu::DebugPathMenu_Setting as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "EnumEntriesWin",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "EnumEntriesWin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enum_entries_win(
+        setting: crate::app::debugpathmenu::DebugPathMenu_Setting,
+        path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
+        let inner: extern "C" fn(
+            crate::app::debugpathmenu::DebugPathMenu_Setting,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult =
+            ::core::mem::transmute(__lookup_enum_entries_win::get_method_info().method_ptr);
+        inner(setting, path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_entry_data_win {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "MakeEntryDataWin",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "MakeEntryDataWin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn make_entry_data_win(
+        is_directory: bool,
+        full_path: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
+        let inner: extern "C" fn(bool, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::debugpathmenu::DebugPathMenu_EntryData =
+            ::core::mem::transmute(__lookup_make_entry_data_win::get_method_info().method_ptr);
+        inner(is_directory, full_path, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exists_win {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
+                "IsExistsWin",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
+                        "IsExistsWin",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exists_win(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exists_win::get_method_info().method_ptr);
+        inner(path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -3751,7 +3689,7 @@ mod __DebugPathMenu_PCDriveMenu_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::class(),
+                <DebugPathMenu_Directory as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -3764,7 +3702,7 @@ mod __DebugPathMenu_PCDriveMenu_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <DebugPathMenu_PCDriveMenu as ::unity2::ClassIdentity>::NAME,
+                        <DebugPathMenu_Directory as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -3772,57 +3710,128 @@ mod __DebugPathMenu_PCDriveMenu_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: DebugPathMenu_PCDriveMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(DebugPathMenu_PCDriveMenu, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: DebugPathMenu_Directory, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugPathMenu_Directory, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_PCDriveMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+impl DebugPathMenu_Directory {
+    #[doc = "`EnumEntries(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
+    pub fn enum_entries(
         setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
-    ) -> () {
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
         unsafe {
-            __DebugPathMenu_PCDriveMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
+            __DebugPathMenu_Directory_unity2_raw::enum_entries(
                 ::core::convert::Into::into(setting),
+                ::core::convert::Into::into(path),
                 ::core::option::Option::None,
             )
         }
     }
+
+    #[doc = "`IsExists(::unity2::Il2CppString)` overload"]
+    pub fn is_exists(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __DebugPathMenu_Directory_unity2_raw::is_exists(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`EnumEntriesNX(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
+    pub fn enum_entries_nx(
+        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
+        unsafe {
+            __DebugPathMenu_Directory_unity2_raw::enum_entries_nx(
+                ::core::convert::Into::into(setting),
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`MakeEntryDataNX(bool, ::unity2::Il2CppString)` overload"]
+    pub fn make_entry_data_nx(
+        is_directory: impl ::core::convert::Into<bool>,
+        entry_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
+        unsafe {
+            __DebugPathMenu_Directory_unity2_raw::make_entry_data_nx(
+                ::core::convert::Into::into(is_directory),
+                ::core::convert::Into::into(entry_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`IsExistsNX(::unity2::Il2CppString)` overload"]
+    pub fn is_exists_nx(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __DebugPathMenu_Directory_unity2_raw::is_exists_nx(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
+
+    #[doc = "`EnumEntriesWin(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString)` overload"]
+    pub fn enum_entries_win(
+        setting: impl ::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>,
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_Directory_EnumResult {
+        unsafe {
+            __DebugPathMenu_Directory_unity2_raw::enum_entries_win(
+                ::core::convert::Into::into(setting),
+                ::core::convert::Into::into(path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`MakeEntryDataWin(bool, ::unity2::Il2CppString)` overload"]
+    pub fn make_entry_data_win(
+        is_directory: impl ::core::convert::Into<bool>,
+        full_path: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::debugpathmenu::DebugPathMenu_EntryData {
+        unsafe {
+            __DebugPathMenu_Directory_unity2_raw::make_entry_data_win(
+                ::core::convert::Into::into(is_directory),
+                ::core::convert::Into::into(full_path),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`IsExistsWin(::unity2::Il2CppString)` overload"]
+    pub fn is_exists_win(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __DebugPathMenu_Directory_unity2_raw::is_exists_win(::core::convert::Into::into(path), ::core::option::Option::None) }
+    }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-pub trait IDebugPathMenu_PCDriveMenuMethods: IDebugPathMenu_PCDriveMenu {
+pub trait IDebugPathMenu_DirectoryMethods: IDebugPathMenu_Directory {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DebugPathMenu_PCDriveMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DebugPathMenu_PCDriveMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <DebugPathMenu_Directory as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugPathMenu_Directory_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-debugpathmenu")]
-impl<__T: IDebugPathMenu_PCDriveMenu> IDebugPathMenu_PCDriveMenuMethods for __T {}
+impl<__T: IDebugPathMenu_Directory> IDebugPathMenu_DirectoryMethods for __T {}
 
 #[cfg(feature = "app-debugpathmenu")]
-impl DebugPathMenu_PCDriveMenu {
+impl DebugPathMenu_Directory {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugPathMenu_PCDriveMenu),
+                ::core::stringify!(DebugPathMenu_Directory),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugPathMenu_PCDriveMenuMethods>::ctor(this);
+        <Self as IDebugPathMenu_DirectoryMethods>::ctor(this);
         this
     }
 }

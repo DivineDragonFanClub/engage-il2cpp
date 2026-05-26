@@ -11,36 +11,21 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections", name = "ArrayList")]
     #[parent(crate::system::object::Object)]
     pub struct ArrayList {
+        #[offset(16)]
         #[rename(name = "_items")]
         pub items: ::unity2::Array<crate::system::object::Object>,
+        #[offset(24)]
         #[rename(name = "_size")]
         pub size: i32,
+        #[offset(28)]
         #[rename(name = "_version")]
         pub version: i32,
+        #[offset(32)]
         #[rename(name = "_syncRoot")]
         pub sync_root: ::unity2::IlInstance,
         #[static_field]
         #[rename(name = "emptyArray")]
         pub empty_array: ::unity2::Array<crate::system::object::Object>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListEnumeratorSimple.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ArrayListEnumeratorSimple")]
-    #[parent(crate::system::object::Object)]
-    pub struct ArrayList_ArrayListEnumeratorSimple {
-        #[rename(name = "list")]
-        pub list: crate::system::collections::arraylist::ArrayList,
-        #[rename(name = "index")]
-        pub index: i32,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "currentElement")]
-        pub current_element: ::unity2::IlInstance,
-        #[rename(name = "isArrayList")]
-        pub is_array_list: bool,
-        #[static_field]
-        #[rename(name = "dummyObject")]
-        pub dummy_object: ::unity2::IlInstance,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListDebugView.md"))]
@@ -52,8 +37,33 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ReadOnlyArrayList")]
     #[parent(crate::system::collections::arraylist::ArrayList)]
     pub struct ArrayList_ReadOnlyArrayList {
+        #[offset(40)]
         #[rename(name = "_list")]
         pub list: crate::system::collections::arraylist::ArrayList,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListEnumeratorSimple.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ArrayListEnumeratorSimple")]
+    #[parent(crate::system::object::Object)]
+    pub struct ArrayList_ArrayListEnumeratorSimple {
+        #[offset(16)]
+        #[rename(name = "list")]
+        pub list: crate::system::collections::arraylist::ArrayList,
+        #[offset(24)]
+        #[rename(name = "index")]
+        pub index: i32,
+        #[offset(28)]
+        #[rename(name = "version")]
+        pub version: i32,
+        #[offset(32)]
+        #[rename(name = "currentElement")]
+        pub current_element: ::unity2::IlInstance,
+        #[offset(40)]
+        #[rename(name = "isArrayList")]
+        pub is_array_list: bool,
+        #[static_field]
+        #[rename(name = "dummyObject")]
+        pub dummy_object: ::unity2::IlInstance,
     }
 }
 
@@ -1253,297 +1263,6 @@ impl ArrayList {
 #[cfg(feature = "system-collections-arraylist")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ArrayList_ArrayListEnumeratorSimple,
-        list: crate::system::collections::arraylist::ArrayList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArrayList_ArrayListEnumeratorSimple,
-            crate::system::collections::arraylist::ArrayList,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, list, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clone {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "Clone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "Clone",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clone(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
-        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(
-        this: ArrayList_ArrayListEnumeratorSimple,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-impl ArrayList_ArrayListEnumeratorSimple {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ArrayList_ArrayListEnumeratorSimple_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-pub trait IArrayList_ArrayListEnumeratorSimpleMethods: IArrayList_ArrayListEnumeratorSimple {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList)` overload"]
-    fn ctor(self, list: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>) -> () {
-        unsafe {
-            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::ctor(__receiver, ::core::convert::Into::into(list), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clone()` overload"]
-    fn clone(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::clone(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MoveNext()` overload"]
-    fn move_next(self) -> bool {
-        unsafe {
-            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::move_next(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Current()` overload"]
-    fn get_current(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::get_current(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-impl<__T: IArrayList_ArrayListEnumeratorSimple> IArrayList_ArrayListEnumeratorSimpleMethods for __T {}
-
-#[cfg(feature = "system-collections-arraylist")]
-impl ArrayList_ArrayListEnumeratorSimple {
-    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList)` — overload selector"]
-    pub fn new(list: crate::system::collections::arraylist::ArrayList) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArrayList_ArrayListEnumeratorSimple),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArrayList_ArrayListEnumeratorSimpleMethods>::ctor(this, list);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-arraylist")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __ArrayList_ReadOnlyArrayList_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2677,6 +2396,297 @@ impl ArrayList_ReadOnlyArrayList {
             )
         });
         <Self as IArrayList_ReadOnlyArrayListMethods>::ctor(this, l);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::arraylist::ArrayList as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ArrayList_ArrayListEnumeratorSimple,
+        list: crate::system::collections::arraylist::ArrayList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ArrayList_ArrayListEnumeratorSimple,
+            crate::system::collections::arraylist::ArrayList,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, list, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clone {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "Clone",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clone(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn move_next(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current(
+        this: ArrayList_ArrayListEnumeratorSimple,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: ArrayList_ArrayListEnumeratorSimple, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArrayList_ArrayListEnumeratorSimple as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+impl ArrayList_ArrayListEnumeratorSimple {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ArrayList_ArrayListEnumeratorSimple_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+pub trait IArrayList_ArrayListEnumeratorSimpleMethods: IArrayList_ArrayListEnumeratorSimple {
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList)` overload"]
+    fn ctor(self, list: impl ::core::convert::Into<crate::system::collections::arraylist::ArrayList>) -> () {
+        unsafe {
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::ctor(__receiver, ::core::convert::Into::into(list), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clone()` overload"]
+    fn clone(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::clone(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MoveNext()` overload"]
+    fn move_next(self) -> bool {
+        unsafe {
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::move_next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Current()` overload"]
+    fn get_current(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::get_current(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <ArrayList_ArrayListEnumeratorSimple as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArrayList_ArrayListEnumeratorSimple_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-arraylist")]
+impl<__T: IArrayList_ArrayListEnumeratorSimple> IArrayList_ArrayListEnumeratorSimpleMethods for __T {}
+
+#[cfg(feature = "system-collections-arraylist")]
+impl ArrayList_ArrayListEnumeratorSimple {
+    #[doc = "`.ctor(crate::system::collections::arraylist::ArrayList)` — overload selector"]
+    pub fn new(list: crate::system::collections::arraylist::ArrayList) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArrayList_ArrayListEnumeratorSimple),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArrayList_ArrayListEnumeratorSimpleMethods>::ctor(this, list);
         this
     }
 }

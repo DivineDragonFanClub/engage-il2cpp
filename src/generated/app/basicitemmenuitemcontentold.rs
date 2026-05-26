@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicItemMenuItemContentOld")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct BasicItemMenuItemContentOld {
+        #[offset(72)]
         #[rename(name = "m_icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_text")]
         pub m_text: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_count")]
         pub m_count: crate::unity_engine::gameobject::GameObject,
     }

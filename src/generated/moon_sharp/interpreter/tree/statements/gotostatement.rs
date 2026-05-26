@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "GotoStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct GotoStatement {
+        #[offset(72)]
         #[rename(name = "m_Jump")]
         pub m_jump: crate::moon_sharp::interpreter::execution::vm::instruction::Instruction,
+        #[offset(80)]
         #[rename(name = "m_LabelAddress")]
         pub m_label_address: i32,
     }

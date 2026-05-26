@@ -11,10 +11,12 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution", name = "BuildTimeScope")]
     #[parent(crate::system::object::Object)]
     pub struct BuildTimeScope {
+        #[offset(16)]
         #[rename(name = "m_Frames")]
         pub m_frames: crate::system::collections::generic::list_1::List_1<
             crate::moon_sharp::interpreter::execution::scopes::buildtimescopeframe::BuildTimeScopeFrame,
         >,
+        #[offset(24)]
         #[rename(name = "m_ClosureBuilders")]
         pub m_closure_builders:
             crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::execution::iclosurebuilder::IClosureBuilder>,

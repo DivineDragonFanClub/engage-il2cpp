@@ -24,6 +24,15 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct TutorialListTopMenu_DecideEventHandler {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu.md"))]
+    #[::unity2::class(namespace = "", name = "TutorialListTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct TutorialListTopMenu {
+        #[offset(200)]
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallisttopmenu/TutorialListTopMenu_SelectCategoryType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -80,14 +89,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 7 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu.md"))]
-    #[::unity2::class(namespace = "", name = "TutorialListTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct TutorialListTopMenu {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
     }
 }
 

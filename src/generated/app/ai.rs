@@ -14,6 +14,42 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ai/AI.md"))]
+    #[::unity2::class(namespace = "App", name = "AI")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)]
+    pub struct AI {
+        #[offset(32)]
+        #[rename(name = "m_Order")]
+        pub m_order: crate::app::aiorder::AIOrder,
+        #[offset(40)]
+        #[rename(name = "m_Think")]
+        pub m_think: crate::app::aithink::AIThink,
+        #[offset(48)]
+        #[rename(name = "m_Cannon")]
+        pub m_cannon: crate::app::aicannon::AICannon,
+        #[offset(56)]
+        #[rename(name = "m_InterruptAttack")]
+        pub m_interrupt_attack: crate::app::aiinterruptattack::AIInterruptAttack,
+        #[offset(64)]
+        #[rename(name = "m_Seq")]
+        pub m_seq: crate::app::ai::AI_Seq,
+        #[offset(68)]
+        #[rename(name = "m_Crossfire")]
+        pub m_crossfire: bool,
+        #[offset(69)]
+        #[rename(name = "m_IsTargetUpdate")]
+        pub m_is_target_update: bool,
+        #[offset(70)]
+        #[rename(name = "m_IsVersus")]
+        pub m_is_versus: bool,
+        #[offset(71)]
+        #[rename(name = "m_IsVersusCasual")]
+        pub m_is_versus_casual: bool,
+        #[offset(72)]
+        #[rename(name = "m_IsVersusRankedOrMock")]
+        pub m_is_versus_ranked_or_mock: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ai/AI_Seq.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -62,32 +98,6 @@ mod __types {
         pub fn finalize() -> Self {
             Self { value: 5 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ai/AI.md"))]
-    #[::unity2::class(namespace = "App", name = "AI")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)]
-    pub struct AI {
-        #[rename(name = "m_Order")]
-        pub m_order: crate::app::aiorder::AIOrder,
-        #[rename(name = "m_Think")]
-        pub m_think: crate::app::aithink::AIThink,
-        #[rename(name = "m_Cannon")]
-        pub m_cannon: crate::app::aicannon::AICannon,
-        #[rename(name = "m_InterruptAttack")]
-        pub m_interrupt_attack: crate::app::aiinterruptattack::AIInterruptAttack,
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::ai::AI_Seq,
-        #[rename(name = "m_Crossfire")]
-        pub m_crossfire: bool,
-        #[rename(name = "m_IsTargetUpdate")]
-        pub m_is_target_update: bool,
-        #[rename(name = "m_IsVersus")]
-        pub m_is_versus: bool,
-        #[rename(name = "m_IsVersusCasual")]
-        pub m_is_versus_casual: bool,
-        #[rename(name = "m_IsVersusRankedOrMock")]
-        pub m_is_versus_ranked_or_mock: bool,
     }
 }
 

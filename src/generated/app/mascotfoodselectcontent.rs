@@ -26,12 +26,16 @@ mod __types {
         #[static_field]
         #[rename(name = "UIName")]
         pub ui_name: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_Food")]
         pub m_food: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_FoodCount")]
         pub m_food_count: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_FoodHelp")]
         pub m_food_help: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_HelpRoot")]
         pub m_help_root: crate::unity_engine::gameobject::GameObject,
     }

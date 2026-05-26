@@ -20,34 +20,49 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerBehind")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerBehind {
+        #[offset(168)]
         #[rename(name = "Distance")]
         pub distance: f32,
+        #[offset(172)]
         #[rename(name = "CameraHeight")]
         pub camera_height: f32,
+        #[offset(176)]
         #[rename(name = "CameraLookUp")]
         pub camera_look_up: f32,
+        #[offset(180)]
         #[rename(name = "DistanceRate")]
         pub distance_rate: f32,
+        #[offset(184)]
         #[rename(name = "SidePlayer")]
         pub side_player: bool,
+        #[offset(188)]
         #[rename(name = "NearUnitSize")]
         pub near_unit_size: f32,
+        #[offset(192)]
         #[rename(name = "FarUnitSize")]
         pub far_unit_size: f32,
+        #[offset(196)]
         #[rename(name = "CameraUpThreshold")]
         pub camera_up_threshold: f32,
+        #[offset(200)]
         #[rename(name = "m_BaseDegree")]
         pub m_base_degree: f32,
+        #[offset(204)]
         #[rename(name = "m_LastDegree")]
         pub m_last_degree: f32,
+        #[offset(208)]
         #[rename(name = "m_LastLookHeight")]
         pub m_last_look_height: f32,
+        #[offset(212)]
         #[rename(name = "m_DoCameraLookUp")]
         pub m_do_camera_look_up: bool,
+        #[offset(213)]
         #[rename(name = "isValid")]
         pub is_valid: bool,
+        #[offset(214)]
         #[rename(name = "m_IsInverse")]
         pub m_is_inverse: bool,
+        #[offset(215)]
         #[rename(name = "m_IsSideRev")]
         pub m_is_side_rev: bool,
     }

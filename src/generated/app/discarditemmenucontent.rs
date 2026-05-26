@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct DiscardItemMenuContent {
+        #[offset(232)]
         #[rename(name = "m_KindIcon")]
         pub m_kind_icon: ::unity2::Array<crate::app::discarditemmenucontent::DiscardItemMenuContent_KindIcon>,
+        #[offset(240)]
         #[rename(name = "m_MenuTitleText")]
         pub m_menu_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_TransporterText")]
         pub m_transporter_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_StockValueText")]
         pub m_stock_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_StockValueMaxText")]
         pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
@@ -36,8 +41,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent.KindIcon")]
     #[parent(crate::system::object::Object)]
     pub struct DiscardItemMenuContent_KindIcon {
+        #[offset(16)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(24)]
         #[rename(name = "m_Kind")]
         pub m_kind: crate::app::itemdata::ItemData_Kinds,
     }

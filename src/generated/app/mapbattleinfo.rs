@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBattleInfo")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapbattleinfo :: MapBattleInfo >)]
     pub struct MapBattleInfo {
+        #[offset(32)]
         #[rename(name = "m_Calculator")]
         pub m_calculator: crate::app::battlecalculator::BattleCalculator,
     }

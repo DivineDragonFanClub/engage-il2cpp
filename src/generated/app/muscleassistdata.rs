@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MuscleAssistData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: muscleassistdata :: MuscleAssistData >)]
     pub struct MuscleAssistData {
+        #[offset(88)]
         #[rename(name = "Param")]
         pub param: ::unity2::Array<i32>,
     }

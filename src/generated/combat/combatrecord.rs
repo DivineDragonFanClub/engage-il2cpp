@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatRecord")]
     #[parent(crate::system::object::Object)]
     pub struct CombatRecord {
+        #[offset(96)]
         #[rename(name = "finishStyle")]
         pub finish_style: crate::combat::finishstyle::FinishStyle,
     }

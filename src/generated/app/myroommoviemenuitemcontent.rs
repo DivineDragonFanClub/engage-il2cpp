@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomMovieMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct MyRoomMovieMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
     }

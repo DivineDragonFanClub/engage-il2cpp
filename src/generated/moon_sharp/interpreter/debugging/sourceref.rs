@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "SourceRef")]
     #[parent(crate::system::object::Object)]
     pub struct SourceRef {
+        #[offset(41)]
         #[rename(name = "Breakpoint")]
         pub breakpoint: bool,
     }

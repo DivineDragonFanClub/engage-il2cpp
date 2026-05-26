@@ -20,24 +20,34 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial.MatEntry")]
     #[parent(crate::system::object::Object)]
     pub struct StencilMaterial_MatEntry {
+        #[offset(16)]
         #[rename(name = "baseMat")]
         pub base_mat: crate::unity_engine::material::Material,
+        #[offset(24)]
         #[rename(name = "customMat")]
         pub custom_mat: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "count")]
         pub count: i32,
+        #[offset(36)]
         #[rename(name = "stencilId")]
         pub stencil_id: i32,
+        #[offset(40)]
         #[rename(name = "operation")]
         pub operation: crate::unity_engine::rendering::stencilop::StencilOp,
+        #[offset(44)]
         #[rename(name = "compareFunction")]
         pub compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+        #[offset(48)]
         #[rename(name = "readMask")]
         pub read_mask: i32,
+        #[offset(52)]
         #[rename(name = "writeMask")]
         pub write_mask: i32,
+        #[offset(56)]
         #[rename(name = "useAlphaClip")]
         pub use_alpha_clip: bool,
+        #[offset(60)]
         #[rename(name = "colorMask")]
         pub color_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
     }

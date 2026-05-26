@@ -25,12 +25,16 @@ mod __types {
         #[static_field]
         #[rename(name = "UIName")]
         pub ui_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_gauge")]
         pub m_gauge: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(32)]
         #[rename(name = "m_gaugeImage")]
         pub m_gauge_image: crate::unity_engine::ui::image::Image,
+        #[offset(40)]
         #[rename(name = "m_animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(48)]
         #[rename(name = "m_max")]
         pub m_max: crate::unity_engine::gameobject::GameObject,
     }

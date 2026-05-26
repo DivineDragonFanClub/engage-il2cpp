@@ -17,8 +17,10 @@ mod __types {
         #[static_field]
         #[rename(name = "BufferSize")]
         pub buffer_size: i32,
+        #[offset(16)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::Array<u8>,
+        #[offset(24)]
         #[rename(name = "m_Stream")]
         pub m_stream: crate::app::stream_2::Stream_2,
     }

@@ -14,76 +14,6 @@ mod __types {
         unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct PostProcessPass_CaptureMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PostProcessPass_CaptureMode {
-        const NAME: &'static str = "PostProcessPass.CaptureMode";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostProcessPass_CaptureMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl PostProcessPass_CaptureMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn capture() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn copy() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "PostProcessPass.MaterialLibrary")]
-    #[parent(crate::system::object::Object)]
-    pub struct PostProcessPass_MaterialLibrary {
-        #[rename(name = "stopNaN")]
-        pub stop_na_n: crate::unity_engine::material::Material,
-        #[rename(name = "subpixelMorphologicalAntialiasing")]
-        pub subpixel_morphological_antialiasing: crate::unity_engine::material::Material,
-        #[rename(name = "gaussianDepthOfField")]
-        pub gaussian_depth_of_field: crate::unity_engine::material::Material,
-        #[rename(name = "bokehDepthOfField")]
-        pub bokeh_depth_of_field: crate::unity_engine::material::Material,
-        #[rename(name = "cameraMotionBlur")]
-        pub camera_motion_blur: crate::unity_engine::material::Material,
-        #[rename(name = "paniniProjection")]
-        pub panini_projection: crate::unity_engine::material::Material,
-        #[rename(name = "bloom")]
-        pub bloom: crate::unity_engine::material::Material,
-        #[rename(name = "uber")]
-        pub uber: crate::unity_engine::material::Material,
-        #[rename(name = "finalPass")]
-        pub final_pass: crate::unity_engine::material::Material,
-        #[rename(name = "customBlur")]
-        pub custom_blur: crate::unity_engine::material::Material,
-        #[rename(name = "customRadialBlur")]
-        pub custom_radial_blur: crate::unity_engine::material::Material,
-        #[rename(name = "customFilter")]
-        pub custom_filter: crate::unity_engine::material::Material,
-        #[rename(name = "customUber")]
-        pub custom_uber: crate::unity_engine::material::Material,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_ShaderConstants.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "PostProcessPass.ShaderConstants")]
     #[parent(crate::system::object::Object)]
@@ -234,18 +164,106 @@ mod __types {
         pub custom_gradation_filter_params2: i32,
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct PostProcessPass_CaptureMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for PostProcessPass_CaptureMode {
+        const NAME: &'static str = "PostProcessPass.CaptureMode";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostProcessPass_CaptureMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl PostProcessPass_CaptureMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn capture() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn copy() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "PostProcessPass.MaterialLibrary")]
+    #[parent(crate::system::object::Object)]
+    pub struct PostProcessPass_MaterialLibrary {
+        #[offset(16)]
+        #[rename(name = "stopNaN")]
+        pub stop_na_n: crate::unity_engine::material::Material,
+        #[offset(24)]
+        #[rename(name = "subpixelMorphologicalAntialiasing")]
+        pub subpixel_morphological_antialiasing: crate::unity_engine::material::Material,
+        #[offset(32)]
+        #[rename(name = "gaussianDepthOfField")]
+        pub gaussian_depth_of_field: crate::unity_engine::material::Material,
+        #[offset(40)]
+        #[rename(name = "bokehDepthOfField")]
+        pub bokeh_depth_of_field: crate::unity_engine::material::Material,
+        #[offset(48)]
+        #[rename(name = "cameraMotionBlur")]
+        pub camera_motion_blur: crate::unity_engine::material::Material,
+        #[offset(56)]
+        #[rename(name = "paniniProjection")]
+        pub panini_projection: crate::unity_engine::material::Material,
+        #[offset(64)]
+        #[rename(name = "bloom")]
+        pub bloom: crate::unity_engine::material::Material,
+        #[offset(72)]
+        #[rename(name = "uber")]
+        pub uber: crate::unity_engine::material::Material,
+        #[offset(80)]
+        #[rename(name = "finalPass")]
+        pub final_pass: crate::unity_engine::material::Material,
+        #[offset(88)]
+        #[rename(name = "customBlur")]
+        pub custom_blur: crate::unity_engine::material::Material,
+        #[offset(96)]
+        #[rename(name = "customRadialBlur")]
+        pub custom_radial_blur: crate::unity_engine::material::Material,
+        #[offset(104)]
+        #[rename(name = "customFilter")]
+        pub custom_filter: crate::unity_engine::material::Material,
+        #[offset(112)]
+        #[rename(name = "customUber")]
+        pub custom_uber: crate::unity_engine::material::Material,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "PostProcessPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct PostProcessPass {
+        #[offset(112)]
         #[rename(name = "m_Descriptor")]
         pub m_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+        #[offset(168)]
         #[rename(name = "m_Source")]
         pub m_source: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(216)]
         #[rename(name = "m_Destination")]
         pub m_destination: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(264)]
         #[rename(name = "m_Depth")]
         pub m_depth: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(312)]
         #[rename(name = "m_InternalLut")]
         pub m_internal_lut: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
         #[static_field]
@@ -260,95 +278,139 @@ mod __types {
         #[static_field]
         #[rename(name = "m_ProfilingRenderFinalPostProcessing")]
         pub m_profiling_render_final_post_processing: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(360)]
         #[rename(name = "m_Materials")]
         pub m_materials: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass_MaterialLibrary,
+        #[offset(368)]
         #[rename(name = "m_Data")]
         pub m_data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+        #[offset(376)]
         #[rename(name = "m_DepthOfField")]
         pub m_depth_of_field: crate::unity_engine::rendering::universal::depthoffield::DepthOfField,
+        #[offset(384)]
         #[rename(name = "m_MotionBlur")]
         pub m_motion_blur: crate::unity_engine::rendering::universal::motionblur::MotionBlur,
+        #[offset(392)]
         #[rename(name = "m_PaniniProjection")]
         pub m_panini_projection: crate::unity_engine::rendering::universal::paniniprojection::PaniniProjection,
+        #[offset(400)]
         #[rename(name = "m_Bloom")]
         pub m_bloom: crate::unity_engine::rendering::universal::bloom::Bloom,
+        #[offset(408)]
         #[rename(name = "m_LensDistortion")]
         pub m_lens_distortion: crate::unity_engine::rendering::universal::lensdistortion::LensDistortion,
+        #[offset(416)]
         #[rename(name = "m_ChromaticAberration")]
         pub m_chromatic_aberration: crate::unity_engine::rendering::universal::chromaticaberration::ChromaticAberration,
+        #[offset(424)]
         #[rename(name = "m_Vignette")]
         pub m_vignette: crate::unity_engine::rendering::universal::vignette::Vignette,
+        #[offset(432)]
         #[rename(name = "m_ColorLookup")]
         pub m_color_lookup: crate::unity_engine::rendering::universal::colorlookup::ColorLookup,
+        #[offset(440)]
         #[rename(name = "m_ColorAdjustments")]
         pub m_color_adjustments: crate::unity_engine::rendering::universal::coloradjustments::ColorAdjustments,
+        #[offset(448)]
         #[rename(name = "m_Tonemapping")]
         pub m_tonemapping: crate::unity_engine::rendering::universal::tonemapping::Tonemapping,
+        #[offset(456)]
         #[rename(name = "m_FilmGrain")]
         pub m_film_grain: crate::unity_engine::rendering::universal::filmgrain::FilmGrain,
+        #[offset(464)]
         #[rename(name = "m_CustomColorGrading")]
         pub m_custom_color_grading: crate::unity_engine::rendering::universal::custom::customcolorgrading::CustomColorGrading,
+        #[offset(472)]
         #[rename(name = "m_CustomRadialBlur")]
         pub m_custom_radial_blur: crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur,
+        #[offset(480)]
         #[rename(name = "m_CustomHeatHaze")]
         pub m_custom_heat_haze: crate::unity_engine::rendering::universal::custom::customheathaze::CustomHeatHaze,
+        #[offset(488)]
         #[rename(name = "m_CustomGradationFilter")]
         pub m_custom_gradation_filter: crate::unity_engine::rendering::universal::custom::customgradationfilter::CustomGradationFilter,
+        #[offset(496)]
         #[rename(name = "m_Sharpen")]
         pub m_sharpen: bool,
+        #[offset(497)]
         #[rename(name = "m_CustomBlur")]
         pub m_custom_blur: bool,
+        #[offset(500)]
         #[rename(name = "m_CustomBlurTimes")]
         pub m_custom_blur_times: i32,
+        #[offset(504)]
         #[rename(name = "m_CustomFinalMonoColor")]
         pub m_custom_final_mono_color: crate::unity_engine::vector4::Vector4,
+        #[offset(520)]
         #[rename(name = "m_CustomFilterEnabled")]
         pub m_custom_filter_enabled: bool,
+        #[offset(524)]
         #[rename(name = "m_CustomFilterParam0")]
         pub m_custom_filter_param0: crate::unity_engine::vector4::Vector4,
+        #[offset(540)]
         #[rename(name = "m_CustomFilterParam1")]
         pub m_custom_filter_param1: crate::unity_engine::vector4::Vector4,
+        #[offset(560)]
         #[rename(name = "m_CaptureTexture")]
         pub m_capture_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[offset(568)]
         #[rename(name = "m_CaptureTextureRect")]
         pub m_capture_texture_rect: crate::unity_engine::rect::Rect,
+        #[offset(584)]
         #[rename(name = "m_CaptureMode")]
         pub m_capture_mode: crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass_CaptureMode,
+        #[offset(588)]
         #[rename(name = "m_CaptureTextureHasBeenRendered")]
         pub m_capture_texture_has_been_rendered: bool,
         #[static_field]
         #[rename(name = "k_MaxPyramidSize")]
         pub k_max_pyramid_size: i32,
+        #[offset(592)]
         #[rename(name = "m_DefaultHDRFormat")]
         pub m_default_hdr_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[offset(596)]
         #[rename(name = "m_UseRGBM")]
         pub m_use_rgbm: bool,
+        #[offset(600)]
         #[rename(name = "m_SMAAEdgeFormat")]
         pub m_smaa_edge_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[offset(604)]
         #[rename(name = "m_GaussianCoCFormat")]
         pub m_gaussian_co_c_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[offset(608)]
         #[rename(name = "m_PrevViewProjM")]
         pub m_prev_view_proj_m: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+        #[offset(616)]
         #[rename(name = "m_ResetHistory")]
         pub m_reset_history: bool,
+        #[offset(620)]
         #[rename(name = "m_DitheringTextureIndex")]
         pub m_dithering_texture_index: i32,
+        #[offset(624)]
         #[rename(name = "m_MRT2")]
         pub m_mrt2: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        #[offset(632)]
         #[rename(name = "m_BokehKernel")]
         pub m_bokeh_kernel: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+        #[offset(640)]
         #[rename(name = "m_BokehHash")]
         pub m_bokeh_hash: i32,
+        #[offset(644)]
         #[rename(name = "m_IsFinalPass")]
         pub m_is_final_pass: bool,
+        #[offset(645)]
         #[rename(name = "m_HasFinalPass")]
         pub m_has_final_pass: bool,
+        #[offset(646)]
         #[rename(name = "m_EnableSRGBConversionIfNeeded")]
         pub m_enable_srgb_conversion_if_needed: bool,
+        #[offset(647)]
         #[rename(name = "m_UseDrawProcedural")]
         pub m_use_draw_procedural: bool,
+        #[offset(648)]
         #[rename(name = "m_BlitMaterial")]
         pub m_blit_material: crate::unity_engine::material::Material,
+        #[offset(656)]
         #[rename(name = "m_HableCurve")]
         pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
         #[static_field]
@@ -359,6 +421,53 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PostProcessPass_ShaderConstants_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+impl PostProcessPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __PostProcessPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
 #[doc(hidden)]
@@ -525,53 +634,6 @@ impl PostProcessPass_MaterialLibrary {
         });
         <Self as IPostProcessPass_MaterialLibraryMethods>::ctor(this, data);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PostProcessPass_ShaderConstants_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-impl PostProcessPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __PostProcessPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 

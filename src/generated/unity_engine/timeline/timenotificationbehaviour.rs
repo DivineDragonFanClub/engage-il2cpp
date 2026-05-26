@@ -13,6 +13,26 @@ mod __types {
         unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeNotificationBehaviour")]
+    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+    pub struct TimeNotificationBehaviour {
+        #[offset(16)]
+        #[rename(name = "m_Notifications")]
+        pub m_notifications: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry,
+        >,
+        #[offset(24)]
+        #[rename(name = "m_PreviousTime")]
+        pub m_previous_time: f64,
+        #[offset(32)]
+        #[rename(name = "m_NeedSortNotifications")]
+        pub m_need_sort_notifications: bool,
+        #[offset(40)]
+        #[rename(name = "m_TimeSource")]
+        pub m_time_source: crate::unity_engine::playables::playable::Playable,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour_NotificationEntry.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -39,150 +59,10 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeNotificationBehaviour")]
-    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
-    pub struct TimeNotificationBehaviour {
-        #[rename(name = "m_Notifications")]
-        pub m_notifications: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry,
-        >,
-        #[rename(name = "m_PreviousTime")]
-        pub m_previous_time: f64,
-        #[rename(name = "m_NeedSortNotifications")]
-        pub m_need_sort_notifications: bool,
-        #[rename(name = "m_TimeSource")]
-        pub m_time_source: crate::unity_engine::playables::playable::Playable,
-    }
 }
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TimeNotificationBehaviour_NotificationEntry_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_trigger_in_editor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
-                "get_triggerInEditor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
-                        "get_triggerInEditor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_trigger_in_editor(this: TimeNotificationBehaviour_NotificationEntry, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TimeNotificationBehaviour_NotificationEntry, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_trigger_in_editor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_prewarm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
-                "get_prewarm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
-                        "get_prewarm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_prewarm(this: TimeNotificationBehaviour_NotificationEntry, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TimeNotificationBehaviour_NotificationEntry, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_prewarm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_trigger_once {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
-                "get_triggerOnce",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
-                        "get_triggerOnce",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_trigger_once(this: TimeNotificationBehaviour_NotificationEntry, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(TimeNotificationBehaviour_NotificationEntry, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_trigger_once::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
-impl TimeNotificationBehaviour_NotificationEntry {
-    #[doc = "`get_triggerInEditor()` overload"]
-    pub fn get_trigger_in_editor(self) -> bool {
-        unsafe { __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_trigger_in_editor(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_prewarm()` overload"]
-    pub fn get_prewarm(self) -> bool {
-        unsafe { __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_prewarm(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_triggerOnce()` overload"]
-    pub fn get_trigger_once(self) -> bool {
-        unsafe { __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_trigger_once(self, ::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
 #[doc(hidden)]
@@ -960,6 +840,130 @@ impl TimeNotificationBehaviour {
         });
         <Self as ITimeNotificationBehaviourMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TimeNotificationBehaviour_NotificationEntry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_trigger_in_editor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
+                "get_triggerInEditor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_triggerInEditor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_trigger_in_editor(this: TimeNotificationBehaviour_NotificationEntry, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TimeNotificationBehaviour_NotificationEntry, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_trigger_in_editor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_prewarm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
+                "get_prewarm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_prewarm",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_prewarm(this: TimeNotificationBehaviour_NotificationEntry, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TimeNotificationBehaviour_NotificationEntry, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_prewarm::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_trigger_once {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::class(),
+                "get_triggerOnce",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimeNotificationBehaviour_NotificationEntry as ::unity2::ClassIdentity>::NAME,
+                        "get_triggerOnce",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_trigger_once(this: TimeNotificationBehaviour_NotificationEntry, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TimeNotificationBehaviour_NotificationEntry, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_trigger_once::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+impl TimeNotificationBehaviour_NotificationEntry {
+    #[doc = "`get_triggerInEditor()` overload"]
+    pub fn get_trigger_in_editor(self) -> bool {
+        unsafe { __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_trigger_in_editor(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_prewarm()` overload"]
+    pub fn get_prewarm(self) -> bool {
+        unsafe { __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_prewarm(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_triggerOnce()` overload"]
+    pub fn get_trigger_once(self) -> bool {
+        unsafe { __TimeNotificationBehaviour_NotificationEntry_unity2_raw::get_trigger_once(self, ::core::option::Option::None) }
     }
 }
 

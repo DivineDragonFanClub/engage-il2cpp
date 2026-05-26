@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "CompositeStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct CompositeStatement {
+        #[offset(32)]
         #[rename(name = "m_Statements")]
         pub m_statements: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statement::Statement>,
     }

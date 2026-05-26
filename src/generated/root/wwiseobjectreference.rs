@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "WwiseObjectReference")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct WwiseObjectReference {
+        #[offset(24)]
         #[rename(name = "objectName")]
         pub object_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "id")]
         pub id: u32,
+        #[offset(40)]
         #[rename(name = "guid")]
         pub guid: ::unity2::Il2CppString,
     }

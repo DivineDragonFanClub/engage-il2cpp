@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GiftDialogItemYes")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct GiftDialogItemYes {
+        #[offset(112)]
         #[rename(name = "m_Item")]
         pub m_item: crate::app::itemdata::ItemData,
+        #[offset(120)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(128)]
         #[rename(name = "m_Value")]
         pub m_value: i32,
     }

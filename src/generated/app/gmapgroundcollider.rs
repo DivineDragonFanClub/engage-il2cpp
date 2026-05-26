@@ -57,6 +57,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapGroundCollider")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct GmapGroundCollider {
+        #[offset(24)]
         #[rename(name = "m_GroundType")]
         pub m_ground_type: crate::app::gmapgroundcollider::GmapGroundCollider_Type,
     }

@@ -11,24 +11,34 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "ScrollViewState")]
     #[parent(crate::system::object::Object)]
     pub struct ScrollViewState {
+        #[offset(16)]
         #[rename(name = "position")]
         pub position: crate::unity_engine::rect::Rect,
+        #[offset(32)]
         #[rename(name = "visibleRect")]
         pub visible_rect: crate::unity_engine::rect::Rect,
+        #[offset(48)]
         #[rename(name = "viewRect")]
         pub view_rect: crate::unity_engine::rect::Rect,
+        #[offset(64)]
         #[rename(name = "scrollPosition")]
         pub scroll_position: crate::unity_engine::vector2::Vector2,
+        #[offset(72)]
         #[rename(name = "apply")]
         pub apply: bool,
+        #[offset(73)]
         #[rename(name = "isDuringTouchScroll")]
         pub is_during_touch_scroll: bool,
+        #[offset(76)]
         #[rename(name = "touchScrollStartMousePosition")]
         pub touch_scroll_start_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[offset(84)]
         #[rename(name = "touchScrollStartPosition")]
         pub touch_scroll_start_position: crate::unity_engine::vector2::Vector2,
+        #[offset(92)]
         #[rename(name = "velocity")]
         pub velocity: crate::unity_engine::vector2::Vector2,
+        #[offset(100)]
         #[rename(name = "previousTimeSinceStartup")]
         pub previous_time_since_startup: f32,
     }

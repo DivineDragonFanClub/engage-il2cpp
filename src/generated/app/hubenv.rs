@@ -19,72 +19,106 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubEnv")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubEnv {
+        #[offset(24)]
         #[rename(name = "m_EnableEditMode")]
         pub m_enable_edit_mode: bool,
+        #[offset(28)]
         #[rename(name = "m_editTimezoneType")]
         pub m_edit_timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
+        #[offset(32)]
         #[rename(name = "m_EnableMorning")]
         pub m_enable_morning: bool,
+        #[offset(36)]
         #[rename(name = "m_MorningAmbientSkyColor")]
         pub m_morning_ambient_sky_color: crate::unity_engine::color::Color,
+        #[offset(52)]
         #[rename(name = "m_MorningAmbientEquatorColor")]
         pub m_morning_ambient_equator_color: crate::unity_engine::color::Color,
+        #[offset(68)]
         #[rename(name = "m_MorningAmbientGroundColor")]
         pub m_morning_ambient_ground_color: crate::unity_engine::color::Color,
+        #[offset(84)]
         #[rename(name = "m_MorningFogColor")]
         pub m_morning_fog_color: crate::unity_engine::color::Color,
+        #[offset(100)]
         #[rename(name = "m_MorningFogStart")]
         pub m_morning_fog_start: f32,
+        #[offset(104)]
         #[rename(name = "m_MorningFogEnd")]
         pub m_morning_fog_end: f32,
+        #[offset(108)]
         #[rename(name = "m_EnableDay")]
         pub m_enable_day: bool,
+        #[offset(112)]
         #[rename(name = "m_DayAmbientSkyColor")]
         pub m_day_ambient_sky_color: crate::unity_engine::color::Color,
+        #[offset(128)]
         #[rename(name = "m_DayAmbientEquatorColor")]
         pub m_day_ambient_equator_color: crate::unity_engine::color::Color,
+        #[offset(144)]
         #[rename(name = "m_DayAmbientGroundColor")]
         pub m_day_ambient_ground_color: crate::unity_engine::color::Color,
+        #[offset(160)]
         #[rename(name = "m_DayFogColor")]
         pub m_day_fog_color: crate::unity_engine::color::Color,
+        #[offset(176)]
         #[rename(name = "m_DayFogStart")]
         pub m_day_fog_start: f32,
+        #[offset(180)]
         #[rename(name = "m_DayFogEnd")]
         pub m_day_fog_end: f32,
+        #[offset(184)]
         #[rename(name = "m_EnableEvening")]
         pub m_enable_evening: bool,
+        #[offset(188)]
         #[rename(name = "m_EveningAmbientSkyColor")]
         pub m_evening_ambient_sky_color: crate::unity_engine::color::Color,
+        #[offset(204)]
         #[rename(name = "m_EveningAmbientEquatorColor")]
         pub m_evening_ambient_equator_color: crate::unity_engine::color::Color,
+        #[offset(220)]
         #[rename(name = "m_EveningAmbientGroundColor")]
         pub m_evening_ambient_ground_color: crate::unity_engine::color::Color,
+        #[offset(236)]
         #[rename(name = "m_EveningFogColor")]
         pub m_evening_fog_color: crate::unity_engine::color::Color,
+        #[offset(252)]
         #[rename(name = "m_EveningFogStart")]
         pub m_evening_fog_start: f32,
+        #[offset(256)]
         #[rename(name = "m_EveningFogEnd")]
         pub m_evening_fog_end: f32,
+        #[offset(260)]
         #[rename(name = "m_EnableNight")]
         pub m_enable_night: bool,
+        #[offset(264)]
         #[rename(name = "m_NightAmbientSkyColor")]
         pub m_night_ambient_sky_color: crate::unity_engine::color::Color,
+        #[offset(280)]
         #[rename(name = "m_NightAmbientEquatorColor")]
         pub m_night_ambient_equator_color: crate::unity_engine::color::Color,
+        #[offset(296)]
         #[rename(name = "m_NightAmbientGroundColor")]
         pub m_night_ambient_ground_color: crate::unity_engine::color::Color,
+        #[offset(312)]
         #[rename(name = "m_NightFogColor")]
         pub m_night_fog_color: crate::unity_engine::color::Color,
+        #[offset(328)]
         #[rename(name = "m_NightFogStart")]
         pub m_night_fog_start: f32,
+        #[offset(332)]
         #[rename(name = "m_NightFogEnd")]
         pub m_night_fog_end: f32,
+        #[offset(336)]
         #[rename(name = "baseTimezoneName")]
         pub base_timezone_name: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(344)]
         #[rename(name = "textureNames")]
         pub texture_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(352)]
         #[rename(name = "resourceHandles")]
         pub resource_handles: crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2>,
+        #[offset(360)]
         #[rename(name = "m_lightmapData")]
         pub m_lightmap_data: ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>,
     }

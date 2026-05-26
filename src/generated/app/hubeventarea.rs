@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubEventArea")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubEventArea {
+        #[offset(24)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::hubdemodata::HubDemoData,
     }

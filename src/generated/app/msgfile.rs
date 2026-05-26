@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MsgFile")]
     #[parent(crate::nintendo::message_studio::lib::binmsgfile::BinMsgFile)]
     pub struct MsgFile {
+        #[offset(32)]
         #[rename(name = "m_reference")]
         pub m_reference: i32,
     }

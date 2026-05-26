@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/serialization/formerlyserializedasattribute/FormerlySerializedAsAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Serialization", name = "FormerlySerializedAsAttribute")]
     pub struct FormerlySerializedAsAttribute {
+        #[offset(16)]
         #[rename(name = "m_oldName")]
         pub m_old_name: ::unity2::Il2CppString,
     }

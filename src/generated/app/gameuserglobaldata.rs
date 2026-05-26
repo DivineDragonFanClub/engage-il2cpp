@@ -97,24 +97,146 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserGlobalData")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)]
-    pub struct GameUserGlobalData {
-        #[rename(name = "m_CompletedHash")]
-        pub m_completed_hash: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
-        #[rename(name = "m_CompletedList")]
-        pub m_completed_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]
     #[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
     # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
     pub struct GameUserGlobalData_FlagsField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserGlobalData")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)]
+    pub struct GameUserGlobalData {
+        #[offset(48)]
+        #[rename(name = "m_CompletedHash")]
+        pub m_completed_hash: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        #[offset(56)]
+        #[rename(name = "m_CompletedList")]
+        pub m_completed_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    }
 }
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-gameuserglobaldata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameUserGlobalData_FlagsField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gameuserglobaldata::GameUserGlobalData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::NAME,
+                        "ToInt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_int(
+        this: GameUserGlobalData_FlagsField,
+        value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            GameUserGlobalData_FlagsField,
+            crate::app::gameuserglobaldata::GameUserGlobalData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: GameUserGlobalData_FlagsField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserGlobalData_FlagsField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+pub trait IGameUserGlobalData_FlagsFieldMethods: IGameUserGlobalData_FlagsField {
+    #[doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>) -> i32 {
+        unsafe {
+            let __receiver =
+                <GameUserGlobalData_FlagsField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGlobalData_FlagsField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameUserGlobalData_FlagsField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserGlobalData_FlagsField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl<__T: IGameUserGlobalData_FlagsField> IGameUserGlobalData_FlagsFieldMethods for __T {}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData_FlagsField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserGlobalData_FlagsField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-gameuserglobaldata")]
 #[doc(hidden)]
@@ -1097,126 +1219,6 @@ impl GameUserGlobalData {
             )
         });
         <Self as IGameUserGlobalDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserGlobalData_FlagsField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gameuserglobaldata::GameUserGlobalData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::NAME,
-                        "ToInt",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn to_int(
-        this: GameUserGlobalData_FlagsField,
-        value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            GameUserGlobalData_FlagsField,
-            crate::app::gameuserglobaldata::GameUserGlobalData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserGlobalData_FlagsField as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameUserGlobalData_FlagsField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserGlobalData_FlagsField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-pub trait IGameUserGlobalData_FlagsFieldMethods: IGameUserGlobalData_FlagsField {
-    #[doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]
-    fn to_int(self, value: impl ::core::convert::Into<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>) -> i32 {
-        unsafe {
-            let __receiver =
-                <GameUserGlobalData_FlagsField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_FlagsField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameUserGlobalData_FlagsField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserGlobalData_FlagsField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl<__T: IGameUserGlobalData_FlagsField> IGameUserGlobalData_FlagsFieldMethods for __T {}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData_FlagsField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserGlobalData_FlagsField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
         this
     }
 }

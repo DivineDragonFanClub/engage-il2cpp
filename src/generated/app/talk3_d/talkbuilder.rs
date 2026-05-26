@@ -14,8 +14,10 @@ mod __types {
         #[static_field]
         #[rename(name = "BufSize")]
         pub buf_size: i32,
+        #[offset(16)]
         #[rename(name = "m_TalkPtr")]
         pub m_talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
+        #[offset(24)]
         #[rename(name = "m_IntPtr")]
         pub m_int_ptr: ::unity2::IntPtr,
     }

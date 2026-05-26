@@ -14,60 +14,88 @@ mod __types {
         #[static_field]
         #[rename(name = "s_StencilValue")]
         pub s_stencil_value: f32,
+        #[offset(16)]
         #[rename(name = "assets")]
         pub assets: ::unity2::Array<crate::combat::characterasset::CharacterAsset>,
+        #[offset(24)]
         #[rename(name = "AnimsetNames")]
         pub animset_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[offset(32)]
         #[rename(name = "accTargets")]
         pub acc_targets: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(40)]
         #[rename(name = "MaskColor100")]
         pub mask_color100: crate::unity_engine::color::Color,
+        #[offset(56)]
         #[rename(name = "MaskColor075")]
         pub mask_color075: crate::unity_engine::color::Color,
+        #[offset(72)]
         #[rename(name = "MaskColor050")]
         pub mask_color050: crate::unity_engine::color::Color,
+        #[offset(88)]
         #[rename(name = "MaskColor025")]
         pub mask_color025: crate::unity_engine::color::Color,
+        #[offset(104)]
         #[rename(name = "SkinColor")]
         pub skin_color: crate::unity_engine::color::Color,
+        #[offset(120)]
         #[rename(name = "GradColor")]
         pub grad_color: crate::unity_engine::color::Color,
+        #[offset(136)]
         #[rename(name = "HairColor")]
         pub hair_color: crate::unity_engine::color::Color,
+        #[offset(152)]
         #[rename(name = "ToonShadowColor")]
         pub toon_shadow_color: crate::unity_engine::color::Color,
+        #[offset(168)]
         #[rename(name = "Sound")]
         pub sound: crate::app::assettable::AssetTable_Sound,
+        #[offset(192)]
         #[rename(name = "Proportion")]
         pub proportion: crate::combat::proportionparameters::ProportionParameters,
+        #[offset(216)]
         #[rename(name = "m_InstancedMaterials")]
         pub m_instanced_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
+        #[offset(224)]
         #[rename(name = "m_HolderLoadSimultaneous")]
         pub m_holder_load_simultaneous: crate::app::gameparam::GameParam_Holder,
+        #[offset(232)]
         #[rename(name = "m_CharaTallWalk")]
         pub m_chara_tall_walk: crate::app::gameparam::GameParam_Holder,
+        #[offset(240)]
         #[rename(name = "m_CharaTallHorse")]
         pub m_chara_tall_horse: crate::app::gameparam::GameParam_Holder,
+        #[offset(248)]
         #[rename(name = "m_CharaTallWolf")]
         pub m_chara_tall_wolf: crate::app::gameparam::GameParam_Holder,
+        #[offset(256)]
         #[rename(name = "m_CharaTallPegasus")]
         pub m_chara_tall_pegasus: crate::app::gameparam::GameParam_Holder,
+        #[offset(264)]
         #[rename(name = "m_CharaTallDragon")]
         pub m_chara_tall_dragon: crate::app::gameparam::GameParam_Holder,
+        #[offset(272)]
         #[rename(name = "m_CharaTallGriffon")]
         pub m_chara_tall_griffon: crate::app::gameparam::GameParam_Holder,
+        #[offset(280)]
         #[rename(name = "m_CharaTallEngage")]
         pub m_chara_tall_engage: crate::app::gameparam::GameParam_Holder,
+        #[offset(288)]
         #[rename(name = "m_CharaTallSombronHuman")]
         pub m_chara_tall_sombron_human: crate::app::gameparam::GameParam_Holder,
+        #[offset(296)]
         #[rename(name = "m_CharaTallSombronDragon")]
         pub m_chara_tall_sombron_dragon: crate::app::gameparam::GameParam_Holder,
+        #[offset(304)]
         #[rename(name = "m_CharaTallEngageTiki")]
         pub m_chara_tall_engage_tiki: crate::app::gameparam::GameParam_Holder,
+        #[offset(312)]
         #[rename(name = "m_CharaTallPhantomWolf")]
         pub m_chara_tall_phantom_wolf: crate::app::gameparam::GameParam_Holder,
+        #[offset(320)]
         #[rename(name = "m_CharaTallPhantomDragon")]
         pub m_chara_tall_phantom_dragon: crate::app::gameparam::GameParam_Holder,
+        #[offset(328)]
         #[rename(name = "m_CharaTallCorruptDragon")]
         pub m_chara_tall_corrupt_dragon: crate::app::gameparam::GameParam_Holder,
         #[static_field]

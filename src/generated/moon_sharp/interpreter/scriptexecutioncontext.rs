@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "ScriptExecutionContext")]
     #[parent(crate::system::object::Object)]
     pub struct ScriptExecutionContext {
+        #[offset(16)]
         #[rename(name = "m_Processor")]
         pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+        #[offset(24)]
         #[rename(name = "m_Callback")]
         pub m_callback: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
     }

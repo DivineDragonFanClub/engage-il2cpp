@@ -19,34 +19,49 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BattleRecordLineSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BattleRecordLineSetter {
+        #[offset(24)]
         #[rename(name = "InfoTurnCount")]
         pub info_turn_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "InfoTime")]
         pub info_time: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "InfoMVP")]
         pub info_mvp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "ChapterNumber")]
         pub chapter_number: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "ChapterName")]
         pub chapter_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "TurnCount")]
         pub turn_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "Time")]
         pub time: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "MVPSolo")]
         pub mvp_solo: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "MVPSoloUnit")]
         pub mvp_solo_unit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "MVPSoloImg")]
         pub mvp_solo_img: crate::app::uniticon::UnitIcon,
+        #[offset(104)]
         #[rename(name = "MVPDuet")]
         pub mvp_duet: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "MVPDuetUnit")]
         pub mvp_duet_unit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "MVPDuetEmblem")]
         pub mvp_duet_emblem: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "MVPDuetUnitImg")]
         pub mvp_duet_unit_img: crate::app::uniticon::UnitIcon,
+        #[offset(136)]
         #[rename(name = "MVPDuetEmblemImg")]
         pub mvp_duet_emblem_img: crate::app::uniticon::UnitIcon,
     }

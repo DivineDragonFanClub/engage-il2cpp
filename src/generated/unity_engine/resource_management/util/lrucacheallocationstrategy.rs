@@ -11,15 +11,20 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "LRUCacheAllocationStrategy")]
     #[parent(crate::system::object::Object)]
     pub struct LRUCacheAllocationStrategy {
+        #[offset(16)]
         #[rename(name = "m_poolMaxSize")]
         pub m_pool_max_size: i32,
+        #[offset(20)]
         #[rename(name = "m_poolInitialCapacity")]
         pub m_pool_initial_capacity: i32,
+        #[offset(24)]
         #[rename(name = "m_poolCacheMaxSize")]
         pub m_pool_cache_max_size: i32,
+        #[offset(32)]
         #[rename(name = "m_poolCache")]
         pub m_pool_cache:
             crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::system::object::Object>>,
+        #[offset(40)]
         #[rename(name = "m_cache")]
         pub m_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
             i32,

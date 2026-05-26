@@ -22,6 +22,7 @@ mod __types {
         #[static_field]
         #[rename(name = "waitTime")]
         pub wait_time: f64,
+        #[offset(24)]
         #[rename(name = "m_TargetObject")]
         pub m_target_object: crate::unity_engine::gameobject::GameObject,
     }

@@ -18,22 +18,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "Bloom")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct Bloom {
+        #[offset(56)]
         #[rename(name = "threshold")]
         pub threshold: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(64)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(72)]
         #[rename(name = "scatter")]
         pub scatter: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "clamp")]
         pub clamp: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(88)]
         #[rename(name = "tint")]
         pub tint: crate::unity_engine::rendering::colorparameter::ColorParameter,
+        #[offset(96)]
         #[rename(name = "highQualityFiltering")]
         pub high_quality_filtering: crate::unity_engine::rendering::boolparameter::BoolParameter,
+        #[offset(104)]
         #[rename(name = "skipIterations")]
         pub skip_iterations: crate::unity_engine::rendering::clampedintparameter::ClampedIntParameter,
+        #[offset(112)]
         #[rename(name = "dirtTexture")]
         pub dirt_texture: crate::unity_engine::rendering::textureparameter::TextureParameter,
+        #[offset(120)]
         #[rename(name = "dirtIntensity")]
         pub dirt_intensity: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
     }

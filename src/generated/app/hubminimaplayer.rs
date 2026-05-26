@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubMiniMapLayer")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubMiniMapLayer {
+        #[offset(24)]
         #[rename(name = "m_Layer")]
         pub m_layer: i32,
+        #[offset(32)]
         #[rename(name = "m_EnvSoundID")]
         pub m_env_sound_id: ::unity2::Il2CppString,
     }

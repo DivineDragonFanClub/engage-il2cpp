@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RawValueStack")]
     #[parent(crate::system::object::Object)]
     pub struct RawValueStack {
+        #[offset(16)]
         #[rename(name = "Count")]
         pub count: i32,
+        #[offset(24)]
         #[rename(name = "Values")]
         pub values: ::unity2::Array<crate::system::valuetype::ValueType>,
     }

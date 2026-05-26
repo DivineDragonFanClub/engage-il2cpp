@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteCharacter")]
     #[parent(crate::tm_pro::tmp_textelement::TMP_TextElement)]
     pub struct TMP_SpriteCharacter {
+        #[offset(48)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_HashCode")]
         pub m_hash_code: i32,
     }

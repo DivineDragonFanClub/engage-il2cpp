@@ -59,8 +59,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ConfigBgmSelectSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: configbgmselectsequence :: ConfigBgmSelectSequence >)]
     pub struct ConfigBgmSelectSequence {
+        #[offset(120)]
         #[rename(name = "m_selectBgm")]
         pub m_select_bgm: ::unity2::Il2CppString,
+        #[offset(128)]
         #[rename(name = "m_callback")]
         pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
     }

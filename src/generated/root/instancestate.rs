@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "", name = "InstanceState")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct InstanceState {
+        #[offset(24)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "m_ColorAttr")]
         pub m_color_attr: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_Render")]
         pub m_render: crate::unity_engine::renderer::Renderer,
+        #[offset(56)]
         #[rename(name = "m_PropertyBlock")]
         pub m_property_block: crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
+        #[offset(64)]
         #[rename(name = "m_ColorOld")]
         pub m_color_old: crate::unity_engine::color::Color,
     }

@@ -30,6 +30,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "Button")]
     #[parent(crate::unity_engine::ui::selectable::Selectable)]
     pub struct Button {
+        #[offset(248)]
         #[rename(name = "m_OnClick")]
         pub m_on_click: crate::unity_engine::ui::button::Button_ButtonClickedEvent,
     }

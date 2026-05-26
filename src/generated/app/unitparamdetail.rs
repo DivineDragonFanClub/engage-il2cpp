@@ -11,14 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitparamdetail/UnitParamDetail.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitParamDetail")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitParamDetail {
-        #[rename(name = "m_value")]
-        pub m_value: ::unity2::Array<i32>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitparamdetail/UnitParamDetail_ValueDetail.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -75,6 +67,15 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 7 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitparamdetail/UnitParamDetail.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitParamDetail")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitParamDetail {
+        #[offset(16)]
+        #[rename(name = "m_value")]
+        pub m_value: ::unity2::Array<i32>,
     }
 }
 

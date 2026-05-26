@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "WaitForSeconds")]
     #[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
     pub struct WaitForSeconds {
+        #[offset(16)]
         #[rename(name = "m_Seconds")]
         pub m_seconds: f32,
     }

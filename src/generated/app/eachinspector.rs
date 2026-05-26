@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EachInspector")]
     #[parent(crate::app::mapinspector::MapInspector)]
     pub struct EachInspector {
+        #[offset(48)]
         #[rename(name = "m_FromPerson")]
         pub m_from_person: i32,
+        #[offset(52)]
         #[rename(name = "m_FromForce")]
         pub m_from_force: i32,
+        #[offset(56)]
         #[rename(name = "m_ToPerson")]
         pub m_to_person: i32,
+        #[offset(60)]
         #[rename(name = "m_ToForce")]
         pub m_to_force: i32,
+        #[offset(64)]
         #[rename(name = "m_Both")]
         pub m_both: bool,
     }

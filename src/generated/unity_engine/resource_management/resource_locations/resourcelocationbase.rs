@@ -11,24 +11,33 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceLocations", name = "ResourceLocationBase")]
     #[parent(crate::system::object::Object)]
     pub struct ResourceLocationBase {
+        #[offset(16)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Id")]
         pub m_id: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_ProviderId")]
         pub m_provider_id: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Data")]
         pub m_data: ::unity2::IlInstance,
+        #[offset(48)]
         #[rename(name = "m_DependencyHashCode")]
         pub m_dependency_hash_code: i32,
+        #[offset(52)]
         #[rename(name = "m_HashCode")]
         pub m_hash_code: i32,
+        #[offset(56)]
         #[rename(name = "m_Type")]
         pub m_type: ::unity2::SystemType,
+        #[offset(64)]
         #[rename(name = "m_Dependencies")]
         pub m_dependencies: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         >,
+        #[offset(72)]
         #[rename(name = "m_PrimaryKey")]
         pub m_primary_key: ::unity2::Il2CppString,
     }

@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaRunnableProxy")]
     #[parent(crate::unity_engine::androidjavaproxy::AndroidJavaProxy)]
     pub struct AndroidJavaRunnableProxy {
+        #[offset(32)]
         #[rename(name = "mRunnable")]
         pub m_runnable: crate::unity_engine::androidjavarunnable::AndroidJavaRunnable,
     }

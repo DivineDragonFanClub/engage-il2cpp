@@ -11,24 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystem")]
     #[parent(crate::system::object::Object)]
     pub struct XRSystem {
+        #[offset(16)]
         #[rename(name = "emptyPass")]
         pub empty_pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
+        #[offset(24)]
         #[rename(name = "framePasses")]
         pub frame_passes: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::xrpass::XRPass>,
         #[static_field]
         #[rename(name = "displayList")]
         pub display_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem>,
+        #[offset(32)]
         #[rename(name = "display")]
         pub display: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem,
         #[static_field]
         #[rename(name = "msaaLevel")]
         pub msaa_level: i32,
+        #[offset(40)]
         #[rename(name = "occlusionMeshMaterial")]
         pub occlusion_mesh_material: crate::unity_engine::material::Material,
+        #[offset(48)]
         #[rename(name = "mirrorViewMaterial")]
         pub mirror_view_material: crate::unity_engine::material::Material,
+        #[offset(56)]
         #[rename(name = "mirrorViewMaterialProperty")]
         pub mirror_view_material_property: crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
+        #[offset(64)]
         #[rename(name = "testRenderTexture")]
         pub test_render_texture: crate::unity_engine::rendertexture::RenderTexture,
         #[static_field]

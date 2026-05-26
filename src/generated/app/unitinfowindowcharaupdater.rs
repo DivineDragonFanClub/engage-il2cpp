@@ -18,44 +18,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaUpdater")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct UnitInfoWindowCharaUpdater {
-        #[rename(name = "m_IsRequestToPlayBody")]
-        pub m_is_request_to_play_body: bool,
-        #[rename(name = "m_IsRequestToPlayFace")]
-        pub m_is_request_to_play_face: bool,
-        #[rename(name = "m_BodyAnimHash")]
-        pub m_body_anim_hash: i32,
-        #[rename(name = "m_BodyAnimTransitionDuration")]
-        pub m_body_anim_transition_duration: f32,
-        #[rename(name = "m_FaceAnimHash")]
-        pub m_face_anim_hash: i32,
-        #[rename(name = "m_IsRequestToSetParam")]
-        pub m_is_request_to_set_param: bool,
-        #[rename(name = "m_BodyParamHash")]
-        pub m_body_param_hash: i32,
-        #[rename(name = "m_BodyParamValue")]
-        pub m_body_param_value: bool,
-        #[rename(name = "m_IsRequestToWeapon")]
-        pub m_is_request_to_weapon: bool,
-        #[rename(name = "m_RequestWeapon")]
-        pub m_request_weapon: crate::app::itemdata::ItemData,
-        #[rename(name = "m_AnimeChangeWaitCount")]
-        pub m_anime_change_wait_count: i32,
-        #[rename(name = "m_CameraObject")]
-        pub m_camera_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CharaImageSimple")]
-        pub m_chara_image_simple: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_DefaultZoomCameraLocalHeight")]
-        pub m_default_zoom_camera_local_height: f32,
-        #[rename(name = "m_HeadLookAtObj")]
-        pub m_head_look_at_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IsRequestToOffset")]
-        pub m_is_request_to_offset: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater_StatusScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -80,10 +42,194 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaUpdater")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct UnitInfoWindowCharaUpdater {
+        #[offset(24)]
+        #[rename(name = "m_IsRequestToPlayBody")]
+        pub m_is_request_to_play_body: bool,
+        #[offset(25)]
+        #[rename(name = "m_IsRequestToPlayFace")]
+        pub m_is_request_to_play_face: bool,
+        #[offset(28)]
+        #[rename(name = "m_BodyAnimHash")]
+        pub m_body_anim_hash: i32,
+        #[offset(32)]
+        #[rename(name = "m_BodyAnimTransitionDuration")]
+        pub m_body_anim_transition_duration: f32,
+        #[offset(36)]
+        #[rename(name = "m_FaceAnimHash")]
+        pub m_face_anim_hash: i32,
+        #[offset(40)]
+        #[rename(name = "m_IsRequestToSetParam")]
+        pub m_is_request_to_set_param: bool,
+        #[offset(44)]
+        #[rename(name = "m_BodyParamHash")]
+        pub m_body_param_hash: i32,
+        #[offset(48)]
+        #[rename(name = "m_BodyParamValue")]
+        pub m_body_param_value: bool,
+        #[offset(49)]
+        #[rename(name = "m_IsRequestToWeapon")]
+        pub m_is_request_to_weapon: bool,
+        #[offset(56)]
+        #[rename(name = "m_RequestWeapon")]
+        pub m_request_weapon: crate::app::itemdata::ItemData,
+        #[offset(64)]
+        #[rename(name = "m_AnimeChangeWaitCount")]
+        pub m_anime_change_wait_count: i32,
+        #[offset(72)]
+        #[rename(name = "m_CameraObject")]
+        pub m_camera_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
+        #[rename(name = "m_CharaImageSimple")]
+        pub m_chara_image_simple: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
+        #[rename(name = "m_DefaultZoomCameraLocalHeight")]
+        pub m_default_zoom_camera_local_height: f32,
+        #[offset(96)]
+        #[rename(name = "m_HeadLookAtObj")]
+        pub m_head_look_at_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
+        #[rename(name = "m_IsRequestToOffset")]
+        pub m_is_request_to_offset: bool,
+    }
 }
 
 #[cfg(feature = "app-unitinfowindowcharaupdater-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-unitinfowindowcharaupdater")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitInfoWindowCharaUpdater_StatusScope,
+        chara: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitInfoWindowCharaUpdater_StatusScope, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, chara, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: UnitInfoWindowCharaUpdater_StatusScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitInfoWindowCharaUpdater_StatusScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unitinfowindowcharaupdater")]
+impl UnitInfoWindowCharaUpdater_StatusScope {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-unitinfowindowcharaupdater")]
+impl UnitInfoWindowCharaUpdater_StatusScope {
+    #[doc = "`.ctor(crate::combat::character::Character)` overload"]
+    pub fn ctor(self, chara: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
+        unsafe { __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw::ctor(self, ::core::convert::Into::into(chara), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-unitinfowindowcharaupdater")]
 #[doc(hidden)]
@@ -874,136 +1020,6 @@ impl UnitInfoWindowCharaUpdater {
         });
         <Self as IUnitInfoWindowCharaUpdaterMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnitInfoWindowCharaUpdater_StatusScope,
-        chara: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitInfoWindowCharaUpdater_StatusScope, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, chara, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: UnitInfoWindowCharaUpdater_StatusScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoWindowCharaUpdater_StatusScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoWindowCharaUpdater_StatusScope as ::unity2::ClassIdentity>::NAME,
-                        ".cctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl UnitInfoWindowCharaUpdater_StatusScope {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl UnitInfoWindowCharaUpdater_StatusScope {
-    #[doc = "`.ctor(crate::combat::character::Character)` overload"]
-    pub fn ctor(self, chara: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
-        unsafe { __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw::ctor(self, ::core::convert::Into::into(chara), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __UnitInfoWindowCharaUpdater_StatusScope_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 }
 

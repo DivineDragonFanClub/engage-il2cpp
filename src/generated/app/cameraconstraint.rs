@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CameraConstraint")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CameraConstraint {
+        #[offset(24)]
         #[rename(name = "m_Target")]
         pub m_target: crate::unity_engine::camera::Camera,
+        #[offset(32)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(40)]
         #[rename(name = "m_Position")]
         pub m_position: crate::unity_engine::vector3::Vector3,
+        #[offset(52)]
         #[rename(name = "m_Rotation")]
         pub m_rotation: crate::unity_engine::quaternion::Quaternion,
     }

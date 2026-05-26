@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/supportschildtracksattribute/SupportsChildTracksAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "SupportsChildTracksAttribute")]
     pub struct SupportsChildTracksAttribute {
+        #[offset(16)]
         #[rename(name = "childType")]
         pub child_type: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "levels")]
         pub levels: i32,
     }

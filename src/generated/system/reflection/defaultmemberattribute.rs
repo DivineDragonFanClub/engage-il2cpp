@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/defaultmemberattribute/DefaultMemberAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "DefaultMemberAttribute")]
     pub struct DefaultMemberAttribute {
+        #[offset(16)]
         #[rename(name = "m_memberName")]
         pub m_member_name: ::unity2::Il2CppString,
     }

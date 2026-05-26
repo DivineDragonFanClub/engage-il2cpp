@@ -20,24 +20,34 @@ mod __types {
     #[::unity2::class(namespace = "", name = "ConfigMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ConfigMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_CommandObject")]
         pub m_command_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_CommandIcon")]
         pub m_command_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_GaugeObject")]
         pub m_gauge_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_LeftArrow")]
         pub m_left_arrow: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_RightArrow")]
         pub m_right_arrow: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "m_CommandText")]
         pub m_command_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_HelpText")]
         pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(136)]
         #[rename(name = "m_BaseGaugeRect")]
         pub m_base_gauge_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(144)]
         #[rename(name = "m_GaugeRect")]
         pub m_gauge_rect: crate::unity_engine::recttransform::RectTransform,
     }

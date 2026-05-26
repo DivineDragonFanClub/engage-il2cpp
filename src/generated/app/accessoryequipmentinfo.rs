@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AccessoryEquipmentInfo")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AccessoryEquipmentInfo {
+        #[offset(24)]
         #[rename(name = "m_ContentObject")]
         pub m_content_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_CursorObject")]
         pub m_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_MenuItemList")]
         pub m_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterEffect")]
     #[parent(crate::system::object::Object)]
     pub struct CharacterEffect {
+        #[offset(16)]
         #[rename(name = "CP")]
         pub cp: crate::combat::character::Character,
     }

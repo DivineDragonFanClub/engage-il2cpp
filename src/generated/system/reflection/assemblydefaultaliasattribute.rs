@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydefaultaliasattribute/AssemblyDefaultAliasAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyDefaultAliasAttribute")]
     pub struct AssemblyDefaultAliasAttribute {
+        #[offset(16)]
         #[rename(name = "m_defaultAlias")]
         pub m_default_alias: ::unity2::Il2CppString,
     }

@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionGranApproach")]
     #[parent(crate::combat::actiongranbase::ActionGranBase)]
     pub struct ActionGranApproach {
+        #[offset(64)]
         #[rename(name = "m_WorldArrivalTime")]
         pub m_world_arrival_time: f32,
     }

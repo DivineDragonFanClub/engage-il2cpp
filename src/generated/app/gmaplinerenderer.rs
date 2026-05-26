@@ -23,12 +23,69 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapLineRenderer.LinePoint")]
     #[parent(crate::system::object::Object)]
     pub struct GmapLineRenderer_LinePoint {
+        #[offset(16)]
         #[rename(name = "vtxOffsets")]
         pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(24)]
         #[rename(name = "uv_table")]
         pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+        #[offset(32)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapLineRenderer")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapLineRenderer {
+        #[offset(24)]
+        #[rename(name = "m_DrawType")]
+        pub m_draw_type: crate::app::gmaplinerenderer::GmapLineRenderer_DrawType,
+        #[offset(32)]
+        #[rename(name = "m_Material")]
+        pub m_material: crate::unity_engine::material::Material,
+        #[offset(40)]
+        #[rename(name = "m_Step")]
+        pub m_step: f32,
+        #[offset(44)]
+        #[rename(name = "m_Size")]
+        pub m_size: f32,
+        #[offset(48)]
+        #[rename(name = "m_AppearSpeed")]
+        pub m_appear_speed: f32,
+        #[offset(56)]
+        #[rename(name = "m_MeshRenderer")]
+        pub m_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[offset(64)]
+        #[rename(name = "m_LinePoints")]
+        pub m_line_points: crate::system::collections::generic::list_1::List_1<crate::app::gmaplinerenderer::GmapLineRenderer_LinePoint>,
+        #[offset(80)]
+        #[rename(name = "m_IsAppearing")]
+        pub m_is_appearing: bool,
+        #[offset(84)]
+        #[rename(name = "m_PathLength")]
+        pub m_path_length: f32,
+        #[offset(88)]
+        #[rename(name = "m_AppeardPathLength")]
+        pub m_appeard_path_length: f32,
+        #[offset(96)]
+        #[rename(name = "m_LineRenderer")]
+        pub m_line_renderer: crate::unity_engine::linerenderer::LineRenderer,
+        #[offset(104)]
+        #[rename(name = "m_LineStep")]
+        pub m_line_step: f32,
+        #[offset(112)]
+        #[rename(name = "m_LinePositionList")]
+        pub m_line_position_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(120)]
+        #[rename(name = "m_LineAppearCountOld")]
+        pub m_line_appear_count_old: i32,
+        #[offset(124)]
+        #[rename(name = "m_LineAppearCount")]
+        pub m_line_appear_count: i32,
+        #[offset(128)]
+        #[rename(name = "m_LineAppearSpeed")]
+        pub m_line_appear_speed: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaplinerenderer/GmapLineRenderer_DrawType.md"))]
@@ -59,44 +116,6 @@ mod __types {
         pub fn 線() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaplinerenderer/GmapLineRenderer.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapLineRenderer")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapLineRenderer {
-        #[rename(name = "m_DrawType")]
-        pub m_draw_type: crate::app::gmaplinerenderer::GmapLineRenderer_DrawType,
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_Step")]
-        pub m_step: f32,
-        #[rename(name = "m_Size")]
-        pub m_size: f32,
-        #[rename(name = "m_AppearSpeed")]
-        pub m_appear_speed: f32,
-        #[rename(name = "m_MeshRenderer")]
-        pub m_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
-        #[rename(name = "m_LinePoints")]
-        pub m_line_points: crate::system::collections::generic::list_1::List_1<crate::app::gmaplinerenderer::GmapLineRenderer_LinePoint>,
-        #[rename(name = "m_IsAppearing")]
-        pub m_is_appearing: bool,
-        #[rename(name = "m_PathLength")]
-        pub m_path_length: f32,
-        #[rename(name = "m_AppeardPathLength")]
-        pub m_appeard_path_length: f32,
-        #[rename(name = "m_LineRenderer")]
-        pub m_line_renderer: crate::unity_engine::linerenderer::LineRenderer,
-        #[rename(name = "m_LineStep")]
-        pub m_line_step: f32,
-        #[rename(name = "m_LinePositionList")]
-        pub m_line_position_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_LineAppearCountOld")]
-        pub m_line_appear_count_old: i32,
-        #[rename(name = "m_LineAppearCount")]
-        pub m_line_appear_count: i32,
-        #[rename(name = "m_LineAppearSpeed")]
-        pub m_line_appear_speed: i32,
     }
 }
 

@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblycopyrightattribute/AssemblyCopyrightAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyCopyrightAttribute")]
     pub struct AssemblyCopyrightAttribute {
+        #[offset(16)]
         #[rename(name = "m_copyright")]
         pub m_copyright: ::unity2::Il2CppString,
     }

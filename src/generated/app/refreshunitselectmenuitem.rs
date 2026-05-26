@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefreshUnitSelectMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RefreshUnitSelectMenuItem {
+        #[offset(112)]
         #[rename(name = "m_InitialSelected")]
         pub m_initial_selected: bool,
+        #[offset(113)]
         #[rename(name = "m_Decided")]
         pub m_decided: bool,
+        #[offset(120)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler,
+        #[offset(128)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler,
     }

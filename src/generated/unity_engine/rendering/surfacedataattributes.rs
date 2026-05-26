@@ -9,14 +9,19 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SurfaceDataAttributes")]
     pub struct SurfaceDataAttributes {
+        #[offset(16)]
         #[rename(name = "displayNames")]
         pub display_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(24)]
         #[rename(name = "isDirection")]
         pub is_direction: bool,
+        #[offset(25)]
         #[rename(name = "sRGBDisplay")]
         pub s_rgb_display: bool,
+        #[offset(28)]
         #[rename(name = "precision")]
         pub precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
+        #[offset(32)]
         #[rename(name = "checkIsNormalized")]
         pub check_is_normalized: bool,
     }

@@ -18,26 +18,37 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardColor")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: profilecardcolor :: ProfileCardColor >)]
     pub struct ProfileCardColor {
+        #[offset(24)]
         #[rename(name = "黒")]
         pub 黒: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "灰")]
         pub 灰: crate::unity_engine::color::Color,
+        #[offset(56)]
         #[rename(name = "赤")]
         pub 赤: crate::unity_engine::color::Color,
+        #[offset(72)]
         #[rename(name = "桃")]
         pub 桃: crate::unity_engine::color::Color,
+        #[offset(88)]
         #[rename(name = "紫")]
         pub 紫: crate::unity_engine::color::Color,
+        #[offset(104)]
         #[rename(name = "青")]
         pub 青: crate::unity_engine::color::Color,
+        #[offset(120)]
         #[rename(name = "群青")]
         pub 群青: crate::unity_engine::color::Color,
+        #[offset(136)]
         #[rename(name = "緑")]
         pub 緑: crate::unity_engine::color::Color,
+        #[offset(152)]
         #[rename(name = "黄緑")]
         pub 黄緑: crate::unity_engine::color::Color,
+        #[offset(168)]
         #[rename(name = "茶色")]
         pub 茶色: crate::unity_engine::color::Color,
+        #[offset(184)]
         #[rename(name = "橙")]
         pub 橙: crate::unity_engine::color::Color,
     }

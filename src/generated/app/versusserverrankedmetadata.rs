@@ -17,18 +17,25 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: u16,
+        #[offset(48)]
         #[rename(name = "m_Version")]
         pub m_version: u16,
+        #[offset(56)]
         #[rename(name = "m_OwnerId")]
         pub m_owner_id: u64,
+        #[offset(64)]
         #[rename(name = "m_OwnerName")]
         pub m_owner_name: ::unity2::Il2CppString,
+        #[offset(72)]
         #[rename(name = "m_SaveIdentifier")]
         pub m_save_identifier: u64,
+        #[offset(80)]
         #[rename(name = "m_Rate")]
         pub m_rate: i16,
+        #[offset(96)]
         #[rename(name = "m_ScreenShotDataId")]
         pub m_screen_shot_data_id: u64,
+        #[offset(104)]
         #[rename(name = "m_Language")]
         pub m_language: ::unity2::Il2CppString,
         #[static_field]

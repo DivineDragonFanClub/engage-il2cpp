@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "ResourceRequest")]
     #[parent(crate::unity_engine::asyncoperation::AsyncOperation)]
     pub struct ResourceRequest {
+        #[offset(32)]
         #[rename(name = "m_Path")]
         pub m_path: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Type")]
         pub m_type: ::unity2::SystemType,
     }

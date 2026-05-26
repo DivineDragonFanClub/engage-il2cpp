@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CommonRelianceTalkSequence")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct CommonRelianceTalkSequence {
+        #[offset(112)]
         #[rename(name = "m_MessFileName")]
         pub m_mess_file_name: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_IsLoadedMessFile")]
         pub m_is_loaded_mess_file: bool,
     }

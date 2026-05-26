@@ -66,18 +66,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SkipIndicator")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)]
     pub struct SkipIndicator {
+        #[offset(32)]
         #[rename(name = "m_Skip")]
         pub m_skip: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Auto")]
         pub m_auto: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_Error")]
         pub m_error: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_CanvasManager")]
         pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
+        #[offset(64)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(72)]
         #[rename(name = "m_Seq")]
         pub m_seq: crate::app::skipindicator::SkipIndicator_Seq,
+        #[offset(76)]
         #[rename(name = "m_IsReqClose")]
         pub m_is_req_close: bool,
     }

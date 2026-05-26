@@ -23,12 +23,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UnitInfoViewerSetting {
+        #[offset(24)]
         #[rename(name = "m_LeftUnit")]
         pub m_left_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+        #[offset(32)]
         #[rename(name = "m_RightUnit")]
         pub m_right_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+        #[offset(40)]
         #[rename(name = "m_IsCharaOnlyTransition")]
         pub m_is_chara_only_transition: bool,
+        #[offset(44)]
         #[rename(name = "m_Seq")]
         pub m_seq: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,
     }
@@ -71,6 +75,24 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitInfoViewerSetting_UnitData {
+        #[offset(16)]
+        #[rename(name = "person")]
+        pub person: ::unity2::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "job")]
+        pub job: ::unity2::Il2CppString,
+        #[offset(32)]
+        #[rename(name = "weapon")]
+        pub weapon: ::unity2::Il2CppString,
+        #[offset(40)]
+        #[rename(name = "force")]
+        pub force: ::unity2::Il2CppString,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
     #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
     #[parent(crate::system::object::Object)]
@@ -81,20 +103,6 @@ mod __types {
         #[static_field]
         #[rename(name = "Names")]
         pub names: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitInfoViewerSetting_UnitData {
-        #[rename(name = "person")]
-        pub person: ::unity2::Il2CppString,
-        #[rename(name = "job")]
-        pub job: ::unity2::Il2CppString,
-        #[rename(name = "weapon")]
-        pub weapon: ::unity2::Il2CppString,
-        #[rename(name = "force")]
-        pub force: ::unity2::Il2CppString,
     }
 }
 
@@ -745,6 +753,77 @@ impl UnitInfoViewerSetting {
 #[cfg(feature = "app-unitinfoviewersetting")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitInfoViewerSetting_UnitData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: UnitInfoViewerSetting_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitInfoViewerSetting_UnitData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+pub trait IUnitInfoViewerSetting_UnitDataMethods: IUnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <UnitInfoViewerSetting_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitInfoViewerSetting_UnitData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl<__T: IUnitInfoViewerSetting_UnitData> IUnitInfoViewerSetting_UnitDataMethods for __T {}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoViewerSetting_UnitData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __UnitInfoViewerSetting_ForceList_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -900,77 +979,6 @@ impl UnitInfoViewerSetting_ForceList {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoViewerSetting_UnitData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: UnitInfoViewerSetting_UnitData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting_UnitData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-pub trait IUnitInfoViewerSetting_UnitDataMethods: IUnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting_UnitData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __UnitInfoViewerSetting_UnitData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl<__T: IUnitInfoViewerSetting_UnitData> IUnitInfoViewerSetting_UnitDataMethods for __T {}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoViewerSetting_UnitData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
-        this
     }
 }
 

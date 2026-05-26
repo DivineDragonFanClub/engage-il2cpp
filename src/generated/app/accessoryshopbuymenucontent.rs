@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct AccessoryShopBuyMenuContent {
+        #[offset(232)]
         #[rename(name = "m_CaptionText")]
         pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_KindIcon")]
         pub m_kind_icon: ::unity2::Array<crate::app::accessoryshopbuymenucontent::AccessoryShopBuyMenuContent_KindIcon>,
+        #[offset(248)]
         #[rename(name = "m_ContentObject")]
         pub m_content_object: crate::unity_engine::gameobject::GameObject,
     }
@@ -32,8 +35,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenuContent.KindIcon")]
     #[parent(crate::system::object::Object)]
     pub struct AccessoryShopBuyMenuContent_KindIcon {
+        #[offset(16)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(24)]
         #[rename(name = "m_Kind")]
         pub m_kind: crate::app::accessorydata::AccessoryData_Kinds,
     }

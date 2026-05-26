@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ToggleGroup")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct ToggleGroup {
+        #[offset(24)]
         #[rename(name = "m_AllowSwitchOff")]
         pub m_allow_switch_off: bool,
+        #[offset(32)]
         #[rename(name = "m_Toggles")]
         pub m_toggles: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::toggle::Toggle>,
     }

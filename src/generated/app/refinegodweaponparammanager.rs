@@ -15,18 +15,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponParamManager")]
     #[parent(crate::system::object::Object)]
     pub struct RefineGodWeaponParamManager {
+        #[offset(16)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::refinegodweaponparammanager::RefineGodWeaponParamManager_ReturnEventHandler,
+        #[offset(24)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu,
+        #[offset(32)]
         #[rename(name = "m_Root")]
         pub m_root: crate::app::refinegodweaponroot::RefineGodWeaponRoot,
+        #[offset(40)]
         #[rename(name = "m_GodUnit")]
         pub m_god_unit: crate::app::godunit::GodUnit,
+        #[offset(48)]
         #[rename(name = "m_GodWeapon")]
         pub m_god_weapon: crate::app::itemdata::ItemData,
+        #[offset(56)]
         #[rename(name = "m_RefineKind")]
         pub m_refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+        #[offset(60)]
         #[rename(name = "m_CurrentLevel")]
         pub m_current_level: i32,
     }

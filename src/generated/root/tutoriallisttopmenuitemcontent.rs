@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "TutorialListTopMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct TutorialListTopMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_BackGroundObject")]
         pub m_back_ground_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "MinFloatParameter")]
     #[parent(crate::unity_engine::rendering::floatparameter::FloatParameter)]
     pub struct MinFloatParameter {
+        #[offset(24)]
         #[rename(name = "min")]
         pub min: f32,
     }

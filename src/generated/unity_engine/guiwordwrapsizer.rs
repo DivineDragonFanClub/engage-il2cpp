@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUIWordWrapSizer")]
     #[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]
     pub struct GUIWordWrapSizer {
+        #[offset(72)]
         #[rename(name = "m_Content")]
         pub m_content: crate::unity_engine::guicontent::GUIContent,
+        #[offset(80)]
         #[rename(name = "m_ForcedMinHeight")]
         pub m_forced_min_height: f32,
+        #[offset(84)]
         #[rename(name = "m_ForcedMaxHeight")]
         pub m_forced_max_height: f32,
     }

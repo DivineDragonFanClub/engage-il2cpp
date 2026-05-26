@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "AssetReference")]
     #[parent(crate::system::object::Object)]
     pub struct AssetReference {
+        #[offset(16)]
         #[rename(name = "m_AssetGUID")]
         pub m_asset_guid: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_SubObjectName")]
         pub m_sub_object_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_SubObjectType")]
         pub m_sub_object_type: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Operation")]
         pub m_operation: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
     }

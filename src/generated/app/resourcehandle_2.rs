@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ResourceHandle")]
     #[parent(crate::system::object::Object)]
     pub struct ResourceHandle_2 {
+        #[offset(16)]
         #[rename(name = "m_Path")]
         pub m_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Handle")]
         pub m_handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
     }

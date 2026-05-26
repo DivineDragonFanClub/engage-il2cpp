@@ -10,30 +10,19 @@ mod __types {
         system::object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Indication.md"))]
-    #[::unity2::class(namespace = "App", name = "AIBattleSimulator.Indication")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Break.md"))]
+    #[::unity2::class(namespace = "App", name = "AIBattleSimulator.Break")]
     #[parent(crate::system::object::Object)]
-    pub struct AIBattleSimulator_Indication {
-        #[rename(name = "m_Power")]
-        pub m_power: i32,
-        #[rename(name = "m_SkillPower")]
-        pub m_skill_power: i32,
-        #[rename(name = "m_Hit")]
-        pub m_hit: f32,
-        #[rename(name = "m_Critical")]
-        pub m_critical: f32,
-        #[rename(name = "m_Skill")]
-        pub m_skill: f32,
-        #[rename(name = "m_SkillCritical")]
-        pub m_skill_critical: f32,
-        #[rename(name = "m_Prevent")]
-        pub m_prevent: f32,
-        #[rename(name = "m_Miss")]
-        pub m_miss: f32,
-        #[rename(name = "m_Expectation")]
-        pub m_expectation: f32,
-        #[rename(name = "m_IsSkillKill")]
-        pub m_is_skill_kill: bool,
+    pub struct AIBattleSimulator_Break {
+        #[static_field]
+        #[rename(name = "MaxStun")]
+        pub max_stun: f32,
+        #[offset(16)]
+        #[rename(name = "m_BreakAttack")]
+        pub m_break_attack: f32,
+        #[offset(20)]
+        #[rename(name = "m_Stun")]
+        pub m_stun: f32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator.md"))]
@@ -49,51 +38,87 @@ mod __types {
         #[static_field]
         #[rename(name = "BattleSideDf")]
         pub battle_side_df: i32,
+        #[offset(56)]
         #[rename(name = "m_aIndication")]
         pub m_a_indication: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Indication>,
+        #[offset(72)]
         #[rename(name = "m_Kill")]
         pub m_kill: f32,
+        #[offset(76)]
         #[rename(name = "m_Dead")]
         pub m_dead: f32,
+        #[offset(80)]
         #[rename(name = "m_Expectation")]
         pub m_expectation: f32,
+        #[offset(84)]
         #[rename(name = "m_ExpectationReceived")]
         pub m_expectation_received: f32,
+        #[offset(88)]
         #[rename(name = "m_Attack")]
         pub m_attack: f32,
+        #[offset(92)]
         #[rename(name = "m_Follow")]
         pub m_follow: f32,
+        #[offset(96)]
         #[rename(name = "m_aChainAttackCandidate")]
         pub m_a_chain_attack_candidate: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_ChainAttackCandidate>,
+        #[offset(104)]
         #[rename(name = "m_ChainAttackExpectation")]
         pub m_chain_attack_expectation: f32,
+        #[offset(112)]
         #[rename(name = "m_aBreak")]
         pub m_a_break: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Break>,
+        #[offset(120)]
         #[rename(name = "m_BattleSides")]
         pub m_battle_sides: ::unity2::Array<i32>,
+        #[offset(128)]
         #[rename(name = "m_OffenseBattleTimes")]
         pub m_offense_battle_times: i32,
+        #[offset(132)]
         #[rename(name = "m_DefenseBattleTimes")]
         pub m_defense_battle_times: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Indication.md"))]
+    #[::unity2::class(namespace = "App", name = "AIBattleSimulator.Indication")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIBattleSimulator_Indication {
+        #[offset(16)]
+        #[rename(name = "m_Power")]
+        pub m_power: i32,
+        #[offset(20)]
+        #[rename(name = "m_SkillPower")]
+        pub m_skill_power: i32,
+        #[offset(24)]
+        #[rename(name = "m_Hit")]
+        pub m_hit: f32,
+        #[offset(28)]
+        #[rename(name = "m_Critical")]
+        pub m_critical: f32,
+        #[offset(32)]
+        #[rename(name = "m_Skill")]
+        pub m_skill: f32,
+        #[offset(36)]
+        #[rename(name = "m_SkillCritical")]
+        pub m_skill_critical: f32,
+        #[offset(40)]
+        #[rename(name = "m_Prevent")]
+        pub m_prevent: f32,
+        #[offset(44)]
+        #[rename(name = "m_Miss")]
+        pub m_miss: f32,
+        #[offset(48)]
+        #[rename(name = "m_Expectation")]
+        pub m_expectation: f32,
+        #[offset(52)]
+        #[rename(name = "m_IsSkillKill")]
+        pub m_is_skill_kill: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_ChainAttackCandidate.md"))]
     #[::unity2::class(namespace = "App", name = "AIBattleSimulator.ChainAttackCandidate")]
     #[parent(crate::system::object::Object)]
     pub struct AIBattleSimulator_ChainAttackCandidate {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Break.md"))]
-    #[::unity2::class(namespace = "App", name = "AIBattleSimulator.Break")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIBattleSimulator_Break {
-        #[static_field]
-        #[rename(name = "MaxStun")]
-        pub max_stun: f32,
-        #[rename(name = "m_BreakAttack")]
-        pub m_break_attack: f32,
-        #[rename(name = "m_Stun")]
-        pub m_stun: f32,
-    }
 }
 
 #[cfg(feature = "app-aibattlesimulator-types")]
@@ -102,17 +127,62 @@ pub use __types::*;
 #[cfg(feature = "app-aibattlesimulator")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIBattleSimulator_Indication_unity2_raw {
+mod __AIBattleSimulator_Break_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_power {
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+                <crate::app::aibattlesimulator::AIBattleSimulator_Indication as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup(
+        this: AIBattleSimulator_Break,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        indication: crate::app::aibattlesimulator::AIBattleSimulator_Indication,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AIBattleSimulator_Break,
+            crate::app::battleinfoside::BattleInfoSide,
+            crate::app::aibattlesimulator::AIBattleSimulator_Indication,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
+        inner(this, side, indication, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_Power",
+                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
+                "Disable",
                 0,
                 param_types,
                 false,
@@ -124,160 +194,28 @@ mod __AIBattleSimulator_Indication_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_Power",
+                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
+                        "Disable",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_power(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_power::get_method_info().method_ptr);
+    pub unsafe fn disable(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_power {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_Power",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_Power",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_power(this: AIBattleSimulator_Indication, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_power::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_power {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_SkillPower",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_SkillPower",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_skill_power(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_skill_power::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_skill_power {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_SkillPower",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_SkillPower",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_skill_power(this: AIBattleSimulator_Indication, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_skill_power::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_hit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_Hit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_Hit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_hit(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_hit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_hit {
+    pub mod __lookup_add {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_Hit",
+                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
+                "Add",
                 1,
                 param_types,
                 false,
@@ -289,28 +227,28 @@ mod __AIBattleSimulator_Indication_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_Hit",
+                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
+                        "Add",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_hit(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_hit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
+    pub unsafe fn add(this: AIBattleSimulator_Break, break_attack: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Break, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, break_attack, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_critical {
+    pub mod __lookup_get_break_attack {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_Critical",
+                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
+                "get_BreakAttack",
                 0,
                 param_types,
                 false,
@@ -322,61 +260,28 @@ mod __AIBattleSimulator_Indication_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_Critical",
+                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
+                        "get_BreakAttack",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_critical(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_critical::get_method_info().method_ptr);
+    pub unsafe fn get_break_attack(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_break_attack::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_critical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_Critical",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_Critical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_critical(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_critical::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill {
+    pub mod __lookup_get_stun {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_Skill",
+                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
+                "get_Stun",
                 0,
                 param_types,
                 false,
@@ -388,61 +293,28 @@ mod __AIBattleSimulator_Indication_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_Skill",
+                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
+                        "get_Stun",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_skill(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
+    pub unsafe fn get_stun(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_stun::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_skill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_Skill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_Skill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_skill(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_skill::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill_critical {
+    pub mod __lookup_get_is_not_break {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_SkillCritical",
+                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
+                "get_IsNotBreak",
                 0,
                 param_types,
                 false,
@@ -454,347 +326,17 @@ mod __AIBattleSimulator_Indication_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_SkillCritical",
+                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
+                        "get_IsNotBreak",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_skill_critical(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_skill_critical::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_skill_critical {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_SkillCritical",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_SkillCritical",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_skill_critical(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_skill_critical::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_prevent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_Prevent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_Prevent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_prevent(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_prevent::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_prevent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_Prevent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_Prevent",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_prevent(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_prevent::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_miss {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_Miss",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_Miss",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_miss(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_miss::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_miss {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_Miss",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_Miss",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_miss(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_miss::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_expectation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_Expectation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_Expectation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_expectation(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_expectation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_expectation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_Expectation",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_Expectation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_expectation(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_expectation::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_skill_kill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "get_IsSkillKill",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "get_IsSkillKill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_skill_kill(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_skill_kill::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_skill_kill {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "set_IsSkillKill",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "set_IsSkillKill",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_is_skill_kill(this: AIBattleSimulator_Indication, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_is_skill_kill::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+    pub unsafe fn get_is_not_break(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_not_break::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -804,7 +346,7 @@ mod __AIBattleSimulator_Indication_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -817,7 +359,7 @@ mod __AIBattleSimulator_Indication_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -825,212 +367,97 @@ mod __AIBattleSimulator_Indication_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-aibattlesimulator")]
-pub trait IAIBattleSimulator_IndicationMethods: IAIBattleSimulator_Indication {
-    #[doc = "`get_Power()` overload"]
-    fn get_power(self) -> i32 {
+pub trait IAIBattleSimulator_BreakMethods: IAIBattleSimulator_Break {
+    #[doc = "`Setup(crate::app::battleinfoside::BattleInfoSide, crate::app::aibattlesimulator::AIBattleSimulator_Indication)` overload"]
+    fn setup(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+        indication: impl ::core::convert::Into<crate::app::aibattlesimulator::AIBattleSimulator_Indication>,
+    ) -> () {
         unsafe {
             let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_power(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Power(i32)` overload"]
-    fn set_power(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_power(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SkillPower()` overload"]
-    fn get_skill_power(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_skill_power(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_SkillPower(i32)` overload"]
-    fn set_skill_power(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_skill_power(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Hit()` overload"]
-    fn get_hit(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_hit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Hit(f32)` overload"]
-    fn set_hit(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_hit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Critical()` overload"]
-    fn get_critical(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_critical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Critical(f32)` overload"]
-    fn set_critical(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_critical(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Skill()` overload"]
-    fn get_skill(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_skill(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Skill(f32)` overload"]
-    fn set_skill(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_skill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SkillCritical()` overload"]
-    fn get_skill_critical(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_skill_critical(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_SkillCritical(f32)` overload"]
-    fn set_skill_critical(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_skill_critical(
+                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Break_unity2_raw::setup(
                 __receiver,
-                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(indication),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`get_Prevent()` overload"]
-    fn get_prevent(self) -> f32 {
+    #[doc = "`Disable()` overload"]
+    fn disable(self) -> () {
         unsafe {
             let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_prevent(__receiver, ::core::option::Option::None)
+                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Break_unity2_raw::disable(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`set_Prevent(f32)` overload"]
-    fn set_prevent(self, value: impl ::core::convert::Into<f32>) -> () {
+    #[doc = "`Add(f32)` overload"]
+    fn add(self, break_attack: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_prevent(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Break_unity2_raw::add(__receiver, ::core::convert::Into::into(break_attack), ::core::option::Option::None)
         }
     }
-    #[doc = "`get_Miss()` overload"]
-    fn get_miss(self) -> f32 {
+    #[doc = "`get_BreakAttack()` overload"]
+    fn get_break_attack(self) -> f32 {
         unsafe {
             let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_miss(__receiver, ::core::option::Option::None)
+                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Break_unity2_raw::get_break_attack(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`set_Miss(f32)` overload"]
-    fn set_miss(self, value: impl ::core::convert::Into<f32>) -> () {
+    #[doc = "`get_Stun()` overload"]
+    fn get_stun(self) -> f32 {
         unsafe {
             let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_miss(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Break_unity2_raw::get_stun(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`get_Expectation()` overload"]
-    fn get_expectation(self) -> f32 {
+    #[doc = "`get_IsNotBreak()` overload"]
+    fn get_is_not_break(self) -> bool {
         unsafe {
             let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_expectation(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_Expectation(f32)` overload"]
-    fn set_expectation(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_expectation(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsSkillKill()` overload"]
-    fn get_is_skill_kill(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::get_is_skill_kill(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsSkillKill(bool)` overload"]
-    fn set_is_skill_kill(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::set_is_skill_kill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::clear(__receiver, ::core::option::Option::None)
+                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Break_unity2_raw::get_is_not_break(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Indication_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Break_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-aibattlesimulator")]
-impl<__T: IAIBattleSimulator_Indication> IAIBattleSimulator_IndicationMethods for __T {}
+impl<__T: IAIBattleSimulator_Break> IAIBattleSimulator_BreakMethods for __T {}
 
 #[cfg(feature = "app-aibattlesimulator")]
-impl AIBattleSimulator_Indication {
+impl AIBattleSimulator_Break {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AIBattleSimulator_Indication),
+                ::core::stringify!(AIBattleSimulator_Break),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAIBattleSimulator_IndicationMethods>::ctor(this);
+        <Self as IAIBattleSimulator_BreakMethods>::ctor(this);
         this
     }
 }
@@ -2273,6 +1700,942 @@ impl AIBattleSimulator {
 #[cfg(feature = "app-aibattlesimulator")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIBattleSimulator_Indication_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_power {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_Power",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_Power",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_power(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_power::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_power {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_Power",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_Power",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_power(this: AIBattleSimulator_Indication, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_power::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_power {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_SkillPower",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_SkillPower",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill_power(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_skill_power::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill_power {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_SkillPower",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_SkillPower",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_skill_power(this: AIBattleSimulator_Indication, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skill_power::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_hit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_Hit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_Hit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_hit(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_hit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_Hit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_Hit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_hit(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hit::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_critical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_Critical",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_Critical",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_critical(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_critical::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_critical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_Critical",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_Critical",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_critical(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_critical::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_Skill",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_Skill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_Skill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_Skill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_skill(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skill::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skill_critical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_SkillCritical",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_SkillCritical",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skill_critical(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_skill_critical::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skill_critical {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_SkillCritical",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_SkillCritical",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_skill_critical(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skill_critical::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_prevent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_Prevent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_Prevent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_prevent(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_prevent::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_prevent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_Prevent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_Prevent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_prevent(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_prevent::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_miss {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_Miss",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_Miss",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_miss(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_miss::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_miss {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_Miss",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_Miss",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_miss(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_miss::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_expectation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_Expectation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_Expectation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_expectation(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_expectation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_expectation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_Expectation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_Expectation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_expectation(this: AIBattleSimulator_Indication, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_expectation::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_skill_kill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "get_IsSkillKill",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSkillKill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_skill_kill(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_skill_kill::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_skill_kill {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "set_IsSkillKill",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "set_IsSkillKill",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_skill_kill(this: AIBattleSimulator_Indication, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_skill_kill::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIBattleSimulator_Indication as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AIBattleSimulator_Indication, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIBattleSimulator_Indication, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+pub trait IAIBattleSimulator_IndicationMethods: IAIBattleSimulator_Indication {
+    #[doc = "`get_Power()` overload"]
+    fn get_power(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_power(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Power(i32)` overload"]
+    fn set_power(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_power(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SkillPower()` overload"]
+    fn get_skill_power(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_skill_power(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SkillPower(i32)` overload"]
+    fn set_skill_power(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_skill_power(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Hit()` overload"]
+    fn get_hit(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_hit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Hit(f32)` overload"]
+    fn set_hit(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_hit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Critical()` overload"]
+    fn get_critical(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_critical(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Critical(f32)` overload"]
+    fn set_critical(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_critical(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Skill()` overload"]
+    fn get_skill(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_skill(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Skill(f32)` overload"]
+    fn set_skill(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_skill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SkillCritical()` overload"]
+    fn get_skill_critical(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_skill_critical(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SkillCritical(f32)` overload"]
+    fn set_skill_critical(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_skill_critical(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Prevent()` overload"]
+    fn get_prevent(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_prevent(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Prevent(f32)` overload"]
+    fn set_prevent(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_prevent(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Miss()` overload"]
+    fn get_miss(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_miss(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Miss(f32)` overload"]
+    fn set_miss(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_miss(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Expectation()` overload"]
+    fn get_expectation(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_expectation(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Expectation(f32)` overload"]
+    fn set_expectation(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_expectation(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsSkillKill()` overload"]
+    fn get_is_skill_kill(self) -> bool {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::get_is_skill_kill(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsSkillKill(bool)` overload"]
+    fn set_is_skill_kill(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::set_is_skill_kill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AIBattleSimulator_Indication as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIBattleSimulator_Indication_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl<__T: IAIBattleSimulator_Indication> IAIBattleSimulator_IndicationMethods for __T {}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator_Indication {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator_Indication),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulator_IndicationMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AIBattleSimulator_ChainAttackCandidate_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2476,344 +2839,6 @@ impl AIBattleSimulator_ChainAttackCandidate {
             )
         });
         <Self as IAIBattleSimulator_ChainAttackCandidateMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIBattleSimulator_Break_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-                <crate::app::aibattlesimulator::AIBattleSimulator_Indication as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
-                        "Setup",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn setup(
-        this: AIBattleSimulator_Break,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        indication: crate::app::aibattlesimulator::AIBattleSimulator_Indication,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIBattleSimulator_Break,
-            crate::app::battleinfoside::BattleInfoSide,
-            crate::app::aibattlesimulator::AIBattleSimulator_Indication,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
-        inner(this, side, indication, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
-                "Disable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
-                        "Disable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn disable(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_disable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: AIBattleSimulator_Break, break_attack: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Break, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, break_attack, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_break_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
-                "get_BreakAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
-                        "get_BreakAttack",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_break_attack(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_break_attack::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_stun {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
-                "get_Stun",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
-                        "get_Stun",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_stun(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_stun::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_not_break {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
-                "get_IsNotBreak",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
-                        "get_IsNotBreak",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_is_not_break(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_get_is_not_break::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIBattleSimulator_Break as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIBattleSimulator_Break as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AIBattleSimulator_Break, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIBattleSimulator_Break, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-pub trait IAIBattleSimulator_BreakMethods: IAIBattleSimulator_Break {
-    #[doc = "`Setup(crate::app::battleinfoside::BattleInfoSide, crate::app::aibattlesimulator::AIBattleSimulator_Indication)` overload"]
-    fn setup(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-        indication: impl ::core::convert::Into<crate::app::aibattlesimulator::AIBattleSimulator_Indication>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Break_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::convert::Into::into(indication),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Disable()` overload"]
-    fn disable(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Break_unity2_raw::disable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(f32)` overload"]
-    fn add(self, break_attack: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Break_unity2_raw::add(__receiver, ::core::convert::Into::into(break_attack), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_BreakAttack()` overload"]
-    fn get_break_attack(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Break_unity2_raw::get_break_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Stun()` overload"]
-    fn get_stun(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Break_unity2_raw::get_stun(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsNotBreak()` overload"]
-    fn get_is_not_break(self) -> bool {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Break_unity2_raw::get_is_not_break(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AIBattleSimulator_Break as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIBattleSimulator_Break_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-impl<__T: IAIBattleSimulator_Break> IAIBattleSimulator_BreakMethods for __T {}
-
-#[cfg(feature = "app-aibattlesimulator")]
-impl AIBattleSimulator_Break {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIBattleSimulator_Break),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIBattleSimulator_BreakMethods>::ctor(this);
         this
     }
 }

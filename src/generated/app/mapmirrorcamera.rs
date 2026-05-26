@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapMirrorCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapMirrorCamera {
+        #[offset(24)]
         #[rename(name = "m_renderCamera")]
         pub m_render_camera: crate::unity_engine::camera::Camera,
+        #[offset(32)]
         #[rename(name = "m_OffsetY")]
         pub m_offset_y: f32,
+        #[offset(36)]
         #[rename(name = "m_MarginForChara")]
         pub m_margin_for_chara: f32,
+        #[offset(40)]
         #[rename(name = "m_MarginForMapObj")]
         pub m_margin_for_map_obj: f32,
+        #[offset(44)]
         #[rename(name = "m_UseEditorCamera")]
         pub m_use_editor_camera: bool,
     }

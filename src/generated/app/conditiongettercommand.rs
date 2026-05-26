@@ -10,29 +10,104 @@ mod __types {
         system::object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/conditiongettercommand/ConditionGetterCommand.md"))]
-    #[::unity2::class(namespace = "App", name = "ConditionGetterCommand")]
-    #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-    pub struct ConditionGetterCommand {
-        #[rename(name = "m_Commands")]
-        pub m_commands: crate::system::collections::generic::list_1::List_1<crate::app::conditiongettercommand::ConditionGetterCommand_Command>,
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/conditiongettercommand/ConditionGetterCommand_Command.md"))]
     #[::unity2::class(namespace = "App", name = "ConditionGetterCommand.Command")]
     #[parent(crate::system::object::Object)]
     pub struct ConditionGetterCommand_Command {
+        #[offset(16)]
         #[rename(name = "Condition")]
         pub condition: crate::app::stringcalculator::StringCalculator,
+        #[offset(24)]
         #[rename(name = "Function")]
         pub function: crate::app::stringcalculator::StringCalculator,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/conditiongettercommand/ConditionGetterCommand.md"))]
+    #[::unity2::class(namespace = "App", name = "ConditionGetterCommand")]
+    #[parent(crate::app::calculatorcommand::CalculatorCommand)]
+    pub struct ConditionGetterCommand {
+        #[offset(24)]
+        #[rename(name = "m_Commands")]
+        pub m_commands: crate::system::collections::generic::list_1::List_1<crate::app::conditiongettercommand::ConditionGetterCommand_Command>,
+        #[offset(32)]
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
     }
 }
 
 #[cfg(feature = "app-conditiongettercommand-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-conditiongettercommand")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ConditionGetterCommand_Command_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ConditionGetterCommand_Command as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConditionGetterCommand_Command as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ConditionGetterCommand_Command, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ConditionGetterCommand_Command, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-conditiongettercommand")]
+pub trait IConditionGetterCommand_CommandMethods: IConditionGetterCommand_Command {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ConditionGetterCommand_Command as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConditionGetterCommand_Command_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-conditiongettercommand")]
+impl<__T: IConditionGetterCommand_Command> IConditionGetterCommand_CommandMethods for __T {}
+
+#[cfg(feature = "app-conditiongettercommand")]
+impl ConditionGetterCommand_Command {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConditionGetterCommand_Command),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConditionGetterCommand_CommandMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-conditiongettercommand")]
 #[doc(hidden)]
@@ -366,77 +441,6 @@ impl ConditionGetterCommand {
             )
         });
         <Self as IConditionGetterCommandMethods>::ctor(this, name);
-        this
-    }
-}
-
-#[cfg(feature = "app-conditiongettercommand")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ConditionGetterCommand_Command_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ConditionGetterCommand_Command as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ConditionGetterCommand_Command as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: ConditionGetterCommand_Command, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ConditionGetterCommand_Command, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-conditiongettercommand")]
-pub trait IConditionGetterCommand_CommandMethods: IConditionGetterCommand_Command {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ConditionGetterCommand_Command as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __ConditionGetterCommand_Command_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-conditiongettercommand")]
-impl<__T: IConditionGetterCommand_Command> IConditionGetterCommand_CommandMethods for __T {}
-
-#[cfg(feature = "app-conditiongettercommand")]
-impl ConditionGetterCommand_Command {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConditionGetterCommand_Command),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConditionGetterCommand_CommandMethods>::ctor(this);
         this
     }
 }

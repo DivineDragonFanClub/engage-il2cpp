@@ -17,18 +17,25 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "ForEachLoopStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct ForEachLoopStatement {
+        #[offset(32)]
         #[rename(name = "m_StackFrame")]
         pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        #[offset(40)]
         #[rename(name = "m_Names")]
         pub m_names: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+        #[offset(48)]
         #[rename(name = "m_NameExps")]
         pub m_name_exps: ::unity2::Array<crate::moon_sharp::interpreter::tree::ivariable::IVariable>,
+        #[offset(56)]
         #[rename(name = "m_RValues")]
         pub m_r_values: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(64)]
         #[rename(name = "m_Block")]
         pub m_block: crate::moon_sharp::interpreter::tree::statement::Statement,
+        #[offset(72)]
         #[rename(name = "m_RefFor")]
         pub m_ref_for: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[offset(80)]
         #[rename(name = "m_RefEnd")]
         pub m_ref_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

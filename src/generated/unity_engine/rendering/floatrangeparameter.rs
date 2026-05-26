@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "FloatRangeParameter")]
     # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
     pub struct FloatRangeParameter {
+        #[offset(28)]
         #[rename(name = "min")]
         pub min: f32,
+        #[offset(32)]
         #[rename(name = "max")]
         pub max: f32,
     }

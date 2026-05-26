@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatViewer")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CombatViewer {
+        #[offset(24)]
         #[rename(name = "Settings")]
         pub settings: crate::combat::combatviewersettings::CombatViewerSettings,
+        #[offset(32)]
         #[rename(name = "PlayAll")]
         pub play_all: bool,
+        #[offset(36)]
         #[rename(name = "PlayAllIdx")]
         pub play_all_idx: i32,
     }

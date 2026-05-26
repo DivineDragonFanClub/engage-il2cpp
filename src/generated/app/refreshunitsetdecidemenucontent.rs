@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefreshUnitSetDecideMenuContent {
+        #[offset(232)]
         #[rename(name = "m_DecideObject")]
         pub m_decide_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_MenuItemContent")]
         pub m_menu_item_content: crate::app::basicmenuitemcontent::BasicMenuItemContent,
+        #[offset(248)]
         #[rename(name = "m_DecideText")]
         pub m_decide_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_BackCursorObject")]
         pub m_back_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(264)]
         #[rename(name = "m_FrontCursorObject")]
         pub m_front_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(272)]
         #[rename(name = "m_Usabled")]
         pub m_usabled: bool,
     }

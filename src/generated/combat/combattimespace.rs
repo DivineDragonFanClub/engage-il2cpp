@@ -25,18 +25,25 @@ mod __types {
         #[static_field]
         #[rename(name = "EditorPrefsName")]
         pub editor_prefs_name: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "HitStopSpeedCurve")]
         pub hit_stop_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(48)]
         #[rename(name = "EvasionSpeedCurve")]
         pub evasion_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(56)]
         #[rename(name = "SkillDisplayFreezeDuration")]
         pub skill_display_freeze_duration: f32,
+        #[offset(60)]
         #[rename(name = "BossKilledHitStopTime")]
         pub boss_killed_hit_stop_time: f32,
+        #[offset(64)]
         #[rename(name = "BossKilledTimeScale")]
         pub boss_killed_time_scale: f32,
+        #[offset(68)]
         #[rename(name = "BossKilledTimeScaleDuration")]
         pub boss_killed_time_scale_duration: f32,
+        #[offset(96)]
         #[rename(name = "isCombatSkipped")]
         pub is_combat_skipped: bool,
     }

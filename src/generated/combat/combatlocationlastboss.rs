@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatLocationLastBoss")]
     #[parent(crate::combat::basecombatlocation::BaseCombatLocation)]
     pub struct CombatLocationLastBoss {
+        #[offset(137)]
         #[rename(name = "m_IsCrossCut")]
         pub m_is_cross_cut: bool,
+        #[offset(140)]
         #[rename(name = "m_BossCenter")]
         pub m_boss_center: crate::unity_engine::vector3::Vector3,
+        #[offset(152)]
         #[rename(name = "m_BossSize")]
         pub m_boss_size: f32,
+        #[offset(156)]
         #[rename(name = "m_BattleDist")]
         pub m_battle_dist: f32,
     }

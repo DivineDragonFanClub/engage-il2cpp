@@ -23,13 +23,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardStampListMenuContent")]
     #[parent(crate::app::gridmenucontent::GridMenuContent)]
     pub struct ProfileCardStampListMenuContent {
+        #[offset(240)]
         #[rename(name = "m_CaptionText")]
         pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_PageIconImage")]
         pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
         #[static_field]
         #[rename(name = "m_RowCount")]
         pub m_row_count: i32,
+        #[offset(256)]
         #[rename(name = "isStarted")]
         pub is_started: bool,
     }

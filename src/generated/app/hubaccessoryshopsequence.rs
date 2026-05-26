@@ -14,28 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "HubAccessoryShopSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubAccessoryShopSequence {
-        #[rename(name = "m_ShopMenuResult")]
-        pub m_shop_menu_result: crate::app::accessoryshoptopmenu::AccessoryShopTopMenu_Result2,
-        #[rename(name = "m_ShopUnitSelectMenuResult")]
-        pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_AccessoryShopUnitSelectRoot")]
-        pub m_accessory_shop_unit_select_root: crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot,
-        #[rename(name = "m_AccessoryShopBuyRoot")]
-        pub m_accessory_shop_buy_root: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot,
-        #[rename(name = "m_AccessoryShopChangeRoot")]
-        pub m_accessory_shop_change_root: crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_UnitSelectMenuScrollIndex")]
-        pub m_unit_select_menu_scroll_index: i32,
-        #[rename(name = "m_Changed")]
-        pub m_changed: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence_Label2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,6 +66,36 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 6 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "HubAccessoryShopSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubAccessoryShopSequence {
+        #[offset(112)]
+        #[rename(name = "m_ShopMenuResult")]
+        pub m_shop_menu_result: crate::app::accessoryshoptopmenu::AccessoryShopTopMenu_Result2,
+        #[offset(116)]
+        #[rename(name = "m_ShopUnitSelectMenuResult")]
+        pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
+        #[offset(120)]
+        #[rename(name = "m_AccessoryShopUnitSelectRoot")]
+        pub m_accessory_shop_unit_select_root: crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot,
+        #[offset(128)]
+        #[rename(name = "m_AccessoryShopBuyRoot")]
+        pub m_accessory_shop_buy_root: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot,
+        #[offset(136)]
+        #[rename(name = "m_AccessoryShopChangeRoot")]
+        pub m_accessory_shop_change_root: crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
+        #[offset(144)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(152)]
+        #[rename(name = "m_UnitSelectMenuScrollIndex")]
+        pub m_unit_select_menu_scroll_index: i32,
+        #[offset(156)]
+        #[rename(name = "m_Changed")]
+        pub m_changed: bool,
     }
 }
 

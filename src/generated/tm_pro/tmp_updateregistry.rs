@@ -14,12 +14,16 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry,
+        #[offset(16)]
         #[rename(name = "m_LayoutRebuildQueue")]
         pub m_layout_rebuild_queue: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+        #[offset(24)]
         #[rename(name = "m_LayoutQueueLookup")]
         pub m_layout_queue_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        #[offset(32)]
         #[rename(name = "m_GraphicRebuildQueue")]
         pub m_graphic_rebuild_queue: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::icanvaselement::ICanvasElement>,
+        #[offset(40)]
         #[rename(name = "m_GraphicQueueLookup")]
         pub m_graphic_queue_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
     }

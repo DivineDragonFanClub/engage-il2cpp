@@ -24,12 +24,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ContentSizeFitter")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct ContentSizeFitter {
+        #[offset(24)]
         #[rename(name = "m_HorizontalFit")]
         pub m_horizontal_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+        #[offset(28)]
         #[rename(name = "m_VerticalFit")]
         pub m_vertical_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+        #[offset(32)]
         #[rename(name = "m_Rect")]
         pub m_rect: crate::unity_engine::recttransform::RectTransform,
+        #[offset(40)]
         #[rename(name = "m_Tracker")]
         pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
     }

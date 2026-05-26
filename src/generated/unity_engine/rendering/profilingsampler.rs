@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ProfilingSampler")]
     #[parent(crate::system::object::Object)]
     pub struct ProfilingSampler {
+        #[offset(40)]
         #[rename(name = "m_Recorder")]
         pub m_recorder: crate::unity_engine::profiling::recorder::Recorder,
+        #[offset(48)]
         #[rename(name = "m_InlineRecorder")]
         pub m_inline_recorder: crate::unity_engine::profiling::recorder::Recorder,
     }

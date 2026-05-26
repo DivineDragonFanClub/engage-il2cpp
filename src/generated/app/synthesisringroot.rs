@@ -22,10 +22,13 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_SynthesisRingBaseRingMenuObject")]
         pub m_synthesis_ring_base_ring_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_SynthesisRingInfoWindowObject")]
         pub m_synthesis_ring_info_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_SynthesisRingInfoWindow")]
         pub m_synthesis_ring_info_window: crate::app::synthesisringinfowindow::SynthesisRingInfoWindow,
     }

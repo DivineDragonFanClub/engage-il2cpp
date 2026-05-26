@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitSelectMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct UnitSelectMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Setter")]
         pub m_setter: crate::app::unitmenuitemsetter::UnitMenuItemSetter,
+        #[offset(80)]
         #[rename(name = "m_relayOthers")]
         pub m_relay_others: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_versusDefense")]
         pub m_versus_defense: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_subFrameType")]
         pub m_sub_frame_type: crate::app::unitmenuitemsetter::UnitMenuItemSetter_SubFrame,
+        #[offset(100)]
         #[rename(name = "m_IsSortieBackupUnit")]
         pub m_is_sortie_backup_unit: bool,
     }

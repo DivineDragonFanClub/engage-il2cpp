@@ -19,89 +19,11 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]
-    #[::unity2::class(namespace = "App", name = "WellSequence.DialogItemGotoEvilFirst")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct WellSequence_DialogItemGotoEvilFirst {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct WellSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for WellSequence_Label {
-        const NAME: &'static str = "WellSequence.Label";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for WellSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl WellSequence_Label {
-        pub fn entry() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn get_evil_weapons() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn evil_map_first_demo() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn get_exchange_item() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn top_menu() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn item_select() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn first_evil_map_confirm() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn evil_map_confirm() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn change_difficulty() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn change_difficulty_result() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 11 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "WellSequence.ChangeDifficultyMenuItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct WellSequence_ChangeDifficultyMenuItem {
+        #[offset(112)]
         #[rename(name = "YesEventHandler")]
         pub yes_event_handler: crate::system::action::Action,
     }
@@ -122,6 +44,7 @@ mod __types {
         #[static_field]
         #[rename(name = "EvilWeaponState")]
         pub evil_weapon_state: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_TopMenuResult")]
         pub m_top_menu_result: crate::app::welltopmenu::WellTopMenu_MenuResult,
         #[static_field]
@@ -211,131 +134,89 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]
+    #[::unity2::class(namespace = "App", name = "WellSequence.DialogItemGotoEvilFirst")]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct WellSequence_DialogItemGotoEvilFirst {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct WellSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for WellSequence_Label {
+        const NAME: &'static str = "WellSequence.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for WellSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl WellSequence_Label {
+        pub fn entry() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn get_evil_weapons() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn evil_map_first_demo() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn get_exchange_item() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn top_menu() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn item_select() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn first_evil_map_confirm() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn evil_map_confirm() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn change_difficulty() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn change_difficulty_result() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn exit() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 11 }
+        }
+    }
 }
 
 #[cfg(feature = "app-wellsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-wellsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellSequence_DialogItemGotoEvilFirst_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WellSequence_DialogItemGotoEvilFirst,
-        label: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::NAME,
-                        "ACall",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn a_call(
-        this: WellSequence_DialogItemGotoEvilFirst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
-            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-pub trait IWellSequence_DialogItemGotoEvilFirstMethods: IWellSequence_DialogItemGotoEvilFirst {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, label: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <WellSequence_DialogItemGotoEvilFirst as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellSequence_DialogItemGotoEvilFirst_unity2_raw::ctor(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <WellSequence_DialogItemGotoEvilFirst as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellSequence_DialogItemGotoEvilFirst_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-wellsequence")]
-impl<__T: IWellSequence_DialogItemGotoEvilFirst> IWellSequence_DialogItemGotoEvilFirstMethods for __T {}
-
-#[cfg(feature = "app-wellsequence")]
-impl WellSequence_DialogItemGotoEvilFirst {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(label: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WellSequence_DialogItemGotoEvilFirst),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWellSequence_DialogItemGotoEvilFirstMethods>::ctor(this, label);
-        this
-    }
-}
 
 #[cfg(feature = "app-wellsequence")]
 #[doc(hidden)]
@@ -2301,6 +2182,127 @@ impl WellSequence {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(WellSequence), ::core::stringify!(new),));
         <Self as IWellSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-wellsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WellSequence_DialogItemGotoEvilFirst_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: WellSequence_DialogItemGotoEvilFirst,
+        label: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellSequence_DialogItemGotoEvilFirst as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: WellSequence_DialogItemGotoEvilFirst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-wellsequence")]
+pub trait IWellSequence_DialogItemGotoEvilFirstMethods: IWellSequence_DialogItemGotoEvilFirst {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, label: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <WellSequence_DialogItemGotoEvilFirst as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WellSequence_DialogItemGotoEvilFirst_unity2_raw::ctor(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <WellSequence_DialogItemGotoEvilFirst as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WellSequence_DialogItemGotoEvilFirst_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-wellsequence")]
+impl<__T: IWellSequence_DialogItemGotoEvilFirst> IWellSequence_DialogItemGotoEvilFirstMethods for __T {}
+
+#[cfg(feature = "app-wellsequence")]
+impl WellSequence_DialogItemGotoEvilFirst {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(label: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WellSequence_DialogItemGotoEvilFirst),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWellSequence_DialogItemGotoEvilFirstMethods>::ctor(this, label);
         this
     }
 }

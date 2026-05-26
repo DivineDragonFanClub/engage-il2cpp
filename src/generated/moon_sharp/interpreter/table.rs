@@ -14,31 +14,40 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Table")]
     #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
     pub struct Table {
+        #[offset(24)]
         #[rename(name = "m_Values")]
         pub m_values: crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::moon_sharp::interpreter::tablepair::TablePair>,
+        #[offset(32)]
         #[rename(name = "m_ValueMap")]
         pub m_value_map: crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             crate::moon_sharp::interpreter::tablepair::TablePair,
         >,
+        #[offset(40)]
         #[rename(name = "m_StringMap")]
         pub m_string_map: crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::tablepair::TablePair,
         >,
+        #[offset(48)]
         #[rename(name = "m_ArrayMap")]
         pub m_array_map: crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<
             i32,
             crate::moon_sharp::interpreter::tablepair::TablePair,
         >,
+        #[offset(56)]
         #[rename(name = "m_Owner")]
         pub m_owner: crate::moon_sharp::interpreter::script::Script,
+        #[offset(64)]
         #[rename(name = "m_InitArray")]
         pub m_init_array: i32,
+        #[offset(68)]
         #[rename(name = "m_CachedLength")]
         pub m_cached_length: i32,
+        #[offset(72)]
         #[rename(name = "m_ContainsNilEntries")]
         pub m_contains_nil_entries: bool,
+        #[offset(80)]
         #[rename(name = "m_MetaTable")]
         pub m_meta_table: crate::moon_sharp::interpreter::table::Table,
     }

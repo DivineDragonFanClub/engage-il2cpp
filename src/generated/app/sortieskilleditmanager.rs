@@ -14,6 +14,27 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieskilleditmanager/SortieSkillEditManager.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSkillEditManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieskilleditmanager :: SortieSkillEditManager >)]
+    pub struct SortieSkillEditManager {
+        #[offset(32)]
+        #[rename(name = "m_EquipSkillMenu")]
+        pub m_equip_skill_menu: crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
+        #[offset(40)]
+        #[rename(name = "m_PoolSkillMenu")]
+        pub m_pool_skill_menu: crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
+        #[offset(48)]
+        #[rename(name = "m_SkillInfo")]
+        pub m_skill_info: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
+        #[rename(name = "m_SkillInfoRoot")]
+        pub m_skill_info_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieskilleditmanager/SortieSkillEditManager_Modes.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -46,22 +67,6 @@ mod __types {
         pub fn trade() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieskilleditmanager/SortieSkillEditManager.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSkillEditManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieskilleditmanager :: SortieSkillEditManager >)]
-    pub struct SortieSkillEditManager {
-        #[rename(name = "m_EquipSkillMenu")]
-        pub m_equip_skill_menu: crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
-        #[rename(name = "m_PoolSkillMenu")]
-        pub m_pool_skill_menu: crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
-        #[rename(name = "m_SkillInfo")]
-        pub m_skill_info: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_SkillInfoRoot")]
-        pub m_skill_info_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
     }
 }
 

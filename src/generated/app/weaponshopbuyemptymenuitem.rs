@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyEmptyMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct WeaponShopBuyEmptyMenuItem {
+        #[offset(104)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,
     }

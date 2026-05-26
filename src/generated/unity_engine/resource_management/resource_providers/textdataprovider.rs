@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "TextDataProvider.InternalOp")]
     #[parent(crate::system::object::Object)]
     pub struct TextDataProvider_InternalOp {
+        #[offset(16)]
         #[rename(name = "m_Provider")]
         pub m_provider: crate::unity_engine::resource_management::resource_providers::textdataprovider::TextDataProvider,
+        #[offset(24)]
         #[rename(name = "m_RequestOperation")]
         pub m_request_operation: crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation,
+        #[offset(32)]
         #[rename(name = "m_RequestQueueOperation")]
         pub m_request_queue_operation: crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation,
+        #[offset(40)]
         #[rename(name = "m_PI")]
         pub m_pi: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
+        #[offset(64)]
         #[rename(name = "m_IgnoreFailures")]
         pub m_ignore_failures: bool,
+        #[offset(65)]
         #[rename(name = "m_Complete")]
         pub m_complete: bool,
+        #[offset(68)]
         #[rename(name = "m_Timeout")]
         pub m_timeout: i32,
     }

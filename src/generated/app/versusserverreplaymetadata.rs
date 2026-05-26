@@ -17,24 +17,34 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: u16,
+        #[offset(16)]
         #[rename(name = "m_Version")]
         pub m_version: u16,
+        #[offset(24)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::Array<u8>,
+        #[offset(32)]
         #[rename(name = "m_Stream")]
         pub m_stream: crate::app::stream_2::Stream_2,
+        #[offset(40)]
         #[rename(name = "m_DataId")]
         pub m_data_id: u64,
+        #[offset(48)]
         #[rename(name = "m_OffensePrincipalId")]
         pub m_offense_principal_id: u64,
+        #[offset(56)]
         #[rename(name = "m_OffensePlayerName")]
         pub m_offense_player_name: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_MapEndUnixTime")]
         pub m_map_end_unix_time: i64,
+        #[offset(72)]
         #[rename(name = "m_MapResult")]
         pub m_map_result: crate::app::versus::Versus_MapResult,
+        #[offset(76)]
         #[rename(name = "m_IsEnable")]
         pub m_is_enable: bool,
+        #[offset(77)]
         #[rename(name = "m_IsEmpty")]
         pub m_is_empty: bool,
     }

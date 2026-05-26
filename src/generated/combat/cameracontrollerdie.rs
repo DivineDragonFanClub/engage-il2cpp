@@ -20,38 +20,55 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerDie")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerDie {
+        #[offset(168)]
         #[rename(name = "HeightFixer")]
         pub height_fixer: f32,
+        #[offset(172)]
         #[rename(name = "LookDownMax")]
         pub look_down_max: f32,
+        #[offset(176)]
         #[rename(name = "Distance")]
         pub distance: f32,
+        #[offset(180)]
         #[rename(name = "BaseDegree")]
         pub base_degree: f32,
+        #[offset(184)]
         #[rename(name = "StartCameraDownTime")]
         pub start_camera_down_time: f32,
+        #[offset(188)]
         #[rename(name = "StartRotateTime")]
         pub start_rotate_time: f32,
+        #[offset(192)]
         #[rename(name = "m_IsBeforeDead")]
         pub m_is_before_dead: bool,
+        #[offset(196)]
         #[rename(name = "m_Degree")]
         pub m_degree: f32,
+        #[offset(200)]
         #[rename(name = "m_DeadTime")]
         pub m_dead_time: f32,
+        #[offset(204)]
         #[rename(name = "m_DeadHeight")]
         pub m_dead_height: f32,
+        #[offset(208)]
         #[rename(name = "m_IsEnemy")]
         pub m_is_enemy: bool,
+        #[offset(209)]
         #[rename(name = "m_IsInverse")]
         pub m_is_inverse: bool,
+        #[offset(210)]
         #[rename(name = "m_IsStandingDie")]
         pub m_is_standing_die: bool,
+        #[offset(212)]
         #[rename(name = "m_LookDown")]
         pub m_look_down: f32,
+        #[offset(216)]
         #[rename(name = "m_IsEngageAtk")]
         pub m_is_engage_atk: bool,
+        #[offset(220)]
         #[rename(name = "LookDownTime")]
         pub look_down_time: f32,
+        #[offset(224)]
         #[rename(name = "m_ForwardVec")]
         pub m_forward_vec: crate::unity_engine::vector3::Vector3,
     }

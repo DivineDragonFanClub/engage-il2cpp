@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapLightProbe")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapLightProbe {
+        #[offset(24)]
         #[rename(name = "m_Width")]
         pub m_width: i32,
+        #[offset(28)]
         #[rename(name = "m_Height")]
         pub m_height: i32,
+        #[offset(32)]
         #[rename(name = "m_Blank")]
         pub m_blank: i32,
+        #[offset(36)]
         #[rename(name = "m_Split")]
         pub m_split: i32,
     }

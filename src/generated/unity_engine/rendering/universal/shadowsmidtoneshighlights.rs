@@ -18,18 +18,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShadowsMidtonesHighlights")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct ShadowsMidtonesHighlights {
+        #[offset(56)]
         #[rename(name = "shadows")]
         pub shadows: crate::unity_engine::rendering::vector4parameter::Vector4Parameter,
+        #[offset(64)]
         #[rename(name = "midtones")]
         pub midtones: crate::unity_engine::rendering::vector4parameter::Vector4Parameter,
+        #[offset(72)]
         #[rename(name = "highlights")]
         pub highlights: crate::unity_engine::rendering::vector4parameter::Vector4Parameter,
+        #[offset(80)]
         #[rename(name = "shadowsStart")]
         pub shadows_start: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(88)]
         #[rename(name = "shadowsEnd")]
         pub shadows_end: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(96)]
         #[rename(name = "highlightsStart")]
         pub highlights_start: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(104)]
         #[rename(name = "highlightsEnd")]
         pub highlights_end: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
     }

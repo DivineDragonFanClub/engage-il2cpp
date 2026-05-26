@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "PPRadialBlurPlayableAsset")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct PPRadialBlurPlayableAsset {
+        #[offset(24)]
         #[rename(name = "m_Volume")]
         pub m_volume: crate::unity_engine::exposedreference_1::ExposedReference_1<crate::unity_engine::rendering::volume::Volume>,
+        #[offset(40)]
         #[rename(name = "m_BeginIntensity")]
         pub m_begin_intensity: f32,
+        #[offset(44)]
         #[rename(name = "m_EndIntensity")]
         pub m_end_intensity: f32,
     }

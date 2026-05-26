@@ -30,24 +30,34 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "MaskableGraphic")]
     #[parent(crate::unity_engine::ui::graphic::Graphic)]
     pub struct MaskableGraphic {
+        #[offset(153)]
         #[rename(name = "m_ShouldRecalculateStencil")]
         pub m_should_recalculate_stencil: bool,
+        #[offset(160)]
         #[rename(name = "m_MaskMaterial")]
         pub m_mask_material: crate::unity_engine::material::Material,
+        #[offset(168)]
         #[rename(name = "m_ParentMask")]
         pub m_parent_mask: crate::unity_engine::ui::rectmask2d::RectMask2D,
+        #[offset(176)]
         #[rename(name = "m_Maskable")]
         pub m_maskable: bool,
+        #[offset(177)]
         #[rename(name = "m_IsMaskingGraphic")]
         pub m_is_masking_graphic: bool,
+        #[offset(178)]
         #[rename(name = "m_IncludeForMasking")]
         pub m_include_for_masking: bool,
+        #[offset(184)]
         #[rename(name = "m_OnCullStateChanged")]
         pub m_on_cull_state_changed: crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent,
+        #[offset(192)]
         #[rename(name = "m_ShouldRecalculate")]
         pub m_should_recalculate: bool,
+        #[offset(196)]
         #[rename(name = "m_StencilValue")]
         pub m_stencil_value: i32,
+        #[offset(200)]
         #[rename(name = "m_Corners")]
         pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
     }

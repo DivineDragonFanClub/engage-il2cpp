@@ -23,6 +23,33 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "GraphicRaycaster")]
+    #[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
+    pub struct GraphicRaycaster {
+        #[static_field]
+        #[rename(name = "kNoEventMaskSet")]
+        pub k_no_event_mask_set: i32,
+        #[offset(32)]
+        #[rename(name = "m_IgnoreReversedGraphics")]
+        pub m_ignore_reversed_graphics: bool,
+        #[offset(36)]
+        #[rename(name = "m_BlockingObjects")]
+        pub m_blocking_objects: crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
+        #[offset(40)]
+        #[rename(name = "m_BlockingMask")]
+        pub m_blocking_mask: crate::unity_engine::layermask::LayerMask,
+        #[offset(48)]
+        #[rename(name = "m_Canvas")]
+        pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[offset(56)]
+        #[rename(name = "m_RaycastResults")]
+        pub m_raycast_results: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
+        #[static_field]
+        #[rename(name = "s_SortedGraphics")]
+        pub s_sorted_graphics: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster_BlockingObjects.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -63,28 +90,6 @@ mod __types {
         pub fn all() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "GraphicRaycaster")]
-    #[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
-    pub struct GraphicRaycaster {
-        #[static_field]
-        #[rename(name = "kNoEventMaskSet")]
-        pub k_no_event_mask_set: i32,
-        #[rename(name = "m_IgnoreReversedGraphics")]
-        pub m_ignore_reversed_graphics: bool,
-        #[rename(name = "m_BlockingObjects")]
-        pub m_blocking_objects: crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
-        #[rename(name = "m_BlockingMask")]
-        pub m_blocking_mask: crate::unity_engine::layermask::LayerMask,
-        #[rename(name = "m_Canvas")]
-        pub m_canvas: crate::unity_engine::canvas::Canvas,
-        #[rename(name = "m_RaycastResults")]
-        pub m_raycast_results: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
-        #[static_field]
-        #[rename(name = "s_SortedGraphics")]
-        pub s_sorted_graphics: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>,
     }
 }
 

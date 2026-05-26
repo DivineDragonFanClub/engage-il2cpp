@@ -22,12 +22,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MyIdAnim")]
         pub m_my_id_anim: crate::unity_engine::animator::Animator,
+        #[offset(32)]
         #[rename(name = "m_MyRankAnim")]
         pub m_my_rank_anim: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_MyIdText")]
         pub m_my_id_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_MyRankText")]
         pub m_my_rank_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

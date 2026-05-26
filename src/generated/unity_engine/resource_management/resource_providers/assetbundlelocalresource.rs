@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "AssetBundleLocalResource")]
     #[parent(crate::system::object::Object)]
     pub struct AssetBundleLocalResource {
+        #[offset(16)]
         #[rename(name = "m_AssetBundle")]
         pub m_asset_bundle: crate::unity_engine::assetbundle::AssetBundle,
+        #[offset(24)]
         #[rename(name = "m_RequestOperation")]
         pub m_request_operation: crate::unity_engine::asyncoperation::AsyncOperation,
+        #[offset(32)]
         #[rename(name = "m_ProgressHandler")]
         pub m_progress_handler: crate::system::func_1::Func_1<f32>,
+        #[offset(40)]
         #[rename(name = "m_WaitForCompletionHandler")]
         pub m_wait_for_completion_handler: crate::system::func_1::Func_1<bool>,
+        #[offset(48)]
         #[rename(name = "m_CompleteHandler")]
         pub m_complete_handler: crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>,
+        #[offset(56)]
         #[rename(name = "m_ProvideHandle")]
         pub m_provide_handle: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
+        #[offset(80)]
         #[rename(name = "m_Key")]
         pub m_key: ::unity2::Il2CppString,
+        #[offset(88)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(92)]
         #[rename(name = "m_Completed")]
         pub m_completed: bool,
     }

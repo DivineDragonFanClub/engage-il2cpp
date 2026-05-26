@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "LockComponent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct LockComponent {
+        #[offset(24)]
         #[rename(name = "m_IsLocked")]
         pub m_is_locked: bool,
     }

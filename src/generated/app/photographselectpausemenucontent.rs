@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectPauseMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct PhotographSelectPauseMenuContent {
+        #[offset(232)]
         #[rename(name = "m_PageTitleText")]
         pub m_page_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_ArrowL")]
         pub m_arrow_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_ArrowR")]
         pub m_arrow_r: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_PageIcon")]
         pub m_page_icon: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

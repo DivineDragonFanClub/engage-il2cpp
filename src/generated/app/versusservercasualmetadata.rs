@@ -17,8 +17,10 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: u16,
+        #[offset(48)]
         #[rename(name = "m_OwnerId")]
         pub m_owner_id: u64,
+        #[offset(56)]
         #[rename(name = "m_OwnerName")]
         pub m_owner_name: ::unity2::Il2CppString,
     }

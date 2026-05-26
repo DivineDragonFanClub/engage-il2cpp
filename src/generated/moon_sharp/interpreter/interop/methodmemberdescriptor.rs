@@ -14,16 +14,20 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "MethodMemberDescriptor")]
     #[parent(crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::FunctionMemberDescriptorBase)]
     pub struct MethodMemberDescriptor {
+        #[offset(88)]
         #[rename(name = "m_OptimizedFunc")]
         pub m_optimized_func: crate::system::func_3::Func_3<
             crate::system::object::Object,
             ::unity2::Array<crate::system::object::Object>,
             crate::system::object::Object,
         >,
+        #[offset(96)]
         #[rename(name = "m_OptimizedAction")]
         pub m_optimized_action: crate::system::action_2::Action_2<crate::system::object::Object, ::unity2::Array<crate::system::object::Object>>,
+        #[offset(104)]
         #[rename(name = "m_IsAction")]
         pub m_is_action: bool,
+        #[offset(105)]
         #[rename(name = "m_IsArrayCtor")]
         pub m_is_array_ctor: bool,
     }

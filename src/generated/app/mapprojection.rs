@@ -20,44 +20,64 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapProjection")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapprojection :: MapProjection >)]
     pub struct MapProjection {
+        #[offset(32)]
         #[rename(name = "m_Texture")]
         pub m_texture: crate::unity_engine::texture::Texture,
+        #[offset(40)]
         #[rename(name = "m_OffsetX")]
         pub m_offset_x: f32,
+        #[offset(44)]
         #[rename(name = "m_OffsetY")]
         pub m_offset_y: f32,
+        #[offset(48)]
         #[rename(name = "m_SpeedX")]
         pub m_speed_x: f32,
+        #[offset(52)]
         #[rename(name = "m_SpeedY")]
         pub m_speed_y: f32,
+        #[offset(56)]
         #[rename(name = "m_Scale")]
         pub m_scale: f32,
+        #[offset(60)]
         #[rename(name = "m_Alpha")]
         pub m_alpha: f32,
+        #[offset(64)]
         #[rename(name = "m_SightSideColor")]
         pub m_sight_side_color: crate::unity_engine::color32::Color32,
+        #[offset(68)]
         #[rename(name = "m_SightDarkColor")]
         pub m_sight_dark_color: crate::unity_engine::color32::Color32,
+        #[offset(72)]
         #[rename(name = "m_SightMaskColor")]
         pub m_sight_mask_color: crate::unity_engine::color32::Color32,
+        #[offset(80)]
         #[rename(name = "m_SightTexture")]
         pub m_sight_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(88)]
         #[rename(name = "m_SightColors")]
         pub m_sight_colors: ::unity2::Array<crate::unity_engine::color32::Color32>,
+        #[offset(96)]
         #[rename(name = "m_SightImage")]
         pub m_sight_image: crate::app::mapimagesight::MapImageSight,
+        #[offset(104)]
         #[rename(name = "m_SightWidth")]
         pub m_sight_width: i32,
+        #[offset(108)]
         #[rename(name = "m_SightHeight")]
         pub m_sight_height: i32,
+        #[offset(112)]
         #[rename(name = "m_MapProjectionTex")]
         pub m_map_projection_tex: i32,
+        #[offset(116)]
         #[rename(name = "m_MapProjectionScale")]
         pub m_map_projection_scale: i32,
+        #[offset(120)]
         #[rename(name = "m_MapProjectionAlpha")]
         pub m_map_projection_alpha: i32,
+        #[offset(124)]
         #[rename(name = "m_MapProjectionOffset")]
         pub m_map_projection_offset: i32,
+        #[offset(128)]
         #[rename(name = "m_MapProjectionSpeed")]
         pub m_map_projection_speed: i32,
     }

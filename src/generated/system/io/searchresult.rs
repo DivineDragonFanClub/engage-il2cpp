@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "SearchResult")]
     #[parent(crate::system::object::Object)]
     pub struct SearchResult {
+        #[offset(16)]
         #[rename(name = "fullPath")]
         pub full_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "userPath")]
         pub user_path: ::unity2::Il2CppString,
     }

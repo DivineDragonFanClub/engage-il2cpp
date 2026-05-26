@@ -21,6 +21,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_SelectIndex")]
         pub s_select_index: i32,
+        #[offset(200)]
         #[rename(name = "m_MapUnitCommandMenuContent")]
         pub m_map_unit_command_menu_content: crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent,
     }

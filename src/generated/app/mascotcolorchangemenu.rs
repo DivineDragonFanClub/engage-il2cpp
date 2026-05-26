@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotColorChangeMenu")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MascotColorChangeMenu {
+        #[offset(128)]
         #[rename(name = "m_result")]
         pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[offset(136)]
         #[rename(name = "m_RootAnim")]
         pub m_root_anim: crate::unity_engine::animator::Animator,
+        #[offset(144)]
         #[rename(name = "m_cursor")]
         pub m_cursor: crate::app::mascotcolorchangemenu::MascotColorChangeMenu_CursorTop,
     }
@@ -30,14 +33,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MascotColorChangeMenu.CursorTop")]
     #[parent(crate::system::object::Object)]
     pub struct MascotColorChangeMenu_CursorTop {
+        #[offset(16)]
         #[rename(name = "XCount")]
         pub x_count: i32,
+        #[offset(20)]
         #[rename(name = "YCount")]
         pub y_count: i32,
+        #[offset(24)]
         #[rename(name = "MoveFrame")]
         pub move_frame: f32,
+        #[offset(32)]
         #[rename(name = "m_cursorTop")]
         pub m_cursor_top: crate::unity_engine::recttransform::RectTransform,
+        #[offset(56)]
         #[rename(name = "m_moveTick")]
         pub m_move_tick: f32,
     }

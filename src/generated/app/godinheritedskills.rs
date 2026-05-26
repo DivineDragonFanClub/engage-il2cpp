@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_Sids")]
         pub m_sids: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
     }

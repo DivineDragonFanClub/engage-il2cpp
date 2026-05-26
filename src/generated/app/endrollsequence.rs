@@ -20,12 +20,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_BgmHeader")]
         pub m_bgm_header: ::unity2::Il2CppString,
+        #[offset(136)]
         #[rename(name = "m_PrefabHandle")]
         pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(144)]
         #[rename(name = "m_Canvas")]
         pub m_canvas: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
         #[rename(name = "m_Setter")]
         pub m_setter: crate::app::endrollsetter::EndRollSetter,
     }

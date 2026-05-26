@@ -35,14 +35,19 @@ mod __types {
         #[static_field]
         #[rename(name = "kNoEventMaskSet")]
         pub k_no_event_mask_set: i32,
+        #[offset(32)]
         #[rename(name = "m_EventCamera")]
         pub m_event_camera: crate::unity_engine::camera::Camera,
+        #[offset(40)]
         #[rename(name = "m_EventMask")]
         pub m_event_mask: crate::unity_engine::layermask::LayerMask,
+        #[offset(44)]
         #[rename(name = "m_MaxRayIntersections")]
         pub m_max_ray_intersections: i32,
+        #[offset(48)]
         #[rename(name = "m_LastMaxRayIntersections")]
         pub m_last_max_ray_intersections: i32,
+        #[offset(56)]
         #[rename(name = "m_Hits")]
         pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
     }

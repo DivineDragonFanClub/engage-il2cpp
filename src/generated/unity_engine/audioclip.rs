@@ -28,8 +28,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AudioClip")]
     #[parent(crate::unity_engine::object_2::Object_2)]
     pub struct AudioClip {
+        #[offset(24)]
         #[rename(name = "m_PCMReaderCallback")]
         pub m_pcm_reader_callback: crate::unity_engine::audioclip::AudioClip_PCMReaderCallback,
+        #[offset(32)]
         #[rename(name = "m_PCMSetPositionCallback")]
         pub m_pcm_set_position_callback: crate::unity_engine::audioclip::AudioClip_PCMSetPositionCallback,
     }

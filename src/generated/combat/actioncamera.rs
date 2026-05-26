@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionCamera")]
     #[parent(crate::combat::state::State)]
     pub struct ActionCamera {
+        #[offset(20)]
         #[rename(name = "m_Style")]
         pub m_style: crate::combat::camerasituation::CameraSituation,
+        #[offset(24)]
         #[rename(name = "m_Force")]
         pub m_force: bool,
     }

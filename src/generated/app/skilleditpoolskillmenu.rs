@@ -20,6 +20,7 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxCount")]
         pub max_count: i32,
+        #[offset(200)]
         #[rename(name = "m_SkillList")]
         pub m_skill_list: crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
     }

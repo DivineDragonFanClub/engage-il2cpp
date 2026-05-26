@@ -18,12 +18,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "MotionBlur")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct MotionBlur {
+        #[offset(56)]
         #[rename(name = "mode")]
         pub mode: crate::unity_engine::rendering::universal::motionblurmodeparameter::MotionBlurModeParameter,
+        #[offset(64)]
         #[rename(name = "quality")]
         pub quality: crate::unity_engine::rendering::universal::motionblurqualityparameter::MotionBlurQualityParameter,
+        #[offset(72)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "clamp")]
         pub clamp: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

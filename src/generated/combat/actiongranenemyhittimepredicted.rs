@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionGranEnemyHitTimePredicted")]
     #[parent(crate::combat::actiongranbase::ActionGranBase)]
     pub struct ActionGranEnemyHitTimePredicted {
+        #[offset(64)]
         #[rename(name = "m_WorldHitTime")]
         pub m_world_hit_time: f32,
     }

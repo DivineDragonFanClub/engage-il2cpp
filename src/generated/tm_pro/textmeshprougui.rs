@@ -25,44 +25,64 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TextMeshProUGUI")]
     #[parent(crate::tm_pro::tmp_text::TMP_Text)]
     pub struct TextMeshProUGUI {
+        #[offset(1728)]
         #[rename(name = "m_hasFontAssetChanged")]
         pub m_has_font_asset_changed: bool,
+        #[offset(1736)]
         #[rename(name = "m_subTextObjects")]
         pub m_sub_text_objects: ::unity2::Array<crate::tm_pro::tmp_submeshui::TMP_SubMeshUI>,
+        #[offset(1744)]
         #[rename(name = "m_previousLossyScaleY")]
         pub m_previous_lossy_scale_y: f32,
+        #[offset(1752)]
         #[rename(name = "m_RectTransformCorners")]
         pub m_rect_transform_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(1760)]
         #[rename(name = "m_canvasRenderer")]
         pub m_canvas_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+        #[offset(1768)]
         #[rename(name = "m_canvas")]
         pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[offset(1776)]
         #[rename(name = "m_CanvasScaleFactor")]
         pub m_canvas_scale_factor: f32,
+        #[offset(1780)]
         #[rename(name = "m_isFirstAllocation")]
         pub m_is_first_allocation: bool,
+        #[offset(1784)]
         #[rename(name = "m_max_characters")]
         pub m_max_characters: i32,
+        #[offset(1792)]
         #[rename(name = "m_baseMaterial")]
         pub m_base_material: crate::unity_engine::material::Material,
+        #[offset(1800)]
         #[rename(name = "m_isScrollRegionSet")]
         pub m_is_scroll_region_set: bool,
+        #[offset(1804)]
         #[rename(name = "m_maskOffset")]
         pub m_mask_offset: crate::unity_engine::vector4::Vector4,
+        #[offset(1820)]
         #[rename(name = "m_EnvMapMatrix")]
         pub m_env_map_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        #[offset(1884)]
         #[rename(name = "m_isRegisteredForEvents")]
         pub m_is_registered_for_events: bool,
+        #[offset(1885)]
         #[rename(name = "m_isRebuildingLayout")]
         pub m_is_rebuilding_layout: bool,
+        #[offset(1888)]
         #[rename(name = "m_DelayedGraphicRebuild")]
         pub m_delayed_graphic_rebuild: crate::unity_engine::coroutine::Coroutine,
+        #[offset(1896)]
         #[rename(name = "m_DelayedMaterialRebuild")]
         pub m_delayed_material_rebuild: crate::unity_engine::coroutine::Coroutine,
+        #[offset(1904)]
         #[rename(name = "m_ClipRect")]
         pub m_clip_rect: crate::unity_engine::rect::Rect,
+        #[offset(1920)]
         #[rename(name = "m_ValidRect")]
         pub m_valid_rect: bool,
+        #[offset(1928)]
         #[rename(name = "OnPreRenderText")]
         pub on_pre_render_text: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
     }

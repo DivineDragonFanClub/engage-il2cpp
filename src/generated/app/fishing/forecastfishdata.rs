@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Fishing", name = "ForecastFishData")]
     #[parent(crate::system::object::Object)]
     pub struct ForecastFishData {
+        #[offset(16)]
         #[rename(name = "m_FishData")]
         pub m_fish_data: crate::app::fishingfishdata::FishingFishData,
+        #[offset(24)]
         #[rename(name = "m_SizeMult")]
         pub m_size_mult: f32,
+        #[offset(28)]
         #[rename(name = "m_Priority")]
         pub m_priority: f32,
     }

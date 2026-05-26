@@ -26,6 +26,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AnimatorOverrideController")]
     #[parent(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)]
     pub struct AnimatorOverrideController {
+        #[offset(24)]
         #[rename(name = "OnOverrideControllerDirty")]
         pub on_override_controller_dirty:
             crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController_OnOverrideControllerDirtyCallback,

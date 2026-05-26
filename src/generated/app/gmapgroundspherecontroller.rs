@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapGroundSphereController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct GmapGroundSphereController {
+        #[offset(24)]
         #[rename(name = "m_MeshRenderer")]
         pub m_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[offset(32)]
         #[rename(name = "m_GrandSunkTexture")]
         pub m_grand_sunk_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(40)]
         #[rename(name = "m_GrandAscendTexture")]
         pub m_grand_ascend_texture: crate::unity_engine::texture2d::Texture2D,
     }

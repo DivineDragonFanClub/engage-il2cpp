@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubControlMouthSing")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubControlMouthSing {
+        #[offset(32)]
         #[rename(name = "m_animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_layerIndex")]
         pub m_layer_index: i32,
     }

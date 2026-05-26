@@ -14,71 +14,6 @@ mod __types {
         unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomMixedResolutionPass")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct CustomMixedResolutionPass {
-        #[static_field]
-        #[rename(name = "m_ProfilerTag")]
-        pub m_profiler_tag: ::unity2::Il2CppString,
-        #[rename(name = "m_ProfilingSampler")]
-        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[rename(name = "m_HalfColorHandle")]
-        pub m_half_color_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_HalfDepthHandle")]
-        pub m_half_depth_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_EffectSoftParticleDepthHandle")]
-        pub m_effect_soft_particle_depth_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_EdgeHandle")]
-        pub m_edge_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_CopyDepthMaterial")]
-        pub m_copy_depth_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_CompositeMaterial")]
-        pub m_composite_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_FullScreenTriangle")]
-        pub m_full_screen_triangle: crate::unity_engine::mesh::Mesh,
-        #[rename(name = "m_FilteringSettings")]
-        pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-        #[rename(name = "m_EffectTagId")]
-        pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        #[rename(name = "m_MixedRenderState")]
-        pub m_mixed_render_state: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct CustomMixedResolutionPass_DownsampleType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for CustomMixedResolutionPass_DownsampleType {
-        const NAME: &'static str = "CustomMixedResolutionPass.DownsampleType";
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CustomMixedResolutionPass_DownsampleType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl CustomMixedResolutionPass_DownsampleType {
-        pub fn average() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn min_max() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_CompositeType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -114,6 +49,82 @@ mod __types {
 
         pub fn bilateral2x() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomMixedResolutionPass")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct CustomMixedResolutionPass {
+        #[static_field]
+        #[rename(name = "m_ProfilerTag")]
+        pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(112)]
+        #[rename(name = "m_ProfilingSampler")]
+        pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(120)]
+        #[rename(name = "m_HalfColorHandle")]
+        pub m_half_color_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(168)]
+        #[rename(name = "m_HalfDepthHandle")]
+        pub m_half_depth_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(216)]
+        #[rename(name = "m_EffectSoftParticleDepthHandle")]
+        pub m_effect_soft_particle_depth_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(264)]
+        #[rename(name = "m_EdgeHandle")]
+        pub m_edge_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(312)]
+        #[rename(name = "m_CopyDepthMaterial")]
+        pub m_copy_depth_material: crate::unity_engine::material::Material,
+        #[offset(320)]
+        #[rename(name = "m_CompositeMaterial")]
+        pub m_composite_material: crate::unity_engine::material::Material,
+        #[offset(328)]
+        #[rename(name = "m_FullScreenTriangle")]
+        pub m_full_screen_triangle: crate::unity_engine::mesh::Mesh,
+        #[offset(336)]
+        #[rename(name = "m_FilteringSettings")]
+        pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(360)]
+        #[rename(name = "m_EffectTagId")]
+        pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(364)]
+        #[rename(name = "m_MixedRenderState")]
+        pub m_mixed_render_state: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct CustomMixedResolutionPass_DownsampleType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for CustomMixedResolutionPass_DownsampleType {
+        const NAME: &'static str = "CustomMixedResolutionPass.DownsampleType";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CustomMixedResolutionPass_DownsampleType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl CustomMixedResolutionPass_DownsampleType {
+        pub fn average() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn min_max() -> Self {
+            Self { value: 1 }
         }
     }
 }

@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Lyn_Skill_Arrow_01_Trail")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct Lyn_Skill_Arrow_01_Trail {
+        #[offset(24)]
         #[rename(name = "m_ParticleSystem")]
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        #[offset(32)]
         #[rename(name = "m_Transform")]
         pub m_transform: crate::unity_engine::transform::Transform,
+        #[offset(40)]
         #[rename(name = "m_LastPosition")]
         pub m_last_position: crate::unity_engine::vector3::Vector3,
+        #[offset(52)]
         #[rename(name = "m_Running")]
         pub m_running: bool,
+        #[offset(53)]
         #[rename(name = "m_CutChanged")]
         pub m_cut_changed: bool,
     }

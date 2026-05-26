@@ -11,34 +11,49 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "PixelPerfectCameraInternal")]
     #[parent(crate::system::object::Object)]
     pub struct PixelPerfectCameraInternal {
+        #[offset(16)]
         #[rename(name = "m_Component")]
         pub m_component: crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface,
+        #[offset(24)]
         #[rename(name = "m_SerializableComponent")]
         pub m_serializable_component: crate::unity_engine::experimental::rendering::universal::pixelperfectcamera::PixelPerfectCamera,
+        #[offset(32)]
         #[rename(name = "originalOrthoSize")]
         pub original_ortho_size: f32,
+        #[offset(36)]
         #[rename(name = "hasPostProcessLayer")]
         pub has_post_process_layer: bool,
+        #[offset(37)]
         #[rename(name = "cropFrameXAndY")]
         pub crop_frame_x_and_y: bool,
+        #[offset(38)]
         #[rename(name = "cropFrameXOrY")]
         pub crop_frame_x_or_y: bool,
+        #[offset(39)]
         #[rename(name = "useStretchFill")]
         pub use_stretch_fill: bool,
+        #[offset(40)]
         #[rename(name = "zoom")]
         pub zoom: i32,
+        #[offset(44)]
         #[rename(name = "useOffscreenRT")]
         pub use_offscreen_rt: bool,
+        #[offset(48)]
         #[rename(name = "offscreenRTWidth")]
         pub offscreen_rt_width: i32,
+        #[offset(52)]
         #[rename(name = "offscreenRTHeight")]
         pub offscreen_rt_height: i32,
+        #[offset(56)]
         #[rename(name = "pixelRect")]
         pub pixel_rect: crate::unity_engine::rect::Rect,
+        #[offset(72)]
         #[rename(name = "orthoSize")]
         pub ortho_size: f32,
+        #[offset(76)]
         #[rename(name = "unitsPerPixel")]
         pub units_per_pixel: f32,
+        #[offset(80)]
         #[rename(name = "cinemachineVCamZoom")]
         pub cinemachine_v_cam_zoom: i32,
     }

@@ -24,18 +24,6 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct MapBattleInfoSequence_AttackInfo {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapBattleInfoSequence {
-        #[rename(name = "m_AttackList")]
-        pub m_attack_list: ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack>,
-        #[rename(name = "m_HealRoot")]
-        pub m_heal_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Heal")]
-        pub m_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo_SceneResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -80,6 +68,21 @@ mod __types {
         pub fn none() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapBattleInfoSequence {
+        #[offset(24)]
+        #[rename(name = "m_AttackList")]
+        pub m_attack_list: ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack>,
+        #[offset(32)]
+        #[rename(name = "m_HealRoot")]
+        pub m_heal_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
+        #[rename(name = "m_Heal")]
+        pub m_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 }
 

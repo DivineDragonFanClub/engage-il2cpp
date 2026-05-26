@@ -26,8 +26,10 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(264)]
         #[rename(name = "m_objItemList")]
         pub m_obj_item_list: crate::unity_engine::gameobject::GameObject,
+        #[offset(272)]
         #[rename(name = "m_moneyItem")]
         pub m_money_item: crate::unity_engine::gameobject::GameObject,
     }

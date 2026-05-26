@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SolanelInfoMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct SolanelInfoMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_IconObjList")]
         pub m_icon_obj_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(80)]
         #[rename(name = "m_SubNameObj")]
         pub m_sub_name_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
     }

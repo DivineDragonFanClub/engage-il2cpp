@@ -23,12 +23,16 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkState")]
     #[parent(crate::root::akdragdroptriggerhandler::AkDragDropTriggerHandler)]
     pub struct AkState {
+        #[offset(56)]
         #[rename(name = "valueIdInternal")]
         pub value_id_internal: i32,
+        #[offset(60)]
         #[rename(name = "groupIdInternal")]
         pub group_id_internal: i32,
+        #[offset(64)]
         #[rename(name = "valueGuidInternal")]
         pub value_guid_internal: ::unity2::Array<u8>,
+        #[offset(72)]
         #[rename(name = "groupGuidInternal")]
         pub group_guid_internal: ::unity2::Array<u8>,
     }

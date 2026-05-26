@@ -15,31 +15,43 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "AssetBundleResource")]
     #[parent(crate::system::object::Object)]
     pub struct AssetBundleResource {
+        #[offset(16)]
         #[rename(name = "m_AssetBundle")]
         pub m_asset_bundle: crate::unity_engine::assetbundle::AssetBundle,
+        #[offset(24)]
         #[rename(name = "m_downloadHandler")]
         pub m_download_handler: crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle,
+        #[offset(32)]
         #[rename(name = "m_RequestOperation")]
         pub m_request_operation: crate::unity_engine::asyncoperation::AsyncOperation,
+        #[offset(40)]
         #[rename(name = "m_WebRequestQueueOperation")]
         pub m_web_request_queue_operation: crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation,
+        #[offset(48)]
         #[rename(name = "m_ProvideHandle")]
         pub m_provide_handle: crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
+        #[offset(72)]
         #[rename(name = "m_Options")]
         pub m_options: crate::unity_engine::resource_management::resource_providers::assetbundlerequestoptions::AssetBundleRequestOptions,
+        #[offset(80)]
         #[rename(name = "m_WebRequestCompletedCallbackCalled")]
         pub m_web_request_completed_callback_called: bool,
+        #[offset(84)]
         #[rename(name = "m_Retries")]
         pub m_retries: i32,
+        #[offset(88)]
         #[rename(name = "m_BytesToDownload")]
         pub m_bytes_to_download: i64,
+        #[offset(96)]
         #[rename(name = "m_DownloadedBytes")]
         pub m_downloaded_bytes: i64,
+        #[offset(104)]
         #[rename(name = "m_Completed")]
         pub m_completed: bool,
         #[static_field]
         #[rename(name = "k_WaitForWebRequestMainThreadSleep")]
         pub k_wait_for_web_request_main_thread_sleep: i32,
+        #[offset(112)]
         #[rename(name = "m_TransformedInternalId")]
         pub m_transformed_internal_id: ::unity2::Il2CppString,
     }

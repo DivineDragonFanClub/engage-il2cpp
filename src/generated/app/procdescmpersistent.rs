@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescMPersistent")]
     #[parent(crate::app::procdesc::ProcDesc)]
     pub struct ProcDescMPersistent {
+        #[offset(24)]
         #[rename(name = "m_Method")]
         pub m_method: crate::app::procvoidmethod::ProcVoidMethod,
     }

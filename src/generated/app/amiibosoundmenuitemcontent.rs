@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AmiiboSoundMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct AmiiboSoundMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Name")]
         pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_Value")]
         pub m_value: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_Ticket")]
         pub m_ticket: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_New")]
         pub m_new: crate::unity_engine::gameobject::GameObject,
     }

@@ -14,18 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagicon/TalkTagIcon.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagIcon")]
-    #[parent(crate::app::talk3_d::talktag::TalkTag)]
-    pub struct TalkTagIcon {
-        #[rename(name = "m_TagID")]
-        pub m_tag_id: crate::app::talk3_d::talktagicon::TalkTagIcon_TagID,
-        #[rename(name = "m_KindName")]
-        pub m_kind_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagicon/TalkTagIcon_TagID.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -62,6 +50,21 @@ mod __types {
         pub fn system() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagicon/TalkTagIcon.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagIcon")]
+    #[parent(crate::app::talk3_d::talktag::TalkTag)]
+    pub struct TalkTagIcon {
+        #[offset(16)]
+        #[rename(name = "m_TagID")]
+        pub m_tag_id: crate::app::talk3_d::talktagicon::TalkTagIcon_TagID,
+        #[offset(24)]
+        #[rename(name = "m_KindName")]
+        pub m_kind_name: ::unity2::Il2CppString,
+        #[offset(32)]
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
     }
 }
 

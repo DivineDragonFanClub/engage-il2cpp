@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addcomponentmenu/AddComponentMenu.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AddComponentMenu")]
     pub struct AddComponentMenu {
+        #[offset(16)]
         #[rename(name = "m_AddComponentMenu")]
         pub m_add_component_menu: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Ordering")]
         pub m_ordering: i32,
     }

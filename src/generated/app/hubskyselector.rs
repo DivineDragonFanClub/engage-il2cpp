@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubSkySelector")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubSkySelector {
+        #[offset(24)]
         #[rename(name = "m_materialMorning")]
         pub m_material_morning: crate::unity_engine::material::Material,
+        #[offset(32)]
         #[rename(name = "m_materialDay")]
         pub m_material_day: crate::unity_engine::material::Material,
+        #[offset(40)]
         #[rename(name = "m_materialEvening")]
         pub m_material_evening: crate::unity_engine::material::Material,
+        #[offset(48)]
         #[rename(name = "m_materialNight")]
         pub m_material_night: crate::unity_engine::material::Material,
     }

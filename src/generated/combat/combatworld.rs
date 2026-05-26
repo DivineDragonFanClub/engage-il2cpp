@@ -22,20 +22,28 @@ mod __types {
         #[static_field]
         #[rename(name = "s_this")]
         pub s_this: crate::combat::combatworld::CombatWorld,
+        #[offset(24)]
         #[rename(name = "m_bRunning")]
         pub m_b_running: bool,
+        #[offset(32)]
         #[rename(name = "chrs")]
         pub chrs: ::unity2::Array<crate::combat::character::Character>,
+        #[offset(88)]
         #[rename(name = "_Timespace")]
         pub timespace: crate::combat::combattimespace::CombatTimespace,
+        #[offset(96)]
         #[rename(name = "_Staging")]
         pub staging: crate::combat::combatstaging::CombatStaging,
+        #[offset(104)]
         #[rename(name = "_Observable")]
         pub observable: crate::combat::combatobservable::CombatObservable,
+        #[offset(112)]
         #[rename(name = "_Config")]
         pub config: crate::combat::combatconfig::CombatConfig,
+        #[offset(120)]
         #[rename(name = "_Skip")]
         pub skip: crate::combat::combatskip::CombatSkip,
+        #[offset(128)]
         #[rename(name = "_Input")]
         pub input: crate::combat::combatinput::CombatInput,
     }

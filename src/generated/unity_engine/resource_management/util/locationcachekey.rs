@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "LocationCacheKey")]
     #[parent(crate::system::object::Object)]
     pub struct LocationCacheKey {
+        #[offset(16)]
         #[rename(name = "m_Location")]
         pub m_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        #[offset(24)]
         #[rename(name = "m_DesiredType")]
         pub m_desired_type: ::unity2::SystemType,
     }

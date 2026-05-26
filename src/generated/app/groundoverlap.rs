@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GroundOverlap")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: groundoverlap :: GroundOverlap >)]
     pub struct GroundOverlap {
+        #[offset(32)]
         #[rename(name = "m_Attribute")]
         pub m_attribute: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_GroundAttribute")]
         pub m_ground_attribute: crate::app::groundattribute::GroundAttribute,
     }

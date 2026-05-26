@@ -16,6 +16,7 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "EventInfo")]
     #[parent(crate::system::reflection::memberinfo::MemberInfo)]
     pub struct EventInfo {
+        #[offset(16)]
         #[rename(name = "cached_add_event")]
         pub cached_add_event: crate::system::reflection::eventinfo::EventInfo_AddEventAdapter,
     }

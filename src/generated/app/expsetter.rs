@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ExpSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ExpSetter {
+        #[offset(24)]
         #[rename(name = "InAnimWait")]
         pub in_anim_wait: f32,
+        #[offset(32)]
         #[rename(name = "m_UnitWindow")]
         pub m_unit_window: crate::app::expsetter::ExpSetter_ExpWindow,
     }
@@ -29,24 +31,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ExpSetter.ExpWindow")]
     #[parent(crate::system::object::Object)]
     pub struct ExpSetter_ExpWindow {
+        #[offset(16)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_RestExp")]
         pub m_rest_exp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_GetExp")]
         pub m_get_exp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_SpValue")]
         pub m_sp_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_ExpValue")]
         pub m_exp_value: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_LevelMax")]
         pub m_level_max: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_Gauge")]
         pub m_gauge: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_MaxColor")]
         pub m_max_color: crate::unity_engine::material::Material,
+        #[offset(88)]
         #[rename(name = "m_OldLevel")]
         pub m_old_level: i32,
     }

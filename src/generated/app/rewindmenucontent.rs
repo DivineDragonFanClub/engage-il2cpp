@@ -16,6 +16,45 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_KeyHelp.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenuContent.KeyHelp")]
+    #[parent(crate::system::object::Object)]
+    pub struct RewindMenuContent_KeyHelp {
+        #[offset(16)]
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_ScrollArrow.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenuContent.ScrollArrow")]
+    #[parent(crate::system::object::Object)]
+    pub struct RewindMenuContent_ScrollArrow {
+        #[offset(16)]
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_Phase.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenuContent.Phase")]
+    #[parent(crate::system::object::Object)]
+    pub struct RewindMenuContent_Phase {
+        #[offset(16)]
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
+        #[rename(name = "m_TurnName")]
+        pub m_turn_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
+        #[rename(name = "m_Turn")]
+        pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
+        #[rename(name = "m_RestName")]
+        pub m_rest_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
+        #[rename(name = "m_Rest")]
+        pub m_rest: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
@@ -26,90 +65,82 @@ mod __types {
         #[static_field]
         #[rename(name = "ShowRowMax")]
         pub show_row_max: i32,
+        #[offset(232)]
         #[rename(name = "m_PlayerPhaseObj")]
         pub m_player_phase_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_EnemyPhaseObj")]
         pub m_enemy_phase_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_AllyPhaseObj")]
         pub m_ally_phase_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_Enemy2PhaseObj")]
         pub m_enemy2_phase_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(264)]
         #[rename(name = "m_ScrollArrowUpObj")]
         pub m_scroll_arrow_up_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(272)]
         #[rename(name = "m_ScrollArrowDownObj")]
         pub m_scroll_arrow_down_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(280)]
         #[rename(name = "m_RestRewindTimesObj")]
         pub m_rest_rewind_times_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(288)]
         #[rename(name = "m_KeyHelpObj")]
         pub m_key_help_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "m_ForcePlayerColor")]
         pub m_force_player_color: crate::unity_engine::color::Color,
+        #[offset(312)]
         #[rename(name = "m_ForceEnemyColor")]
         pub m_force_enemy_color: crate::unity_engine::color::Color,
+        #[offset(328)]
         #[rename(name = "m_ForceAllyColor")]
         pub m_force_ally_color: crate::unity_engine::color::Color,
+        #[offset(344)]
         #[rename(name = "m_ForceEnemy2Color")]
         pub m_force_enemy2_color: crate::unity_engine::color::Color,
+        #[offset(360)]
         #[rename(name = "m_RootAnimator")]
         pub m_root_animator: crate::unity_engine::animator::Animator,
+        #[offset(368)]
         #[rename(name = "m_PlayerPhase")]
         pub m_player_phase: crate::app::rewindmenucontent::RewindMenuContent_Phase,
+        #[offset(376)]
         #[rename(name = "m_EnemyPhase")]
         pub m_enemy_phase: crate::app::rewindmenucontent::RewindMenuContent_Phase,
+        #[offset(384)]
         #[rename(name = "m_AllyPhase")]
         pub m_ally_phase: crate::app::rewindmenucontent::RewindMenuContent_Phase,
+        #[offset(392)]
         #[rename(name = "m_Enemy2Phase")]
         pub m_enemy2_phase: crate::app::rewindmenucontent::RewindMenuContent_Phase,
+        #[offset(400)]
         #[rename(name = "m_ScrollArrowUp")]
         pub m_scroll_arrow_up: crate::app::rewindmenucontent::RewindMenuContent_ScrollArrow,
+        #[offset(408)]
         #[rename(name = "m_ScrollArrowDown")]
         pub m_scroll_arrow_down: crate::app::rewindmenucontent::RewindMenuContent_ScrollArrow,
+        #[offset(416)]
         #[rename(name = "m_RestRewindTimes")]
         pub m_rest_rewind_times: crate::app::rewindmenucontent::RewindMenuContent_RestRewindTimes,
+        #[offset(424)]
         #[rename(name = "m_KeyHelp")]
         pub m_key_help: crate::app::rewindmenucontent::RewindMenuContent_KeyHelp,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_Phase.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenuContent.Phase")]
-    #[parent(crate::system::object::Object)]
-    pub struct RewindMenuContent_Phase {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TurnName")]
-        pub m_turn_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Turn")]
-        pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_RestName")]
-        pub m_rest_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Rest")]
-        pub m_rest: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_ScrollArrow.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenuContent.ScrollArrow")]
-    #[parent(crate::system::object::Object)]
-    pub struct RewindMenuContent_ScrollArrow {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_KeyHelp.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenuContent.KeyHelp")]
-    #[parent(crate::system::object::Object)]
-    pub struct RewindMenuContent_KeyHelp {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_RestRewindTimes.md"))]
     #[::unity2::class(namespace = "App", name = "RewindMenuContent.RestRewindTimes")]
     #[parent(crate::system::object::Object)]
     pub struct RewindMenuContent_RestRewindTimes {
+        #[offset(16)]
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Name")]
         pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_Times")]
         pub m_times: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
@@ -117,6 +148,566 @@ mod __types {
 
 #[cfg(feature = "app-rewindmenucontent-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-rewindmenucontent")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenuContent_KeyHelp_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RewindMenuContent_KeyHelp,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenuContent_KeyHelp, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: RewindMenuContent_KeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_KeyHelp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::class(),
+                "Set",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set(this: RewindMenuContent_KeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_KeyHelp, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+pub trait IRewindMenuContent_KeyHelpMethods: IRewindMenuContent_KeyHelp {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_KeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_KeyHelp_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_KeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_KeyHelp_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Set()` overload"]
+    fn set(self) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_KeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_KeyHelp_unity2_raw::set(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl<__T: IRewindMenuContent_KeyHelp> IRewindMenuContent_KeyHelpMethods for __T {}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl RewindMenuContent_KeyHelp {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenuContent_KeyHelp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenuContent_KeyHelpMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenuContent_ScrollArrow_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RewindMenuContent_ScrollArrow,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenuContent_ScrollArrow, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(this: RewindMenuContent_ScrollArrow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_ScrollArrow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide(this: RewindMenuContent_ScrollArrow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_ScrollArrow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+pub trait IRewindMenuContent_ScrollArrowMethods: IRewindMenuContent_ScrollArrow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_ScrollArrow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_ScrollArrow_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_ScrollArrow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_ScrollArrow_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_ScrollArrow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_ScrollArrow_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl<__T: IRewindMenuContent_ScrollArrow> IRewindMenuContent_ScrollArrowMethods for __T {}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl RewindMenuContent_ScrollArrow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenuContent_ScrollArrow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenuContent_ScrollArrowMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RewindMenuContent_Phase_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RewindMenuContent_Phase,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(this: RewindMenuContent_Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide(this: RewindMenuContent_Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_turn {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "SetTurn",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                        "SetTurn",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_turn(this: RewindMenuContent_Phase, turn: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_turn::get_method_info().method_ptr);
+        inner(this, turn, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rest_unit_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "SetRestUnitNum",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                        "SetRestUnitNum",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_rest_unit_num(this: RewindMenuContent_Phase, rest_unit_num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rest_unit_num::get_method_info().method_ptr);
+        inner(this, rest_unit_num, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+pub trait IRewindMenuContent_PhaseMethods: IRewindMenuContent_Phase {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_Phase_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_Phase_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_Phase_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTurn(i32)` overload"]
+    fn set_turn(self, turn: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_Phase_unity2_raw::set_turn(__receiver, ::core::convert::Into::into(turn), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetRestUnitNum(i32)` overload"]
+    fn set_rest_unit_num(self, rest_unit_num: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RewindMenuContent_Phase_unity2_raw::set_rest_unit_num(
+                __receiver,
+                ::core::convert::Into::into(rest_unit_num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl<__T: IRewindMenuContent_Phase> IRewindMenuContent_PhaseMethods for __T {}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl RewindMenuContent_Phase {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenuContent_Phase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenuContent_PhaseMethods>::ctor(this, root_object);
+        this
+    }
+}
 
 #[cfg(feature = "app-rewindmenucontent")]
 #[doc(hidden)]
@@ -1256,566 +1847,6 @@ impl RewindMenuContent {
             )
         });
         <Self as IRewindMenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenuContent_Phase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RewindMenuContent_Phase,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: RewindMenuContent_Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: RewindMenuContent_Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_turn {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "SetTurn",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                        "SetTurn",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_turn(this: RewindMenuContent_Phase, turn: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_turn::get_method_info().method_ptr);
-        inner(this, turn, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rest_unit_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "SetRestUnitNum",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                        "SetRestUnitNum",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_rest_unit_num(this: RewindMenuContent_Phase, rest_unit_num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_rest_unit_num::get_method_info().method_ptr);
-        inner(this, rest_unit_num, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-pub trait IRewindMenuContent_PhaseMethods: IRewindMenuContent_Phase {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_Phase_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_Phase_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_Phase_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTurn(i32)` overload"]
-    fn set_turn(self, turn: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_Phase_unity2_raw::set_turn(__receiver, ::core::convert::Into::into(turn), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRestUnitNum(i32)` overload"]
-    fn set_rest_unit_num(self, rest_unit_num: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_Phase_unity2_raw::set_rest_unit_num(
-                __receiver,
-                ::core::convert::Into::into(rest_unit_num),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl<__T: IRewindMenuContent_Phase> IRewindMenuContent_PhaseMethods for __T {}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_Phase {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_Phase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenuContent_PhaseMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenuContent_ScrollArrow_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RewindMenuContent_ScrollArrow,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenuContent_ScrollArrow, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::NAME,
-                        "Show",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn show(this: RewindMenuContent_ScrollArrow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_ScrollArrow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_ScrollArrow as ::unity2::ClassIdentity>::NAME,
-                        "Hide",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn hide(this: RewindMenuContent_ScrollArrow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_ScrollArrow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-pub trait IRewindMenuContent_ScrollArrowMethods: IRewindMenuContent_ScrollArrow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_ScrollArrow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_ScrollArrow_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_ScrollArrow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_ScrollArrow_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_ScrollArrow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_ScrollArrow_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl<__T: IRewindMenuContent_ScrollArrow> IRewindMenuContent_ScrollArrowMethods for __T {}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_ScrollArrow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_ScrollArrow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenuContent_ScrollArrowMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenuContent_KeyHelp_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RewindMenuContent_KeyHelp,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenuContent_KeyHelp, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: RewindMenuContent_KeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_KeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::class(),
-                "Set",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RewindMenuContent_KeyHelp as ::unity2::ClassIdentity>::NAME,
-                        "Set",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set(this: RewindMenuContent_KeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RewindMenuContent_KeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-pub trait IRewindMenuContent_KeyHelpMethods: IRewindMenuContent_KeyHelp {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_KeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_KeyHelp_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_KeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_KeyHelp_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Set()` overload"]
-    fn set(self) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_KeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __RewindMenuContent_KeyHelp_unity2_raw::set(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl<__T: IRewindMenuContent_KeyHelp> IRewindMenuContent_KeyHelpMethods for __T {}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_KeyHelp {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_KeyHelp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenuContent_KeyHelpMethods>::ctor(this, root_object);
         this
     }
 }

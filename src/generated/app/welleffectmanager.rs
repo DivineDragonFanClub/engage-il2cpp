@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "WellEffectManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct WellEffectManager {
+        #[offset(24)]
         #[rename(name = "m_WellEffect")]
         pub m_well_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_IsFadeout")]
         pub m_is_fadeout: bool,
     }

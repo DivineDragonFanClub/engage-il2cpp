@@ -22,10 +22,13 @@ mod __types {
         #[static_field]
         #[rename(name = "CinemaScopePath")]
         pub cinema_scope_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Message")]
         pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(40)]
         #[rename(name = "m_IsDestroyReserved")]
         pub m_is_destroy_reserved: bool,
     }

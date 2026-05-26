@@ -18,16 +18,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomHeatHaze")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct CustomHeatHaze {
+        #[offset(56)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(64)]
         #[rename(name = "cycle")]
         pub cycle: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "cycleU")]
         pub cycle_u: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "cycleV")]
         pub cycle_v: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "beginToApply")]
         pub begin_to_apply: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(96)]
         #[rename(name = "beginFadeWidth")]
         pub begin_fade_width: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
     }

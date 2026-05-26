@@ -17,14 +17,19 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "WhileStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct WhileStatement {
+        #[offset(32)]
         #[rename(name = "m_Condition")]
         pub m_condition: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(40)]
         #[rename(name = "m_Block")]
         pub m_block: crate::moon_sharp::interpreter::tree::statement::Statement,
+        #[offset(48)]
         #[rename(name = "m_StackFrame")]
         pub m_stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        #[offset(56)]
         #[rename(name = "m_Start")]
         pub m_start: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[offset(64)]
         #[rename(name = "m_End")]
         pub m_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

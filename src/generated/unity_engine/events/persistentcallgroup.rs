@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Events", name = "PersistentCallGroup")]
     #[parent(crate::system::object::Object)]
     pub struct PersistentCallGroup {
+        #[offset(16)]
         #[rename(name = "m_Calls")]
         pub m_calls: crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::persistentcall::PersistentCall>,
     }

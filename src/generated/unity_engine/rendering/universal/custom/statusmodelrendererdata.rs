@@ -14,43 +14,126 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "StatusModelRendererData")]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
-    pub struct StatusModelRendererData {
-        #[rename(name = "postProcessData")]
-        pub post_process_data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-        #[rename(name = "shaders")]
-        pub shaders: crate::unity_engine::rendering::universal::custom::statusmodelrendererdata::StatusModelRendererData_ShaderResources,
-        #[rename(name = "m_OpaqueLayerMask")]
-        pub m_opaque_layer_mask: crate::unity_engine::layermask::LayerMask,
-        #[rename(name = "m_TransparentLayerMask")]
-        pub m_transparent_layer_mask: crate::unity_engine::layermask::LayerMask,
-        #[rename(name = "m_DefaultStencilState")]
-        pub m_default_stencil_state: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
-        #[rename(name = "m_ShadowTransparentReceive")]
-        pub m_shadow_transparent_receive: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData_ShaderResources.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "StatusModelRendererData.ShaderResources")]
     #[parent(crate::system::object::Object)]
     pub struct StatusModelRendererData_ShaderResources {
+        #[offset(16)]
         #[rename(name = "blitPS")]
         pub blit_ps: crate::unity_engine::shader::Shader,
+        #[offset(24)]
         #[rename(name = "downsampleDepth")]
         pub downsample_depth: crate::unity_engine::shader::Shader,
+        #[offset(32)]
         #[rename(name = "halfResoComposite")]
         pub half_reso_composite: crate::unity_engine::shader::Shader,
+        #[offset(40)]
         #[rename(name = "copyDepthPS")]
         pub copy_depth_ps: crate::unity_engine::shader::Shader,
+        #[offset(48)]
         #[rename(name = "samplingPS")]
         pub sampling_ps: crate::unity_engine::shader::Shader,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "StatusModelRendererData")]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
+    pub struct StatusModelRendererData {
+        #[offset(48)]
+        #[rename(name = "postProcessData")]
+        pub post_process_data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+        #[offset(56)]
+        #[rename(name = "shaders")]
+        pub shaders: crate::unity_engine::rendering::universal::custom::statusmodelrendererdata::StatusModelRendererData_ShaderResources,
+        #[offset(64)]
+        #[rename(name = "m_OpaqueLayerMask")]
+        pub m_opaque_layer_mask: crate::unity_engine::layermask::LayerMask,
+        #[offset(68)]
+        #[rename(name = "m_TransparentLayerMask")]
+        pub m_transparent_layer_mask: crate::unity_engine::layermask::LayerMask,
+        #[offset(72)]
+        #[rename(name = "m_DefaultStencilState")]
+        pub m_default_stencil_state: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
+        #[offset(80)]
+        #[rename(name = "m_ShadowTransparentReceive")]
+        pub m_shadow_transparent_receive: bool,
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __StatusModelRendererData_ShaderResources_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: StatusModelRendererData_ShaderResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(StatusModelRendererData_ShaderResources, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+pub trait IStatusModelRendererData_ShaderResourcesMethods: IStatusModelRendererData_ShaderResources {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <StatusModelRendererData_ShaderResources as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __StatusModelRendererData_ShaderResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+impl<__T: IStatusModelRendererData_ShaderResources> IStatusModelRendererData_ShaderResourcesMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+impl StatusModelRendererData_ShaderResources {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StatusModelRendererData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStatusModelRendererData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
 #[doc(hidden)]
@@ -578,78 +661,6 @@ impl StatusModelRendererData {
             )
         });
         <Self as IStatusModelRendererDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __StatusModelRendererData_ShaderResources_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <StatusModelRendererData_ShaderResources as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: StatusModelRendererData_ShaderResources, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(StatusModelRendererData_ShaderResources, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-pub trait IStatusModelRendererData_ShaderResourcesMethods: IStatusModelRendererData_ShaderResources {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <StatusModelRendererData_ShaderResources as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StatusModelRendererData_ShaderResources_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-impl<__T: IStatusModelRendererData_ShaderResources> IStatusModelRendererData_ShaderResourcesMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-impl StatusModelRendererData_ShaderResources {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StatusModelRendererData_ShaderResources),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStatusModelRendererData_ShaderResourcesMethods>::ctor(this);
         this
     }
 }

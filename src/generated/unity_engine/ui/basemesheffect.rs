@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "BaseMeshEffect")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct BaseMeshEffect {
+        #[offset(24)]
         #[rename(name = "m_Graphic")]
         pub m_graphic: crate::unity_engine::ui::graphic::Graphic,
     }

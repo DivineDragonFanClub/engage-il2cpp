@@ -65,8 +65,10 @@ mod __types {
         #[static_field]
         #[rename(name = "s_typedRef")]
         pub s_typed_ref: crate::system::runtimetype::RuntimeType,
+        #[offset(32)]
         #[rename(name = "GenericCache")]
         pub generic_cache: ::unity2::IlInstance,
+        #[offset(40)]
         #[rename(name = "m_serializationCtor")]
         pub m_serialization_ctor: crate::system::reflection::runtimeconstructorinfo::RuntimeConstructorInfo,
     }

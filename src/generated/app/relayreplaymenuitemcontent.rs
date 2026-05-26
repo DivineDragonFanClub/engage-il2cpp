@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayReplayMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RelayReplayMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_UserNameText")]
         pub m_user_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_BattleIcon")]
         pub m_battle_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_PresentIcon")]
         pub m_present_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_CheckIcon")]
         pub m_check_icon: crate::unity_engine::gameobject::GameObject,
     }

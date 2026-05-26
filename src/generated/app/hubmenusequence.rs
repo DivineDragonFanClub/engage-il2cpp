@@ -17,14 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenusequence/HubMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "HubMenuSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubmenusequence :: HubMenuSequence >)]
-    pub struct HubMenuSequence {
-        #[rename(name = "IsGotoNext")]
-        pub is_goto_next: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmenusequence/HubMenuSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -89,6 +81,15 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 9 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenusequence/HubMenuSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "HubMenuSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubmenusequence :: HubMenuSequence >)]
+    pub struct HubMenuSequence {
+        #[offset(114)]
+        #[rename(name = "IsGotoNext")]
+        pub is_goto_next: bool,
     }
 }
 

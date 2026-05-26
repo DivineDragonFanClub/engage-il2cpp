@@ -17,11 +17,14 @@ mod __types {
         #[static_field]
         #[rename(name = "ShiftOut")]
         pub shift_out: u16,
+        #[offset(16)]
         #[rename(name = "m_TagDictionary")]
         pub m_tag_dictionary:
             crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mess::Mess_TagGroup, crate::app::talk3_d::talktag::TalkTag>,
+        #[offset(24)]
         #[rename(name = "m_TagFinish")]
         pub m_tag_finish: crate::app::talk3_d::talktagfinish::TalkTagFinish,
+        #[offset(32)]
         #[rename(name = "m_TagAddLetter")]
         pub m_tag_add_letter: crate::app::talk3_d::talktagaddletter::TalkTagAddLetter,
     }

@@ -25,20 +25,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MiniMapPanelDangerRenderer")]
     #[parent(crate::app::minimappanelbase::MiniMapPanelBase)]
     pub struct MiniMapPanelDangerRenderer {
+        #[offset(256)]
         #[rename(name = "m_RodDanger_0")]
         pub m_rod_danger_0: crate::unity_engine::material::Material,
+        #[offset(264)]
         #[rename(name = "m_RodDanger_1")]
         pub m_rod_danger_1: crate::unity_engine::material::Material,
+        #[offset(272)]
         #[rename(name = "m_RodDanger_2")]
         pub m_rod_danger_2: crate::unity_engine::material::Material,
+        #[offset(280)]
         #[rename(name = "m_RodDanger_3")]
         pub m_rod_danger_3: crate::unity_engine::material::Material,
+        #[offset(288)]
         #[rename(name = "m_AttackDanger_0")]
         pub m_attack_danger_0: crate::unity_engine::material::Material,
+        #[offset(296)]
         #[rename(name = "m_AttackDanger_1")]
         pub m_attack_danger_1: crate::unity_engine::material::Material,
+        #[offset(304)]
         #[rename(name = "m_AttackDanger_2")]
         pub m_attack_danger_2: crate::unity_engine::material::Material,
+        #[offset(312)]
         #[rename(name = "m_AttackDanger_3")]
         pub m_attack_danger_3: crate::unity_engine::material::Material,
     }

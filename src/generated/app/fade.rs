@@ -18,19 +18,94 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_LayerScope.md"))]
+    #[::unity2::class(namespace = "App", name = "Fade.LayerScope")]
+    #[parent(crate::system::object::Object)]
+    pub struct Fade_LayerScope {
+        #[offset(16)]
+        #[rename(name = "m_Layer")]
+        pub m_layer: crate::app::fade::Fade_Layer,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_FadeLayer.md"))]
+    #[::unity2::class(namespace = "App", name = "Fade.FadeLayer")]
+    #[parent(crate::system::object::Object)]
+    pub struct Fade_FadeLayer {
+        #[offset(16)]
+        #[rename(name = "m_FromColor")]
+        pub m_from_color: crate::unity_engine::color::Color,
+        #[offset(32)]
+        #[rename(name = "m_ToColor")]
+        pub m_to_color: crate::unity_engine::color::Color,
+        #[offset(48)]
+        #[rename(name = "m_Duration")]
+        pub m_duration: f32,
+        #[offset(52)]
+        #[rename(name = "m_Elapsed")]
+        pub m_elapsed: f32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescWait.md"))]
     #[::unity2::class(namespace = "App", name = "Fade.ProcDescWait")]
     #[parent(crate::app::fade::Fade_ProcDescFade)]
     pub struct Fade_ProcDescWait {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescFade.md"))]
+    #[::unity2::class(namespace = "App", name = "Fade.ProcDescFade")]
+    #[parent(crate::app::procdescuser::ProcDescUser)]
+    pub struct Fade_ProcDescFade {
+        #[offset(20)]
+        #[rename(name = "m_Layer")]
+        pub m_layer: crate::app::fade::Fade_Layer,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade.md"))]
+    #[::unity2::class(namespace = "App", name = "Fade")]
+    #[parent(crate::system::object::Object)]
+    pub struct Fade {
+        #[static_field]
+        #[rename(name = "Num")]
+        pub num: i32,
+        #[static_field]
+        #[rename(name = "VeryFast")]
+        pub very_fast: f32,
+        #[static_field]
+        #[rename(name = "Fast")]
+        pub fast: f32,
+        #[static_field]
+        #[rename(name = "Normal")]
+        pub normal: f32,
+        #[static_field]
+        #[rename(name = "Slow")]
+        pub slow: f32,
+        #[static_field]
+        #[rename(name = "VerySlow")]
+        pub very_slow: f32,
+        #[static_field]
+        #[rename(name = "s_Proc")]
+        pub s_proc: crate::app::fade::Fade_ProcFade,
+        #[static_field]
+        #[rename(name = "s_Colors")]
+        pub s_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[static_field]
+        #[rename(name = "s_Layer")]
+        pub s_layer: crate::app::fade::Fade_Layer,
+        #[static_field]
+        #[rename(name = "s_Statck")]
+        pub s_statck: crate::system::collections::generic::stack_1::Stack_1<crate::app::fade::Fade_Layer>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescInOut.md"))]
     #[::unity2::class(namespace = "App", name = "Fade.ProcDescInOut")]
     #[parent(crate::app::fade::Fade_ProcDescFade)]
     pub struct Fade_ProcDescInOut {
+        #[offset(24)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "m_Duration")]
         pub m_duration: f32,
+        #[offset(44)]
         #[rename(name = "m_IsIn")]
         pub m_is_in: bool,
     }
@@ -81,62 +156,11 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade.md"))]
-    #[::unity2::class(namespace = "App", name = "Fade")]
-    #[parent(crate::system::object::Object)]
-    pub struct Fade {
-        #[static_field]
-        #[rename(name = "Num")]
-        pub num: i32,
-        #[static_field]
-        #[rename(name = "VeryFast")]
-        pub very_fast: f32,
-        #[static_field]
-        #[rename(name = "Fast")]
-        pub fast: f32,
-        #[static_field]
-        #[rename(name = "Normal")]
-        pub normal: f32,
-        #[static_field]
-        #[rename(name = "Slow")]
-        pub slow: f32,
-        #[static_field]
-        #[rename(name = "VerySlow")]
-        pub very_slow: f32,
-        #[static_field]
-        #[rename(name = "s_Proc")]
-        pub s_proc: crate::app::fade::Fade_ProcFade,
-        #[static_field]
-        #[rename(name = "s_Colors")]
-        pub s_colors: ::unity2::Array<crate::unity_engine::color::Color>,
-        #[static_field]
-        #[rename(name = "s_Layer")]
-        pub s_layer: crate::app::fade::Fade_Layer,
-        #[static_field]
-        #[rename(name = "s_Statck")]
-        pub s_statck: crate::system::collections::generic::stack_1::Stack_1<crate::app::fade::Fade_Layer>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescFade.md"))]
-    #[::unity2::class(namespace = "App", name = "Fade.ProcDescFade")]
-    #[parent(crate::app::procdescuser::ProcDescUser)]
-    pub struct Fade_ProcDescFade {
-        #[rename(name = "m_Layer")]
-        pub m_layer: crate::app::fade::Fade_Layer,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_LayerScope.md"))]
-    #[::unity2::class(namespace = "App", name = "Fade.LayerScope")]
-    #[parent(crate::system::object::Object)]
-    pub struct Fade_LayerScope {
-        #[rename(name = "m_Layer")]
-        pub m_layer: crate::app::fade::Fade_Layer,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcFadeWait.md"))]
     #[::unity2::class(namespace = "App", name = "Fade.ProcFadeWait")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct Fade_ProcFadeWait {
+        #[offset(112)]
         #[rename(name = "m_Layer")]
         pub m_layer: crate::app::fade::Fade_Layer,
     }
@@ -145,27 +169,475 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "Fade.ProcFade")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct Fade_ProcFade {
+        #[offset(112)]
         #[rename(name = "m_FadeLayer")]
         pub m_fade_layer: ::unity2::Array<crate::app::fade::Fade_FadeLayer>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_FadeLayer.md"))]
-    #[::unity2::class(namespace = "App", name = "Fade.FadeLayer")]
-    #[parent(crate::system::object::Object)]
-    pub struct Fade_FadeLayer {
-        #[rename(name = "m_FromColor")]
-        pub m_from_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_ToColor")]
-        pub m_to_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_Duration")]
-        pub m_duration: f32,
-        #[rename(name = "m_Elapsed")]
-        pub m_elapsed: f32,
     }
 }
 
 #[cfg(feature = "app-fade-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-fade")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Fade_LayerScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fade::Fade_Layer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_LayerScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_LayerScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: Fade_LayerScope, layer: crate::app::fade::Fade_Layer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Fade_LayerScope, crate::app::fade::Fade_Layer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, layer, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_finalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_LayerScope as ::unity2::ClassIdentity>::class(),
+                "Finalize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_LayerScope as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn finalize(this: Fade_LayerScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Fade_LayerScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_LayerScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_LayerScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: Fade_LayerScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Fade_LayerScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fade")]
+pub trait IFade_LayerScopeMethods: IFade_LayerScope {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
+    fn ctor(self, layer: impl ::core::convert::Into<crate::app::fade::Fade_Layer>) -> () {
+        unsafe {
+            let __receiver = <Fade_LayerScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_LayerScope_unity2_raw::ctor(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = <Fade_LayerScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_LayerScope_unity2_raw::finalize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <Fade_LayerScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_LayerScope_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-fade")]
+impl<__T: IFade_LayerScope> IFade_LayerScopeMethods for __T {}
+
+#[cfg(feature = "app-fade")]
+impl Fade_LayerScope {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
+    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Fade_LayerScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFade_LayerScopeMethods>::ctor(this, layer);
+        this
+    }
+}
+
+#[cfg(feature = "app-fade")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Fade_FadeLayer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exec {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Fade_FadeLayer as ::unity2::ClassIdentity>::class(), "Exec", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
+                        "Exec",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exec(
+        this: Fade_FadeLayer,
+        to_color: crate::unity_engine::color::Color,
+        duration: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Fade_FadeLayer, crate::unity_engine::color::Color, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exec::get_method_info().method_ptr);
+        inner(this, to_color, duration, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Fade_FadeLayer as ::unity2::ClassIdentity>::class(), "Tick", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn tick(this: Fade_FadeLayer, delta_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Fade_FadeLayer, f32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
+        inner(this, delta_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
+                "GetColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
+                        "GetColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_color(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_color::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_to_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
+                "get_ToColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
+                        "get_ToColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_to_color(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_to_color::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_active {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
+                "IsActive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
+                        "IsActive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_active(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_active::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_alive {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
+                "IsAlive",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
+                        "IsAlive",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_alive(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_alive::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fade")]
+pub trait IFade_FadeLayerMethods: IFade_FadeLayer {
+    #[doc = "`Exec(crate::unity_engine::color::Color, f32)` overload"]
+    fn exec(self, to_color: impl ::core::convert::Into<crate::unity_engine::color::Color>, duration: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_FadeLayer_unity2_raw::exec(
+                __receiver,
+                ::core::convert::Into::into(to_color),
+                ::core::convert::Into::into(duration),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick(f32)` overload"]
+    fn tick(self, delta_time: impl ::core::convert::Into<f32>) -> bool {
+        unsafe {
+            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_FadeLayer_unity2_raw::tick(__receiver, ::core::convert::Into::into(delta_time), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetColor()` overload"]
+    fn get_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_FadeLayer_unity2_raw::get_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_ToColor()` overload"]
+    fn get_to_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_FadeLayer_unity2_raw::get_to_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsActive()` overload"]
+    fn is_active(self) -> bool {
+        unsafe {
+            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_FadeLayer_unity2_raw::is_active(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsAlive()` overload"]
+    fn is_alive(self) -> bool {
+        unsafe {
+            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_FadeLayer_unity2_raw::is_alive(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_FadeLayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-fade")]
+impl<__T: IFade_FadeLayer> IFade_FadeLayerMethods for __T {}
+
+#[cfg(feature = "app-fade")]
+impl Fade_FadeLayer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Fade_FadeLayer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFade_FadeLayerMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-fade")]
 #[doc(hidden)]
@@ -287,68 +759,17 @@ impl Fade_ProcDescWait {
 #[cfg(feature = "app-fade")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Fade_ProcDescInOut_unity2_raw {
+mod __Fade_ProcDescFade_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::fade::Fade_Layer as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fade::Fade_Layer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_ProcDescInOut as ::unity2::ClassIdentity>::class(),
+                <Fade_ProcDescFade as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_ProcDescInOut as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Fade_ProcDescInOut,
-        layer: crate::app::fade::Fade_Layer,
-        color: crate::unity_engine::color::Color,
-        duration: f32,
-        is_in: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Fade_ProcDescInOut,
-            crate::app::fade::Fade_Layer,
-            crate::unity_engine::color::Color,
-            f32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, layer, color, duration, is_in, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_ProcDescInOut as ::unity2::ClassIdentity>::class(),
-                "Execute",
                 1,
                 param_types,
                 false,
@@ -360,74 +781,87 @@ mod __Fade_ProcDescInOut_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <Fade_ProcDescInOut as ::unity2::ClassIdentity>::NAME,
-                        "Execute",
+                        <Fade_ProcDescFade as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn execute(
-        this: Fade_ProcDescInOut,
-        inst: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procdesc::ProcDesc_Result {
-        let inner: extern "C" fn(
-            Fade_ProcDescInOut,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procdesc::ProcDesc_Result = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
-        inner(this, inst, __unity2_method_info)
+    pub unsafe fn ctor(this: Fade_ProcDescFade, layer: crate::app::fade::Fade_Layer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Fade_ProcDescFade, crate::app::fade::Fade_Layer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, layer, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-fade")]
-pub trait IFade_ProcDescInOutMethods: IFade_ProcDescInOut {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` overload"]
-    fn ctor(
-        self,
-        layer: impl ::core::convert::Into<crate::app::fade::Fade_Layer>,
-        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-        duration: impl ::core::convert::Into<f32>,
-        is_in: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Fade_ProcDescInOut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_ProcDescInOut_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(layer),
-                ::core::convert::Into::into(color),
-                ::core::convert::Into::into(duration),
-                ::core::convert::Into::into(is_in),
-                ::core::option::Option::None,
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_layer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_ProcDescFade as ::unity2::ClassIdentity>::class(),
+                "GetLayer",
+                0,
+                param_types,
+                false,
             )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_ProcDescFade as ::unity2::ClassIdentity>::NAME,
+                        "GetLayer",
+                        e
+                    )
+                },
+            }
         }
     }
-    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
-    fn execute(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procdesc::ProcDesc_Result {
+    pub unsafe fn get_layer(this: Fade_ProcDescFade, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::fade::Fade_Layer {
+        let inner: extern "C" fn(Fade_ProcDescFade, ::unity2::OptionalMethod) -> crate::app::fade::Fade_Layer =
+            ::core::mem::transmute(__lookup_get_layer::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fade")]
+pub trait IFade_ProcDescFadeMethods: IFade_ProcDescFade {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
+    fn ctor(self, layer: impl ::core::convert::Into<crate::app::fade::Fade_Layer>) -> () {
         unsafe {
-            let __receiver = <Fade_ProcDescInOut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_ProcDescInOut_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
+            let __receiver = <Fade_ProcDescFade as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_ProcDescFade_unity2_raw::ctor(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetLayer()` overload"]
+    fn get_layer(self) -> crate::app::fade::Fade_Layer {
+        unsafe {
+            let __receiver = <Fade_ProcDescFade as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_ProcDescFade_unity2_raw::get_layer(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-fade")]
-impl<__T: IFade_ProcDescInOut> IFade_ProcDescInOutMethods for __T {}
+impl<__T: IFade_ProcDescFade> IFade_ProcDescFadeMethods for __T {}
 
 #[cfg(feature = "app-fade")]
-impl Fade_ProcDescInOut {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` — overload selector"]
-    pub fn new(layer: crate::app::fade::Fade_Layer, color: crate::unity_engine::color::Color, duration: f32, is_in: bool) -> Self {
+impl Fade_ProcDescFade {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
+    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_ProcDescInOut),
+                ::core::stringify!(Fade_ProcDescFade),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFade_ProcDescInOutMethods>::ctor(this, layer, color, duration, is_in);
+        <Self as IFade_ProcDescFadeMethods>::ctor(this, layer);
         this
     }
 }
@@ -1342,17 +1776,68 @@ impl Fade {
 #[cfg(feature = "app-fade")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Fade_ProcDescFade_unity2_raw {
+mod __Fade_ProcDescInOut_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fade::Fade_Layer as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fade::Fade_Layer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_ProcDescFade as ::unity2::ClassIdentity>::class(),
+                <Fade_ProcDescInOut as ::unity2::ClassIdentity>::class(),
                 ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Fade_ProcDescInOut as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Fade_ProcDescInOut,
+        layer: crate::app::fade::Fade_Layer,
+        color: crate::unity_engine::color::Color,
+        duration: f32,
+        is_in: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Fade_ProcDescInOut,
+            crate::app::fade::Fade_Layer,
+            crate::unity_engine::color::Color,
+            f32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, layer, color, duration, is_in, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Fade_ProcDescInOut as ::unity2::ClassIdentity>::class(),
+                "Execute",
                 1,
                 param_types,
                 false,
@@ -1364,237 +1849,74 @@ mod __Fade_ProcDescFade_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <Fade_ProcDescFade as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <Fade_ProcDescInOut as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(this: Fade_ProcDescFade, layer: crate::app::fade::Fade_Layer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Fade_ProcDescFade, crate::app::fade::Fade_Layer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, layer, __unity2_method_info)
+    pub unsafe fn execute(
+        this: Fade_ProcDescInOut,
+        inst: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::procdesc::ProcDesc_Result {
+        let inner: extern "C" fn(
+            Fade_ProcDescInOut,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::procdesc::ProcDesc_Result = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
+        inner(this, inst, __unity2_method_info)
     }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_layer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_ProcDescFade as ::unity2::ClassIdentity>::class(),
-                "GetLayer",
-                0,
-                param_types,
-                false,
+}
+
+#[cfg(feature = "app-fade")]
+pub trait IFade_ProcDescInOutMethods: IFade_ProcDescInOut {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` overload"]
+    fn ctor(
+        self,
+        layer: impl ::core::convert::Into<crate::app::fade::Fade_Layer>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        duration: impl ::core::convert::Into<f32>,
+        is_in: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <Fade_ProcDescInOut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_ProcDescInOut_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(layer),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(duration),
+                ::core::convert::Into::into(is_in),
+                ::core::option::Option::None,
             )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_ProcDescFade as ::unity2::ClassIdentity>::NAME,
-                        "GetLayer",
-                        e
-                    )
-                },
-            }
         }
     }
-    pub unsafe fn get_layer(this: Fade_ProcDescFade, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::fade::Fade_Layer {
-        let inner: extern "C" fn(Fade_ProcDescFade, ::unity2::OptionalMethod) -> crate::app::fade::Fade_Layer =
-            ::core::mem::transmute(__lookup_get_layer::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fade")]
-pub trait IFade_ProcDescFadeMethods: IFade_ProcDescFade {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
-    fn ctor(self, layer: impl ::core::convert::Into<crate::app::fade::Fade_Layer>) -> () {
+    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
+    fn execute(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procdesc::ProcDesc_Result {
         unsafe {
-            let __receiver = <Fade_ProcDescFade as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_ProcDescFade_unity2_raw::ctor(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetLayer()` overload"]
-    fn get_layer(self) -> crate::app::fade::Fade_Layer {
-        unsafe {
-            let __receiver = <Fade_ProcDescFade as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_ProcDescFade_unity2_raw::get_layer(__receiver, ::core::option::Option::None)
+            let __receiver = <Fade_ProcDescInOut as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Fade_ProcDescInOut_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-fade")]
-impl<__T: IFade_ProcDescFade> IFade_ProcDescFadeMethods for __T {}
+impl<__T: IFade_ProcDescInOut> IFade_ProcDescInOutMethods for __T {}
 
 #[cfg(feature = "app-fade")]
-impl Fade_ProcDescFade {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
-    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
+impl Fade_ProcDescInOut {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` — overload selector"]
+    pub fn new(layer: crate::app::fade::Fade_Layer, color: crate::unity_engine::color::Color, duration: f32, is_in: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_ProcDescFade),
+                ::core::stringify!(Fade_ProcDescInOut),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFade_ProcDescFadeMethods>::ctor(this, layer);
-        this
-    }
-}
-
-#[cfg(feature = "app-fade")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Fade_LayerScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fade::Fade_Layer as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_LayerScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_LayerScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Fade_LayerScope, layer: crate::app::fade::Fade_Layer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Fade_LayerScope, crate::app::fade::Fade_Layer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, layer, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_finalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_LayerScope as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_LayerScope as ::unity2::ClassIdentity>::NAME,
-                        "Finalize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn finalize(this: Fade_LayerScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Fade_LayerScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_LayerScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_LayerScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: Fade_LayerScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Fade_LayerScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fade")]
-pub trait IFade_LayerScopeMethods: IFade_LayerScope {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
-    fn ctor(self, layer: impl ::core::convert::Into<crate::app::fade::Fade_Layer>) -> () {
-        unsafe {
-            let __receiver = <Fade_LayerScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_LayerScope_unity2_raw::ctor(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Finalize()` overload"]
-    fn finalize(self) -> () {
-        unsafe {
-            let __receiver = <Fade_LayerScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_LayerScope_unity2_raw::finalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = <Fade_LayerScope as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_LayerScope_unity2_raw::dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-fade")]
-impl<__T: IFade_LayerScope> IFade_LayerScopeMethods for __T {}
-
-#[cfg(feature = "app-fade")]
-impl Fade_LayerScope {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
-    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_LayerScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFade_LayerScopeMethods>::ctor(this, layer);
+        <Self as IFade_ProcDescInOutMethods>::ctor(this, layer, color, duration, is_in);
         this
     }
 }
@@ -1967,317 +2289,6 @@ impl Fade_ProcFade {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Fade_ProcFade), ::core::stringify!(new),));
         <Self as IFade_ProcFadeMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-fade")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Fade_FadeLayer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exec {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(<Fade_FadeLayer as ::unity2::ClassIdentity>::class(), "Exec", 2, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
-                        "Exec",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn exec(
-        this: Fade_FadeLayer,
-        to_color: crate::unity_engine::color::Color,
-        duration: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Fade_FadeLayer, crate::unity_engine::color::Color, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_exec::get_method_info().method_ptr);
-        inner(this, to_color, duration, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Fade_FadeLayer as ::unity2::ClassIdentity>::class(), "Tick", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
-                        "Tick",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn tick(this: Fade_FadeLayer, delta_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Fade_FadeLayer, f32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
-        inner(this, delta_time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
-                "GetColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
-                        "GetColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_color(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_to_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
-                "get_ToColor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
-                        "get_ToColor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_to_color(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
-            ::core::mem::transmute(__lookup_get_to_color::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_active {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
-                "IsActive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
-                        "IsActive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_active(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_active::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_alive {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
-                "IsAlive",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
-                        "IsAlive",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_alive(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_alive::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Fade_FadeLayer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Fade_FadeLayer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Fade_FadeLayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Fade_FadeLayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fade")]
-pub trait IFade_FadeLayerMethods: IFade_FadeLayer {
-    #[doc = "`Exec(crate::unity_engine::color::Color, f32)` overload"]
-    fn exec(self, to_color: impl ::core::convert::Into<crate::unity_engine::color::Color>, duration: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_FadeLayer_unity2_raw::exec(
-                __receiver,
-                ::core::convert::Into::into(to_color),
-                ::core::convert::Into::into(duration),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Tick(f32)` overload"]
-    fn tick(self, delta_time: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_FadeLayer_unity2_raw::tick(__receiver, ::core::convert::Into::into(delta_time), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetColor()` overload"]
-    fn get_color(self) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_FadeLayer_unity2_raw::get_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_ToColor()` overload"]
-    fn get_to_color(self) -> crate::unity_engine::color::Color {
-        unsafe {
-            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_FadeLayer_unity2_raw::get_to_color(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsActive()` overload"]
-    fn is_active(self) -> bool {
-        unsafe {
-            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_FadeLayer_unity2_raw::is_active(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsAlive()` overload"]
-    fn is_alive(self) -> bool {
-        unsafe {
-            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_FadeLayer_unity2_raw::is_alive(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Fade_FadeLayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __Fade_FadeLayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-fade")]
-impl<__T: IFade_FadeLayer> IFade_FadeLayerMethods for __T {}
-
-#[cfg(feature = "app-fade")]
-impl Fade_FadeLayer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_FadeLayer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFade_FadeLayerMethods>::ctor(this);
         this
     }
 }

@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "DebugShader")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct DebugShader {
+        #[offset(24)]
         #[rename(name = "m_Shaders")]
         pub m_shaders: ::unity2::Array<crate::unity_engine::shader::Shader>,
     }

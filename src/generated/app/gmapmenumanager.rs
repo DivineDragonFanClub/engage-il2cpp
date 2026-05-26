@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GmapMenuManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapmenumanager :: GmapMenuManager >)]
     pub struct GmapMenuManager {
+        #[offset(32)]
         #[rename(name = "m_Select")]
         pub m_select: crate::app::basicmenuselect::BasicMenuSelect,
     }

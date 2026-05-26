@@ -19,125 +19,23 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerbase/AkTriggerBase.md"))]
-    #[::unity2::class(namespace = "", name = "AkTriggerBase")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct AkTriggerBase {
-        #[rename(name = "triggerDelegate")]
-        pub trigger_delegate: crate::root::aktriggerbase::AkTriggerBase_Trigger,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerbase/AkTriggerBase_Trigger.md"))]
     #[::unity2::class(namespace = "", name = "AkTriggerBase.Trigger")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct AkTriggerBase_Trigger {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerbase/AkTriggerBase.md"))]
+    #[::unity2::class(namespace = "", name = "AkTriggerBase")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct AkTriggerBase {
+        #[offset(24)]
+        #[rename(name = "triggerDelegate")]
+        pub trigger_delegate: crate::root::aktriggerbase::AkTriggerBase_Trigger,
+    }
 }
 
 #[cfg(feature = "root-aktriggerbase-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-aktriggerbase")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkTriggerBase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_all_derived_types {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriggerBase as ::unity2::ClassIdentity>::class(),
-                "GetAllDerivedTypes",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerBase as ::unity2::ClassIdentity>::NAME,
-                        "GetAllDerivedTypes",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_all_derived_types(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> =
-            ::core::mem::transmute(__lookup_get_all_derived_types::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(<AkTriggerBase as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AkTriggerBase as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AkTriggerBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriggerBase, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-aktriggerbase")]
-impl AkTriggerBase {
-    #[doc = "`GetAllDerivedTypes()` overload"]
-    pub fn get_all_derived_types() -> crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> {
-        unsafe { __AkTriggerBase_unity2_raw::get_all_derived_types(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "root-aktriggerbase")]
-pub trait IAkTriggerBaseMethods: IAkTriggerBase {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AkTriggerBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AkTriggerBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-aktriggerbase")]
-impl<__T: IAkTriggerBase> IAkTriggerBaseMethods for __T {}
-
-#[cfg(feature = "root-aktriggerbase")]
-impl AkTriggerBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate()
-            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkTriggerBase), ::core::stringify!(new),));
-        <Self as IAkTriggerBaseMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "root-aktriggerbase")]
 #[doc(hidden)]
@@ -265,6 +163,109 @@ impl AkTriggerBase_Trigger {
             )
         });
         <Self as IAkTriggerBase_TriggerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "root-aktriggerbase")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkTriggerBase_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_derived_types {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkTriggerBase as ::unity2::ClassIdentity>::class(),
+                "GetAllDerivedTypes",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriggerBase as ::unity2::ClassIdentity>::NAME,
+                        "GetAllDerivedTypes",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_all_derived_types(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_all_derived_types::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriggerBase as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriggerBase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AkTriggerBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkTriggerBase, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-aktriggerbase")]
+impl AkTriggerBase {
+    #[doc = "`GetAllDerivedTypes()` overload"]
+    pub fn get_all_derived_types() -> crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> {
+        unsafe { __AkTriggerBase_unity2_raw::get_all_derived_types(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "root-aktriggerbase")]
+pub trait IAkTriggerBaseMethods: IAkTriggerBase {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkTriggerBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriggerBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-aktriggerbase")]
+impl<__T: IAkTriggerBase> IAkTriggerBaseMethods for __T {}
+
+#[cfg(feature = "root-aktriggerbase")]
+impl AkTriggerBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkTriggerBase), ::core::stringify!(new),));
+        <Self as IAkTriggerBaseMethods>::ctor(this);
         this
     }
 }

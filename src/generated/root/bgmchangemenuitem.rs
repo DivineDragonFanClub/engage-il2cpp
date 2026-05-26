@@ -15,6 +15,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "BGMChangeMenuItem")]
     #[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]
     pub struct BGMChangeMenuItem {
+        #[offset(136)]
         #[rename(name = "m_IsEnemy")]
         pub m_is_enemy: bool,
     }

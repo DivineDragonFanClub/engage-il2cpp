@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaexception/AndroidJavaException.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaException")]
     pub struct AndroidJavaException {
+        #[offset(136)]
         #[rename(name = "mJavaStackTrace")]
         pub m_java_stack_trace: ::unity2::Il2CppString,
     }

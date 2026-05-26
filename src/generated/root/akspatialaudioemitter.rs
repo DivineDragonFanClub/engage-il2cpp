@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkSpatialAudioEmitter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AkSpatialAudioEmitter {
+        #[offset(32)]
         #[rename(name = "reflectionMaxPathLength")]
         pub reflection_max_path_length: f32,
+        #[offset(36)]
         #[rename(name = "reflectionsAuxBusGain")]
         pub reflections_aux_bus_gain: f32,
+        #[offset(40)]
         #[rename(name = "reflectionsOrder")]
         pub reflections_order: u32,
+        #[offset(44)]
         #[rename(name = "roomReverbAuxBusGain")]
         pub room_reverb_aux_bus_gain: f32,
+        #[offset(48)]
         #[rename(name = "diffractionMaxEdges")]
         pub diffraction_max_edges: u32,
+        #[offset(52)]
         #[rename(name = "diffractionMaxPaths")]
         pub diffraction_max_paths: u32,
+        #[offset(56)]
         #[rename(name = "diffractionMaxPathLength")]
         pub diffraction_max_path_length: u32,
     }

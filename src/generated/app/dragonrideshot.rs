@@ -19,26 +19,37 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideShot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DragonRideShot {
+        #[offset(76)]
         #[rename(name = "m_PrePosition")]
         pub m_pre_position: crate::unity_engine::vector3::Vector3,
+        #[offset(88)]
         #[rename(name = "m_IsAssist")]
         pub m_is_assist: bool,
+        #[offset(89)]
         #[rename(name = "m_IsPenetrate")]
         pub m_is_penetrate: bool,
+        #[offset(90)]
         #[rename(name = "m_IsSpecialShot")]
         pub m_is_special_shot: bool,
+        #[offset(91)]
         #[rename(name = "m_IsMaximumAssist")]
         pub m_is_maximum_assist: bool,
+        #[offset(92)]
         #[rename(name = "m_IsDestroy")]
         pub m_is_destroy: bool,
+        #[offset(96)]
         #[rename(name = "m_DiffInterp")]
         pub m_diff_interp: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[offset(104)]
         #[rename(name = "m_Effect")]
         pub m_effect: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_CheckRayPoint")]
         pub m_check_ray_point: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(120)]
         #[rename(name = "m_HitCheckRay")]
         pub m_hit_check_ray: crate::unity_engine::ray::Ray,
+        #[offset(144)]
         #[rename(name = "m_LifeTimer")]
         pub m_life_timer: f32,
     }

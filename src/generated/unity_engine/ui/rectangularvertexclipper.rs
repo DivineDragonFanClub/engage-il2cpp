@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "RectangularVertexClipper")]
     #[parent(crate::system::object::Object)]
     pub struct RectangularVertexClipper {
+        #[offset(16)]
         #[rename(name = "m_WorldCorners")]
         pub m_world_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(24)]
         #[rename(name = "m_CanvasCorners")]
         pub m_canvas_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
     }

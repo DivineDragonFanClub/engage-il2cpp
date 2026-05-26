@@ -24,55 +24,21 @@ mod __types {
         #[static_field]
         #[rename(name = "ResNameC")]
         pub res_name_c: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
         #[static_field]
         #[rename(name = "m_mode")]
         pub m_mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
+        #[offset(128)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::trooplistroot::TroopListRoot,
+        #[offset(136)]
         #[rename(name = "m_troopListMenu")]
         pub m_troop_list_menu: crate::app::trooplistmenu::TroopListMenu,
+        #[offset(144)]
         #[rename(name = "m_sortMenu")]
         pub m_sort_menu: crate::app::trooplistsortmenu::TroopListSortMenu,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Label.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieSequenceTroopList_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SortieSequenceTroopList_Label {
-        const NAME: &'static str = "SortieSequenceTroopList.Label";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SortieSequenceTroopList_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl SortieSequenceTroopList_Label {
-        pub fn r#return() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn to_unit_select() -> Self {
-            Self { value: 2 }
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Mode.md"))]
@@ -109,6 +75,44 @@ mod __types {
         }
 
         pub fn num() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencetrooplist/SortieSequenceTroopList_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct SortieSequenceTroopList_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SortieSequenceTroopList_Label {
+        const NAME: &'static str = "SortieSequenceTroopList.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SortieSequenceTroopList_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl SortieSequenceTroopList_Label {
+        pub fn r#return() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn to_unit_select() -> Self {
             Self { value: 2 }
         }
     }

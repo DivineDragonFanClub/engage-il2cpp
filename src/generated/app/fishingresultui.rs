@@ -11,40 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_SpriteKind.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct FishingResultUI_SpriteKind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingResultUI_SpriteKind {
-        const NAME: &'static str = "FishingResultUI.SpriteKind";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingResultUI_SpriteKind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl FishingResultUI_SpriteKind {
-        pub fn size() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn gyotaku() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_ResultPhase.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -91,6 +57,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingResultUI")]
     #[parent(crate::system::object::Object)]
     pub struct FishingResultUI {
+        #[offset(16)]
         #[rename(name = "m_Sprites")]
         pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
         #[static_field]
@@ -105,18 +72,58 @@ mod __types {
         #[static_field]
         #[rename(name = "cResultTextureBronze")]
         pub c_result_texture_bronze: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::fishingresultdata::FishingResultData,
+        #[offset(40)]
         #[rename(name = "m_Timer")]
         pub m_timer: f64,
+        #[offset(48)]
         #[rename(name = "m_TimeLimit")]
         pub m_time_limit: f32,
+        #[offset(52)]
         #[rename(name = "m_IsNewRecord")]
         pub m_is_new_record: bool,
+        #[offset(56)]
         #[rename(name = "m_Phase")]
         pub m_phase: crate::app::fishingresultui::FishingResultUI_ResultPhase,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_SpriteKind.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct FishingResultUI_SpriteKind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingResultUI_SpriteKind {
+        const NAME: &'static str = "FishingResultUI.SpriteKind";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingResultUI_SpriteKind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl FishingResultUI_SpriteKind {
+        pub fn size() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn gyotaku() -> Self {
+            Self { value: 1 }
+        }
     }
 }
 

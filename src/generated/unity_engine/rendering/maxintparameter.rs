@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "MaxIntParameter")]
     #[parent(crate::unity_engine::rendering::intparameter::IntParameter)]
     pub struct MaxIntParameter {
+        #[offset(24)]
         #[rename(name = "max")]
         pub max: i32,
     }

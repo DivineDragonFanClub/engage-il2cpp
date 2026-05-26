@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Water", name = "MeshContainer")]
     #[parent(crate::system::object::Object)]
     pub struct MeshContainer {
+        #[offset(16)]
         #[rename(name = "mesh")]
         pub mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(24)]
         #[rename(name = "vertices")]
         pub vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(32)]
         #[rename(name = "normals")]
         pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
     }

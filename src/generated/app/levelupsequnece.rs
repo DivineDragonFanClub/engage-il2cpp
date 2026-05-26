@@ -14,28 +14,40 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "LevelUpSequnece")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct LevelUpSequnece {
+        #[offset(112)]
         #[rename(name = "ResNameLevelUp")]
         pub res_name_level_up: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "ResNameClassChange")]
         pub res_name_class_change: ::unity2::Il2CppString,
+        #[offset(128)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(136)]
         #[rename(name = "m_Grow")]
         pub m_grow: crate::app::unit::Unit,
+        #[offset(144)]
         #[rename(name = "m_Level")]
         pub m_level: i32,
+        #[offset(148)]
         #[rename(name = "m_IsClassChange")]
         pub m_is_class_change: bool,
+        #[offset(152)]
         #[rename(name = "m_TalkMid")]
         pub m_talk_mid: ::unity2::Il2CppString,
+        #[offset(160)]
         #[rename(name = "m_Window")]
         pub m_window: crate::app::levelupwindowcontroller::LevelUpWindowController,
+        #[offset(168)]
         #[rename(name = "m_IsShowCharaImage")]
         pub m_is_show_chara_image: bool,
+        #[offset(169)]
         #[rename(name = "m_IsTalk")]
         pub m_is_talk: bool,
+        #[offset(172)]
         #[rename(name = "m_NowCapabilityIndex")]
         pub m_now_capability_index: i32,
+        #[offset(176)]
         #[rename(name = "m_CapabilityOrder")]
         pub m_capability_order: ::unity2::Array<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
     }

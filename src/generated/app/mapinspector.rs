@@ -18,12 +18,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapInspector")]
     #[parent(crate::app::scriptutil::ScriptUtil)]
     pub struct MapInspector {
+        #[offset(16)]
         #[rename(name = "m_Kind")]
         pub m_kind: crate::app::mapinspector::MapInspector_Kind,
+        #[offset(24)]
         #[rename(name = "m_Condition")]
         pub m_condition: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(32)]
         #[rename(name = "m_Function")]
         pub m_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[offset(40)]
         #[rename(name = "m_Args")]
         pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     }

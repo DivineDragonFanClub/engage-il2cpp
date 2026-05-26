@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "LifespanManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct LifespanManager {
+        #[offset(24)]
         #[rename(name = "m_Life")]
         pub m_life: f32,
+        #[offset(28)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
     }

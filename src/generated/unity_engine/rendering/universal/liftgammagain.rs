@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "LiftGammaGain")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct LiftGammaGain {
+        #[offset(56)]
         #[rename(name = "lift")]
         pub lift: crate::unity_engine::rendering::vector4parameter::Vector4Parameter,
+        #[offset(64)]
         #[rename(name = "gamma")]
         pub gamma: crate::unity_engine::rendering::vector4parameter::Vector4Parameter,
+        #[offset(72)]
         #[rename(name = "gain")]
         pub gain: crate::unity_engine::rendering::vector4parameter::Vector4Parameter,
     }

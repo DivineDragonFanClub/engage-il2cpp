@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AnimalMenuContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AnimalMenuContent {
+        #[offset(24)]
         #[rename(name = "m_FreeAnimal")]
         pub m_free_animal: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_InAnimal")]
         pub m_in_animal: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Number")]
         pub m_number: crate::unity_engine::gameobject::GameObject,
     }

@@ -9,10 +9,13 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/contextmenu/ContextMenu.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ContextMenu")]
     pub struct ContextMenu {
+        #[offset(16)]
         #[rename(name = "menuItem")]
         pub menu_item: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "validate")]
         pub validate: bool,
+        #[offset(28)]
         #[rename(name = "priority")]
         pub priority: i32,
     }

@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CommandInspector")]
     #[parent(crate::app::pokeinspector::PokeInspector)]
     pub struct CommandInspector {
+        #[offset(80)]
         #[rename(name = "m_Range")]
         pub m_range: i32,
+        #[offset(88)]
         #[rename(name = "m_Mid")]
         pub m_mid: ::unity2::Il2CppString,
     }

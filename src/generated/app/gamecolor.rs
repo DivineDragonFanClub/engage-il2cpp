@@ -18,74 +18,109 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GameColor")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: gamecolor :: GameColor >)]
     pub struct GameColor {
+        #[offset(24)]
         #[rename(name = "サンプル")]
         pub サンプル: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "進撃可能位置")]
         pub 進撃可能位置: crate::unity_engine::color::Color,
+        #[offset(56)]
         #[rename(name = "進撃禁止位置")]
         pub 進撃禁止位置: crate::unity_engine::color::Color,
+        #[offset(72)]
         #[rename(name = "進撃選択位置")]
         pub 進撃選択位置: crate::unity_engine::color::Color,
+        #[offset(88)]
         #[rename(name = "文字デフォルト")]
         pub 文字デフォルト: crate::unity_engine::color::Color,
+        #[offset(104)]
         #[rename(name = "文字不可")]
         pub 文字不可: crate::unity_engine::color::Color,
+        #[offset(120)]
         #[rename(name = "文字ヘルプ")]
         pub 文字ヘルプ: crate::unity_engine::color::Color,
+        #[offset(136)]
         #[rename(name = "文字錬成")]
         pub 文字錬成: crate::unity_engine::color::Color,
+        #[offset(152)]
         #[rename(name = "数値上昇")]
         pub 数値上昇: crate::unity_engine::color::Color,
+        #[offset(168)]
         #[rename(name = "数値下降")]
         pub 数値下降: crate::unity_engine::color::Color,
+        #[offset(184)]
         #[rename(name = "数値上限")]
         pub 数値上限: crate::unity_engine::color::Color,
+        #[offset(200)]
         #[rename(name = "数値不足")]
         pub 数値不足: crate::unity_engine::color::Color,
+        #[offset(216)]
         #[rename(name = "エンゲージ技コマンド")]
         pub エンゲージ技コマンド: crate::unity_engine::color::Color,
+        #[offset(232)]
         #[rename(name = "エンゲージ技コマンド不可")]
         pub エンゲージ技コマンド不可: crate::unity_engine::color::Color,
+        #[offset(248)]
         #[rename(name = "緑文字コマンド")]
         pub 緑文字コマンド: crate::unity_engine::color::Color,
+        #[offset(264)]
         #[rename(name = "黄色文字")]
         pub 黄色文字: crate::unity_engine::color::Color,
+        #[offset(280)]
         #[rename(name = "支援会話不可")]
         pub 支援会話不可: crate::unity_engine::color::Color,
+        #[offset(296)]
         #[rename(name = "SkillE")]
         pub skill_e: crate::unity_engine::color::Color,
+        #[offset(312)]
         #[rename(name = "デフォルトカラー")]
         pub デフォルトカラー: crate::unity_engine::color::Color,
+        #[offset(328)]
         #[rename(name = "セカンドカラー")]
         pub セカンドカラー: crate::unity_engine::color::Color,
+        #[offset(344)]
         #[rename(name = "ダイアログ")]
         pub ダイアログ: crate::unity_engine::color::Color,
+        #[offset(360)]
         #[rename(name = "選択不可カラー")]
         pub 選択不可カラー: crate::unity_engine::color::Color,
+        #[offset(376)]
         #[rename(name = "ページナビON")]
         pub ページナビon: crate::unity_engine::color::Color,
+        #[offset(392)]
         #[rename(name = "ページナビOFF")]
         pub ページナビoff: crate::unity_engine::color::Color,
+        #[offset(408)]
         #[rename(name = "種類アイコン選択")]
         pub 種類アイコン選択: crate::unity_engine::color::Color,
+        #[offset(424)]
         #[rename(name = "種類アイコン非選択")]
         pub 種類アイコン非選択: crate::unity_engine::color::Color,
+        #[offset(440)]
         #[rename(name = "マップカーソル白")]
         pub マップカーソル白: crate::unity_engine::color::Color,
+        #[offset(456)]
         #[rename(name = "マップカーソル赤")]
         pub マップカーソル赤: crate::unity_engine::color::Color,
+        #[offset(472)]
         #[rename(name = "待機中")]
         pub 待機中: crate::unity_engine::color::Color,
+        #[offset(488)]
         #[rename(name = "個別危険範囲を表示中")]
         pub 個別危険範囲を表示中: crate::unity_engine::color::Color,
+        #[offset(504)]
         #[rename(name = "紋章士リング")]
         pub 紋章士リング: crate::unity_engine::color::Color,
+        #[offset(520)]
         #[rename(name = "闇紋章士リング")]
         pub 闇紋章士リング: crate::unity_engine::color::Color,
+        #[offset(536)]
         #[rename(name = "ウィンドウ無効")]
         pub ウィンドウ無効: crate::unity_engine::color::Color,
+        #[offset(552)]
         #[rename(name = "被支援発光")]
         pub 被支援発光: crate::unity_engine::color::Color,
+        #[offset(568)]
         #[rename(name = "被支援輪郭")]
         pub 被支援輪郭: crate::unity_engine::color::Color,
     }

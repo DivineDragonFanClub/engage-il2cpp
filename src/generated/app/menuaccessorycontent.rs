@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MenuAccessoryContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MenuAccessoryContent {
+        #[offset(24)]
         #[rename(name = "m_MasterMenu")]
         pub m_master_menu: crate::app::basicmenu::BasicMenu,
+        #[offset(32)]
         #[rename(name = "m_winAnimator")]
         pub m_win_animator: crate::unity_engine::animator::Animator,
     }

@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardStampListMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ProfileCardStampListMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_StampImage")]
         pub m_stamp_image: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_NewIconObject")]
         pub m_new_icon_object: crate::unity_engine::gameobject::GameObject,
     }

@@ -22,12 +22,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_StatusMenuContentObject")]
         pub m_status_menu_content_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_MiniMapMenuContentObject")]
         pub m_mini_map_menu_content_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_StatusTitleText")]
         pub m_status_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_MiniMapTitleText")]
         pub m_mini_map_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

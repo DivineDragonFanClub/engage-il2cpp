@@ -23,14 +23,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InventoryPoolItemMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct InventoryPoolItemMenuContent {
+        #[offset(232)]
         #[rename(name = "m_MenuTitleText")]
         pub m_menu_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_TransporterText")]
         pub m_transporter_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_StockValueText")]
         pub m_stock_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_StockValueMaxText")]
         pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_KindBgName")]
         pub m_kind_bg_name: crate::system::collections::generic::list_1::List_1<
             crate::app::inventorypoolitemmenucontent::InventoryPoolItemMenuContent_KindBgNameClass,

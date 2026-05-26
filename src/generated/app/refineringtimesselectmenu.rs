@@ -24,6 +24,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Times")]
         pub times: ::unity2::Array<i32>,
+        #[offset(200)]
         #[rename(name = "m_RefineRingTimesSelectRoot")]
         pub m_refine_ring_times_select_root: crate::app::refineringtimesselectroot::RefineRingTimesSelectRoot,
     }

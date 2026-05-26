@@ -22,8 +22,10 @@ mod __types {
         #[static_field]
         #[rename(name = "HumanCollideRadius")]
         pub human_collide_radius: f32,
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "isRunning")]
         pub is_running: bool,
     }

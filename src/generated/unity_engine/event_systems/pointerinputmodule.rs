@@ -19,16 +19,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_ButtonState.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerInputModule.ButtonState")]
-    #[parent(crate::system::object::Object)]
-    pub struct PointerInputModule_ButtonState {
-        #[rename(name = "m_Button")]
-        pub m_button: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
-        #[rename(name = "m_EventData")]
-        pub m_event_data: crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerInputModule")]
     #[parent(crate::unity_engine::event_systems::baseinputmodule::BaseInputModule)]
@@ -45,304 +35,55 @@ mod __types {
         #[static_field]
         #[rename(name = "kFakeTouchesId")]
         pub k_fake_touches_id: i32,
+        #[offset(72)]
         #[rename(name = "m_PointerData")]
         pub m_pointer_data: crate::system::collections::generic::dictionary_2::Dictionary_2<
             i32,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
         >,
+        #[offset(80)]
         #[rename(name = "m_MouseState")]
         pub m_mouse_state: crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseState,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseState.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerInputModule.MouseState")]
-    #[parent(crate::system::object::Object)]
-    pub struct PointerInputModule_MouseState {
-        #[rename(name = "m_TrackedButtons")]
-        pub m_tracked_buttons: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState,
-        >,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseButtonEventData.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerInputModule.MouseButtonEventData")]
     #[parent(crate::system::object::Object)]
     pub struct PointerInputModule_MouseButtonEventData {
+        #[offset(16)]
         #[rename(name = "buttonState")]
         pub button_state: crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState,
+        #[offset(24)]
         #[rename(name = "buttonData")]
         pub button_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseState.md"))]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerInputModule.MouseState")]
+    #[parent(crate::system::object::Object)]
+    pub struct PointerInputModule_MouseState {
+        #[offset(16)]
+        #[rename(name = "m_TrackedButtons")]
+        pub m_tracked_buttons: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_ButtonState.md"))]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerInputModule.ButtonState")]
+    #[parent(crate::system::object::Object)]
+    pub struct PointerInputModule_ButtonState {
+        #[offset(16)]
+        #[rename(name = "m_Button")]
+        pub m_button: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
+        #[offset(24)]
+        #[rename(name = "m_EventData")]
+        pub m_event_data: crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
     }
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PointerInputModule_ButtonState_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_event_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
-                "get_eventData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
-                        "get_eventData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_event_data(
-        this: PointerInputModule_ButtonState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData {
-        let inner: extern "C" fn(
-            PointerInputModule_ButtonState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData =
-            ::core::mem::transmute(__lookup_get_event_data::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_event_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
-                "set_eventData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
-                        "set_eventData",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_event_data(
-        this: PointerInputModule_ButtonState,
-        value: crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PointerInputModule_ButtonState,
-            crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_event_data::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_button {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
-                "get_button",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
-                        "get_button",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_button(
-        this: PointerInputModule_ButtonState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton {
-        let inner: extern "C" fn(
-            PointerInputModule_ButtonState,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton =
-            ::core::mem::transmute(__lookup_get_button::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_button {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
-                "set_button",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
-                        "set_button",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_button(
-        this: PointerInputModule_ButtonState,
-        value: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PointerInputModule_ButtonState,
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_set_button::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: PointerInputModule_ButtonState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PointerInputModule_ButtonState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-pub trait IPointerInputModule_ButtonStateMethods: IPointerInputModule_ButtonState {
-    #[doc = "`get_eventData()` overload"]
-    fn get_event_data(self) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData {
-        unsafe {
-            let __receiver =
-                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PointerInputModule_ButtonState_unity2_raw::get_event_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_eventData(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)` overload"]
-    fn set_event_data(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PointerInputModule_ButtonState_unity2_raw::set_event_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_button()` overload"]
-    fn get_button(self) -> crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton {
-        unsafe {
-            let __receiver =
-                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PointerInputModule_ButtonState_unity2_raw::get_button(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_button(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"]
-    fn set_button(self, value: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton>) -> () {
-        unsafe {
-            let __receiver =
-                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PointerInputModule_ButtonState_unity2_raw::set_button(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __PointerInputModule_ButtonState_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl<__T: IPointerInputModule_ButtonState> IPointerInputModule_ButtonStateMethods for __T {}
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_ButtonState {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PointerInputModule_ButtonState),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPointerInputModule_ButtonStateMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
 #[doc(hidden)]
@@ -1215,6 +956,162 @@ impl PointerInputModule {
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PointerInputModule_MouseButtonEventData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pressed_this_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::class(),
+                "PressedThisFrame",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::NAME,
+                        "PressedThisFrame",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn pressed_this_frame(this: PointerInputModule_MouseButtonEventData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(PointerInputModule_MouseButtonEventData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_pressed_this_frame::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_released_this_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::class(),
+                "ReleasedThisFrame",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::NAME,
+                        "ReleasedThisFrame",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn released_this_frame(this: PointerInputModule_MouseButtonEventData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(PointerInputModule_MouseButtonEventData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_released_this_frame::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: PointerInputModule_MouseButtonEventData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PointerInputModule_MouseButtonEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+pub trait IPointerInputModule_MouseButtonEventDataMethods: IPointerInputModule_MouseButtonEventData {
+    #[doc = "`PressedThisFrame()` overload"]
+    fn pressed_this_frame(self) -> bool {
+        unsafe {
+            let __receiver = <PointerInputModule_MouseButtonEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PointerInputModule_MouseButtonEventData_unity2_raw::pressed_this_frame(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReleasedThisFrame()` overload"]
+    fn released_this_frame(self) -> bool {
+        unsafe {
+            let __receiver = <PointerInputModule_MouseButtonEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PointerInputModule_MouseButtonEventData_unity2_raw::released_this_frame(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PointerInputModule_MouseButtonEventData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PointerInputModule_MouseButtonEventData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+impl<__T: IPointerInputModule_MouseButtonEventData> IPointerInputModule_MouseButtonEventDataMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+impl PointerInputModule_MouseButtonEventData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PointerInputModule_MouseButtonEventData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPointerInputModule_MouseButtonEventDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __PointerInputModule_MouseState_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1492,17 +1389,17 @@ impl PointerInputModule_MouseState {
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PointerInputModule_MouseButtonEventData_unity2_raw {
+mod __PointerInputModule_ButtonState_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_pressed_this_frame {
+    pub mod __lookup_get_event_data {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::class(),
-                "PressedThisFrame",
+                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
+                "get_eventData",
                 0,
                 param_types,
                 false,
@@ -1514,28 +1411,75 @@ mod __PointerInputModule_MouseButtonEventData_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::NAME,
-                        "PressedThisFrame",
+                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
+                        "get_eventData",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn pressed_this_frame(this: PointerInputModule_MouseButtonEventData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(PointerInputModule_MouseButtonEventData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_pressed_this_frame::get_method_info().method_ptr);
+    pub unsafe fn get_event_data(
+        this: PointerInputModule_ButtonState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData {
+        let inner: extern "C" fn(
+            PointerInputModule_ButtonState,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData =
+            ::core::mem::transmute(__lookup_get_event_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_released_this_frame {
+    pub mod __lookup_set_event_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
+                "set_eventData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
+                        "set_eventData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_event_data(
+        this: PointerInputModule_ButtonState,
+        value: crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PointerInputModule_ButtonState,
+            crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_event_data::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_button {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::class(),
-                "ReleasedThisFrame",
+                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
+                "get_button",
                 0,
                 param_types,
                 false,
@@ -1547,18 +1491,65 @@ mod __PointerInputModule_MouseButtonEventData_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::NAME,
-                        "ReleasedThisFrame",
+                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
+                        "get_button",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn released_this_frame(this: PointerInputModule_MouseButtonEventData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(PointerInputModule_MouseButtonEventData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_released_this_frame::get_method_info().method_ptr);
+    pub unsafe fn get_button(
+        this: PointerInputModule_ButtonState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton {
+        let inner: extern "C" fn(
+            PointerInputModule_ButtonState,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton =
+            ::core::mem::transmute(__lookup_get_button::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_button {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
+                "set_button",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
+                        "set_button",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_button(
+        this: PointerInputModule_ButtonState,
+        value: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            PointerInputModule_ButtonState,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_button::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1567,7 +1558,7 @@ mod __PointerInputModule_MouseButtonEventData_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::class(),
+                <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1580,7 +1571,7 @@ mod __PointerInputModule_MouseButtonEventData_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <PointerInputModule_MouseButtonEventData as ::unity2::ClassIdentity>::NAME,
+                        <PointerInputModule_ButtonState as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -1588,59 +1579,75 @@ mod __PointerInputModule_MouseButtonEventData_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: PointerInputModule_MouseButtonEventData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(PointerInputModule_MouseButtonEventData, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: PointerInputModule_ButtonState, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PointerInputModule_ButtonState, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-pub trait IPointerInputModule_MouseButtonEventDataMethods: IPointerInputModule_MouseButtonEventData {
-    #[doc = "`PressedThisFrame()` overload"]
-    fn pressed_this_frame(self) -> bool {
+pub trait IPointerInputModule_ButtonStateMethods: IPointerInputModule_ButtonState {
+    #[doc = "`get_eventData()` overload"]
+    fn get_event_data(self) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData {
         unsafe {
-            let __receiver = <PointerInputModule_MouseButtonEventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PointerInputModule_MouseButtonEventData_unity2_raw::pressed_this_frame(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PointerInputModule_ButtonState_unity2_raw::get_event_data(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`ReleasedThisFrame()` overload"]
-    fn released_this_frame(self) -> bool {
+    #[doc = "`set_eventData(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)` overload"]
+    fn set_event_data(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData>,
+    ) -> () {
         unsafe {
-            let __receiver = <PointerInputModule_MouseButtonEventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PointerInputModule_MouseButtonEventData_unity2_raw::released_this_frame(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PointerInputModule_ButtonState_unity2_raw::set_event_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_button()` overload"]
+    fn get_button(self) -> crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton {
+        unsafe {
+            let __receiver =
+                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PointerInputModule_ButtonState_unity2_raw::get_button(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_button(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"]
+    fn set_button(self, value: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton>) -> () {
+        unsafe {
+            let __receiver =
+                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PointerInputModule_ButtonState_unity2_raw::set_button(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PointerInputModule_MouseButtonEventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PointerInputModule_MouseButtonEventData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <PointerInputModule_ButtonState as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PointerInputModule_ButtonState_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl<__T: IPointerInputModule_MouseButtonEventData> IPointerInputModule_MouseButtonEventDataMethods for __T {}
+impl<__T: IPointerInputModule_ButtonState> IPointerInputModule_ButtonStateMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_MouseButtonEventData {
+impl PointerInputModule_ButtonState {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PointerInputModule_MouseButtonEventData),
+                ::core::stringify!(PointerInputModule_ButtonState),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPointerInputModule_MouseButtonEventDataMethods>::ctor(this);
+        <Self as IPointerInputModule_ButtonStateMethods>::ctor(this);
         this
     }
 }

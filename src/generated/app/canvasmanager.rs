@@ -19,22 +19,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CanvasManager")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CanvasManager {
+        #[offset(24)]
         #[rename(name = "m_LocalPosition")]
         pub m_local_position: crate::unity_engine::vector3::Vector3,
+        #[offset(36)]
         #[rename(name = "m_LocalRotation")]
         pub m_local_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(52)]
         #[rename(name = "m_LocalScale")]
         pub m_local_scale: crate::unity_engine::vector3::Vector3,
+        #[offset(64)]
         #[rename(name = "m_AnchorMin")]
         pub m_anchor_min: crate::unity_engine::vector2::Vector2,
+        #[offset(72)]
         #[rename(name = "m_AnchorMax")]
         pub m_anchor_max: crate::unity_engine::vector2::Vector2,
+        #[offset(80)]
         #[rename(name = "m_AnchoredPosition")]
         pub m_anchored_position: crate::unity_engine::vector2::Vector2,
+        #[offset(88)]
         #[rename(name = "m_SizeDelta")]
         pub m_size_delta: crate::unity_engine::vector2::Vector2,
+        #[offset(96)]
         #[rename(name = "m_Pivot")]
         pub m_pivot: crate::unity_engine::vector2::Vector2,
+        #[offset(104)]
         #[rename(name = "m_SelfDestroy")]
         pub m_self_destroy: bool,
     }

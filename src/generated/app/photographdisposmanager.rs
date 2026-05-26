@@ -20,22 +20,31 @@ mod __types {
         #[static_field]
         #[rename(name = "s_AnimeControllerPathList")]
         pub s_anime_controller_path_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(16)]
         #[rename(name = "m_DisposInfoList")]
         pub m_dispos_info_list: crate::system::collections::generic::list_1::List_1<crate::app::photographdisposinfo::PhotographDisposInfo>,
+        #[offset(24)]
         #[rename(name = "m_CurrentDisposInfo")]
         pub m_current_dispos_info: crate::app::photographdisposinfo::PhotographDisposInfo,
+        #[offset(32)]
         #[rename(name = "m_IsRecordDispos")]
         pub m_is_record_dispos: bool,
+        #[offset(40)]
         #[rename(name = "m_CharacteIdOld")]
         pub m_characte_id_old: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_PauseDataOld")]
         pub m_pause_data_old: crate::app::photographpausedata::PhotographPauseData,
+        #[offset(56)]
         #[rename(name = "m_DisposEffectList")]
         pub m_dispos_effect_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(64)]
         #[rename(name = "m_BodyAccDataOld")]
         pub m_body_acc_data_old: crate::app::accessorydata::AccessoryData,
+        #[offset(72)]
         #[rename(name = "m_FaceAccDataOld")]
         pub m_face_acc_data_old: crate::app::accessorydata::AccessoryData,
+        #[offset(80)]
         #[rename(name = "m_WeaponDataOld")]
         pub m_weapon_data_old: crate::app::itemdata::ItemData,
     }

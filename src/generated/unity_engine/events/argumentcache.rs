@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Events", name = "ArgumentCache")]
     #[parent(crate::system::object::Object)]
     pub struct ArgumentCache {
+        #[offset(16)]
         #[rename(name = "m_ObjectArgument")]
         pub m_object_argument: crate::unity_engine::object_2::Object_2,
+        #[offset(24)]
         #[rename(name = "m_ObjectArgumentAssemblyTypeName")]
         pub m_object_argument_assembly_type_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_IntArgument")]
         pub m_int_argument: i32,
+        #[offset(36)]
         #[rename(name = "m_FloatArgument")]
         pub m_float_argument: f32,
+        #[offset(40)]
         #[rename(name = "m_StringArgument")]
         pub m_string_argument: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_BoolArgument")]
         pub m_bool_argument: bool,
     }

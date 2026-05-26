@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterHUD")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterHUD {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "CombatGaugeController")]
         pub combat_gauge_controller: crate::root::combatgaugecontroller::CombatGaugeController,
     }

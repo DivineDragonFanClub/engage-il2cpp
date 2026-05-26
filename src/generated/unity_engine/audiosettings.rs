@@ -11,11 +11,6 @@ mod __types {
         object::{IObject, Object},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audiosettings/AudioSettings_AudioConfigurationChangeHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AudioSettings.AudioConfigurationChangeHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AudioSettings_AudioConfigurationChangeHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audiosettings/AudioSettings.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AudioSettings")]
     #[parent(crate::system::object::Object)]
@@ -24,10 +19,68 @@ mod __types {
         #[rename(name = "OnAudioConfigurationChanged")]
         pub on_audio_configuration_changed: crate::unity_engine::audiosettings::AudioSettings_AudioConfigurationChangeHandler,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audiosettings/AudioSettings_AudioConfigurationChangeHandler.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "AudioSettings.AudioConfigurationChangeHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AudioSettings_AudioConfigurationChangeHandler {}
 }
 
 #[cfg(feature = "unity_engine-audiosettings-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-audiosettings")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AudioSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_on_audio_configuration_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioSettings as ::unity2::ClassIdentity>::class(),
+                "InvokeOnAudioConfigurationChanged",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AudioSettings as ::unity2::ClassIdentity>::NAME,
+                        "InvokeOnAudioConfigurationChanged",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_on_audio_configuration_changed(device_was_changed: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_on_audio_configuration_changed::get_method_info().method_ptr);
+        inner(device_was_changed, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-audiosettings")]
+impl AudioSettings {
+    #[doc = "`InvokeOnAudioConfigurationChanged(bool)` overload"]
+    pub fn invoke_on_audio_configuration_changed(device_was_changed: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            __AudioSettings_unity2_raw::invoke_on_audio_configuration_changed(
+                ::core::convert::Into::into(device_was_changed),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-audiosettings")]
 #[doc(hidden)]
@@ -165,59 +218,6 @@ impl AudioSettings_AudioConfigurationChangeHandler {
         });
         <Self as IAudioSettings_AudioConfigurationChangeHandlerMethods>::ctor(this, object, method);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-audiosettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AudioSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_on_audio_configuration_changed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AudioSettings as ::unity2::ClassIdentity>::class(),
-                "InvokeOnAudioConfigurationChanged",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AudioSettings as ::unity2::ClassIdentity>::NAME,
-                        "InvokeOnAudioConfigurationChanged",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke_on_audio_configuration_changed(device_was_changed: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke_on_audio_configuration_changed::get_method_info().method_ptr);
-        inner(device_was_changed, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-audiosettings")]
-impl AudioSettings {
-    #[doc = "`InvokeOnAudioConfigurationChanged(bool)` overload"]
-    pub fn invoke_on_audio_configuration_changed(device_was_changed: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __AudioSettings_unity2_raw::invoke_on_audio_configuration_changed(
-                ::core::convert::Into::into(device_was_changed),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

@@ -24,12 +24,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "TouchInputModule")]
     #[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]
     pub struct TouchInputModule {
+        #[offset(88)]
         #[rename(name = "m_LastMousePosition")]
         pub m_last_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[offset(96)]
         #[rename(name = "m_MousePosition")]
         pub m_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[offset(104)]
         #[rename(name = "m_InputPointerEvent")]
         pub m_input_pointer_event: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        #[offset(112)]
         #[rename(name = "m_ForceModuleActive")]
         pub m_force_module_active: bool,
     }

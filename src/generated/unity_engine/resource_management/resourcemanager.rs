@@ -14,6 +14,30 @@ mod __types {
         unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_InstanceOperation.md"))]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "ResourceManager.InstanceOperation")]
+    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: gameobject :: GameObject >)]
+    pub struct ResourceManager_InstanceOperation {
+        #[offset(136)]
+        #[rename(name = "m_dependency")]
+        pub m_dependency: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[offset(160)]
+        #[rename(name = "m_instantiationParams")]
+        pub m_instantiation_params: crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,
+        #[offset(208)]
+        #[rename(name = "m_instanceProvider")]
+        pub m_instance_provider:
+            crate::unity_engine::resource_management::resource_providers::iinstanceprovider_interface::IInstanceProvider_Interface,
+        #[offset(216)]
+        #[rename(name = "m_instance")]
+        pub m_instance: crate::unity_engine::gameobject::GameObject,
+        #[offset(224)]
+        #[rename(name = "m_scene")]
+        pub m_scene: crate::unity_engine::scene_management::scene::Scene,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_DiagnosticEventContext.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -97,69 +121,64 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager_InstanceOperation.md"))]
-    #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "ResourceManager.InstanceOperation")]
-    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: gameobject :: GameObject >)]
-    pub struct ResourceManager_InstanceOperation {
-        #[rename(name = "m_dependency")]
-        pub m_dependency: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_instantiationParams")]
-        pub m_instantiation_params: crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,
-        #[rename(name = "m_instanceProvider")]
-        pub m_instance_provider:
-            crate::unity_engine::resource_management::resource_providers::iinstanceprovider_interface::IInstanceProvider_Interface,
-        #[rename(name = "m_instance")]
-        pub m_instance: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_scene")]
-        pub m_scene: crate::unity_engine::scene_management::scene::Scene,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resourcemanager/ResourceManager.md"))]
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "ResourceManager")]
     #[parent(crate::system::object::Object)]
     pub struct ResourceManager {
+        #[offset(16)]
         #[rename(name = "postProfilerEvents")]
         pub post_profiler_events: bool,
+        #[offset(40)]
         #[rename(name = "CallbackHooksEnabled")]
         pub callback_hooks_enabled: bool,
+        #[offset(48)]
         #[rename(name = "m_ResourceProviders")]
         pub m_resource_providers: crate::root::listwithevents_1::ListWithEvents_1<
             crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,
         >,
+        #[offset(56)]
         #[rename(name = "m_allocator")]
         pub m_allocator: crate::unity_engine::resource_management::util::iallocationstrategy::IAllocationStrategy,
+        #[offset(64)]
         #[rename(name = "m_UpdateReceivers")]
         pub m_update_receivers:
             crate::root::listwithevents_1::ListWithEvents_1<crate::unity_engine::resource_management::iupdatereceiver::IUpdateReceiver>,
+        #[offset(72)]
         #[rename(name = "m_UpdateReceiversToRemove")]
         pub m_update_receivers_to_remove:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::iupdatereceiver::IUpdateReceiver>,
+        #[offset(80)]
         #[rename(name = "m_UpdatingReceivers")]
         pub m_updating_receivers: bool,
+        #[offset(81)]
         #[rename(name = "m_InsideUpdateMethod")]
         pub m_inside_update_method: bool,
+        #[offset(88)]
         #[rename(name = "m_providerMap")]
         pub m_provider_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
             i32,
             crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,
         >,
+        #[offset(96)]
         #[rename(name = "m_AssetOperationCache")]
         pub m_asset_operation_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
             crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation,
         >,
+        #[offset(104)]
         #[rename(name = "m_TrackedInstanceOperations")]
         pub m_tracked_instance_operations: crate::system::collections::generic::hashset_1::HashSet_1<
             crate::unity_engine::resource_management::resourcemanager::ResourceManager_InstanceOperation,
         >,
+        #[offset(112)]
         #[rename(name = "m_UpdateCallbacks")]
         pub m_update_callbacks: crate::root::delegatelist_1::DelegateList_1<f32>,
+        #[offset(120)]
         #[rename(name = "m_DeferredCompleteCallbacks")]
         pub m_deferred_complete_callbacks: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation,
         >,
+        #[offset(128)]
         #[rename(name = "m_obsoleteDiagnosticsHandler")]
         pub m_obsolete_diagnostics_handler: crate::system::action_4::Action_4<
             crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
@@ -167,15 +186,19 @@ mod __types {
             i32,
             crate::system::object::Object,
         >,
+        #[offset(136)]
         #[rename(name = "m_diagnosticsHandler")]
         pub m_diagnostics_handler:
             crate::system::action_1::Action_1<crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventContext>,
+        #[offset(144)]
         #[rename(name = "m_ReleaseOpNonCached")]
         pub m_release_op_non_cached:
             crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation>,
+        #[offset(152)]
         #[rename(name = "m_ReleaseOpCached")]
         pub m_release_op_cached:
             crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation>,
+        #[offset(160)]
         #[rename(name = "m_ReleaseInstanceOp")]
         pub m_release_instance_op:
             crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation>,
@@ -185,8 +208,10 @@ mod __types {
         #[static_field]
         #[rename(name = "s_InstanceOperationTypeHash")]
         pub s_instance_operation_type_hash: i32,
+        #[offset(176)]
         #[rename(name = "m_RegisteredForCallbacks")]
         pub m_registered_for_callbacks: bool,
+        #[offset(184)]
         #[rename(name = "m_ProviderOperationTypeCache")]
         pub m_provider_operation_type_cache:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::SystemType, ::unity2::SystemType>,
@@ -195,382 +220,6 @@ mod __types {
 
 #[cfg(feature = "unity_engine-resource_management-resourcemanager-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ResourceManager_DiagnosticEventContext_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_operation_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
-                "get_OperationHandle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
-                        "get_OperationHandle",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_operation_handle(
-        this: ResourceManager_DiagnosticEventContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle {
-        let inner: extern "C" fn(
-            ResourceManager_DiagnosticEventContext,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle =
-            ::core::mem::transmute(__lookup_get_operation_handle::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
-                "get_Type",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
-                        "get_Type",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_type(
-        this: ResourceManager_DiagnosticEventContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType {
-        let inner: extern "C" fn(
-            ResourceManager_DiagnosticEventContext,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType =
-            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_event_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
-                "get_EventValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
-                        "get_EventValue",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_event_value(this: ResourceManager_DiagnosticEventContext, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(ResourceManager_DiagnosticEventContext, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_event_value::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_location {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
-                "get_Location",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
-                        "get_Location",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_location(
-        this: ResourceManager_DiagnosticEventContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation {
-        let inner: extern "C" fn(
-            ResourceManager_DiagnosticEventContext,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation =
-            ::core::mem::transmute(__lookup_get_location::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_context {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
-                "get_Context",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
-                        "get_Context",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_context(
-        this: ResourceManager_DiagnosticEventContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(ResourceManager_DiagnosticEventContext, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_get_context::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
-                "get_Error",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
-                        "get_Error",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_error(this: ResourceManager_DiagnosticEventContext, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(ResourceManager_DiagnosticEventContext, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(__lookup_get_error::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ResourceManager_DiagnosticEventContext,
-        op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-        r#type: crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType,
-        event_value: i32,
-        error: ::unity2::Il2CppString,
-        context: ::unity2::IlInstance,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ResourceManager_DiagnosticEventContext,
-            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
-            crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::IlInstance,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, op, r#type, event_value, error, context, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-impl ResourceManager_DiagnosticEventContext {
-    #[doc = "`get_OperationHandle()` overload"]
-    pub fn get_operation_handle(self) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle {
-        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_operation_handle(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Type()` overload"]
-    pub fn get_type(self) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType {
-        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_type(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_EventValue()` overload"]
-    pub fn get_event_value(self) -> i32 {
-        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_event_value(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Location()` overload"]
-    pub fn get_location(self) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation {
-        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_location(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Context()` overload"]
-    pub fn get_context(self) -> crate::system::object::Object {
-        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_context(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Error()` overload"]
-    pub fn get_error(self) -> ::unity2::Il2CppString {
-        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_error(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`.ctor(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle, crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType, i32, ::unity2::Il2CppString, ::unity2::IlInstance)` overload"]
-    pub fn ctor(
-        self,
-        op: impl ::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>,
-        r#type: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType>,
-        event_value: impl ::core::convert::Into<i32>,
-        error: impl ::core::convert::Into<::unity2::Il2CppString>,
-        context: impl ::core::convert::Into<::unity2::IlInstance>,
-    ) -> () {
-        unsafe {
-            __ResourceManager_DiagnosticEventContext_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(op),
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(event_value),
-                ::core::convert::Into::into(error),
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Init(T0, bool, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "Init", args = 4)]
-    pub fn init(self, result: T0, success: bool, error_msg: ::unity2::Il2CppString, release_dependencies_on_failure: bool) -> ();
-
-    #[doc = "`get_DebugName()` overload"]
-    #[method(name = "get_DebugName", args = 0)]
-    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`InvokeWaitForCompletion()` overload"]
-    #[method(name = "InvokeWaitForCompletion", args = 0)]
-    pub fn invoke_wait_for_completion(self) -> bool;
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceManager_CompletedOperation_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceManager_CompletedOperation_1Methods<T0>>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-resource_management-resourcemanager")]
 #[doc(hidden)]
@@ -1099,6 +748,382 @@ impl ResourceManager_InstanceOperation {
             )
         });
         <Self as IResourceManager_InstanceOperationMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ResourceManager_DiagnosticEventContext_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_operation_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
+                "get_OperationHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
+                        "get_OperationHandle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_operation_handle(
+        this: ResourceManager_DiagnosticEventContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle {
+        let inner: extern "C" fn(
+            ResourceManager_DiagnosticEventContext,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle =
+            ::core::mem::transmute(__lookup_get_operation_handle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
+                "get_Type",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
+                        "get_Type",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_type(
+        this: ResourceManager_DiagnosticEventContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType {
+        let inner: extern "C" fn(
+            ResourceManager_DiagnosticEventContext,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
+                "get_EventValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
+                        "get_EventValue",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_event_value(this: ResourceManager_DiagnosticEventContext, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(ResourceManager_DiagnosticEventContext, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_event_value::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_location {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
+                "get_Location",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
+                        "get_Location",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_location(
+        this: ResourceManager_DiagnosticEventContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation {
+        let inner: extern "C" fn(
+            ResourceManager_DiagnosticEventContext,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation =
+            ::core::mem::transmute(__lookup_get_location::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_context {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
+                "get_Context",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
+                        "get_Context",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_context(
+        this: ResourceManager_DiagnosticEventContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(ResourceManager_DiagnosticEventContext, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_context::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
+                "get_Error",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
+                        "get_Error",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_error(this: ResourceManager_DiagnosticEventContext, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ResourceManager_DiagnosticEventContext, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_error::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ResourceManager_DiagnosticEventContext as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ResourceManager_DiagnosticEventContext,
+        op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        r#type: crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType,
+        event_value: i32,
+        error: ::unity2::Il2CppString,
+        context: ::unity2::IlInstance,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ResourceManager_DiagnosticEventContext,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType,
+            i32,
+            ::unity2::Il2CppString,
+            ::unity2::IlInstance,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, op, r#type, event_value, error, context, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+impl ResourceManager_DiagnosticEventContext {
+    #[doc = "`get_OperationHandle()` overload"]
+    pub fn get_operation_handle(self) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle {
+        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_operation_handle(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Type()` overload"]
+    pub fn get_type(self) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType {
+        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_type(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_EventValue()` overload"]
+    pub fn get_event_value(self) -> i32 {
+        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_event_value(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Location()` overload"]
+    pub fn get_location(self) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation {
+        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_location(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Context()` overload"]
+    pub fn get_context(self) -> crate::system::object::Object {
+        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_context(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Error()` overload"]
+    pub fn get_error(self) -> ::unity2::Il2CppString {
+        unsafe { __ResourceManager_DiagnosticEventContext_unity2_raw::get_error(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`.ctor(crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle, crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType, i32, ::unity2::Il2CppString, ::unity2::IlInstance)` overload"]
+    pub fn ctor(
+        self,
+        op: impl ::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>,
+        r#type: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager_DiagnosticEventType>,
+        event_value: impl ::core::convert::Into<i32>,
+        error: impl ::core::convert::Into<::unity2::Il2CppString>,
+        context: impl ::core::convert::Into<::unity2::IlInstance>,
+    ) -> () {
+        unsafe {
+            __ResourceManager_DiagnosticEventContext_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(op),
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(event_value),
+                ::core::convert::Into::into(error),
+                ::core::convert::Into::into(context),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Init(T0, bool, ::unity2::Il2CppString, bool)` overload"]
+    #[method(name = "Init", args = 4)]
+    pub fn init(self, result: T0, success: bool, error_msg: ::unity2::Il2CppString, release_dependencies_on_failure: bool) -> ();
+
+    #[doc = "`get_DebugName()` overload"]
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`InvokeWaitForCompletion()` overload"]
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManager_CompletedOperation_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManager_CompletedOperation_1Methods<T0>>::ctor(this);
         this
     }
 }

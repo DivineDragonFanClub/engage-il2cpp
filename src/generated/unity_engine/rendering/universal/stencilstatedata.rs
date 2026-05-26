@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "StencilStateData")]
     #[parent(crate::system::object::Object)]
     pub struct StencilStateData {
+        #[offset(16)]
         #[rename(name = "overrideStencilState")]
         pub override_stencil_state: bool,
+        #[offset(20)]
         #[rename(name = "stencilReference")]
         pub stencil_reference: i32,
+        #[offset(24)]
         #[rename(name = "stencilCompareFunction")]
         pub stencil_compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+        #[offset(28)]
         #[rename(name = "passOperation")]
         pub pass_operation: crate::unity_engine::rendering::stencilop::StencilOp,
+        #[offset(32)]
         #[rename(name = "failOperation")]
         pub fail_operation: crate::unity_engine::rendering::stencilop::StencilOp,
+        #[offset(36)]
         #[rename(name = "zFailOperation")]
         pub z_fail_operation: crate::unity_engine::rendering::stencilop::StencilOp,
     }

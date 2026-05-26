@@ -20,6 +20,7 @@ mod __types {
         #[static_field]
         #[rename(name = "ResNameC")]
         pub res_name_c: ::unity2::Il2CppString,
+        #[offset(120)]
         #[rename(name = "m_PrefabHandle")]
         pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
         #[static_field]

@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubStatueCondition")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubStatueCondition {
+        #[offset(24)]
         #[rename(name = "m_stage1Object")]
         pub m_stage1_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_stage2Object")]
         pub m_stage2_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_completeObjectM")]
         pub m_complete_object_m: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_completeObjectF")]
         pub m_complete_object_f: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_phase")]
         pub m_phase: i32,
     }

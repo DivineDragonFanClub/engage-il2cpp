@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "TransparentSettingsPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct TransparentSettingsPass {
+        #[offset(112)]
         #[rename(name = "m_shouldReceiveShadows")]
         pub m_should_receive_shadows: bool,
         #[static_field]

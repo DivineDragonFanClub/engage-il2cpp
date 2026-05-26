@@ -24,10 +24,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "UIFoldout")]
     #[parent(crate::unity_engine::ui::toggle::Toggle)]
     pub struct UIFoldout {
+        #[offset(288)]
         #[rename(name = "content")]
         pub content: crate::unity_engine::gameobject::GameObject,
+        #[offset(296)]
         #[rename(name = "arrowOpened")]
         pub arrow_opened: crate::unity_engine::gameobject::GameObject,
+        #[offset(304)]
         #[rename(name = "arrowClosed")]
         pub arrow_closed: crate::unity_engine::gameobject::GameObject,
     }

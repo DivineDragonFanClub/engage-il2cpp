@@ -14,8 +14,10 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_Rate")]
         pub m_rate: i16,
+        #[offset(24)]
         #[rename(name = "m_DataId")]
         pub m_data_id: u64,
     }

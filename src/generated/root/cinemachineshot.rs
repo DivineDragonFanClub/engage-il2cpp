@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "CinemachineShot")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
     pub struct CinemachineShot {
+        #[offset(24)]
         #[rename(name = "DisplayName")]
         pub display_name: ::unity2::Il2CppString,
     }

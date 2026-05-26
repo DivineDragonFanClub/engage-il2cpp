@@ -22,24 +22,34 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(32)]
         #[rename(name = "m_UnitIcon0")]
         pub m_unit_icon0: crate::app::uniticon::UnitIcon,
+        #[offset(40)]
         #[rename(name = "m_UnitIcon1")]
         pub m_unit_icon1: crate::app::uniticon::UnitIcon,
+        #[offset(48)]
         #[rename(name = "m_Heart0")]
         pub m_heart0: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_Heart1")]
         pub m_heart1: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_WdwReliance")]
         pub m_wdw_reliance: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_WdwTalk")]
         pub m_wdw_talk: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_TextReliance")]
         pub m_text_reliance: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_TextTalk")]
         pub m_text_talk: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_TalkIcon")]
         pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
     }

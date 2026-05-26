@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerToggleHistory")]
     #[parent(crate::unity_engine::rendering::ui::debuguihandlertoggle::DebugUIHandlerToggle)]
     pub struct DebugUIHandlerToggleHistory {
+        #[offset(120)]
         #[rename(name = "historyToggles")]
         pub history_toggles: ::unity2::Array<crate::unity_engine::ui::toggle::Toggle>,
         #[static_field]

@@ -13,19 +13,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspectors/MapInspectors.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInspectors")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapinspectors :: MapInspectors >)]
-    pub struct MapInspectors {
-        #[rename(name = "m_Inspectors")]
-        pub m_inspectors: crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>,
-        #[rename(name = "m_KindInspectors")]
-        pub m_kind_inspectors: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>>,
-        #[static_field]
-        #[rename(name = "s_InspectorSearch")]
-        pub s_inspector_search: crate::app::mapinspectors::MapInspectors_MapInspectorSearch,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinspectors/MapInspectors_EventUnitScope.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -48,10 +35,26 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspectors/MapInspectors.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInspectors")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapinspectors :: MapInspectors >)]
+    pub struct MapInspectors {
+        #[offset(32)]
+        #[rename(name = "m_Inspectors")]
+        pub m_inspectors: crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>,
+        #[offset(40)]
+        #[rename(name = "m_KindInspectors")]
+        pub m_kind_inspectors: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>>,
+        #[static_field]
+        #[rename(name = "s_InspectorSearch")]
+        pub s_inspector_search: crate::app::mapinspectors::MapInspectors_MapInspectorSearch,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspectors/MapInspectors_MapInspectorSearch.md"))]
     #[::unity2::class(namespace = "App", name = "MapInspectors.MapInspectorSearch")]
     #[parent(crate::system::object::Object)]
     pub struct MapInspectors_MapInspectorSearch {
+        #[offset(16)]
         #[rename(name = "m_List")]
         pub m_list: crate::app::rawclasslist_1::RawClassList_1<crate::app::mapinspector::MapInspector>,
     }
@@ -59,6 +62,92 @@ mod __types {
 
 #[cfg(feature = "app-mapinspectors-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapinspectors")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapInspectors_EventUnitScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapInspectors_EventUnitScope, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInspectors_EventUnitScope, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: MapInspectors_EventUnitScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInspectors_EventUnitScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapinspectors")]
+impl MapInspectors_EventUnitScope {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    pub fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __MapInspectors_EventUnitScope_unity2_raw::ctor(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __MapInspectors_EventUnitScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-mapinspectors")]
 #[doc(hidden)]
@@ -1340,92 +1429,6 @@ impl MapInspectors {
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapInspectors), ::core::stringify!(new),));
         <Self as IMapInspectorsMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-mapinspectors")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapInspectors_EventUnitScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: MapInspectors_EventUnitScope, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInspectors_EventUnitScope, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <MapInspectors_EventUnitScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: MapInspectors_EventUnitScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapInspectors_EventUnitScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapinspectors")]
-impl MapInspectors_EventUnitScope {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    pub fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __MapInspectors_EventUnitScope_unity2_raw::ctor(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __MapInspectors_EventUnitScope_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 }
 

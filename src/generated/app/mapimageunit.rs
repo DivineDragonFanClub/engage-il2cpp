@@ -71,6 +71,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapImageUnit")]
     #[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]
     pub struct MapImageUnit {
+        #[offset(24)]
         #[rename(name = "m_Cells")]
         pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
     }

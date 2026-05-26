@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingColliderPart")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingColliderPart {
+        #[offset(24)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
     }

@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "BaseTransitionCameraController")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct BaseTransitionCameraController {
+        #[offset(172)]
         #[rename(name = "ProgressTime")]
         pub progress_time: f32,
     }

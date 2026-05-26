@@ -16,27 +16,32 @@ mod __types {
     #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream")]
     #[parent(crate::system::io::stream::Stream)]
     pub struct DeflateStream {
+        #[offset(40)]
         #[rename(name = "base_stream")]
         pub base_stream: crate::system::io::stream::Stream,
+        #[offset(48)]
         #[rename(name = "mode")]
         pub mode: crate::system::io::compression::compressionmode::CompressionMode,
+        #[offset(52)]
         #[rename(name = "leaveOpen")]
         pub leave_open: bool,
+        #[offset(53)]
         #[rename(name = "disposed")]
         pub disposed: bool,
+        #[offset(56)]
         #[rename(name = "native")]
         pub native: crate::system::io::compression::deflatestreamnative::DeflateStreamNative,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md"))]
-    #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream.WriteMethod")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct DeflateStream_WriteMethod {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]
     #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream.ReadMethod")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct DeflateStream_ReadMethod {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md"))]
+    #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream.WriteMethod")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct DeflateStream_WriteMethod {}
 }
 
 #[cfg(feature = "system-io-compression-deflatestream-types")]
@@ -1090,152 +1095,6 @@ impl DeflateStream {
 #[cfg(feature = "system-io-compression-deflatestream")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DeflateStream_WriteMethod_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DeflateStream_WriteMethod,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DeflateStream_WriteMethod, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: DeflateStream_WriteMethod,
-        array: ::unity2::Array<u8>,
-        offset: i32,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DeflateStream_WriteMethod, ::unity2::Array<u8>, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, array, offset, count, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-pub trait IDeflateStream_WriteMethodMethods: IDeflateStream_WriteMethod {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <DeflateStream_WriteMethod as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DeflateStream_WriteMethod_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"]
-    fn invoke(
-        self,
-        array: impl ::core::convert::Into<::unity2::Array<u8>>,
-        offset: impl ::core::convert::Into<i32>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DeflateStream_WriteMethod as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __DeflateStream_WriteMethod_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(offset),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl<__T: IDeflateStream_WriteMethod> IDeflateStream_WriteMethodMethods for __T {}
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream_WriteMethod {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DeflateStream_WriteMethod),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDeflateStream_WriteMethodMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __DeflateStream_ReadMethod_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1375,6 +1234,152 @@ impl DeflateStream_ReadMethod {
             )
         });
         <Self as IDeflateStream_ReadMethodMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "system-io-compression-deflatestream")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DeflateStream_WriteMethod_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DeflateStream_WriteMethod,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeflateStream_WriteMethod, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStream_WriteMethod as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: DeflateStream_WriteMethod,
+        array: ::unity2::Array<u8>,
+        offset: i32,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(DeflateStream_WriteMethod, ::unity2::Array<u8>, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, array, offset, count, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-io-compression-deflatestream")]
+pub trait IDeflateStream_WriteMethodMethods: IDeflateStream_WriteMethod {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <DeflateStream_WriteMethod as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DeflateStream_WriteMethod_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"]
+    fn invoke(
+        self,
+        array: impl ::core::convert::Into<::unity2::Array<u8>>,
+        offset: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DeflateStream_WriteMethod as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DeflateStream_WriteMethod_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(offset),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-io-compression-deflatestream")]
+impl<__T: IDeflateStream_WriteMethod> IDeflateStream_WriteMethodMethods for __T {}
+
+#[cfg(feature = "system-io-compression-deflatestream")]
+impl DeflateStream_WriteMethod {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DeflateStream_WriteMethod),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDeflateStream_WriteMethodMethods>::ctor(this, object, method);
         this
     }
 }

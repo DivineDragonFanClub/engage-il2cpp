@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingConfig_WaitCancel")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_WaitCancel {
+        #[offset(24)]
         #[rename(name = "m_CancelTime")]
         pub m_cancel_time: f32,
+        #[offset(28)]
         #[rename(name = "m_CancelPullTime")]
         pub m_cancel_pull_time: f32,
+        #[offset(32)]
         #[rename(name = "m_CancelFadeOutTime")]
         pub m_cancel_fade_out_time: f32,
+        #[offset(36)]
         #[rename(name = "m_CancelFadeInTime")]
         pub m_cancel_fade_in_time: f32,
     }

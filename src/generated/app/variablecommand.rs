@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VariableCommand")]
     #[parent(crate::app::calculatorcommand::CalculatorCommand)]
     pub struct VariableCommand {
+        #[offset(24)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_Value")]
         pub m_value: f32,
     }

@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections.Specialized", name = "NameValueCollection")]
     #[parent(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)]
     pub struct NameValueCollection {
+        #[offset(80)]
         #[rename(name = "_all")]
         pub all: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(88)]
         #[rename(name = "_allKeys")]
         pub all_keys: ::unity2::Array<::unity2::Il2CppString>,
     }

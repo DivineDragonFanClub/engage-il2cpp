@@ -23,40 +23,6 @@ mod __types {
     # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 >)]
     pub struct GameUserRestartData_RecordWriter {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserRestartData")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserrestartdata :: GameUserRestartData >)]
-    pub struct GameUserRestartData {
-        #[rename(name = "m_Streams")]
-        pub m_streams: ::unity2::Array<crate::app::gameuserrestartdata::GameUserRestartData_RestartStream>,
-        #[rename(name = "m_Target")]
-        pub m_target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes,
-        #[rename(name = "m_KeepLevel")]
-        pub m_keep_level: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GameConfigWriter.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserRestartData.GameConfigWriter")]
-    #[parent(crate::app::stream_2::Stream_2)]
-    pub struct GameUserRestartData_GameConfigWriter {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GrowthWriter.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserRestartData.GrowthWriter")]
-    # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: gameuserrestartdata :: GameUserRestartData_Growth >)]
-    pub struct GameUserRestartData_GrowthWriter {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_CompleteWriter.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserRestartData.CompleteWriter")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameUserRestartData_CompleteWriter {
-        #[rename(name = "m_Chapter")]
-        pub m_chapter: crate::app::chapterdata::ChapterData,
-        #[rename(name = "m_Records")]
-        pub m_records: crate::system::collections::generic::list_1::List_1<crate::app::chapterrecord::ChapterRecord_Record>,
-        #[rename(name = "m_Encounters")]
-        pub m_encounters: ::unity2::Array<i32>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_RestartStream.md"))]
     #[::unity2::class(namespace = "App", name = "GameUserRestartData.RestartStream")]
     #[parent(crate::app::stream_2::Stream_2)]
@@ -72,18 +38,58 @@ mod __types {
         pub magic_number: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GrowthWriter.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserRestartData.GrowthWriter")]
+    # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: gameuserrestartdata :: GameUserRestartData_Growth >)]
+    pub struct GameUserRestartData_GrowthWriter {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_CompleteWriter.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserRestartData.CompleteWriter")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameUserRestartData_CompleteWriter {
+        #[offset(16)]
+        #[rename(name = "m_Chapter")]
+        pub m_chapter: crate::app::chapterdata::ChapterData,
+        #[offset(24)]
+        #[rename(name = "m_Records")]
+        pub m_records: crate::system::collections::generic::list_1::List_1<crate::app::chapterrecord::ChapterRecord_Record>,
+        #[offset(32)]
+        #[rename(name = "m_Encounters")]
+        pub m_encounters: ::unity2::Array<i32>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserRestartData")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserrestartdata :: GameUserRestartData >)]
+    pub struct GameUserRestartData {
+        #[offset(32)]
+        #[rename(name = "m_Streams")]
+        pub m_streams: ::unity2::Array<crate::app::gameuserrestartdata::GameUserRestartData_RestartStream>,
+        #[offset(40)]
+        #[rename(name = "m_Target")]
+        pub m_target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes,
+        #[offset(44)]
+        #[rename(name = "m_KeepLevel")]
+        pub m_keep_level: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_Growth.md"))]
     #[::unity2::class(namespace = "App", name = "GameUserRestartData.Growth")]
     #[parent(crate::system::object::Object)]
     pub struct GameUserRestartData_Growth {
+        #[offset(16)]
         #[rename(name = "Job")]
         pub job: crate::app::jobdata::JobData,
+        #[offset(24)]
         #[rename(name = "Level")]
         pub level: i32,
+        #[offset(28)]
         #[rename(name = "Exp")]
         pub exp: i32,
+        #[offset(32)]
         #[rename(name = "GrowCapability")]
         pub grow_capability: crate::app::capability::Capability,
+        #[offset(40)]
         #[rename(name = "LevelCapability")]
         pub level_capability: crate::app::unitbasecapability::UnitBaseCapability,
     }
@@ -134,6 +140,11 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GameUserRestartData.VariableWriter")]
     # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 >)]
     pub struct GameUserRestartData_VariableWriter {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GameConfigWriter.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserRestartData.GameConfigWriter")]
+    #[parent(crate::app::stream_2::Stream_2)]
+    pub struct GameUserRestartData_GameConfigWriter {}
 }
 
 #[cfg(feature = "app-gameuserrestartdata-types")]
@@ -296,6 +307,579 @@ impl GameUserRestartData_RecordWriter {
             )
         });
         <Self as IGameUserRestartData_RecordWriterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameUserRestartData_RestartStream_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: GameUserRestartData_RestartStream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_read_header {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
+                "TryReadHeader",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
+                        "TryReadHeader",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_read_header(
+        this: GameUserRestartData_RestartStream,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::chapterdata::ChapterData {
+        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData =
+            ::core::mem::transmute(__lookup_try_read_header::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
+                "IsEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
+                        "IsEnable",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_enable(this: GameUserRestartData_RestartStream, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_enable::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
+                "Save",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
+                        "Save",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn save(this: GameUserRestartData_RestartStream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_save::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
+                "Load",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load(
+        this: GameUserRestartData_RestartStream,
+        keep_level: bool,
+        keep_achieve: bool,
+        completed: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameUserRestartData_RestartStream, bool, bool, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
+        inner(this, keep_level, keep_achieve, completed, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+pub trait IGameUserRestartData_RestartStreamMethods: IGameUserRestartData_RestartStream {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_RestartStream_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryReadHeader()` overload"]
+    fn try_read_header(self) -> crate::app::chapterdata::ChapterData {
+        unsafe {
+            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_RestartStream_unity2_raw::try_read_header(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsEnable()` overload"]
+    fn is_enable(self) -> bool {
+        unsafe {
+            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_RestartStream_unity2_raw::is_enable(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Save()` overload"]
+    fn save(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_RestartStream_unity2_raw::save(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Load(bool, bool, bool)` overload"]
+    fn load(
+        self,
+        keep_level: impl ::core::convert::Into<bool>,
+        keep_achieve: impl ::core::convert::Into<bool>,
+        completed: impl ::core::convert::Into<bool>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_RestartStream_unity2_raw::load(
+                __receiver,
+                ::core::convert::Into::into(keep_level),
+                ::core::convert::Into::into(keep_achieve),
+                ::core::convert::Into::into(completed),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl<__T: IGameUserRestartData_RestartStream> IGameUserRestartData_RestartStreamMethods for __T {}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl GameUserRestartData_RestartStream {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserRestartData_RestartStream),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserRestartData_RestartStreamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameUserRestartData_GrowthWriter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::class(),
+                "Read",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::NAME,
+                        "Read",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn read(this: GameUserRestartData_GrowthWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_GrowthWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::class(),
+                "Write",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::NAME,
+                        "Write",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn write(this: GameUserRestartData_GrowthWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_GrowthWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: GameUserRestartData_GrowthWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_GrowthWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+pub trait IGameUserRestartData_GrowthWriterMethods: IGameUserRestartData_GrowthWriter {
+    #[doc = "`Read()` overload"]
+    fn read(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameUserRestartData_GrowthWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserRestartData_GrowthWriter_unity2_raw::read(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Write()` overload"]
+    fn write(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameUserRestartData_GrowthWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserRestartData_GrowthWriter_unity2_raw::write(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameUserRestartData_GrowthWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GameUserRestartData_GrowthWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl<__T: IGameUserRestartData_GrowthWriter> IGameUserRestartData_GrowthWriterMethods for __T {}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl GameUserRestartData_GrowthWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserRestartData_GrowthWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserRestartData_GrowthWriterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameUserRestartData_CompleteWriter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::class(),
+                "Read",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::NAME,
+                        "Read",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn read(this: GameUserRestartData_CompleteWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_CompleteWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::class(),
+                "Write",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::NAME,
+                        "Write",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn write(this: GameUserRestartData_CompleteWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_CompleteWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: GameUserRestartData_CompleteWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_CompleteWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+pub trait IGameUserRestartData_CompleteWriterMethods: IGameUserRestartData_CompleteWriter {
+    #[doc = "`Read()` overload"]
+    fn read(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_CompleteWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_CompleteWriter_unity2_raw::read(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Write()` overload"]
+    fn write(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_CompleteWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_CompleteWriter_unity2_raw::write(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_CompleteWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_CompleteWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl<__T: IGameUserRestartData_CompleteWriter> IGameUserRestartData_CompleteWriterMethods for __T {}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl GameUserRestartData_CompleteWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserRestartData_CompleteWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserRestartData_CompleteWriterMethods>::ctor(this);
         this
     }
 }
@@ -1042,735 +1626,6 @@ impl GameUserRestartData {
 #[cfg(feature = "app-gameuserrestartdata")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserRestartData_GameConfigWriter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameUserRestartData_GameConfigWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_GameConfigWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::class(),
-                "Read",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::NAME,
-                        "Read",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read(this: GameUserRestartData_GameConfigWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_GameConfigWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::NAME,
-                        "Write",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write(this: GameUserRestartData_GameConfigWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_GameConfigWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-pub trait IGameUserRestartData_GameConfigWriterMethods: IGameUserRestartData_GameConfigWriter {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_GameConfigWriter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_GameConfigWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Read()` overload"]
-    fn read(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_GameConfigWriter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_GameConfigWriter_unity2_raw::read(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Write()` overload"]
-    fn write(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_GameConfigWriter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_GameConfigWriter_unity2_raw::write(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl<__T: IGameUserRestartData_GameConfigWriter> IGameUserRestartData_GameConfigWriterMethods for __T {}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_GameConfigWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_GameConfigWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserRestartData_GameConfigWriterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserRestartData_GrowthWriter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::class(),
-                "Read",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::NAME,
-                        "Read",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read(this: GameUserRestartData_GrowthWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_GrowthWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::NAME,
-                        "Write",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write(this: GameUserRestartData_GrowthWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_GrowthWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_GrowthWriter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameUserRestartData_GrowthWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_GrowthWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-pub trait IGameUserRestartData_GrowthWriterMethods: IGameUserRestartData_GrowthWriter {
-    #[doc = "`Read()` overload"]
-    fn read(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameUserRestartData_GrowthWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserRestartData_GrowthWriter_unity2_raw::read(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Write()` overload"]
-    fn write(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameUserRestartData_GrowthWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserRestartData_GrowthWriter_unity2_raw::write(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameUserRestartData_GrowthWriter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __GameUserRestartData_GrowthWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl<__T: IGameUserRestartData_GrowthWriter> IGameUserRestartData_GrowthWriterMethods for __T {}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_GrowthWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_GrowthWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserRestartData_GrowthWriterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserRestartData_CompleteWriter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_read {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::class(),
-                "Read",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::NAME,
-                        "Read",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn read(this: GameUserRestartData_CompleteWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_CompleteWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::class(),
-                "Write",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::NAME,
-                        "Write",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn write(this: GameUserRestartData_CompleteWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_CompleteWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_CompleteWriter as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameUserRestartData_CompleteWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_CompleteWriter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-pub trait IGameUserRestartData_CompleteWriterMethods: IGameUserRestartData_CompleteWriter {
-    #[doc = "`Read()` overload"]
-    fn read(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_CompleteWriter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_CompleteWriter_unity2_raw::read(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Write()` overload"]
-    fn write(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_CompleteWriter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_CompleteWriter_unity2_raw::write(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_CompleteWriter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_CompleteWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl<__T: IGameUserRestartData_CompleteWriter> IGameUserRestartData_CompleteWriterMethods for __T {}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_CompleteWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_CompleteWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserRestartData_CompleteWriterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserRestartData_RestartStream_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: GameUserRestartData_RestartStream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_read_header {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
-                "TryReadHeader",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
-                        "TryReadHeader",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn try_read_header(
-        this: GameUserRestartData_RestartStream,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::chapterdata::ChapterData {
-        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> crate::app::chapterdata::ChapterData =
-            ::core::mem::transmute(__lookup_try_read_header::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
-                "IsEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
-                        "IsEnable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_enable(this: GameUserRestartData_RestartStream, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_enable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
-                "Save",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
-                        "Save",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn save(this: GameUserRestartData_RestartStream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GameUserRestartData_RestartStream, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_save::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::class(),
-                "Load",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <GameUserRestartData_RestartStream as ::unity2::ClassIdentity>::NAME,
-                        "Load",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn load(
-        this: GameUserRestartData_RestartStream,
-        keep_level: bool,
-        keep_achieve: bool,
-        completed: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(GameUserRestartData_RestartStream, bool, bool, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
-        inner(this, keep_level, keep_achieve, completed, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-pub trait IGameUserRestartData_RestartStreamMethods: IGameUserRestartData_RestartStream {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_RestartStream_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryReadHeader()` overload"]
-    fn try_read_header(self) -> crate::app::chapterdata::ChapterData {
-        unsafe {
-            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_RestartStream_unity2_raw::try_read_header(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsEnable()` overload"]
-    fn is_enable(self) -> bool {
-        unsafe {
-            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_RestartStream_unity2_raw::is_enable(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Save()` overload"]
-    fn save(self) -> () {
-        unsafe {
-            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_RestartStream_unity2_raw::save(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Load(bool, bool, bool)` overload"]
-    fn load(
-        self,
-        keep_level: impl ::core::convert::Into<bool>,
-        keep_achieve: impl ::core::convert::Into<bool>,
-        completed: impl ::core::convert::Into<bool>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <GameUserRestartData_RestartStream as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GameUserRestartData_RestartStream_unity2_raw::load(
-                __receiver,
-                ::core::convert::Into::into(keep_level),
-                ::core::convert::Into::into(keep_achieve),
-                ::core::convert::Into::into(completed),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl<__T: IGameUserRestartData_RestartStream> IGameUserRestartData_RestartStreamMethods for __T {}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_RestartStream {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_RestartStream),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserRestartData_RestartStreamMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __GameUserRestartData_Growth_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2037,6 +1892,162 @@ impl GameUserRestartData_VariableWriter {
             )
         });
         <Self as IGameUserRestartData_VariableWriterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameUserRestartData_GameConfigWriter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: GameUserRestartData_GameConfigWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_GameConfigWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_read {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::class(),
+                "Read",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::NAME,
+                        "Read",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn read(this: GameUserRestartData_GameConfigWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_GameConfigWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::class(),
+                "Write",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GameUserRestartData_GameConfigWriter as ::unity2::ClassIdentity>::NAME,
+                        "Write",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn write(this: GameUserRestartData_GameConfigWriter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GameUserRestartData_GameConfigWriter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+pub trait IGameUserRestartData_GameConfigWriterMethods: IGameUserRestartData_GameConfigWriter {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_GameConfigWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_GameConfigWriter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Read()` overload"]
+    fn read(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_GameConfigWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_GameConfigWriter_unity2_raw::read(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Write()` overload"]
+    fn write(self) -> () {
+        unsafe {
+            let __receiver = <GameUserRestartData_GameConfigWriter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __GameUserRestartData_GameConfigWriter_unity2_raw::write(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl<__T: IGameUserRestartData_GameConfigWriter> IGameUserRestartData_GameConfigWriterMethods for __T {}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl GameUserRestartData_GameConfigWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserRestartData_GameConfigWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserRestartData_GameConfigWriterMethods>::ctor(this);
         this
     }
 }

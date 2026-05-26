@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FunctionCallProc")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct FunctionCallProc {
+        #[offset(112)]
         #[rename(name = "m_Callback")]
         pub m_callback: crate::app::procvoidmethod::ProcVoidMethod,
     }

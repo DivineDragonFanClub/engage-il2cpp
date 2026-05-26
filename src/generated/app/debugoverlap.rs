@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DebugOverlap")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: debugoverlap :: DebugOverlap >)]
     pub struct DebugOverlap {
+        #[offset(32)]
         #[rename(name = "m_Shader")]
         pub m_shader: crate::unity_engine::shader::Shader,
+        #[offset(40)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(48)]
         #[rename(name = "m_ClearFlags")]
         pub m_clear_flags: crate::unity_engine::cameraclearflags::CameraClearFlags,
+        #[offset(52)]
         #[rename(name = "m_BackgroundColor")]
         pub m_background_color: crate::unity_engine::color::Color,
+        #[offset(72)]
         #[rename(name = "m_Renders")]
         pub m_renders: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::renderer::Renderer,

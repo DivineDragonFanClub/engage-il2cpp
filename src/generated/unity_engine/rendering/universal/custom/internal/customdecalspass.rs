@@ -17,24 +17,34 @@ mod __types {
         #[static_field]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[offset(120)]
         #[rename(name = "m_DecalShadowHandle")]
         pub m_decal_shadow_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(168)]
         #[rename(name = "m_DepthHandle")]
         pub m_depth_handle: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(216)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(240)]
         #[rename(name = "m_DecalShaderTagId")]
         pub m_decal_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(244)]
         #[rename(name = "m_ScaleBiasId")]
         pub m_scale_bias_id: i32,
+        #[offset(248)]
         #[rename(name = "m_CopyDepthMaterial")]
         pub m_copy_depth_material: crate::unity_engine::material::Material,
+        #[offset(392)]
         #[rename(name = "m_IsOcclusionCasterEnabled")]
         pub m_is_occlusion_caster_enabled: bool,
+        #[offset(396)]
         #[rename(name = "m_OcclusionStrength")]
         pub m_occlusion_strength: f32,
+        #[offset(400)]
         #[rename(name = "m_OcclusionBlackToAlbedo")]
         pub m_occlusion_black_to_albedo: f32,
     }

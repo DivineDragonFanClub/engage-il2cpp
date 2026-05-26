@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FunctionCommand")]
     #[parent(crate::app::calculatorcommand::CalculatorCommand)]
     pub struct FunctionCommand {
+        #[offset(24)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_Function")]
         pub m_function: crate::app::stringcalculator::StringCalculator,
     }

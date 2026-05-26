@@ -14,39 +14,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayCamera")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayCamera {
-        #[rename(name = "CameraObject")]
-        pub camera_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "MainCamera")]
-        pub main_camera: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "AssetPath")]
-        pub asset_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "DisableLodCrossFadeTag")]
-        pub disable_lod_cross_fade_tag: ::unity2::Il2CppString,
-        #[rename(name = "m_distance")]
-        pub m_distance: crate::system::collections::generic::list_1::List_1<f32>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayCamera.DemoTelop")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayCamera_DemoTelop {
-        #[rename(name = "Root")]
-        pub root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "UIObject")]
-        pub ui_object: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "UIAssetPath")]
-        pub ui_asset_path: ::unity2::Il2CppString,
-        #[rename(name = "m_animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaycamera/HubPlayCamera_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -87,6 +54,45 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera.md"))]
+    #[::unity2::class(namespace = "App", name = "HubPlayCamera")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubPlayCamera {
+        #[offset(120)]
+        #[rename(name = "CameraObject")]
+        pub camera_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
+        #[rename(name = "MainCamera")]
+        pub main_camera: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "AssetPath")]
+        pub asset_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "DisableLodCrossFadeTag")]
+        pub disable_lod_cross_fade_tag: ::unity2::Il2CppString,
+        #[offset(144)]
+        #[rename(name = "m_distance")]
+        pub m_distance: crate::system::collections::generic::list_1::List_1<f32>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))]
+    #[::unity2::class(namespace = "App", name = "HubPlayCamera.DemoTelop")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubPlayCamera_DemoTelop {
+        #[offset(120)]
+        #[rename(name = "Root")]
+        pub root: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
+        #[rename(name = "UIObject")]
+        pub ui_object: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "UIAssetPath")]
+        pub ui_asset_path: ::unity2::Il2CppString,
+        #[offset(144)]
+        #[rename(name = "m_animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
     }
 }
 

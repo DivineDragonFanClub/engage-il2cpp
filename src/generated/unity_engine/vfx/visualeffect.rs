@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.VFX", name = "VisualEffect")]
     #[parent(crate::unity_engine::behaviour::Behaviour)]
     pub struct VisualEffect {
+        #[offset(24)]
         #[rename(name = "m_cachedEventAttribute")]
         pub m_cached_event_attribute: crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute,
+        #[offset(32)]
         #[rename(name = "outputEventReceived")]
         pub output_event_received: crate::system::action_1::Action_1<crate::unity_engine::vfx::vfxoutputeventargs::VFXOutputEventArgs>,
     }

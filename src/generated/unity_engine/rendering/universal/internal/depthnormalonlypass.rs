@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "DepthNormalOnlyPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct DepthNormalOnlyPass {
+        #[offset(312)]
         #[rename(name = "m_ShaderTagId")]
         pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(316)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
         #[static_field]

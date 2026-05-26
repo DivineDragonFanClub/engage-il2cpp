@@ -20,11 +20,14 @@ mod __types {
         #[static_field]
         #[rename(name = "connectionNative")]
         pub connection_native: crate::unity_engine::iplayereditorconnectionnative::IPlayerEditorConnectionNative,
+        #[offset(24)]
         #[rename(name = "m_PlayerEditorConnectionEvents")]
         pub m_player_editor_connection_events:
             crate::unity_engine::networking::player_connection::playereditorconnectionevents::PlayerEditorConnectionEvents,
+        #[offset(32)]
         #[rename(name = "m_connectedPlayers")]
         pub m_connected_players: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(40)]
         #[rename(name = "m_IsInitilized")]
         pub m_is_initilized: bool,
         #[static_field]

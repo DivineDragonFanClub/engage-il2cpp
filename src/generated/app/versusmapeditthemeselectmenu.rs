@@ -18,14 +18,22 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu_SelectedFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusMapEditThemeSelectMenu.SelectedFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct VersusMapEditThemeSelectMenu_SelectedFunction {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu.md"))]
     #[::unity2::class(namespace = "App", name = "VersusMapEditThemeSelectMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct VersusMapEditThemeSelectMenu {
+        #[offset(200)]
         #[rename(name = "m_Content")]
         pub m_content: crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent,
+        #[offset(208)]
         #[rename(name = "m_SelectedCategory")]
         pub m_selected_category: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories,
+        #[offset(216)]
         #[rename(name = "m_SelectList")]
         pub m_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
     }
@@ -34,22 +42,163 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "VersusMapEditThemeSelectMenu.VersusMapEditThemeSelectMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct VersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem {
+        #[offset(104)]
         #[rename(name = "m_Data")]
         pub m_data: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
+        #[offset(112)]
         #[rename(name = "m_IsChecked")]
         pub m_is_checked: bool,
+        #[offset(120)]
         #[rename(name = "m_SelectedFunc")]
         pub m_selected_func: crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu_SelectedFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusMapEditThemeSelectMenu.SelectedFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct VersusMapEditThemeSelectMenu_SelectedFunction {}
 }
 
 #[cfg(feature = "app-versusmapeditthemeselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-versusmapeditthemeselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VersusMapEditThemeSelectMenu_SelectedFunction_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VersusMapEditThemeSelectMenu_SelectedFunction,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VersusMapEditThemeSelectMenu_SelectedFunction,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: VersusMapEditThemeSelectMenu_SelectedFunction,
+        selected_theme: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VersusMapEditThemeSelectMenu_SelectedFunction,
+            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, selected_theme, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-versusmapeditthemeselectmenu")]
+pub trait IVersusMapEditThemeSelectMenu_SelectedFunctionMethods: IVersusMapEditThemeSelectMenu_SelectedFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VersusMapEditThemeSelectMenu_SelectedFunction_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)` overload"]
+    fn invoke(self, selected_theme: impl ::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>) -> () {
+        unsafe {
+            let __receiver = <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VersusMapEditThemeSelectMenu_SelectedFunction_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(selected_theme),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-versusmapeditthemeselectmenu")]
+impl<__T: IVersusMapEditThemeSelectMenu_SelectedFunction> IVersusMapEditThemeSelectMenu_SelectedFunctionMethods for __T {}
+
+#[cfg(feature = "app-versusmapeditthemeselectmenu")]
+impl VersusMapEditThemeSelectMenu_SelectedFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusMapEditThemeSelectMenu_SelectedFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusMapEditThemeSelectMenu_SelectedFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-versusmapeditthemeselectmenu")]
 #[doc(hidden)]
@@ -999,149 +1148,6 @@ impl VersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem {
             )
         });
         <Self as IVersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItemMethods>::ctor(this, data, is_checked, func);
-        this
-    }
-}
-
-#[cfg(feature = "app-versusmapeditthemeselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusMapEditThemeSelectMenu_SelectedFunction_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VersusMapEditThemeSelectMenu_SelectedFunction,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusMapEditThemeSelectMenu_SelectedFunction,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: VersusMapEditThemeSelectMenu_SelectedFunction,
-        selected_theme: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusMapEditThemeSelectMenu_SelectedFunction,
-            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, selected_theme, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versusmapeditthemeselectmenu")]
-pub trait IVersusMapEditThemeSelectMenu_SelectedFunctionMethods: IVersusMapEditThemeSelectMenu_SelectedFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusMapEditThemeSelectMenu_SelectedFunction_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)` overload"]
-    fn invoke(self, selected_theme: impl ::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>) -> () {
-        unsafe {
-            let __receiver = <VersusMapEditThemeSelectMenu_SelectedFunction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VersusMapEditThemeSelectMenu_SelectedFunction_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(selected_theme),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-versusmapeditthemeselectmenu")]
-impl<__T: IVersusMapEditThemeSelectMenu_SelectedFunction> IVersusMapEditThemeSelectMenu_SelectedFunctionMethods for __T {}
-
-#[cfg(feature = "app-versusmapeditthemeselectmenu")]
-impl VersusMapEditThemeSelectMenu_SelectedFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusMapEditThemeSelectMenu_SelectedFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusMapEditThemeSelectMenu_SelectedFunctionMethods>::ctor(this, object, method);
         this
     }
 }

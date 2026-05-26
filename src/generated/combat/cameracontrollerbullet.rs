@@ -24,14 +24,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerBullet")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerBullet {
+        #[offset(184)]
         #[rename(name = "StartVector")]
         pub start_vector: crate::unity_engine::vector3::Vector3,
+        #[offset(196)]
         #[rename(name = "HoldVector")]
         pub hold_vector: crate::unity_engine::vector3::Vector3,
+        #[offset(208)]
         #[rename(name = "BulletVector")]
         pub bullet_vector: crate::unity_engine::vector3::Vector3,
+        #[offset(220)]
         #[rename(name = "SpeedBrake")]
         pub speed_brake: f32,
+        #[offset(224)]
         #[rename(name = "m_LastSpeed")]
         pub m_last_speed: crate::unity_engine::vector3::Vector3,
     }

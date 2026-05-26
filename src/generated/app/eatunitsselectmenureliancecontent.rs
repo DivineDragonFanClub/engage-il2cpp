@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EatUnitsSelectMenuRelianceContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EatUnitsSelectMenuRelianceContent {
+        #[offset(24)]
         #[rename(name = "m_TogetherList")]
         pub m_together_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(32)]
         #[rename(name = "m_RelianceList")]
         pub m_reliance_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

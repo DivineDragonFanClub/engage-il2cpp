@@ -15,6 +15,18 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot_UnitWindowUnitInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot.UnitWindowUnitInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct RefreshUnitSelectRoot_UnitWindowUnitInfo {
+        #[offset(16)]
+        #[rename(name = "m_UnitIcon")]
+        pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[offset(24)]
+        #[rename(name = "m_UnitName")]
+        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot.md"))]
     #[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -22,77 +34,167 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_RefreshUnitSetMenuContent")]
         pub m_refresh_unit_set_menu_content: crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent,
+        #[offset(32)]
         #[rename(name = "m_RefreshUnitSelectMenuContent")]
         pub m_refresh_unit_select_menu_content: crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent,
+        #[offset(40)]
         #[rename(name = "m_RefreshFacilitySelectMenuContent")]
         pub m_refresh_facility_select_menu_content: crate::app::refreshfacilityselectmenucontent::RefreshFacilitySelectMenuContent,
+        #[offset(48)]
         #[rename(name = "m_SettingInfoWindowAnimator")]
         pub m_setting_info_window_animator: crate::unity_engine::animator::Animator,
+        #[offset(56)]
         #[rename(name = "m_FacilityWindowCanvasGroup")]
         pub m_facility_window_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(64)]
         #[rename(name = "m_FacilityWindowCaptionText")]
         pub m_facility_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_FacilityWindowNameText")]
         pub m_facility_window_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_UnitWindowCanvasGroup")]
         pub m_unit_window_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(88)]
         #[rename(name = "m_UnitWindowCaptionText")]
         pub m_unit_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_UnitWindowUnitInfo")]
         pub m_unit_window_unit_info: ::unity2::Array<crate::app::refreshunitselectroot::RefreshUnitSelectRoot_UnitWindowUnitInfo>,
+        #[offset(104)]
         #[rename(name = "m_RelianceWindowCanvasGroup")]
         pub m_reliance_window_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[offset(112)]
         #[rename(name = "m_RelianceWindowCaptionText")]
         pub m_reliance_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "m_RelianceWindowRankCImage")]
         pub m_reliance_window_rank_c_image: crate::unity_engine::ui::image::Image,
+        #[offset(128)]
         #[rename(name = "m_RelianceWindowRankBImage")]
         pub m_reliance_window_rank_b_image: crate::unity_engine::ui::image::Image,
+        #[offset(136)]
         #[rename(name = "m_RelianceWindowRankAImage")]
         pub m_reliance_window_rank_a_image: crate::unity_engine::ui::image::Image,
+        #[offset(144)]
         #[rename(name = "m_RelianceWindowRankSImage")]
         pub m_reliance_window_rank_s_image: crate::unity_engine::ui::image::Image,
+        #[offset(152)]
         #[rename(name = "m_RelianceWindowNoneImage")]
         pub m_reliance_window_none_image: crate::unity_engine::ui::image::Image,
+        #[offset(160)]
         #[rename(name = "m_HelpWindowObject")]
         pub m_help_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_HelpWindowAnimator")]
         pub m_help_window_animator: crate::unity_engine::animator::Animator,
+        #[offset(176)]
         #[rename(name = "m_HelpWindowCaptionText")]
         pub m_help_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(184)]
         #[rename(name = "m_HelpWindowUnitIcon")]
         pub m_help_window_unit_icon: ::unity2::Array<crate::app::uniticon::UnitIcon>,
+        #[offset(192)]
         #[rename(name = "m_HelpWindowRankRootObject")]
         pub m_help_window_rank_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(200)]
         #[rename(name = "m_HelpWindowRankCImage")]
         pub m_help_window_rank_c_image: crate::unity_engine::ui::image::Image,
+        #[offset(208)]
         #[rename(name = "m_HelpWindowRankBImage")]
         pub m_help_window_rank_b_image: crate::unity_engine::ui::image::Image,
+        #[offset(216)]
         #[rename(name = "m_HelpWindowRankAImage")]
         pub m_help_window_rank_a_image: crate::unity_engine::ui::image::Image,
+        #[offset(224)]
         #[rename(name = "m_HelpWindowRankSImage")]
         pub m_help_window_rank_s_image: crate::unity_engine::ui::image::Image,
+        #[offset(232)]
         #[rename(name = "m_HelpWindowRankNoneImage")]
         pub m_help_window_rank_none_image: crate::unity_engine::ui::image::Image,
+        #[offset(240)]
         #[rename(name = "m_HelpWindowMessageText")]
         pub m_help_window_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot_UnitWindowUnitInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot.UnitWindowUnitInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct RefreshUnitSelectRoot_UnitWindowUnitInfo {
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 }
 
 #[cfg(feature = "app-refreshunitselectroot-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refreshunitselectroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefreshUnitSelectRoot_UnitWindowUnitInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RefreshUnitSelectRoot_UnitWindowUnitInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefreshUnitSelectRoot_UnitWindowUnitInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+pub trait IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods: IRefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefreshUnitSelectRoot_UnitWindowUnitInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+impl<__T: IRefreshUnitSelectRoot_UnitWindowUnitInfo> IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods for __T {}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSelectRoot_UnitWindowUnitInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-refreshunitselectroot")]
 #[doc(hidden)]
@@ -981,78 +1083,6 @@ impl RefreshUnitSelectRoot {
             )
         });
         <Self as IRefreshUnitSelectRootMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-refreshunitselectroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSelectRoot_UnitWindowUnitInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: RefreshUnitSelectRoot_UnitWindowUnitInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RefreshUnitSelectRoot_UnitWindowUnitInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refreshunitselectroot")]
-pub trait IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods: IRefreshUnitSelectRoot_UnitWindowUnitInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RefreshUnitSelectRoot_UnitWindowUnitInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RefreshUnitSelectRoot_UnitWindowUnitInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshunitselectroot")]
-impl<__T: IRefreshUnitSelectRoot_UnitWindowUnitInfo> IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods for __T {}
-
-#[cfg(feature = "app-refreshunitselectroot")]
-impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSelectRoot_UnitWindowUnitInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods>::ctor(this);
         this
     }
 }

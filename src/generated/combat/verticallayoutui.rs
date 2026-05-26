@@ -11,34 +11,49 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "VerticalLayoutUI")]
     #[parent(crate::system::object::Object)]
     pub struct VerticalLayoutUI {
+        #[offset(16)]
         #[rename(name = "DefaultHighlightedColor")]
         pub default_highlighted_color: crate::unity_engine::color::Color,
+        #[offset(32)]
         #[rename(name = "DefaultPressedColor")]
         pub default_pressed_color: crate::unity_engine::color::Color,
+        #[offset(48)]
         #[rename(name = "DefaultSelectedColor")]
         pub default_selected_color: crate::unity_engine::color::Color,
+        #[offset(64)]
         #[rename(name = "DefaultTextAnchor")]
         pub default_text_anchor: crate::unity_engine::textanchor::TextAnchor,
+        #[offset(68)]
         #[rename(name = "DefaultWidgetWidth")]
         pub default_widget_width: f32,
+        #[offset(72)]
         #[rename(name = "DefaultWidgetHeight")]
         pub default_widget_height: f32,
+        #[offset(76)]
         #[rename(name = "DefaultItemMargin")]
         pub default_item_margin: f32,
+        #[offset(80)]
         #[rename(name = "DefaultFontSize")]
         pub default_font_size: i32,
+        #[offset(84)]
         #[rename(name = "DefaultFontColor")]
         pub default_font_color: crate::unity_engine::color::Color,
+        #[offset(100)]
         #[rename(name = "UseTextOutline")]
         pub use_text_outline: bool,
+        #[offset(104)]
         #[rename(name = "m_InitialPosition")]
         pub m_initial_position: crate::unity_engine::vector3::Vector3,
+        #[offset(116)]
         #[rename(name = "m_CurrentPosition")]
         pub m_current_position: crate::unity_engine::vector3::Vector3,
+        #[offset(128)]
         #[rename(name = "m_Canvas")]
         pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[offset(136)]
         #[rename(name = "m_bInitialSelected")]
         pub m_b_initial_selected: bool,
+        #[offset(144)]
         #[rename(name = "m_Widgets")]
         pub m_widgets: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

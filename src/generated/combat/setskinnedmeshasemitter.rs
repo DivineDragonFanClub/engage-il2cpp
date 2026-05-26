@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "SetSkinnedMeshAsEmitter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SetSkinnedMeshAsEmitter {
+        #[offset(24)]
         #[rename(name = "NotMatch")]
         pub not_match: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "Match")]
         pub r#match: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "BottomupSearch")]
         pub bottomup_search: bool,
     }

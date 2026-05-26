@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "Compute_DT_EventArgs")]
     #[parent(crate::system::object::Object)]
     pub struct Compute_DT_EventArgs {
+        #[offset(16)]
         #[rename(name = "EventType")]
         pub event_type: crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
+        #[offset(20)]
         #[rename(name = "ProgressPercentage")]
         pub progress_percentage: f32,
+        #[offset(24)]
         #[rename(name = "Colors")]
         pub colors: ::unity2::Array<crate::unity_engine::color::Color>,
     }

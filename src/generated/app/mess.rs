@@ -11,15 +11,15 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Name.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_IconCategory.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Name {
+    pub struct Mess_IconCategory {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Mess_TagID_Name {
-        const NAME: &'static str = "Mess.TagID_Name";
+    impl ::unity2::ClassIdentity for Mess_IconCategory {
+        const NAME: &'static str = "Mess.IconCategory";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -29,109 +29,27 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Mess_TagID_Name {
+    impl ::unity2::IlType for Mess_IconCategory {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl Mess_TagID_Name {
-        pub fn replace() -> Self {
+    impl Mess_IconCategory {
+        pub fn item() -> Self {
             Self { value: 0 }
         }
 
-        pub fn publish() -> Self {
+        pub fn skill() -> Self {
             Self { value: 1 }
         }
 
-        pub fn private() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn user() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn partner() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mascot() -> Self {
-            Self { value: 5 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagGroup.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagGroup {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_TagGroup {
-        const NAME: &'static str = "Mess.TagGroup";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_TagGroup {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl Mess_TagGroup {
         pub fn system() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn arg() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn talk_type() -> Self {
             Self { value: 2 }
         }
 
-        pub fn window() -> Self {
+        pub fn god_symbol_engrave() -> Self {
             Self { value: 3 }
-        }
-
-        pub fn wait() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn expression() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn name() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn fade() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn icon() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn text() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn localize() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn picture() -> Self {
-            Self { value: 11 }
         }
     }
 
@@ -182,6 +100,214 @@ mod __types {
 
         pub fn k_rppn02() -> Self {
             Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_LanguageScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Mess_LanguageScope {
+        pub m_count: i32,
+        pub m_name: ::unity2::Il2CppString,
+        pub m_lang: crate::app::language::Language_Langs,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_LanguageScope {
+        const NAME: &'static str = "Mess.LanguageScope";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_LanguageScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Name.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Mess_TagID_Name {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_TagID_Name {
+        const NAME: &'static str = "Mess.TagID_Name";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_TagID_Name {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl Mess_TagID_Name {
+        pub fn replace() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn publish() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn private() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn user() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn partner() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn mascot() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Text.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Mess_TagID_Text {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_TagID_Text {
+        const NAME: &'static str = "Mess.TagID_Text";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_TagID_Text {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl Mess_TagID_Text {
+        pub fn space() -> Self {
+            Self { value: 0 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_ArgScope.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Mess_ArgScope {
+        pub current: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_ArgScope {
+        const NAME: &'static str = "Mess.ArgScope";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_ArgScope {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Arg.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Mess_TagID_Arg {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Mess_TagID_Arg {
+        const NAME: &'static str = "Mess.TagID_Arg";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mess_TagID_Arg {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl Mess_TagID_Arg {
+        pub fn arg0() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn arg1() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn arg2() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn arg3() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn arg4() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn arg5() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn arg6() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn arg7() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn arg_b() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn arg_bs() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn arg_b_uncap() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn arg_bs_uncap() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn arg_max() -> Self {
+            Self { value: 8 }
         }
     }
 
@@ -329,38 +455,14 @@ mod __types {
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::resourcehandle_2::ResourceHandle_2>,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_LanguageScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mess_LanguageScope {
-        pub m_count: i32,
-        pub m_name: ::unity2::Il2CppString,
-        pub m_lang: crate::app::language::Language_Langs,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_LanguageScope {
-        const NAME: &'static str = "Mess.LanguageScope";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_LanguageScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess_ReloadFileInfo.md"))]
     #[::unity2::class(namespace = "App", name = "Mess.ReloadFileInfo")]
     #[parent(crate::system::object::Object)]
     pub struct Mess_ReloadFileInfo {
+        #[offset(16)]
         #[rename(name = "m_fileName")]
         pub m_file_name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_refCount")]
         pub m_ref_count: i32,
     }
@@ -399,15 +501,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_IconCategory.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagGroup.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_IconCategory {
+    pub struct Mess_TagGroup {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Mess_IconCategory {
-        const NAME: &'static str = "Mess.IconCategory";
+    impl ::unity2::ClassIdentity for Mess_TagGroup {
+        const NAME: &'static str = "Mess.TagGroup";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -417,165 +519,250 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Mess_IconCategory {
+    impl ::unity2::IlType for Mess_TagGroup {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl Mess_IconCategory {
-        pub fn item() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn skill() -> Self {
-            Self { value: 1 }
-        }
-
+    impl Mess_TagGroup {
         pub fn system() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn god_symbol_engrave() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_ArgScope.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mess_ArgScope {
-        pub current: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_ArgScope {
-        const NAME: &'static str = "Mess.ArgScope";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_ArgScope {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Arg.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Arg {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_TagID_Arg {
-        const NAME: &'static str = "Mess.TagID_Arg";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_TagID_Arg {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl Mess_TagID_Arg {
-        pub fn arg0() -> Self {
             Self { value: 0 }
         }
 
-        pub fn arg1() -> Self {
+        pub fn arg() -> Self {
             Self { value: 1 }
         }
 
-        pub fn arg2() -> Self {
+        pub fn talk_type() -> Self {
             Self { value: 2 }
         }
 
-        pub fn arg3() -> Self {
+        pub fn window() -> Self {
             Self { value: 3 }
         }
 
-        pub fn arg4() -> Self {
+        pub fn wait() -> Self {
             Self { value: 4 }
         }
 
-        pub fn arg5() -> Self {
+        pub fn expression() -> Self {
             Self { value: 5 }
         }
 
-        pub fn arg6() -> Self {
+        pub fn name() -> Self {
             Self { value: 6 }
         }
 
-        pub fn arg7() -> Self {
+        pub fn fade() -> Self {
             Self { value: 7 }
         }
 
-        pub fn arg_b() -> Self {
+        pub fn icon() -> Self {
             Self { value: 8 }
         }
 
-        pub fn arg_bs() -> Self {
+        pub fn text() -> Self {
             Self { value: 9 }
         }
 
-        pub fn arg_b_uncap() -> Self {
+        pub fn localize() -> Self {
             Self { value: 10 }
         }
 
-        pub fn arg_bs_uncap() -> Self {
+        pub fn picture() -> Self {
             Self { value: 11 }
-        }
-
-        pub fn arg_max() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Text.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct Mess_TagID_Text {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Mess_TagID_Text {
-        const NAME: &'static str = "Mess.TagID_Text";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mess_TagID_Text {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl Mess_TagID_Text {
-        pub fn space() -> Self {
-            Self { value: 0 }
         }
     }
 }
 
 #[cfg(feature = "app-mess-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mess")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Mess_LanguageScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::language::Language_Langs as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mess_LanguageScope as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Mess_LanguageScope,
+        name: ::unity2::Il2CppString,
+        lang: crate::app::language::Language_Langs,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mess_LanguageScope, ::unity2::Il2CppString, crate::app::language::Language_Langs, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, name, lang, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mess_LanguageScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: Mess_LanguageScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mess_LanguageScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mess")]
+impl Mess_LanguageScope {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::language::Language_Langs)` overload"]
+    pub fn ctor(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        lang: impl ::core::convert::Into<crate::app::language::Language_Langs>,
+    ) -> () {
+        unsafe {
+            __Mess_LanguageScope_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(lang),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __Mess_LanguageScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mess")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Mess_ArgScope_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Mess_ArgScope as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: Mess_ArgScope, dummy: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mess_ArgScope, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, dummy, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mess_ArgScope as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: Mess_ArgScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Mess_ArgScope, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mess")]
+impl Mess_ArgScope {
+    #[doc = "`.ctor(i32)` overload"]
+    pub fn ctor(self, dummy: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __Mess_ArgScope_unity2_raw::ctor(self, ::core::convert::Into::into(dummy), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __Mess_ArgScope_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "app-mess")]
 #[doc(hidden)]
@@ -3723,111 +3910,6 @@ impl Mess {
 #[cfg(feature = "app-mess")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mess_LanguageScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::language::Language_Langs as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_LanguageScope as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Mess_LanguageScope,
-        name: ::unity2::Il2CppString,
-        lang: crate::app::language::Language_Langs,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Mess_LanguageScope, ::unity2::Il2CppString, crate::app::language::Language_Langs, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, name, lang, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_LanguageScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_LanguageScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: Mess_LanguageScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess_LanguageScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mess")]
-impl Mess_LanguageScope {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::language::Language_Langs)` overload"]
-    pub fn ctor(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        lang: impl ::core::convert::Into<crate::app::language::Language_Langs>,
-    ) -> () {
-        unsafe {
-            __Mess_LanguageScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(lang),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __Mess_LanguageScope_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __Mess_ReloadFileInfo_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -3905,86 +3987,6 @@ impl Mess_ReloadFileInfo {
         });
         <Self as IMess_ReloadFileInfoMethods>::ctor(this, file_name, ref_count);
         this
-    }
-}
-
-#[cfg(feature = "app-mess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mess_ArgScope_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(<Mess_ArgScope as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: Mess_ArgScope, dummy: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess_ArgScope, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, dummy, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mess_ArgScope as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <Mess_ArgScope as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn dispose(this: Mess_ArgScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Mess_ArgScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mess")]
-impl Mess_ArgScope {
-    #[doc = "`.ctor(i32)` overload"]
-    pub fn ctor(self, dummy: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __Mess_ArgScope_unity2_raw::ctor(self, ::core::convert::Into::into(dummy), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __Mess_ArgScope_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 }
 

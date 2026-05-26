@@ -17,10 +17,10 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
-    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
-    pub struct RelaySequence_RelaySequenceNet {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelaySequence {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceBase_1.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceBase`1")]
@@ -252,10 +252,16 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
+    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
+    pub struct RelaySequence_RelaySequenceNet {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceLocal.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceLocal")]
     # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceLocal >)]
     pub struct RelaySequence_RelaySequenceLocal {
+        #[offset(192)]
         #[rename(name = "m_RootPath")]
         pub m_root_path: ::unity2::Il2CppString,
     }
@@ -263,15 +269,838 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySequence.IRelaySequenceBase")]
     pub struct RelaySequence_IRelaySequenceBase {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelaySequence {}
 }
 
 #[cfg(feature = "app-relaysequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relaysequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelaySequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SelectMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SelectMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn select_mode(mode: crate::app::relay::Relay_Modes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::relay::Relay_Modes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_mode::get_method_info().method_ptr);
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_take_over_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SelectTakeOverMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SelectTakeOverMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn select_take_over_mode(mode: crate::app::relay::Relay_TakeOverModes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::relay::Relay_TakeOverModes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_take_over_mode::get_method_info().method_ptr);
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_select_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SelectMap",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SelectMap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn select_map(cid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_map::get_method_info().method_ptr);
+        inner(cid, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_no_selectable_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "NoSelectableMap",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "NoSelectableMap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn no_selectable_map(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_no_selectable_map::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_take_over_mode_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToTakeOverModeSelect",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToTakeOverModeSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn jump_to_take_over_mode_select(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_to_take_over_mode_select::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_take_over_predownload_meta_with_data_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToTakeOverPredownloadMetaWithDataCode",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToTakeOverPredownloadMetaWithDataCode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn jump_to_take_over_predownload_meta_with_data_code(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_to_take_over_predownload_meta_with_data_code::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_replay_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToReplayDownload",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToReplayDownload",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn jump_to_replay_download(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_to_replay_download::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_jump_to_award {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "JumpToAward",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToAward",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn jump_to_award(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_jump_to_award::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_public {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "SetPublic",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SetPublic",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_public(is_public: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_public::get_method_info().method_ptr);
+        inner(is_public, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence as ::unity2::ClassIdentity>::class(),
+                "GetSequence",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "GetSequence",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sequence(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase =
+            ::core::mem::transmute(__lookup_get_sequence::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl RelaySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RelaySequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
+    pub fn select_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
+        unsafe { __RelaySequence_unity2_raw::select_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
+    }
+
+    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
+    pub fn select_take_over_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>) -> () {
+        unsafe { __RelaySequence_unity2_raw::select_take_over_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
+    }
+
+    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
+    pub fn select_map(cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __RelaySequence_unity2_raw::select_map(::core::convert::Into::into(cid), ::core::option::Option::None) }
+    }
+
+    #[doc = "`NoSelectableMap()` overload"]
+    pub fn no_selectable_map() -> () {
+        unsafe { __RelaySequence_unity2_raw::no_selectable_map(::core::option::Option::None) }
+    }
+
+    #[doc = "`JumpToTakeOverModeSelect()` overload"]
+    pub fn jump_to_take_over_mode_select() -> () {
+        unsafe { __RelaySequence_unity2_raw::jump_to_take_over_mode_select(::core::option::Option::None) }
+    }
+
+    #[doc = "`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]
+    pub fn jump_to_take_over_predownload_meta_with_data_code() -> () {
+        unsafe { __RelaySequence_unity2_raw::jump_to_take_over_predownload_meta_with_data_code(::core::option::Option::None) }
+    }
+
+    #[doc = "`JumpToReplayDownload()` overload"]
+    pub fn jump_to_replay_download() -> () {
+        unsafe { __RelaySequence_unity2_raw::jump_to_replay_download(::core::option::Option::None) }
+    }
+
+    #[doc = "`JumpToAward()` overload"]
+    pub fn jump_to_award() -> () {
+        unsafe { __RelaySequence_unity2_raw::jump_to_award(::core::option::Option::None) }
+    }
+
+    #[doc = "`SetPublic(bool)` overload"]
+    pub fn set_public(is_public: impl ::core::convert::Into<bool>) -> () {
+        unsafe { __RelaySequence_unity2_raw::set_public(::core::convert::Into::into(is_public), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetSequence()` overload"]
+    pub fn get_sequence() -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
+        unsafe { __RelaySequence_unity2_raw::get_sequence(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`OnShutdown()` overload"]
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[doc = "`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]
+    #[method(name = "JumpTo", args = 1)]
+    pub fn jump_to(self, label: crate::app::relaysequence::RelaySequence_Label) -> ();
+
+    #[doc = "`Backup()` overload"]
+    #[method(name = "Backup", args = 0)]
+    pub fn backup(self) -> ();
+
+    #[doc = "`RestoreFromBackup()` overload"]
+    #[method(name = "RestoreFromBackup", args = 0)]
+    pub fn restore_from_backup(self) -> ();
+
+    #[doc = "`RestoreFromBackupForShutdown()` overload"]
+    #[method(name = "RestoreFromBackupForShutdown", args = 0)]
+    pub fn restore_from_backup_for_shutdown(self) -> ();
+
+    #[doc = "`LoadResources()` overload"]
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[doc = "`IsLoadingResources()` overload"]
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[doc = "`End()` overload"]
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[doc = "`OpenTitleBar()` overload"]
+    #[method(name = "OpenTitleBar", args = 0)]
+    pub fn open_title_bar(self) -> ();
+
+    #[doc = "`CloseTitleBar()` overload"]
+    #[method(name = "CloseTitleBar", args = 0)]
+    pub fn close_title_bar(self) -> ();
+
+    #[doc = "`CreateBg()` overload"]
+    #[method(name = "CreateBg", args = 0)]
+    pub fn create_bg(self) -> ();
+
+    #[doc = "`DestroyBg()` overload"]
+    #[method(name = "DestroyBg", args = 0)]
+    pub fn destroy_bg(self) -> ();
+
+    #[doc = "`UpdateProfileCard()` overload"]
+    #[method(name = "UpdateProfileCard", args = 0)]
+    pub fn update_profile_card(self) -> ();
+
+    #[doc = "`ModeMenu()` overload"]
+    #[method(name = "ModeMenu", args = 0)]
+    pub fn mode_menu(self) -> ();
+
+    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
+    #[method(name = "SelectMode", args = 1)]
+    pub fn select_mode(self, mode: crate::app::relay::Relay_Modes) -> ();
+
+    #[doc = "`DisposPlayerCounts()` overload"]
+    #[method(name = "DisposPlayerCounts", args = 0)]
+    pub fn dispos_player_counts(self) -> ();
+
+    #[doc = "`NewMapSelectMenu()` overload"]
+    #[method(name = "NewMapSelectMenu", args = 0)]
+    pub fn new_map_select_menu(self) -> ();
+
+    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
+    #[method(name = "SelectMap", args = 1)]
+    pub fn select_map(self, cid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`NewSetup()` overload"]
+    #[method(name = "NewSetup", args = 0)]
+    pub fn new_setup(self) -> ();
+
+    #[doc = "`TakeOverModeMenu()` overload"]
+    #[method(name = "TakeOverModeMenu", args = 0)]
+    pub fn take_over_mode_menu(self) -> ();
+
+    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
+    #[method(name = "SelectTakeOverMode", args = 1)]
+    pub fn select_take_over_mode(self, mode: crate::app::relay::Relay_TakeOverModes) -> ();
+
+    #[doc = "`TakeOverSearch()` overload"]
+    #[method(name = "TakeOverSearch", args = 0)]
+    pub fn take_over_search(self) -> ();
+
+    #[doc = "`TakeOverSearchImpl()` overload"]
+    #[method(name = "TakeOverSearchImpl", args = 0)]
+    pub fn take_over_search_impl(self) -> ();
+
+    #[doc = "`TakeOverPostsearch()` overload"]
+    #[method(name = "TakeOverPostsearch", args = 0)]
+    pub fn take_over_postsearch(self) -> ();
+
+    #[doc = "`TakeOverPostsearchImpl()` overload"]
+    #[method(name = "TakeOverPostsearchImpl", args = 0)]
+    pub fn take_over_postsearch_impl(self) -> ();
+
+    #[doc = "`TakeOverPostsearchSucceeded(u64)` overload"]
+    #[method(name = "TakeOverPostsearchSucceeded", args = 1)]
+    pub fn take_over_postsearch_succeeded(self, principal_id: u64) -> ();
+
+    #[doc = "`CanSelectTakeOver(crate::app::relayservermetadata::RelayServerMetaData, u64, *mutcrate::app::relay::Relay_CstoResult)` overload"]
+    #[method(name = "CanSelectTakeOver", args = 3)]
+    pub fn can_select_take_over(
+        self,
+        meta_data_from_server: crate::app::relayservermetadata::RelayServerMetaData,
+        principal_id: u64,
+        result: *mut crate::app::relay::Relay_CstoResult,
+    ) -> bool;
+
+    #[doc = "`CanSelectTakeOver(crate::app::relayservermetadata::RelayServerMetaData, u64, i64, *mutcrate::app::relay::Relay_CstoResult)` overload"]
+    #[method(name = "CanSelectTakeOver", args = 4)]
+    pub fn can_select_take_over_2(
+        self,
+        meta_data_from_server: crate::app::relayservermetadata::RelayServerMetaData,
+        principal_id: u64,
+        current_unix_time: i64,
+        result: *mut crate::app::relay::Relay_CstoResult,
+    ) -> bool;
+
+    #[doc = "`TakeOverPostsearchBranch()` overload"]
+    #[method(name = "TakeOverPostsearchBranch", args = 0)]
+    pub fn take_over_postsearch_branch(self) -> ();
+
+    #[doc = "`TakeOverRandomSelect()` overload"]
+    #[method(name = "TakeOverRandomSelect", args = 0)]
+    pub fn take_over_random_select(self) -> ();
+
+    #[doc = "`InputDataCode()` overload"]
+    #[method(name = "InputDataCode", args = 0)]
+    pub fn input_data_code(self) -> ();
+
+    #[doc = "`ConfirmSearchDataCode()` overload"]
+    #[method(name = "ConfirmSearchDataCode", args = 0)]
+    pub fn confirm_search_data_code(self) -> ();
+
+    #[doc = "`TakeOverDownloadMetaWithDataCode()` overload"]
+    #[method(name = "TakeOverDownloadMetaWithDataCode", args = 0)]
+    pub fn take_over_download_meta_with_data_code(self) -> ();
+
+    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
+    #[method(name = "TakeOverDownloadMetaWithDataCodeImpl", args = 0)]
+    pub fn take_over_download_meta_with_data_code_impl(self) -> ();
+
+    #[doc = "`TakeOverPostdownloadMetaWithDataCode()` overload"]
+    #[method(name = "TakeOverPostdownloadMetaWithDataCode", args = 0)]
+    pub fn take_over_postdownload_meta_with_data_code(self) -> ();
+
+    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
+    #[method(name = "TakeOverPostdownloadMetaWithDataCodeImpl", args = 0)]
+    pub fn take_over_postdownload_meta_with_data_code_impl(self) -> ();
+
+    #[doc = "`TakeOverShow()` overload"]
+    #[method(name = "TakeOverShow", args = 0)]
+    pub fn take_over_show(self) -> ();
+
+    #[doc = "`TakeOverSetPlaying()` overload"]
+    #[method(name = "TakeOverSetPlaying", args = 0)]
+    pub fn take_over_set_playing(self) -> ();
+
+    #[doc = "`TakeOverSetPlayingImpl()` overload"]
+    #[method(name = "TakeOverSetPlayingImpl", args = 0)]
+    pub fn take_over_set_playing_impl(self) -> ();
+
+    #[doc = "`TakeOverPostsetPlaying()` overload"]
+    #[method(name = "TakeOverPostsetPlaying", args = 0)]
+    pub fn take_over_postset_playing(self) -> ();
+
+    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
+    #[method(name = "TakeOverPostsetPlayingImpl", args = 0)]
+    pub fn take_over_postset_playing_impl(self) -> ();
+
+    #[doc = "`ReplaySearch()` overload"]
+    #[method(name = "ReplaySearch", args = 0)]
+    pub fn replay_search(self) -> ();
+
+    #[doc = "`ReplaySearchEnteredImpl()` overload"]
+    #[method(name = "ReplaySearchEnteredImpl", args = 0)]
+    pub fn replay_search_entered_impl(self) -> ();
+
+    #[doc = "`ReplaySearchAnyImpl()` overload"]
+    #[method(name = "ReplaySearchAnyImpl", args = 0)]
+    pub fn replay_search_any_impl(self) -> ();
+
+    #[doc = "`ReplayPostsearch()` overload"]
+    #[method(name = "ReplayPostsearch", args = 0)]
+    pub fn replay_postsearch(self) -> ();
+
+    #[doc = "`ReplayPostsearchImpl()` overload"]
+    #[method(name = "ReplayPostsearchImpl", args = 0)]
+    pub fn replay_postsearch_impl(self) -> ();
+
+    #[doc = "`ReplayPostsearchSucceeded(bool)` overload"]
+    #[method(name = "ReplayPostsearchSucceeded", args = 1)]
+    pub fn replay_postsearch_succeeded(self, is_cache_used: bool) -> ();
+
+    #[doc = "`ReplayDataMenu()` overload"]
+    #[method(name = "ReplayDataMenu", args = 0)]
+    pub fn replay_data_menu(self) -> ();
+
+    #[doc = "`DownloadTakeOver()` overload"]
+    #[method(name = "DownloadTakeOver", args = 0)]
+    pub fn download_take_over(self) -> ();
+
+    #[doc = "`DownloadReplay()` overload"]
+    #[method(name = "DownloadReplay", args = 0)]
+    pub fn download_replay(self) -> ();
+
+    #[doc = "`DownloadImpl(bool)` overload"]
+    #[method(name = "DownloadImpl", args = 1)]
+    pub fn download_impl(self, with_meta_data: bool) -> ();
+
+    #[doc = "`PostdownloadTakeOver()` overload"]
+    #[method(name = "PostdownloadTakeOver", args = 0)]
+    pub fn postdownload_take_over(self) -> ();
+
+    #[doc = "`PostdownloadTakeOverImpl()` overload"]
+    #[method(name = "PostdownloadTakeOverImpl", args = 0)]
+    pub fn postdownload_take_over_impl(self) -> ();
+
+    #[doc = "`PostdownloadTakeOverSucceeded()` overload"]
+    #[method(name = "PostdownloadTakeOverSucceeded", args = 0)]
+    pub fn postdownload_take_over_succeeded(self) -> ();
+
+    #[doc = "`PostdownloadReplay()` overload"]
+    #[method(name = "PostdownloadReplay", args = 0)]
+    pub fn postdownload_replay(self) -> ();
+
+    #[doc = "`PostdownloadReplayImpl()` overload"]
+    #[method(name = "PostdownloadReplayImpl", args = 0)]
+    pub fn postdownload_replay_impl(self) -> ();
+
+    #[doc = "`PostdownloadReplaySucceeded()` overload"]
+    #[method(name = "PostdownloadReplaySucceeded", args = 0)]
+    pub fn postdownload_replay_succeeded(self) -> ();
+
+    #[doc = "`PostdownloadSucceededImpl(crate::app::relaysequence::RelaySequence_Label, bool)` overload"]
+    #[method(name = "PostdownloadSucceededImpl", args = 2)]
+    pub fn postdownload_succeeded_impl(self, label_failed: crate::app::relaysequence::RelaySequence_Label, with_meta_data: bool) -> ();
+
+    #[doc = "`MapSequence()` overload"]
+    #[method(name = "MapSequence", args = 0)]
+    pub fn map_sequence(self) -> ();
+
+    #[doc = "`UploadShow()` overload"]
+    #[method(name = "UploadShow", args = 0)]
+    pub fn upload_show(self) -> ();
+
+    #[doc = "`SetPublic(bool)` overload"]
+    #[method(name = "SetPublic", args = 1)]
+    pub fn set_public(self, is_public: bool) -> ();
+
+    #[doc = "`Upload()` overload"]
+    #[method(name = "Upload", args = 0)]
+    pub fn upload(self) -> ();
+
+    #[doc = "`UploadImpl()` overload"]
+    #[method(name = "UploadImpl", args = 0)]
+    pub fn upload_impl(self) -> ();
+
+    #[doc = "`Postupload()` overload"]
+    #[method(name = "Postupload", args = 0)]
+    pub fn postupload(self) -> ();
+
+    #[doc = "`PostuploadImpl()` overload"]
+    #[method(name = "PostuploadImpl", args = 0)]
+    pub fn postupload_impl(self) -> ();
+
+    #[doc = "`ShowDataCode(::unity2::Il2CppString)` overload"]
+    #[method(name = "ShowDataCode", args = 1)]
+    pub fn show_data_code(self, code: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`UploadProfileCard()` overload"]
+    #[method(name = "UploadProfileCard", args = 0)]
+    pub fn upload_profile_card(self) -> ();
+
+    #[doc = "`UseTicket()` overload"]
+    #[method(name = "UseTicket", args = 0)]
+    pub fn use_ticket(self) -> ();
+
+    #[doc = "`IsAward()` overload"]
+    #[method(name = "IsAward", args = 0)]
+    pub fn is_award(self) -> bool;
+
+    #[doc = "`Preaward()` overload"]
+    #[method(name = "Preaward", args = 0)]
+    pub fn preaward(self) -> ();
+
+    #[doc = "`DownloadProfileCards()` overload"]
+    #[method(name = "DownloadProfileCards", args = 0)]
+    pub fn download_profile_cards(self) -> ();
+
+    #[doc = "`CloseWaitMessageSuccess()` overload"]
+    #[method(name = "CloseWaitMessageSuccess", args = 0)]
+    pub fn close_wait_message_success(self) -> ();
+
+    #[doc = "`CloseWaitMessageFailure()` overload"]
+    #[method(name = "CloseWaitMessageFailure", args = 0)]
+    pub fn close_wait_message_failure(self) -> ();
+
+    #[doc = "`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CloseWaitMessageImpl", args = 2)]
+    pub fn close_wait_message_impl(self, super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
+
+    #[doc = "`NoTicket()` overload"]
+    #[method(name = "NoTicket", args = 0)]
+    pub fn no_ticket(self) -> ();
+
+    #[doc = "`NoSelectableMap()` overload"]
+    #[method(name = "NoSelectableMap", args = 0)]
+    pub fn no_selectable_map(self) -> ();
+
+    #[doc = "`NotFoundMapForTakeOverRandom()` overload"]
+    #[method(name = "NotFoundMapForTakeOverRandom", args = 0)]
+    pub fn not_found_map_for_take_over_random(self) -> ();
+
+    #[doc = "`NotFoundMapForTakeOverDataCode()` overload"]
+    #[method(name = "NotFoundMapForTakeOverDataCode", args = 0)]
+    pub fn not_found_map_for_take_over_data_code(self) -> ();
+
+    #[doc = "`CantTakeOverSelfCreate()` overload"]
+    #[method(name = "CantTakeOverSelfCreate", args = 0)]
+    pub fn cant_take_over_self_create(self) -> ();
+
+    #[doc = "`CantTakeOverEnd()` overload"]
+    #[method(name = "CantTakeOverEnd", args = 0)]
+    pub fn cant_take_over_end(self) -> ();
+
+    #[doc = "`CantTakeOverOtherPlaying()` overload"]
+    #[method(name = "CantTakeOverOtherPlaying", args = 0)]
+    pub fn cant_take_over_other_playing(self) -> ();
+
+    #[doc = "`CantTakeOverAlreadyPlayed()` overload"]
+    #[method(name = "CantTakeOverAlreadyPlayed", args = 0)]
+    pub fn cant_take_over_already_played(self) -> ();
+
+    #[doc = "`CantTakeOverLackOfUnit()` overload"]
+    #[method(name = "CantTakeOverLackOfUnit", args = 0)]
+    pub fn cant_take_over_lack_of_unit(self) -> ();
+
+    #[doc = "`CantTakeOverUnknown()` overload"]
+    #[method(name = "CantTakeOverUnknown", args = 0)]
+    pub fn cant_take_over_unknown(self) -> ();
+
+    #[doc = "`NotFoundMapForReplay()` overload"]
+    #[method(name = "NotFoundMapForReplay", args = 0)]
+    pub fn not_found_map_for_replay(self) -> ();
+
+    #[doc = "`NoEnteredMap()` overload"]
+    #[method(name = "NoEnteredMap", args = 0)]
+    pub fn no_entered_map(self) -> ();
+
+    #[doc = "`CantGetByDeleting()` overload"]
+    #[method(name = "CantGetByDeleting", args = 0)]
+    pub fn cant_get_by_deleting(self) -> ();
+
+    #[doc = "`InvalidDownloadData()` overload"]
+    #[method(name = "InvalidDownloadData", args = 0)]
+    pub fn invalid_download_data(self) -> ();
+
+    #[doc = "`DeletedHalfwayBranchForReplay()` overload"]
+    #[method(name = "DeletedHalfwayBranchForReplay", args = 0)]
+    pub fn deleted_halfway_branch_for_replay(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySequence_RelaySequenceBase_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySequence_RelaySequenceBase_1Methods<T0>>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-relaysequence")]
 #[doc(hidden)]
@@ -1146,409 +1975,6 @@ impl RelaySequence_RelaySequenceNet {
             )
         });
         <Self as IRelaySequence_RelaySequenceNetMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`OnShutdown()` overload"]
-    #[method(name = "OnShutdown", args = 0)]
-    pub fn on_shutdown(self) -> ();
-
-    #[doc = "`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]
-    #[method(name = "JumpTo", args = 1)]
-    pub fn jump_to(self, label: crate::app::relaysequence::RelaySequence_Label) -> ();
-
-    #[doc = "`Backup()` overload"]
-    #[method(name = "Backup", args = 0)]
-    pub fn backup(self) -> ();
-
-    #[doc = "`RestoreFromBackup()` overload"]
-    #[method(name = "RestoreFromBackup", args = 0)]
-    pub fn restore_from_backup(self) -> ();
-
-    #[doc = "`RestoreFromBackupForShutdown()` overload"]
-    #[method(name = "RestoreFromBackupForShutdown", args = 0)]
-    pub fn restore_from_backup_for_shutdown(self) -> ();
-
-    #[doc = "`LoadResources()` overload"]
-    #[method(name = "LoadResources", args = 0)]
-    pub fn load_resources(self) -> ();
-
-    #[doc = "`IsLoadingResources()` overload"]
-    #[method(name = "IsLoadingResources", args = 0)]
-    pub fn is_loading_resources(self) -> bool;
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
-
-    #[doc = "`OpenTitleBar()` overload"]
-    #[method(name = "OpenTitleBar", args = 0)]
-    pub fn open_title_bar(self) -> ();
-
-    #[doc = "`CloseTitleBar()` overload"]
-    #[method(name = "CloseTitleBar", args = 0)]
-    pub fn close_title_bar(self) -> ();
-
-    #[doc = "`CreateBg()` overload"]
-    #[method(name = "CreateBg", args = 0)]
-    pub fn create_bg(self) -> ();
-
-    #[doc = "`DestroyBg()` overload"]
-    #[method(name = "DestroyBg", args = 0)]
-    pub fn destroy_bg(self) -> ();
-
-    #[doc = "`UpdateProfileCard()` overload"]
-    #[method(name = "UpdateProfileCard", args = 0)]
-    pub fn update_profile_card(self) -> ();
-
-    #[doc = "`ModeMenu()` overload"]
-    #[method(name = "ModeMenu", args = 0)]
-    pub fn mode_menu(self) -> ();
-
-    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
-    #[method(name = "SelectMode", args = 1)]
-    pub fn select_mode(self, mode: crate::app::relay::Relay_Modes) -> ();
-
-    #[doc = "`DisposPlayerCounts()` overload"]
-    #[method(name = "DisposPlayerCounts", args = 0)]
-    pub fn dispos_player_counts(self) -> ();
-
-    #[doc = "`NewMapSelectMenu()` overload"]
-    #[method(name = "NewMapSelectMenu", args = 0)]
-    pub fn new_map_select_menu(self) -> ();
-
-    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
-    #[method(name = "SelectMap", args = 1)]
-    pub fn select_map(self, cid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`NewSetup()` overload"]
-    #[method(name = "NewSetup", args = 0)]
-    pub fn new_setup(self) -> ();
-
-    #[doc = "`TakeOverModeMenu()` overload"]
-    #[method(name = "TakeOverModeMenu", args = 0)]
-    pub fn take_over_mode_menu(self) -> ();
-
-    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    #[method(name = "SelectTakeOverMode", args = 1)]
-    pub fn select_take_over_mode(self, mode: crate::app::relay::Relay_TakeOverModes) -> ();
-
-    #[doc = "`TakeOverSearch()` overload"]
-    #[method(name = "TakeOverSearch", args = 0)]
-    pub fn take_over_search(self) -> ();
-
-    #[doc = "`TakeOverSearchImpl()` overload"]
-    #[method(name = "TakeOverSearchImpl", args = 0)]
-    pub fn take_over_search_impl(self) -> ();
-
-    #[doc = "`TakeOverPostsearch()` overload"]
-    #[method(name = "TakeOverPostsearch", args = 0)]
-    pub fn take_over_postsearch(self) -> ();
-
-    #[doc = "`TakeOverPostsearchImpl()` overload"]
-    #[method(name = "TakeOverPostsearchImpl", args = 0)]
-    pub fn take_over_postsearch_impl(self) -> ();
-
-    #[doc = "`TakeOverPostsearchSucceeded(u64)` overload"]
-    #[method(name = "TakeOverPostsearchSucceeded", args = 1)]
-    pub fn take_over_postsearch_succeeded(self, principal_id: u64) -> ();
-
-    #[doc = "`CanSelectTakeOver(crate::app::relayservermetadata::RelayServerMetaData, u64, *mutcrate::app::relay::Relay_CstoResult)` overload"]
-    #[method(name = "CanSelectTakeOver", args = 3)]
-    pub fn can_select_take_over(
-        self,
-        meta_data_from_server: crate::app::relayservermetadata::RelayServerMetaData,
-        principal_id: u64,
-        result: *mut crate::app::relay::Relay_CstoResult,
-    ) -> bool;
-
-    #[doc = "`CanSelectTakeOver(crate::app::relayservermetadata::RelayServerMetaData, u64, i64, *mutcrate::app::relay::Relay_CstoResult)` overload"]
-    #[method(name = "CanSelectTakeOver", args = 4)]
-    pub fn can_select_take_over_2(
-        self,
-        meta_data_from_server: crate::app::relayservermetadata::RelayServerMetaData,
-        principal_id: u64,
-        current_unix_time: i64,
-        result: *mut crate::app::relay::Relay_CstoResult,
-    ) -> bool;
-
-    #[doc = "`TakeOverPostsearchBranch()` overload"]
-    #[method(name = "TakeOverPostsearchBranch", args = 0)]
-    pub fn take_over_postsearch_branch(self) -> ();
-
-    #[doc = "`TakeOverRandomSelect()` overload"]
-    #[method(name = "TakeOverRandomSelect", args = 0)]
-    pub fn take_over_random_select(self) -> ();
-
-    #[doc = "`InputDataCode()` overload"]
-    #[method(name = "InputDataCode", args = 0)]
-    pub fn input_data_code(self) -> ();
-
-    #[doc = "`ConfirmSearchDataCode()` overload"]
-    #[method(name = "ConfirmSearchDataCode", args = 0)]
-    pub fn confirm_search_data_code(self) -> ();
-
-    #[doc = "`TakeOverDownloadMetaWithDataCode()` overload"]
-    #[method(name = "TakeOverDownloadMetaWithDataCode", args = 0)]
-    pub fn take_over_download_meta_with_data_code(self) -> ();
-
-    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
-    #[method(name = "TakeOverDownloadMetaWithDataCodeImpl", args = 0)]
-    pub fn take_over_download_meta_with_data_code_impl(self) -> ();
-
-    #[doc = "`TakeOverPostdownloadMetaWithDataCode()` overload"]
-    #[method(name = "TakeOverPostdownloadMetaWithDataCode", args = 0)]
-    pub fn take_over_postdownload_meta_with_data_code(self) -> ();
-
-    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
-    #[method(name = "TakeOverPostdownloadMetaWithDataCodeImpl", args = 0)]
-    pub fn take_over_postdownload_meta_with_data_code_impl(self) -> ();
-
-    #[doc = "`TakeOverShow()` overload"]
-    #[method(name = "TakeOverShow", args = 0)]
-    pub fn take_over_show(self) -> ();
-
-    #[doc = "`TakeOverSetPlaying()` overload"]
-    #[method(name = "TakeOverSetPlaying", args = 0)]
-    pub fn take_over_set_playing(self) -> ();
-
-    #[doc = "`TakeOverSetPlayingImpl()` overload"]
-    #[method(name = "TakeOverSetPlayingImpl", args = 0)]
-    pub fn take_over_set_playing_impl(self) -> ();
-
-    #[doc = "`TakeOverPostsetPlaying()` overload"]
-    #[method(name = "TakeOverPostsetPlaying", args = 0)]
-    pub fn take_over_postset_playing(self) -> ();
-
-    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
-    #[method(name = "TakeOverPostsetPlayingImpl", args = 0)]
-    pub fn take_over_postset_playing_impl(self) -> ();
-
-    #[doc = "`ReplaySearch()` overload"]
-    #[method(name = "ReplaySearch", args = 0)]
-    pub fn replay_search(self) -> ();
-
-    #[doc = "`ReplaySearchEnteredImpl()` overload"]
-    #[method(name = "ReplaySearchEnteredImpl", args = 0)]
-    pub fn replay_search_entered_impl(self) -> ();
-
-    #[doc = "`ReplaySearchAnyImpl()` overload"]
-    #[method(name = "ReplaySearchAnyImpl", args = 0)]
-    pub fn replay_search_any_impl(self) -> ();
-
-    #[doc = "`ReplayPostsearch()` overload"]
-    #[method(name = "ReplayPostsearch", args = 0)]
-    pub fn replay_postsearch(self) -> ();
-
-    #[doc = "`ReplayPostsearchImpl()` overload"]
-    #[method(name = "ReplayPostsearchImpl", args = 0)]
-    pub fn replay_postsearch_impl(self) -> ();
-
-    #[doc = "`ReplayPostsearchSucceeded(bool)` overload"]
-    #[method(name = "ReplayPostsearchSucceeded", args = 1)]
-    pub fn replay_postsearch_succeeded(self, is_cache_used: bool) -> ();
-
-    #[doc = "`ReplayDataMenu()` overload"]
-    #[method(name = "ReplayDataMenu", args = 0)]
-    pub fn replay_data_menu(self) -> ();
-
-    #[doc = "`DownloadTakeOver()` overload"]
-    #[method(name = "DownloadTakeOver", args = 0)]
-    pub fn download_take_over(self) -> ();
-
-    #[doc = "`DownloadReplay()` overload"]
-    #[method(name = "DownloadReplay", args = 0)]
-    pub fn download_replay(self) -> ();
-
-    #[doc = "`DownloadImpl(bool)` overload"]
-    #[method(name = "DownloadImpl", args = 1)]
-    pub fn download_impl(self, with_meta_data: bool) -> ();
-
-    #[doc = "`PostdownloadTakeOver()` overload"]
-    #[method(name = "PostdownloadTakeOver", args = 0)]
-    pub fn postdownload_take_over(self) -> ();
-
-    #[doc = "`PostdownloadTakeOverImpl()` overload"]
-    #[method(name = "PostdownloadTakeOverImpl", args = 0)]
-    pub fn postdownload_take_over_impl(self) -> ();
-
-    #[doc = "`PostdownloadTakeOverSucceeded()` overload"]
-    #[method(name = "PostdownloadTakeOverSucceeded", args = 0)]
-    pub fn postdownload_take_over_succeeded(self) -> ();
-
-    #[doc = "`PostdownloadReplay()` overload"]
-    #[method(name = "PostdownloadReplay", args = 0)]
-    pub fn postdownload_replay(self) -> ();
-
-    #[doc = "`PostdownloadReplayImpl()` overload"]
-    #[method(name = "PostdownloadReplayImpl", args = 0)]
-    pub fn postdownload_replay_impl(self) -> ();
-
-    #[doc = "`PostdownloadReplaySucceeded()` overload"]
-    #[method(name = "PostdownloadReplaySucceeded", args = 0)]
-    pub fn postdownload_replay_succeeded(self) -> ();
-
-    #[doc = "`PostdownloadSucceededImpl(crate::app::relaysequence::RelaySequence_Label, bool)` overload"]
-    #[method(name = "PostdownloadSucceededImpl", args = 2)]
-    pub fn postdownload_succeeded_impl(self, label_failed: crate::app::relaysequence::RelaySequence_Label, with_meta_data: bool) -> ();
-
-    #[doc = "`MapSequence()` overload"]
-    #[method(name = "MapSequence", args = 0)]
-    pub fn map_sequence(self) -> ();
-
-    #[doc = "`UploadShow()` overload"]
-    #[method(name = "UploadShow", args = 0)]
-    pub fn upload_show(self) -> ();
-
-    #[doc = "`SetPublic(bool)` overload"]
-    #[method(name = "SetPublic", args = 1)]
-    pub fn set_public(self, is_public: bool) -> ();
-
-    #[doc = "`Upload()` overload"]
-    #[method(name = "Upload", args = 0)]
-    pub fn upload(self) -> ();
-
-    #[doc = "`UploadImpl()` overload"]
-    #[method(name = "UploadImpl", args = 0)]
-    pub fn upload_impl(self) -> ();
-
-    #[doc = "`Postupload()` overload"]
-    #[method(name = "Postupload", args = 0)]
-    pub fn postupload(self) -> ();
-
-    #[doc = "`PostuploadImpl()` overload"]
-    #[method(name = "PostuploadImpl", args = 0)]
-    pub fn postupload_impl(self) -> ();
-
-    #[doc = "`ShowDataCode(::unity2::Il2CppString)` overload"]
-    #[method(name = "ShowDataCode", args = 1)]
-    pub fn show_data_code(self, code: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UploadProfileCard()` overload"]
-    #[method(name = "UploadProfileCard", args = 0)]
-    pub fn upload_profile_card(self) -> ();
-
-    #[doc = "`UseTicket()` overload"]
-    #[method(name = "UseTicket", args = 0)]
-    pub fn use_ticket(self) -> ();
-
-    #[doc = "`IsAward()` overload"]
-    #[method(name = "IsAward", args = 0)]
-    pub fn is_award(self) -> bool;
-
-    #[doc = "`Preaward()` overload"]
-    #[method(name = "Preaward", args = 0)]
-    pub fn preaward(self) -> ();
-
-    #[doc = "`DownloadProfileCards()` overload"]
-    #[method(name = "DownloadProfileCards", args = 0)]
-    pub fn download_profile_cards(self) -> ();
-
-    #[doc = "`CloseWaitMessageSuccess()` overload"]
-    #[method(name = "CloseWaitMessageSuccess", args = 0)]
-    pub fn close_wait_message_success(self) -> ();
-
-    #[doc = "`CloseWaitMessageFailure()` overload"]
-    #[method(name = "CloseWaitMessageFailure", args = 0)]
-    pub fn close_wait_message_failure(self) -> ();
-
-    #[doc = "`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]
-    #[method(name = "CloseWaitMessageImpl", args = 2)]
-    pub fn close_wait_message_impl(self, super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
-
-    #[doc = "`NoTicket()` overload"]
-    #[method(name = "NoTicket", args = 0)]
-    pub fn no_ticket(self) -> ();
-
-    #[doc = "`NoSelectableMap()` overload"]
-    #[method(name = "NoSelectableMap", args = 0)]
-    pub fn no_selectable_map(self) -> ();
-
-    #[doc = "`NotFoundMapForTakeOverRandom()` overload"]
-    #[method(name = "NotFoundMapForTakeOverRandom", args = 0)]
-    pub fn not_found_map_for_take_over_random(self) -> ();
-
-    #[doc = "`NotFoundMapForTakeOverDataCode()` overload"]
-    #[method(name = "NotFoundMapForTakeOverDataCode", args = 0)]
-    pub fn not_found_map_for_take_over_data_code(self) -> ();
-
-    #[doc = "`CantTakeOverSelfCreate()` overload"]
-    #[method(name = "CantTakeOverSelfCreate", args = 0)]
-    pub fn cant_take_over_self_create(self) -> ();
-
-    #[doc = "`CantTakeOverEnd()` overload"]
-    #[method(name = "CantTakeOverEnd", args = 0)]
-    pub fn cant_take_over_end(self) -> ();
-
-    #[doc = "`CantTakeOverOtherPlaying()` overload"]
-    #[method(name = "CantTakeOverOtherPlaying", args = 0)]
-    pub fn cant_take_over_other_playing(self) -> ();
-
-    #[doc = "`CantTakeOverAlreadyPlayed()` overload"]
-    #[method(name = "CantTakeOverAlreadyPlayed", args = 0)]
-    pub fn cant_take_over_already_played(self) -> ();
-
-    #[doc = "`CantTakeOverLackOfUnit()` overload"]
-    #[method(name = "CantTakeOverLackOfUnit", args = 0)]
-    pub fn cant_take_over_lack_of_unit(self) -> ();
-
-    #[doc = "`CantTakeOverUnknown()` overload"]
-    #[method(name = "CantTakeOverUnknown", args = 0)]
-    pub fn cant_take_over_unknown(self) -> ();
-
-    #[doc = "`NotFoundMapForReplay()` overload"]
-    #[method(name = "NotFoundMapForReplay", args = 0)]
-    pub fn not_found_map_for_replay(self) -> ();
-
-    #[doc = "`NoEnteredMap()` overload"]
-    #[method(name = "NoEnteredMap", args = 0)]
-    pub fn no_entered_map(self) -> ();
-
-    #[doc = "`CantGetByDeleting()` overload"]
-    #[method(name = "CantGetByDeleting", args = 0)]
-    pub fn cant_get_by_deleting(self) -> ();
-
-    #[doc = "`InvalidDownloadData()` overload"]
-    #[method(name = "InvalidDownloadData", args = 0)]
-    pub fn invalid_download_data(self) -> ();
-
-    #[doc = "`DeletedHalfwayBranchForReplay()` overload"]
-    #[method(name = "DeletedHalfwayBranchForReplay", args = 0)]
-    pub fn deleted_halfway_branch_for_replay(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelaySequence_RelaySequenceBase_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelaySequence_RelaySequenceBase_1Methods<T0>>::ctor(this);
         this
     }
 }
@@ -2746,431 +3172,6 @@ pub trait IRelaySequence_IRelaySequenceBaseMethods: IRelaySequence_IRelaySequenc
 
 #[cfg(feature = "app-relaysequence")]
 impl<__T: IRelaySequence_IRelaySequenceBase> IRelaySequence_IRelaySequenceBaseMethods for __T {}
-
-#[cfg(feature = "app-relaysequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelaySequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "CreateBind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SelectMode",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "SelectMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn select_mode(mode: crate::app::relay::Relay_Modes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::relay::Relay_Modes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_select_mode::get_method_info().method_ptr);
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_take_over_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SelectTakeOverMode",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "SelectTakeOverMode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn select_take_over_mode(mode: crate::app::relay::Relay_TakeOverModes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(crate::app::relay::Relay_TakeOverModes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_select_take_over_mode::get_method_info().method_ptr);
-        inner(mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_select_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SelectMap",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "SelectMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn select_map(cid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_select_map::get_method_info().method_ptr);
-        inner(cid, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_no_selectable_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "NoSelectableMap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "NoSelectableMap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn no_selectable_map(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_no_selectable_map::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_take_over_mode_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToTakeOverModeSelect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpToTakeOverModeSelect",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_take_over_mode_select(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_to_take_over_mode_select::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_take_over_predownload_meta_with_data_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToTakeOverPredownloadMetaWithDataCode",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpToTakeOverPredownloadMetaWithDataCode",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_take_over_predownload_meta_with_data_code(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_to_take_over_predownload_meta_with_data_code::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_replay_download {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToReplayDownload",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpToReplayDownload",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_replay_download(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_jump_to_replay_download::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_jump_to_award {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "JumpToAward",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "JumpToAward",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn jump_to_award(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_jump_to_award::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_public {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "SetPublic",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "SetPublic",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_public(is_public: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_public::get_method_info().method_ptr);
-        inner(is_public, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence as ::unity2::ClassIdentity>::class(),
-                "GetSequence",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                        "GetSequence",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_sequence(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase =
-            ::core::mem::transmute(__lookup_get_sequence::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl RelaySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe { __RelaySequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
-    pub fn select_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
-        unsafe { __RelaySequence_unity2_raw::select_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    pub fn select_take_over_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>) -> () {
-        unsafe { __RelaySequence_unity2_raw::select_take_over_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
-    }
-
-    #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
-    pub fn select_map(cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe { __RelaySequence_unity2_raw::select_map(::core::convert::Into::into(cid), ::core::option::Option::None) }
-    }
-
-    #[doc = "`NoSelectableMap()` overload"]
-    pub fn no_selectable_map() -> () {
-        unsafe { __RelaySequence_unity2_raw::no_selectable_map(::core::option::Option::None) }
-    }
-
-    #[doc = "`JumpToTakeOverModeSelect()` overload"]
-    pub fn jump_to_take_over_mode_select() -> () {
-        unsafe { __RelaySequence_unity2_raw::jump_to_take_over_mode_select(::core::option::Option::None) }
-    }
-
-    #[doc = "`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]
-    pub fn jump_to_take_over_predownload_meta_with_data_code() -> () {
-        unsafe { __RelaySequence_unity2_raw::jump_to_take_over_predownload_meta_with_data_code(::core::option::Option::None) }
-    }
-
-    #[doc = "`JumpToReplayDownload()` overload"]
-    pub fn jump_to_replay_download() -> () {
-        unsafe { __RelaySequence_unity2_raw::jump_to_replay_download(::core::option::Option::None) }
-    }
-
-    #[doc = "`JumpToAward()` overload"]
-    pub fn jump_to_award() -> () {
-        unsafe { __RelaySequence_unity2_raw::jump_to_award(::core::option::Option::None) }
-    }
-
-    #[doc = "`SetPublic(bool)` overload"]
-    pub fn set_public(is_public: impl ::core::convert::Into<bool>) -> () {
-        unsafe { __RelaySequence_unity2_raw::set_public(::core::convert::Into::into(is_public), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetSequence()` overload"]
-    pub fn get_sequence() -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
-        unsafe { __RelaySequence_unity2_raw::get_sequence(::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "app-relaysequence")]
 #[doc(hidden)]

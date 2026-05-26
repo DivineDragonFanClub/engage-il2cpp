@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "IfStatement.IfBlock")]
     #[parent(crate::system::object::Object)]
     pub struct IfStatement_IfBlock {
+        #[offset(16)]
         #[rename(name = "Exp")]
         pub exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(24)]
         #[rename(name = "Block")]
         pub block: crate::moon_sharp::interpreter::tree::statement::Statement,
+        #[offset(32)]
         #[rename(name = "StackFrame")]
         pub stack_frame: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+        #[offset(40)]
         #[rename(name = "Source")]
         pub source: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }
@@ -31,11 +35,14 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "IfStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct IfStatement {
+        #[offset(32)]
         #[rename(name = "m_Ifs")]
         pub m_ifs:
             crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock>,
+        #[offset(40)]
         #[rename(name = "m_Else")]
         pub m_else: crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock,
+        #[offset(48)]
         #[rename(name = "m_End")]
         pub m_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
     }

@@ -20,22 +20,31 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterLyingHuman")]
     #[parent(crate::combat::characterlying::CharacterLying)]
     pub struct CharacterLyingHuman {
+        #[offset(36)]
         #[rename(name = "m_StartPos")]
         pub m_start_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(48)]
         #[rename(name = "m_EndPos")]
         pub m_end_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(60)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(64)]
         #[rename(name = "m_EndTime")]
         pub m_end_time: f32,
+        #[offset(68)]
         #[rename(name = "m_BodyRotation")]
         pub m_body_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(84)]
         #[rename(name = "m_LastNrm")]
         pub m_last_nrm: crate::unity_engine::vector3::Vector3,
+        #[offset(96)]
         #[rename(name = "m_LastY")]
         pub m_last_y: f32,
+        #[offset(100)]
         #[rename(name = "m_Skipped")]
         pub m_skipped: bool,
+        #[offset(104)]
         #[rename(name = "m_SkipFrames")]
         pub m_skip_frames: i32,
     }

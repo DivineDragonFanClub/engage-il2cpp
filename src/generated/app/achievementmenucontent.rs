@@ -23,14 +23,19 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_activeIconColor")]
         pub m_active_icon_color: crate::unity_engine::color::Color,
+        #[offset(248)]
         #[rename(name = "m_inactiveIconColor")]
         pub m_inactive_icon_color: crate::unity_engine::color::Color,
+        #[offset(264)]
         #[rename(name = "m_categoryValue")]
         pub m_category_value: crate::system::collections::generic::list_1::List_1<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[offset(272)]
         #[rename(name = "m_totalValue")]
         pub m_total_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_categoryIcon")]
         pub m_category_icon: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

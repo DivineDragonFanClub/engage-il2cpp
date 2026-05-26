@@ -16,10 +16,13 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "Directory.SearchData")]
     #[parent(crate::system::object::Object)]
     pub struct Directory_SearchData {
+        #[offset(16)]
         #[rename(name = "fullPath")]
         pub full_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "userPath")]
         pub user_path: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "searchOption")]
         pub search_option: crate::system::io::searchoption::SearchOption,
     }

@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EventCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EventCamera {
+        #[offset(24)]
         #[rename(name = "m_ViewMode")]
         pub m_view_mode: crate::app::viewmode::ViewMode_Mode,
+        #[offset(32)]
         #[rename(name = "m_MainCamera")]
         pub m_main_camera: crate::unity_engine::camera::Camera,
+        #[offset(40)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(48)]
         #[rename(name = "m_Animation")]
         pub m_animation: crate::root::simpleanimation::SimpleAnimation,
     }

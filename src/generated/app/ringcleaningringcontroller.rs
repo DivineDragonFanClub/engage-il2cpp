@@ -11,24 +11,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCleaningRingController")]
     #[parent(crate::system::object::Object)]
     pub struct RingCleaningRingController {
+        #[offset(16)]
         #[rename(name = "m_GodUnit")]
         pub m_god_unit: crate::app::godunit::GodUnit,
+        #[offset(24)]
         #[rename(name = "m_Ring")]
         pub m_ring: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_RingMaterials")]
         pub m_ring_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[offset(40)]
         #[rename(name = "m_RingCollider")]
         pub m_ring_collider: crate::app::ringcollider::RingCollider,
+        #[offset(48)]
         #[rename(name = "InitHeight")]
         pub init_height: f32,
+        #[offset(52)]
         #[rename(name = "InitRotate")]
         pub init_rotate: crate::unity_engine::vector3::Vector3,
+        #[offset(64)]
         #[rename(name = "RotateSpeed")]
         pub rotate_speed: f32,
+        #[offset(72)]
         #[rename(name = "m_InitRotation")]
         pub m_init_rotation: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[offset(80)]
         #[rename(name = "m_InterDirty")]
         pub m_inter_dirty: crate::app::interpolatorint::InterpolatorInt,
+        #[offset(88)]
         #[rename(name = "m_InfoRoot")]
         pub m_info_root: crate::app::ringcleaningroot::RingCleaningRoot,
     }

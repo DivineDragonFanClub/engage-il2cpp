@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteGlyph")]
     #[parent(crate::unity_engine::text_core::glyph::Glyph)]
     pub struct TMP_SpriteGlyph {
+        #[offset(64)]
         #[rename(name = "sprite")]
         pub sprite: crate::unity_engine::sprite::Sprite,
     }

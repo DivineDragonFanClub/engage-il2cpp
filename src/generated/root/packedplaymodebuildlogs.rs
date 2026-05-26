@@ -39,6 +39,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "PackedPlayModeBuildLogs")]
     #[parent(crate::system::object::Object)]
     pub struct PackedPlayModeBuildLogs {
+        #[offset(16)]
         #[rename(name = "m_RuntimeBuildLogs")]
         pub m_runtime_build_logs:
             crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog>,

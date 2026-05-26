@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapGridRender")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapgridrender :: MapGridRender >)]
     pub struct MapGridRender {
+        #[offset(32)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::app::map::Map_CellMesh,
+        #[offset(40)]
         #[rename(name = "m_SizeX")]
         pub m_size_x: i32,
+        #[offset(44)]
         #[rename(name = "m_SizeZ")]
         pub m_size_z: i32,
+        #[offset(48)]
         #[rename(name = "UV0")]
         pub uv0: crate::unity_engine::vector2::Vector2,
+        #[offset(56)]
         #[rename(name = "UV2")]
         pub uv2: crate::unity_engine::vector2::Vector2,
     }

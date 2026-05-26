@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutEntry")]
     #[parent(crate::system::object::Object)]
     pub struct GUILayoutEntry {
+        #[offset(16)]
         #[rename(name = "minWidth")]
         pub min_width: f32,
+        #[offset(20)]
         #[rename(name = "maxWidth")]
         pub max_width: f32,
+        #[offset(24)]
         #[rename(name = "minHeight")]
         pub min_height: f32,
+        #[offset(28)]
         #[rename(name = "maxHeight")]
         pub max_height: f32,
+        #[offset(32)]
         #[rename(name = "rect")]
         pub rect: crate::unity_engine::rect::Rect,
+        #[offset(48)]
         #[rename(name = "stretchWidth")]
         pub stretch_width: i32,
+        #[offset(52)]
         #[rename(name = "stretchHeight")]
         pub stretch_height: i32,
+        #[offset(56)]
         #[rename(name = "consideredForMargin")]
         pub considered_for_margin: bool,
+        #[offset(64)]
         #[rename(name = "m_Style")]
         pub m_style: crate::unity_engine::guistyle::GUIStyle,
         #[static_field]

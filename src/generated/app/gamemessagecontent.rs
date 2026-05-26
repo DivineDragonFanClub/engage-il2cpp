@@ -22,18 +22,25 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_objText")]
         pub m_obj_text: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_objKeyWaitIcon")]
         pub m_obj_key_wait_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_objLoadingIcon")]
         pub m_obj_loading_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(56)]
         #[rename(name = "m_proc")]
         pub m_proc: crate::app::gamemessage::GameMessage,
+        #[offset(64)]
         #[rename(name = "m_posX")]
         pub m_pos_x: f32,
+        #[offset(68)]
         #[rename(name = "m_posY")]
         pub m_pos_y: f32,
     }

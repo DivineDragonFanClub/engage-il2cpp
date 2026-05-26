@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopSellMenuContent.KindIcon")]
     #[parent(crate::system::object::Object)]
     pub struct ShopSellMenuContent_KindIcon {
+        #[offset(16)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(24)]
         #[rename(name = "m_Kind")]
         pub m_kind: crate::app::itemdata::ItemData_Kinds,
     }
@@ -30,14 +32,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopSellMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct ShopSellMenuContent {
+        #[offset(232)]
         #[rename(name = "m_KindIcon")]
         pub m_kind_icon: ::unity2::Array<crate::app::shopsellmenucontent::ShopSellMenuContent_KindIcon>,
+        #[offset(240)]
         #[rename(name = "m_ColumnTitleItemText")]
         pub m_column_title_item_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_ColumnTitleUsableCountText")]
         pub m_column_title_usable_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(256)]
         #[rename(name = "m_ColumnTitlePriceText")]
         pub m_column_title_price_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_ContentObject")]
         pub m_content_object: crate::unity_engine::gameobject::GameObject,
     }

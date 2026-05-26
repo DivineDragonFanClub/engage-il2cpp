@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "", name = "MapNavigationMiniMapBasicMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MapNavigationMiniMapBasicMenuItem {
+        #[offset(104)]
         #[rename(name = "m_MiniMapText")]
         pub m_mini_map_text: ::unity2::Il2CppString,
     }

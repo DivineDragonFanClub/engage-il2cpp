@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App.Water", name = "PlanarReflectionV2")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct PlanarReflectionV2 {
+        #[offset(24)]
         #[rename(name = "m_ReflectionManager")]
         pub m_reflection_manager: crate::app::water::reflectionmanager::ReflectionManager,
+        #[offset(32)]
         #[rename(name = "m_SharedMaterial")]
         pub m_shared_material: crate::unity_engine::material::Material,
+        #[offset(40)]
         #[rename(name = "reflectionCameraNumber")]
         pub reflection_camera_number: i16,
         #[static_field]

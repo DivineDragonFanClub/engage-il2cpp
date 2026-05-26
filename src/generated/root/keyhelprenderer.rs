@@ -21,8 +21,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "KeyHelpRenderer")]
     #[parent(crate::unity_engine::ui::graphic::Graphic)]
     pub struct KeyHelpRenderer {
+        #[offset(156)]
         #[rename(name = "fadeOffset")]
         pub fade_offset: f32,
+        #[offset(160)]
         #[rename(name = "m_Horizontal")]
         pub m_horizontal: crate::unity_engine::ui::horizontallayoutgroup::HorizontalLayoutGroup,
     }

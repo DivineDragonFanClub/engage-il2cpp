@@ -20,24 +20,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AchievementMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct AchievementMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_countRoot")]
         pub m_count_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_countValue")]
         pub m_count_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_clearRoot")]
         pub m_clear_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_bonusRoot")]
         pub m_bonus_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_bonusValue")]
         pub m_bonus_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_completeRoot")]
         pub m_complete_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_countText")]
         pub m_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_clearText")]
         pub m_clear_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(136)]
         #[rename(name = "m_bonusText")]
         pub m_bonus_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(144)]
         #[rename(name = "m_completeText")]
         pub m_complete_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

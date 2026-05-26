@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Events", name = "InvokableCall")]
     #[parent(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)]
     pub struct InvokableCall {
+        #[offset(16)]
         #[rename(name = "Delegate")]
         pub delegate: crate::unity_engine::events::unityaction::UnityAction,
     }

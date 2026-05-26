@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "BaseRaycaster")]
     #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
     pub struct BaseRaycaster {
+        #[offset(24)]
         #[rename(name = "m_RootRaycaster")]
         pub m_root_raycaster: crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,
     }

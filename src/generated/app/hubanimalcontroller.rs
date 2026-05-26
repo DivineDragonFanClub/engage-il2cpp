@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubAnimalController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubAnimalController {
+        #[offset(24)]
         #[rename(name = "m_hubUnit")]
         pub m_hub_unit: crate::app::hubunitcontroller::HubUnitController,
+        #[offset(32)]
         #[rename(name = "m_delay")]
         pub m_delay: f32,
+        #[offset(36)]
         #[rename(name = "m_isSleep")]
         pub m_is_sleep: bool,
+        #[offset(37)]
         #[rename(name = "m_trigger")]
         pub m_trigger: bool,
+        #[offset(40)]
         #[rename(name = "m_rangeAction")]
         pub m_range_action: crate::app::hubrangeaction::HubRangeAction,
     }

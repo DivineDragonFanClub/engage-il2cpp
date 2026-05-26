@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "DeferredPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct DeferredPass {
+        #[offset(112)]
         #[rename(name = "m_DeferredLights")]
         pub m_deferred_lights: crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,
     }

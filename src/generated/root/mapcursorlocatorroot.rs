@@ -19,6 +19,69 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot.md"))]
+    #[::unity2::class(namespace = "", name = "MapCursorLocatorRoot")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapCursorLocatorRoot {
+        #[offset(24)]
+        #[rename(name = "m_MapCursor1")]
+        pub m_map_cursor1: crate::unity_engine::transform::Transform,
+        #[offset(32)]
+        #[rename(name = "m_MapCursor2")]
+        pub m_map_cursor2: crate::unity_engine::transform::Transform,
+        #[offset(40)]
+        #[rename(name = "m_MapCursor3")]
+        pub m_map_cursor3: crate::unity_engine::transform::Transform,
+        #[offset(48)]
+        #[rename(name = "m_MapCursor4")]
+        pub m_map_cursor4: crate::unity_engine::transform::Transform,
+        #[offset(56)]
+        #[rename(name = "m_LockRoot1")]
+        pub m_lock_root1: crate::unity_engine::transform::Transform,
+        #[offset(64)]
+        #[rename(name = "m_LockRoot2")]
+        pub m_lock_root2: crate::unity_engine::transform::Transform,
+        #[offset(72)]
+        #[rename(name = "m_LockRoot3")]
+        pub m_lock_root3: crate::unity_engine::transform::Transform,
+        #[offset(80)]
+        #[rename(name = "m_LockRoot4")]
+        pub m_lock_root4: crate::unity_engine::transform::Transform,
+        #[offset(88)]
+        #[rename(name = "m_LockCursor1")]
+        pub m_lock_cursor1: crate::unity_engine::transform::Transform,
+        #[offset(96)]
+        #[rename(name = "m_LockCursor2")]
+        pub m_lock_cursor2: crate::unity_engine::transform::Transform,
+        #[offset(104)]
+        #[rename(name = "m_LockCursor3")]
+        pub m_lock_cursor3: crate::unity_engine::transform::Transform,
+        #[offset(112)]
+        #[rename(name = "m_LockCursor4")]
+        pub m_lock_cursor4: crate::unity_engine::transform::Transform,
+        #[offset(120)]
+        #[rename(name = "m_MapCursors")]
+        pub m_map_cursors: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(128)]
+        #[rename(name = "m_Colors")]
+        pub m_colors: ::unity2::Array<crate::root::mapcursorcolor::MapCursorColor>,
+        #[offset(136)]
+        #[rename(name = "m_OrigPos")]
+        pub m_orig_pos: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(144)]
+        #[rename(name = "m_SizeX")]
+        pub m_size_x: i32,
+        #[offset(148)]
+        #[rename(name = "m_SizeZ")]
+        pub m_size_z: i32,
+        #[offset(152)]
+        #[rename(name = "m_CursorCount")]
+        pub m_cursor_count: i32,
+        #[static_field]
+        #[rename(name = "MOVE_CURSOR_FRAME")]
+        pub move_cursor_frame: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot_PartType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -79,51 +142,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 8 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot.md"))]
-    #[::unity2::class(namespace = "", name = "MapCursorLocatorRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapCursorLocatorRoot {
-        #[rename(name = "m_MapCursor1")]
-        pub m_map_cursor1: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_MapCursor2")]
-        pub m_map_cursor2: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_MapCursor3")]
-        pub m_map_cursor3: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_MapCursor4")]
-        pub m_map_cursor4: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockRoot1")]
-        pub m_lock_root1: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockRoot2")]
-        pub m_lock_root2: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockRoot3")]
-        pub m_lock_root3: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockRoot4")]
-        pub m_lock_root4: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockCursor1")]
-        pub m_lock_cursor1: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockCursor2")]
-        pub m_lock_cursor2: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockCursor3")]
-        pub m_lock_cursor3: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LockCursor4")]
-        pub m_lock_cursor4: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_MapCursors")]
-        pub m_map_cursors: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_Colors")]
-        pub m_colors: ::unity2::Array<crate::root::mapcursorcolor::MapCursorColor>,
-        #[rename(name = "m_OrigPos")]
-        pub m_orig_pos: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_SizeX")]
-        pub m_size_x: i32,
-        #[rename(name = "m_SizeZ")]
-        pub m_size_z: i32,
-        #[rename(name = "m_CursorCount")]
-        pub m_cursor_count: i32,
-        #[static_field]
-        #[rename(name = "MOVE_CURSOR_FRAME")]
-        pub move_cursor_frame: i32,
     }
 }
 

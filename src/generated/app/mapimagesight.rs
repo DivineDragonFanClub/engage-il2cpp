@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapImageSight")]
     #[parent(crate::app::mapimagesightcore::MapImageSightCore)]
     pub struct MapImageSight {
+        #[offset(24)]
         #[rename(name = "m_ForceType")]
         pub m_force_type: crate::app::force::Force_Type,
     }

@@ -19,6 +19,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideScore")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DragonRideScore {
+        #[offset(24)]
         #[rename(name = "scoreText")]
         pub score_text: crate::unity_engine::ui::text::Text,
     }

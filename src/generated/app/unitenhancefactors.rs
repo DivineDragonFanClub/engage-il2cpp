@@ -14,10 +14,13 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_HubValues")]
         pub m_hub_values: crate::app::unitenhancevalues::UnitEnhanceValues,
+        #[offset(24)]
         #[rename(name = "m_FoodValues")]
         pub m_food_values: crate::app::unitenhancevalues::UnitEnhanceValues,
+        #[offset(32)]
         #[rename(name = "m_ItemValues")]
         pub m_item_values: crate::app::unitenhancevalues::UnitEnhanceValues,
     }

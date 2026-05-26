@@ -55,6 +55,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequenceSkipReplay")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceskipreplay :: MapSequenceSkipReplay >)]
     pub struct MapSequenceSkipReplay {
+        #[offset(120)]
         #[rename(name = "m_SetupFieldFunc")]
         pub m_setup_field_func: crate::system::action::Action,
     }

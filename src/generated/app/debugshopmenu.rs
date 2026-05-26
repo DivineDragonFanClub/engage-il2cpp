@@ -22,6 +22,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DebugShopMenu.ShopCallItem")]
     #[parent(crate::app::stringitem::StringItem)]
     pub struct DebugShopMenu_ShopCallItem {
+        #[offset(48)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
     }

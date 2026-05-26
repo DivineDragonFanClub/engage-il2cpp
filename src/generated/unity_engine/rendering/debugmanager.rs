@@ -44,32 +44,45 @@ mod __types {
         #[static_field]
         #[rename(name = "kEnableDebug")]
         pub k_enable_debug: ::unity2::Il2CppString,
+        #[offset(16)]
         #[rename(name = "m_DebugActions")]
         pub m_debug_actions: ::unity2::Array<crate::unity_engine::rendering::debugactiondesc::DebugActionDesc>,
+        #[offset(24)]
         #[rename(name = "m_DebugActionStates")]
         pub m_debug_action_states: ::unity2::Array<crate::unity_engine::rendering::debugactionstate::DebugActionState>,
+        #[offset(32)]
         #[rename(name = "m_ReadOnlyPanels")]
         pub m_read_only_panels: crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
             crate::unity_engine::rendering::debugui::DebugUI_Panel,
         >,
+        #[offset(40)]
         #[rename(name = "m_Panels")]
         pub m_panels: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::debugui::DebugUI_Panel>,
+        #[offset(48)]
         #[rename(name = "onDisplayRuntimeUIChanged")]
         pub on_display_runtime_ui_changed: crate::system::action_1::Action_1<bool>,
+        #[offset(56)]
         #[rename(name = "onSetDirty")]
         pub on_set_dirty: crate::system::action::Action,
+        #[offset(64)]
         #[rename(name = "resetData")]
         pub reset_data: crate::system::action::Action,
+        #[offset(72)]
         #[rename(name = "refreshEditorRequested")]
         pub refresh_editor_requested: bool,
+        #[offset(80)]
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_RootUICanvas")]
         pub m_root_ui_canvas: crate::unity_engine::rendering::ui::debuguihandlercanvas::DebugUIHandlerCanvas,
+        #[offset(96)]
         #[rename(name = "m_PersistentRoot")]
         pub m_persistent_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_RootUIPersistentCanvas")]
         pub m_root_ui_persistent_canvas: crate::unity_engine::rendering::ui::debuguihandlerpersistentcanvas::DebugUIHandlerPersistentCanvas,
+        #[offset(112)]
         #[rename(name = "m_EditorOpen")]
         pub m_editor_open: bool,
     }

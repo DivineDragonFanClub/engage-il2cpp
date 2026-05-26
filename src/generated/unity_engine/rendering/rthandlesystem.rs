@@ -11,30 +11,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandleSystem")]
-    #[parent(crate::system::object::Object)]
-    pub struct RTHandleSystem {
-        #[rename(name = "m_HardwareDynamicResRequested")]
-        pub m_hardware_dynamic_res_requested: bool,
-        #[rename(name = "m_ScaledRTSupportsMSAA")]
-        pub m_scaled_rt_supports_msaa: bool,
-        #[rename(name = "m_ScaledRTCurrentMSAASamples")]
-        pub m_scaled_rt_current_msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
-        #[rename(name = "m_AutoSizedRTs")]
-        pub m_auto_sized_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle>,
-        #[rename(name = "m_AutoSizedRTsArray")]
-        pub m_auto_sized_r_ts_array: ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle>,
-        #[rename(name = "m_ResizeOnDemandRTs")]
-        pub m_resize_on_demand_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle>,
-        #[rename(name = "m_RTHandleProperties")]
-        pub m_rt_handle_properties: crate::unity_engine::rendering::rthandleproperties::RTHandleProperties,
-        #[rename(name = "m_MaxWidths")]
-        pub m_max_widths: i32,
-        #[rename(name = "m_MaxHeights")]
-        pub m_max_heights: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem_ResizeMode.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -67,6 +43,39 @@ mod __types {
         pub fn on_demand() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandleSystem")]
+    #[parent(crate::system::object::Object)]
+    pub struct RTHandleSystem {
+        #[offset(16)]
+        #[rename(name = "m_HardwareDynamicResRequested")]
+        pub m_hardware_dynamic_res_requested: bool,
+        #[offset(17)]
+        #[rename(name = "m_ScaledRTSupportsMSAA")]
+        pub m_scaled_rt_supports_msaa: bool,
+        #[offset(20)]
+        #[rename(name = "m_ScaledRTCurrentMSAASamples")]
+        pub m_scaled_rt_current_msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+        #[offset(24)]
+        #[rename(name = "m_AutoSizedRTs")]
+        pub m_auto_sized_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle>,
+        #[offset(32)]
+        #[rename(name = "m_AutoSizedRTsArray")]
+        pub m_auto_sized_r_ts_array: ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle>,
+        #[offset(40)]
+        #[rename(name = "m_ResizeOnDemandRTs")]
+        pub m_resize_on_demand_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle>,
+        #[offset(48)]
+        #[rename(name = "m_RTHandleProperties")]
+        pub m_rt_handle_properties: crate::unity_engine::rendering::rthandleproperties::RTHandleProperties,
+        #[offset(96)]
+        #[rename(name = "m_MaxWidths")]
+        pub m_max_widths: i32,
+        #[offset(100)]
+        #[rename(name = "m_MaxHeights")]
+        pub m_max_heights: i32,
     }
 }
 

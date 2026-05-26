@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkCommonAdvancedSettings.SpatialAudioSettings")]
     #[parent(crate::system::object::Object)]
     pub struct AkCommonAdvancedSettings_SpatialAudioSettings {
+        #[offset(16)]
         #[rename(name = "m_DiffractionShadowAttenuationFactor")]
         pub m_diffraction_shadow_attenuation_factor: f32,
+        #[offset(20)]
         #[rename(name = "m_DiffractionShadowDegrees")]
         pub m_diffraction_shadow_degrees: f32,
     }
@@ -21,32 +23,46 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkCommonAdvancedSettings")]
     #[parent(crate::system::object::Object)]
     pub struct AkCommonAdvancedSettings {
+        #[offset(16)]
         #[rename(name = "m_IOMemorySize")]
         pub m_io_memory_size: u32,
+        #[offset(20)]
         #[rename(name = "m_TargetAutoStreamBufferLengthMs")]
         pub m_target_auto_stream_buffer_length_ms: f32,
+        #[offset(24)]
         #[rename(name = "m_UseStreamCache")]
         pub m_use_stream_cache: bool,
+        #[offset(28)]
         #[rename(name = "m_MaximumPinnedBytesInCache")]
         pub m_maximum_pinned_bytes_in_cache: u32,
+        #[offset(32)]
         #[rename(name = "m_EnableGameSyncPreparation")]
         pub m_enable_game_sync_preparation: bool,
+        #[offset(36)]
         #[rename(name = "m_ContinuousPlaybackLookAhead")]
         pub m_continuous_playback_look_ahead: u32,
+        #[offset(40)]
         #[rename(name = "m_MonitorQueuePoolSize")]
         pub m_monitor_queue_pool_size: u32,
+        #[offset(44)]
         #[rename(name = "m_MaximumHardwareTimeoutMs")]
         pub m_maximum_hardware_timeout_ms: u32,
+        #[offset(48)]
         #[rename(name = "m_DebugOutOfRangeCheckEnabled")]
         pub m_debug_out_of_range_check_enabled: bool,
+        #[offset(52)]
         #[rename(name = "m_DebugOutOfRangeLimit")]
         pub m_debug_out_of_range_limit: f32,
+        #[offset(56)]
         #[rename(name = "m_SpatialAudioSettings")]
         pub m_spatial_audio_settings: crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings_SpatialAudioSettings,
+        #[offset(64)]
         #[rename(name = "m_RenderDuringFocusLoss")]
         pub m_render_during_focus_loss: bool,
+        #[offset(72)]
         #[rename(name = "m_SoundBankPersistentDataPath")]
         pub m_sound_bank_persistent_data_path: ::unity2::Il2CppString,
+        #[offset(80)]
         #[rename(name = "m_UseAsyncOpen")]
         pub m_use_async_open: bool,
     }

@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapRestartMenu.ConfirmRestartItemYes")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct MapRestartMenu_ConfirmRestartItemYes {
+        #[offset(112)]
         #[rename(name = "m_KeepLevel")]
         pub m_keep_level: bool,
     }

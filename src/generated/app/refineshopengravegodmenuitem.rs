@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RefineShopEngraveGodMenuItem {
+        #[offset(128)]
         #[rename(name = "m_EngravedUnitItem")]
         pub m_engraved_unit_item: crate::app::unititem::UnitItem,
+        #[offset(136)]
         #[rename(name = "m_SelectEventHandler")]
         pub m_select_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_SelectEventHandler,
+        #[offset(144)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::refineshopengravegodmenu::RefineShopEngraveGodMenu_DecideEventHandler,
     }

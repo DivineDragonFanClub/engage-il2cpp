@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "CopyColorPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CopyColorPass {
+        #[offset(112)]
         #[rename(name = "m_SampleOffsetShaderHandle")]
         pub m_sample_offset_shader_handle: i32,
+        #[offset(120)]
         #[rename(name = "m_SamplingMaterial")]
         pub m_sampling_material: crate::unity_engine::material::Material,
+        #[offset(128)]
         #[rename(name = "m_DownsamplingMethod")]
         pub m_downsampling_method: crate::unity_engine::rendering::universal::downsampling::Downsampling,
+        #[offset(136)]
         #[rename(name = "m_CopyColorMaterial")]
         pub m_copy_color_material: crate::unity_engine::material::Material,
     }

@@ -59,12 +59,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_DishResultRoot")]
         pub m_dish_result_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_ResultContent")]
         pub m_result_content: crate::app::dishresultdialogcontent::DishResultDialogContent,
+        #[offset(128)]
         #[rename(name = "m_Dish")]
         pub m_dish: crate::app::dish::Dish,
+        #[offset(136)]
         #[rename(name = "m_SelectedUnits")]
         pub m_selected_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
     }

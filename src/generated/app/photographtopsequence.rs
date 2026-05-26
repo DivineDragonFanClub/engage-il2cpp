@@ -17,6 +17,37 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographTopSequence.UnitAccDataSet")]
+    #[parent(crate::system::object::Object)]
+    pub struct PhotographTopSequence_UnitAccDataSet {
+        #[offset(40)]
+        #[rename(name = "m_RecordPid")]
+        pub m_record_pid: ::unity2::Il2CppString,
+        #[offset(48)]
+        #[rename(name = "m_RecordBodyAccData")]
+        pub m_record_body_acc_data: crate::app::accessorydata::AccessoryData,
+        #[offset(56)]
+        #[rename(name = "m_RecordFaceAccData")]
+        pub m_record_face_acc_data: crate::app::accessorydata::AccessoryData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographTopSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: photographtopsequence :: PhotographTopSequence >)]
+    pub struct PhotographTopSequence {
+        #[offset(116)]
+        #[rename(name = "m_NextLabel")]
+        pub m_next_label: crate::app::photographtopsequence::PhotographTopSequence_Label,
+        #[offset(120)]
+        #[rename(name = "m_SelectAreaData")]
+        pub m_select_area_data: crate::app::photographspotdata::PhotographSpotData,
+        #[offset(128)]
+        #[rename(name = "m_UnitAccDataSetList")]
+        pub m_unit_acc_data_set_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographtopsequence/PhotographTopSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -57,31 +88,6 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographTopSequence.UnitAccDataSet")]
-    #[parent(crate::system::object::Object)]
-    pub struct PhotographTopSequence_UnitAccDataSet {
-        #[rename(name = "m_RecordPid")]
-        pub m_record_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_RecordBodyAccData")]
-        pub m_record_body_acc_data: crate::app::accessorydata::AccessoryData,
-        #[rename(name = "m_RecordFaceAccData")]
-        pub m_record_face_acc_data: crate::app::accessorydata::AccessoryData,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographTopSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: photographtopsequence :: PhotographTopSequence >)]
-    pub struct PhotographTopSequence {
-        #[rename(name = "m_NextLabel")]
-        pub m_next_label: crate::app::photographtopsequence::PhotographTopSequence_Label,
-        #[rename(name = "m_SelectAreaData")]
-        pub m_select_area_data: crate::app::photographspotdata::PhotographSpotData,
-        #[rename(name = "m_UnitAccDataSetList")]
-        pub m_unit_acc_data_set_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet>,
     }
 }
 

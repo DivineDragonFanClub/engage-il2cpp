@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemSkill")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemSkill {
+        #[offset(80)]
         #[rename(name = "m_SkillData")]
         pub m_skill_data: crate::app::skilldata::SkillData,
+        #[offset(88)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(96)]
         #[rename(name = "m_IsForcedEngage")]
         pub m_is_forced_engage: bool,
+        #[offset(97)]
         #[rename(name = "m_IsForceDisplay")]
         pub m_is_force_display: bool,
     }

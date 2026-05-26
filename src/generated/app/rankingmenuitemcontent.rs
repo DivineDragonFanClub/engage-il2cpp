@@ -20,16 +20,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RankingMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RankingMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_rank")]
         pub m_rank: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_unitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_godName")]
         pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_andText")]
         pub m_and_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_unitIcon")]
         pub m_unit_icon: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_godIcon")]
         pub m_god_icon: crate::unity_engine::gameobject::GameObject,
     }

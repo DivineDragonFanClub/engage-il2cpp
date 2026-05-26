@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ChallengeData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: challengedata :: ChallengeData >)]
     pub struct ChallengeData {
+        #[offset(96)]
         #[rename(name = "FlagNameTurn")]
         pub flag_name_turn: ::unity2::Il2CppString,
+        #[offset(104)]
         #[rename(name = "FlagNameLevel")]
         pub flag_name_level: ::unity2::Il2CppString,
         #[static_field]

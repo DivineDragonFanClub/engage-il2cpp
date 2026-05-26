@@ -22,8 +22,10 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(32)]
         #[rename(name = "m_RingInfoContent")]
         pub m_ring_info_content: ::unity2::Array<crate::app::refineringresult10ringinfocontent::RefineRingResult10RingInfoContent>,
     }

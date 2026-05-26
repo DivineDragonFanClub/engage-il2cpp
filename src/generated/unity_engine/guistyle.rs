@@ -11,32 +11,46 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUIStyle")]
     #[parent(crate::system::object::Object)]
     pub struct GUIStyle {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_Normal")]
         pub m_normal: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(32)]
         #[rename(name = "m_Hover")]
         pub m_hover: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(40)]
         #[rename(name = "m_Active")]
         pub m_active: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(48)]
         #[rename(name = "m_Focused")]
         pub m_focused: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(56)]
         #[rename(name = "m_OnNormal")]
         pub m_on_normal: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(64)]
         #[rename(name = "m_OnHover")]
         pub m_on_hover: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(72)]
         #[rename(name = "m_OnActive")]
         pub m_on_active: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(80)]
         #[rename(name = "m_OnFocused")]
         pub m_on_focused: crate::unity_engine::guistylestate::GUIStyleState,
+        #[offset(88)]
         #[rename(name = "m_Border")]
         pub m_border: crate::unity_engine::rectoffset::RectOffset,
+        #[offset(96)]
         #[rename(name = "m_Padding")]
         pub m_padding: crate::unity_engine::rectoffset::RectOffset,
+        #[offset(104)]
         #[rename(name = "m_Margin")]
         pub m_margin: crate::unity_engine::rectoffset::RectOffset,
+        #[offset(112)]
         #[rename(name = "m_Overflow")]
         pub m_overflow: crate::unity_engine::rectoffset::RectOffset,
+        #[offset(120)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
         #[static_field]

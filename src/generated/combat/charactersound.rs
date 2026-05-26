@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterSound")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterSound {
+        #[offset(24)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_LoadObj")]
         pub m_load_obj: crate::app::gamesound::GameSound_ResultLoad,
+        #[offset(40)]
         #[rename(name = "m_VoiceID")]
         pub m_voice_id: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "m_bLoaded")]
         pub m_b_loaded: bool,
+        #[offset(49)]
         #[rename(name = "m_bWinVoicePlayed")]
         pub m_b_win_voice_played: bool,
+        #[offset(61)]
         #[rename(name = "m_IsVoiceLoad")]
         pub m_is_voice_load: bool,
     }

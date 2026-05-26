@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemEfficacy")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemEfficacy {
+        #[offset(80)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
     }

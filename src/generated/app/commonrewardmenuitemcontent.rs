@@ -20,36 +20,52 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "CommonRewardMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct CommonRewardMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_ImageFace")]
         pub m_image_face: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_LevelValue")]
         pub m_level_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_ExpValue")]
         pub m_exp_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_ExpAddValue")]
         pub m_exp_add_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_ObjGauge")]
         pub m_obj_gauge: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_ObjExpValue")]
         pub m_obj_exp_value: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_ObjExpMax")]
         pub m_obj_exp_max: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_ImageGauge")]
         pub m_image_gauge: crate::unity_engine::ui::image::Image,
+        #[offset(144)]
         #[rename(name = "m_GaugeMaxColor")]
         pub m_gauge_max_color: crate::unity_engine::material::Material,
+        #[offset(152)]
         #[rename(name = "m_AnimLevelUp")]
         pub m_anim_level_up: crate::unity_engine::animator::Animator,
+        #[offset(160)]
         #[rename(name = "m_AnimAddValue")]
         pub m_anim_add_value: crate::unity_engine::animator::Animator,
+        #[offset(168)]
         #[rename(name = "m_ImageArrow")]
         pub m_image_arrow: crate::unity_engine::ui::image::Image,
+        #[offset(176)]
         #[rename(name = "m_StockExp")]
         pub m_stock_exp: i32,
+        #[offset(184)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(192)]
         #[rename(name = "m_IsPlaySoundExp")]
         pub m_is_play_sound_exp: bool,
     }

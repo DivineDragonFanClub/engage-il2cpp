@@ -22,12 +22,16 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_TargetMenuObject")]
         pub m_target_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_SourceMenuObject")]
         pub m_source_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_CountMenuObject")]
         pub m_count_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_ResultPopupObject")]
         pub m_result_popup_object: crate::unity_engine::gameobject::GameObject,
     }

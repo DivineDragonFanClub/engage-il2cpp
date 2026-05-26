@@ -53,15 +53,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SupportedRenderingFeatures")]
-    #[parent(crate::system::object::Object)]
-    pub struct SupportedRenderingFeatures {
-        #[static_field]
-        #[rename(name = "s_Active")]
-        pub s_active: crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_ReflectionProbeModes.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -94,6 +85,15 @@ mod __types {
         pub fn rotation() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SupportedRenderingFeatures")]
+    #[parent(crate::system::object::Object)]
+    pub struct SupportedRenderingFeatures {
+        #[static_field]
+        #[rename(name = "s_Active")]
+        pub s_active: crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,
     }
 }
 

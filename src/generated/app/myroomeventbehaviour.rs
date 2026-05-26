@@ -14,16 +14,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MyRoomEventBehaviour")]
     #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
     pub struct MyRoomEventBehaviour {
+        #[offset(16)]
         #[rename(name = "eventType")]
         pub event_type: crate::app::myroomeventclip::MyRoomEventClip_EventClipType,
+        #[offset(24)]
         #[rename(name = "eventName")]
         pub event_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "eventLayer")]
         pub event_layer: crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer,
+        #[offset(36)]
         #[rename(name = "isOut")]
         pub is_out: bool,
+        #[offset(40)]
         #[rename(name = "effectObject")]
         pub effect_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "soundHandle")]
         pub sound_handle: crate::app::gamesound::GameSound_Handle,
     }

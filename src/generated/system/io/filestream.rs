@@ -32,32 +32,46 @@ mod __types {
         #[static_field]
         #[rename(name = "buf_recycle_lock")]
         pub buf_recycle_lock: ::unity2::IlInstance,
+        #[offset(40)]
         #[rename(name = "buf")]
         pub buf: ::unity2::Array<u8>,
+        #[offset(48)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "isExposed")]
         pub is_exposed: bool,
+        #[offset(72)]
         #[rename(name = "append_startpos")]
         pub append_startpos: i64,
+        #[offset(80)]
         #[rename(name = "access")]
         pub access: crate::system::io::fileaccess::FileAccess,
+        #[offset(84)]
         #[rename(name = "owner")]
         pub owner: bool,
+        #[offset(85)]
         #[rename(name = "async")]
         pub r#async: bool,
+        #[offset(86)]
         #[rename(name = "canseek")]
         pub canseek: bool,
+        #[offset(87)]
         #[rename(name = "anonymous")]
         pub anonymous: bool,
+        #[offset(88)]
         #[rename(name = "buf_dirty")]
         pub buf_dirty: bool,
+        #[offset(92)]
         #[rename(name = "buf_size")]
         pub buf_size: i32,
+        #[offset(96)]
         #[rename(name = "buf_length")]
         pub buf_length: i32,
+        #[offset(100)]
         #[rename(name = "buf_offset")]
         pub buf_offset: i32,
+        #[offset(104)]
         #[rename(name = "buf_start")]
         pub buf_start: i64,
     }

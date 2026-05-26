@@ -20,22 +20,28 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Diagnostics", name = "DiagnosticEventCollectorSingleton")]
     # [parent (crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: ComponentSingleton_1_2 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollectorsingleton :: DiagnosticEventCollectorSingleton >)]
     pub struct DiagnosticEventCollectorSingleton {
+        #[offset(24)]
         #[rename(name = "m_CreatedEvents")]
         pub m_created_events: crate::system::collections::generic::dictionary_2::Dictionary_2<
             i32,
             crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
         >,
+        #[offset(32)]
         #[rename(name = "m_UnhandledEvents")]
         pub m_unhandled_events: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
         >,
+        #[offset(40)]
         #[rename(name = "s_EventHandlers")]
         pub s_event_handlers:
             crate::root::delegatelist_1::DelegateList_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>,
+        #[offset(48)]
         #[rename(name = "m_lastTickSent")]
         pub m_last_tick_sent: f32,
+        #[offset(52)]
         #[rename(name = "m_lastFrame")]
         pub m_last_frame: i32,
+        #[offset(56)]
         #[rename(name = "fpsAvg")]
         pub fps_avg: f32,
     }

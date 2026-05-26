@@ -31,32 +31,46 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_RefineShopRefineBaseMenuObject")]
         pub m_refine_shop_refine_base_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_WeaponModelObject")]
         pub m_weapon_model_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_ItemDetailInfoWindowObject")]
         pub m_item_detail_info_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_WeaponRotWaitTime")]
         pub m_weapon_rot_wait_time: f32,
+        #[offset(52)]
         #[rename(name = "m_WeaponRotSpeedAuto")]
         pub m_weapon_rot_speed_auto: f32,
+        #[offset(56)]
         #[rename(name = "m_WeaponRotSpeedMax")]
         pub m_weapon_rot_speed_max: f32,
+        #[offset(60)]
         #[rename(name = "m_WeaponRotStickSense")]
         pub m_weapon_rot_stick_sense: f32,
+        #[offset(64)]
         #[rename(name = "m_WeaponRotWaitTimeCount")]
         pub m_weapon_rot_wait_time_count: f32,
+        #[offset(72)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
+        #[offset(80)]
         #[rename(name = "m_RefineShopRefineBaseMenu")]
         pub m_refine_shop_refine_base_menu: crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu,
+        #[offset(88)]
         #[rename(name = "m_ItemMenuDetailSetter")]
         pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+        #[offset(96)]
         #[rename(name = "m_ShopWeaponModelRenderer")]
         pub m_shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        #[offset(104)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(112)]
         #[rename(name = "m_OwnerItemIndex")]
         pub m_owner_item_index: i32,
     }

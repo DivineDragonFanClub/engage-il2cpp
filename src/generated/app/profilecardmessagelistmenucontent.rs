@@ -20,10 +20,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardMessageListMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct ProfileCardMessageListMenuContent {
+        #[offset(232)]
         #[rename(name = "m_CaptionText")]
         pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_PageIconImage")]
         pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(248)]
         #[rename(name = "isStarted")]
         pub is_started: bool,
     }

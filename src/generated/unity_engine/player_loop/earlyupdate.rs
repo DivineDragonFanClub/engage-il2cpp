@@ -10,578 +10,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_RendererNotifyInvisible.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_RendererNotifyInvisible {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_RendererNotifyInvisible {
-        const NAME: &'static str = "EarlyUpdate.RendererNotifyInvisible";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_RendererNotifyInvisible {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ProcessMouseInWindow.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ProcessMouseInWindow {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_ProcessMouseInWindow {
-        const NAME: &'static str = "EarlyUpdate.ProcessMouseInWindow";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_ProcessMouseInWindow {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateCanvasRectTransform.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UpdateCanvasRectTransform {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateCanvasRectTransform {
-        const NAME: &'static str = "EarlyUpdate.UpdateCanvasRectTransform";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_UpdateCanvasRectTransform {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PollPlayerConnection.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_PollPlayerConnection {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_PollPlayerConnection {
-        const NAME: &'static str = "EarlyUpdate.PollPlayerConnection";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_PollPlayerConnection {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PlayerCleanupCachedData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_PlayerCleanupCachedData {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_PlayerCleanupCachedData {
-        const NAME: &'static str = "EarlyUpdate.PlayerCleanupCachedData";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_PlayerCleanupCachedData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PollHtcsPlayerConnection.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_PollHtcsPlayerConnection {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_PollHtcsPlayerConnection {
-        const NAME: &'static str = "EarlyUpdate.PollHtcsPlayerConnection";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_PollHtcsPlayerConnection {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_TangoUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_TangoUpdate {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_TangoUpdate {
-        const NAME: &'static str = "EarlyUpdate.TangoUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_TangoUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_GpuTimestamp.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_GpuTimestamp {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_GpuTimestamp {
-        const NAME: &'static str = "EarlyUpdate.GpuTimestamp";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_GpuTimestamp {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateKinect.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UpdateKinect {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateKinect {
-        const NAME: &'static str = "EarlyUpdate.UpdateKinect";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_UpdateKinect {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ARCoreUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ARCoreUpdate {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_ARCoreUpdate {
-        const NAME: &'static str = "EarlyUpdate.ARCoreUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_ARCoreUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate {
-        const NAME: &'static str = "EarlyUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_DispatchEventQueueEvents.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_DispatchEventQueueEvents {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_DispatchEventQueueEvents {
-        const NAME: &'static str = "EarlyUpdate.DispatchEventQueueEvents";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_DispatchEventQueueEvents {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ProcessRemoteInput.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ProcessRemoteInput {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_ProcessRemoteInput {
-        const NAME: &'static str = "EarlyUpdate.ProcessRemoteInput";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_ProcessRemoteInput {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_SpriteAtlasManagerUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_SpriteAtlasManagerUpdate {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_SpriteAtlasManagerUpdate {
-        const NAME: &'static str = "EarlyUpdate.SpriteAtlasManagerUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_SpriteAtlasManagerUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ProfilerStartFrame.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ProfilerStartFrame {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_ProfilerStartFrame {
-        const NAME: &'static str = "EarlyUpdate.ProfilerStartFrame";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_ProfilerStartFrame {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ScriptRunDelayedStartupFrame.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ScriptRunDelayedStartupFrame {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_ScriptRunDelayedStartupFrame {
-        const NAME: &'static str = "EarlyUpdate.ScriptRunDelayedStartupFrame";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_ScriptRunDelayedStartupFrame {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateAsyncReadbackManager.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UpdateAsyncReadbackManager {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateAsyncReadbackManager {
-        const NAME: &'static str = "EarlyUpdate.UpdateAsyncReadbackManager";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_UpdateAsyncReadbackManager {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_XRUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_XRUpdate {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_XRUpdate {
-        const NAME: &'static str = "EarlyUpdate.XRUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_XRUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_AnalyticsCoreStatsUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_AnalyticsCoreStatsUpdate {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_AnalyticsCoreStatsUpdate {
-        const NAME: &'static str = "EarlyUpdate.AnalyticsCoreStatsUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_AnalyticsCoreStatsUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ClearLines.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ClearLines {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_ClearLines {
-        const NAME: &'static str = "EarlyUpdate.ClearLines";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_ClearLines {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ClearIntermediateRenderers.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ClearIntermediateRenderers {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_ClearIntermediateRenderers {
-        const NAME: &'static str = "EarlyUpdate.ClearIntermediateRenderers";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_ClearIntermediateRenderers {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_DeliverIosPlatformEvents.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_DeliverIosPlatformEvents {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_DeliverIosPlatformEvents {
-        const NAME: &'static str = "EarlyUpdate.DeliverIosPlatformEvents";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_DeliverIosPlatformEvents {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UnityWebRequestUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UnityWebRequestUpdate {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_UnityWebRequestUpdate {
-        const NAME: &'static str = "EarlyUpdate.UnityWebRequestUpdate";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_UnityWebRequestUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateInputManager.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UpdateInputManager {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateInputManager {
-        const NAME: &'static str = "EarlyUpdate.UpdateInputManager";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_UpdateInputManager {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdatePreloading.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UpdatePreloading {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_UpdatePreloading {
-        const NAME: &'static str = "EarlyUpdate.UpdatePreloading";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_UpdatePreloading {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PhysicsResetInterpolatedTransformPosition.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_PhysicsResetInterpolatedTransformPosition {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_PhysicsResetInterpolatedTransformPosition {
-        const NAME: &'static str = "EarlyUpdate.PhysicsResetInterpolatedTransformPosition";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_PhysicsResetInterpolatedTransformPosition {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PresentBeforeUpdate.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -604,13 +32,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateStreamingManager.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ProfilerStartFrame.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UpdateStreamingManager {}
+    pub struct EarlyUpdate_ProfilerStartFrame {}
 
-    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateStreamingManager {
-        const NAME: &'static str = "EarlyUpdate.UpdateStreamingManager";
+    impl ::unity2::ClassIdentity for EarlyUpdate_ProfilerStartFrame {
+        const NAME: &'static str = "EarlyUpdate.ProfilerStartFrame";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -620,29 +48,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for EarlyUpdate_UpdateStreamingManager {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateMainGameViewRect.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_UpdateMainGameViewRect {}
-
-    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateMainGameViewRect {
-        const NAME: &'static str = "EarlyUpdate.UpdateMainGameViewRect";
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for EarlyUpdate_UpdateMainGameViewRect {
+    impl ::unity2::IlType for EarlyUpdate_ProfilerStartFrame {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -692,13 +98,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ResetFrameStatsAfterPresent.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PollPlayerConnection.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct EarlyUpdate_ResetFrameStatsAfterPresent {}
+    pub struct EarlyUpdate_PollPlayerConnection {}
 
-    impl ::unity2::ClassIdentity for EarlyUpdate_ResetFrameStatsAfterPresent {
-        const NAME: &'static str = "EarlyUpdate.ResetFrameStatsAfterPresent";
+    impl ::unity2::ClassIdentity for EarlyUpdate_PollPlayerConnection {
+        const NAME: &'static str = "EarlyUpdate.PollPlayerConnection";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -708,7 +114,227 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for EarlyUpdate_ResetFrameStatsAfterPresent {
+    impl ::unity2::IlType for EarlyUpdate_PollPlayerConnection {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UnityWebRequestUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UnityWebRequestUpdate {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UnityWebRequestUpdate {
+        const NAME: &'static str = "EarlyUpdate.UnityWebRequestUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UnityWebRequestUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ProcessMouseInWindow.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_ProcessMouseInWindow {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_ProcessMouseInWindow {
+        const NAME: &'static str = "EarlyUpdate.ProcessMouseInWindow";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_ProcessMouseInWindow {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateAsyncReadbackManager.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UpdateAsyncReadbackManager {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateAsyncReadbackManager {
+        const NAME: &'static str = "EarlyUpdate.UpdateAsyncReadbackManager";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UpdateAsyncReadbackManager {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateInputManager.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UpdateInputManager {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateInputManager {
+        const NAME: &'static str = "EarlyUpdate.UpdateInputManager";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UpdateInputManager {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_DispatchEventQueueEvents.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_DispatchEventQueueEvents {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_DispatchEventQueueEvents {
+        const NAME: &'static str = "EarlyUpdate.DispatchEventQueueEvents";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_DispatchEventQueueEvents {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateStreamingManager.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UpdateStreamingManager {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateStreamingManager {
+        const NAME: &'static str = "EarlyUpdate.UpdateStreamingManager";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UpdateStreamingManager {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_RendererNotifyInvisible.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_RendererNotifyInvisible {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_RendererNotifyInvisible {
+        const NAME: &'static str = "EarlyUpdate.RendererNotifyInvisible";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_RendererNotifyInvisible {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PlayerCleanupCachedData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_PlayerCleanupCachedData {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_PlayerCleanupCachedData {
+        const NAME: &'static str = "EarlyUpdate.PlayerCleanupCachedData";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_PlayerCleanupCachedData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_XRUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_XRUpdate {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_XRUpdate {
+        const NAME: &'static str = "EarlyUpdate.XRUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_XRUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ProcessRemoteInput.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_ProcessRemoteInput {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_ProcessRemoteInput {
+        const NAME: &'static str = "EarlyUpdate.ProcessRemoteInput";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_ProcessRemoteInput {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -731,6 +357,380 @@ mod __types {
     }
 
     impl ::unity2::IlType for EarlyUpdate_UpdateTextureStreamingManager {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_DeliverIosPlatformEvents.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_DeliverIosPlatformEvents {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_DeliverIosPlatformEvents {
+        const NAME: &'static str = "EarlyUpdate.DeliverIosPlatformEvents";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_DeliverIosPlatformEvents {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_AnalyticsCoreStatsUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_AnalyticsCoreStatsUpdate {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_AnalyticsCoreStatsUpdate {
+        const NAME: &'static str = "EarlyUpdate.AnalyticsCoreStatsUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_AnalyticsCoreStatsUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ClearLines.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_ClearLines {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_ClearLines {
+        const NAME: &'static str = "EarlyUpdate.ClearLines";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_ClearLines {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_TangoUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_TangoUpdate {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_TangoUpdate {
+        const NAME: &'static str = "EarlyUpdate.TangoUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_TangoUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate {
+        const NAME: &'static str = "EarlyUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateKinect.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UpdateKinect {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateKinect {
+        const NAME: &'static str = "EarlyUpdate.UpdateKinect";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UpdateKinect {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_SpriteAtlasManagerUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_SpriteAtlasManagerUpdate {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_SpriteAtlasManagerUpdate {
+        const NAME: &'static str = "EarlyUpdate.SpriteAtlasManagerUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_SpriteAtlasManagerUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PhysicsResetInterpolatedTransformPosition.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_PhysicsResetInterpolatedTransformPosition {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_PhysicsResetInterpolatedTransformPosition {
+        const NAME: &'static str = "EarlyUpdate.PhysicsResetInterpolatedTransformPosition";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_PhysicsResetInterpolatedTransformPosition {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_PollHtcsPlayerConnection.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_PollHtcsPlayerConnection {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_PollHtcsPlayerConnection {
+        const NAME: &'static str = "EarlyUpdate.PollHtcsPlayerConnection";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_PollHtcsPlayerConnection {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ClearIntermediateRenderers.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_ClearIntermediateRenderers {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_ClearIntermediateRenderers {
+        const NAME: &'static str = "EarlyUpdate.ClearIntermediateRenderers";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_ClearIntermediateRenderers {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ResetFrameStatsAfterPresent.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_ResetFrameStatsAfterPresent {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_ResetFrameStatsAfterPresent {
+        const NAME: &'static str = "EarlyUpdate.ResetFrameStatsAfterPresent";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_ResetFrameStatsAfterPresent {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_GpuTimestamp.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_GpuTimestamp {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_GpuTimestamp {
+        const NAME: &'static str = "EarlyUpdate.GpuTimestamp";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_GpuTimestamp {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdatePreloading.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UpdatePreloading {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UpdatePreloading {
+        const NAME: &'static str = "EarlyUpdate.UpdatePreloading";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UpdatePreloading {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ARCoreUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_ARCoreUpdate {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_ARCoreUpdate {
+        const NAME: &'static str = "EarlyUpdate.ARCoreUpdate";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_ARCoreUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_ScriptRunDelayedStartupFrame.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_ScriptRunDelayedStartupFrame {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_ScriptRunDelayedStartupFrame {
+        const NAME: &'static str = "EarlyUpdate.ScriptRunDelayedStartupFrame";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_ScriptRunDelayedStartupFrame {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateMainGameViewRect.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UpdateMainGameViewRect {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateMainGameViewRect {
+        const NAME: &'static str = "EarlyUpdate.UpdateMainGameViewRect";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UpdateMainGameViewRect {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/earlyupdate/EarlyUpdate_UpdateCanvasRectTransform.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct EarlyUpdate_UpdateCanvasRectTransform {}
+
+    impl ::unity2::ClassIdentity for EarlyUpdate_UpdateCanvasRectTransform {
+        const NAME: &'static str = "EarlyUpdate.UpdateCanvasRectTransform";
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for EarlyUpdate_UpdateCanvasRectTransform {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }

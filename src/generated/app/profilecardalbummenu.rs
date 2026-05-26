@@ -20,18 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardAlbumMenu")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct ProfileCardAlbumMenu {
+        #[offset(112)]
         #[rename(name = "m_ChangeProfileEventHandler")]
         pub m_change_profile_event_handler: crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler,
+        #[offset(120)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler,
+        #[offset(128)]
         #[rename(name = "m_CardRoot")]
         pub m_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[offset(136)]
         #[rename(name = "m_ProfileListIndex")]
         pub m_profile_list_index: i32,
+        #[offset(144)]
         #[rename(name = "m_ProfileCard")]
         pub m_profile_card: crate::app::profilecard::ProfileCard,
+        #[offset(152)]
         #[rename(name = "m_result")]
         pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[offset(156)]
         #[rename(name = "m_CloseCalled")]
         pub m_close_called: bool,
     }

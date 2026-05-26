@@ -18,14 +18,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomGradationFilter")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct CustomGradationFilter {
+        #[offset(56)]
         #[rename(name = "color")]
         pub color: crate::unity_engine::rendering::colorparameter::ColorParameter,
+        #[offset(64)]
         #[rename(name = "alpha")]
         pub alpha: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "vignetteCenter")]
         pub vignette_center: crate::unity_engine::rendering::vector2parameter::Vector2Parameter,
+        #[offset(80)]
         #[rename(name = "vignetteIntensity")]
         pub vignette_intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "vignetteSmoothness")]
         pub vignette_smoothness: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

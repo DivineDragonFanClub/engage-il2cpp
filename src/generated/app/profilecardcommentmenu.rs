@@ -23,22 +23,31 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardCommentMenu")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct ProfileCardCommentMenu {
+        #[offset(112)]
         #[rename(name = "m_DisposeEventHandler")]
         pub m_dispose_event_handler: crate::app::profilecardcommentmenu::ProfileCardCommentMenu_DisposeEventHandler,
+        #[offset(120)]
         #[rename(name = "m_MessageSelectMenuContent")]
         pub m_message_select_menu_content: crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
+        #[offset(128)]
         #[rename(name = "m_MessageListMenuContent")]
         pub m_message_list_menu_content: crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
+        #[offset(136)]
         #[rename(name = "m_ProfileCardRoot")]
         pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[offset(144)]
         #[rename(name = "m_ProfileCardCommentIndexMenu")]
         pub m_profile_card_comment_index_menu: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu,
+        #[offset(152)]
         #[rename(name = "m_ProfileCardCommentListMenu")]
         pub m_profile_card_comment_list_menu: crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu,
+        #[offset(160)]
         #[rename(name = "m_MyProfileCardTemp")]
         pub m_my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        #[offset(168)]
         #[rename(name = "m_CommentTempArray")]
         pub m_comment_temp_array: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData>,
+        #[offset(184)]
         #[rename(name = "m_DecidedMessageIndex")]
         pub m_decided_message_index: i32,
     }

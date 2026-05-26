@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkChannelEmitterArray")]
     #[parent(crate::system::object::Object)]
     pub struct AkChannelEmitterArray {
+        #[offset(16)]
         #[rename(name = "m_Buffer")]
         pub m_buffer: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_Current")]
         pub m_current: ::unity2::IntPtr,
+        #[offset(32)]
         #[rename(name = "m_MaxCount")]
         pub m_max_count: u32,
     }

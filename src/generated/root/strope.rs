@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "instance")]
         pub instance: crate::root::strope::StrOpe,
+        #[offset(24)]
         #[rename(name = "chars")]
         pub chars: ::unity2::Array<u16>,
     }

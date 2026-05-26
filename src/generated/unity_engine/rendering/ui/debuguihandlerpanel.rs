@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerPanel")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DebugUIHandlerPanel {
+        #[offset(24)]
         #[rename(name = "nameLabel")]
         pub name_label: crate::unity_engine::ui::text::Text,
+        #[offset(32)]
         #[rename(name = "scrollRect")]
         pub scroll_rect: crate::unity_engine::ui::scrollrect::ScrollRect,
+        #[offset(40)]
         #[rename(name = "viewport")]
         pub viewport: crate::unity_engine::recttransform::RectTransform,
+        #[offset(48)]
         #[rename(name = "m_ScrollTransform")]
         pub m_scroll_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(56)]
         #[rename(name = "m_ContentTransform")]
         pub m_content_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(64)]
         #[rename(name = "m_MaskTransform")]
         pub m_mask_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(72)]
         #[rename(name = "m_Panel")]
         pub m_panel: crate::unity_engine::rendering::debugui::DebugUI_Panel,
     }

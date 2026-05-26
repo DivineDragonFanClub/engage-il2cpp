@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideEventFader")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DragonRideEventFader {
+        #[offset(24)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
+        #[offset(40)]
         #[rename(name = "m_Layer")]
         pub m_layer: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_Image")]
         pub m_image: crate::unity_engine::ui::image::Image,
+        #[offset(56)]
         #[rename(name = "m_Timer")]
         pub m_timer: f32,
+        #[offset(60)]
         #[rename(name = "m_FinishTime")]
         pub m_finish_time: f32,
+        #[offset(64)]
         #[rename(name = "IsFadeIn")]
         pub is_fade_in: bool,
+        #[offset(65)]
         #[rename(name = "IsRun")]
         pub is_run: bool,
+        #[offset(72)]
         #[rename(name = "m_FadeTimeList")]
         pub m_fade_time_list: ::unity2::Array<f32>,
     }

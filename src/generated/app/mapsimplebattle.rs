@@ -23,14 +23,19 @@ mod __types {
         #[static_field]
         #[rename(name = "RightSideObjName")]
         pub right_side_obj_name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_PrefabHandle")]
         pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(40)]
         #[rename(name = "m_IsValid")]
         pub m_is_valid: bool,
+        #[offset(48)]
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_GaugeControllerLeft")]
         pub m_gauge_controller_left: crate::root::combatgaugecontroller::CombatGaugeController,
+        #[offset(64)]
         #[rename(name = "m_GaugeControllerRight")]
         pub m_gauge_controller_right: crate::root::combatgaugecontroller::CombatGaugeController,
     }

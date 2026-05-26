@@ -110,12 +110,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingData")]
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: ringdata :: RingData >)]
     pub struct RingData {
+        #[offset(120)]
         #[rename(name = "m_Group")]
         pub m_group: ::unity2::Il2CppString,
+        #[offset(128)]
         #[rename(name = "m_FlagName")]
         pub m_flag_name: ::unity2::Il2CppString,
+        #[offset(136)]
         #[rename(name = "m_JewelColor")]
         pub m_jewel_color: crate::unity_engine::color::Color,
+        #[offset(152)]
         #[rename(name = "m_RimColor")]
         pub m_rim_color: crate::unity_engine::color::Color,
     }

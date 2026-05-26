@@ -19,46 +19,67 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "LevelUpWindowController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct LevelUpWindowController {
+        #[offset(24)]
         #[rename(name = "m_CharaName")]
         pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_TitleLevel")]
         pub m_title_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_Level")]
         pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_Job")]
         pub m_job: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_ParameterMax")]
         pub m_parameter_max: i32,
+        #[offset(64)]
         #[rename(name = "m_Hp")]
         pub m_hp: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_Str")]
         pub m_str: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_Magic")]
         pub m_magic: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_Tech")]
         pub m_tech: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_Quick")]
         pub m_quick: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_Def")]
         pub m_def: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_Mdef")]
         pub m_mdef: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_Luck")]
         pub m_luck: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_Phys")]
         pub m_phys: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_Sight")]
         pub m_sight: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_Move")]
         pub m_move: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
         #[rename(name = "m_ArrowUp")]
         pub m_arrow_up: crate::unity_engine::sprite::Sprite,
+        #[offset(160)]
         #[rename(name = "m_ArrowDown")]
         pub m_arrow_down: crate::unity_engine::sprite::Sprite,
+        #[offset(168)]
         #[rename(name = "m_FrameUp")]
         pub m_frame_up: crate::unity_engine::sprite::Sprite,
+        #[offset(176)]
         #[rename(name = "m_FrameDown")]
         pub m_frame_down: crate::unity_engine::sprite::Sprite,
+        #[offset(184)]
         #[rename(name = "m_ParamObjectArray")]
         pub m_param_object_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
     }

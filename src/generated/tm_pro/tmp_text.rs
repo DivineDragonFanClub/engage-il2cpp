@@ -24,6 +24,769 @@ mod __types {
         },
     };
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_CharacterSubstitution {
+        pub index: i32,
+        pub unicode: u32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_CharacterSubstitution {
+        const NAME: &'static str = "TMP_Text.CharacterSubstitution";
+        const NAMESPACE: &'static str = "TMPro";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_CharacterSubstitution {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_TextBackingContainer {
+        pub m_array: ::unity2::Array<u32>,
+        pub m_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_TextBackingContainer {
+        const NAME: &'static str = "TMP_Text.TextBackingContainer";
+        const NAMESPACE: &'static str = "TMPro";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_TextBackingContainer {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_text/TMP_Text.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_Text")]
+    #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
+    pub struct TMP_Text {
+        #[offset(208)]
+        #[rename(name = "m_text")]
+        pub m_text: ::unity2::Il2CppString,
+        #[offset(216)]
+        #[rename(name = "m_IsTextBackingStringDirty")]
+        pub m_is_text_backing_string_dirty: bool,
+        #[offset(224)]
+        #[rename(name = "m_TextPreprocessor")]
+        pub m_text_preprocessor: crate::tm_pro::itextpreprocessor::ITextPreprocessor,
+        #[offset(232)]
+        #[rename(name = "m_isRightToLeft")]
+        pub m_is_right_to_left: bool,
+        #[offset(240)]
+        #[rename(name = "m_fontAsset")]
+        pub m_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[offset(248)]
+        #[rename(name = "m_currentFontAsset")]
+        pub m_current_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[offset(256)]
+        #[rename(name = "m_isSDFShader")]
+        pub m_is_sdf_shader: bool,
+        #[offset(264)]
+        #[rename(name = "m_sharedMaterial")]
+        pub m_shared_material: crate::unity_engine::material::Material,
+        #[offset(272)]
+        #[rename(name = "m_currentMaterial")]
+        pub m_current_material: crate::unity_engine::material::Material,
+        #[static_field]
+        #[rename(name = "m_materialReferences")]
+        pub m_material_references: ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
+        #[static_field]
+        #[rename(name = "m_materialReferenceIndexLookup")]
+        pub m_material_reference_index_lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
+        #[static_field]
+        #[rename(name = "m_materialReferenceStack")]
+        pub m_material_reference_stack:
+            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::materialreference::MaterialReference>,
+        #[offset(280)]
+        #[rename(name = "m_currentMaterialIndex")]
+        pub m_current_material_index: i32,
+        #[offset(288)]
+        #[rename(name = "m_fontSharedMaterials")]
+        pub m_font_shared_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[offset(296)]
+        #[rename(name = "m_fontMaterial")]
+        pub m_font_material: crate::unity_engine::material::Material,
+        #[offset(304)]
+        #[rename(name = "m_fontMaterials")]
+        pub m_font_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[offset(312)]
+        #[rename(name = "m_isMaterialDirty")]
+        pub m_is_material_dirty: bool,
+        #[offset(316)]
+        #[rename(name = "m_fontColor32")]
+        pub m_font_color32: crate::unity_engine::color32::Color32,
+        #[offset(320)]
+        #[rename(name = "m_fontColor")]
+        pub m_font_color: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "s_colorWhite")]
+        pub s_color_white: crate::unity_engine::color32::Color32,
+        #[offset(336)]
+        #[rename(name = "m_underlineColor")]
+        pub m_underline_color: crate::unity_engine::color32::Color32,
+        #[offset(340)]
+        #[rename(name = "m_strikethroughColor")]
+        pub m_strikethrough_color: crate::unity_engine::color32::Color32,
+        #[offset(344)]
+        #[rename(name = "m_enableVertexGradient")]
+        pub m_enable_vertex_gradient: bool,
+        #[offset(348)]
+        #[rename(name = "m_colorMode")]
+        pub m_color_mode: crate::tm_pro::colormode::ColorMode,
+        #[offset(352)]
+        #[rename(name = "m_fontColorGradient")]
+        pub m_font_color_gradient: crate::tm_pro::vertexgradient::VertexGradient,
+        #[offset(416)]
+        #[rename(name = "m_fontColorGradientPreset")]
+        pub m_font_color_gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+        #[offset(424)]
+        #[rename(name = "m_spriteAsset")]
+        pub m_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        #[offset(432)]
+        #[rename(name = "m_tintAllSprites")]
+        pub m_tint_all_sprites: bool,
+        #[offset(433)]
+        #[rename(name = "m_tintSprite")]
+        pub m_tint_sprite: bool,
+        #[offset(436)]
+        #[rename(name = "m_spriteColor")]
+        pub m_sprite_color: crate::unity_engine::color32::Color32,
+        #[offset(440)]
+        #[rename(name = "m_StyleSheet")]
+        pub m_style_sheet: crate::tm_pro::tmp_stylesheet::TMP_StyleSheet,
+        #[offset(448)]
+        #[rename(name = "m_TextStyle")]
+        pub m_text_style: crate::tm_pro::tmp_style::TMP_Style,
+        #[offset(456)]
+        #[rename(name = "m_TextStyleHashCode")]
+        pub m_text_style_hash_code: i32,
+        #[offset(460)]
+        #[rename(name = "m_overrideHtmlColors")]
+        pub m_override_html_colors: bool,
+        #[offset(464)]
+        #[rename(name = "m_faceColor")]
+        pub m_face_color: crate::unity_engine::color32::Color32,
+        #[offset(468)]
+        #[rename(name = "m_outlineColor")]
+        pub m_outline_color: crate::unity_engine::color32::Color32,
+        #[offset(472)]
+        #[rename(name = "m_outlineWidth")]
+        pub m_outline_width: f32,
+        #[offset(476)]
+        #[rename(name = "m_fontSize")]
+        pub m_font_size: f32,
+        #[offset(480)]
+        #[rename(name = "m_currentFontSize")]
+        pub m_current_font_size: f32,
+        #[offset(484)]
+        #[rename(name = "m_fontSizeBase")]
+        pub m_font_size_base: f32,
+        #[offset(488)]
+        #[rename(name = "m_sizeStack")]
+        pub m_size_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
+        #[offset(520)]
+        #[rename(name = "m_fontWeight")]
+        pub m_font_weight: crate::tm_pro::fontweight::FontWeight,
+        #[offset(524)]
+        #[rename(name = "m_FontWeightInternal")]
+        pub m_font_weight_internal: crate::tm_pro::fontweight::FontWeight,
+        #[offset(528)]
+        #[rename(name = "m_FontWeightStack")]
+        pub m_font_weight_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::fontweight::FontWeight>,
+        #[offset(560)]
+        #[rename(name = "m_enableAutoSizing")]
+        pub m_enable_auto_sizing: bool,
+        #[offset(564)]
+        #[rename(name = "m_maxFontSize")]
+        pub m_max_font_size: f32,
+        #[offset(568)]
+        #[rename(name = "m_minFontSize")]
+        pub m_min_font_size: f32,
+        #[offset(572)]
+        #[rename(name = "m_AutoSizeIterationCount")]
+        pub m_auto_size_iteration_count: i32,
+        #[offset(576)]
+        #[rename(name = "m_AutoSizeMaxIterationCount")]
+        pub m_auto_size_max_iteration_count: i32,
+        #[offset(580)]
+        #[rename(name = "m_IsAutoSizePointSizeSet")]
+        pub m_is_auto_size_point_size_set: bool,
+        #[offset(584)]
+        #[rename(name = "m_fontSizeMin")]
+        pub m_font_size_min: f32,
+        #[offset(588)]
+        #[rename(name = "m_fontSizeMax")]
+        pub m_font_size_max: f32,
+        #[offset(592)]
+        #[rename(name = "m_fontStyle")]
+        pub m_font_style: crate::tm_pro::fontstyles::FontStyles,
+        #[offset(596)]
+        #[rename(name = "m_FontStyleInternal")]
+        pub m_font_style_internal: crate::tm_pro::fontstyles::FontStyles,
+        #[offset(600)]
+        #[rename(name = "m_fontStyleStack")]
+        pub m_font_style_stack: crate::tm_pro::tmp_fontstylestack::TMP_FontStyleStack,
+        #[offset(610)]
+        #[rename(name = "m_isUsingBold")]
+        pub m_is_using_bold: bool,
+        #[offset(612)]
+        #[rename(name = "m_HorizontalAlignment")]
+        pub m_horizontal_alignment: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+        #[offset(616)]
+        #[rename(name = "m_VerticalAlignment")]
+        pub m_vertical_alignment: crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions,
+        #[offset(620)]
+        #[rename(name = "m_textAlignment")]
+        pub m_text_alignment: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
+        #[offset(624)]
+        #[rename(name = "m_lineJustification")]
+        pub m_line_justification: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+        #[offset(632)]
+        #[rename(name = "m_lineJustificationStack")]
+        pub m_line_justification_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+        >,
+        #[offset(664)]
+        #[rename(name = "m_textContainerLocalCorners")]
+        pub m_text_container_local_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(672)]
+        #[rename(name = "m_characterSpacing")]
+        pub m_character_spacing: f32,
+        #[offset(676)]
+        #[rename(name = "m_cSpacing")]
+        pub m_c_spacing: f32,
+        #[offset(680)]
+        #[rename(name = "m_monoSpacing")]
+        pub m_mono_spacing: f32,
+        #[offset(684)]
+        #[rename(name = "m_wordSpacing")]
+        pub m_word_spacing: f32,
+        #[offset(688)]
+        #[rename(name = "m_lineSpacing")]
+        pub m_line_spacing: f32,
+        #[offset(692)]
+        #[rename(name = "m_lineSpacingDelta")]
+        pub m_line_spacing_delta: f32,
+        #[offset(696)]
+        #[rename(name = "m_lineHeight")]
+        pub m_line_height: f32,
+        #[offset(700)]
+        #[rename(name = "m_IsDrivenLineSpacing")]
+        pub m_is_driven_line_spacing: bool,
+        #[offset(704)]
+        #[rename(name = "m_lineSpacingMax")]
+        pub m_line_spacing_max: f32,
+        #[offset(708)]
+        #[rename(name = "m_paragraphSpacing")]
+        pub m_paragraph_spacing: f32,
+        #[offset(712)]
+        #[rename(name = "m_charWidthMaxAdj")]
+        pub m_char_width_max_adj: f32,
+        #[offset(716)]
+        #[rename(name = "m_charWidthAdjDelta")]
+        pub m_char_width_adj_delta: f32,
+        #[offset(720)]
+        #[rename(name = "m_enableWordWrapping")]
+        pub m_enable_word_wrapping: bool,
+        #[offset(721)]
+        #[rename(name = "m_isCharacterWrappingEnabled")]
+        pub m_is_character_wrapping_enabled: bool,
+        #[offset(722)]
+        #[rename(name = "m_isNonBreakingSpace")]
+        pub m_is_non_breaking_space: bool,
+        #[offset(723)]
+        #[rename(name = "m_isIgnoringAlignment")]
+        pub m_is_ignoring_alignment: bool,
+        #[offset(724)]
+        #[rename(name = "m_wordWrappingRatios")]
+        pub m_word_wrapping_ratios: f32,
+        #[offset(728)]
+        #[rename(name = "m_overflowMode")]
+        pub m_overflow_mode: crate::tm_pro::textoverflowmodes::TextOverflowModes,
+        #[offset(732)]
+        #[rename(name = "m_firstOverflowCharacterIndex")]
+        pub m_first_overflow_character_index: i32,
+        #[offset(736)]
+        #[rename(name = "m_linkedTextComponent")]
+        pub m_linked_text_component: crate::tm_pro::tmp_text::TMP_Text,
+        #[offset(744)]
+        #[rename(name = "parentLinkedComponent")]
+        pub parent_linked_component: crate::tm_pro::tmp_text::TMP_Text,
+        #[offset(752)]
+        #[rename(name = "m_isTextTruncated")]
+        pub m_is_text_truncated: bool,
+        #[offset(753)]
+        #[rename(name = "m_enableKerning")]
+        pub m_enable_kerning: bool,
+        #[offset(756)]
+        #[rename(name = "m_GlyphHorizontalAdvanceAdjustment")]
+        pub m_glyph_horizontal_advance_adjustment: f32,
+        #[offset(760)]
+        #[rename(name = "m_enableExtraPadding")]
+        pub m_enable_extra_padding: bool,
+        #[offset(761)]
+        #[rename(name = "checkPaddingRequired")]
+        pub check_padding_required: bool,
+        #[offset(762)]
+        #[rename(name = "m_isRichText")]
+        pub m_is_rich_text: bool,
+        #[offset(763)]
+        #[rename(name = "m_parseCtrlCharacters")]
+        pub m_parse_ctrl_characters: bool,
+        #[offset(764)]
+        #[rename(name = "m_isOverlay")]
+        pub m_is_overlay: bool,
+        #[offset(765)]
+        #[rename(name = "m_isOrthographic")]
+        pub m_is_orthographic: bool,
+        #[offset(766)]
+        #[rename(name = "m_isCullingEnabled")]
+        pub m_is_culling_enabled: bool,
+        #[offset(767)]
+        #[rename(name = "m_isMaskingEnabled")]
+        pub m_is_masking_enabled: bool,
+        #[offset(768)]
+        #[rename(name = "isMaskUpdateRequired")]
+        pub is_mask_update_required: bool,
+        #[offset(769)]
+        #[rename(name = "m_ignoreCulling")]
+        pub m_ignore_culling: bool,
+        #[offset(772)]
+        #[rename(name = "m_horizontalMapping")]
+        pub m_horizontal_mapping: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+        #[offset(776)]
+        #[rename(name = "m_verticalMapping")]
+        pub m_vertical_mapping: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+        #[offset(780)]
+        #[rename(name = "m_uvLineOffset")]
+        pub m_uv_line_offset: f32,
+        #[offset(784)]
+        #[rename(name = "m_renderMode")]
+        pub m_render_mode: crate::tm_pro::textrenderflags::TextRenderFlags,
+        #[offset(788)]
+        #[rename(name = "m_geometrySortingOrder")]
+        pub m_geometry_sorting_order: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
+        #[offset(792)]
+        #[rename(name = "m_IsTextObjectScaleStatic")]
+        pub m_is_text_object_scale_static: bool,
+        #[offset(793)]
+        #[rename(name = "m_VertexBufferAutoSizeReduction")]
+        pub m_vertex_buffer_auto_size_reduction: bool,
+        #[offset(796)]
+        #[rename(name = "m_firstVisibleCharacter")]
+        pub m_first_visible_character: i32,
+        #[offset(800)]
+        #[rename(name = "m_maxVisibleCharacters")]
+        pub m_max_visible_characters: i32,
+        #[offset(804)]
+        #[rename(name = "m_maxVisibleWords")]
+        pub m_max_visible_words: i32,
+        #[offset(808)]
+        #[rename(name = "m_maxVisibleLines")]
+        pub m_max_visible_lines: i32,
+        #[offset(812)]
+        #[rename(name = "m_useMaxVisibleDescender")]
+        pub m_use_max_visible_descender: bool,
+        #[offset(816)]
+        #[rename(name = "m_pageToDisplay")]
+        pub m_page_to_display: i32,
+        #[offset(820)]
+        #[rename(name = "m_isNewPage")]
+        pub m_is_new_page: bool,
+        #[offset(824)]
+        #[rename(name = "m_margin")]
+        pub m_margin: crate::unity_engine::vector4::Vector4,
+        #[offset(840)]
+        #[rename(name = "m_marginLeft")]
+        pub m_margin_left: f32,
+        #[offset(844)]
+        #[rename(name = "m_marginRight")]
+        pub m_margin_right: f32,
+        #[offset(848)]
+        #[rename(name = "m_marginWidth")]
+        pub m_margin_width: f32,
+        #[offset(852)]
+        #[rename(name = "m_marginHeight")]
+        pub m_margin_height: f32,
+        #[offset(856)]
+        #[rename(name = "m_width")]
+        pub m_width: f32,
+        #[offset(864)]
+        #[rename(name = "m_textInfo")]
+        pub m_text_info: crate::tm_pro::tmp_textinfo::TMP_TextInfo,
+        #[offset(872)]
+        #[rename(name = "m_havePropertiesChanged")]
+        pub m_have_properties_changed: bool,
+        #[offset(873)]
+        #[rename(name = "m_isUsingLegacyAnimationComponent")]
+        pub m_is_using_legacy_animation_component: bool,
+        #[offset(880)]
+        #[rename(name = "m_transform")]
+        pub m_transform: crate::unity_engine::transform::Transform,
+        #[offset(888)]
+        #[rename(name = "m_rectTransform")]
+        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(896)]
+        #[rename(name = "m_PreviousRectTransformSize")]
+        pub m_previous_rect_transform_size: crate::unity_engine::vector2::Vector2,
+        #[offset(904)]
+        #[rename(name = "m_PreviousPivotPosition")]
+        pub m_previous_pivot_position: crate::unity_engine::vector2::Vector2,
+        #[offset(913)]
+        #[rename(name = "m_autoSizeTextContainer")]
+        pub m_auto_size_text_container: bool,
+        #[offset(920)]
+        #[rename(name = "m_mesh")]
+        pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(928)]
+        #[rename(name = "m_isVolumetricText")]
+        pub m_is_volumetric_text: bool,
+        #[static_field]
+        #[rename(name = "OnFontAssetRequest")]
+        pub on_font_asset_request: crate::system::func_3::Func_3<i32, ::unity2::Il2CppString, crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        #[static_field]
+        #[rename(name = "OnSpriteAssetRequest")]
+        pub on_sprite_asset_request: crate::system::func_3::Func_3<i32, ::unity2::Il2CppString, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        #[offset(936)]
+        #[rename(name = "OnPreRenderText")]
+        pub on_pre_render_text: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+        #[offset(944)]
+        #[rename(name = "m_spriteAnimator")]
+        pub m_sprite_animator: crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator,
+        #[offset(952)]
+        #[rename(name = "m_flexibleHeight")]
+        pub m_flexible_height: f32,
+        #[offset(956)]
+        #[rename(name = "m_flexibleWidth")]
+        pub m_flexible_width: f32,
+        #[offset(960)]
+        #[rename(name = "m_minWidth")]
+        pub m_min_width: f32,
+        #[offset(964)]
+        #[rename(name = "m_minHeight")]
+        pub m_min_height: f32,
+        #[offset(968)]
+        #[rename(name = "m_maxWidth")]
+        pub m_max_width: f32,
+        #[offset(972)]
+        #[rename(name = "m_maxHeight")]
+        pub m_max_height: f32,
+        #[offset(976)]
+        #[rename(name = "m_LayoutElement")]
+        pub m_layout_element: crate::unity_engine::ui::layoutelement::LayoutElement,
+        #[offset(984)]
+        #[rename(name = "m_preferredWidth")]
+        pub m_preferred_width: f32,
+        #[offset(988)]
+        #[rename(name = "m_renderedWidth")]
+        pub m_rendered_width: f32,
+        #[offset(992)]
+        #[rename(name = "m_isPreferredWidthDirty")]
+        pub m_is_preferred_width_dirty: bool,
+        #[offset(996)]
+        #[rename(name = "m_preferredHeight")]
+        pub m_preferred_height: f32,
+        #[offset(1000)]
+        #[rename(name = "m_renderedHeight")]
+        pub m_rendered_height: f32,
+        #[offset(1004)]
+        #[rename(name = "m_isPreferredHeightDirty")]
+        pub m_is_preferred_height_dirty: bool,
+        #[offset(1005)]
+        #[rename(name = "m_isCalculatingPreferredValues")]
+        pub m_is_calculating_preferred_values: bool,
+        #[offset(1008)]
+        #[rename(name = "m_layoutPriority")]
+        pub m_layout_priority: i32,
+        #[offset(1012)]
+        #[rename(name = "m_isLayoutDirty")]
+        pub m_is_layout_dirty: bool,
+        #[offset(1013)]
+        #[rename(name = "m_isAwake")]
+        pub m_is_awake: bool,
+        #[offset(1014)]
+        #[rename(name = "m_isWaitingOnResourceLoad")]
+        pub m_is_waiting_on_resource_load: bool,
+        #[offset(1016)]
+        #[rename(name = "m_inputSource")]
+        pub m_input_source: crate::tm_pro::tmp_text::TMP_Text_TextInputSources,
+        #[offset(1020)]
+        #[rename(name = "m_fontScaleMultiplier")]
+        pub m_font_scale_multiplier: f32,
+        #[static_field]
+        #[rename(name = "m_htmlTag")]
+        pub m_html_tag: ::unity2::Array<u16>,
+        #[static_field]
+        #[rename(name = "m_xmlAttribute")]
+        pub m_xml_attribute: ::unity2::Array<crate::tm_pro::richtexttagattribute::RichTextTagAttribute>,
+        #[static_field]
+        #[rename(name = "m_attributeParameterValues")]
+        pub m_attribute_parameter_values: ::unity2::Array<f32>,
+        #[offset(1024)]
+        #[rename(name = "tag_LineIndent")]
+        pub tag_line_indent: f32,
+        #[offset(1028)]
+        #[rename(name = "tag_Indent")]
+        pub tag_indent: f32,
+        #[offset(1032)]
+        #[rename(name = "m_indentStack")]
+        pub m_indent_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
+        #[offset(1064)]
+        #[rename(name = "tag_NoParsing")]
+        pub tag_no_parsing: bool,
+        #[offset(1065)]
+        #[rename(name = "m_isParsingText")]
+        pub m_is_parsing_text: bool,
+        #[offset(1068)]
+        #[rename(name = "m_FXMatrix")]
+        pub m_fx_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        #[offset(1132)]
+        #[rename(name = "m_isFXMatrixSet")]
+        pub m_is_fx_matrix_set: bool,
+        #[offset(1136)]
+        #[rename(name = "m_TextProcessingArray")]
+        pub m_text_processing_array: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        #[offset(1144)]
+        #[rename(name = "m_InternalTextProcessingArraySize")]
+        pub m_internal_text_processing_array_size: i32,
+        #[offset(1152)]
+        #[rename(name = "m_internalCharacterInfo")]
+        pub m_internal_character_info: ::unity2::Array<crate::tm_pro::tmp_characterinfo::TMP_CharacterInfo>,
+        #[offset(1160)]
+        #[rename(name = "m_totalCharacterCount")]
+        pub m_total_character_count: i32,
+        #[static_field]
+        #[rename(name = "m_SavedWordWrapState")]
+        pub m_saved_word_wrap_state: crate::tm_pro::wordwrapstate::WordWrapState,
+        #[static_field]
+        #[rename(name = "m_SavedLineState")]
+        pub m_saved_line_state: crate::tm_pro::wordwrapstate::WordWrapState,
+        #[static_field]
+        #[rename(name = "m_SavedEllipsisState")]
+        pub m_saved_ellipsis_state: crate::tm_pro::wordwrapstate::WordWrapState,
+        #[static_field]
+        #[rename(name = "m_SavedLastValidState")]
+        pub m_saved_last_valid_state: crate::tm_pro::wordwrapstate::WordWrapState,
+        #[static_field]
+        #[rename(name = "m_SavedSoftLineBreakState")]
+        pub m_saved_soft_line_break_state: crate::tm_pro::wordwrapstate::WordWrapState,
+        #[static_field]
+        #[rename(name = "m_EllipsisInsertionCandidateStack")]
+        pub m_ellipsis_insertion_candidate_stack:
+            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::wordwrapstate::WordWrapState>,
+        #[offset(1164)]
+        #[rename(name = "m_characterCount")]
+        pub m_character_count: i32,
+        #[offset(1168)]
+        #[rename(name = "m_firstCharacterOfLine")]
+        pub m_first_character_of_line: i32,
+        #[offset(1172)]
+        #[rename(name = "m_firstVisibleCharacterOfLine")]
+        pub m_first_visible_character_of_line: i32,
+        #[offset(1176)]
+        #[rename(name = "m_lastCharacterOfLine")]
+        pub m_last_character_of_line: i32,
+        #[offset(1180)]
+        #[rename(name = "m_lastVisibleCharacterOfLine")]
+        pub m_last_visible_character_of_line: i32,
+        #[offset(1184)]
+        #[rename(name = "m_lineNumber")]
+        pub m_line_number: i32,
+        #[offset(1188)]
+        #[rename(name = "m_lineVisibleCharacterCount")]
+        pub m_line_visible_character_count: i32,
+        #[offset(1192)]
+        #[rename(name = "m_pageNumber")]
+        pub m_page_number: i32,
+        #[offset(1196)]
+        #[rename(name = "m_PageAscender")]
+        pub m_page_ascender: f32,
+        #[offset(1200)]
+        #[rename(name = "m_maxTextAscender")]
+        pub m_max_text_ascender: f32,
+        #[offset(1204)]
+        #[rename(name = "m_maxCapHeight")]
+        pub m_max_cap_height: f32,
+        #[offset(1208)]
+        #[rename(name = "m_ElementAscender")]
+        pub m_element_ascender: f32,
+        #[offset(1212)]
+        #[rename(name = "m_ElementDescender")]
+        pub m_element_descender: f32,
+        #[offset(1216)]
+        #[rename(name = "m_maxLineAscender")]
+        pub m_max_line_ascender: f32,
+        #[offset(1220)]
+        #[rename(name = "m_maxLineDescender")]
+        pub m_max_line_descender: f32,
+        #[offset(1224)]
+        #[rename(name = "m_startOfLineAscender")]
+        pub m_start_of_line_ascender: f32,
+        #[offset(1228)]
+        #[rename(name = "m_startOfLineDescender")]
+        pub m_start_of_line_descender: f32,
+        #[offset(1232)]
+        #[rename(name = "m_lineOffset")]
+        pub m_line_offset: f32,
+        #[offset(1236)]
+        #[rename(name = "m_meshExtents")]
+        pub m_mesh_extents: crate::tm_pro::extents::Extents,
+        #[offset(1252)]
+        #[rename(name = "m_htmlColor")]
+        pub m_html_color: crate::unity_engine::color32::Color32,
+        #[offset(1256)]
+        #[rename(name = "m_colorStack")]
+        pub m_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
+        #[offset(1288)]
+        #[rename(name = "m_underlineColorStack")]
+        pub m_underline_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
+        #[offset(1320)]
+        #[rename(name = "m_strikethroughColorStack")]
+        pub m_strikethrough_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
+        #[offset(1352)]
+        #[rename(name = "m_HighlightStateStack")]
+        pub m_highlight_state_stack:
+            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::highlightstate::HighlightState>,
+        #[offset(1400)]
+        #[rename(name = "m_colorGradientPreset")]
+        pub m_color_gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+        #[offset(1408)]
+        #[rename(name = "m_colorGradientStack")]
+        pub m_color_gradient_stack:
+            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,
+        #[offset(1448)]
+        #[rename(name = "m_colorGradientPresetIsTinted")]
+        pub m_color_gradient_preset_is_tinted: bool,
+        #[offset(1452)]
+        #[rename(name = "m_tabSpacing")]
+        pub m_tab_spacing: f32,
+        #[offset(1456)]
+        #[rename(name = "m_spacing")]
+        pub m_spacing: f32,
+        #[offset(1464)]
+        #[rename(name = "m_TextStyleStacks")]
+        pub m_text_style_stacks: ::unity2::Array<crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>>,
+        #[offset(1472)]
+        #[rename(name = "m_TextStyleStackDepth")]
+        pub m_text_style_stack_depth: i32,
+        #[offset(1480)]
+        #[rename(name = "m_ItalicAngleStack")]
+        pub m_italic_angle_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
+        #[offset(1512)]
+        #[rename(name = "m_ItalicAngle")]
+        pub m_italic_angle: i32,
+        #[offset(1520)]
+        #[rename(name = "m_actionStack")]
+        pub m_action_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
+        #[offset(1552)]
+        #[rename(name = "m_padding")]
+        pub m_padding: f32,
+        #[offset(1556)]
+        #[rename(name = "m_baselineOffset")]
+        pub m_baseline_offset: f32,
+        #[offset(1560)]
+        #[rename(name = "m_baselineOffsetStack")]
+        pub m_baseline_offset_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
+        #[offset(1592)]
+        #[rename(name = "m_xAdvance")]
+        pub m_x_advance: f32,
+        #[offset(1596)]
+        #[rename(name = "m_textElementType")]
+        pub m_text_element_type: crate::tm_pro::tmp_textelementtype::TMP_TextElementType,
+        #[offset(1600)]
+        #[rename(name = "m_cached_TextElement")]
+        pub m_cached_text_element: crate::tm_pro::tmp_textelement::TMP_TextElement,
+        #[offset(1608)]
+        #[rename(name = "m_Ellipsis")]
+        pub m_ellipsis: crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter,
+        #[offset(1640)]
+        #[rename(name = "m_Underline")]
+        pub m_underline: crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter,
+        #[offset(1672)]
+        #[rename(name = "m_defaultSpriteAsset")]
+        pub m_default_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        #[offset(1680)]
+        #[rename(name = "m_currentSpriteAsset")]
+        pub m_current_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        #[offset(1688)]
+        #[rename(name = "m_spriteCount")]
+        pub m_sprite_count: i32,
+        #[offset(1692)]
+        #[rename(name = "m_spriteIndex")]
+        pub m_sprite_index: i32,
+        #[offset(1696)]
+        #[rename(name = "m_spriteAnimationID")]
+        pub m_sprite_animation_id: i32,
+        #[offset(1700)]
+        #[rename(name = "m_ignoreActiveState")]
+        pub m_ignore_active_state: bool,
+        #[offset(1704)]
+        #[rename(name = "m_TextBackingArray")]
+        pub m_text_backing_array: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        #[static_field]
+        #[rename(name = "k_LargePositiveVector2")]
+        pub k_large_positive_vector2: crate::unity_engine::vector2::Vector2,
+        #[static_field]
+        #[rename(name = "k_LargeNegativeVector2")]
+        pub k_large_negative_vector2: crate::unity_engine::vector2::Vector2,
+        #[static_field]
+        #[rename(name = "k_LargePositiveFloat")]
+        pub k_large_positive_float: f32,
+        #[static_field]
+        #[rename(name = "k_LargeNegativeFloat")]
+        pub k_large_negative_float: f32,
+        #[static_field]
+        #[rename(name = "k_LargePositiveInt")]
+        pub k_large_positive_int: i32,
+        #[static_field]
+        #[rename(name = "k_LargeNegativeInt")]
+        pub k_large_negative_int: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_UnicodeChar {
+        pub unicode: i32,
+        pub string_index: i32,
+        pub length: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
+        const NAME: &'static str = "TMP_Text.UnicodeChar";
+        const NAMESPACE: &'static str = "TMPro";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_UnicodeChar {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -66,32 +829,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_UnicodeChar {
-        pub unicode: i32,
-        pub string_index: i32,
-        pub length: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
-        const NAME: &'static str = "TMP_Text.UnicodeChar";
-        const NAMESPACE: &'static str = "TMPro";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_UnicodeChar {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -118,539 +855,6 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_text/TMP_Text.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Text")]
-    #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
-    pub struct TMP_Text {
-        #[rename(name = "m_text")]
-        pub m_text: ::unity2::Il2CppString,
-        #[rename(name = "m_IsTextBackingStringDirty")]
-        pub m_is_text_backing_string_dirty: bool,
-        #[rename(name = "m_TextPreprocessor")]
-        pub m_text_preprocessor: crate::tm_pro::itextpreprocessor::ITextPreprocessor,
-        #[rename(name = "m_isRightToLeft")]
-        pub m_is_right_to_left: bool,
-        #[rename(name = "m_fontAsset")]
-        pub m_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_currentFontAsset")]
-        pub m_current_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_isSDFShader")]
-        pub m_is_sdf_shader: bool,
-        #[rename(name = "m_sharedMaterial")]
-        pub m_shared_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_currentMaterial")]
-        pub m_current_material: crate::unity_engine::material::Material,
-        #[static_field]
-        #[rename(name = "m_materialReferences")]
-        pub m_material_references: ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
-        #[static_field]
-        #[rename(name = "m_materialReferenceIndexLookup")]
-        pub m_material_reference_index_lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
-        #[static_field]
-        #[rename(name = "m_materialReferenceStack")]
-        pub m_material_reference_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::materialreference::MaterialReference>,
-        #[rename(name = "m_currentMaterialIndex")]
-        pub m_current_material_index: i32,
-        #[rename(name = "m_fontSharedMaterials")]
-        pub m_font_shared_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_fontMaterial")]
-        pub m_font_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_fontMaterials")]
-        pub m_font_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_isMaterialDirty")]
-        pub m_is_material_dirty: bool,
-        #[rename(name = "m_fontColor32")]
-        pub m_font_color32: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_fontColor")]
-        pub m_font_color: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "s_colorWhite")]
-        pub s_color_white: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_underlineColor")]
-        pub m_underline_color: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_strikethroughColor")]
-        pub m_strikethrough_color: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_enableVertexGradient")]
-        pub m_enable_vertex_gradient: bool,
-        #[rename(name = "m_colorMode")]
-        pub m_color_mode: crate::tm_pro::colormode::ColorMode,
-        #[rename(name = "m_fontColorGradient")]
-        pub m_font_color_gradient: crate::tm_pro::vertexgradient::VertexGradient,
-        #[rename(name = "m_fontColorGradientPreset")]
-        pub m_font_color_gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-        #[rename(name = "m_spriteAsset")]
-        pub m_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-        #[rename(name = "m_tintAllSprites")]
-        pub m_tint_all_sprites: bool,
-        #[rename(name = "m_tintSprite")]
-        pub m_tint_sprite: bool,
-        #[rename(name = "m_spriteColor")]
-        pub m_sprite_color: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_StyleSheet")]
-        pub m_style_sheet: crate::tm_pro::tmp_stylesheet::TMP_StyleSheet,
-        #[rename(name = "m_TextStyle")]
-        pub m_text_style: crate::tm_pro::tmp_style::TMP_Style,
-        #[rename(name = "m_TextStyleHashCode")]
-        pub m_text_style_hash_code: i32,
-        #[rename(name = "m_overrideHtmlColors")]
-        pub m_override_html_colors: bool,
-        #[rename(name = "m_faceColor")]
-        pub m_face_color: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_outlineColor")]
-        pub m_outline_color: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_outlineWidth")]
-        pub m_outline_width: f32,
-        #[rename(name = "m_fontSize")]
-        pub m_font_size: f32,
-        #[rename(name = "m_currentFontSize")]
-        pub m_current_font_size: f32,
-        #[rename(name = "m_fontSizeBase")]
-        pub m_font_size_base: f32,
-        #[rename(name = "m_sizeStack")]
-        pub m_size_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
-        #[rename(name = "m_fontWeight")]
-        pub m_font_weight: crate::tm_pro::fontweight::FontWeight,
-        #[rename(name = "m_FontWeightInternal")]
-        pub m_font_weight_internal: crate::tm_pro::fontweight::FontWeight,
-        #[rename(name = "m_FontWeightStack")]
-        pub m_font_weight_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::fontweight::FontWeight>,
-        #[rename(name = "m_enableAutoSizing")]
-        pub m_enable_auto_sizing: bool,
-        #[rename(name = "m_maxFontSize")]
-        pub m_max_font_size: f32,
-        #[rename(name = "m_minFontSize")]
-        pub m_min_font_size: f32,
-        #[rename(name = "m_AutoSizeIterationCount")]
-        pub m_auto_size_iteration_count: i32,
-        #[rename(name = "m_AutoSizeMaxIterationCount")]
-        pub m_auto_size_max_iteration_count: i32,
-        #[rename(name = "m_IsAutoSizePointSizeSet")]
-        pub m_is_auto_size_point_size_set: bool,
-        #[rename(name = "m_fontSizeMin")]
-        pub m_font_size_min: f32,
-        #[rename(name = "m_fontSizeMax")]
-        pub m_font_size_max: f32,
-        #[rename(name = "m_fontStyle")]
-        pub m_font_style: crate::tm_pro::fontstyles::FontStyles,
-        #[rename(name = "m_FontStyleInternal")]
-        pub m_font_style_internal: crate::tm_pro::fontstyles::FontStyles,
-        #[rename(name = "m_fontStyleStack")]
-        pub m_font_style_stack: crate::tm_pro::tmp_fontstylestack::TMP_FontStyleStack,
-        #[rename(name = "m_isUsingBold")]
-        pub m_is_using_bold: bool,
-        #[rename(name = "m_HorizontalAlignment")]
-        pub m_horizontal_alignment: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
-        #[rename(name = "m_VerticalAlignment")]
-        pub m_vertical_alignment: crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions,
-        #[rename(name = "m_textAlignment")]
-        pub m_text_alignment: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
-        #[rename(name = "m_lineJustification")]
-        pub m_line_justification: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
-        #[rename(name = "m_lineJustificationStack")]
-        pub m_line_justification_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-            crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
-        >,
-        #[rename(name = "m_textContainerLocalCorners")]
-        pub m_text_container_local_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_characterSpacing")]
-        pub m_character_spacing: f32,
-        #[rename(name = "m_cSpacing")]
-        pub m_c_spacing: f32,
-        #[rename(name = "m_monoSpacing")]
-        pub m_mono_spacing: f32,
-        #[rename(name = "m_wordSpacing")]
-        pub m_word_spacing: f32,
-        #[rename(name = "m_lineSpacing")]
-        pub m_line_spacing: f32,
-        #[rename(name = "m_lineSpacingDelta")]
-        pub m_line_spacing_delta: f32,
-        #[rename(name = "m_lineHeight")]
-        pub m_line_height: f32,
-        #[rename(name = "m_IsDrivenLineSpacing")]
-        pub m_is_driven_line_spacing: bool,
-        #[rename(name = "m_lineSpacingMax")]
-        pub m_line_spacing_max: f32,
-        #[rename(name = "m_paragraphSpacing")]
-        pub m_paragraph_spacing: f32,
-        #[rename(name = "m_charWidthMaxAdj")]
-        pub m_char_width_max_adj: f32,
-        #[rename(name = "m_charWidthAdjDelta")]
-        pub m_char_width_adj_delta: f32,
-        #[rename(name = "m_enableWordWrapping")]
-        pub m_enable_word_wrapping: bool,
-        #[rename(name = "m_isCharacterWrappingEnabled")]
-        pub m_is_character_wrapping_enabled: bool,
-        #[rename(name = "m_isNonBreakingSpace")]
-        pub m_is_non_breaking_space: bool,
-        #[rename(name = "m_isIgnoringAlignment")]
-        pub m_is_ignoring_alignment: bool,
-        #[rename(name = "m_wordWrappingRatios")]
-        pub m_word_wrapping_ratios: f32,
-        #[rename(name = "m_overflowMode")]
-        pub m_overflow_mode: crate::tm_pro::textoverflowmodes::TextOverflowModes,
-        #[rename(name = "m_firstOverflowCharacterIndex")]
-        pub m_first_overflow_character_index: i32,
-        #[rename(name = "m_linkedTextComponent")]
-        pub m_linked_text_component: crate::tm_pro::tmp_text::TMP_Text,
-        #[rename(name = "parentLinkedComponent")]
-        pub parent_linked_component: crate::tm_pro::tmp_text::TMP_Text,
-        #[rename(name = "m_isTextTruncated")]
-        pub m_is_text_truncated: bool,
-        #[rename(name = "m_enableKerning")]
-        pub m_enable_kerning: bool,
-        #[rename(name = "m_GlyphHorizontalAdvanceAdjustment")]
-        pub m_glyph_horizontal_advance_adjustment: f32,
-        #[rename(name = "m_enableExtraPadding")]
-        pub m_enable_extra_padding: bool,
-        #[rename(name = "checkPaddingRequired")]
-        pub check_padding_required: bool,
-        #[rename(name = "m_isRichText")]
-        pub m_is_rich_text: bool,
-        #[rename(name = "m_parseCtrlCharacters")]
-        pub m_parse_ctrl_characters: bool,
-        #[rename(name = "m_isOverlay")]
-        pub m_is_overlay: bool,
-        #[rename(name = "m_isOrthographic")]
-        pub m_is_orthographic: bool,
-        #[rename(name = "m_isCullingEnabled")]
-        pub m_is_culling_enabled: bool,
-        #[rename(name = "m_isMaskingEnabled")]
-        pub m_is_masking_enabled: bool,
-        #[rename(name = "isMaskUpdateRequired")]
-        pub is_mask_update_required: bool,
-        #[rename(name = "m_ignoreCulling")]
-        pub m_ignore_culling: bool,
-        #[rename(name = "m_horizontalMapping")]
-        pub m_horizontal_mapping: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
-        #[rename(name = "m_verticalMapping")]
-        pub m_vertical_mapping: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
-        #[rename(name = "m_uvLineOffset")]
-        pub m_uv_line_offset: f32,
-        #[rename(name = "m_renderMode")]
-        pub m_render_mode: crate::tm_pro::textrenderflags::TextRenderFlags,
-        #[rename(name = "m_geometrySortingOrder")]
-        pub m_geometry_sorting_order: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
-        #[rename(name = "m_IsTextObjectScaleStatic")]
-        pub m_is_text_object_scale_static: bool,
-        #[rename(name = "m_VertexBufferAutoSizeReduction")]
-        pub m_vertex_buffer_auto_size_reduction: bool,
-        #[rename(name = "m_firstVisibleCharacter")]
-        pub m_first_visible_character: i32,
-        #[rename(name = "m_maxVisibleCharacters")]
-        pub m_max_visible_characters: i32,
-        #[rename(name = "m_maxVisibleWords")]
-        pub m_max_visible_words: i32,
-        #[rename(name = "m_maxVisibleLines")]
-        pub m_max_visible_lines: i32,
-        #[rename(name = "m_useMaxVisibleDescender")]
-        pub m_use_max_visible_descender: bool,
-        #[rename(name = "m_pageToDisplay")]
-        pub m_page_to_display: i32,
-        #[rename(name = "m_isNewPage")]
-        pub m_is_new_page: bool,
-        #[rename(name = "m_margin")]
-        pub m_margin: crate::unity_engine::vector4::Vector4,
-        #[rename(name = "m_marginLeft")]
-        pub m_margin_left: f32,
-        #[rename(name = "m_marginRight")]
-        pub m_margin_right: f32,
-        #[rename(name = "m_marginWidth")]
-        pub m_margin_width: f32,
-        #[rename(name = "m_marginHeight")]
-        pub m_margin_height: f32,
-        #[rename(name = "m_width")]
-        pub m_width: f32,
-        #[rename(name = "m_textInfo")]
-        pub m_text_info: crate::tm_pro::tmp_textinfo::TMP_TextInfo,
-        #[rename(name = "m_havePropertiesChanged")]
-        pub m_have_properties_changed: bool,
-        #[rename(name = "m_isUsingLegacyAnimationComponent")]
-        pub m_is_using_legacy_animation_component: bool,
-        #[rename(name = "m_transform")]
-        pub m_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_rectTransform")]
-        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_PreviousRectTransformSize")]
-        pub m_previous_rect_transform_size: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_PreviousPivotPosition")]
-        pub m_previous_pivot_position: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_autoSizeTextContainer")]
-        pub m_auto_size_text_container: bool,
-        #[rename(name = "m_mesh")]
-        pub m_mesh: crate::unity_engine::mesh::Mesh,
-        #[rename(name = "m_isVolumetricText")]
-        pub m_is_volumetric_text: bool,
-        #[static_field]
-        #[rename(name = "OnFontAssetRequest")]
-        pub on_font_asset_request: crate::system::func_3::Func_3<i32, ::unity2::Il2CppString, crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
-        #[static_field]
-        #[rename(name = "OnSpriteAssetRequest")]
-        pub on_sprite_asset_request: crate::system::func_3::Func_3<i32, ::unity2::Il2CppString, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
-        #[rename(name = "OnPreRenderText")]
-        pub on_pre_render_text: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
-        #[rename(name = "m_spriteAnimator")]
-        pub m_sprite_animator: crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator,
-        #[rename(name = "m_flexibleHeight")]
-        pub m_flexible_height: f32,
-        #[rename(name = "m_flexibleWidth")]
-        pub m_flexible_width: f32,
-        #[rename(name = "m_minWidth")]
-        pub m_min_width: f32,
-        #[rename(name = "m_minHeight")]
-        pub m_min_height: f32,
-        #[rename(name = "m_maxWidth")]
-        pub m_max_width: f32,
-        #[rename(name = "m_maxHeight")]
-        pub m_max_height: f32,
-        #[rename(name = "m_LayoutElement")]
-        pub m_layout_element: crate::unity_engine::ui::layoutelement::LayoutElement,
-        #[rename(name = "m_preferredWidth")]
-        pub m_preferred_width: f32,
-        #[rename(name = "m_renderedWidth")]
-        pub m_rendered_width: f32,
-        #[rename(name = "m_isPreferredWidthDirty")]
-        pub m_is_preferred_width_dirty: bool,
-        #[rename(name = "m_preferredHeight")]
-        pub m_preferred_height: f32,
-        #[rename(name = "m_renderedHeight")]
-        pub m_rendered_height: f32,
-        #[rename(name = "m_isPreferredHeightDirty")]
-        pub m_is_preferred_height_dirty: bool,
-        #[rename(name = "m_isCalculatingPreferredValues")]
-        pub m_is_calculating_preferred_values: bool,
-        #[rename(name = "m_layoutPriority")]
-        pub m_layout_priority: i32,
-        #[rename(name = "m_isLayoutDirty")]
-        pub m_is_layout_dirty: bool,
-        #[rename(name = "m_isAwake")]
-        pub m_is_awake: bool,
-        #[rename(name = "m_isWaitingOnResourceLoad")]
-        pub m_is_waiting_on_resource_load: bool,
-        #[rename(name = "m_inputSource")]
-        pub m_input_source: crate::tm_pro::tmp_text::TMP_Text_TextInputSources,
-        #[rename(name = "m_fontScaleMultiplier")]
-        pub m_font_scale_multiplier: f32,
-        #[static_field]
-        #[rename(name = "m_htmlTag")]
-        pub m_html_tag: ::unity2::Array<u16>,
-        #[static_field]
-        #[rename(name = "m_xmlAttribute")]
-        pub m_xml_attribute: ::unity2::Array<crate::tm_pro::richtexttagattribute::RichTextTagAttribute>,
-        #[static_field]
-        #[rename(name = "m_attributeParameterValues")]
-        pub m_attribute_parameter_values: ::unity2::Array<f32>,
-        #[rename(name = "tag_LineIndent")]
-        pub tag_line_indent: f32,
-        #[rename(name = "tag_Indent")]
-        pub tag_indent: f32,
-        #[rename(name = "m_indentStack")]
-        pub m_indent_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
-        #[rename(name = "tag_NoParsing")]
-        pub tag_no_parsing: bool,
-        #[rename(name = "m_isParsingText")]
-        pub m_is_parsing_text: bool,
-        #[rename(name = "m_FXMatrix")]
-        pub m_fx_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
-        #[rename(name = "m_isFXMatrixSet")]
-        pub m_is_fx_matrix_set: bool,
-        #[rename(name = "m_TextProcessingArray")]
-        pub m_text_processing_array: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        #[rename(name = "m_InternalTextProcessingArraySize")]
-        pub m_internal_text_processing_array_size: i32,
-        #[rename(name = "m_internalCharacterInfo")]
-        pub m_internal_character_info: ::unity2::Array<crate::tm_pro::tmp_characterinfo::TMP_CharacterInfo>,
-        #[rename(name = "m_totalCharacterCount")]
-        pub m_total_character_count: i32,
-        #[static_field]
-        #[rename(name = "m_SavedWordWrapState")]
-        pub m_saved_word_wrap_state: crate::tm_pro::wordwrapstate::WordWrapState,
-        #[static_field]
-        #[rename(name = "m_SavedLineState")]
-        pub m_saved_line_state: crate::tm_pro::wordwrapstate::WordWrapState,
-        #[static_field]
-        #[rename(name = "m_SavedEllipsisState")]
-        pub m_saved_ellipsis_state: crate::tm_pro::wordwrapstate::WordWrapState,
-        #[static_field]
-        #[rename(name = "m_SavedLastValidState")]
-        pub m_saved_last_valid_state: crate::tm_pro::wordwrapstate::WordWrapState,
-        #[static_field]
-        #[rename(name = "m_SavedSoftLineBreakState")]
-        pub m_saved_soft_line_break_state: crate::tm_pro::wordwrapstate::WordWrapState,
-        #[static_field]
-        #[rename(name = "m_EllipsisInsertionCandidateStack")]
-        pub m_ellipsis_insertion_candidate_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::wordwrapstate::WordWrapState>,
-        #[rename(name = "m_characterCount")]
-        pub m_character_count: i32,
-        #[rename(name = "m_firstCharacterOfLine")]
-        pub m_first_character_of_line: i32,
-        #[rename(name = "m_firstVisibleCharacterOfLine")]
-        pub m_first_visible_character_of_line: i32,
-        #[rename(name = "m_lastCharacterOfLine")]
-        pub m_last_character_of_line: i32,
-        #[rename(name = "m_lastVisibleCharacterOfLine")]
-        pub m_last_visible_character_of_line: i32,
-        #[rename(name = "m_lineNumber")]
-        pub m_line_number: i32,
-        #[rename(name = "m_lineVisibleCharacterCount")]
-        pub m_line_visible_character_count: i32,
-        #[rename(name = "m_pageNumber")]
-        pub m_page_number: i32,
-        #[rename(name = "m_PageAscender")]
-        pub m_page_ascender: f32,
-        #[rename(name = "m_maxTextAscender")]
-        pub m_max_text_ascender: f32,
-        #[rename(name = "m_maxCapHeight")]
-        pub m_max_cap_height: f32,
-        #[rename(name = "m_ElementAscender")]
-        pub m_element_ascender: f32,
-        #[rename(name = "m_ElementDescender")]
-        pub m_element_descender: f32,
-        #[rename(name = "m_maxLineAscender")]
-        pub m_max_line_ascender: f32,
-        #[rename(name = "m_maxLineDescender")]
-        pub m_max_line_descender: f32,
-        #[rename(name = "m_startOfLineAscender")]
-        pub m_start_of_line_ascender: f32,
-        #[rename(name = "m_startOfLineDescender")]
-        pub m_start_of_line_descender: f32,
-        #[rename(name = "m_lineOffset")]
-        pub m_line_offset: f32,
-        #[rename(name = "m_meshExtents")]
-        pub m_mesh_extents: crate::tm_pro::extents::Extents,
-        #[rename(name = "m_htmlColor")]
-        pub m_html_color: crate::unity_engine::color32::Color32,
-        #[rename(name = "m_colorStack")]
-        pub m_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
-        #[rename(name = "m_underlineColorStack")]
-        pub m_underline_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
-        #[rename(name = "m_strikethroughColorStack")]
-        pub m_strikethrough_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
-        #[rename(name = "m_HighlightStateStack")]
-        pub m_highlight_state_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::highlightstate::HighlightState>,
-        #[rename(name = "m_colorGradientPreset")]
-        pub m_color_gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-        #[rename(name = "m_colorGradientStack")]
-        pub m_color_gradient_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,
-        #[rename(name = "m_colorGradientPresetIsTinted")]
-        pub m_color_gradient_preset_is_tinted: bool,
-        #[rename(name = "m_tabSpacing")]
-        pub m_tab_spacing: f32,
-        #[rename(name = "m_spacing")]
-        pub m_spacing: f32,
-        #[rename(name = "m_TextStyleStacks")]
-        pub m_text_style_stacks: ::unity2::Array<crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>>,
-        #[rename(name = "m_TextStyleStackDepth")]
-        pub m_text_style_stack_depth: i32,
-        #[rename(name = "m_ItalicAngleStack")]
-        pub m_italic_angle_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
-        #[rename(name = "m_ItalicAngle")]
-        pub m_italic_angle: i32,
-        #[rename(name = "m_actionStack")]
-        pub m_action_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
-        #[rename(name = "m_padding")]
-        pub m_padding: f32,
-        #[rename(name = "m_baselineOffset")]
-        pub m_baseline_offset: f32,
-        #[rename(name = "m_baselineOffsetStack")]
-        pub m_baseline_offset_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
-        #[rename(name = "m_xAdvance")]
-        pub m_x_advance: f32,
-        #[rename(name = "m_textElementType")]
-        pub m_text_element_type: crate::tm_pro::tmp_textelementtype::TMP_TextElementType,
-        #[rename(name = "m_cached_TextElement")]
-        pub m_cached_text_element: crate::tm_pro::tmp_textelement::TMP_TextElement,
-        #[rename(name = "m_Ellipsis")]
-        pub m_ellipsis: crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter,
-        #[rename(name = "m_Underline")]
-        pub m_underline: crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter,
-        #[rename(name = "m_defaultSpriteAsset")]
-        pub m_default_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-        #[rename(name = "m_currentSpriteAsset")]
-        pub m_current_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-        #[rename(name = "m_spriteCount")]
-        pub m_sprite_count: i32,
-        #[rename(name = "m_spriteIndex")]
-        pub m_sprite_index: i32,
-        #[rename(name = "m_spriteAnimationID")]
-        pub m_sprite_animation_id: i32,
-        #[rename(name = "m_ignoreActiveState")]
-        pub m_ignore_active_state: bool,
-        #[rename(name = "m_TextBackingArray")]
-        pub m_text_backing_array: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
-        #[static_field]
-        #[rename(name = "k_LargePositiveVector2")]
-        pub k_large_positive_vector2: crate::unity_engine::vector2::Vector2,
-        #[static_field]
-        #[rename(name = "k_LargeNegativeVector2")]
-        pub k_large_negative_vector2: crate::unity_engine::vector2::Vector2,
-        #[static_field]
-        #[rename(name = "k_LargePositiveFloat")]
-        pub k_large_positive_float: f32,
-        #[static_field]
-        #[rename(name = "k_LargeNegativeFloat")]
-        pub k_large_negative_float: f32,
-        #[static_field]
-        #[rename(name = "k_LargePositiveInt")]
-        pub k_large_positive_int: i32,
-        #[static_field]
-        #[rename(name = "k_LargeNegativeInt")]
-        pub k_large_negative_int: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_TextBackingContainer {
-        pub m_array: ::unity2::Array<u32>,
-        pub m_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_TextBackingContainer {
-        const NAME: &'static str = "TMP_Text.TextBackingContainer";
-        const NAMESPACE: &'static str = "TMPro";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_TextBackingContainer {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_CharacterSubstitution {
-        pub index: i32,
-        pub unicode: u32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_CharacterSubstitution {
-        const NAME: &'static str = "TMP_Text.CharacterSubstitution";
-        const NAMESPACE: &'static str = "TMPro";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_CharacterSubstitution {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "tm_pro-tmp_text-types")]
@@ -659,19 +863,16 @@ pub use __types::*;
 #[cfg(feature = "tm_pro-tmp_text")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Text_SpecialCharacter_unity2_raw {
+mod __TMP_Text_CharacterSubstitution_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::class(),
+                <TMP_Text_CharacterSubstitution as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -684,7 +885,7 @@ mod __TMP_Text_SpecialCharacter_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::NAME,
+                        <TMP_Text_CharacterSubstitution as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -692,34 +893,308 @@ mod __TMP_Text_SpecialCharacter_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(
-        this: TMP_Text_SpecialCharacter,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-        material_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TMP_Text_SpecialCharacter, crate::tm_pro::tmp_character::TMP_Character, i32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(this: TMP_Text_CharacterSubstitution, index: i32, unicode: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Text_CharacterSubstitution, i32, u32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, character, material_index, __unity2_method_info)
+        inner(this, index, unicode, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "tm_pro-tmp_text")]
-impl TMP_Text_SpecialCharacter {
-    #[doc = "`.ctor(crate::tm_pro::tmp_character::TMP_Character, i32)` overload"]
-    pub fn ctor(
-        self,
-        character: impl ::core::convert::Into<crate::tm_pro::tmp_character::TMP_Character>,
-        material_index: impl ::core::convert::Into<i32>,
-    ) -> () {
+impl TMP_Text_CharacterSubstitution {
+    #[doc = "`.ctor(i32, u32)` overload"]
+    pub fn ctor(self, index: impl ::core::convert::Into<i32>, unicode: impl ::core::convert::Into<u32>) -> () {
         unsafe {
-            __TMP_Text_SpecialCharacter_unity2_raw::ctor(
+            __TMP_Text_CharacterSubstitution_unity2_raw::ctor(
                 self,
-                ::core::convert::Into::into(character),
-                ::core::convert::Into::into(material_index),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(unicode),
                 ::core::option::Option::None,
             )
         }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Text_TextBackingContainer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "get_Capacity",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                        "get_Capacity",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_capacity(this: TMP_Text_TextBackingContainer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_capacity::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: TMP_Text_TextBackingContainer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "set_Count",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                        "set_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_count(this: TMP_Text_TextBackingContainer, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_count::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "get_Item",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item(this: TMP_Text_TextBackingContainer, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "set_Item",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item(this: TMP_Text_TextBackingContainer, index: i32, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
+        inner(this, index, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_Text_TextBackingContainer, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, size, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
+                "Resize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
+                        "Resize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn resize(this: TMP_Text_TextBackingContainer, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_resize::get_method_info().method_ptr);
+        inner(this, size, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl TMP_Text_TextBackingContainer {
+    #[doc = "`get_Capacity()` overload"]
+    pub fn get_capacity(self) -> i32 {
+        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::get_capacity(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Count()` overload"]
+    pub fn get_count(self) -> i32 {
+        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::get_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Count(i32)` overload"]
+    pub fn set_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::set_count(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Item(i32)` overload"]
+    pub fn get_item(self, index: impl ::core::convert::Into<i32>) -> u32 {
+        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::get_item(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Item(i32, u32)` overload"]
+    pub fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            __TMP_Text_TextBackingContainer_unity2_raw::set_item(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`.ctor(i32)` overload"]
+    pub fn ctor(self, size: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::ctor(self, ::core::convert::Into::into(size), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Resize(i32)` overload"]
+    pub fn resize(self, size: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::resize(self, ::core::convert::Into::into(size), ::core::option::Option::None) }
     }
 }
 
@@ -13868,299 +14343,19 @@ impl TMP_Text {
 #[cfg(feature = "tm_pro-tmp_text")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Text_TextBackingContainer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_capacity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
-                "get_Capacity",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
-                        "get_Capacity",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_capacity(this: TMP_Text_TextBackingContainer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(TMP_Text_TextBackingContainer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_capacity::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: TMP_Text_TextBackingContainer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(TMP_Text_TextBackingContainer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
-                "set_Count",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
-                        "set_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_count(this: TMP_Text_TextBackingContainer, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
-                        "get_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item(this: TMP_Text_TextBackingContainer, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
-                        "set_Item",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item(this: TMP_Text_TextBackingContainer, index: i32, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
-        inner(this, index, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_Text_TextBackingContainer, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, size, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::class(),
-                "Resize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_Text_TextBackingContainer as ::unity2::ClassIdentity>::NAME,
-                        "Resize",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn resize(this: TMP_Text_TextBackingContainer, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Text_TextBackingContainer, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_resize::get_method_info().method_ptr);
-        inner(this, size, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_text")]
-impl TMP_Text_TextBackingContainer {
-    #[doc = "`get_Capacity()` overload"]
-    pub fn get_capacity(self) -> i32 {
-        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::get_capacity(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Count()` overload"]
-    pub fn get_count(self) -> i32 {
-        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::get_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Count(i32)` overload"]
-    pub fn set_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::set_count(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Item(i32)` overload"]
-    pub fn get_item(self, index: impl ::core::convert::Into<i32>) -> u32 {
-        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::get_item(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Item(i32, u32)` overload"]
-    pub fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe {
-            __TMP_Text_TextBackingContainer_unity2_raw::set_item(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`.ctor(i32)` overload"]
-    pub fn ctor(self, size: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::ctor(self, ::core::convert::Into::into(size), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Resize(i32)` overload"]
-    pub fn resize(self, size: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __TMP_Text_TextBackingContainer_unity2_raw::resize(self, ::core::convert::Into::into(size), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_text")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Text_CharacterSubstitution_unity2_raw {
+mod __TMP_Text_SpecialCharacter_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_CharacterSubstitution as ::unity2::ClassIdentity>::class(),
+                <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -14173,7 +14368,7 @@ mod __TMP_Text_CharacterSubstitution_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <TMP_Text_CharacterSubstitution as ::unity2::ClassIdentity>::NAME,
+                        <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -14181,22 +14376,31 @@ mod __TMP_Text_CharacterSubstitution_unity2_raw {
             }
         }
     }
-    pub unsafe fn ctor(this: TMP_Text_CharacterSubstitution, index: i32, unicode: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_Text_CharacterSubstitution, i32, u32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn ctor(
+        this: TMP_Text_SpecialCharacter,
+        character: crate::tm_pro::tmp_character::TMP_Character,
+        material_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Text_SpecialCharacter, crate::tm_pro::tmp_character::TMP_Character, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, index, unicode, __unity2_method_info)
+        inner(this, character, material_index, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "tm_pro-tmp_text")]
-impl TMP_Text_CharacterSubstitution {
-    #[doc = "`.ctor(i32, u32)` overload"]
-    pub fn ctor(self, index: impl ::core::convert::Into<i32>, unicode: impl ::core::convert::Into<u32>) -> () {
+impl TMP_Text_SpecialCharacter {
+    #[doc = "`.ctor(crate::tm_pro::tmp_character::TMP_Character, i32)` overload"]
+    pub fn ctor(
+        self,
+        character: impl ::core::convert::Into<crate::tm_pro::tmp_character::TMP_Character>,
+        material_index: impl ::core::convert::Into<i32>,
+    ) -> () {
         unsafe {
-            __TMP_Text_CharacterSubstitution_unity2_raw::ctor(
+            __TMP_Text_SpecialCharacter_unity2_raw::ctor(
                 self,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(unicode),
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(material_index),
                 ::core::option::Option::None,
             )
         }

@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "InventoryRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct InventoryRoot {
+        #[offset(24)]
         #[rename(name = "m_UnitItemList")]
         pub m_unit_item_list: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_PoolItemList")]
         pub m_pool_item_list: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_ItemInfo")]
         pub m_item_info: crate::unity_engine::gameobject::GameObject,
     }

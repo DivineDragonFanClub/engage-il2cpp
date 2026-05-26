@@ -21,6 +21,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapPanelRoute")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelroute :: MapPanelRoute >)]
     pub struct MapPanelRoute {
+        #[offset(64)]
         #[rename(name = "m_Routes")]
         pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
     }

@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "Light2DCullResult")]
     #[parent(crate::system::object::Object)]
     pub struct Light2DCullResult {
+        #[offset(16)]
         #[rename(name = "m_VisibleLights")]
         pub m_visible_lights:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,

@@ -25,6 +25,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Root")]
         pub s_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_Pool")]
         pub m_pool: crate::app::mapeffect::MapEffect_LocationPool,
     }
@@ -33,12 +34,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapEffect.LocationNode")]
     #[parent(crate::app::pool::Pool_Node)]
     pub struct MapEffect_LocationNode {
+        #[offset(16)]
         #[rename(name = "Name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "Position")]
         pub position: crate::unity_engine::vector3::Vector3,
+        #[offset(36)]
         #[rename(name = "Rotation")]
         pub rotation: crate::unity_engine::quaternion::Quaternion,
+        #[offset(56)]
         #[rename(name = "Effect")]
         pub effect: crate::app::resourceobject::ResourceObject,
     }

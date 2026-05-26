@@ -22,14 +22,19 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_ProfileCardRoot")]
         pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[offset(32)]
         #[rename(name = "m_AlbumListMenuContent")]
         pub m_album_list_menu_content: crate::app::profilecardalbumlistmenucontent::ProfileCardAlbumListMenuContent,
+        #[offset(40)]
         #[rename(name = "m_PageText")]
         pub m_page_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_PageMaxText")]
         pub m_page_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_ArrowGroupObject")]
         pub m_arrow_group_object: crate::unity_engine::gameobject::GameObject,
     }

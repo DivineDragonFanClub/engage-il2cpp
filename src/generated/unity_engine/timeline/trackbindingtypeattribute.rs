@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackbindingtypeattribute/TrackBindingTypeAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackBindingTypeAttribute")]
     pub struct TrackBindingTypeAttribute {
+        #[offset(16)]
         #[rename(name = "type")]
         pub r#type: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "flags")]
         pub flags: crate::unity_engine::timeline::trackbindingflags::TrackBindingFlags,
     }

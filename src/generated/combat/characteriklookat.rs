@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterIKLookAt")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterIKLookAt {
+        #[offset(32)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(48)]
         #[rename(name = "m_LookTargetGO")]
         pub m_look_target_go: crate::unity_engine::gameobject::GameObject,
     }

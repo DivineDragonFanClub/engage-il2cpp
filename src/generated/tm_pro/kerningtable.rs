@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "KerningTable")]
     #[parent(crate::system::object::Object)]
     pub struct KerningTable {
+        #[offset(16)]
         #[rename(name = "kerningPairs")]
         pub kerning_pairs: crate::system::collections::generic::list_1::List_1<crate::tm_pro::kerningpair::KerningPair>,
     }

@@ -14,10 +14,13 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_UserId0")]
         pub m_user_id0: u64,
+        #[offset(24)]
         #[rename(name = "m_UserId1")]
         pub m_user_id1: u64,
+        #[offset(32)]
         #[rename(name = "m_MakeTime")]
         pub m_make_time: u64,
     }

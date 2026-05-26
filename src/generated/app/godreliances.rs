@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_PartnerPid")]
         pub m_partner_pid: ::unity2::Il2CppString,
     }

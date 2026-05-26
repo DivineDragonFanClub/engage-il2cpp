@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "VolumeProfile")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct VolumeProfile {
+        #[offset(24)]
         #[rename(name = "components")]
         pub components: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::volumecomponent::VolumeComponent>,
+        #[offset(32)]
         #[rename(name = "isDirty")]
         pub is_dirty: bool,
     }

@@ -18,6 +18,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DebugInfo")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: debuginfo :: DebugInfo >)]
     pub struct DebugInfo {
+        #[offset(24)]
         #[rename(name = "SkipWarnings")]
         pub skip_warnings: ::unity2::Array<::unity2::Il2CppString>,
     }

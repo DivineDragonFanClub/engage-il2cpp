@@ -25,24 +25,34 @@ mod __types {
         #[static_field]
         #[rename(name = "MessageKind")]
         pub message_kind: i32,
+        #[offset(24)]
         #[rename(name = "m_unitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_cardRoot")]
         pub m_card_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_result0Title")]
         pub m_result0_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(48)]
         #[rename(name = "m_result0Text")]
         pub m_result0_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_result1Title")]
         pub m_result1_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(64)]
         #[rename(name = "m_result1Text")]
         pub m_result1_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(80)]
         #[rename(name = "m_cardKind")]
         pub m_card_kind: i32,
+        #[offset(84)]
         #[rename(name = "m_bCardPositive")]
         pub m_b_card_positive: bool,
+        #[offset(88)]
         #[rename(name = "m_cardAnimator")]
         pub m_card_animator: crate::unity_engine::animator::Animator,
     }

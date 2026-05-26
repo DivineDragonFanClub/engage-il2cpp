@@ -14,12 +14,16 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection.Emit", name = "LocalBuilder")]
     #[parent(crate::system::reflection::localvariableinfo::LocalVariableInfo)]
     pub struct LocalBuilder {
+        #[offset(32)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "ilgen")]
         pub ilgen: crate::system::reflection::emit::ilgenerator::ILGenerator,
+        #[offset(48)]
         #[rename(name = "startOffset")]
         pub start_offset: i32,
+        #[offset(52)]
         #[rename(name = "endOffset")]
         pub end_offset: i32,
     }

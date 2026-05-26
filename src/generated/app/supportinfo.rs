@@ -19,18 +19,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SupportInfo")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct SupportInfo {
+        #[offset(24)]
         #[rename(name = "m_SideType")]
         pub m_side_type: crate::app::battleside::BattleSide_Type,
+        #[offset(28)]
         #[rename(name = "m_Hit")]
         pub m_hit: i32,
+        #[offset(32)]
         #[rename(name = "m_Avoid")]
         pub m_avoid: i32,
+        #[offset(36)]
         #[rename(name = "m_Critical")]
         pub m_critical: i32,
+        #[offset(40)]
         #[rename(name = "m_Secure")]
         pub m_secure: i32,
+        #[offset(48)]
         #[rename(name = "m_SupportUnits")]
         pub m_support_units: ::unity2::Array<crate::app::unit::Unit>,
+        #[offset(56)]
         #[rename(name = "m_SkillArray")]
         pub m_skill_array: crate::app::skillarray::SkillArray,
     }

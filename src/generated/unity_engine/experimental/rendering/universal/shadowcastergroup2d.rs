@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "ShadowCasterGroup2D")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ShadowCasterGroup2D {
+        #[offset(24)]
         #[rename(name = "m_ShadowGroup")]
         pub m_shadow_group: i32,
+        #[offset(32)]
         #[rename(name = "m_ShadowCasters")]
         pub m_shadow_casters: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,

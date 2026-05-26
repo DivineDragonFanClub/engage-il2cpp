@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "DirectoryInfo")]
     #[parent(crate::system::io::filesysteminfo::FileSystemInfo)]
     pub struct DirectoryInfo {
+        #[offset(96)]
         #[rename(name = "current")]
         pub current: ::unity2::Il2CppString,
+        #[offset(104)]
         #[rename(name = "parent")]
         pub parent: ::unity2::Il2CppString,
     }

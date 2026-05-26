@@ -17,23 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapminimap/MapMiniMap.md"))]
-    #[::unity2::class(namespace = "App", name = "MapMiniMap")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapminimap :: MapMiniMap >)]
-    pub struct MapMiniMap {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_PrefabHandle")]
-        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_MiniMapObject")]
-        pub m_mini_map_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ModeStack")]
-        pub m_mode_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::minimapcontroller::MiniMapController_Mode>,
-        #[rename(name = "m_MiniMapMode")]
-        pub m_mini_map_mode: crate::app::minimapcontroller::MiniMapController_Mode,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapminimap/MapMiniMap_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -66,6 +49,27 @@ mod __types {
         pub fn measure() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapminimap/MapMiniMap.md"))]
+    #[::unity2::class(namespace = "App", name = "MapMiniMap")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapminimap :: MapMiniMap >)]
+    pub struct MapMiniMap {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[offset(120)]
+        #[rename(name = "m_PrefabHandle")]
+        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(128)]
+        #[rename(name = "m_MiniMapObject")]
+        pub m_mini_map_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
+        #[rename(name = "m_ModeStack")]
+        pub m_mode_stack: crate::system::collections::generic::stack_1::Stack_1<crate::app::minimapcontroller::MiniMapController_Mode>,
+        #[offset(144)]
+        #[rename(name = "m_MiniMapMode")]
+        pub m_mini_map_mode: crate::app::minimapcontroller::MiniMapController_Mode,
     }
 }
 

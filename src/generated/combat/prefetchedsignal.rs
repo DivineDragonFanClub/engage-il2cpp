@@ -14,18 +14,25 @@ mod __types {
         #[static_field]
         #[rename(name = "s_null")]
         pub s_null: crate::combat::prefetchedsignal::PrefetchedSignal,
+        #[offset(56)]
         #[rename(name = "m_ClipEvents")]
         pub m_clip_events: ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
+        #[offset(84)]
         #[rename(name = "backwardCancelA")]
         pub backward_cancel_a: f32,
+        #[offset(88)]
         #[rename(name = "backwardCancelB")]
         pub backward_cancel_b: f32,
+        #[offset(152)]
         #[rename(name = "HitTimesNT")]
         pub hit_times_nt: crate::system::collections::generic::list_1::List_1<f32>,
+        #[offset(160)]
         #[rename(name = "HitSignals")]
         pub hit_signals: crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationevent::AnimationEvent>,
+        #[offset(200)]
         #[rename(name = "localDieFallPos")]
         pub local_die_fall_pos: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(236)]
         #[rename(name = "score")]
         pub score_field: f32,
     }

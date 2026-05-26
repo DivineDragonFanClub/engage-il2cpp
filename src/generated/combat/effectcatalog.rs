@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "EffectCatalog")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: effectcatalog :: EffectCatalog >)]
     pub struct EffectCatalog {
+        #[offset(32)]
         #[rename(name = "EffectPrefab")]
         pub effect_prefab: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(40)]
         #[rename(name = "m_HashTable")]
         pub m_hash_table: ::unity2::Array<i32>,
     }

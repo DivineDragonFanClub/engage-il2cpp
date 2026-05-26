@@ -19,6 +19,11 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot_ReturnEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot.ReturnEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ItemShopBuyRoot_ReturnEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot.md"))]
     #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -26,66 +31,221 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MenuObject")]
         pub m_menu_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_UnitItemMenuContent")]
         pub m_unit_item_menu_content: crate::app::unititemmenucontent::UnitItemMenuContent,
+        #[offset(40)]
         #[rename(name = "m_HoldingInfoWindowObject")]
         pub m_holding_info_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_DetailInfoWindowObject")]
         pub m_detail_info_window_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_UnitImageObject")]
         pub m_unit_image_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_PriceDownObject")]
         pub m_price_down_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_PriceDownText")]
         pub m_price_down_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::unit::Unit,
+        #[offset(88)]
         #[rename(name = "m_ItemShopBuyMenu")]
         pub m_item_shop_buy_menu: crate::app::itemshopbuymenu::ItemShopBuyMenu,
+        #[offset(96)]
         #[rename(name = "m_UnitItemMenu")]
         pub m_unit_item_menu: crate::app::unititemmenu::UnitItemMenu,
+        #[offset(104)]
         #[rename(name = "m_ItemHoldingInfoWindow")]
         pub m_item_holding_info_window: crate::app::itemholdinginfowindow::ItemHoldingInfoWindow,
+        #[offset(112)]
         #[rename(name = "m_ItemMenuDetailSetter")]
         pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+        #[offset(120)]
         #[rename(name = "m_ReturnEventHandler")]
         pub m_return_event_handler: crate::app::itemshopbuyroot::ItemShopBuyRoot_ReturnEventHandler,
+        #[offset(128)]
         #[rename(name = "m_YesNoDialog")]
         pub m_yes_no_dialog: crate::app::exchangeyesnodialog::ExchangeYesNoDialog,
+        #[offset(136)]
         #[rename(name = "m_SendItemMenu")]
         pub m_send_item_menu: crate::app::procinst::ProcInst,
+        #[offset(144)]
         #[rename(name = "m_DiscardItemMenu")]
         pub m_discard_item_menu: crate::app::procinst::ProcInst,
+        #[offset(152)]
         #[rename(name = "m_ItemData")]
         pub m_item_data: crate::app::itemdata::ItemData,
+        #[offset(160)]
         #[rename(name = "m_UnitItem")]
         pub m_unit_item: crate::app::unititem::UnitItem,
+        #[offset(168)]
         #[rename(name = "m_IsSendingItemToTransporter")]
         pub m_is_sending_item_to_transporter: bool,
+        #[offset(169)]
         #[rename(name = "m_IsSendingUnitItem")]
         pub m_is_sending_unit_item: bool,
+        #[offset(172)]
         #[rename(name = "m_SendingUnitItemIndex")]
         pub m_sending_unit_item_index: i32,
+        #[offset(176)]
         #[rename(name = "m_IsDiscardingTransporterItem")]
         pub m_is_discarding_transporter_item: bool,
+        #[offset(180)]
         #[rename(name = "m_DiscardingTransporterItemIndex")]
         pub m_discarding_transporter_item_index: i32,
+        #[offset(184)]
         #[rename(name = "m_ExistingOwner")]
         pub m_existing_owner: bool,
+        #[offset(185)]
         #[rename(name = "m_ItemDetailDisplayWithUnit")]
         pub m_item_detail_display_with_unit: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot_ReturnEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot.ReturnEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ItemShopBuyRoot_ReturnEventHandler {}
 }
 
 #[cfg(feature = "app-itemshopbuyroot-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-itemshopbuyroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ItemShopBuyRoot_ReturnEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ItemShopBuyRoot_ReturnEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemShopBuyRoot_ReturnEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ItemShopBuyRoot_ReturnEventHandler,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemShopBuyRoot_ReturnEventHandler, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-itemshopbuyroot")]
+pub trait IItemShopBuyRoot_ReturnEventHandlerMethods: IItemShopBuyRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <ItemShopBuyRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemShopBuyRoot_ReturnEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    fn invoke(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <ItemShopBuyRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemShopBuyRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-itemshopbuyroot")]
+impl<__T: IItemShopBuyRoot_ReturnEventHandler> IItemShopBuyRoot_ReturnEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-itemshopbuyroot")]
+impl ItemShopBuyRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemShopBuyRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopBuyRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-itemshopbuyroot")]
 #[doc(hidden)]
@@ -1130,141 +1290,6 @@ impl ItemShopBuyRoot {
             )
         });
         <Self as IItemShopBuyRootMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-itemshopbuyroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ItemShopBuyRoot_ReturnEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ItemShopBuyRoot_ReturnEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ItemShopBuyRoot_ReturnEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ItemShopBuyRoot_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ItemShopBuyRoot_ReturnEventHandler,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ItemShopBuyRoot_ReturnEventHandler, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-itemshopbuyroot")]
-pub trait IItemShopBuyRoot_ReturnEventHandlerMethods: IItemShopBuyRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <ItemShopBuyRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemShopBuyRoot_ReturnEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    fn invoke(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe {
-            let __receiver = <ItemShopBuyRoot_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemShopBuyRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-itemshopbuyroot")]
-impl<__T: IItemShopBuyRoot_ReturnEventHandler> IItemShopBuyRoot_ReturnEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-itemshopbuyroot")]
-impl ItemShopBuyRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopBuyRoot_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemShopBuyRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

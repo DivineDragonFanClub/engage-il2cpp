@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingConfig_ThrowIn")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_ThrowIn {
+        #[offset(24)]
         #[rename(name = "m_ThrowInTime")]
         pub m_throw_in_time: f32,
+        #[offset(28)]
         #[rename(name = "m_ThrowSEPlaySec")]
         pub m_throw_se_play_sec: f32,
+        #[offset(32)]
         #[rename(name = "m_ThrowCameraChangeSec")]
         pub m_throw_camera_change_sec: f32,
+        #[offset(36)]
         #[rename(name = "m_ThrowInSinkSec")]
         pub m_throw_in_sink_sec: f32,
     }

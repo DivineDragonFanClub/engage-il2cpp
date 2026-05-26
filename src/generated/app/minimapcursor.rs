@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MiniMapCursor")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MiniMapCursor {
+        #[offset(24)]
         #[rename(name = "m_CursorLT")]
         pub m_cursor_lt: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "m_CursorRT")]
         pub m_cursor_rt: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_CursorLB")]
         pub m_cursor_lb: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_CursorRB")]
         pub m_cursor_rb: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
         #[rename(name = "m_OrgCursorLT")]
         pub m_org_cursor_lt: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_OrgCursorRT")]
         pub m_org_cursor_rt: crate::unity_engine::gameobject::GameObject,
+        #[offset(72)]
         #[rename(name = "m_OrgCursorLB")]
         pub m_org_cursor_lb: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_OrgCursorRB")]
         pub m_org_cursor_rb: crate::unity_engine::gameobject::GameObject,
     }

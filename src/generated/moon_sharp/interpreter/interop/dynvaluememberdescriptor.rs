@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "DynValueMemberDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct DynValueMemberDescriptor {
+        #[offset(16)]
         #[rename(name = "m_Value")]
         pub m_value: crate::moon_sharp::interpreter::dynvalue::DynValue,
     }

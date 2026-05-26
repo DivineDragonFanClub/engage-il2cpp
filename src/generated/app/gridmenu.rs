@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "GridMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct GridMenu {
+        #[offset(200)]
         #[rename(name = "m_gridMenuContent")]
         pub m_grid_menu_content: crate::app::gridmenucontent::GridMenuContent,
+        #[offset(208)]
         #[rename(name = "m_column")]
         pub m_column: i32,
     }

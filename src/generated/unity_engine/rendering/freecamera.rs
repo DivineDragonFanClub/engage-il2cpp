@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "FreeCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FreeCamera {
+        #[offset(24)]
         #[rename(name = "m_LookSpeedController")]
         pub m_look_speed_controller: f32,
+        #[offset(28)]
         #[rename(name = "m_LookSpeedMouse")]
         pub m_look_speed_mouse: f32,
+        #[offset(32)]
         #[rename(name = "m_MoveSpeed")]
         pub m_move_speed: f32,
+        #[offset(36)]
         #[rename(name = "m_MoveSpeedIncrement")]
         pub m_move_speed_increment: f32,
+        #[offset(40)]
         #[rename(name = "m_Turbo")]
         pub m_turbo: f32,
         #[static_field]
@@ -53,22 +58,31 @@ mod __types {
         #[static_field]
         #[rename(name = "kSpeedAxis")]
         pub k_speed_axis: ::unity2::Il2CppString,
+        #[offset(44)]
         #[rename(name = "inputRotateAxisX")]
         pub input_rotate_axis_x: f32,
+        #[offset(48)]
         #[rename(name = "inputRotateAxisY")]
         pub input_rotate_axis_y: f32,
+        #[offset(52)]
         #[rename(name = "inputChangeSpeed")]
         pub input_change_speed: f32,
+        #[offset(56)]
         #[rename(name = "inputVertical")]
         pub input_vertical: f32,
+        #[offset(60)]
         #[rename(name = "inputHorizontal")]
         pub input_horizontal: f32,
+        #[offset(64)]
         #[rename(name = "inputYAxis")]
         pub input_y_axis: f32,
+        #[offset(68)]
         #[rename(name = "leftShiftBoost")]
         pub left_shift_boost: bool,
+        #[offset(69)]
         #[rename(name = "leftShift")]
         pub left_shift: bool,
+        #[offset(70)]
         #[rename(name = "fire1")]
         pub fire1: bool,
     }

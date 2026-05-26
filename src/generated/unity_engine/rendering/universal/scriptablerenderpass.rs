@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRenderPass")]
     #[parent(crate::system::object::Object)]
     pub struct ScriptableRenderPass {
+        #[offset(40)]
         #[rename(name = "m_ColorAttachments")]
         pub m_color_attachments: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        #[offset(48)]
         #[rename(name = "m_DepthAttachment")]
         pub m_depth_attachment: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        #[offset(88)]
         #[rename(name = "m_Input")]
         pub m_input: crate::unity_engine::rendering::universal::scriptablerenderpassinput::ScriptableRenderPassInput,
+        #[offset(92)]
         #[rename(name = "m_ClearFlag")]
         pub m_clear_flag: crate::unity_engine::rendering::clearflag::ClearFlag,
+        #[offset(96)]
         #[rename(name = "m_ClearColor")]
         pub m_clear_color: crate::unity_engine::color::Color,
     }

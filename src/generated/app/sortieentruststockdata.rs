@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieEntrustStockData")]
     #[parent(crate::system::object::Object)]
     pub struct SortieEntrustStockData {
+        #[offset(16)]
         #[rename(name = "m_UnitItem")]
         pub m_unit_item: crate::app::unititem::UnitItem,
+        #[offset(24)]
         #[rename(name = "m_ItemData")]
         pub m_item_data: crate::app::itemdata::ItemData,
+        #[offset(32)]
         #[rename(name = "m_StockCount")]
         pub m_stock_count: i32,
+        #[offset(36)]
         #[rename(name = "m_AssignedCount")]
         pub m_assigned_count: i32,
     }

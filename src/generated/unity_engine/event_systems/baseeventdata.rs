@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "BaseEventData")]
     #[parent(crate::unity_engine::event_systems::abstracteventdata::AbstractEventData)]
     pub struct BaseEventData {
+        #[offset(24)]
         #[rename(name = "m_EventSystem")]
         pub m_event_system: crate::unity_engine::event_systems::eventsystem::EventSystem,
     }

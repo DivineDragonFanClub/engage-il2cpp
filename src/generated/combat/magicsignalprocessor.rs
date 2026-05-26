@@ -19,46 +19,67 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "MagicSignalProcessor")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MagicSignalProcessor {
+        #[offset(24)]
         #[rename(name = "CP")]
         pub cp: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_FlyingObject")]
         pub m_flying_object: crate::combat::magicflying::MagicFlying,
+        #[offset(40)]
         #[rename(name = "m_CachedNodeConstraint")]
         pub m_cached_node_constraint: crate::combat::characternodeconstraint::CharacterNodeConstraint,
+        #[offset(48)]
         #[rename(name = "m_Phase")]
         pub m_phase: crate::combat::phase::Phase,
+        #[offset(56)]
         #[rename(name = "m_DecayTime")]
         pub m_decay_time: f32,
+        #[offset(60)]
         #[rename(name = "m_IsFocusEnemyPassed")]
         pub m_is_focus_enemy_passed: bool,
+        #[offset(61)]
         #[rename(name = "m_bReached")]
         pub m_b_reached: bool,
+        #[offset(72)]
         #[rename(name = "TL開始時処理")]
         pub tl開始時処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(80)]
         #[rename(name = "TL魔法動作1処理")]
         pub tl魔法動作1処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(88)]
         #[rename(name = "TL魔法動作2処理")]
         pub tl魔法動作2処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(96)]
         #[rename(name = "TL魔法動作3処理")]
         pub tl魔法動作3処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(104)]
         #[rename(name = "TLヒット時処理")]
         pub tlヒット時処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(112)]
         #[rename(name = "TLミス時処理")]
         pub tlミス時処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(120)]
         #[rename(name = "TLガード時処理")]
         pub tlガード時処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(128)]
         #[rename(name = "TLパリィ時処理")]
         pub tlパリィ時処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(136)]
         #[rename(name = "TL衝突時処理")]
         pub tl衝突時処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(144)]
         #[rename(name = "TL自然消滅処理")]
         pub tl自然消滅処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(152)]
         #[rename(name = "TL打撃命中処理")]
         pub tl打撃命中処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
+        #[offset(160)]
         #[rename(name = "m_ManagedObjects")]
         pub m_managed_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(168)]
         #[rename(name = "m_DeletedObjects")]
         pub m_deleted_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(176)]
         #[rename(name = "m_KnockoffAttackHash")]
         pub m_knockoff_attack_hash: i32,
     }

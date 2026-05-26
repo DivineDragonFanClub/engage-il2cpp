@@ -35,22 +35,31 @@ mod __types {
         #[static_field]
         #[rename(name = "MaxOuter")]
         pub max_outer: i32,
+        #[offset(32)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Unit")]
         pub m_unit: crate::app::mapimageunit::MapImageUnit,
+        #[offset(48)]
         #[rename(name = "m_Terrain")]
         pub m_terrain: crate::app::mapimageterrain::MapImageTerrain,
+        #[offset(56)]
         #[rename(name = "m_Cost")]
         pub m_cost: crate::app::mapimagecost::MapImageCost,
+        #[offset(64)]
         #[rename(name = "m_Danger")]
         pub m_danger: crate::app::mapimagedanger::MapImageDanger,
+        #[offset(72)]
         #[rename(name = "m_Talk")]
         pub m_talk: crate::app::mapimagetalk::MapImageTalk,
+        #[offset(80)]
         #[rename(name = "m_Range")]
         pub m_range: crate::app::mapimagerange::MapImageRange,
+        #[offset(88)]
         #[rename(name = "m_History")]
         pub m_history: crate::app::mapimagehistory::MapImageHistory,
+        #[offset(96)]
         #[rename(name = "m_BackupTerrains")]
         pub m_backup_terrains: crate::system::collections::generic::list_1::List_1<crate::app::mapimage::MapImage_BackupTerrain>,
     }

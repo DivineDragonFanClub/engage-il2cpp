@@ -19,47 +19,67 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "UniversalAdditionalCameraData")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UniversalAdditionalCameraData {
+        #[offset(24)]
         #[rename(name = "m_RenderShadows")]
         pub m_render_shadows: bool,
+        #[offset(28)]
         #[rename(name = "m_RequiresDepthTextureOption")]
         pub m_requires_depth_texture_option: crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
+        #[offset(32)]
         #[rename(name = "m_RequiresOpaqueTextureOption")]
         pub m_requires_opaque_texture_option: crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
+        #[offset(36)]
         #[rename(name = "m_CameraType")]
         pub m_camera_type: crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
+        #[offset(40)]
         #[rename(name = "m_Cameras")]
         pub m_cameras: crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera>,
+        #[offset(48)]
         #[rename(name = "m_RendererIndex")]
         pub m_renderer_index: i32,
+        #[offset(52)]
         #[rename(name = "m_VolumeLayerMask")]
         pub m_volume_layer_mask: crate::unity_engine::layermask::LayerMask,
+        #[offset(56)]
         #[rename(name = "m_VolumeTrigger")]
         pub m_volume_trigger: crate::unity_engine::transform::Transform,
+        #[offset(64)]
         #[rename(name = "m_RenderPostProcessing")]
         pub m_render_post_processing: bool,
+        #[offset(68)]
         #[rename(name = "m_Antialiasing")]
         pub m_antialiasing: crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode,
+        #[offset(72)]
         #[rename(name = "m_AntialiasingQuality")]
         pub m_antialiasing_quality: crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality,
+        #[offset(76)]
         #[rename(name = "m_StopNaN")]
         pub m_stop_na_n: bool,
+        #[offset(77)]
         #[rename(name = "m_Dithering")]
         pub m_dithering: bool,
+        #[offset(78)]
         #[rename(name = "m_ClearDepth")]
         pub m_clear_depth: bool,
+        #[offset(79)]
         #[rename(name = "m_AllowXRRendering")]
         pub m_allow_xr_rendering: bool,
+        #[offset(80)]
         #[rename(name = "m_IsAutoReduction")]
         pub m_is_auto_reduction: bool,
+        #[offset(81)]
         #[rename(name = "m_RequiresDepthTexture")]
         pub m_requires_depth_texture: bool,
+        #[offset(82)]
         #[rename(name = "m_RequiresColorTexture")]
         pub m_requires_color_texture: bool,
+        #[offset(84)]
         #[rename(name = "m_Version")]
         pub m_version: f32,
         #[static_field]
         #[rename(name = "s_DefaultAdditionalCameraData")]
         pub s_default_additional_camera_data: crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData,
+        #[offset(88)]
         #[rename(name = "m_CustomRenderingFlag")]
         pub m_custom_rendering_flag: crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag,
     }

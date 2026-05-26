@@ -21,6 +21,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapPanelHistory")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelhistory :: MapPanelHistory >)]
     pub struct MapPanelHistory {
+        #[offset(64)]
         #[rename(name = "m_Hash")]
         pub m_hash: i32,
     }

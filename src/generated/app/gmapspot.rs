@@ -11,6 +11,36 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspot/GmapSpot.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSpot")]
+    #[parent(crate::system::object::Object)]
+    pub struct GmapSpot {
+        #[offset(16)]
+        #[rename(name = "m_GlobalFlagName")]
+        pub m_global_flag_name: ::unity2::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "m_Chapters")]
+        pub m_chapters: crate::system::collections::generic::list_1::List_1<crate::app::chapterdata::ChapterData>,
+        #[offset(32)]
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
+        #[rename(name = "m_Controller")]
+        pub m_controller: crate::app::gmapspotcontroller::GmapSpotController,
+        #[offset(48)]
+        #[rename(name = "m_MapObject")]
+        pub m_map_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(56)]
+        #[rename(name = "m_NextSpots")]
+        pub m_next_spots: ::unity2::Array<crate::app::gmapspot::GmapSpot>,
+        #[offset(64)]
+        #[rename(name = "m_MobUnit")]
+        pub m_mob_unit: crate::app::gmapmobunit::GmapMobUnit,
+        #[offset(72)]
+        #[rename(name = "m_EncountIcon")]
+        pub m_encount_icon: crate::root::encounticon::EncountIcon,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountType.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -58,6 +88,102 @@ mod __types {
 
         pub fn training_ircion() -> Self {
             Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountPersonType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct GmapSpot_EncountPersonType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSpot_EncountPersonType {
+        const NAME: &'static str = "GmapSpot.EncountPersonType";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSpot_EncountPersonType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl GmapSpot_EncountPersonType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn morph() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn filene() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn brodia() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn solum() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn ircion() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn troublemaker() -> Self {
+            Self { value: 6 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_Direction.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct GmapSpot_Direction {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSpot_Direction {
+        const NAME: &'static str = "GmapSpot.Direction";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSpot_Direction {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl GmapSpot_Direction {
+        pub fn up() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn down() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 3 }
         }
     }
 
@@ -120,124 +246,6 @@ mod __types {
 
         pub fn can_search() -> Self {
             Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_Direction.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GmapSpot_Direction {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSpot_Direction {
-        const NAME: &'static str = "GmapSpot.Direction";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSpot_Direction {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl GmapSpot_Direction {
-        pub fn up() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspot/GmapSpot.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSpot")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapSpot {
-        #[rename(name = "m_GlobalFlagName")]
-        pub m_global_flag_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Chapters")]
-        pub m_chapters: crate::system::collections::generic::list_1::List_1<crate::app::chapterdata::ChapterData>,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Controller")]
-        pub m_controller: crate::app::gmapspotcontroller::GmapSpotController,
-        #[rename(name = "m_MapObject")]
-        pub m_map_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_NextSpots")]
-        pub m_next_spots: ::unity2::Array<crate::app::gmapspot::GmapSpot>,
-        #[rename(name = "m_MobUnit")]
-        pub m_mob_unit: crate::app::gmapmobunit::GmapMobUnit,
-        #[rename(name = "m_EncountIcon")]
-        pub m_encount_icon: crate::root::encounticon::EncountIcon,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspot/GmapSpot_EncountPersonType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct GmapSpot_EncountPersonType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSpot_EncountPersonType {
-        const NAME: &'static str = "GmapSpot.EncountPersonType";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSpot_EncountPersonType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl GmapSpot_EncountPersonType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn morph() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn filene() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn brodia() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn solum() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn ircion() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn troublemaker() -> Self {
-            Self { value: 6 }
         }
     }
 }

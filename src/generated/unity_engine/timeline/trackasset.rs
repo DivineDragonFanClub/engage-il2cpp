@@ -17,6 +17,93 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackasset/TrackAsset.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackAsset")]
+    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
+    pub struct TrackAsset {
+        #[static_field]
+        #[rename(name = "k_LatestVersion")]
+        pub k_latest_version: i32,
+        #[offset(24)]
+        #[rename(name = "m_Version")]
+        pub m_version: i32,
+        #[offset(32)]
+        #[rename(name = "m_AnimClip")]
+        pub m_anim_clip: crate::unity_engine::animationclip::AnimationClip,
+        #[static_field]
+        #[rename(name = "s_BuildData")]
+        pub s_build_data: crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData,
+        #[static_field]
+        #[rename(name = "kDefaultCurvesName")]
+        pub k_default_curves_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "OnClipPlayableCreate")]
+        pub on_clip_playable_create: crate::system::action_3::Action_3<
+            crate::unity_engine::timeline::timelineclip::TimelineClip,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::playables::playable::Playable,
+        >,
+        #[static_field]
+        #[rename(name = "OnTrackAnimationPlayableCreate")]
+        pub on_track_animation_playable_create: crate::system::action_3::Action_3<
+            crate::unity_engine::timeline::trackasset::TrackAsset,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::playables::playable::Playable,
+        >,
+        #[offset(40)]
+        #[rename(name = "m_Locked")]
+        pub m_locked: bool,
+        #[offset(41)]
+        #[rename(name = "m_Muted")]
+        pub m_muted: bool,
+        #[offset(48)]
+        #[rename(name = "m_CustomPlayableFullTypename")]
+        pub m_custom_playable_full_typename: ::unity2::Il2CppString,
+        #[offset(56)]
+        #[rename(name = "m_Curves")]
+        pub m_curves: crate::unity_engine::animationclip::AnimationClip,
+        #[offset(64)]
+        #[rename(name = "m_Parent")]
+        pub m_parent: crate::unity_engine::playables::playableasset::PlayableAsset,
+        #[offset(72)]
+        #[rename(name = "m_Children")]
+        pub m_children: crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>,
+        #[offset(80)]
+        #[rename(name = "m_ItemsHash")]
+        pub m_items_hash: i32,
+        #[offset(88)]
+        #[rename(name = "m_ClipsCache")]
+        pub m_clips_cache: ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>,
+        #[offset(96)]
+        #[rename(name = "m_Start")]
+        pub m_start: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        #[offset(104)]
+        #[rename(name = "m_End")]
+        pub m_end: crate::unity_engine::timeline::discretetime::DiscreteTime,
+        #[offset(112)]
+        #[rename(name = "m_CacheSorted")]
+        pub m_cache_sorted: bool,
+        #[static_field]
+        #[rename(name = "s_EmptyCache")]
+        pub s_empty_cache: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        #[offset(120)]
+        #[rename(name = "m_ChildTrackCache")]
+        pub m_child_track_cache:
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
+        #[static_field]
+        #[rename(name = "s_TrackBindingTypeAttributeCache")]
+        pub s_track_binding_type_attribute_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::SystemType,
+            crate::unity_engine::timeline::trackbindingtypeattribute::TrackBindingTypeAttribute,
+        >,
+        #[offset(128)]
+        #[rename(name = "m_Clips")]
+        pub m_clips: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::timelineclip::TimelineClip>,
+        #[offset(136)]
+        #[rename(name = "m_Markers")]
+        pub m_markers: crate::unity_engine::timeline::markerlist::MarkerList,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/trackasset/TrackAsset_TransientBuildData.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -42,170 +129,10 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackasset/TrackAsset.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackAsset")]
-    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
-    pub struct TrackAsset {
-        #[static_field]
-        #[rename(name = "k_LatestVersion")]
-        pub k_latest_version: i32,
-        #[rename(name = "m_Version")]
-        pub m_version: i32,
-        #[rename(name = "m_AnimClip")]
-        pub m_anim_clip: crate::unity_engine::animationclip::AnimationClip,
-        #[static_field]
-        #[rename(name = "s_BuildData")]
-        pub s_build_data: crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData,
-        #[static_field]
-        #[rename(name = "kDefaultCurvesName")]
-        pub k_default_curves_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "OnClipPlayableCreate")]
-        pub on_clip_playable_create: crate::system::action_3::Action_3<
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-            crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::playables::playable::Playable,
-        >,
-        #[static_field]
-        #[rename(name = "OnTrackAnimationPlayableCreate")]
-        pub on_track_animation_playable_create: crate::system::action_3::Action_3<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::playables::playable::Playable,
-        >,
-        #[rename(name = "m_Locked")]
-        pub m_locked: bool,
-        #[rename(name = "m_Muted")]
-        pub m_muted: bool,
-        #[rename(name = "m_CustomPlayableFullTypename")]
-        pub m_custom_playable_full_typename: ::unity2::Il2CppString,
-        #[rename(name = "m_Curves")]
-        pub m_curves: crate::unity_engine::animationclip::AnimationClip,
-        #[rename(name = "m_Parent")]
-        pub m_parent: crate::unity_engine::playables::playableasset::PlayableAsset,
-        #[rename(name = "m_Children")]
-        pub m_children: crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>,
-        #[rename(name = "m_ItemsHash")]
-        pub m_items_hash: i32,
-        #[rename(name = "m_ClipsCache")]
-        pub m_clips_cache: ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-        #[rename(name = "m_Start")]
-        pub m_start: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        #[rename(name = "m_End")]
-        pub m_end: crate::unity_engine::timeline::discretetime::DiscreteTime,
-        #[rename(name = "m_CacheSorted")]
-        pub m_cache_sorted: bool,
-        #[static_field]
-        #[rename(name = "s_EmptyCache")]
-        pub s_empty_cache: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset>,
-        #[rename(name = "m_ChildTrackCache")]
-        pub m_child_track_cache:
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>,
-        #[static_field]
-        #[rename(name = "s_TrackBindingTypeAttributeCache")]
-        pub s_track_binding_type_attribute_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::SystemType,
-            crate::unity_engine::timeline::trackbindingtypeattribute::TrackBindingTypeAttribute,
-        >,
-        #[rename(name = "m_Clips")]
-        pub m_clips: crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::timelineclip::TimelineClip>,
-        #[rename(name = "m_Markers")]
-        pub m_markers: crate::unity_engine::timeline::markerlist::MarkerList,
-    }
 }
 
 #[cfg(feature = "unity_engine-timeline-trackasset-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-timeline-trackasset")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TrackAsset_TransientBuildData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
-                        "Create",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData =
-            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: TrackAsset_TransientBuildData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TrackAsset_TransientBuildData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-trackasset")]
-impl TrackAsset_TransientBuildData {
-    #[doc = "`Create()` overload"]
-    pub fn create() -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
-        unsafe { __TrackAsset_TransientBuildData_unity2_raw::create(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-trackasset")]
-impl TrackAsset_TransientBuildData {
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __TrackAsset_TransientBuildData_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "unity_engine-timeline-trackasset")]
 #[doc(hidden)]
@@ -4835,6 +4762,95 @@ impl TrackAsset {
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TrackAsset), ::core::stringify!(new),));
         <Self as ITrackAssetMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackasset")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TrackAsset_TransientBuildData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
+                "Create",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: TrackAsset_TransientBuildData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TrackAsset_TransientBuildData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackasset")]
+impl TrackAsset_TransientBuildData {
+    #[doc = "`Create()` overload"]
+    pub fn create() -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
+        unsafe { __TrackAsset_TransientBuildData_unity2_raw::create(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackasset")]
+impl TrackAsset_TransientBuildData {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __TrackAsset_TransientBuildData_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 

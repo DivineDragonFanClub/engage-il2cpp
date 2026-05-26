@@ -24,24 +24,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MiniMapSightRenderer")]
     #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
     pub struct MiniMapSightRenderer {
+        #[offset(208)]
         #[rename(name = "m_Texture")]
         pub m_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(216)]
         #[rename(name = "m_CanvasRenderer")]
         pub m_canvas_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+        #[offset(224)]
         #[rename(name = "m_SightFillColor")]
         pub m_sight_fill_color: crate::unity_engine::color::Color,
+        #[offset(240)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(248)]
         #[rename(name = "m_Vertices")]
         pub m_vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(256)]
         #[rename(name = "m_Colors")]
         pub m_colors: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        #[offset(264)]
         #[rename(name = "m_UVs")]
         pub m_u_vs: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>,
+        #[offset(272)]
         #[rename(name = "m_Indices")]
         pub m_indices: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(280)]
         #[rename(name = "VERTEX_CAPACITY")]
         pub vertex_capacity: i32,
+        #[offset(288)]
         #[rename(name = "vtxOffsets")]
         pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
     }

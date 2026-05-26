@@ -18,8 +18,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EventMarker")]
     #[parent(crate::unity_engine::timeline::marker::Marker)]
     pub struct EventMarker {
+        #[offset(40)]
         #[rename(name = "EventMode")]
         pub event_mode: bool,
+        #[offset(41)]
         #[rename(name = "IsIgnoreMarker")]
         pub is_ignore_marker: bool,
     }

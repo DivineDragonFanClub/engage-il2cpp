@@ -10,67 +10,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillarray/SkillArray_Entity.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct SkillArray_Entity {
-        pub value: u32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillArray_Entity {
-        const NAME: &'static str = "SkillArray.Entity";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillArray_Entity {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillarray/SkillArray.md"))]
-    #[::unity2::class(namespace = "App", name = "SkillArray")]
-    #[parent(crate::system::object::Object)]
-    pub struct SkillArray {
-        #[static_field]
-        #[rename(name = "MaxCount")]
-        pub max_count: i32,
-        #[static_field]
-        #[rename(name = "Capacity")]
-        pub capacity: i32,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[rename(name = "m_Mask")]
-        pub m_mask: crate::app::bitstruct::BitStruct,
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<crate::app::skillarray::SkillArray_Entity>,
-        #[rename(name = "m_Flags")]
-        pub m_flags: crate::app::skilldata::SkillData_Flags,
-        #[rename(name = "m_Cycles")]
-        pub m_cycles: crate::app::skilldata::SkillData_CycleMasks,
-        #[rename(name = "m_Timings")]
-        pub m_timings: crate::app::skilldata::SkillData_TimingMasks,
-        #[rename(name = "m_Efficacys")]
-        pub m_efficacys: crate::app::skilldata::SkillData_Attrs,
-        #[rename(name = "m_EfficacyIgnores")]
-        pub m_efficacy_ignores: crate::app::skilldata::SkillData_Attrs,
-        #[rename(name = "m_BadStates")]
-        pub m_bad_states: crate::app::skilldata::SkillData_States,
-        #[rename(name = "m_BadIgnore")]
-        pub m_bad_ignore: crate::app::skilldata::SkillData_States,
-        #[rename(name = "m_WeaponLevels")]
-        pub m_weapon_levels: crate::app::weaponlevels::WeaponLevels,
-        #[rename(name = "m_IsEquipSkillFirstNull")]
-        pub m_is_equip_skill_first_null: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillarray/SkillArray_Enumerator.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -96,6 +35,78 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillarray/SkillArray.md"))]
+    #[::unity2::class(namespace = "App", name = "SkillArray")]
+    #[parent(crate::system::object::Object)]
+    pub struct SkillArray {
+        #[static_field]
+        #[rename(name = "MaxCount")]
+        pub max_count: i32,
+        #[static_field]
+        #[rename(name = "Capacity")]
+        pub capacity: i32,
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[offset(16)]
+        #[rename(name = "m_Mask")]
+        pub m_mask: crate::app::bitstruct::BitStruct,
+        #[offset(24)]
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<crate::app::skillarray::SkillArray_Entity>,
+        #[offset(32)]
+        #[rename(name = "m_Flags")]
+        pub m_flags: crate::app::skilldata::SkillData_Flags,
+        #[offset(40)]
+        #[rename(name = "m_Cycles")]
+        pub m_cycles: crate::app::skilldata::SkillData_CycleMasks,
+        #[offset(44)]
+        #[rename(name = "m_Timings")]
+        pub m_timings: crate::app::skilldata::SkillData_TimingMasks,
+        #[offset(48)]
+        #[rename(name = "m_Efficacys")]
+        pub m_efficacys: crate::app::skilldata::SkillData_Attrs,
+        #[offset(52)]
+        #[rename(name = "m_EfficacyIgnores")]
+        pub m_efficacy_ignores: crate::app::skilldata::SkillData_Attrs,
+        #[offset(56)]
+        #[rename(name = "m_BadStates")]
+        pub m_bad_states: crate::app::skilldata::SkillData_States,
+        #[offset(60)]
+        #[rename(name = "m_BadIgnore")]
+        pub m_bad_ignore: crate::app::skilldata::SkillData_States,
+        #[offset(64)]
+        #[rename(name = "m_WeaponLevels")]
+        pub m_weapon_levels: crate::app::weaponlevels::WeaponLevels,
+        #[offset(72)]
+        #[rename(name = "m_IsEquipSkillFirstNull")]
+        pub m_is_equip_skill_first_null: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillarray/SkillArray_Entity.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct SkillArray_Entity {
+        pub value: u32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillArray_Entity {
+        const NAME: &'static str = "SkillArray.Entity";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillArray_Entity {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-skillarray-types")]
@@ -104,23 +115,18 @@ pub use __types::*;
 #[cfg(feature = "app-skillarray")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkillArray_Entity_unity2_raw {
+mod __SkillArray_Enumerator_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                4,
+                1,
                 param_types,
                 false,
             )
@@ -131,7 +137,7 @@ mod __SkillArray_Entity_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
                         ".ctor",
                         e
                     )
@@ -140,26 +146,23 @@ mod __SkillArray_Entity_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: SkillArray_Entity,
-        index: i32,
-        group: i32,
-        category: crate::app::skilldata::SkillData_Categorys,
-        age: i32,
+        this: SkillArray_Enumerator,
+        skill_array: crate::app::skillarray::SkillArray,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(SkillArray_Entity, i32, i32, crate::app::skilldata::SkillData_Categorys, i32, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(SkillArray_Enumerator, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, index, group, category, age, __unity2_method_info)
+        inner(this, skill_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_index {
+    pub mod __lookup_dispose {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Index",
+                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
+                "Dispose",
                 0,
                 param_types,
                 false,
@@ -171,61 +174,28 @@ mod __SkillArray_Entity_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Index",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_index(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
+    pub unsafe fn dispose(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "set_Index",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "set_Index",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_index(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_group {
+    pub mod __lookup_move_next {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Group",
+                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
+                "MoveNext",
                 0,
                 param_types,
                 false,
@@ -237,61 +207,28 @@ mod __SkillArray_Entity_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Group",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_group(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_group::get_method_info().method_ptr);
+    pub unsafe fn move_next(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "set_Group",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "set_Group",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_group(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_group::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_age {
+    pub mod __lookup_reset {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Age",
+                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
+                "Reset",
                 0,
                 param_types,
                 false,
@@ -303,61 +240,28 @@ mod __SkillArray_Entity_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Age",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_age(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_age::get_method_info().method_ptr);
+    pub unsafe fn reset(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_age {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "set_Age",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "set_Age",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_age(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_age::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_category {
+    pub mod __lookup_system_collections_i_enumerator_get_current {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Category",
+                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
+                "System.Collections.IEnumerator.get_Current",
                 0,
                 param_types,
                 false,
@@ -369,69 +273,31 @@ mod __SkillArray_Entity_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Category",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.IEnumerator.get_Current",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_category(
-        this: SkillArray_Entity,
+    pub unsafe fn system_collections_i_enumerator_get_current(
+        this: SkillArray_Enumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData_Categorys {
-        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_Categorys =
-            ::core::mem::transmute(__lookup_get_category::get_method_info().method_ptr);
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_category {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "set_Category",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "set_Category",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_category(
-        this: SkillArray_Entity,
-        value: crate::app::skilldata::SkillData_Categorys,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SkillArray_Entity, crate::app::skilldata::SkillData_Categorys, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_category::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skill {
+    pub mod __lookup_get_current {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
-                "get_Skill",
+                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
+                "get_Current",
                 0,
                 param_types,
                 false,
@@ -443,86 +309,51 @@ mod __SkillArray_Entity_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                        "get_Skill",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_skill(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
-            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
+    pub unsafe fn get_current(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-skillarray")]
-impl SkillArray_Entity {
-    #[doc = "`.ctor(i32, i32, crate::app::skilldata::SkillData_Categorys, i32)` overload"]
-    pub fn ctor(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        group: impl ::core::convert::Into<i32>,
-        category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
-        age: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __SkillArray_Entity_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(group),
-                ::core::convert::Into::into(category),
-                ::core::convert::Into::into(age),
-                ::core::option::Option::None,
-            )
-        }
+impl SkillArray_Enumerator {
+    #[doc = "`.ctor(crate::app::skillarray::SkillArray)` overload"]
+    pub fn ctor(self, skill_array: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
+        unsafe { __SkillArray_Enumerator_unity2_raw::ctor(self, ::core::convert::Into::into(skill_array), ::core::option::Option::None) }
     }
 
-    #[doc = "`get_Index()` overload"]
-    pub fn get_index(self) -> i32 {
-        unsafe { __SkillArray_Entity_unity2_raw::get_index(self, ::core::option::Option::None) }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __SkillArray_Enumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`set_Index(i32)` overload"]
-    pub fn set_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __SkillArray_Entity_unity2_raw::set_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    #[doc = "`MoveNext()` overload"]
+    pub fn move_next(self) -> bool {
+        unsafe { __SkillArray_Enumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`get_Group()` overload"]
-    pub fn get_group(self) -> i32 {
-        unsafe { __SkillArray_Entity_unity2_raw::get_group(self, ::core::option::Option::None) }
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe { __SkillArray_Enumerator_unity2_raw::reset(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`set_Group(i32)` overload"]
-    pub fn set_group(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __SkillArray_Entity_unity2_raw::set_group(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
+        unsafe { __SkillArray_Enumerator_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`get_Age()` overload"]
-    pub fn get_age(self) -> i32 {
-        unsafe { __SkillArray_Entity_unity2_raw::get_age(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Age(i32)` overload"]
-    pub fn set_age(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __SkillArray_Entity_unity2_raw::set_age(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Category()` overload"]
-    pub fn get_category(self) -> crate::app::skilldata::SkillData_Categorys {
-        unsafe { __SkillArray_Entity_unity2_raw::get_category(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]
-    pub fn set_category(self, value: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>) -> () {
-        unsafe { __SkillArray_Entity_unity2_raw::set_category(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Skill()` overload"]
-    pub fn get_skill(self) -> crate::app::skilldata::SkillData {
-        unsafe { __SkillArray_Entity_unity2_raw::get_skill(self, ::core::option::Option::None) }
+    #[doc = "`get_Current()` overload"]
+    pub fn get_current(self) -> crate::app::skilldata::SkillData {
+        unsafe { __SkillArray_Enumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
     }
 }
 
@@ -4193,17 +4024,95 @@ impl SkillArray {
 #[cfg(feature = "app-skillarray")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SkillArray_Enumerator_unity2_raw {
+mod __SkillArray_Entity_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
                 ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SkillArray_Entity,
+        index: i32,
+        group: i32,
+        category: crate::app::skilldata::SkillData_Categorys,
+        age: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SkillArray_Entity, i32, i32, crate::app::skilldata::SkillData_Categorys, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, index, group, category, age, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "get_Index",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Index",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_index(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "set_Index",
                 1,
                 param_types,
                 false,
@@ -4215,32 +4124,234 @@ mod __SkillArray_Enumerator_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Index",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn ctor(
-        this: SkillArray_Enumerator,
-        skill_array: crate::app::skillarray::SkillArray,
+    pub unsafe fn set_index(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "get_Group",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Group",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_group(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "set_Group",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Group",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_group(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_group::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_age {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "get_Age",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Age",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_age(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_age::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_age {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "set_Age",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Age",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_age(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_age::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_category {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "get_Category",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Category",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_category(
+        this: SkillArray_Entity,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilldata::SkillData_Categorys {
+        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_Categorys =
+            ::core::mem::transmute(__lookup_get_category::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_category {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "set_Category",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Category",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_category(
+        this: SkillArray_Entity,
+        value: crate::app::skilldata::SkillData_Categorys,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(SkillArray_Enumerator, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, skill_array, __unity2_method_info)
+        let inner: extern "C" fn(SkillArray_Entity, crate::app::skilldata::SkillData_Categorys, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_category::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
+    pub mod __lookup_get_skill {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
-                "Dispose",
+                <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
+                "get_Skill",
                 0,
                 param_types,
                 false,
@@ -4252,186 +4363,86 @@ mod __SkillArray_Enumerator_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                        "Dispose",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Skill",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn dispose(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                        "MoveNext",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn move_next(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                        "Reset",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn reset(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                        "System.Collections.IEnumerator.get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: SkillArray_Enumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
-                "get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                        "get_Current",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_current(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
-            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
+    pub unsafe fn get_skill(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-skillarray")]
-impl SkillArray_Enumerator {
-    #[doc = "`.ctor(crate::app::skillarray::SkillArray)` overload"]
-    pub fn ctor(self, skill_array: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
-        unsafe { __SkillArray_Enumerator_unity2_raw::ctor(self, ::core::convert::Into::into(skill_array), ::core::option::Option::None) }
+impl SkillArray_Entity {
+    #[doc = "`.ctor(i32, i32, crate::app::skilldata::SkillData_Categorys, i32)` overload"]
+    pub fn ctor(
+        self,
+        index: impl ::core::convert::Into<i32>,
+        group: impl ::core::convert::Into<i32>,
+        category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
+        age: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __SkillArray_Entity_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(group),
+                ::core::convert::Into::into(category),
+                ::core::convert::Into::into(age),
+                ::core::option::Option::None,
+            )
+        }
     }
 
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __SkillArray_Enumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
+    #[doc = "`get_Index()` overload"]
+    pub fn get_index(self) -> i32 {
+        unsafe { __SkillArray_Entity_unity2_raw::get_index(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`MoveNext()` overload"]
-    pub fn move_next(self) -> bool {
-        unsafe { __SkillArray_Enumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
+    #[doc = "`set_Index(i32)` overload"]
+    pub fn set_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __SkillArray_Entity_unity2_raw::set_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __SkillArray_Enumerator_unity2_raw::reset(self, ::core::option::Option::None) }
+    #[doc = "`get_Group()` overload"]
+    pub fn get_group(self) -> i32 {
+        unsafe { __SkillArray_Entity_unity2_raw::get_group(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe { __SkillArray_Enumerator_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
+    #[doc = "`set_Group(i32)` overload"]
+    pub fn set_group(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __SkillArray_Entity_unity2_raw::set_group(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
-    #[doc = "`get_Current()` overload"]
-    pub fn get_current(self) -> crate::app::skilldata::SkillData {
-        unsafe { __SkillArray_Enumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
+    #[doc = "`get_Age()` overload"]
+    pub fn get_age(self) -> i32 {
+        unsafe { __SkillArray_Entity_unity2_raw::get_age(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Age(i32)` overload"]
+    pub fn set_age(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __SkillArray_Entity_unity2_raw::set_age(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Category()` overload"]
+    pub fn get_category(self) -> crate::app::skilldata::SkillData_Categorys {
+        unsafe { __SkillArray_Entity_unity2_raw::get_category(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]
+    pub fn set_category(self, value: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>) -> () {
+        unsafe { __SkillArray_Entity_unity2_raw::set_category(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Skill()` overload"]
+    pub fn get_skill(self) -> crate::app::skilldata::SkillData {
+        unsafe { __SkillArray_Entity_unity2_raw::get_skill(self, ::core::option::Option::None) }
     }
 }
 

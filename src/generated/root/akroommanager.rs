@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkRoomManager")]
     #[parent(crate::system::object::Object)]
     pub struct AkRoomManager {
+        #[offset(16)]
         #[rename(name = "m_Portals")]
         pub m_portals: crate::system::collections::generic::list_1::List_1<crate::root::akroomportal::AkRoomPortal>,
+        #[offset(24)]
         #[rename(name = "m_PortalsToUpdate")]
         pub m_portals_to_update: crate::system::collections::generic::list_1::List_1<crate::root::akroomportal::AkRoomPortal>,
+        #[offset(32)]
         #[rename(name = "m_Reflectors")]
         pub m_reflectors: crate::system::collections::generic::list_1::List_1<crate::root::aksurfacereflector::AkSurfaceReflector>,
+        #[offset(40)]
         #[rename(name = "m_ReflectorsToUpdate")]
         pub m_reflectors_to_update: crate::system::collections::generic::list_1::List_1<crate::root::aksurfacereflector::AkSurfaceReflector>,
         #[static_field]

@@ -18,14 +18,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "Vignette")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct Vignette {
+        #[offset(56)]
         #[rename(name = "color")]
         pub color: crate::unity_engine::rendering::colorparameter::ColorParameter,
+        #[offset(64)]
         #[rename(name = "center")]
         pub center: crate::unity_engine::rendering::vector2parameter::Vector2Parameter,
+        #[offset(72)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "smoothness")]
         pub smoothness: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "rounded")]
         pub rounded: crate::unity_engine::rendering::boolparameter::BoolParameter,
     }

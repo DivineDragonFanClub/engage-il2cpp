@@ -27,8 +27,10 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(240)]
         #[rename(name = "m_ItemHelpText")]
         pub m_item_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(248)]
         #[rename(name = "m_CategoryIconList")]
         pub m_category_icon_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
     }

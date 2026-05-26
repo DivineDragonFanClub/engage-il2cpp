@@ -16,10 +16,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "SortieEntrust.Executor")]
     #[parent(crate::system::object::Object)]
     pub struct SortieEntrust_Executor {
+        #[offset(16)]
         #[rename(name = "m_IsAll")]
         pub m_is_all: bool,
+        #[offset(24)]
         #[rename(name = "m_UnitDataHolder")]
         pub m_unit_data_holder: crate::app::sortieentrustunitdataholder::SortieEntrustUnitDataHolder,
+        #[offset(32)]
         #[rename(name = "m_StockDataHoler")]
         pub m_stock_data_holer: crate::app::sortieentruststockdataholder::SortieEntrustStockDataHolder,
     }

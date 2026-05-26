@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_StyleSheet")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct TMP_StyleSheet {
+        #[offset(24)]
         #[rename(name = "m_StyleList")]
         pub m_style_list: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style>,
+        #[offset(32)]
         #[rename(name = "m_StyleLookupDictionary")]
         pub m_style_lookup_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::tm_pro::tmp_style::TMP_Style>,
     }

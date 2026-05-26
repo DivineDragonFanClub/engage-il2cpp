@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BondLevelUpSkill")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BondLevelUpSkill {
+        #[offset(24)]
         #[rename(name = "m_Skill")]
         pub m_skill: crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent,
+        #[offset(32)]
         #[rename(name = "m_SkillDetailHelp")]
         pub m_skill_detail_help: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_SkillDetailSetter")]
         pub m_skill_detail_setter: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_Anim")]
         pub m_anim: crate::unity_engine::animator::Animator,
+        #[offset(56)]
         #[rename(name = "m_NextMenuItem")]
         pub m_next_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+        #[offset(64)]
         #[rename(name = "m_NextGod")]
         pub m_next_god: crate::app::godunit::GodUnit,
     }

@@ -11,18 +11,25 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "ExceptionHandlingClause")]
     #[parent(crate::system::object::Object)]
     pub struct ExceptionHandlingClause {
+        #[offset(16)]
         #[rename(name = "catch_type")]
         pub catch_type: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "filter_offset")]
         pub filter_offset: i32,
+        #[offset(28)]
         #[rename(name = "flags")]
         pub flags: crate::system::reflection::exceptionhandlingclauseoptions::ExceptionHandlingClauseOptions,
+        #[offset(32)]
         #[rename(name = "try_offset")]
         pub try_offset: i32,
+        #[offset(36)]
         #[rename(name = "try_length")]
         pub try_length: i32,
+        #[offset(40)]
         #[rename(name = "handler_offset")]
         pub handler_offset: i32,
+        #[offset(44)]
         #[rename(name = "handler_length")]
         pub handler_length: i32,
     }

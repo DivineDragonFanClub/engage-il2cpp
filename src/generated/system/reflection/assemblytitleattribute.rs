@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblytitleattribute/AssemblyTitleAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyTitleAttribute")]
     pub struct AssemblyTitleAttribute {
+        #[offset(16)]
         #[rename(name = "m_title")]
         pub m_title: ::unity2::Il2CppString,
     }

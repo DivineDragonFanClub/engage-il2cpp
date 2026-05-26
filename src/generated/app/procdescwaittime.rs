@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProcDescWaitTime")]
     #[parent(crate::app::procdesc::ProcDesc)]
     pub struct ProcDescWaitTime {
+        #[offset(20)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
     }

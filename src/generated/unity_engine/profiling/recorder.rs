@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Profiling", name = "Recorder")]
     #[parent(crate::system::object::Object)]
     pub struct Recorder {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
         #[static_field]

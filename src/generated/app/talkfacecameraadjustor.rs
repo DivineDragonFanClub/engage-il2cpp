@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TalkFaceCameraAdjustor")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TalkFaceCameraAdjustor {
+        #[offset(24)]
         #[rename(name = "m_CameraTransform")]
         pub m_camera_transform: crate::unity_engine::transform::Transform,
+        #[offset(32)]
         #[rename(name = "m_CameraHeightOffset")]
         pub m_camera_height_offset: f32,
+        #[offset(36)]
         #[rename(name = "m_DefaultCameraOffset")]
         pub m_default_camera_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(48)]
         #[rename(name = "m_Tmp")]
         pub m_tmp: crate::unity_engine::vector3::Vector3,
     }

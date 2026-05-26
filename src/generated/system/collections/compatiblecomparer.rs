@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections", name = "CompatibleComparer")]
     #[parent(crate::system::object::Object)]
     pub struct CompatibleComparer {
+        #[offset(16)]
         #[rename(name = "_comparer")]
         pub comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
+        #[offset(24)]
         #[rename(name = "_hcp")]
         pub hcp: crate::system::collections::ihashcodeprovider::IHashCodeProvider,
     }

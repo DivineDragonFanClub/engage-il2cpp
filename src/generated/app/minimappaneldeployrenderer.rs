@@ -25,14 +25,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MiniMapPanelDeployRenderer")]
     #[parent(crate::app::minimappanelbase::MiniMapPanelBase)]
     pub struct MiniMapPanelDeployRenderer {
+        #[offset(256)]
         #[rename(name = "m_MoveImage")]
         pub m_move_image: crate::unity_engine::material::Material,
+        #[offset(264)]
         #[rename(name = "m_AttackImage")]
         pub m_attack_image: crate::unity_engine::material::Material,
+        #[offset(272)]
         #[rename(name = "m_HealImage")]
         pub m_heal_image: crate::unity_engine::material::Material,
+        #[offset(280)]
         #[rename(name = "m_SupportImage")]
         pub m_support_image: crate::unity_engine::material::Material,
+        #[offset(288)]
         #[rename(name = "m_InterferenceImage")]
         pub m_interference_image: crate::unity_engine::material::Material,
     }

@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "MonoCMethod")]
     #[parent(crate::system::reflection::runtimeconstructorinfo::RuntimeConstructorInfo)]
     pub struct MonoCMethod {
+        #[offset(16)]
         #[rename(name = "mhandle")]
         pub mhandle: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "reftype")]
         pub reftype: ::unity2::SystemType,
     }

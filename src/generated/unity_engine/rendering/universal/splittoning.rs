@@ -18,10 +18,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "SplitToning")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct SplitToning {
+        #[offset(56)]
         #[rename(name = "shadows")]
         pub shadows: crate::unity_engine::rendering::colorparameter::ColorParameter,
+        #[offset(64)]
         #[rename(name = "highlights")]
         pub highlights: crate::unity_engine::rendering::colorparameter::ColorParameter,
+        #[offset(72)]
         #[rename(name = "balance")]
         pub balance: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
     }

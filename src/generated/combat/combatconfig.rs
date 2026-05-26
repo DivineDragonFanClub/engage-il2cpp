@@ -19,26 +19,37 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatConfig")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CombatConfig {
+        #[offset(24)]
         #[rename(name = "SpeedPan")]
         pub speed_pan: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(32)]
         #[rename(name = "ScalePan")]
         pub scale_pan: crate::unity_engine::vector2::Vector2,
+        #[offset(40)]
         #[rename(name = "StartAnimeStartTime")]
         pub start_anime_start_time: f32,
+        #[offset(44)]
         #[rename(name = "BGDarknessScale")]
         pub bg_darkness_scale: f32,
+        #[offset(48)]
         #[rename(name = "DamagePopupNumberStride")]
         pub damage_popup_number_stride: f32,
+        #[offset(52)]
         #[rename(name = "DamagePopupWordsStride")]
         pub damage_popup_words_stride: f32,
+        #[offset(56)]
         #[rename(name = "BackwardCancelPosition_High")]
         pub backward_cancel_position_high: f32,
+        #[offset(60)]
         #[rename(name = "BackwardCancelPosition_Low")]
         pub backward_cancel_position_low: f32,
+        #[offset(64)]
         #[rename(name = "BackwardCancelPosition_Heavy")]
         pub backward_cancel_position_heavy: f32,
+        #[offset(68)]
         #[rename(name = "TimeDragonTransformFadeOut")]
         pub time_dragon_transform_fade_out: f32,
+        #[offset(72)]
         #[rename(name = "TimeDragonTransformFadeIn")]
         pub time_dragon_transform_fade_in: f32,
     }

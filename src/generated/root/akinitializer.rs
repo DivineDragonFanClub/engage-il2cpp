@@ -22,6 +22,7 @@ mod __types {
         #[static_field]
         #[rename(name = "ms_Instance")]
         pub ms_instance: crate::root::akinitializer::AkInitializer,
+        #[offset(24)]
         #[rename(name = "InitializationSettings")]
         pub initialization_settings: crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings,
     }

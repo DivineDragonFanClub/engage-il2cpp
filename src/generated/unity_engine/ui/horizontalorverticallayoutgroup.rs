@@ -21,20 +21,28 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "HorizontalOrVerticalLayoutGroup")]
     #[parent(crate::unity_engine::ui::layoutgroup::LayoutGroup)]
     pub struct HorizontalOrVerticalLayoutGroup {
+        #[offset(88)]
         #[rename(name = "m_Spacing")]
         pub m_spacing: f32,
+        #[offset(92)]
         #[rename(name = "m_ChildForceExpandWidth")]
         pub m_child_force_expand_width: bool,
+        #[offset(93)]
         #[rename(name = "m_ChildForceExpandHeight")]
         pub m_child_force_expand_height: bool,
+        #[offset(94)]
         #[rename(name = "m_ChildControlWidth")]
         pub m_child_control_width: bool,
+        #[offset(95)]
         #[rename(name = "m_ChildControlHeight")]
         pub m_child_control_height: bool,
+        #[offset(96)]
         #[rename(name = "m_ChildScaleWidth")]
         pub m_child_scale_width: bool,
+        #[offset(97)]
         #[rename(name = "m_ChildScaleHeight")]
         pub m_child_scale_height: bool,
+        #[offset(98)]
         #[rename(name = "m_ReverseArrangement")]
         pub m_reverse_arrangement: bool,
     }

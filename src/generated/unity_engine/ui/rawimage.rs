@@ -24,8 +24,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "RawImage")]
     #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
     pub struct RawImage {
+        #[offset(208)]
         #[rename(name = "m_Texture")]
         pub m_texture: crate::unity_engine::texture::Texture,
+        #[offset(216)]
         #[rename(name = "m_UVRect")]
         pub m_uv_rect: crate::unity_engine::rect::Rect,
     }

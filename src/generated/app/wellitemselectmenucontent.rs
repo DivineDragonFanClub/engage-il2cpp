@@ -23,24 +23,34 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_ItemListContent")]
         pub m_item_list_content: crate::app::menuaccessorycontent::MenuAccessoryContent,
+        #[offset(248)]
         #[rename(name = "m_ItemHelpContent")]
         pub m_item_help_content: crate::app::menuaccessorycontent::MenuAccessoryContent,
+        #[offset(256)]
         #[rename(name = "m_ExpectedContent")]
         pub m_expected_content: crate::app::menuaccessorycontent::MenuAccessoryContent,
+        #[offset(264)]
         #[rename(name = "m_SelectedItemContentList")]
         pub m_selected_item_content_list: ::unity2::Array<crate::app::basicitemmenuitemcontent::BasicItemMenuItemContent>,
+        #[offset(272)]
         #[rename(name = "m_StarList")]
         pub m_star_list: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(280)]
         #[rename(name = "m_StockValueText")]
         pub m_stock_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_StockValueMaxText")]
         pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(296)]
         #[rename(name = "m_KindIconBgImageList")]
         pub m_kind_icon_bg_image_list: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(304)]
         #[rename(name = "m_SelectedKindIndex")]
         pub m_selected_kind_index: i32,
     }

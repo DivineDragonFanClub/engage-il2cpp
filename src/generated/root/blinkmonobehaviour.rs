@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "", name = "BlinkMonoBehaviour")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BlinkMonoBehaviour {
+        #[offset(24)]
         #[rename(name = "m_Counter")]
         pub m_counter: i32,
+        #[offset(28)]
         #[rename(name = "m_Enabled")]
         pub m_enabled: bool,
     }

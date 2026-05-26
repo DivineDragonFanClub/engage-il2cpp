@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystemData.ShaderResources")]
     #[parent(crate::system::object::Object)]
     pub struct XRSystemData_ShaderResources {
+        #[offset(16)]
         #[rename(name = "xrOcclusionMeshPS")]
         pub xr_occlusion_mesh_ps: crate::unity_engine::shader::Shader,
+        #[offset(24)]
         #[rename(name = "xrMirrorViewPS")]
         pub xr_mirror_view_ps: crate::unity_engine::shader::Shader,
     }
@@ -27,6 +29,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystemData")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct XRSystemData {
+        #[offset(24)]
         #[rename(name = "shaders")]
         pub shaders: crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData_ShaderResources,
     }

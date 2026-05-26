@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayStamp")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RelayStamp {
+        #[offset(24)]
         #[rename(name = "m_LastNameText")]
         pub m_last_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_TitleText")]
         pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_StampImage")]
         pub m_stamp_image: crate::unity_engine::ui::image::Image,
     }

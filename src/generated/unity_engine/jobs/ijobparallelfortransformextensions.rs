@@ -12,6 +12,11 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Jobs", name = "IJobParallelForTransformExtensions")]
+    #[parent(crate::system::object::Object)]
+    pub struct IJobParallelForTransformExtensions {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -79,11 +84,6 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Jobs", name = "IJobParallelForTransformExtensions")]
-    #[parent(crate::system::object::Object)]
-    pub struct IJobParallelForTransformExtensions {}
 }
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions-types")]

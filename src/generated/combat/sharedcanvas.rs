@@ -22,8 +22,10 @@ mod __types {
         #[static_field]
         #[rename(name = "s_this")]
         pub s_this: crate::combat::sharedcanvas::SharedCanvas,
+        #[offset(24)]
         #[rename(name = "m_Canvas")]
         pub m_canvas: crate::unity_engine::canvas::Canvas,
+        #[offset(32)]
         #[rename(name = "m_bShown")]
         pub m_b_shown: crate::combat::editorprefs_bool::EditorPrefs_Bool,
     }

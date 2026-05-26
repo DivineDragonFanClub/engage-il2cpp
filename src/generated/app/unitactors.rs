@@ -20,12 +20,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitActors")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: unitactors :: UnitActors >)]
     pub struct UnitActors {
+        #[offset(32)]
         #[rename(name = "m_Actors")]
         pub m_actors: crate::system::collections::generic::list_1::List_1<crate::app::unitactor::UnitActor>,
+        #[offset(40)]
         #[rename(name = "m_ChangeEnableInfoList")]
         pub m_change_enable_info_list: crate::system::collections::generic::list_1::List_1<crate::app::mapinforoot::MapInfoRoot>,
+        #[offset(48)]
         #[rename(name = "m_ChangeDisableInfoList")]
         pub m_change_disable_info_list: crate::system::collections::generic::list_1::List_1<crate::app::mapinforoot::MapInfoRoot>,
+        #[offset(56)]
         #[rename(name = "m_UnitPositionScales")]
         pub m_unit_position_scales: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         #[static_field]

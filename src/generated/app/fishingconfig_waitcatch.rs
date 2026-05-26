@@ -19,36 +19,52 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "FishingConfig_WaitCatch")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct FishingConfig_WaitCatch {
+        #[offset(24)]
         #[rename(name = "m_FishChangeAppearTime")]
         pub m_fish_change_appear_time: f32,
+        #[offset(28)]
         #[rename(name = "m_FishChangePercentage")]
         pub m_fish_change_percentage: f32,
+        #[offset(32)]
         #[rename(name = "m_FishFaintPercentage")]
         pub m_fish_faint_percentage: f32,
+        #[offset(36)]
         #[rename(name = "m_FishFaintMaxCount")]
         pub m_fish_faint_max_count: i32,
+        #[offset(40)]
         #[rename(name = "m_FishCatchingTimeMax")]
         pub m_fish_catching_time_max: f32,
+        #[offset(44)]
         #[rename(name = "m_LureCameraDiff")]
         pub m_lure_camera_diff: crate::unity_engine::vector3::Vector3,
+        #[offset(56)]
         #[rename(name = "m_LureCameraRot")]
         pub m_lure_camera_rot: crate::unity_engine::vector3::Vector3,
+        #[offset(68)]
         #[rename(name = "m_AssistShowSec")]
         pub m_assist_show_sec: f32,
+        #[offset(72)]
         #[rename(name = "m_FakeVibeTimeMult")]
         pub m_fake_vibe_time_mult: f32,
+        #[offset(76)]
         #[rename(name = "m_CatchVibeTimeMult")]
         pub m_catch_vibe_time_mult: f32,
+        #[offset(80)]
         #[rename(name = "m_CatchVibePower_Tiny")]
         pub m_catch_vibe_power_tiny: f32,
+        #[offset(84)]
         #[rename(name = "m_CatchVibeTime_Tiny")]
         pub m_catch_vibe_time_tiny: f32,
+        #[offset(88)]
         #[rename(name = "m_CatchVibePower_Middle")]
         pub m_catch_vibe_power_middle: f32,
+        #[offset(92)]
         #[rename(name = "m_CatchVibeTime_Middle")]
         pub m_catch_vibe_time_middle: f32,
+        #[offset(96)]
         #[rename(name = "m_CatchVibePower_Giant")]
         pub m_catch_vibe_power_giant: f32,
+        #[offset(100)]
         #[rename(name = "m_CatchVibeTime_Giant")]
         pub m_catch_vibe_time_giant: f32,
     }

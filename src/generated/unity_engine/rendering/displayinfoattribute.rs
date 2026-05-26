@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/displayinfoattribute/DisplayInfoAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DisplayInfoAttribute")]
     pub struct DisplayInfoAttribute {
+        #[offset(16)]
         #[rename(name = "name")]
         pub name: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "order")]
         pub order: i32,
     }

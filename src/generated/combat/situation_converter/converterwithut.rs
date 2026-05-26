@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConverterWithUt")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConverterWithUt {
+        #[offset(24)]
         #[rename(name = "m_Chr")]
         pub m_chr: crate::combat::character::Character,
+        #[offset(32)]
         #[rename(name = "m_Phase")]
         pub m_phase: crate::combat::phase::Phase,
         #[static_field]

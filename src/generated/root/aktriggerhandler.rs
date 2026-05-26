@@ -37,10 +37,13 @@ mod __types {
         #[static_field]
         #[rename(name = "triggerTypes")]
         pub trigger_types: crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString>,
+        #[offset(24)]
         #[rename(name = "didDestroy")]
         pub did_destroy: bool,
+        #[offset(32)]
         #[rename(name = "triggerList")]
         pub trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[offset(40)]
         #[rename(name = "useOtherObject")]
         pub use_other_object: bool,
     }

@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoiconpool/MapInfoIconPool.md"))]
     #[::unity2::class(namespace = "", name = "MapInfoIconPool")]
     pub struct MapInfoIconPool {
+        #[offset(32)]
         #[rename(name = "m_Prefab")]
         pub m_prefab: crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot,
+        #[offset(40)]
         #[rename(name = "m_ParentTransform")]
         pub m_parent_transform: crate::unity_engine::transform::Transform,
     }

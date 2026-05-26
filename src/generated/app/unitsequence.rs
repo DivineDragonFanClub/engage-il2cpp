@@ -21,24 +21,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "UnitSequence")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: unitsequence :: UnitSequence >)]
     pub struct UnitSequence {
+        #[offset(24)]
         #[rename(name = "待機中")]
         pub 待機中: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(36)]
         #[rename(name = "カーソル")]
         pub カーソル: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(48)]
         #[rename(name = "掴み中")]
         pub 掴み中: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(60)]
         #[rename(name = "移動中")]
         pub 移動中: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(72)]
         #[rename(name = "移動後")]
         pub 移動後: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(84)]
         #[rename(name = "敵選択中")]
         pub 敵選択中: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(96)]
         #[rename(name = "戦闘中")]
         pub 戦闘中: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(108)]
         #[rename(name = "戦闘後")]
         pub 戦闘後: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(120)]
         #[rename(name = "杖戦闘中")]
         pub 杖戦闘中: crate::app::unitsequence::UnitSequence_Action,
+        #[offset(132)]
         #[rename(name = "ガード中")]
         pub ガード中: crate::app::unitsequence::UnitSequence_Action,
     }

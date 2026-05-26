@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "ScreenSpaceShadowResolvePass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct ScreenSpaceShadowResolvePass {
+        #[offset(112)]
         #[rename(name = "m_ScreenSpaceShadowsMaterial")]
         pub m_screen_space_shadows_material: crate::unity_engine::material::Material,
+        #[offset(120)]
         #[rename(name = "m_ScreenSpaceShadowmap")]
         pub m_screen_space_shadowmap: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(168)]
         #[rename(name = "m_RenderTextureDescriptor")]
         pub m_render_texture_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
     }

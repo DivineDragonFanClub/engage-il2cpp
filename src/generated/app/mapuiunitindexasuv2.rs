@@ -21,6 +21,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapUIUnitIndexAsUV2")]
     #[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]
     pub struct MapUIUnitIndexAsUV2 {
+        #[offset(32)]
         #[rename(name = "m_UnitIndex")]
         pub m_unit_index: i32,
     }

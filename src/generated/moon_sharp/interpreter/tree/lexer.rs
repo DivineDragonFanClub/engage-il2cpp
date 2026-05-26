@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "Lexer")]
     #[parent(crate::system::object::Object)]
     pub struct Lexer {
+        #[offset(16)]
         #[rename(name = "m_Current")]
         pub m_current: crate::moon_sharp::interpreter::tree::token::Token,
+        #[offset(24)]
         #[rename(name = "m_Code")]
         pub m_code: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_PrevLineTo")]
         pub m_prev_line_to: i32,
+        #[offset(36)]
         #[rename(name = "m_PrevColTo")]
         pub m_prev_col_to: i32,
+        #[offset(40)]
         #[rename(name = "m_Cursor")]
         pub m_cursor: i32,
+        #[offset(44)]
         #[rename(name = "m_Line")]
         pub m_line: i32,
+        #[offset(48)]
         #[rename(name = "m_Col")]
         pub m_col: i32,
+        #[offset(52)]
         #[rename(name = "m_SourceId")]
         pub m_source_id: i32,
+        #[offset(56)]
         #[rename(name = "m_AutoSkipComments")]
         pub m_auto_skip_comments: bool,
     }

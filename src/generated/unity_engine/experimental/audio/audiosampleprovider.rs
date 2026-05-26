@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Experimental.Audio", name = "AudioSampleProvider")]
     #[parent(crate::system::object::Object)]
     pub struct AudioSampleProvider {
+        #[offset(16)]
         #[rename(name = "sampleFramesAvailable")]
         pub sample_frames_available: crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler,
+        #[offset(24)]
         #[rename(name = "sampleFramesOverflow")]
         pub sample_frames_overflow: crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler,
     }

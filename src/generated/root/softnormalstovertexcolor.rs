@@ -19,6 +19,21 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor.md"))]
+    #[::unity2::class(namespace = "", name = "SoftNormalsToVertexColor")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct SoftNormalsToVertexColor {
+        #[offset(24)]
+        #[rename(name = "method")]
+        pub method: crate::root::softnormalstovertexcolor::SoftNormalsToVertexColor_Method,
+        #[offset(28)]
+        #[rename(name = "generateOnAwake")]
+        pub generate_on_awake: bool,
+        #[offset(29)]
+        #[rename(name = "generateNow")]
+        pub generate_now: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor_Method.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -51,18 +66,6 @@ mod __types {
         pub fn angular_deviation() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor.md"))]
-    #[::unity2::class(namespace = "", name = "SoftNormalsToVertexColor")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct SoftNormalsToVertexColor {
-        #[rename(name = "method")]
-        pub method: crate::root::softnormalstovertexcolor::SoftNormalsToVertexColor_Method,
-        #[rename(name = "generateOnAwake")]
-        pub generate_on_awake: bool,
-        #[rename(name = "generateNow")]
-        pub generate_now: bool,
     }
 }
 

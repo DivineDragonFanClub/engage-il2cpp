@@ -12,16 +12,6 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct ConstantBuffer_ConstantBufferBase {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ConstantBuffer")]
-    #[parent(crate::system::object::Object)]
-    pub struct ConstantBuffer {
-        #[static_field]
-        #[rename(name = "m_RegisteredConstantBuffers")]
-        pub m_registered_constant_buffers:
-            crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ConstantBuffer.TypedConstantBuffer`1")]
     #[parent(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase)]
@@ -36,6 +26,16 @@ mod __types {
         pub s_instance: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>,
         #[rename(name = "m_GPUConstantBuffer")]
         pub m_gpu_constant_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ConstantBuffer")]
+    #[parent(crate::system::object::Object)]
+    pub struct ConstantBuffer {
+        #[static_field]
+        #[rename(name = "m_RegisteredConstantBuffers")]
+        pub m_registered_constant_buffers:
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase>,
     }
 }
 
@@ -152,6 +152,67 @@ impl ConstantBuffer_ConstantBufferBase {
             )
         });
         <Self as IConstantBuffer_ConstantBufferBaseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
+    #[doc = "`get_instance()` overload"]
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance() -> crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>;
+
+    #[doc = "`set_instance(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>)` overload"]
+    #[method(name = "set_instance", args = 1)]
+    pub fn set_instance(value: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`UpdateData(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutT0)` overload"]
+    #[method(name = "UpdateData", args = 2)]
+    pub fn update_data(self, cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer, data: *mut T0) -> ();
+
+    #[doc = "`SetGlobal(crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]
+    #[method(name = "SetGlobal", args = 2)]
+    pub fn set_global(self, cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer, shader_id: i32) -> ();
+
+    #[doc = "`Set(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader, i32)` overload"]
+    #[method(name = "Set", args = 3)]
+    pub fn set(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        cs: crate::unity_engine::computeshader::ComputeShader,
+        shader_id: i32,
+    ) -> ();
+
+    #[doc = "`Set(crate::unity_engine::material::Material, i32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set_2(self, mat: crate::unity_engine::material::Material, shader_id: i32) -> ();
+
+    #[doc = "`Release()` overload"]
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConstantBuffer_TypedConstantBuffer_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConstantBuffer_TypedConstantBuffer_1Methods<T0>>::ctor(this);
         this
     }
 }
@@ -657,67 +718,6 @@ impl ConstantBuffer {
             )
         });
         <Self as IConstantBufferMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
-    #[doc = "`get_instance()` overload"]
-    #[method(name = "get_instance", args = 0)]
-    pub fn get_instance() -> crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>;
-
-    #[doc = "`set_instance(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>)` overload"]
-    #[method(name = "set_instance", args = 1)]
-    pub fn set_instance(value: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`UpdateData(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutT0)` overload"]
-    #[method(name = "UpdateData", args = 2)]
-    pub fn update_data(self, cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer, data: *mut T0) -> ();
-
-    #[doc = "`SetGlobal(crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]
-    #[method(name = "SetGlobal", args = 2)]
-    pub fn set_global(self, cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer, shader_id: i32) -> ();
-
-    #[doc = "`Set(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader, i32)` overload"]
-    #[method(name = "Set", args = 3)]
-    pub fn set(
-        self,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        cs: crate::unity_engine::computeshader::ComputeShader,
-        shader_id: i32,
-    ) -> ();
-
-    #[doc = "`Set(crate::unity_engine::material::Material, i32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set_2(self, mat: crate::unity_engine::material::Material, shader_id: i32) -> ();
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-constantbuffer")]
-impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConstantBuffer_TypedConstantBuffer_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConstantBuffer_TypedConstantBuffer_1Methods<T0>>::ctor(this);
         this
     }
 }

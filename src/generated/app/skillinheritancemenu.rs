@@ -20,10 +20,13 @@ mod __types {
         #[static_field]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::system::action_1::Action_1<crate::app::unit::Unit>,
+        #[offset(200)]
         #[rename(name = "m_GodListActive")]
         pub m_god_list_active: crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>,
+        #[offset(208)]
         #[rename(name = "m_MenuSelectList")]
         pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(216)]
         #[rename(name = "m_GodIndex")]
         pub m_god_index: i32,
     }

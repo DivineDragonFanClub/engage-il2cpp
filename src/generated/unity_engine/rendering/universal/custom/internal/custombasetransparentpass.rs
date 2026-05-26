@@ -14,30 +14,41 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomBaseTransparentPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CustomBaseTransparentPass {
+        #[offset(112)]
         #[rename(name = "m_FilteringSettings")]
         pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        #[offset(136)]
         #[rename(name = "m_RenderStateBlock")]
         pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+        #[offset(244)]
         #[rename(name = "m_DefaultShaderTagId")]
         pub m_default_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(248)]
         #[rename(name = "m_ShaderTagIdList")]
         pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[offset(256)]
         #[rename(name = "m_UnlitShaderTagId")]
         pub m_unlit_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        #[offset(264)]
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
+        #[offset(272)]
         #[rename(name = "m_ProfilingSampler")]
         pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
         #[static_field]
         #[rename(name = "s_DrawObjectPassDataPropID")]
         pub s_draw_object_pass_data_prop_id: i32,
+        #[offset(280)]
         #[rename(name = "m_NoOverrideStateShaderTagIdList")]
         pub m_no_override_state_shader_tag_id_list:
             crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        #[offset(288)]
         #[rename(name = "m_MixedResolutionEnabled")]
         pub m_mixed_resolution_enabled: bool,
+        #[offset(289)]
         #[rename(name = "m_ShouldSetEffectDepth")]
         pub m_should_set_effect_depth: bool,
+        #[offset(296)]
         #[rename(name = "m_EffectDepthId")]
         pub m_effect_depth_id: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
     }

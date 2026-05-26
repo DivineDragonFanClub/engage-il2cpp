@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "App.Fishing.Config", name = "FixCameraConfig")]
     #[parent(crate::system::object::Object)]
     pub struct FixCameraConfig {
+        #[offset(16)]
         #[rename(name = "Pos")]
         pub pos: crate::unity_engine::vector3::Vector3,
+        #[offset(28)]
         #[rename(name = "Rot")]
         pub rot: crate::unity_engine::vector3::Vector3,
     }

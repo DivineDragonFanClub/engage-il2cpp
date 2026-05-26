@@ -25,38 +25,55 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TextMeshPro")]
     #[parent(crate::tm_pro::tmp_text::TMP_Text)]
     pub struct TextMeshPro {
+        #[offset(1728)]
         #[rename(name = "m_hasFontAssetChanged")]
         pub m_has_font_asset_changed: bool,
+        #[offset(1732)]
         #[rename(name = "m_previousLossyScaleY")]
         pub m_previous_lossy_scale_y: f32,
+        #[offset(1736)]
         #[rename(name = "m_renderer")]
         pub m_renderer: crate::unity_engine::renderer::Renderer,
+        #[offset(1744)]
         #[rename(name = "m_meshFilter")]
         pub m_mesh_filter: crate::unity_engine::meshfilter::MeshFilter,
+        #[offset(1752)]
         #[rename(name = "m_isFirstAllocation")]
         pub m_is_first_allocation: bool,
+        #[offset(1756)]
         #[rename(name = "m_max_characters")]
         pub m_max_characters: i32,
+        #[offset(1760)]
         #[rename(name = "m_max_numberOfLines")]
         pub m_max_number_of_lines: i32,
+        #[offset(1768)]
         #[rename(name = "m_subTextObjects")]
         pub m_sub_text_objects: ::unity2::Array<crate::tm_pro::tmp_submesh::TMP_SubMesh>,
+        #[offset(1776)]
         #[rename(name = "m_maskType")]
         pub m_mask_type: crate::tm_pro::maskingtypes::MaskingTypes,
+        #[offset(1780)]
         #[rename(name = "m_EnvMapMatrix")]
         pub m_env_map_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        #[offset(1848)]
         #[rename(name = "m_RectTransformCorners")]
         pub m_rect_transform_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(1856)]
         #[rename(name = "m_isRegisteredForEvents")]
         pub m_is_registered_for_events: bool,
+        #[offset(1860)]
         #[rename(name = "_SortingLayer")]
         pub sorting_layer: i32,
+        #[offset(1864)]
         #[rename(name = "_SortingLayerID")]
         pub sorting_layer_id_field: i32,
+        #[offset(1868)]
         #[rename(name = "_SortingOrder")]
         pub sorting_order_field: i32,
+        #[offset(1872)]
         #[rename(name = "OnPreRenderText")]
         pub on_pre_render_text: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+        #[offset(1880)]
         #[rename(name = "m_currentAutoSizeMode")]
         pub m_current_auto_size_mode: bool,
     }

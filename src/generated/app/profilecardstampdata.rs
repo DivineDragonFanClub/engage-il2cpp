@@ -18,6 +18,15 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampdata/ProfileCardStampData.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardStampData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardstampdata :: ProfileCardStampData >)]
+    pub struct ProfileCardStampData {
+        #[static_field]
+        #[rename(name = "CategoryMid")]
+        pub category_mid: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardstampdata/ProfileCardStampData_Categories.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -74,15 +83,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 7 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampdata/ProfileCardStampData.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardstampdata :: ProfileCardStampData >)]
-    pub struct ProfileCardStampData {
-        #[static_field]
-        #[rename(name = "CategoryMid")]
-        pub category_mid: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 

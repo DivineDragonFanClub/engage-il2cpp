@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "InspectorNameAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct InspectorNameAttribute {
+        #[offset(16)]
         #[rename(name = "displayName")]
         pub display_name: ::unity2::Il2CppString,
     }

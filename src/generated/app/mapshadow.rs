@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapShadow")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapshadow :: MapShadow >)]
     pub struct MapShadow {
+        #[offset(32)]
         #[rename(name = "m_Mesh")]
         pub m_mesh: crate::app::map::Map_CellMesh,
     }

@@ -17,31 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattleaction/MapSequenceBattleAction.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceBattleAction")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencebattleaction :: MapSequenceBattleAction >)]
-    pub struct MapSequenceBattleAction {
-        #[rename(name = "m_Calculator")]
-        pub m_calculator: crate::app::battlecalculator::BattleCalculator,
-        #[rename(name = "m_SimCalculator")]
-        pub m_sim_calculator: crate::app::battlecalculator::BattleCalculator,
-        #[rename(name = "m_Signal")]
-        pub m_signal: crate::app::unitsignal::UnitSignal,
-        #[rename(name = "m_SceneIndex")]
-        pub m_scene_index: i32,
-        #[rename(name = "m_BattleCount")]
-        pub m_battle_count: i32,
-        #[rename(name = "m_AttackCount")]
-        pub m_attack_count: i32,
-        #[rename(name = "m_InfoWait")]
-        pub m_info_wait: f32,
-        #[rename(name = "m_AttackSide")]
-        pub m_attack_side: crate::app::battleside::BattleSide_Type,
-        #[static_field]
-        #[rename(name = "WaitFrame")]
-        pub wait_frame: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattleaction/MapSequenceBattleAction_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -102,6 +77,39 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 8 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattleaction/MapSequenceBattleAction.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceBattleAction")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencebattleaction :: MapSequenceBattleAction >)]
+    pub struct MapSequenceBattleAction {
+        #[offset(120)]
+        #[rename(name = "m_Calculator")]
+        pub m_calculator: crate::app::battlecalculator::BattleCalculator,
+        #[offset(128)]
+        #[rename(name = "m_SimCalculator")]
+        pub m_sim_calculator: crate::app::battlecalculator::BattleCalculator,
+        #[offset(136)]
+        #[rename(name = "m_Signal")]
+        pub m_signal: crate::app::unitsignal::UnitSignal,
+        #[offset(144)]
+        #[rename(name = "m_SceneIndex")]
+        pub m_scene_index: i32,
+        #[offset(148)]
+        #[rename(name = "m_BattleCount")]
+        pub m_battle_count: i32,
+        #[offset(152)]
+        #[rename(name = "m_AttackCount")]
+        pub m_attack_count: i32,
+        #[offset(156)]
+        #[rename(name = "m_InfoWait")]
+        pub m_info_wait: f32,
+        #[offset(160)]
+        #[rename(name = "m_AttackSide")]
+        pub m_attack_side: crate::app::battleside::BattleSide_Type,
+        #[static_field]
+        #[rename(name = "WaitFrame")]
+        pub wait_frame: i32,
     }
 }
 

@@ -11,14 +11,19 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUISettings")]
     #[parent(crate::system::object::Object)]
     pub struct GUISettings {
+        #[offset(16)]
         #[rename(name = "m_DoubleClickSelectsWord")]
         pub m_double_click_selects_word: bool,
+        #[offset(17)]
         #[rename(name = "m_TripleClickSelectsLine")]
         pub m_triple_click_selects_line: bool,
+        #[offset(20)]
         #[rename(name = "m_CursorColor")]
         pub m_cursor_color: crate::unity_engine::color::Color,
+        #[offset(36)]
         #[rename(name = "m_CursorFlashSpeed")]
         pub m_cursor_flash_speed: f32,
+        #[offset(40)]
         #[rename(name = "m_SelectionColor")]
         pub m_selection_color: crate::unity_engine::color::Color,
     }

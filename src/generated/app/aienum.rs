@@ -40,15 +40,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))]
-    #[::unity2::class(namespace = "App", name = "AIEnum")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIEnum {
-        #[static_field]
-        #[rename(name = "s_SkillRangeEnemyEnumerator")]
-        pub s_skill_range_enemy_enumerator: crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -73,6 +64,15 @@ mod __types {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))]
+    #[::unity2::class(namespace = "App", name = "AIEnum")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIEnum {
+        #[static_field]
+        #[rename(name = "s_SkillRangeEnemyEnumerator")]
+        pub s_skill_range_enemy_enumerator: crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,
     }
 }
 

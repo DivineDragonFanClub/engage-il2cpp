@@ -19,20 +19,28 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayWdwMapHelp")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RelayWdwMapHelp {
+        #[offset(24)]
         #[rename(name = "m_MapName")]
         pub m_map_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_Turn")]
         pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_MapImage")]
         pub m_map_image: crate::unity_engine::ui::image::Image,
+        #[offset(48)]
         #[rename(name = "m_ItemList")]
         pub m_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(56)]
         #[rename(name = "m_IdRoot")]
         pub m_id_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_Id")]
         pub m_id: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_ShowItemList")]
         pub m_show_item_list: crate::system::collections::generic::list_1::List_1<crate::app::relaywdwmaphelp::RelayWdwMapHelp_ShowItem>,
+        #[offset(80)]
         #[rename(name = "m_AwardItemList")]
         pub m_award_item_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
     }
@@ -41,8 +49,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayWdwMapHelp.ShowItem")]
     #[parent(crate::system::object::Object)]
     pub struct RelayWdwMapHelp_ShowItem {
+        #[offset(16)]
         #[rename(name = "m_Object")]
         pub m_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Title")]
         pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

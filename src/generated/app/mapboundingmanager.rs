@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBoundingManager")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapboundingmanager :: MapBoundingManager >)]
     pub struct MapBoundingManager {
+        #[offset(32)]
         #[rename(name = "m_Prefab")]
         pub m_prefab: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_Colliders")]
         pub m_colliders: ::unity2::Array<crate::unity_engine::boxcollider::BoxCollider>,
     }

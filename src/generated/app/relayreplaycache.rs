@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RelayReplayCache")]
     #[parent(crate::system::object::Object)]
     pub struct RelayReplayCache {
+        #[offset(16)]
         #[rename(name = "m_IsValid")]
         pub m_is_valid: bool,
+        #[offset(17)]
         #[rename(name = "m_IsNoNeed")]
         pub m_is_no_need: bool,
+        #[offset(24)]
         #[rename(name = "m_Data")]
         pub m_data: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
     }

@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib.IO", name = "StreamFileUserDataBase")]
     #[parent(crate::moon_sharp::interpreter::core_lib::io::fileuserdatabase::FileUserDataBase)]
     pub struct StreamFileUserDataBase {
+        #[offset(24)]
         #[rename(name = "m_Stream")]
         pub m_stream: crate::system::io::stream::Stream,
+        #[offset(32)]
         #[rename(name = "m_Reader")]
         pub m_reader: crate::system::io::streamreader::StreamReader,
+        #[offset(40)]
         #[rename(name = "m_Writer")]
         pub m_writer: crate::system::io::streamwriter::StreamWriter,
+        #[offset(48)]
         #[rename(name = "m_Closed")]
         pub m_closed: bool,
     }

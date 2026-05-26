@@ -15,16 +15,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionState")]
     #[parent(crate::system::object::Object)]
     pub struct DebugActionState {
+        #[offset(16)]
         #[rename(name = "m_Type")]
         pub m_type: crate::unity_engine::rendering::debugactionstate::DebugActionState_DebugActionKeyType,
+        #[offset(24)]
         #[rename(name = "m_PressedButtons")]
         pub m_pressed_buttons: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(32)]
         #[rename(name = "m_PressedAxis")]
         pub m_pressed_axis: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_PressedKeys")]
         pub m_pressed_keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
+        #[offset(48)]
         #[rename(name = "m_TriggerPressedUp")]
         pub m_trigger_pressed_up: ::unity2::Array<bool>,
+        #[offset(56)]
         #[rename(name = "m_Timer")]
         pub m_timer: f32,
     }

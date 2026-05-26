@@ -17,10 +17,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "RuntimeClip")]
     #[parent(crate::unity_engine::timeline::runtimeclipbase::RuntimeClipBase)]
     pub struct RuntimeClip {
+        #[offset(24)]
         #[rename(name = "m_Clip")]
         pub m_clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+        #[offset(32)]
         #[rename(name = "m_Playable")]
         pub m_playable: crate::unity_engine::playables::playable::Playable,
+        #[offset(48)]
         #[rename(name = "m_ParentMixer")]
         pub m_parent_mixer: crate::unity_engine::playables::playable::Playable,
     }

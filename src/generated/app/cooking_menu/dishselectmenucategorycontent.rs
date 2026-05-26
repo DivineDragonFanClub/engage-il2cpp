@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuCategoryContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DishSelectMenuCategoryContent {
+        #[offset(24)]
         #[rename(name = "m_CategoryList")]
         pub m_category_list: crate::system::collections::generic::list_1::List_1<
             crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject,
@@ -98,8 +99,10 @@ mod __types {
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuCategoryContent.CategoryObject")]
     #[parent(crate::system::object::Object)]
     pub struct DishSelectMenuCategoryContent_CategoryObject {
+        #[offset(16)]
         #[rename(name = "m_Object")]
         pub m_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(24)]
         #[rename(name = "m_Category")]
         pub m_category: crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category,
     }

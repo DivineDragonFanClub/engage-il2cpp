@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIPrefabBundle")]
     #[parent(crate::system::object::Object)]
     pub struct DebugUIPrefabBundle {
+        #[offset(16)]
         #[rename(name = "type")]
         pub r#type: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "prefab")]
         pub prefab: crate::unity_engine::recttransform::RectTransform,
     }

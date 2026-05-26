@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "InstanceProvider")]
     #[parent(crate::system::object::Object)]
     pub struct InstanceProvider {
+        #[offset(16)]
         #[rename(name = "m_InstanceObjectToPrefabHandle")]
         pub m_instance_object_to_prefab_handle: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::unity_engine::gameobject::GameObject,

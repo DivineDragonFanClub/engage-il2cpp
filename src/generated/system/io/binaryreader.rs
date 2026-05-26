@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "BinaryReader")]
     #[parent(crate::system::object::Object)]
     pub struct BinaryReader {
+        #[offset(16)]
         #[rename(name = "m_stream")]
         pub m_stream: crate::system::io::stream::Stream,
+        #[offset(24)]
         #[rename(name = "m_buffer")]
         pub m_buffer: ::unity2::Array<u8>,
+        #[offset(40)]
         #[rename(name = "m_charBytes")]
         pub m_char_bytes: ::unity2::Array<u8>,
+        #[offset(48)]
         #[rename(name = "m_singleChar")]
         pub m_single_char: ::unity2::Array<u16>,
+        #[offset(56)]
         #[rename(name = "m_charBuffer")]
         pub m_char_buffer: ::unity2::Array<u16>,
+        #[offset(64)]
         #[rename(name = "m_maxCharsSize")]
         pub m_max_chars_size: i32,
+        #[offset(68)]
         #[rename(name = "m_2BytesPerChar")]
         pub m_2bytes_per_char: bool,
+        #[offset(69)]
         #[rename(name = "m_isMemoryStream")]
         pub m_is_memory_stream: bool,
+        #[offset(70)]
         #[rename(name = "m_leaveOpen")]
         pub m_leave_open: bool,
     }

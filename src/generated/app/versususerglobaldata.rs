@@ -17,8 +17,10 @@ mod __types {
         #[static_field]
         #[rename(name = "ReportedListNum")]
         pub reported_list_num: i32,
+        #[offset(32)]
         #[rename(name = "m_ReportedList")]
         pub m_reported_list: crate::system::collections::generic::list_1::List_1<u64>,
+        #[offset(40)]
         #[rename(name = "m_ReservedId")]
         pub m_reserved_id: u64,
     }

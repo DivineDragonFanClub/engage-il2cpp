@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomOffscreenCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CustomOffscreenCamera {
+        #[offset(24)]
         #[rename(name = "m_PPVolumeProfile")]
         pub m_pp_volume_profile: crate::unity_engine::rendering::volumeprofile::VolumeProfile,
+        #[offset(32)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[offset(40)]
         #[rename(name = "m_AdditionalCameraData")]
         pub m_additional_camera_data: crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData,
     }

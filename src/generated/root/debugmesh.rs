@@ -23,6 +23,7 @@ mod __types {
         #[static_field]
         #[rename(name = "ROLL_90")]
         pub roll_90: crate::unity_engine::quaternion::Quaternion,
+        #[offset(100)]
         #[rename(name = "m_MaskUV")]
         pub m_mask_uv: crate::unity_engine::vector2::Vector2,
     }

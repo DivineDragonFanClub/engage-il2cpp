@@ -20,10 +20,44 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "WellItemSelectMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct WellItemSelectMenu {
+        #[offset(200)]
+        #[rename(name = "ItemKindList")]
+        pub item_kind_list: ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
+        #[static_field]
+        #[rename(name = "SELECT_ITEM_MAX")]
+        pub select_item_max: i32,
+        #[offset(208)]
+        #[rename(name = "m_SelectedKindIndex")]
+        pub m_selected_kind_index: i32,
+        #[static_field]
+        #[rename(name = "ShowRowNum")]
+        pub show_row_num: i32,
+        #[offset(216)]
+        #[rename(name = "m_SavedFullMenuItemList")]
+        pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(224)]
+        #[rename(name = "m_SortMenuItemList")]
+        pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        #[offset(232)]
+        #[rename(name = "m_ItemKind")]
+        pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
+        #[offset(240)]
+        #[rename(name = "m_Selects")]
+        pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+        #[offset(248)]
+        #[rename(name = "m_SelectedItemList")]
+        pub m_selected_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]
     #[::unity2::class(namespace = "App", name = "WellItemSelectMenu.SelectedItem")]
     #[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]
     pub struct WellItemSelectMenu_SelectedItem {
+        #[offset(128)]
         #[rename(name = "m_MenuItem")]
         pub m_menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
     }
@@ -65,234 +99,10 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "WellItemSelectMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct WellItemSelectMenu {
-        #[rename(name = "ItemKindList")]
-        pub item_kind_list: ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
-        #[static_field]
-        #[rename(name = "SELECT_ITEM_MAX")]
-        pub select_item_max: i32,
-        #[rename(name = "m_SelectedKindIndex")]
-        pub m_selected_kind_index: i32,
-        #[static_field]
-        #[rename(name = "ShowRowNum")]
-        pub show_row_num: i32,
-        #[rename(name = "m_SavedFullMenuItemList")]
-        pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        #[rename(name = "m_SortMenuItemList")]
-        pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
-        #[rename(name = "m_ItemKind")]
-        pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
-        #[rename(name = "m_Selects")]
-        pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
-        #[rename(name = "m_SelectedItemList")]
-        pub m_selected_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem>,
-    }
 }
 
 #[cfg(feature = "app-wellitemselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-wellitemselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellItemSelectMenu_SelectedItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::wellitemselectmenuitem::WellItemSelectMenuItem as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WellItemSelectMenu_SelectedItem,
-        unit: crate::app::unit::Unit,
-        owner_item_index: i32,
-        menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WellItemSelectMenu_SelectedItem,
-            crate::app::unit::Unit,
-            i32,
-            crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, unit, owner_item_index, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_same {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
-                "IsSame",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
-                        "IsSame",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn is_same(
-        this: WellItemSelectMenu_SelectedItem,
-        unit: crate::app::unit::Unit,
-        owner_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(WellItemSelectMenu_SelectedItem, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_is_same::get_method_info().method_ptr);
-        inner(this, unit, owner_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_original_menu_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
-                "get_OriginalMenuItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
-                        "get_OriginalMenuItem",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_original_menu_item(
-        this: WellItemSelectMenu_SelectedItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem {
-        let inner: extern "C" fn(
-            WellItemSelectMenu_SelectedItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem =
-            ::core::mem::transmute(__lookup_get_original_menu_item::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-wellitemselectmenu")]
-pub trait IWellItemSelectMenu_SelectedItemMethods: IWellItemSelectMenu_SelectedItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` overload"]
-    fn ctor(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        owner_item_index: impl ::core::convert::Into<i32>,
-        menu_item: impl ::core::convert::Into<crate::app::wellitemselectmenuitem::WellItemSelectMenuItem>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenu_SelectedItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(owner_item_index),
-                ::core::convert::Into::into(menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsSame(crate::app::unit::Unit, i32)` overload"]
-    fn is_same(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, owner_item_index: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenu_SelectedItem_unity2_raw::is_same(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(owner_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_OriginalMenuItem()` overload"]
-    fn get_original_menu_item(self) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem {
-        unsafe {
-            let __receiver =
-                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __WellItemSelectMenu_SelectedItem_unity2_raw::get_original_menu_item(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-wellitemselectmenu")]
-impl<__T: IWellItemSelectMenu_SelectedItem> IWellItemSelectMenu_SelectedItemMethods for __T {}
-
-#[cfg(feature = "app-wellitemselectmenu")]
-impl WellItemSelectMenu_SelectedItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit, owner_item_index: i32, menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WellItemSelectMenu_SelectedItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWellItemSelectMenu_SelectedItemMethods>::ctor(this, unit, owner_item_index, menu_item);
-        this
-    }
-}
 
 #[cfg(feature = "app-wellitemselectmenu")]
 #[doc(hidden)]
@@ -1991,6 +1801,204 @@ impl WellItemSelectMenu {
             )
         });
         <Self as IWellItemSelectMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-wellitemselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WellItemSelectMenu_SelectedItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::wellitemselectmenuitem::WellItemSelectMenuItem as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: WellItemSelectMenu_SelectedItem,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WellItemSelectMenu_SelectedItem,
+            crate::app::unit::Unit,
+            i32,
+            crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, owner_item_index, menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_same {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
+                "IsSame",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
+                        "IsSame",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_same(
+        this: WellItemSelectMenu_SelectedItem,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(WellItemSelectMenu_SelectedItem, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_same::get_method_info().method_ptr);
+        inner(this, unit, owner_item_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_original_menu_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
+                "get_OriginalMenuItem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
+                        "get_OriginalMenuItem",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_original_menu_item(
+        this: WellItemSelectMenu_SelectedItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem {
+        let inner: extern "C" fn(
+            WellItemSelectMenu_SelectedItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem =
+            ::core::mem::transmute(__lookup_get_original_menu_item::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-wellitemselectmenu")]
+pub trait IWellItemSelectMenu_SelectedItemMethods: IWellItemSelectMenu_SelectedItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` overload"]
+    fn ctor(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        owner_item_index: impl ::core::convert::Into<i32>,
+        menu_item: impl ::core::convert::Into<crate::app::wellitemselectmenuitem::WellItemSelectMenuItem>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_SelectedItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(owner_item_index),
+                ::core::convert::Into::into(menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsSame(crate::app::unit::Unit, i32)` overload"]
+    fn is_same(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, owner_item_index: impl ::core::convert::Into<i32>) -> bool {
+        unsafe {
+            let __receiver =
+                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_SelectedItem_unity2_raw::is_same(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(owner_item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_OriginalMenuItem()` overload"]
+    fn get_original_menu_item(self) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem {
+        unsafe {
+            let __receiver =
+                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_SelectedItem_unity2_raw::get_original_menu_item(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-wellitemselectmenu")]
+impl<__T: IWellItemSelectMenu_SelectedItem> IWellItemSelectMenu_SelectedItemMethods for __T {}
+
+#[cfg(feature = "app-wellitemselectmenu")]
+impl WellItemSelectMenu_SelectedItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit, owner_item_index: i32, menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WellItemSelectMenu_SelectedItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWellItemSelectMenu_SelectedItemMethods>::ctor(this, unit, owner_item_index, menu_item);
         this
     }
 }

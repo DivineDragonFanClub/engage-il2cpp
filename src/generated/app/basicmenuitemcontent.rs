@@ -19,12 +19,16 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BasicMenuItemContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct BasicMenuItemContent {
+        #[offset(24)]
         #[rename(name = "m_menuItem")]
         pub m_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+        #[offset(32)]
         #[rename(name = "m_textBaseColor")]
         pub m_text_base_color: crate::unity_engine::color::Color,
+        #[offset(48)]
         #[rename(name = "m_textBlendColor")]
         pub m_text_blend_color: crate::unity_engine::color::Color,
+        #[offset(64)]
         #[rename(name = "m_frmContent")]
         pub m_frm_content: crate::unity_engine::gameobject::GameObject,
     }

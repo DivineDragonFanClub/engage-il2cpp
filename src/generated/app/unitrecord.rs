@@ -61,6 +61,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Kinds")]
         pub s_kinds: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::app::unitrecord::UnitRecord_Kinds>,
+        #[offset(16)]
         #[rename(name = "m_Values")]
         pub m_values: ::unity2::Array<i32>,
     }

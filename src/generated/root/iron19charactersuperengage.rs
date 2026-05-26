@@ -22,14 +22,19 @@ mod __types {
         #[static_field]
         #[rename(name = "EditorPrefsDisable")]
         pub editor_prefs_disable: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_bInitialized")]
         pub m_b_initialized: bool,
+        #[offset(25)]
         #[rename(name = "m_Dirty")]
         pub m_dirty: bool,
+        #[offset(32)]
         #[rename(name = "m_ModifiableMaterials")]
         pub m_modifiable_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
+        #[offset(40)]
         #[rename(name = "m_InstancedMaterials")]
         pub m_instanced_materials: crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material>,
+        #[offset(48)]
         #[rename(name = "m_isSuperEngage")]
         pub m_is_super_engage: bool,
         #[static_field]

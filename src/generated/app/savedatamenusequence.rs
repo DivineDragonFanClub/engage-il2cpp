@@ -75,16 +75,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataMenuSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)]
-    pub struct SaveDataMenuSequence {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
-        #[rename(name = "m_saveDataHeaderReader")]
-        pub m_save_data_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Label.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -145,6 +135,18 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 8 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataMenuSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)]
+    pub struct SaveDataMenuSequence {
+        #[offset(116)]
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
+        #[offset(120)]
+        #[rename(name = "m_saveDataHeaderReader")]
+        pub m_save_data_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
     }
 }
 

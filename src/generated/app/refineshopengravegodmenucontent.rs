@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopEngraveGodMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct RefineShopEngraveGodMenuContent {
+        #[offset(232)]
         #[rename(name = "m_CaptionText")]
         pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

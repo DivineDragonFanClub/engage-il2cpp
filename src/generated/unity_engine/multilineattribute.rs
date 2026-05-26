@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "MultilineAttribute")]
     #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
     pub struct MultilineAttribute {
+        #[offset(16)]
         #[rename(name = "lines")]
         pub lines: i32,
     }

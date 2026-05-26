@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "BmapCamera")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: bmapcamera :: BmapCamera >)]
     pub struct BmapCamera {
+        #[offset(32)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
     }

@@ -10,13 +10,13 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_UpdateCameraMotionVectors.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization_UpdateCameraMotionVectors {}
+    pub struct Initialization {}
 
-    impl ::unity2::ClassIdentity for Initialization_UpdateCameraMotionVectors {
-        const NAME: &'static str = "Initialization.UpdateCameraMotionVectors";
+    impl ::unity2::ClassIdentity for Initialization {
+        const NAME: &'static str = "Initialization";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -26,7 +26,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Initialization_UpdateCameraMotionVectors {
+    impl ::unity2::IlType for Initialization {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -76,13 +76,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_SynchronizeState.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_SynchronizeInputs.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization_SynchronizeState {}
+    pub struct Initialization_SynchronizeInputs {}
 
-    impl ::unity2::ClassIdentity for Initialization_SynchronizeState {
-        const NAME: &'static str = "Initialization.SynchronizeState";
+    impl ::unity2::ClassIdentity for Initialization_SynchronizeInputs {
+        const NAME: &'static str = "Initialization.SynchronizeInputs";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -92,7 +92,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Initialization_SynchronizeState {
+    impl ::unity2::IlType for Initialization_SynchronizeInputs {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -120,13 +120,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_SynchronizeInputs.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_UpdateCameraMotionVectors.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization_SynchronizeInputs {}
+    pub struct Initialization_UpdateCameraMotionVectors {}
 
-    impl ::unity2::ClassIdentity for Initialization_SynchronizeInputs {
-        const NAME: &'static str = "Initialization.SynchronizeInputs";
+    impl ::unity2::ClassIdentity for Initialization_UpdateCameraMotionVectors {
+        const NAME: &'static str = "Initialization.UpdateCameraMotionVectors";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -136,19 +136,19 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Initialization_SynchronizeInputs {
+    impl ::unity2::IlType for Initialization_UpdateCameraMotionVectors {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_SynchronizeState.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization {}
+    pub struct Initialization_SynchronizeState {}
 
-    impl ::unity2::ClassIdentity for Initialization {
-        const NAME: &'static str = "Initialization";
+    impl ::unity2::ClassIdentity for Initialization_SynchronizeState {
+        const NAME: &'static str = "Initialization.SynchronizeState";
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
         fn class() -> ::unity2::Class {
@@ -158,7 +158,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Initialization {
+    impl ::unity2::IlType for Initialization_SynchronizeState {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }

@@ -17,8 +17,10 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "PrefetchedCurve")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct PrefetchedCurve {
+        #[offset(24)]
         #[rename(name = "RightHand")]
         pub right_hand: crate::combat::trailtrack::TrailTrack,
+        #[offset(32)]
         #[rename(name = "LeftHand")]
         pub left_hand: crate::combat::trailtrack::TrailTrack,
     }

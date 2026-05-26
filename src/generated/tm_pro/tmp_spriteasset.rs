@@ -18,30 +18,42 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteAsset")]
     #[parent(crate::tm_pro::tmp_asset::TMP_Asset)]
     pub struct TMP_SpriteAsset {
+        #[offset(48)]
         #[rename(name = "m_NameLookup")]
         pub m_name_lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
+        #[offset(56)]
         #[rename(name = "m_GlyphIndexLookup")]
         pub m_glyph_index_lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<u32, i32>,
+        #[offset(64)]
         #[rename(name = "m_Version")]
         pub m_version: ::unity2::Il2CppString,
+        #[offset(72)]
         #[rename(name = "m_FaceInfo")]
         pub m_face_info: crate::unity_engine::text_core::faceinfo::FaceInfo,
+        #[offset(168)]
         #[rename(name = "spriteSheet")]
         pub sprite_sheet: crate::unity_engine::texture::Texture,
+        #[offset(176)]
         #[rename(name = "m_SpriteCharacterTable")]
         pub m_sprite_character_table: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter>,
+        #[offset(184)]
         #[rename(name = "m_SpriteCharacterLookup")]
         pub m_sprite_character_lookup:
             crate::system::collections::generic::dictionary_2::Dictionary_2<u32, crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter>,
+        #[offset(192)]
         #[rename(name = "m_SpriteGlyphTable")]
         pub m_sprite_glyph_table: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph>,
+        #[offset(200)]
         #[rename(name = "m_SpriteGlyphLookup")]
         pub m_sprite_glyph_lookup:
             crate::system::collections::generic::dictionary_2::Dictionary_2<u32, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph>,
+        #[offset(208)]
         #[rename(name = "spriteInfoList")]
         pub sprite_info_list: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_sprite::TMP_Sprite>,
+        #[offset(216)]
         #[rename(name = "fallbackSpriteAssets")]
         pub fallback_sprite_assets: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        #[offset(224)]
         #[rename(name = "m_IsSpriteAssetLookupTablesDirty")]
         pub m_is_sprite_asset_lookup_tables_dirty: bool,
         #[static_field]

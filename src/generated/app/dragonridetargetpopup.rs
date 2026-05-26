@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "DragonRideTargetPopup")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct DragonRideTargetPopup {
+        #[offset(24)]
         #[rename(name = "m_RectTransform")]
         pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(32)]
         #[rename(name = "m_Camera")]
         pub m_camera: crate::app::dragonridecamera::DragonRideCamera,
+        #[offset(40)]
         #[rename(name = "m_WorldPos")]
         pub m_world_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(56)]
         #[rename(name = "m_Config")]
         pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
+        #[offset(64)]
         #[rename(name = "m_AliveTimer")]
         pub m_alive_timer: f32,
     }

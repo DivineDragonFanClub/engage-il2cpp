@@ -19,22 +19,31 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AudienceController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct AudienceController {
+        #[offset(24)]
         #[rename(name = "m_Textures")]
         pub m_textures: ::unity2::Array<crate::unity_engine::texture2d::Texture2D>,
+        #[offset(32)]
         #[rename(name = "m_AnimePatternNum")]
         pub m_anime_pattern_num: i32,
+        #[offset(36)]
         #[rename(name = "m_AnimeSpeedMin")]
         pub m_anime_speed_min: f32,
+        #[offset(40)]
         #[rename(name = "m_AnimeSpeedMax")]
         pub m_anime_speed_max: f32,
+        #[offset(44)]
         #[rename(name = "m_RandomPositionX")]
         pub m_random_position_x: f32,
+        #[offset(48)]
         #[rename(name = "m_RandomPositionY")]
         pub m_random_position_y: f32,
+        #[offset(52)]
         #[rename(name = "m_RandomPositionZ")]
         pub m_random_position_z: f32,
+        #[offset(56)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(64)]
         #[rename(name = "m_AudienceList")]
         pub m_audience_list: crate::system::collections::generic::list_1::List_1<crate::root::audienceanime::AudienceAnime>,
     }

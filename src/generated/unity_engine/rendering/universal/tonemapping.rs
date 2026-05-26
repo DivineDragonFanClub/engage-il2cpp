@@ -18,18 +18,25 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "Tonemapping")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct Tonemapping {
+        #[offset(56)]
         #[rename(name = "mode")]
         pub mode: crate::unity_engine::rendering::universal::tonemappingmodeparameter::TonemappingModeParameter,
+        #[offset(64)]
         #[rename(name = "toeStrength")]
         pub toe_strength: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "toeLength")]
         pub toe_length: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "shoulderStrength")]
         pub shoulder_strength: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(88)]
         #[rename(name = "shoulderLength")]
         pub shoulder_length: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+        #[offset(96)]
         #[rename(name = "shoulderAngle")]
         pub shoulder_angle: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(104)]
         #[rename(name = "gamma")]
         pub gamma: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
     }

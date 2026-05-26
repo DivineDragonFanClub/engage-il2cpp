@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "ExprListExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct ExprListExpression {
+        #[offset(32)]
         #[rename(name = "expressions")]
         pub expressions: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression>,
     }

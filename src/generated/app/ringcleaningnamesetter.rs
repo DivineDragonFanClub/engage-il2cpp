@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RingCleaningNameSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct RingCleaningNameSetter {
+        #[offset(24)]
         #[rename(name = "m_RingNameText")]
         pub m_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_GodNameText")]
         pub m_god_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_CleanerNameText")]
         pub m_cleaner_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

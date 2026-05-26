@@ -19,110 +19,163 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapBattleInfoParamSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct MapBattleInfoParamSetter {
+        #[offset(24)]
         #[rename(name = "ParamClamp")]
         pub param_clamp: i32,
+        #[offset(32)]
         #[rename(name = "m_InfoRoot")]
         pub m_info_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(40)]
         #[rename(name = "m_CharaNameRoot")]
         pub m_chara_name_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_CharaName")]
         pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(56)]
         #[rename(name = "m_GodNameRoot")]
         pub m_god_name_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(64)]
         #[rename(name = "m_GodName")]
         pub m_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(72)]
         #[rename(name = "m_NameOnlyCharaNameRoot")]
         pub m_name_only_chara_name_root: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_NameOnlyCharaName")]
         pub m_name_only_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(88)]
         #[rename(name = "m_NameOnlyGodNameRoot")]
         pub m_name_only_god_name_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_NameOnlyGodName")]
         pub m_name_only_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_MaxHpGaugeWidth")]
         pub m_max_hp_gauge_width: i32,
+        #[offset(108)]
         #[rename(name = "m_MinHpGaugeWidth")]
         pub m_min_hp_gauge_width: i32,
+        #[offset(112)]
         #[rename(name = "m_HpGaugeMax")]
         pub m_hp_gauge_max: i32,
+        #[offset(120)]
         #[rename(name = "m_HpRoot")]
         pub m_hp_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_HpGaugeRoot")]
         pub m_hp_gauge_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_NowHp")]
         pub m_now_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(144)]
         #[rename(name = "m_AfterHpRoot")]
         pub m_after_hp_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
         #[rename(name = "m_AfterHp")]
         pub m_after_hp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(160)]
         #[rename(name = "m_AfterHpHealRoot")]
         pub m_after_hp_heal_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
         #[rename(name = "m_AfterHpHeal")]
         pub m_after_hp_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(176)]
         #[rename(name = "m_HpGaugeAfter")]
         pub m_hp_gauge_after: crate::unity_engine::gameobject::GameObject,
+        #[offset(184)]
         #[rename(name = "m_HpGaugeAdd")]
         pub m_hp_gauge_add: crate::unity_engine::gameobject::GameObject,
+        #[offset(192)]
         #[rename(name = "m_DamageMaterial")]
         pub m_damage_material: crate::unity_engine::material::Material,
+        #[offset(200)]
         #[rename(name = "m_HealMaterial")]
         pub m_heal_material: crate::unity_engine::material::Material,
+        #[offset(208)]
         #[rename(name = "m_EngageMaterial")]
         pub m_engage_material: crate::unity_engine::material::Material,
+        #[offset(216)]
         #[rename(name = "m_HpStockRoot")]
         pub m_hp_stock_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(224)]
         #[rename(name = "m_HpStock")]
         pub m_hp_stock: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[offset(232)]
         #[rename(name = "m_HpStockSprites")]
         pub m_hp_stock_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+        #[offset(240)]
         #[rename(name = "m_HpStockAdd")]
         pub m_hp_stock_add: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_DamageSpace")]
         pub m_damage_space: f32,
+        #[offset(256)]
         #[rename(name = "m_StatusRoot")]
         pub m_status_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(264)]
         #[rename(name = "m_BtlAtkHelp")]
         pub m_btl_atk_help: crate::app::helpitemfixedtext::HelpItemFixedText,
+        #[offset(272)]
         #[rename(name = "m_BtlAtkTitle")]
         pub m_btl_atk_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_BtlAtk")]
         pub m_btl_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_BtlHit")]
         pub m_btl_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(296)]
         #[rename(name = "m_BtlCrit")]
         pub m_btl_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(304)]
         #[rename(name = "m_ChainBtlAtk")]
         pub m_chain_btl_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(312)]
         #[rename(name = "m_ChainBtlHitRoot")]
         pub m_chain_btl_hit_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(320)]
         #[rename(name = "m_ChainBtlHit")]
         pub m_chain_btl_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(328)]
         #[rename(name = "m_ChainBtlCritRoot")]
         pub m_chain_btl_crit_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(336)]
         #[rename(name = "m_ChainBtlCrit")]
         pub m_chain_btl_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(344)]
         #[rename(name = "m_WeaponRoot")]
         pub m_weapon_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(352)]
         #[rename(name = "m_WeaponIconRoot")]
         pub m_weapon_icon_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(360)]
         #[rename(name = "m_WeaponIcon")]
         pub m_weapon_icon: crate::unity_engine::ui::image::Image,
+        #[offset(368)]
         #[rename(name = "m_WeaponArrow")]
         pub m_weapon_arrow: crate::unity_engine::ui::image::Image,
+        #[offset(376)]
         #[rename(name = "m_WeaponName")]
         pub m_weapon_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(384)]
         #[rename(name = "m_WeaponNothing")]
         pub m_weapon_nothing: crate::unity_engine::gameobject::GameObject,
+        #[offset(392)]
         #[rename(name = "m_WeaponEndurance")]
         pub m_weapon_endurance: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(400)]
         #[rename(name = "m_WeaponChangeL")]
         pub m_weapon_change_l: crate::unity_engine::gameobject::GameObject,
+        #[offset(408)]
         #[rename(name = "m_WeaponChangeR")]
         pub m_weapon_change_r: crate::unity_engine::gameobject::GameObject,
+        #[offset(416)]
         #[rename(name = "m_ItemListRoot")]
         pub m_item_list_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(424)]
         #[rename(name = "m_SpaceRoot")]
         pub m_space_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(432)]
         #[rename(name = "m_forceTexture")]
         pub m_force_texture: crate::system::collections::generic::list_1::List_1<crate::app::forcetexturesetter::ForceTextureSetter>,
     }

@@ -18,12 +18,16 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "FilmGrain")]
     #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
     pub struct FilmGrain {
+        #[offset(56)]
         #[rename(name = "type")]
         pub r#type: crate::unity_engine::rendering::universal::filmgrainlookupparameter::FilmGrainLookupParameter,
+        #[offset(64)]
         #[rename(name = "intensity")]
         pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(72)]
         #[rename(name = "response")]
         pub response: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+        #[offset(80)]
         #[rename(name = "texture")]
         pub texture: crate::unity_engine::rendering::nointerptextureparameter::NoInterpTextureParameter,
     }

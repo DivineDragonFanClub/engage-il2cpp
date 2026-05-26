@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "KeyHelpTitleBarController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct KeyHelpTitleBarController {
+        #[offset(24)]
         #[rename(name = "m_HelpObject")]
         pub m_help_object: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }

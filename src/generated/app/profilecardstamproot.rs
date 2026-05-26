@@ -19,56 +19,82 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardStampRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ProfileCardStampRoot {
+        #[offset(24)]
         #[rename(name = "m_StampCountCaption")]
         pub m_stamp_count_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(32)]
         #[rename(name = "m_StampCountText")]
         pub m_stamp_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_StampObject")]
         pub m_stamp_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(48)]
         #[rename(name = "m_StampRectTransform")]
         pub m_stamp_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(56)]
         #[rename(name = "m_StampAnimator")]
         pub m_stamp_animator: crate::unity_engine::animator::Animator,
+        #[offset(64)]
         #[rename(name = "m_StampGroupRectTransform")]
         pub m_stamp_group_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(72)]
         #[rename(name = "m_StampImage")]
         pub m_stamp_image: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_StampImageRectTransform")]
         pub m_stamp_image_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(88)]
         #[rename(name = "m_StampIconRectTransform")]
         pub m_stamp_icon_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(96)]
         #[rename(name = "m_FrameObject")]
         pub m_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_FrameImage")]
         pub m_frame_image: crate::unity_engine::ui::image::Image,
+        #[offset(112)]
         #[rename(name = "m_StampEffectRectTransform")]
         pub m_stamp_effect_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(120)]
         #[rename(name = "m_StampEffectAnimator")]
         pub m_stamp_effect_animator: crate::unity_engine::animator::Animator,
+        #[offset(128)]
         #[rename(name = "m_StampKeyHelpObject")]
         pub m_stamp_key_help_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_StampKeyHelpAnimator")]
         pub m_stamp_key_help_animator: crate::unity_engine::animator::Animator,
+        #[offset(144)]
         #[rename(name = "m_FrameColorEnable")]
         pub m_frame_color_enable: crate::unity_engine::color::Color,
+        #[offset(160)]
         #[rename(name = "m_FrameColorDisable")]
         pub m_frame_color_disable: crate::unity_engine::color::Color,
+        #[offset(176)]
         #[rename(name = "m_StampCountCurrent")]
         pub m_stamp_count_current: i32,
+        #[offset(180)]
         #[rename(name = "m_StampCountMax")]
         pub m_stamp_count_max: i32,
+        #[offset(184)]
         #[rename(name = "m_InitialStampPosition")]
         pub m_initial_stamp_position: crate::unity_engine::vector2::Vector2,
+        #[offset(192)]
         #[rename(name = "m_InitialStampSize")]
         pub m_initial_stamp_size: crate::unity_engine::vector2::Vector2,
+        #[offset(200)]
         #[rename(name = "m_StampScale")]
         pub m_stamp_scale: crate::unity_engine::vector2::Vector2,
+        #[offset(208)]
         #[rename(name = "m_IsStarted")]
         pub m_is_started: bool,
+        #[offset(212)]
         #[rename(name = "m_RecordRotZ")]
         pub m_record_rot_z: f32,
+        #[offset(216)]
         #[rename(name = "m_RecordScale")]
         pub m_record_scale: crate::unity_engine::vector2::Vector2,
+        #[offset(224)]
         #[rename(name = "m_RecordImageScale")]
         pub m_record_image_scale: crate::unity_engine::vector2::Vector2,
     }

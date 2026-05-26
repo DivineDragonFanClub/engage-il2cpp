@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographCameraParameter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct PhotographCameraParameter {
+        #[offset(24)]
         #[rename(name = "m_LimitZoomDistance")]
         pub m_limit_zoom_distance: f32,
+        #[offset(28)]
         #[rename(name = "m_LimitMoveHorizontal")]
         pub m_limit_move_horizontal: f32,
+        #[offset(32)]
         #[rename(name = "m_LimitMoveVertical")]
         pub m_limit_move_vertical: f32,
+        #[offset(36)]
         #[rename(name = "m_LimitAngleY")]
         pub m_limit_angle_y: f32,
+        #[offset(40)]
         #[rename(name = "m_FieldOfView")]
         pub m_field_of_view: f32,
+        #[offset(44)]
         #[rename(name = "m_LimitFov")]
         pub m_limit_fov: f32,
     }

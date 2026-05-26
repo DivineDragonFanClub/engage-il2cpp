@@ -23,20 +23,28 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_TextGodName")]
         pub m_text_god_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(240)]
         #[rename(name = "m_IconGod")]
         pub m_icon_god: crate::app::uniticon::UnitIcon,
+        #[offset(248)]
         #[rename(name = "m_ObjNaviList")]
         pub m_obj_navi_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
+        #[offset(256)]
         #[rename(name = "m_TextHelp")]
         pub m_text_help: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(264)]
         #[rename(name = "m_TextHelpNg")]
         pub m_text_help_ng: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(272)]
         #[rename(name = "m_TextValueSp")]
         pub m_text_value_sp: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(280)]
         #[rename(name = "m_TextUnitName")]
         pub m_text_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(288)]
         #[rename(name = "m_SkillSelectObj")]
         pub m_skill_select_obj: crate::unity_engine::gameobject::GameObject,
     }

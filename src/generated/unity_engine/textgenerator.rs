@@ -11,26 +11,37 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "TextGenerator")]
     #[parent(crate::system::object::Object)]
     pub struct TextGenerator {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_LastString")]
         pub m_last_string: ::unity2::Il2CppString,
+        #[offset(32)]
         #[rename(name = "m_LastSettings")]
         pub m_last_settings: crate::unity_engine::textgenerationsettings::TextGenerationSettings,
+        #[offset(128)]
         #[rename(name = "m_HasGenerated")]
         pub m_has_generated: bool,
+        #[offset(132)]
         #[rename(name = "m_LastValid")]
         pub m_last_valid: crate::unity_engine::textgenerationerror::TextGenerationError,
+        #[offset(136)]
         #[rename(name = "m_Verts")]
         pub m_verts: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
+        #[offset(144)]
         #[rename(name = "m_Characters")]
         pub m_characters: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uicharinfo::UICharInfo>,
+        #[offset(152)]
         #[rename(name = "m_Lines")]
         pub m_lines: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uilineinfo::UILineInfo>,
+        #[offset(160)]
         #[rename(name = "m_CachedVerts")]
         pub m_cached_verts: bool,
+        #[offset(161)]
         #[rename(name = "m_CachedCharacters")]
         pub m_cached_characters: bool,
+        #[offset(162)]
         #[rename(name = "m_CachedLines")]
         pub m_cached_lines: bool,
     }

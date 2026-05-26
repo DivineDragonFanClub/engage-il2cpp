@@ -92,16 +92,22 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "ColorGradingLutPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct ColorGradingLutPass {
+        #[offset(112)]
         #[rename(name = "m_LutBuilderLdr")]
         pub m_lut_builder_ldr: crate::unity_engine::material::Material,
+        #[offset(120)]
         #[rename(name = "m_LutBuilderHdr")]
         pub m_lut_builder_hdr: crate::unity_engine::material::Material,
+        #[offset(128)]
         #[rename(name = "m_HdrLutFormat")]
         pub m_hdr_lut_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[offset(132)]
         #[rename(name = "m_LdrLutFormat")]
         pub m_ldr_lut_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[offset(136)]
         #[rename(name = "m_InternalLut")]
         pub m_internal_lut: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(184)]
         #[rename(name = "m_HableCurve")]
         pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
     }

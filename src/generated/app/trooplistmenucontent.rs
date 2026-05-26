@@ -20,6 +20,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "TroopListMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct TroopListMenuContent {
+        #[offset(232)]
         #[rename(name = "m_rootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
     }

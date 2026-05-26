@@ -19,8 +19,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "UniversalAdditionalLightData")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UniversalAdditionalLightData {
+        #[offset(24)]
         #[rename(name = "m_UsePipelineSettings")]
         pub m_use_pipeline_settings: bool,
+        #[offset(28)]
         #[rename(name = "m_CustomIntensity")]
         pub m_custom_intensity: f32,
         #[static_field]
@@ -29,6 +31,7 @@ mod __types {
         #[static_field]
         #[rename(name = "CustomMode_Batch")]
         pub custom_mode_batch: i32,
+        #[offset(32)]
         #[rename(name = "m_CustomMode")]
         pub m_custom_mode: i32,
     }

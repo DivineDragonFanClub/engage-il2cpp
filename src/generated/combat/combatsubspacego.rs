@@ -15,6 +15,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CombatSubspaceGo")]
     #[parent(crate::combat::combatsubspace::CombatSubspace)]
     pub struct CombatSubspaceGo {
+        #[offset(120)]
         #[rename(name = "m_SceneName")]
         pub m_scene_name: ::unity2::Il2CppString,
     }

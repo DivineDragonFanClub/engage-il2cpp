@@ -16,12 +16,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "StandardEnumUserDataDescriptor")]
     #[parent(crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::DispatchingUserDataDescriptor)]
     pub struct StandardEnumUserDataDescriptor {
+        #[offset(80)]
         #[rename(name = "m_EnumToULong")]
         pub m_enum_to_u_long: crate::system::func_2::Func_2<crate::system::object::Object, u64>,
+        #[offset(88)]
         #[rename(name = "m_ULongToEnum")]
         pub m_u_long_to_enum: crate::system::func_2::Func_2<u64, crate::system::object::Object>,
+        #[offset(96)]
         #[rename(name = "m_EnumToLong")]
         pub m_enum_to_long: crate::system::func_2::Func_2<crate::system::object::Object, i64>,
+        #[offset(104)]
         #[rename(name = "m_LongToEnum")]
         pub m_long_to_enum: crate::system::func_2::Func_2<i64, crate::system::object::Object>,
     }

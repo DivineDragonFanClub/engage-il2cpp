@@ -19,14 +19,19 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ClassChangeRoot")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ClassChangeRoot {
+        #[offset(24)]
         #[rename(name = "m_MenuContent")]
         pub m_menu_content: crate::app::classchangejobmenucontent::ClassChangeJobMenuContent,
+        #[offset(32)]
         #[rename(name = "m_UnitName")]
         pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(40)]
         #[rename(name = "m_UnitInfoBefore")]
         pub m_unit_info_before: crate::app::unitstatussetter::UnitStatusSetter,
+        #[offset(48)]
         #[rename(name = "m_UnitInfoAfter")]
         pub m_unit_info_after: crate::app::unitstatussetter::UnitStatusSetter,
+        #[offset(56)]
         #[rename(name = "m_WeaponIconList")]
         pub m_weapon_icon_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
     }

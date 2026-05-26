@@ -20,19 +20,25 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "AmiiboAccessoryMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct AmiiboAccessoryMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_Icon")]
         pub m_icon: crate::unity_engine::ui::image::Image,
+        #[offset(80)]
         #[rename(name = "m_TicketObj")]
         pub m_ticket_obj: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_TicketIcon")]
         pub m_ticket_icon: crate::unity_engine::ui::image::Image,
+        #[offset(96)]
         #[rename(name = "m_TicketValue")]
         pub m_ticket_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(104)]
         #[rename(name = "m_NewObj")]
         pub m_new_obj: crate::unity_engine::gameobject::GameObject,
         #[static_field]
         #[rename(name = "c_Cost")]
         pub c_cost: i32,
+        #[offset(112)]
         #[rename(name = "m_IsCanBy")]
         pub m_is_can_by: bool,
     }

@@ -23,6 +23,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopRefineBaseMenuItemContent")]
     #[parent(crate::app::basicitemmenuitemcontent::BasicItemMenuItemContent)]
     pub struct RefineShopRefineBaseMenuItemContent {
+        #[offset(128)]
         #[rename(name = "m_EmptyMessageText")]
         pub m_empty_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }

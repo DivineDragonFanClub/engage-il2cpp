@@ -14,8 +14,10 @@ mod __types {
         #[static_field]
         #[rename(name = "enableDebugPrints")]
         pub enable_debug_prints: bool,
+        #[offset(16)]
         #[rename(name = "m_jobject")]
         pub m_jobject: crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef,
+        #[offset(24)]
         #[rename(name = "m_jclass")]
         pub m_jclass: crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef,
     }

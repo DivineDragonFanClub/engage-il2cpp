@@ -14,8 +14,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "StringCalculator")]
     #[parent(crate::app::calculatorutil::CalculatorUtil)]
     pub struct StringCalculator {
+        #[offset(16)]
         #[rename(name = "m_Entitys")]
         pub m_entitys: crate::system::collections::generic::list_1::List_1<crate::app::calculatorutil::CalculatorUtil_Entity>,
+        #[offset(24)]
         #[rename(name = "m_Polishs")]
         pub m_polishs: crate::system::collections::generic::list_1::List_1<i32>,
     }

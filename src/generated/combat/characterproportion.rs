@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterProportion")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterProportion {
+        #[offset(24)]
         #[rename(name = "ProportionParameters")]
         pub proportion_parameters: crate::combat::proportionparameters::ProportionParameters,
+        #[offset(32)]
         #[rename(name = "shadowScaleAll")]
         pub shadow_scale_all: f32,
+        #[offset(36)]
         #[rename(name = "shadowScaleLegs")]
         pub shadow_scale_legs: f32,
+        #[offset(40)]
         #[rename(name = "shadowScaleFeet")]
         pub shadow_scale_feet: f32,
+        #[offset(48)]
         #[rename(name = "_chrJoint")]
         pub chr_joint: crate::combat::characterjoint::CharacterJoint,
+        #[offset(56)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
     }

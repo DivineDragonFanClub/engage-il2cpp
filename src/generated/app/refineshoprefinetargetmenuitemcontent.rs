@@ -20,30 +20,43 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopRefineTargetMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RefineShopRefineTargetMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_KindFrameObject")]
         pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_KindIconImage")]
         pub m_kind_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(88)]
         #[rename(name = "m_NameText")]
         pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(96)]
         #[rename(name = "m_EfficacyObject")]
         pub m_efficacy_object: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[offset(104)]
         #[rename(name = "m_IronValueText")]
         pub m_iron_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(112)]
         #[rename(name = "m_SteelValueText")]
         pub m_steel_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(120)]
         #[rename(name = "m_SilverValueText")]
         pub m_silver_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(128)]
         #[rename(name = "m_PriceValueText")]
         pub m_price_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(136)]
         #[rename(name = "m_PriceGText")]
         pub m_price_g_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(144)]
         #[rename(name = "m_IronIconImage")]
         pub m_iron_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(152)]
         #[rename(name = "m_SteelIconImage")]
         pub m_steel_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(160)]
         #[rename(name = "m_SilverIconImage")]
         pub m_silver_icon_image: crate::unity_engine::ui::image::Image,
+        #[offset(168)]
         #[rename(name = "m_PriceIconImage")]
         pub m_price_icon_image: crate::unity_engine::ui::image::Image,
     }

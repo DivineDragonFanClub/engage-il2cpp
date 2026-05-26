@@ -11,12 +11,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "PropertyMemberDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct PropertyMemberDescriptor {
+        #[offset(40)]
         #[rename(name = "m_Getter")]
         pub m_getter: crate::system::reflection::methodinfo::MethodInfo,
+        #[offset(48)]
         #[rename(name = "m_Setter")]
         pub m_setter: crate::system::reflection::methodinfo::MethodInfo,
+        #[offset(56)]
         #[rename(name = "m_OptimizedGetter")]
         pub m_optimized_getter: crate::system::func_2::Func_2<crate::system::object::Object, crate::system::object::Object>,
+        #[offset(64)]
         #[rename(name = "m_OptimizedSetter")]
         pub m_optimized_setter: crate::system::action_2::Action_2<crate::system::object::Object, crate::system::object::Object>,
     }

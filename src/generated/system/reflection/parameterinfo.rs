@@ -11,16 +11,22 @@ mod __types {
     #[::unity2::class(namespace = "System.Reflection", name = "ParameterInfo")]
     #[parent(crate::system::object::Object)]
     pub struct ParameterInfo {
+        #[offset(16)]
         #[rename(name = "ClassImpl")]
         pub class_impl: ::unity2::SystemType,
+        #[offset(24)]
         #[rename(name = "DefaultValueImpl")]
         pub default_value_impl: ::unity2::IlInstance,
+        #[offset(32)]
         #[rename(name = "MemberImpl")]
         pub member_impl: crate::system::reflection::memberinfo::MemberInfo,
+        #[offset(40)]
         #[rename(name = "NameImpl")]
         pub name_impl: ::unity2::Il2CppString,
+        #[offset(48)]
         #[rename(name = "PositionImpl")]
         pub position_impl: i32,
+        #[offset(52)]
         #[rename(name = "AttrsImpl")]
         pub attrs_impl: crate::system::reflection::parameterattributes::ParameterAttributes,
     }

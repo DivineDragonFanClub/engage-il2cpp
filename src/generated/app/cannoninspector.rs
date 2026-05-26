@@ -20,12 +20,16 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(48)]
         #[rename(name = "m_X")]
         pub m_x: i32,
+        #[offset(52)]
         #[rename(name = "m_Z")]
         pub m_z: i32,
+        #[offset(56)]
         #[rename(name = "m_MaxShells")]
         pub m_max_shells: i32,
+        #[offset(64)]
         #[rename(name = "m_KeyShells")]
         pub m_key_shells: ::unity2::Il2CppString,
     }

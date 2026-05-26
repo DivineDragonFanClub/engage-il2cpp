@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "ActionVoice")]
     #[parent(crate::combat::actionbase::ActionBase)]
     pub struct ActionVoice {
+        #[offset(40)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
     }

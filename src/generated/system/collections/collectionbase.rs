@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "System.Collections", name = "CollectionBase")]
     #[parent(crate::system::object::Object)]
     pub struct CollectionBase {
+        #[offset(16)]
         #[rename(name = "list")]
         pub list: crate::system::collections::arraylist::ArrayList,
     }

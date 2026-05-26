@@ -10,11 +10,6 @@ mod __types {
         valuetype::{IValueType, ValueType},
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "ShadowUtility")]
-    #[parent(crate::system::object::Object)]
-    pub struct ShadowUtility {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility_Edge.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,10 +36,180 @@ mod __types {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "ShadowUtility")]
+    #[parent(crate::system::object::Object)]
+    pub struct ShadowUtility {}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShadowUtility_Edge_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_assign_vertex_indices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
+                "AssignVertexIndices",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
+                        "AssignVertexIndices",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn assign_vertex_indices(this: ShadowUtility_Edge, vi0: i32, vi1: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ShadowUtility_Edge, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_assign_vertex_indices::get_method_info().method_ptr);
+        inner(this, vi0, vi1, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare(
+        this: ShadowUtility_Edge,
+        a: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        b: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ShadowUtility_Edge,
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
+                "CompareTo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
+                        "CompareTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare_to(
+        this: ShadowUtility_Edge,
+        edge_to_compare: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ShadowUtility_Edge,
+            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_compare_to::get_method_info().method_ptr);
+        inner(this, edge_to_compare, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+impl ShadowUtility_Edge {
+    #[doc = "`AssignVertexIndices(i32, i32)` overload"]
+    pub fn assign_vertex_indices(self, vi0: impl ::core::convert::Into<i32>, vi1: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __ShadowUtility_Edge_unity2_raw::assign_vertex_indices(
+                self,
+                ::core::convert::Into::into(vi0),
+                ::core::convert::Into::into(vi1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Compare(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge, crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
+    pub fn compare(
+        self,
+        a: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
+        b: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
+    ) -> i32 {
+        unsafe {
+            __ShadowUtility_Edge_unity2_raw::compare(
+                self,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CompareTo(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
+    pub fn compare_to(
+        self,
+        edge_to_compare: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
+    ) -> i32 {
+        unsafe { __ShadowUtility_Edge_unity2_raw::compare_to(self, ::core::convert::Into::into(edge_to_compare), ::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
 #[doc(hidden)]
@@ -624,171 +789,6 @@ impl ShadowUtility {
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ShadowUtility), ::core::stringify!(new),));
         <Self as IShadowUtilityMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShadowUtility_Edge_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_assign_vertex_indices {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
-                "AssignVertexIndices",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
-                        "AssignVertexIndices",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn assign_vertex_indices(this: ShadowUtility_Edge, vi0: i32, vi1: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ShadowUtility_Edge, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_assign_vertex_indices::get_method_info().method_ptr);
-        inner(this, vi0, vi1, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
-                        "Compare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare(
-        this: ShadowUtility_Edge,
-        a: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
-        b: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ShadowUtility_Edge,
-            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
-            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtility_Edge as ::unity2::ClassIdentity>::class(),
-                "CompareTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <ShadowUtility_Edge as ::unity2::ClassIdentity>::NAME,
-                        "CompareTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare_to(
-        this: ShadowUtility_Edge,
-        edge_to_compare: crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ShadowUtility_Edge,
-            crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(__lookup_compare_to::get_method_info().method_ptr);
-        inner(this, edge_to_compare, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
-impl ShadowUtility_Edge {
-    #[doc = "`AssignVertexIndices(i32, i32)` overload"]
-    pub fn assign_vertex_indices(self, vi0: impl ::core::convert::Into<i32>, vi1: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __ShadowUtility_Edge_unity2_raw::assign_vertex_indices(
-                self,
-                ::core::convert::Into::into(vi0),
-                ::core::convert::Into::into(vi1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Compare(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge, crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
-    pub fn compare(
-        self,
-        a: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
-        b: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
-    ) -> i32 {
-        unsafe {
-            __ShadowUtility_Edge_unity2_raw::compare(
-                self,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`CompareTo(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]
-    pub fn compare_to(
-        self,
-        edge_to_compare: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>,
-    ) -> i32 {
-        unsafe { __ShadowUtility_Edge_unity2_raw::compare_to(self, ::core::convert::Into::into(edge_to_compare), ::core::option::Option::None) }
     }
 }
 

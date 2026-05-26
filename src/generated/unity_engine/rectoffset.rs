@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "RectOffset")]
     #[parent(crate::system::object::Object)]
     pub struct RectOffset {
+        #[offset(16)]
         #[rename(name = "m_Ptr")]
         pub m_ptr: ::unity2::IntPtr,
+        #[offset(24)]
         #[rename(name = "m_SourceStyle")]
         pub m_source_style: ::unity2::IlInstance,
     }

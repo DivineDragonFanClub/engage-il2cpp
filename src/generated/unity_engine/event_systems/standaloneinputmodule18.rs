@@ -24,38 +24,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "StandaloneInputModule18")]
-    #[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]
-    pub struct StandaloneInputModule18 {
-        #[rename(name = "m_PrevActionTime")]
-        pub m_prev_action_time: f32,
-        #[rename(name = "m_LastMoveVector")]
-        pub m_last_move_vector: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_ConsecutiveMoveCount")]
-        pub m_consecutive_move_count: i32,
-        #[rename(name = "m_LastMousePosition")]
-        pub m_last_mouse_position: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_MousePosition")]
-        pub m_mouse_position: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_CurrentFocusedGameObject")]
-        pub m_current_focused_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_HorizontalAxis")]
-        pub m_horizontal_axis: ::unity2::Il2CppString,
-        #[rename(name = "m_VerticalAxis")]
-        pub m_vertical_axis: ::unity2::Il2CppString,
-        #[rename(name = "m_SubmitButton")]
-        pub m_submit_button: ::unity2::Il2CppString,
-        #[rename(name = "m_CancelButton")]
-        pub m_cancel_button: ::unity2::Il2CppString,
-        #[rename(name = "m_InputActionsPerSecond")]
-        pub m_input_actions_per_second: f32,
-        #[rename(name = "m_RepeatDelay")]
-        pub m_repeat_delay: f32,
-        #[rename(name = "m_ForceModuleActive")]
-        pub m_force_module_active: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18_InputMode.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -88,6 +56,51 @@ mod __types {
         pub fn buttons() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18.md"))]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "StandaloneInputModule18")]
+    #[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]
+    pub struct StandaloneInputModule18 {
+        #[offset(88)]
+        #[rename(name = "m_PrevActionTime")]
+        pub m_prev_action_time: f32,
+        #[offset(92)]
+        #[rename(name = "m_LastMoveVector")]
+        pub m_last_move_vector: crate::unity_engine::vector2::Vector2,
+        #[offset(100)]
+        #[rename(name = "m_ConsecutiveMoveCount")]
+        pub m_consecutive_move_count: i32,
+        #[offset(104)]
+        #[rename(name = "m_LastMousePosition")]
+        pub m_last_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[offset(112)]
+        #[rename(name = "m_MousePosition")]
+        pub m_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[offset(120)]
+        #[rename(name = "m_CurrentFocusedGameObject")]
+        pub m_current_focused_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
+        #[rename(name = "m_HorizontalAxis")]
+        pub m_horizontal_axis: ::unity2::Il2CppString,
+        #[offset(136)]
+        #[rename(name = "m_VerticalAxis")]
+        pub m_vertical_axis: ::unity2::Il2CppString,
+        #[offset(144)]
+        #[rename(name = "m_SubmitButton")]
+        pub m_submit_button: ::unity2::Il2CppString,
+        #[offset(152)]
+        #[rename(name = "m_CancelButton")]
+        pub m_cancel_button: ::unity2::Il2CppString,
+        #[offset(160)]
+        #[rename(name = "m_InputActionsPerSecond")]
+        pub m_input_actions_per_second: f32,
+        #[offset(164)]
+        #[rename(name = "m_RepeatDelay")]
+        pub m_repeat_delay: f32,
+        #[offset(168)]
+        #[rename(name = "m_ForceModuleActive")]
+        pub m_force_module_active: bool,
     }
 }
 

@@ -26,12 +26,16 @@ mod __types {
         #[static_field]
         #[rename(name = "ThumbnailPath")]
         pub thumbnail_path: ::unity2::Il2CppString,
+        #[offset(232)]
         #[rename(name = "m_title")]
         pub m_title: crate::unity_engine::gameobject::GameObject,
+        #[offset(240)]
         #[rename(name = "m_help")]
         pub m_help: crate::unity_engine::gameobject::GameObject,
+        #[offset(248)]
         #[rename(name = "m_thumbnail")]
         pub m_thumbnail: crate::unity_engine::gameobject::GameObject,
+        #[offset(256)]
         #[rename(name = "m_thumbnailCache")]
         pub m_thumbnail_cache:
             crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,

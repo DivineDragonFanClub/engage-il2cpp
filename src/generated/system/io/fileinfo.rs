@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "System.IO", name = "FileInfo")]
     #[parent(crate::system::io::filesysteminfo::FileSystemInfo)]
     pub struct FileInfo {
+        #[offset(96)]
         #[rename(name = "_name")]
         pub name: ::unity2::Il2CppString,
     }

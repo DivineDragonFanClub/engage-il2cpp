@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HelpItemWeaponLevel")]
     #[parent(crate::app::helpitembase::HelpItemBase)]
     pub struct HelpItemWeaponLevel {
+        #[offset(80)]
         #[rename(name = "m_Index")]
         pub m_index: i32,
+        #[offset(88)]
         #[rename(name = "m_TempUnit")]
         pub m_temp_unit: crate::app::unit::Unit,
     }

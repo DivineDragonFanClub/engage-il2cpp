@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "HubDistanceAlphaFader")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct HubDistanceAlphaFader {
+        #[offset(24)]
         #[rename(name = "m_distanecCurve")]
         pub m_distanec_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(32)]
         #[rename(name = "m_propetyToID")]
         pub m_propety_to_id: i32,
+        #[offset(40)]
         #[rename(name = "m_renderer")]
         pub m_renderer: crate::unity_engine::renderer::Renderer,
     }

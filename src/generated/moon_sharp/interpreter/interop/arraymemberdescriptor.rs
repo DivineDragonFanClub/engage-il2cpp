@@ -17,6 +17,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "ArrayMemberDescriptor")]
     #[parent(crate::moon_sharp::interpreter::interop::objectcallbackmemberdescriptor::ObjectCallbackMemberDescriptor)]
     pub struct ArrayMemberDescriptor {
+        #[offset(80)]
         #[rename(name = "m_IsSetter")]
         pub m_is_setter: bool,
     }

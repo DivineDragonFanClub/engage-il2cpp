@@ -23,20 +23,28 @@ mod __types {
         #[static_field]
         #[rename(name = "Version")]
         pub version: i32,
+        #[offset(16)]
         #[rename(name = "m_GodData")]
         pub m_god_data: crate::app::goddata::GodData,
+        #[offset(24)]
         #[rename(name = "m_RelianceS")]
         pub m_reliance_s: crate::app::godreliances::GodRelianceS,
+        #[offset(32)]
         #[rename(name = "m_Pid")]
         pub m_pid: ::unity2::Il2CppString,
+        #[offset(40)]
         #[rename(name = "m_Level")]
         pub m_level: u8,
+        #[offset(42)]
         #[rename(name = "m_Exp")]
         pub m_exp: u16,
+        #[offset(48)]
         #[rename(name = "m_InheritedSkills")]
         pub m_inherited_skills: crate::app::godinheritedskills::GodInheritedSkills,
+        #[offset(56)]
         #[rename(name = "m_NotifiedLevelCapTalk")]
         pub m_notified_level_cap_talk: u8,
+        #[offset(64)]
         #[rename(name = "m_LevelData")]
         pub m_level_data: crate::app::godgrowthdata::GodGrowthData_LevelData,
         #[static_field]

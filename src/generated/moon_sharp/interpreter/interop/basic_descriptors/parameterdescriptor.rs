@@ -11,6 +11,7 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors", name = "ParameterDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct ParameterDescriptor {
+        #[offset(56)]
         #[rename(name = "m_OriginalType")]
         pub m_original_type: ::unity2::SystemType,
     }

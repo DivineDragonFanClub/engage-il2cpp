@@ -20,6 +20,7 @@ mod __types {
         #[static_field]
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
+        #[offset(200)]
         #[rename(name = "m_MiniMapMenu")]
         pub m_mini_map_menu: crate::root::mapnavigationminimapmenu::MapNavigationMiniMapMenu,
     }

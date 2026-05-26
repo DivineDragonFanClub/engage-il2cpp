@@ -23,12 +23,16 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerConfrontation")]
     #[parent(crate::combat::basetransitioncameracontroller::BaseTransitionCameraController)]
     pub struct CameraControllerConfrontation {
+        #[offset(192)]
         #[rename(name = "FollowCurve")]
         pub follow_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(200)]
         #[rename(name = "LookatCurve")]
         pub lookat_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(208)]
         #[rename(name = "FollowPosition")]
         pub follow_position: crate::unity_engine::vector3::Vector3,
+        #[offset(220)]
         #[rename(name = "LookatPosition")]
         pub lookat_position: crate::unity_engine::vector3::Vector3,
     }

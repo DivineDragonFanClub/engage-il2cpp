@@ -17,12 +17,16 @@ mod __types {
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "FunctionCallExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct FunctionCallExpression {
+        #[offset(32)]
         #[rename(name = "m_Arguments")]
         pub m_arguments: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression>,
+        #[offset(40)]
         #[rename(name = "m_Function")]
         pub m_function: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(48)]
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
+        #[offset(56)]
         #[rename(name = "m_DebugErr")]
         pub m_debug_err: ::unity2::Il2CppString,
     }

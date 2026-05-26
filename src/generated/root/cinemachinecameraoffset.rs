@@ -9,8 +9,10 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinecameraoffset/CinemachineCameraOffset.md"))]
     #[::unity2::class(namespace = "", name = "CinemachineCameraOffset")]
     pub struct CinemachineCameraOffset {
+        #[offset(40)]
         #[rename(name = "m_Offset")]
         pub m_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(56)]
         #[rename(name = "m_PreserveComposition")]
         pub m_preserve_composition: bool,
     }

@@ -14,6 +14,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::unity_engine::ui::clipperregistry::ClipperRegistry,
+        #[offset(16)]
         #[rename(name = "m_Clippers")]
         pub m_clippers: crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<crate::unity_engine::ui::iclipper::IClipper>,
     }

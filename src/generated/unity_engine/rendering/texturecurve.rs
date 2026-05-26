@@ -17,20 +17,28 @@ mod __types {
         #[static_field]
         #[rename(name = "k_Step")]
         pub k_step: f32,
+        #[offset(20)]
         #[rename(name = "m_Loop")]
         pub m_loop: bool,
+        #[offset(24)]
         #[rename(name = "m_ZeroValue")]
         pub m_zero_value: f32,
+        #[offset(28)]
         #[rename(name = "m_Range")]
         pub m_range: f32,
+        #[offset(32)]
         #[rename(name = "m_Curve")]
         pub m_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(40)]
         #[rename(name = "m_LoopingCurve")]
         pub m_looping_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[offset(48)]
         #[rename(name = "m_Texture")]
         pub m_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(56)]
         #[rename(name = "m_IsCurveDirty")]
         pub m_is_curve_dirty: bool,
+        #[offset(57)]
         #[rename(name = "m_IsTextureDirty")]
         pub m_is_texture_dirty: bool,
     }
@@ -774,25 +782,15 @@ impl<__T: ITextureCurve> ITextureCurveMethods for __T {}
 #[cfg(feature = "unity_engine-rendering-texturecurve")]
 impl TextureCurve {
     #[doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` — overload selector"]
-    pub fn new(
-        base_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        zero_value: f32,
-        r#loop: bool,
-        bounds: *mut crate::unity_engine::vector2::Vector2,
-    ) -> Self {
+    pub fn new(base_curve: crate::unity_engine::animationcurve::AnimationCurve, zero_value: f32, r#loop: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate()
             .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TextureCurve), ::core::stringify!(new),));
-        <Self as ITextureCurveMethods>::ctor(this, base_curve, zero_value, r#loop, bounds);
+        <Self as ITextureCurveMethods>::ctor(this, base_curve, zero_value, r#loop);
         this
     }
 
     #[doc = "`.ctor(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` — overload selector"]
-    pub fn new_2(
-        keys: ::unity2::Array<crate::unity_engine::keyframe::Keyframe>,
-        zero_value: f32,
-        r#loop: bool,
-        bounds: *mut crate::unity_engine::vector2::Vector2,
-    ) -> Self {
+    pub fn new_2(keys: ::unity2::Array<crate::unity_engine::keyframe::Keyframe>, zero_value: f32, r#loop: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -800,7 +798,7 @@ impl TextureCurve {
                 ::core::stringify!(new_2),
             )
         });
-        <Self as ITextureCurveMethods>::ctor_2(this, keys, zero_value, r#loop, bounds);
+        <Self as ITextureCurveMethods>::ctor_2(this, keys, zero_value, r#loop);
         this
     }
 }

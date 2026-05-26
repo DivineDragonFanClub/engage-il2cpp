@@ -18,6 +18,11 @@ mod __types {
         },
     };
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinedata/GodWeaponRefineData.md"))]
+    #[::unity2::class(namespace = "App", name = "GodWeaponRefineData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData >)]
+    pub struct GodWeaponRefineData {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godweaponrefinedata/GodWeaponRefineData_Kind.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -119,11 +124,6 @@ mod __types {
             Self { value: 13 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinedata/GodWeaponRefineData.md"))]
-    #[::unity2::class(namespace = "App", name = "GodWeaponRefineData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData >)]
-    pub struct GodWeaponRefineData {}
 }
 
 #[cfg(feature = "app-godweaponrefinedata-types")]

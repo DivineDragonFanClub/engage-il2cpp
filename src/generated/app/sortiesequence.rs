@@ -17,44 +17,6 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct SortieSequence_Modes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SortieSequence_Modes {
-        const NAME: &'static str = "SortieSequence.Modes";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SortieSequence_Modes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl SortieSequence_Modes {
-        pub fn map() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn hub() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn edit() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))]
     #[::unity2::class(namespace = "App", name = "SortieSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)]
@@ -62,6 +24,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_IsDecidedToBattle")]
         pub s_is_decided_to_battle: bool,
+        #[offset(116)]
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::sortiesequence::SortieSequence_Modes,
     }
@@ -149,6 +112,44 @@ mod __types {
 
         pub fn end() -> Self {
             Self { value: 14 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct SortieSequence_Modes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SortieSequence_Modes {
+        const NAME: &'static str = "SortieSequence.Modes";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SortieSequence_Modes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl SortieSequence_Modes {
+        pub fn map() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn hub() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn edit() -> Self {
+            Self { value: 2 }
         }
     }
 }

@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackcolorattribute/TrackColorAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackColorAttribute")]
     pub struct TrackColorAttribute {
+        #[offset(16)]
         #[rename(name = "m_Color")]
         pub m_color: crate::unity_engine::color::Color,
     }

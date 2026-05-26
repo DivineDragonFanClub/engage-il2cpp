@@ -11,22 +11,31 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.UI", name = "VertexHelper")]
     #[parent(crate::system::object::Object)]
     pub struct VertexHelper {
+        #[offset(16)]
         #[rename(name = "m_Positions")]
         pub m_positions: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(24)]
         #[rename(name = "m_Colors")]
         pub m_colors: crate::system::collections::generic::list_1::List_1<crate::unity_engine::color32::Color32>,
+        #[offset(32)]
         #[rename(name = "m_Uv0S")]
         pub m_uv0_s: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+        #[offset(40)]
         #[rename(name = "m_Uv1S")]
         pub m_uv1_s: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+        #[offset(48)]
         #[rename(name = "m_Uv2S")]
         pub m_uv2_s: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+        #[offset(56)]
         #[rename(name = "m_Uv3S")]
         pub m_uv3_s: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+        #[offset(64)]
         #[rename(name = "m_Normals")]
         pub m_normals: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+        #[offset(72)]
         #[rename(name = "m_Tangents")]
         pub m_tangents: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+        #[offset(80)]
         #[rename(name = "m_Indices")]
         pub m_indices: crate::system::collections::generic::list_1::List_1<i32>,
         #[static_field]
@@ -35,6 +44,7 @@ mod __types {
         #[static_field]
         #[rename(name = "s_DefaultNormal")]
         pub s_default_normal: crate::unity_engine::vector3::Vector3,
+        #[offset(88)]
         #[rename(name = "m_ListsInitalized")]
         pub m_lists_initalized: bool,
     }

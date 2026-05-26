@@ -20,24 +20,34 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopSellMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct ShopSellMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_FixedCursorObject")]
         pub m_fixed_cursor_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(80)]
         #[rename(name = "m_FixedCursorFrameObject")]
         pub m_fixed_cursor_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(88)]
         #[rename(name = "m_KindFrameObject")]
         pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(96)]
         #[rename(name = "m_KindIconObject")]
         pub m_kind_icon_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(104)]
         #[rename(name = "m_NameObject")]
         pub m_name_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(112)]
         #[rename(name = "m_CountObject")]
         pub m_count_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
         #[rename(name = "m_PriceValueObject")]
         pub m_price_value_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(128)]
         #[rename(name = "m_PriceGObject")]
         pub m_price_g_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(136)]
         #[rename(name = "m_UnitIconObject")]
         pub m_unit_icon_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
         #[rename(name = "m_textBaseColor2")]
         pub m_text_base_color2: crate::unity_engine::color::Color,
     }

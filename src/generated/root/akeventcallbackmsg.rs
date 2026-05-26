@@ -11,10 +11,13 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkEventCallbackMsg")]
     #[parent(crate::system::object::Object)]
     pub struct AkEventCallbackMsg {
+        #[offset(16)]
         #[rename(name = "info")]
         pub info: crate::root::akcallbackinfo::AkCallbackInfo,
+        #[offset(24)]
         #[rename(name = "sender")]
         pub sender: crate::unity_engine::gameobject::GameObject,
+        #[offset(32)]
         #[rename(name = "type")]
         pub r#type: crate::root::akcallbacktype::AkCallbackType,
     }

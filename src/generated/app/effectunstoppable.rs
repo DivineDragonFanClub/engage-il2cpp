@@ -19,16 +19,22 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "EffectUnstoppable")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EffectUnstoppable {
+        #[offset(24)]
         #[rename(name = "m_Threshold")]
         pub m_threshold: f32,
+        #[offset(28)]
         #[rename(name = "m_Position")]
         pub m_position: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
         #[rename(name = "m_ParticleSystem")]
         pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        #[offset(48)]
         #[rename(name = "m_IsStopped")]
         pub m_is_stopped: bool,
+        #[offset(56)]
         #[rename(name = "m_StartSound")]
         pub m_start_sound: ::unity2::Il2CppString,
+        #[offset(64)]
         #[rename(name = "m_StopSound")]
         pub m_stop_sound: ::unity2::Il2CppString,
     }

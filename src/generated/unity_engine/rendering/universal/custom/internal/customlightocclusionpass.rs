@@ -41,10 +41,13 @@ mod __types {
         #[static_field]
         #[rename(name = "k_ProfilerTag")]
         pub k_profiler_tag: ::unity2::Il2CppString,
+        #[offset(112)]
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[offset(120)]
         #[rename(name = "m_Result")]
         pub m_result: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[offset(168)]
         #[rename(name = "m_DepthTextureEnabled")]
         pub m_depth_texture_enabled: bool,
     }

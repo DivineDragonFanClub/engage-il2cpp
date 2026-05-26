@@ -11,8 +11,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaProxy")]
     #[parent(crate::system::object::Object)]
     pub struct AndroidJavaProxy {
+        #[offset(16)]
         #[rename(name = "javaInterface")]
         pub java_interface: crate::unity_engine::androidjavaclass::AndroidJavaClass,
+        #[offset(24)]
         #[rename(name = "proxyObject")]
         pub proxy_object: ::unity2::IntPtr,
         #[static_field]

@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/serializedtyperestrictionattribute/SerializedTypeRestrictionAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "SerializedTypeRestrictionAttribute")]
     pub struct SerializedTypeRestrictionAttribute {
+        #[offset(16)]
         #[rename(name = "type")]
         pub r#type: ::unity2::SystemType,
     }

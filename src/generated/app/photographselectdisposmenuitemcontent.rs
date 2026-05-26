@@ -20,8 +20,10 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "PhotographSelectDisposMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct PhotographSelectDisposMenuItemContent {
+        #[offset(72)]
         #[rename(name = "m_AreaText")]
         pub m_area_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[offset(80)]
         #[rename(name = "m_UnitIcon")]
         pub m_unit_icon: crate::app::uniticon::UnitIcon,
     }

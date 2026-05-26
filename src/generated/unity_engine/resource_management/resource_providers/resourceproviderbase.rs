@@ -17,6 +17,7 @@ mod __types {
     )]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < bool >)]
     pub struct ResourceProviderBase_BaseInitAsyncOp {
+        #[offset(136)]
         #[rename(name = "m_CallBack")]
         pub m_call_back: crate::system::func_1::Func_1<bool>,
     }
@@ -25,8 +26,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "ResourceProviderBase")]
     #[parent(crate::system::object::Object)]
     pub struct ResourceProviderBase {
+        #[offset(16)]
         #[rename(name = "m_ProviderId")]
         pub m_provider_id: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_BehaviourFlags")]
         pub m_behaviour_flags: crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags,
     }

@@ -20,14 +20,19 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CameraControllerBird")]
     #[parent(crate::combat::basecameracontroller::BaseCameraController)]
     pub struct CameraControllerBird {
+        #[offset(168)]
         #[rename(name = "CameraPosWalk")]
         pub camera_pos_walk: crate::unity_engine::vector3::Vector3,
+        #[offset(180)]
         #[rename(name = "CameraPosHorse")]
         pub camera_pos_horse: crate::unity_engine::vector3::Vector3,
+        #[offset(192)]
         #[rename(name = "CameraPosFly")]
         pub camera_pos_fly: crate::unity_engine::vector3::Vector3,
+        #[offset(204)]
         #[rename(name = "m_Time")]
         pub m_time: f32,
+        #[offset(208)]
         #[rename(name = "m_TargetSide")]
         pub m_target_side: i32,
     }

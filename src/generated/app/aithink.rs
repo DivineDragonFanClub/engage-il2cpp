@@ -21,13 +21,15 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackScoreResult.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_SurroundingInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_AttackScoreResult {}
+    pub struct AIThink_EnchantThink_SurroundingInfo {
+        pub m_value: u32,
+    }
 
-    impl ::unity2::ClassIdentity for AIThink_AttackScoreResult {
-        const NAME: &'static str = "AIThink.AttackScoreResult";
+    impl ::unity2::ClassIdentity for AIThink_EnchantThink_SurroundingInfo {
+        const NAME: &'static str = "AIThink.EnchantThink.SurroundingInfo";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -37,7 +39,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AIThink_AttackScoreResult {
+    impl ::unity2::IlType for AIThink_EnchantThink_SurroundingInfo {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -129,13 +131,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodScoreImplResult.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackTarget.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_HealRodScoreImplResult {}
+    pub struct AIThink_UncontrollAttackTarget {
+        pub uas_result: crate::app::aithink::AIThink_UncontrollAttackScoreResult,
+    }
 
-    impl ::unity2::ClassIdentity for AIThink_HealRodScoreImplResult {
-        const NAME: &'static str = "AIThink.HealRodScoreImplResult";
+    impl ::unity2::ClassIdentity for AIThink_UncontrollAttackTarget {
+        const NAME: &'static str = "AIThink.UncontrollAttackTarget";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -145,31 +149,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AIThink_HealRodScoreImplResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodTarget.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_WarpRodTarget {
-        pub wre_result: crate::app::aithink::AIThink_WarpRodEvaluationResult,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_WarpRodTarget {
-        const NAME: &'static str = "AIThink.WarpRodTarget";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_WarpRodTarget {
+    impl ::unity2::IlType for AIThink_UncontrollAttackTarget {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -201,17 +181,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackPositionResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_TrimasteriesSkills {
-        pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
-        pub m_count: i32,
-        pub m_last_engage_turn: i32,
-    }
+    pub struct AIThink_AttackPositionResult {}
 
-    impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills {
-        const NAME: &'static str = "AIThink.TrimasteriesSkills";
+    impl ::unity2::ClassIdentity for AIThink_AttackPositionResult {
+        const NAME: &'static str = "AIThink.AttackPositionResult";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -221,25 +197,19 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AIThink_TrimasteriesSkills {
+    impl ::unity2::IlType for AIThink_AttackPositionResult {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_DMPTResult.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackScoreResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_EnchantThink_DMPTResult {
-        pub move_x: i32,
-        pub move_z: i32,
-        pub target_index: i32,
-        pub target_x: i32,
-        pub target_z: i32,
-    }
+    pub struct AIThink_UncontrollAttackScoreResult {}
 
-    impl ::unity2::ClassIdentity for AIThink_EnchantThink_DMPTResult {
-        const NAME: &'static str = "AIThink.EnchantThink.DMPTResult";
+    impl ::unity2::ClassIdentity for AIThink_UncontrollAttackScoreResult {
+        const NAME: &'static str = "AIThink.UncontrollAttackScoreResult";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -249,79 +219,186 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AIThink_EnchantThink_DMPTResult {
+    impl ::unity2::IlType for AIThink_UncontrollAttackScoreResult {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AcFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.AcFunc")]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_InterferenceTarget.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_InterferenceTarget {
+        pub is_result: crate::app::aithink::AIThink_InterferenceScoreResult,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_InterferenceTarget {
+        const NAME: &'static str = "AIThink.InterferenceTarget";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_InterferenceTarget {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink_CalcUnitScoreFunction.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.EnchantThink.CalcUnitScoreFunction")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AIThink_AcFunc {}
+    pub struct AIThink_EnchantThink_CalcUnitScoreFunction {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_CGBSResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AIThink_CGBSResult {
-        pub value: i32,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIThink {
+        #[static_field]
+        #[rename(name = "BlowScoreNone")]
+        pub blow_score_none: u32,
+        #[static_field]
+        #[rename(name = "BlowScoreWall")]
+        pub blow_score_wall: u32,
+        #[static_field]
+        #[rename(name = "BlowScoreBlew")]
+        pub blow_score_blew: u32,
+        #[static_field]
+        #[rename(name = "BlowScoreHole")]
+        pub blow_score_hole: u32,
+        #[static_field]
+        #[rename(name = "BlowScoreBit")]
+        pub blow_score_bit: i32,
+        #[static_field]
+        #[rename(name = "TerrainScoreBit")]
+        pub terrain_score_bit: i32,
+        #[static_field]
+        #[rename(name = "IceTileMoveMax")]
+        pub ice_tile_move_max: i32,
+        #[static_field]
+        #[rename(name = "EscortDistance")]
+        pub escort_distance: i32,
+        #[static_field]
+        #[rename(name = "EntrustAskHealA")]
+        pub entrust_ask_heal_a: i32,
+        #[static_field]
+        #[rename(name = "EntrustAskHealB")]
+        pub entrust_ask_heal_b: i32,
+        #[static_field]
+        #[rename(name = "AttackTargetMax")]
+        pub attack_target_max: u32,
+        #[static_field]
+        #[rename(name = "EngageHealTargetCountThreshold")]
+        pub engage_heal_target_count_threshold: i32,
+        #[offset(16)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(24)]
+        #[rename(name = "m_Think")]
+        pub m_think: crate::app::aithink::AIThink_Think,
+        #[offset(28)]
+        #[rename(name = "m_Order")]
+        pub m_order: crate::app::aivalue::AIValue_Order,
+        #[offset(32)]
+        #[rename(name = "m_UpdateFlag")]
+        pub m_update_flag: crate::app::aithink::AIThink_UpdateFlag,
+        #[offset(40)]
+        #[rename(name = "m_UpdateActive")]
+        pub m_update_active: i32,
+        #[offset(48)]
+        #[rename(name = "m_aUpdateValue")]
+        pub m_a_update_value: ::unity2::Array<crate::app::aivalue::AIValue>,
+        #[offset(56)]
+        #[rename(name = "m_Caution")]
+        pub m_caution: crate::app::mapimagecorebyte::MapImageCoreByte,
+        #[offset(64)]
+        #[rename(name = "m_Rerewarp")]
+        pub m_rerewarp: crate::app::mapimagecorebyte::MapImageCoreByte,
+        #[offset(72)]
+        #[rename(name = "m_aAttackTargetForCandidate")]
+        pub m_a_attack_target_for_candidate: ::unity2::Array<u8>,
+        #[offset(80)]
+        #[rename(name = "m_aAttackTargetForMind")]
+        pub m_a_attack_target_for_mind: ::unity2::Array<u8>,
+        #[offset(88)]
+        #[rename(name = "m_ProhibitEngageAttack")]
+        pub m_prohibit_engage_attack: i32,
+        #[offset(92)]
+        #[rename(name = "m_ProhibitRod")]
+        pub m_prohibit_rod: i32,
+        #[offset(96)]
+        #[rename(name = "m_ProhibitOverlap")]
+        pub m_prohibit_overlap: i32,
+        #[offset(100)]
+        #[rename(name = "m_IsEngageAttackOnceDone")]
+        pub m_is_engage_attack_once_done: bool,
+        #[offset(101)]
+        #[rename(name = "m_IsMagicShieldOnceDone")]
+        pub m_is_magic_shield_once_done: bool,
+        #[offset(102)]
+        #[rename(name = "m_IsEnchantWeaponDone")]
+        pub m_is_enchant_weapon_done: bool,
+        #[offset(104)]
+        #[rename(name = "m_BulletPattern")]
+        pub m_bullet_pattern: i32,
+        #[offset(108)]
+        #[rename(name = "m_IsChangeATAttack")]
+        pub m_is_change_at_attack: bool,
+        #[offset(112)]
+        #[rename(name = "m_Cells")]
+        pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
+        #[offset(120)]
+        #[rename(name = "m_OverlapSkills")]
+        pub m_overlap_skills: crate::app::aithink::AIThink_OverlapSkills,
+        #[offset(136)]
+        #[rename(name = "m_TrimasteriesSkills")]
+        pub m_trimasteries_skills: crate::app::aithink::AIThink_TrimasteriesSkills,
+        #[offset(152)]
+        #[rename(name = "m_BattleSimulator")]
+        pub m_battle_simulator: crate::app::aibattlesimulator::AIBattleSimulator,
+        #[offset(160)]
+        #[rename(name = "m_BattleSimulatorForScore")]
+        pub m_battle_simulator_for_score: crate::app::aibattlesimulator::AIBattleSimulator,
+        #[offset(168)]
+        #[rename(name = "m_InterferenceSimulator")]
+        pub m_interference_simulator: crate::app::aiinterferencesimulator::AIInterferenceSimulator,
+        #[offset(176)]
+        #[rename(name = "m_NearTargetsCSO")]
+        pub m_near_targets_cso: ::unity2::Array<crate::app::unit::Unit>,
+        #[offset(184)]
+        #[rename(name = "m_TargetDistsCSO")]
+        pub m_target_dists_cso: ::unity2::Array<i32>,
+        #[offset(192)]
+        #[rename(name = "m_UnitScores")]
+        pub m_unit_scores: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u32>,
+        #[static_field]
+        #[rename(name = "s_CellsGAP")]
+        pub s_cells_gap: ::unity2::Array<crate::app::mappos::MapPos>,
+        #[static_field]
+        #[rename(name = "s_BattleInfoGAP")]
+        pub s_battle_info_gap: crate::app::battleinfo::BattleInfo,
+        #[static_field]
+        #[rename(name = "s_UnitItemGAR")]
+        pub s_unit_item_gar: crate::app::unititem::UnitItem,
+        #[offset(200)]
+        #[rename(name = "m_EngageWaitAdditionalAttackImage")]
+        pub m_engage_wait_additional_attack_image: crate::app::aithink::AIThink_EngageWaitAdditionalAttackImage,
+        #[offset(208)]
+        #[rename(name = "m_HolyShield")]
+        pub m_holy_shield: crate::app::mapimagecorebyte::MapImageCoreByte,
+        #[offset(216)]
+        #[rename(name = "m_EnchantThink")]
+        pub m_enchant_think: crate::app::aithink::AIThink_EnchantThink,
     }
 
-    impl ::unity2::ClassIdentity for AIThink_CGBSResult {
-        const NAME: &'static str = "AIThink.CGBSResult";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_CGBSResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl AIThink_CGBSResult {
-        pub fn no_give() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn cannot_give() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn can_give() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_Desc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_EnchantThink_Desc {
-        pub priority: i32,
-        pub calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_EnchantThink_Desc {
-        const NAME: &'static str = "AIThink.EnchantThink.Desc";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_EnchantThink_Desc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_RcFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.RcFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AIThink_RcFunc {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Result.md"))]
     #[repr(C)]
@@ -361,6 +438,306 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AttackFlag.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.AttackFlag")]
+    #[parent(crate::app::bitfield32::BitField32)]
+    pub struct AIThink_AttackFlag {
+        #[static_field]
+        #[rename(name = "Side")]
+        pub side: i32,
+        #[static_field]
+        #[rename(name = "Nearest")]
+        pub nearest: i32,
+        #[static_field]
+        #[rename(name = "AheadIgnore")]
+        pub ahead_ignore: i32,
+        #[static_field]
+        #[rename(name = "__IgnoreSilent")]
+        pub ignore_silent: i32,
+        #[static_field]
+        #[rename(name = "__DestroyTargetCastleOffset")]
+        pub destroy_target_castle_offset: i32,
+        #[static_field]
+        #[rename(name = "ScoreExpectation")]
+        pub score_expectation: i32,
+        #[static_field]
+        #[rename(name = "InterferenceHighMagic")]
+        pub interference_high_magic: i32,
+        #[static_field]
+        #[rename(name = "InterferenceLowMagic")]
+        pub interference_low_magic: i32,
+        #[static_field]
+        #[rename(name = "Break")]
+        pub r#break: i32,
+        #[static_field]
+        #[rename(name = "Chain")]
+        pub chain: i32,
+        #[static_field]
+        #[rename(name = "MagicOnly")]
+        pub magic_only: i32,
+        #[static_field]
+        #[rename(name = "ChainAttackCount")]
+        pub chain_attack_count: i32,
+        #[static_field]
+        #[rename(name = "PierceMultiple")]
+        pub pierce_multiple: i32,
+        #[static_field]
+        #[rename(name = "InterferenceRange")]
+        pub interference_range: i32,
+        #[static_field]
+        #[rename(name = "EquipSkillMultiple")]
+        pub equip_skill_multiple: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_MoveFlag.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.MoveFlag")]
+    #[parent(crate::app::bitfield32::BitField32)]
+    pub struct AIThink_MoveFlag {
+        #[static_field]
+        #[rename(name = "Through")]
+        pub through: i32,
+        #[static_field]
+        #[rename(name = "Break")]
+        pub r#break: i32,
+        #[static_field]
+        #[rename(name = "Back")]
+        pub back: i32,
+        #[static_field]
+        #[rename(name = "Slow")]
+        pub slow: i32,
+        #[static_field]
+        #[rename(name = "Door")]
+        pub door: i32,
+        #[static_field]
+        #[rename(name = "Ignore")]
+        pub ignore: i32,
+        #[static_field]
+        #[rename(name = "IgnoreIceTile")]
+        pub ignore_ice_tile: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_DMPTResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_EnchantThink_DMPTResult {
+        pub move_x: i32,
+        pub move_z: i32,
+        pub target_index: i32,
+        pub target_x: i32,
+        pub target_z: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_EnchantThink_DMPTResult {
+        const NAME: &'static str = "AIThink.EnchantThink.DMPTResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_EnchantThink_DMPTResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodEvaluationResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_WarpRodEvaluationResult {}
+
+    impl ::unity2::ClassIdentity for AIThink_WarpRodEvaluationResult {
+        const NAME: &'static str = "AIThink.WarpRodEvaluationResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_WarpRodEvaluationResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodScoreImplResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_HealRodScoreImplResult {}
+
+    impl ::unity2::ClassIdentity for AIThink_HealRodScoreImplResult {
+        const NAME: &'static str = "AIThink.HealRodScoreImplResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_HealRodScoreImplResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_OverlapSkills.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_OverlapSkills {
+        pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
+        pub m_count: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_OverlapSkills {
+        const NAME: &'static str = "AIThink.OverlapSkills";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_OverlapSkills {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_ItemInfo.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_EnchantThink_ItemInfo {
+        pub item_index: u8,
+        pub kind: u8,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_EnchantThink_ItemInfo {
+        const NAME: &'static str = "AIThink.EnchantThink.ItemInfo";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_EnchantThink_ItemInfo {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodPositionResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_HealRodPositionResult {}
+
+    impl ::unity2::ClassIdentity for AIThink_HealRodPositionResult {
+        const NAME: &'static str = "AIThink.HealRodPositionResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_HealRodPositionResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EngageWaitAdditionalAttackImage.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.EngageWaitAdditionalAttackImage")]
+    # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u16 >)]
+    pub struct AIThink_EngageWaitAdditionalAttackImage {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackTarget.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_EntrustAttackTarget {
+        pub eas_result: crate::app::aithink::AIThink_EntrustAttackScoreResult,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_EntrustAttackTarget {
+        const NAME: &'static str = "AIThink.EntrustAttackTarget";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_EntrustAttackTarget {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_ActionFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.ActionFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AIThink_ActionFunc {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackScoreResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_EntrustAttackScoreResult {}
+
+    impl ::unity2::ClassIdentity for AIThink_EntrustAttackScoreResult {
+        const NAME: &'static str = "AIThink.EntrustAttackScoreResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_EntrustAttackScoreResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodScoreResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_RescueRodScoreResult {}
+
+    impl ::unity2::ClassIdentity for AIThink_RescueRodScoreResult {
+        const NAME: &'static str = "AIThink.RescueRodScoreResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_RescueRodScoreResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodScoreResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -382,6 +759,103 @@ mod __types {
     impl ::unity2::IlType for AIThink_HealRodScoreResult {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodTarget.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_WarpRodTarget {
+        pub wre_result: crate::app::aithink::AIThink_WarpRodEvaluationResult,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_WarpRodTarget {
+        const NAME: &'static str = "AIThink.WarpRodTarget";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_WarpRodTarget {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_UpdateFlag.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.UpdateFlag")]
+    #[parent(crate::app::bitfield32::BitField32)]
+    pub struct AIThink_UpdateFlag {
+        #[static_field]
+        #[rename(name = "Active")]
+        pub active: i32,
+        #[static_field]
+        #[rename(name = "Value0")]
+        pub value0: i32,
+        #[static_field]
+        #[rename(name = "Value1")]
+        pub value1: i32,
+        #[static_field]
+        #[rename(name = "Value2")]
+        pub value2: i32,
+        #[static_field]
+        #[rename(name = "Value3")]
+        pub value3: i32,
+        #[static_field]
+        #[rename(name = "Retry")]
+        pub retry: i32,
+        #[static_field]
+        #[rename(name = "MaskUpdate")]
+        pub mask_update: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills_Kinds.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct AIThink_TrimasteriesSkills_Kinds {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills_Kinds {
+        const NAME: &'static str = "AIThink.TrimasteriesSkills.Kinds";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_TrimasteriesSkills_Kinds {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl AIThink_TrimasteriesSkills_Kinds {
+        pub fn unknown() -> Self {
+            Self { value: -1 }
+        }
+
+        pub fn mad_storm() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn miserable() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn falling_stars() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn max() -> Self {
+            Self { value: 3 }
         }
     }
 
@@ -475,15 +949,16 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_InterferenceTarget.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_Desc.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_InterferenceTarget {
-        pub is_result: crate::app::aithink::AIThink_InterferenceScoreResult,
+    pub struct AIThink_EnchantThink_Desc {
+        pub priority: i32,
+        pub calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
     }
 
-    impl ::unity2::ClassIdentity for AIThink_InterferenceTarget {
-        const NAME: &'static str = "AIThink.InterferenceTarget";
+    impl ::unity2::ClassIdentity for AIThink_EnchantThink_Desc {
+        const NAME: &'static str = "AIThink.EnchantThink.Desc";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -493,9 +968,184 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AIThink_InterferenceTarget {
+    impl ::unity2::IlType for AIThink_EnchantThink_Desc {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.EnchantThink")]
+    #[parent(crate::system::object::Object)]
+    pub struct AIThink_EnchantThink {
+        #[offset(16)]
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[offset(24)]
+        #[rename(name = "m_ItemInfos")]
+        pub m_item_infos: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_ItemInfo>,
+        #[offset(32)]
+        #[rename(name = "m_ItemInfoCount")]
+        pub m_item_info_count: i32,
+        #[offset(40)]
+        #[rename(name = "m_UnitScores")]
+        pub m_unit_scores: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u8>,
+        #[offset(48)]
+        #[rename(name = "m_UnitSurroundings")]
+        pub m_unit_surroundings:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::app::aithink::AIThink_EnchantThink_SurroundingInfo>,
+        #[static_field]
+        #[rename(name = "Descs")]
+        pub descs: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_Desc>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_TrimasteriesSkills {
+        pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
+        pub m_count: i32,
+        pub m_last_engage_turn: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills {
+        const NAME: &'static str = "AIThink.TrimasteriesSkills";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_TrimasteriesSkills {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodTarget.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_RescueRodTarget {
+        pub rrs_result: crate::app::aithink::AIThink_RescueRodScoreResult,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_RescueRodTarget {
+        const NAME: &'static str = "AIThink.RescueRodTarget";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_RescueRodTarget {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_CGBSResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct AIThink_CGBSResult {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_CGBSResult {
+        const NAME: &'static str = "AIThink.CGBSResult";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_CGBSResult {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl AIThink_CGBSResult {
+        pub fn no_give() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn cannot_give() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn can_give() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackTarget.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIThink_AttackTarget {
+        pub as_result: crate::app::aithink::AIThink_AttackScoreResult,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_AttackTarget {
+        const NAME: &'static str = "AIThink.AttackTarget";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_AttackTarget {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Command.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct AIThink_Command {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AIThink_Command {
+        const NAME: &'static str = "AIThink.Command";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIThink_Command {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl AIThink_Command {
+        pub fn every_time() -> Self {
+            Self { value: -1 }
+        }
+
+        pub fn non_actiive() -> Self {
+            Self { value: -2 }
+        }
+
+        pub fn active() -> Self {
+            Self { value: 0 }
         }
     }
 
@@ -521,113 +1171,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_RcFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.RcFunc")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AcFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "AIThink.AcFunc")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AIThink_RcFunc {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink_CalcUnitScoreFunction.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.EnchantThink.CalcUnitScoreFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AIThink_EnchantThink_CalcUnitScoreFunction {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackTarget.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_UncontrollAttackTarget {
-        pub uas_result: crate::app::aithink::AIThink_UncontrollAttackScoreResult,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_UncontrollAttackTarget {
-        const NAME: &'static str = "AIThink.UncontrollAttackTarget";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_UncontrollAttackTarget {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodPositionResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_HealRodPositionResult {}
-
-    impl ::unity2::ClassIdentity for AIThink_HealRodPositionResult {
-        const NAME: &'static str = "AIThink.HealRodPositionResult";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_HealRodPositionResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EngageWaitAdditionalAttackImage.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.EngageWaitAdditionalAttackImage")]
-    # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u16 >)]
-    pub struct AIThink_EngageWaitAdditionalAttackImage {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_OverlapSkills.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_OverlapSkills {
-        pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
-        pub m_count: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_OverlapSkills {
-        const NAME: &'static str = "AIThink.OverlapSkills";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_OverlapSkills {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackPositionResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_AttackPositionResult {}
-
-    impl ::unity2::ClassIdentity for AIThink_AttackPositionResult {
-        const NAME: &'static str = "AIThink.AttackPositionResult";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_AttackPositionResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
+    pub struct AIThink_AcFunc {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EngageWaitResult.md"))]
     #[repr(C)]
@@ -658,16 +1205,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_ItemInfo.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackScoreResult.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_EnchantThink_ItemInfo {
-        pub item_index: u8,
-        pub kind: u8,
-    }
+    pub struct AIThink_AttackScoreResult {}
 
-    impl ::unity2::ClassIdentity for AIThink_EnchantThink_ItemInfo {
-        const NAME: &'static str = "AIThink.EnchantThink.ItemInfo";
+    impl ::unity2::ClassIdentity for AIThink_AttackScoreResult {
+        const NAME: &'static str = "AIThink.AttackScoreResult";
         const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
@@ -677,102 +1221,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for AIThink_EnchantThink_ItemInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodEvaluationResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_WarpRodEvaluationResult {}
-
-    impl ::unity2::ClassIdentity for AIThink_WarpRodEvaluationResult {
-        const NAME: &'static str = "AIThink.WarpRodEvaluationResult";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_WarpRodEvaluationResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AttackFlag.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.AttackFlag")]
-    #[parent(crate::app::bitfield32::BitField32)]
-    pub struct AIThink_AttackFlag {
-        #[static_field]
-        #[rename(name = "Side")]
-        pub side: i32,
-        #[static_field]
-        #[rename(name = "Nearest")]
-        pub nearest: i32,
-        #[static_field]
-        #[rename(name = "AheadIgnore")]
-        pub ahead_ignore: i32,
-        #[static_field]
-        #[rename(name = "__IgnoreSilent")]
-        pub ignore_silent: i32,
-        #[static_field]
-        #[rename(name = "__DestroyTargetCastleOffset")]
-        pub destroy_target_castle_offset: i32,
-        #[static_field]
-        #[rename(name = "ScoreExpectation")]
-        pub score_expectation: i32,
-        #[static_field]
-        #[rename(name = "InterferenceHighMagic")]
-        pub interference_high_magic: i32,
-        #[static_field]
-        #[rename(name = "InterferenceLowMagic")]
-        pub interference_low_magic: i32,
-        #[static_field]
-        #[rename(name = "Break")]
-        pub r#break: i32,
-        #[static_field]
-        #[rename(name = "Chain")]
-        pub chain: i32,
-        #[static_field]
-        #[rename(name = "MagicOnly")]
-        pub magic_only: i32,
-        #[static_field]
-        #[rename(name = "ChainAttackCount")]
-        pub chain_attack_count: i32,
-        #[static_field]
-        #[rename(name = "PierceMultiple")]
-        pub pierce_multiple: i32,
-        #[static_field]
-        #[rename(name = "InterferenceRange")]
-        pub interference_range: i32,
-        #[static_field]
-        #[rename(name = "EquipSkillMultiple")]
-        pub equip_skill_multiple: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackScoreResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_EntrustAttackScoreResult {}
-
-    impl ::unity2::ClassIdentity for AIThink_EntrustAttackScoreResult {
-        const NAME: &'static str = "AIThink.EntrustAttackScoreResult";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_EntrustAttackScoreResult {
+    impl ::unity2::IlType for AIThink_AttackScoreResult {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
@@ -871,420 +1320,6 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIThink {
-        #[static_field]
-        #[rename(name = "BlowScoreNone")]
-        pub blow_score_none: u32,
-        #[static_field]
-        #[rename(name = "BlowScoreWall")]
-        pub blow_score_wall: u32,
-        #[static_field]
-        #[rename(name = "BlowScoreBlew")]
-        pub blow_score_blew: u32,
-        #[static_field]
-        #[rename(name = "BlowScoreHole")]
-        pub blow_score_hole: u32,
-        #[static_field]
-        #[rename(name = "BlowScoreBit")]
-        pub blow_score_bit: i32,
-        #[static_field]
-        #[rename(name = "TerrainScoreBit")]
-        pub terrain_score_bit: i32,
-        #[static_field]
-        #[rename(name = "IceTileMoveMax")]
-        pub ice_tile_move_max: i32,
-        #[static_field]
-        #[rename(name = "EscortDistance")]
-        pub escort_distance: i32,
-        #[static_field]
-        #[rename(name = "EntrustAskHealA")]
-        pub entrust_ask_heal_a: i32,
-        #[static_field]
-        #[rename(name = "EntrustAskHealB")]
-        pub entrust_ask_heal_b: i32,
-        #[static_field]
-        #[rename(name = "AttackTargetMax")]
-        pub attack_target_max: u32,
-        #[static_field]
-        #[rename(name = "EngageHealTargetCountThreshold")]
-        pub engage_heal_target_count_threshold: i32,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_Think")]
-        pub m_think: crate::app::aithink::AIThink_Think,
-        #[rename(name = "m_Order")]
-        pub m_order: crate::app::aivalue::AIValue_Order,
-        #[rename(name = "m_UpdateFlag")]
-        pub m_update_flag: crate::app::aithink::AIThink_UpdateFlag,
-        #[rename(name = "m_UpdateActive")]
-        pub m_update_active: i32,
-        #[rename(name = "m_aUpdateValue")]
-        pub m_a_update_value: ::unity2::Array<crate::app::aivalue::AIValue>,
-        #[rename(name = "m_Caution")]
-        pub m_caution: crate::app::mapimagecorebyte::MapImageCoreByte,
-        #[rename(name = "m_Rerewarp")]
-        pub m_rerewarp: crate::app::mapimagecorebyte::MapImageCoreByte,
-        #[rename(name = "m_aAttackTargetForCandidate")]
-        pub m_a_attack_target_for_candidate: ::unity2::Array<u8>,
-        #[rename(name = "m_aAttackTargetForMind")]
-        pub m_a_attack_target_for_mind: ::unity2::Array<u8>,
-        #[rename(name = "m_ProhibitEngageAttack")]
-        pub m_prohibit_engage_attack: i32,
-        #[rename(name = "m_ProhibitRod")]
-        pub m_prohibit_rod: i32,
-        #[rename(name = "m_ProhibitOverlap")]
-        pub m_prohibit_overlap: i32,
-        #[rename(name = "m_IsEngageAttackOnceDone")]
-        pub m_is_engage_attack_once_done: bool,
-        #[rename(name = "m_IsMagicShieldOnceDone")]
-        pub m_is_magic_shield_once_done: bool,
-        #[rename(name = "m_IsEnchantWeaponDone")]
-        pub m_is_enchant_weapon_done: bool,
-        #[rename(name = "m_BulletPattern")]
-        pub m_bullet_pattern: i32,
-        #[rename(name = "m_IsChangeATAttack")]
-        pub m_is_change_at_attack: bool,
-        #[rename(name = "m_Cells")]
-        pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
-        #[rename(name = "m_OverlapSkills")]
-        pub m_overlap_skills: crate::app::aithink::AIThink_OverlapSkills,
-        #[rename(name = "m_TrimasteriesSkills")]
-        pub m_trimasteries_skills: crate::app::aithink::AIThink_TrimasteriesSkills,
-        #[rename(name = "m_BattleSimulator")]
-        pub m_battle_simulator: crate::app::aibattlesimulator::AIBattleSimulator,
-        #[rename(name = "m_BattleSimulatorForScore")]
-        pub m_battle_simulator_for_score: crate::app::aibattlesimulator::AIBattleSimulator,
-        #[rename(name = "m_InterferenceSimulator")]
-        pub m_interference_simulator: crate::app::aiinterferencesimulator::AIInterferenceSimulator,
-        #[rename(name = "m_NearTargetsCSO")]
-        pub m_near_targets_cso: ::unity2::Array<crate::app::unit::Unit>,
-        #[rename(name = "m_TargetDistsCSO")]
-        pub m_target_dists_cso: ::unity2::Array<i32>,
-        #[rename(name = "m_UnitScores")]
-        pub m_unit_scores: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u32>,
-        #[static_field]
-        #[rename(name = "s_CellsGAP")]
-        pub s_cells_gap: ::unity2::Array<crate::app::mappos::MapPos>,
-        #[static_field]
-        #[rename(name = "s_BattleInfoGAP")]
-        pub s_battle_info_gap: crate::app::battleinfo::BattleInfo,
-        #[static_field]
-        #[rename(name = "s_UnitItemGAR")]
-        pub s_unit_item_gar: crate::app::unititem::UnitItem,
-        #[rename(name = "m_EngageWaitAdditionalAttackImage")]
-        pub m_engage_wait_additional_attack_image: crate::app::aithink::AIThink_EngageWaitAdditionalAttackImage,
-        #[rename(name = "m_HolyShield")]
-        pub m_holy_shield: crate::app::mapimagecorebyte::MapImageCoreByte,
-        #[rename(name = "m_EnchantThink")]
-        pub m_enchant_think: crate::app::aithink::AIThink_EnchantThink,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackTarget.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_AttackTarget {
-        pub as_result: crate::app::aithink::AIThink_AttackScoreResult,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_AttackTarget {
-        const NAME: &'static str = "AIThink.AttackTarget";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_AttackTarget {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_SurroundingInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_EnchantThink_SurroundingInfo {
-        pub m_value: u32,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_EnchantThink_SurroundingInfo {
-        const NAME: &'static str = "AIThink.EnchantThink.SurroundingInfo";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_EnchantThink_SurroundingInfo {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackTarget.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_EntrustAttackTarget {
-        pub eas_result: crate::app::aithink::AIThink_EntrustAttackScoreResult,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_EntrustAttackTarget {
-        const NAME: &'static str = "AIThink.EntrustAttackTarget";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_EntrustAttackTarget {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_ActionFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.ActionFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AIThink_ActionFunc {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_MoveFlag.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.MoveFlag")]
-    #[parent(crate::app::bitfield32::BitField32)]
-    pub struct AIThink_MoveFlag {
-        #[static_field]
-        #[rename(name = "Through")]
-        pub through: i32,
-        #[static_field]
-        #[rename(name = "Break")]
-        pub r#break: i32,
-        #[static_field]
-        #[rename(name = "Back")]
-        pub back: i32,
-        #[static_field]
-        #[rename(name = "Slow")]
-        pub slow: i32,
-        #[static_field]
-        #[rename(name = "Door")]
-        pub door: i32,
-        #[static_field]
-        #[rename(name = "Ignore")]
-        pub ignore: i32,
-        #[static_field]
-        #[rename(name = "IgnoreIceTile")]
-        pub ignore_ice_tile: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Command.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AIThink_Command {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_Command {
-        const NAME: &'static str = "AIThink.Command";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_Command {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl AIThink_Command {
-        pub fn every_time() -> Self {
-            Self { value: -1 }
-        }
-
-        pub fn non_actiive() -> Self {
-            Self { value: -2 }
-        }
-
-        pub fn active() -> Self {
-            Self { value: 0 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodTarget.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_RescueRodTarget {
-        pub rrs_result: crate::app::aithink::AIThink_RescueRodScoreResult,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_RescueRodTarget {
-        const NAME: &'static str = "AIThink.RescueRodTarget";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_RescueRodTarget {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills_Kinds.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct AIThink_TrimasteriesSkills_Kinds {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills_Kinds {
-        const NAME: &'static str = "AIThink.TrimasteriesSkills.Kinds";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_TrimasteriesSkills_Kinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl AIThink_TrimasteriesSkills_Kinds {
-        pub fn unknown() -> Self {
-            Self { value: -1 }
-        }
-
-        pub fn mad_storm() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn miserable() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn falling_stars() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn max() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_UpdateFlag.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.UpdateFlag")]
-    #[parent(crate::app::bitfield32::BitField32)]
-    pub struct AIThink_UpdateFlag {
-        #[static_field]
-        #[rename(name = "Active")]
-        pub active: i32,
-        #[static_field]
-        #[rename(name = "Value0")]
-        pub value0: i32,
-        #[static_field]
-        #[rename(name = "Value1")]
-        pub value1: i32,
-        #[static_field]
-        #[rename(name = "Value2")]
-        pub value2: i32,
-        #[static_field]
-        #[rename(name = "Value3")]
-        pub value3: i32,
-        #[static_field]
-        #[rename(name = "Retry")]
-        pub retry: i32,
-        #[static_field]
-        #[rename(name = "MaskUpdate")]
-        pub mask_update: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackScoreResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_UncontrollAttackScoreResult {}
-
-    impl ::unity2::ClassIdentity for AIThink_UncontrollAttackScoreResult {
-        const NAME: &'static str = "AIThink.UncontrollAttackScoreResult";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_UncontrollAttackScoreResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodScoreResult.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIThink_RescueRodScoreResult {}
-
-    impl ::unity2::ClassIdentity for AIThink_RescueRodScoreResult {
-        const NAME: &'static str = "AIThink.RescueRodScoreResult";
-        const NAMESPACE: &'static str = "App";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIThink_RescueRodScoreResult {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink.md"))]
-    #[::unity2::class(namespace = "App", name = "AIThink.EnchantThink")]
-    #[parent(crate::system::object::Object)]
-    pub struct AIThink_EnchantThink {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_ItemInfos")]
-        pub m_item_infos: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_ItemInfo>,
-        #[rename(name = "m_ItemInfoCount")]
-        pub m_item_info_count: i32,
-        #[rename(name = "m_UnitScores")]
-        pub m_unit_scores: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u8>,
-        #[rename(name = "m_UnitSurroundings")]
-        pub m_unit_surroundings:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::app::aithink::AIThink_EnchantThink_SurroundingInfo>,
-        #[static_field]
-        #[rename(name = "Descs")]
-        pub descs: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_Desc>,
-    }
 }
 
 #[cfg(feature = "app-aithink-types")]
@@ -1293,17 +1328,17 @@ pub use __types::*;
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_AttackScoreResult_unity2_raw {
+mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
+    pub mod __lookup_get_morph_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Score",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "get_MorphCount",
                 0,
                 param_types,
                 false,
@@ -1315,94 +1350,28 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Score",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_MorphCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_score(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+    pub unsafe fn get_morph_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_morph_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_Score",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_score(this: AIThink_AttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
+    pub mod __lookup_set_morph_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "set_MorphCount",
                 1,
                 param_types,
                 false,
@@ -1414,28 +1383,28 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveX",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_MorphCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_move_x(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
+    pub unsafe fn set_morph_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_morph_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
+    pub mod __lookup_get_physical_attack_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "get_PhysicalAttackCount",
                 0,
                 param_types,
                 false,
@@ -1447,28 +1416,28 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_PhysicalAttackCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_move_z(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+    pub unsafe fn get_physical_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_physical_attack_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
+    pub mod __lookup_set_physical_attack_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "set_PhysicalAttackCount",
                 1,
                 param_types,
                 false,
@@ -1480,28 +1449,32 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveZ",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_PhysicalAttackCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_move_z(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+    pub unsafe fn set_physical_attack_count(
+        this: AIThink_EnchantThink_SurroundingInfo,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_physical_attack_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
+    pub mod __lookup_get_magic_attack_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "get_MagicAttackCount",
                 0,
                 param_types,
                 false,
@@ -1513,28 +1486,28 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_MagicAttackCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_attack_x(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+    pub unsafe fn get_magic_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_magic_attack_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
+    pub mod __lookup_set_magic_attack_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "set_MagicAttackCount",
                 1,
                 param_types,
                 false,
@@ -1546,28 +1519,32 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackX",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_MagicAttackCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_attack_x(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+    pub unsafe fn set_magic_attack_count(
+        this: AIThink_EnchantThink_SurroundingInfo,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_magic_attack_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
+    pub mod __lookup_get_attack_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "get_AttackCount",
                 0,
                 param_types,
                 false,
@@ -1579,381 +1556,18 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_attack_z(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+    pub unsafe fn get_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_z(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_ItemIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_ItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_index(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_ItemIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_ItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item_index(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kill_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_KillRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_KillRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kill_rate(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_kill_rate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_kill_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_KillRate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_KillRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_kill_rate(this: AIThink_AttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_kill_rate::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dead_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_DeadRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_DeadRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dead_rate(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_dead_rate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dead_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_DeadRate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_DeadRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dead_rate(this: AIThink_AttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dead_rate::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_expectation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Expectation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Expectation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_expectation(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_expectation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_expectation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_Expectation",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_Expectation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_expectation(this: AIThink_AttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_expectation::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blow_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_BlowScore",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_BlowScore",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blow_score(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_blow_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_blow_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_BlowScore",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_BlowScore",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_blow_score(this: AIThink_AttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_blow_score::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1962,7 +1576,7 @@ mod __AIThink_AttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
                 "get_ChainAttackCount",
                 0,
                 param_types,
@@ -1975,7 +1589,7 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
                         "get_ChainAttackCount",
                         e
                     )
@@ -1983,8 +1597,8 @@ mod __AIThink_AttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_chain_attack_count(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_chain_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_chain_attack_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -1995,7 +1609,7 @@ mod __AIThink_AttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
                 "set_ChainAttackCount",
                 1,
                 param_types,
@@ -2008,7 +1622,7 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
                         "set_ChainAttackCount",
                         e
                     )
@@ -2016,20 +1630,24 @@ mod __AIThink_AttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn set_chain_attack_count(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn set_chain_attack_count(
+        this: AIThink_EnchantThink_SurroundingInfo,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_set_chain_attack_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_clear {
+    pub mod __lookup_get_break_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "get_BreakCount",
                 0,
                 param_types,
                 false,
@@ -2041,649 +1659,403 @@ mod __AIThink_AttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_BreakCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn clear(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+    pub unsafe fn get_break_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_break_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_break_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "set_BreakCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_BreakCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_break_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_break_count::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_silence_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "get_SilenceCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_SilenceCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_silence_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_silence_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_silence_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "set_SilenceCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_SilenceCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_silence_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_silence_count::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_freeze_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "get_FreezeCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_FreezeCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_freeze_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_freeze_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_freeze_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "set_FreezeCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_FreezeCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_freeze_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_freeze_count::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "Get",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get(this: AIThink_EnchantThink_SurroundingInfo, mask: u32, shift: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, u32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
+        inner(this, mask, shift, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
+                "Set",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set(
+        this: AIThink_EnchantThink_SurroundingInfo,
+        mask: u32,
+        shift: i32,
+        v: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, u32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
+        inner(this, mask, shift, v, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_AttackScoreResult {
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
+impl AIThink_EnchantThink_SurroundingInfo {
+    #[doc = "`get_MorphCount()` overload"]
+    pub fn get_morph_count(self) -> i32 {
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_morph_count(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`set_Score(u32)` overload"]
-    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    #[doc = "`set_MorphCount(i32)` overload"]
+    pub fn set_morph_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_morph_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
     }
 
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    #[doc = "`get_PhysicalAttackCount()` overload"]
+    pub fn get_physical_attack_count(self) -> i32 {
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_physical_attack_count(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    #[doc = "`set_PhysicalAttackCount(i32)` overload"]
+    pub fn set_physical_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_physical_attack_count(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
     }
 
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    #[doc = "`get_MagicAttackCount()` overload"]
+    pub fn get_magic_attack_count(self) -> i32 {
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_magic_attack_count(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    #[doc = "`set_MagicAttackCount(i32)` overload"]
+    pub fn set_magic_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_magic_attack_count(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
     }
 
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ItemIndex()` overload"]
-    pub fn get_item_index(self) -> i32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_item_index(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ItemIndex(i32)` overload"]
-    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_item_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_KillRate()` overload"]
-    pub fn get_kill_rate(self) -> f32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_kill_rate(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_KillRate(f32)` overload"]
-    pub fn set_kill_rate(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_kill_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_DeadRate()` overload"]
-    pub fn get_dead_rate(self) -> f32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_dead_rate(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_DeadRate(f32)` overload"]
-    pub fn set_dead_rate(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_dead_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Expectation()` overload"]
-    pub fn get_expectation(self) -> f32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_expectation(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Expectation(f32)` overload"]
-    pub fn set_expectation(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_expectation(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_BlowScore()` overload"]
-    pub fn get_blow_score(self) -> u32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_blow_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_BlowScore(u32)` overload"]
-    pub fn set_blow_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_blow_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    #[doc = "`get_AttackCount()` overload"]
+    pub fn get_attack_count(self) -> i32 {
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_attack_count(self, ::core::option::Option::None) }
     }
 
     #[doc = "`get_ChainAttackCount()` overload"]
     pub fn get_chain_attack_count(self) -> i32 {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
     }
 
     #[doc = "`set_ChainAttackCount(i32)` overload"]
     pub fn set_chain_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            __AIThink_AttackScoreResult_unity2_raw::set_chain_attack_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_chain_attack_count(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
         }
     }
 
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_AttackScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    #[doc = "`get_BreakCount()` overload"]
+    pub fn get_break_count(self) -> i32 {
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_break_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_BreakCount(i32)` overload"]
+    pub fn set_break_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_break_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_SilenceCount()` overload"]
+    pub fn get_silence_count(self) -> i32 {
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_silence_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_SilenceCount(i32)` overload"]
+    pub fn set_silence_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_silence_count(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`get_FreezeCount()` overload"]
+    pub fn get_freeze_count(self) -> i32 {
+        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_freeze_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_FreezeCount(i32)` overload"]
+    pub fn set_freeze_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_freeze_count(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Get(u32, i32)` overload"]
+    pub fn get(self, mask: impl ::core::convert::Into<u32>, shift: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get(
+                self,
+                ::core::convert::Into::into(mask),
+                ::core::convert::Into::into(shift),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Set(u32, i32, i32)` overload"]
+    pub fn set(self, mask: impl ::core::convert::Into<u32>, shift: impl ::core::convert::Into<i32>, v: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set(
+                self,
+                ::core::convert::Into::into(mask),
+                ::core::convert::Into::into(shift),
+                ::core::convert::Into::into(v),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_HealRodScoreImplResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_x(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_z(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_x(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_z(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "get_Heal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Heal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_heal(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_heal::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "set_Heal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "set_Heal",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_heal(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_heal::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "get_Damage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Damage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_damage(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_damage::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "set_Damage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "set_Damage",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_damage(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_damage::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_HealRodScoreImplResult {
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Heal()` overload"]
-    pub fn get_heal(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_heal(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Heal(i32)` overload"]
-    pub fn set_heal(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_heal(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Damage()` overload"]
-    pub fn get_damage(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_damage(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Damage(i32)` overload"]
-    pub fn set_damage(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_damage(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_WarpRodTarget_unity2_raw {
+mod __AIThink_UncontrollAttackTarget_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2692,7 +2064,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "get_Unit",
                 0,
                 param_types,
@@ -2705,7 +2077,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "get_Unit",
                         e
                     )
@@ -2713,8 +2085,8 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_unit(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+    pub unsafe fn get_unit(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
             ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -2725,7 +2097,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "set_Unit",
                 1,
                 param_types,
@@ -2738,7 +2110,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "set_Unit",
                         e
                     )
@@ -2746,9 +2118,145 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn set_unit(this: AIThink_WarpRodTarget, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn set_unit(
+        this: AIThink_UncontrollAttackTarget,
+        value: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_X",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_X",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_x(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
+                "set_X",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_X",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_x(this: AIThink_UncontrollAttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_Z",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Z",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_z(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
+                "set_Z",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_Z",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_z(this: AIThink_UncontrollAttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -2758,7 +2266,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "get_Score",
                 0,
                 param_types,
@@ -2771,7 +2279,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "get_Score",
                         e
                     )
@@ -2779,43 +2287,10 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_score(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> u32 =
+    pub unsafe fn get_score(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> u32 =
             ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
-                "set_Score",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_score(this: AIThink_WarpRodTarget, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2824,7 +2299,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "get_MoveX",
                 0,
                 param_types,
@@ -2837,7 +2312,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "get_MoveX",
                         e
                     )
@@ -2845,8 +2320,8 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_move_x(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_move_x(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -2857,7 +2332,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "get_MoveZ",
                 0,
                 param_types,
@@ -2870,7 +2345,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "get_MoveZ",
                         e
                     )
@@ -2878,8 +2353,8 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_move_z(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_move_z(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -2890,7 +2365,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "get_AttackX",
                 0,
                 param_types,
@@ -2903,7 +2378,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "get_AttackX",
                         e
                     )
@@ -2911,8 +2386,8 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_attack_x(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_attack_x(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -2923,7 +2398,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "get_AttackZ",
                 0,
                 param_types,
@@ -2936,7 +2411,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "get_AttackZ",
                         e
                     )
@@ -2944,75 +2419,9 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_attack_z(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_attack_z(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_warp_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_WarpX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_WarpX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_warp_x(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_warp_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_warp_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_WarpZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_WarpZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_warp_z(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_warp_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -3022,7 +2431,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "Clear",
                 0,
                 param_types,
@@ -3035,7 +2444,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "Clear",
                         e
                     )
@@ -3043,8 +2452,8 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn clear(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn clear(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -3054,9 +2463,9 @@ mod __AIThink_WarpRodTarget_unity2_raw {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aithink::AIThink_WarpRodTarget as ::unity2::IlType>::il_type()];
+                &[<crate::app::aithink::AIThink_UncontrollAttackTarget as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
                 "New",
                 1,
                 param_types,
@@ -3069,7 +2478,7 @@ mod __AIThink_WarpRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
                         "New",
                         e
                     )
@@ -3077,80 +2486,85 @@ mod __AIThink_WarpRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
         inner(inst, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_WarpRodTarget {
-    #[doc = "`New(*mutcrate::app::aithink::AIThink_WarpRodTarget)` overload"]
-    pub fn new() -> crate::app::aithink::AIThink_WarpRodTarget {
+impl AIThink_UncontrollAttackTarget {
+    #[doc = "`New(*mutcrate::app::aithink::AIThink_UncontrollAttackTarget)` overload"]
+    pub fn new() -> crate::app::aithink::AIThink_UncontrollAttackTarget {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_WarpRodTarget>::uninit();
-            __AIThink_WarpRodTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_UncontrollAttackTarget>::uninit();
+            __AIThink_UncontrollAttackTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_WarpRodTarget {
+impl AIThink_UncontrollAttackTarget {
     #[doc = "`get_Unit()` overload"]
     pub fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
     }
 
     #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
     pub fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_X()` overload"]
+    pub fn get_x(self) -> i32 {
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_X(i32)` overload"]
+    pub fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::set_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Z()` overload"]
+    pub fn get_z(self) -> i32 {
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Z(i32)` overload"]
+    pub fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::set_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_Score()` overload"]
     pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Score(u32)` overload"]
-    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
     }
 
     #[doc = "`get_MoveX()` overload"]
     pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
     }
 
     #[doc = "`get_MoveZ()` overload"]
     pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
     }
 
     #[doc = "`get_AttackX()` overload"]
     pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
     }
 
     #[doc = "`get_AttackZ()` overload"]
     pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_WarpX()` overload"]
-    pub fn get_warp_x(self) -> i32 {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_warp_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_WarpZ()` overload"]
-    pub fn get_warp_z(self) -> i32 {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_warp_z(self, ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
     }
 
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
-        unsafe { __AIThink_WarpRodTarget_unity2_raw::clear(self, ::core::option::Option::None) }
+        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
@@ -3274,702 +2688,8 @@ impl AIThink_EngageWaitRangeScore {
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_TrimasteriesSkills_unity2_raw {
+mod __AIThink_AttackPositionResult_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
-                "Prepare",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
-                        "Prepare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn prepare(this: AIThink_TrimasteriesSkills, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_TrimasteriesSkills, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_prepare::get_method_info().method_ptr);
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(
-        this: AIThink_TrimasteriesSkills,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_TrimasteriesSkills, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: AIThink_TrimasteriesSkills, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mad_storm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
-                "get_MadStorm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
-                        "get_MadStorm",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_mad_storm(
-        this: AIThink_TrimasteriesSkills,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
-            ::core::mem::transmute(__lookup_get_mad_storm::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_miserable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
-                "get_Miserable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
-                        "get_Miserable",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_miserable(
-        this: AIThink_TrimasteriesSkills,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
-            ::core::mem::transmute(__lookup_get_miserable::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_falling_stars {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
-                "get_FallingStars",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
-                        "get_FallingStars",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_falling_stars(
-        this: AIThink_TrimasteriesSkills,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
-            ::core::mem::transmute(__lookup_get_falling_stars::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
-                "GetKind",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
-                        "GetKind",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kind(
-        this: AIThink_TrimasteriesSkills,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds {
-        let inner: extern "C" fn(
-            AIThink_TrimasteriesSkills,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds = ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
-        inner(this, skill, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_TrimasteriesSkills {
-    #[doc = "`Prepare(crate::app::unit::Unit)` overload"]
-    pub fn prepare(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::prepare(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
-    pub fn add(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
-        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::add(self, ::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Count()` overload"]
-    pub fn get_count(self) -> i32 {
-        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MadStorm()` overload"]
-    pub fn get_mad_storm(self) -> crate::app::skilldata::SkillData {
-        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_mad_storm(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Miserable()` overload"]
-    pub fn get_miserable(self) -> crate::app::skilldata::SkillData {
-        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_miserable(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_FallingStars()` overload"]
-    pub fn get_falling_stars(self) -> crate::app::skilldata::SkillData {
-        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_falling_stars(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetKind(crate::app::skilldata::SkillData)` overload"]
-    pub fn get_kind(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds {
-        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_kind(self, ::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_EnchantThink_DMPTResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_DMPTResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_DMPTResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_EnchantThink_DMPTResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_DMPTResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EnchantThink_DMPTResult {
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_EnchantThink_DMPTResult_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_AcFunc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AcFunc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AcFunc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AIThink_AcFunc,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_AcFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
-                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AcFunc as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AcFunc as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AIThink_AcFunc,
-        command: i32,
-        v0: crate::app::aivalue::AIValue,
-        v1: crate::app::aivalue::AIValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AIThink_AcFunc, i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, command, v0, v1, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-pub trait IAIThink_AcFuncMethods: IAIThink_AcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <AIThink_AcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIThink_AcFunc_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
-    fn invoke(
-        self,
-        command: impl ::core::convert::Into<i32>,
-        v0: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
-        v1: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <AIThink_AcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIThink_AcFunc_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(command),
-                ::core::convert::Into::into(v0),
-                ::core::convert::Into::into(v1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl<__T: IAIThink_AcFunc> IAIThink_AcFuncMethods for __T {}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_AcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_AcFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_AcFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_EnchantThink_Desc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_Desc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_Desc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AIThink_EnchantThink_Desc,
-        priority: i32,
-        calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIThink_EnchantThink_Desc,
-            i32,
-            crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, priority, calc_unit_score, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EnchantThink_Desc {
-    #[doc = "`.ctor(i32, crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)` overload"]
-    pub fn ctor(
-        self,
-        priority: impl ::core::convert::Into<i32>,
-        calc_unit_score: impl ::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction>,
-    ) -> () {
-        unsafe {
-            __AIThink_EnchantThink_Desc_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(priority),
-                ::core::convert::Into::into(calc_unit_score),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_HealRodScoreResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_score(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_Score",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_score(this: AIThink_HealRodScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_ItemIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_ItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_index(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_ItemIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_ItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item_index(this: AIThink_HealRodScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_move_x {
@@ -3977,7 +2697,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
                 "get_MoveX",
                 0,
                 param_types,
@@ -3990,7 +2710,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
                         "get_MoveX",
                         e
                     )
@@ -3998,10 +2718,43 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_move_x(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_move_x(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_x(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4010,7 +2763,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
                 "get_MoveZ",
                 0,
                 param_types,
@@ -4023,7 +2776,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
                         "get_MoveZ",
                         e
                     )
@@ -4031,10 +2784,43 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_move_z(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_move_z(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_z(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4043,7 +2829,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
                 "get_AttackX",
                 0,
                 param_types,
@@ -4056,7 +2842,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
                         "get_AttackX",
                         e
                     )
@@ -4064,10 +2850,43 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_attack_x(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_attack_x(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_x(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4076,7 +2895,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
                 "get_AttackZ",
                 0,
                 param_types,
@@ -4089,7 +2908,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
                         "get_AttackZ",
                         e
                     )
@@ -4097,20 +2916,53 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_attack_z(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_attack_z(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_heal {
+    pub mod __lookup_set_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_z(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blow_score {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Heal",
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "get_BlowScore",
                 0,
                 param_types,
                 false,
@@ -4122,28 +2974,61 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Heal",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "get_BlowScore",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_heal(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_heal::get_method_info().method_ptr);
+    pub unsafe fn get_blow_score(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_blow_score::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_damage {
+    pub mod __lookup_set_blow_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_BlowScore",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_BlowScore",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_blow_score(this: AIThink_AttackPositionResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_blow_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chain_attack_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Damage",
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "get_ChainAttackCount",
                 0,
                 param_types,
                 false,
@@ -4155,18 +3040,51 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Damage",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "get_ChainAttackCount",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_damage(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_damage::get_method_info().method_ptr);
+    pub unsafe fn get_chain_attack_count(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_chain_attack_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chain_attack_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_ChainAttackCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_ChainAttackCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_chain_attack_count(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_chain_attack_count::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4175,7 +3093,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
                 "Clear",
                 0,
                 param_types,
@@ -4188,7 +3106,7 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
                         "Clear",
                         e
                     )
@@ -4196,68 +3114,516 @@ mod __AIThink_HealRodScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn clear(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn clear(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_HealRodScoreResult {
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Score(u32)` overload"]
-    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ItemIndex()` overload"]
-    pub fn get_item_index(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_item_index(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ItemIndex(i32)` overload"]
-    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::set_item_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
+impl AIThink_AttackPositionResult {
     #[doc = "`get_MoveX()` overload"]
     pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_MoveZ()` overload"]
     pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_AttackX()` overload"]
     pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_AttackZ()` overload"]
     pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
     }
 
-    #[doc = "`get_Heal()` overload"]
-    pub fn get_heal(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_heal(self, ::core::option::Option::None) }
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
-    #[doc = "`get_Damage()` overload"]
-    pub fn get_damage(self) -> i32 {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_damage(self, ::core::option::Option::None) }
+    #[doc = "`get_BlowScore()` overload"]
+    pub fn get_blow_score(self) -> u32 {
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_blow_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_BlowScore(u32)` overload"]
+    pub fn set_blow_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_blow_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_ChainAttackCount()` overload"]
+    pub fn get_chain_attack_count(self) -> i32 {
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_ChainAttackCount(i32)` overload"]
+    pub fn set_chain_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_AttackPositionResult_unity2_raw::set_chain_attack_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
     }
 
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
-        unsafe { __AIThink_HealRodScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
+        unsafe { __AIThink_AttackPositionResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_Score",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_score(this: AIThink_UncontrollAttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_x(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_z(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_x(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_z(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_UncontrollAttackScoreResult {
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Score(u32)` overload"]
+    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
@@ -4814,656 +4180,6 @@ impl AIThink_InterferenceTarget {
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_InterferenceScoreResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_score(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_Score",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_score(this: AIThink_InterferenceScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_x(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_z(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_x(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_z(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_ItemIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_ItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_index(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_ItemIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_ItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_item_index(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_InterferenceScoreResult {
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Score(u32)` overload"]
-    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ItemIndex()` overload"]
-    pub fn get_item_index(self) -> i32 {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_item_index(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ItemIndex(i32)` overload"]
-    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_InterferenceScoreResult_unity2_raw::set_item_index(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_RcFunc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RcFunc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RcFunc as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AIThink_RcFunc,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_RcFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
-                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RcFunc as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RcFunc as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: AIThink_RcFunc,
-        command: i32,
-        v0: crate::app::aivalue::AIValue,
-        v1: crate::app::aivalue::AIValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AIThink_RcFunc, i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, command, v0, v1, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-pub trait IAIThink_RcFuncMethods: IAIThink_RcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <AIThink_RcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIThink_RcFunc_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
-    fn invoke(
-        self,
-        command: impl ::core::convert::Into<i32>,
-        v0: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
-        v1: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <AIThink_RcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIThink_RcFunc_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(command),
-                ::core::convert::Into::into(v0),
-                ::core::convert::Into::into(v1),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl<__T: IAIThink_RcFunc> IAIThink_RcFuncMethods for __T {}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_RcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_RcFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_RcFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AIThink_EnchantThink_CalcUnitScoreFunction_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -5620,3378 +4336,6 @@ impl AIThink_EnchantThink_CalcUnitScoreFunction {
         });
         <Self as IAIThink_EnchantThink_CalcUnitScoreFunctionMethods>::ctor(this, object, method);
         this
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_UncontrollAttackTarget_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_Unit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "set_Unit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit(
-        this: AIThink_UncontrollAttackTarget,
-        value: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_X",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_X",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_x(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "set_X",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_X",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_x(this: AIThink_UncontrollAttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_Z",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Z",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_z(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "set_Z",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_Z",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_z(this: AIThink_UncontrollAttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_score(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_new {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aithink::AIThink_UncontrollAttackTarget as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::class(),
-                "New",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "New",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_UncontrollAttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_UncontrollAttackTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
-        inner(inst, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_UncontrollAttackTarget {
-    #[doc = "`New(*mutcrate::app::aithink::AIThink_UncontrollAttackTarget)` overload"]
-    pub fn new() -> crate::app::aithink::AIThink_UncontrollAttackTarget {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_UncontrollAttackTarget>::uninit();
-            __AIThink_UncontrollAttackTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_UncontrollAttackTarget {
-    #[doc = "`get_Unit()` overload"]
-    pub fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    pub fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_X()` overload"]
-    pub fn get_x(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_X(i32)` overload"]
-    pub fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::set_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Z()` overload"]
-    pub fn get_z(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Z(i32)` overload"]
-    pub fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::set_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_UncontrollAttackTarget_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_HealRodPositionResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_x(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_z(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_x(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_z(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_HealRodPositionResult {
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_HealRodPositionResult_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_EngageWaitAdditionalAttackImage_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: AIThink_EngageWaitAdditionalAttackImage, index: i32, v: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, index, v, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_inc_range1 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
-                "IncRange1",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
-                        "IncRange1",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn inc_range1(this: AIThink_EngageWaitAdditionalAttackImage, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_inc_range1::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_inc_range2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
-                "IncRange2",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
-                        "IncRange2",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn inc_range2(this: AIThink_EngageWaitAdditionalAttackImage, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_inc_range2::get_method_info().method_ptr);
-        inner(this, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_range12 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <u8 as ::unity2::IlType>::il_type(),
-                <u8 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
-                "SetRange12",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
-                        "SetRange12",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_range12(
-        this: AIThink_EngageWaitAdditionalAttackImage,
-        x: i32,
-        z: i32,
-        range1: u8,
-        range2: u8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, u8, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_range12::get_method_info().method_ptr);
-        inner(this, x, z, range1, range2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_range12 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <u8 as ::unity2::IlType>::il_type(),
-                <u8 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
-                "GetRange12",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
-                        "GetRange12",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_range12(
-        this: AIThink_EngageWaitAdditionalAttackImage,
-        x: i32,
-        z: i32,
-        range1: *mut u8,
-        range2: *mut u8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, *mut u8, *mut u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_get_range12::get_method_info().method_ptr);
-        inner(this, x, z, range1, range2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AIThink_EngageWaitAdditionalAttackImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-pub trait IAIThink_EngageWaitAdditionalAttackImageMethods: IAIThink_EngageWaitAdditionalAttackImage {
-    #[doc = "`Add(i32, u16)` overload"]
-    fn add(self, index: impl ::core::convert::Into<i32>, v: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IncRange1(i32, i32)` overload"]
-    fn inc_range1(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::inc_range1(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IncRange2(i32, i32)` overload"]
-    fn inc_range2(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::inc_range2(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetRange12(i32, i32, u8, u8)` overload"]
-    fn set_range12(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        range1: impl ::core::convert::Into<u8>,
-        range2: impl ::core::convert::Into<u8>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::set_range12(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(range1),
-                ::core::convert::Into::into(range2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRange12(i32, i32, *mutu8, *mutu8)` overload"]
-    fn get_range12(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> (u8, u8) {
-        unsafe {
-            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<u8>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<u8>::uninit();
-            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::get_range12(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl<__T: IAIThink_EngageWaitAdditionalAttackImage> IAIThink_EngageWaitAdditionalAttackImageMethods for __T {}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EngageWaitAdditionalAttackImage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_EngageWaitAdditionalAttackImage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_EngageWaitAdditionalAttackImageMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_OverlapSkills_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
-                "Prepare",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
-                        "Prepare",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn prepare(this: AIThink_OverlapSkills, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_OverlapSkills, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_prepare::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
-                        "Add",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn add(this: AIThink_OverlapSkills, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_OverlapSkills, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
-        inner(this, skill, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_by_random {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
-                "GetByRandom",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
-                        "GetByRandom",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_by_random(this: AIThink_OverlapSkills, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(AIThink_OverlapSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
-            ::core::mem::transmute(__lookup_get_by_random::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
-                        "get_Count",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_count(this: AIThink_OverlapSkills, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_OverlapSkills, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_OverlapSkills {
-    #[doc = "`Prepare()` overload"]
-    pub fn prepare(self) -> () {
-        unsafe { __AIThink_OverlapSkills_unity2_raw::prepare(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
-    pub fn add(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
-        unsafe { __AIThink_OverlapSkills_unity2_raw::add(self, ::core::convert::Into::into(skill), ::core::option::Option::None) }
-    }
-
-    #[doc = "`GetByRandom()` overload"]
-    pub fn get_by_random(self) -> crate::app::skilldata::SkillData {
-        unsafe { __AIThink_OverlapSkills_unity2_raw::get_by_random(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Count()` overload"]
-    pub fn get_count(self) -> i32 {
-        unsafe { __AIThink_OverlapSkills_unity2_raw::get_count(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_AttackPositionResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_x(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_z(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_x(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_z(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blow_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_BlowScore",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_BlowScore",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blow_score(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_blow_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_blow_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_BlowScore",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_BlowScore",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_blow_score(this: AIThink_AttackPositionResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_blow_score::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_chain_attack_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "get_ChainAttackCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "get_ChainAttackCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_chain_attack_count(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_chain_attack_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_chain_attack_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "set_ChainAttackCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "set_ChainAttackCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_chain_attack_count(this: AIThink_AttackPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_chain_attack_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackPositionResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_AttackPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackPositionResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_AttackPositionResult {
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_BlowScore()` overload"]
-    pub fn get_blow_score(self) -> u32 {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_blow_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_BlowScore(u32)` overload"]
-    pub fn set_blow_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::set_blow_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ChainAttackCount()` overload"]
-    pub fn get_chain_attack_count(self) -> i32 {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ChainAttackCount(i32)` overload"]
-    pub fn set_chain_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_AttackPositionResult_unity2_raw::set_chain_attack_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_AttackPositionResult_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_EngageWaitResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_and_swap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::class(),
-                "CompareAndSwap",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::NAME,
-                        "CompareAndSwap",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare_and_swap(
-        this: AIThink_EngageWaitResult,
-        temp_score: u32,
-        temp_x: i32,
-        temp_z: i32,
-        temp_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_EngageWaitResult, u32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_compare_and_swap::get_method_info().method_ptr);
-        inner(this, temp_score, temp_x, temp_z, temp_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_new {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::aithink::AIThink_EngageWaitResult as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::class(),
-                "New",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::NAME,
-                        "New",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn new(
-        unit: crate::app::unit::Unit,
-        inst: *mut crate::app::aithink::AIThink_EngageWaitResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::unit::Unit, *mut crate::app::aithink::AIThink_EngageWaitResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
-        inner(unit, inst, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EngageWaitResult {
-    #[doc = "`New(crate::app::unit::Unit, *mutcrate::app::aithink::AIThink_EngageWaitResult)` overload"]
-    pub fn new(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::aithink::AIThink_EngageWaitResult {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_EngageWaitResult>::uninit();
-            __AIThink_EngageWaitResult_unity2_raw::new(::core::convert::Into::into(unit), __out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EngageWaitResult {
-    #[doc = "`CompareAndSwap(u32, i32, i32, i32)` overload"]
-    pub fn compare_and_swap(
-        self,
-        temp_score: impl ::core::convert::Into<u32>,
-        temp_x: impl ::core::convert::Into<i32>,
-        temp_z: impl ::core::convert::Into<i32>,
-        temp_item_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __AIThink_EngageWaitResult_unity2_raw::compare_and_swap(
-                self,
-                ::core::convert::Into::into(temp_score),
-                ::core::convert::Into::into(temp_x),
-                ::core::convert::Into::into(temp_z),
-                ::core::convert::Into::into(temp_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_EnchantThink_ItemInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aithink::AIThink_EnchantThink_ItemInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_ItemInfo as ::unity2::ClassIdentity>::class(),
-                "CompareTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_ItemInfo as ::unity2::ClassIdentity>::NAME,
-                        "CompareTo",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn compare_to(
-        this: AIThink_EnchantThink_ItemInfo,
-        other: crate::app::aithink::AIThink_EnchantThink_ItemInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_ItemInfo, crate::app::aithink::AIThink_EnchantThink_ItemInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_compare_to::get_method_info().method_ptr);
-        inner(this, other, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EnchantThink_ItemInfo {
-    #[doc = "`CompareTo(crate::app::aithink::AIThink_EnchantThink_ItemInfo)` overload"]
-    pub fn compare_to(self, other: impl ::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_ItemInfo>) -> i32 {
-        unsafe { __AIThink_EnchantThink_ItemInfo_unity2_raw::compare_to(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_WarpRodEvaluationResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_x(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_z(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_x(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_z(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_warp_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_WarpX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_WarpX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_warp_x(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_warp_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_warp_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_WarpX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_WarpX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_warp_x(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_warp_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_warp_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_WarpZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_WarpZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_warp_z(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_warp_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_warp_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_WarpZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_WarpZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_warp_z(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_warp_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_dist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveDist",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveDist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_dist(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_dist::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_dist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveDist",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveDist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_dist(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_dist::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enemy_dist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "get_EnemyDist",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "get_EnemyDist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_enemy_dist(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_enemy_dist::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_enemy_dist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "set_EnemyDist",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "set_EnemyDist",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_enemy_dist(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_enemy_dist::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_WarpRodEvaluationResult {
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_WarpX()` overload"]
-    pub fn get_warp_x(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_warp_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_WarpX(i32)` overload"]
-    pub fn set_warp_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_warp_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_WarpZ()` overload"]
-    pub fn get_warp_z(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_warp_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_WarpZ(i32)` overload"]
-    pub fn set_warp_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_warp_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveDist()` overload"]
-    pub fn get_move_dist(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_move_dist(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveDist(i32)` overload"]
-    pub fn set_move_dist(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_move_dist(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_EnemyDist()` overload"]
-    pub fn get_enemy_dist(self) -> i32 {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_enemy_dist(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_EnemyDist(i32)` overload"]
-    pub fn set_enemy_dist(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_WarpRodEvaluationResult_unity2_raw::set_enemy_dist(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_AttackFlag_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackFlag as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackFlag as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AIThink_AttackFlag, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackFlag, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-pub trait IAIThink_AttackFlagMethods: IAIThink_AttackFlag {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AIThink_AttackFlag as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIThink_AttackFlag_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl<__T: IAIThink_AttackFlag> IAIThink_AttackFlagMethods for __T {}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_AttackFlag {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_AttackFlag),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_AttackFlagMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_EntrustAttackScoreResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_score(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_Score",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_score(this: AIThink_EntrustAttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_x(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_MoveZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_move_z(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackX",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_x(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_AttackZ",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_attack_z(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kill_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_KillRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_KillRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kill_rate(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_kill_rate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_kill_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_KillRate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_KillRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_kill_rate(this: AIThink_EntrustAttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_kill_rate::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dead_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_DeadRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_DeadRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dead_rate(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_dead_rate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dead_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "set_DeadRate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "set_DeadRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_dead_rate(this: AIThink_EntrustAttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_dead_rate::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EntrustAttackScoreResult {
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Score(u32)` overload"]
-    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_KillRate()` overload"]
-    pub fn get_kill_rate(self) -> f32 {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_kill_rate(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_KillRate(f32)` overload"]
-    pub fn set_kill_rate(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __AIThink_EntrustAttackScoreResult_unity2_raw::set_kill_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`get_DeadRate()` overload"]
-    pub fn get_dead_rate(self) -> f32 {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_dead_rate(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_DeadRate(f32)` overload"]
-    pub fn set_dead_rate(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __AIThink_EntrustAttackScoreResult_unity2_raw::set_dead_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
@@ -31598,17 +26942,161 @@ impl AIThink {
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_AttackTarget_unity2_raw {
+mod __AIThink_RcFunc_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RcFunc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RcFunc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AIThink_RcFunc,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_RcFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
+                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RcFunc as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RcFunc as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AIThink_RcFunc,
+        command: i32,
+        v0: crate::app::aivalue::AIValue,
+        v1: crate::app::aivalue::AIValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AIThink_RcFunc, i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, command, v0, v1, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+pub trait IAIThink_RcFuncMethods: IAIThink_RcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <AIThink_RcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIThink_RcFunc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
+    fn invoke(
+        self,
+        command: impl ::core::convert::Into<i32>,
+        v0: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
+        v1: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <AIThink_RcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIThink_RcFunc_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(command),
+                ::core::convert::Into::into(v0),
+                ::core::convert::Into::into(v1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl<__T: IAIThink_RcFunc> IAIThink_RcFuncMethods for __T {}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_RcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_RcFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_RcFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_AttackFlag_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_Unit",
+                <AIThink_AttackFlag as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 0,
                 param_types,
                 false,
@@ -31620,61 +27108,65 @@ mod __AIThink_AttackTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Unit",
+                        <AIThink_AttackFlag as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_unit(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+    pub unsafe fn ctor(this: AIThink_AttackFlag, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackFlag, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "set_Unit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_Unit",
-                        e
-                    )
-                },
-            }
+}
+
+#[cfg(feature = "app-aithink")]
+pub trait IAIThink_AttackFlagMethods: IAIThink_AttackFlag {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AIThink_AttackFlag as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIThink_AttackFlag_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
-    pub unsafe fn set_unit(this: AIThink_AttackTarget, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
+}
+
+#[cfg(feature = "app-aithink")]
+impl<__T: IAIThink_AttackFlag> IAIThink_AttackFlagMethods for __T {}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_AttackFlag {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_AttackFlag),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_AttackFlagMethods>::ctor(this);
+        this
     }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_MoveFlag_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_x {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_X",
+                <AIThink_MoveFlag as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 0,
                 param_types,
                 false,
@@ -31686,481 +27178,56 @@ mod __AIThink_AttackTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_X",
+                        <AIThink_MoveFlag as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_x(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
+    pub unsafe fn ctor(this: AIThink_MoveFlag, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_MoveFlag, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "set_X",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_X",
-                        e
-                    )
-                },
-            }
+}
+
+#[cfg(feature = "app-aithink")]
+pub trait IAIThink_MoveFlagMethods: IAIThink_MoveFlag {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AIThink_MoveFlag as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIThink_MoveFlag_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
-    pub unsafe fn set_x(this: AIThink_AttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackTarget, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_Z",
-                0,
-                param_types,
-                false,
+}
+
+#[cfg(feature = "app-aithink")]
+impl<__T: IAIThink_MoveFlag> IAIThink_MoveFlagMethods for __T {}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_MoveFlag {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_MoveFlag),
+                ::core::stringify!(new),
             )
         });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Z",
-                        e
-                    )
-                },
-            }
-        }
+        <Self as IAIThink_MoveFlagMethods>::ctor(this);
+        this
     }
-    pub unsafe fn get_z(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "set_Z",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_Z",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_z(this: AIThink_AttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackTarget, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_score(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_item_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_ItemIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_ItemIndex",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_item_index(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kill_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_KillRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_KillRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_kill_rate(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_kill_rate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dead_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_DeadRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_DeadRate",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_dead_rate(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_dead_rate::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_expectation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_Expectation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Expectation",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_expectation(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(__lookup_get_expectation::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_blow_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_BlowScore",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_BlowScore",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_blow_score(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_blow_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_chain_attack_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "get_ChainAttackCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_ChainAttackCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_chain_attack_count(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_chain_attack_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_EnchantThink_DMPTResult_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
@@ -32168,7 +27235,7 @@ mod __AIThink_AttackTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_EnchantThink_DMPTResult as ::unity2::ClassIdentity>::class(),
                 "Clear",
                 0,
                 param_types,
@@ -32181,7 +27248,7 @@ mod __AIThink_AttackTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EnchantThink_DMPTResult as ::unity2::ClassIdentity>::NAME,
                         "Clear",
                         e
                     )
@@ -32189,165 +27256,35 @@ mod __AIThink_AttackTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn clear(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn clear(this: AIThink_EnchantThink_DMPTResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EnchantThink_DMPTResult, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_new {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aithink::AIThink_AttackTarget as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
-                "New",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
-                        "New",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_AttackTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
-        inner(inst, __unity2_method_info)
-    }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_AttackTarget {
-    #[doc = "`New(*mutcrate::app::aithink::AIThink_AttackTarget)` overload"]
-    pub fn new() -> crate::app::aithink::AIThink_AttackTarget {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_AttackTarget>::uninit();
-            __AIThink_AttackTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_AttackTarget {
-    #[doc = "`get_Unit()` overload"]
-    pub fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    pub fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __AIThink_AttackTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_X()` overload"]
-    pub fn get_x(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_X(i32)` overload"]
-    pub fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackTarget_unity2_raw::set_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Z()` overload"]
-    pub fn get_z(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Z(i32)` overload"]
-    pub fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_AttackTarget_unity2_raw::set_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ItemIndex()` overload"]
-    pub fn get_item_index(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_item_index(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_KillRate()` overload"]
-    pub fn get_kill_rate(self) -> f32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_kill_rate(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_DeadRate()` overload"]
-    pub fn get_dead_rate(self) -> f32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_dead_rate(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Expectation()` overload"]
-    pub fn get_expectation(self) -> f32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_expectation(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_BlowScore()` overload"]
-    pub fn get_blow_score(self) -> u32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_blow_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ChainAttackCount()` overload"]
-    pub fn get_chain_attack_count(self) -> i32 {
-        unsafe { __AIThink_AttackTarget_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
-    }
-
+impl AIThink_EnchantThink_DMPTResult {
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
-        unsafe { __AIThink_AttackTarget_unity2_raw::clear(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EnchantThink_DMPTResult_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
+mod __AIThink_WarpRodEvaluationResult_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_morph_count {
+    pub mod __lookup_get_move_x {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_MorphCount",
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
                 0,
                 param_types,
                 false,
@@ -32359,28 +27296,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_MorphCount",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_morph_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_morph_count::get_method_info().method_ptr);
+    pub unsafe fn get_move_x(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_morph_count {
+    pub mod __lookup_set_move_x {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "set_MorphCount",
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
                 1,
                 param_types,
                 false,
@@ -32392,28 +27329,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_MorphCount",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_morph_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_morph_count::get_method_info().method_ptr);
+    pub unsafe fn set_move_x(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_physical_attack_count {
+    pub mod __lookup_get_move_z {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_PhysicalAttackCount",
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
                 0,
                 param_types,
                 false,
@@ -32425,28 +27362,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_PhysicalAttackCount",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_physical_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_physical_attack_count::get_method_info().method_ptr);
+    pub unsafe fn get_move_z(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_physical_attack_count {
+    pub mod __lookup_set_move_z {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "set_PhysicalAttackCount",
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
                 1,
                 param_types,
                 false,
@@ -32458,32 +27395,1273 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_PhysicalAttackCount",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_physical_attack_count(
-        this: AIThink_EnchantThink_SurroundingInfo,
-        value: i32,
+    pub unsafe fn set_move_z(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_x(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_z(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_warp_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_WarpX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_WarpX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_warp_x(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_warp_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_warp_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_WarpX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_WarpX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_warp_x(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_warp_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_warp_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_WarpZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_WarpZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_warp_z(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_warp_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_warp_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_WarpZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_WarpZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_warp_z(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_warp_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_dist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveDist",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveDist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_dist(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_dist::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_dist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveDist",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveDist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_dist(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_dist::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enemy_dist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "get_EnemyDist",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "get_EnemyDist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_enemy_dist(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_enemy_dist::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_enemy_dist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "set_EnemyDist",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "set_EnemyDist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_enemy_dist(this: AIThink_WarpRodEvaluationResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_enemy_dist::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodEvaluationResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_WarpRodEvaluationResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodEvaluationResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_WarpRodEvaluationResult {
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_WarpX()` overload"]
+    pub fn get_warp_x(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_warp_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_WarpX(i32)` overload"]
+    pub fn set_warp_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_warp_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_WarpZ()` overload"]
+    pub fn get_warp_z(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_warp_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_WarpZ(i32)` overload"]
+    pub fn set_warp_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_warp_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveDist()` overload"]
+    pub fn get_move_dist(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_move_dist(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveDist(i32)` overload"]
+    pub fn set_move_dist(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::set_move_dist(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_EnemyDist()` overload"]
+    pub fn get_enemy_dist(self) -> i32 {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::get_enemy_dist(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_EnemyDist(i32)` overload"]
+    pub fn set_enemy_dist(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_WarpRodEvaluationResult_unity2_raw::set_enemy_dist(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_WarpRodEvaluationResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_HealRodScoreImplResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_x(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_z(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_x(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_z(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "get_Heal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Heal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_heal(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_heal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "set_Heal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Heal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_heal(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_heal::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "get_Damage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Damage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_damage(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_damage::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "set_Damage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Damage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_damage(this: AIThink_HealRodScoreImplResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_damage::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreImplResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_HealRodScoreImplResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreImplResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_HealRodScoreImplResult {
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Heal()` overload"]
+    pub fn get_heal(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_heal(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Heal(i32)` overload"]
+    pub fn set_heal(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_heal(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Damage()` overload"]
+    pub fn get_damage(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::get_damage(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Damage(i32)` overload"]
+    pub fn set_damage(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::set_damage(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_HealRodScoreImplResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_OverlapSkills_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
+                "Prepare",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
+                        "Prepare",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn prepare(this: AIThink_OverlapSkills, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_OverlapSkills, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(this: AIThink_OverlapSkills, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_OverlapSkills, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_by_random {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
+                "GetByRandom",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
+                        "GetByRandom",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_by_random(this: AIThink_OverlapSkills, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(AIThink_OverlapSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_by_random::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_OverlapSkills as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_OverlapSkills as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: AIThink_OverlapSkills, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_OverlapSkills, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_OverlapSkills {
+    #[doc = "`Prepare()` overload"]
+    pub fn prepare(self) -> () {
+        unsafe { __AIThink_OverlapSkills_unity2_raw::prepare(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
+    pub fn add(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
+        unsafe { __AIThink_OverlapSkills_unity2_raw::add(self, ::core::convert::Into::into(skill), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetByRandom()` overload"]
+    pub fn get_by_random(self) -> crate::app::skilldata::SkillData {
+        unsafe { __AIThink_OverlapSkills_unity2_raw::get_by_random(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Count()` overload"]
+    pub fn get_count(self) -> i32 {
+        unsafe { __AIThink_OverlapSkills_unity2_raw::get_count(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_EnchantThink_ItemInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::aithink::AIThink_EnchantThink_ItemInfo as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_ItemInfo as ::unity2::ClassIdentity>::class(),
+                "CompareTo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_ItemInfo as ::unity2::ClassIdentity>::NAME,
+                        "CompareTo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare_to(
+        this: AIThink_EnchantThink_ItemInfo,
+        other: crate::app::aithink::AIThink_EnchantThink_ItemInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_physical_attack_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
+    ) -> i32 {
+        let inner: extern "C" fn(AIThink_EnchantThink_ItemInfo, crate::app::aithink::AIThink_EnchantThink_ItemInfo, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_compare_to::get_method_info().method_ptr);
+        inner(this, other, __unity2_method_info)
     }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EnchantThink_ItemInfo {
+    #[doc = "`CompareTo(crate::app::aithink::AIThink_EnchantThink_ItemInfo)` overload"]
+    pub fn compare_to(self, other: impl ::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_ItemInfo>) -> i32 {
+        unsafe { __AIThink_EnchantThink_ItemInfo_unity2_raw::compare_to(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_HealRodPositionResult_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_magic_attack_count {
+    pub mod __lookup_get_move_x {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_MagicAttackCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
                 0,
                 param_types,
                 false,
@@ -32495,28 +28673,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_MagicAttackCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_magic_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_magic_attack_count::get_method_info().method_ptr);
+    pub unsafe fn get_move_x(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_magic_attack_count {
+    pub mod __lookup_set_move_x {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "set_MagicAttackCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
                 1,
                 param_types,
                 false,
@@ -32528,32 +28706,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_MagicAttackCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_magic_attack_count(
-        this: AIThink_EnchantThink_SurroundingInfo,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_magic_attack_count::get_method_info().method_ptr);
+    pub unsafe fn set_move_x(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_count {
+    pub mod __lookup_get_move_z {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_AttackCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
                 0,
                 param_types,
                 false,
@@ -32565,61 +28739,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_count::get_method_info().method_ptr);
+    pub unsafe fn get_move_z(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_chain_attack_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_ChainAttackCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_ChainAttackCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_chain_attack_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_chain_attack_count::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_chain_attack_count {
+    pub mod __lookup_set_move_z {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "set_ChainAttackCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
                 1,
                 param_types,
                 false,
@@ -32631,32 +28772,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_ChainAttackCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_chain_attack_count(
-        this: AIThink_EnchantThink_SurroundingInfo,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_chain_attack_count::get_method_info().method_ptr);
+    pub unsafe fn set_move_z(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_break_count {
+    pub mod __lookup_get_attack_x {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_BreakCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
                 0,
                 param_types,
                 false,
@@ -32668,28 +28805,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_BreakCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_break_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_break_count::get_method_info().method_ptr);
+    pub unsafe fn get_attack_x(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_break_count {
+    pub mod __lookup_set_attack_x {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "set_BreakCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
                 1,
                 param_types,
                 false,
@@ -32701,28 +28838,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_BreakCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_break_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_break_count::get_method_info().method_ptr);
+    pub unsafe fn set_attack_x(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_silence_count {
+    pub mod __lookup_get_attack_z {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_SilenceCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
                 0,
                 param_types,
                 false,
@@ -32734,28 +28871,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_SilenceCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_silence_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_silence_count::get_method_info().method_ptr);
+    pub unsafe fn get_attack_z(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_silence_count {
+    pub mod __lookup_set_attack_z {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "set_SilenceCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
                 1,
                 param_types,
                 false,
@@ -32767,28 +28904,28 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_SilenceCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set_silence_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_silence_count::get_method_info().method_ptr);
+    pub unsafe fn set_attack_z(this: AIThink_HealRodPositionResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_freeze_count {
+    pub mod __lookup_clear {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "get_FreezeCount",
+                <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
                 0,
                 param_types,
                 false,
@@ -32800,61 +28937,83 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "get_FreezeCount",
+                        <AIThink_HealRodPositionResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get_freeze_count(this: AIThink_EnchantThink_SurroundingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_freeze_count::get_method_info().method_ptr);
+    pub unsafe fn clear(this: AIThink_HealRodPositionResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodPositionResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_HealRodPositionResult {
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_HealRodPositionResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_EngageWaitAdditionalAttackImage_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_freeze_count {
+    pub mod __lookup_add {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "set_FreezeCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "set_FreezeCount",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_freeze_count(this: AIThink_EnchantThink_SurroundingInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_freeze_count::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "Get",
+                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
+                "Add",
                 2,
                 param_types,
                 false,
@@ -32866,33 +29025,29 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "Get",
+                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
+                        "Add",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn get(this: AIThink_EnchantThink_SurroundingInfo, mask: u32, shift: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, u32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
-        inner(this, mask, shift, __unity2_method_info)
+    pub unsafe fn add(this: AIThink_EngageWaitAdditionalAttackImage, index: i32, v: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, u16, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, index, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set {
+    pub mod __lookup_inc_range1 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::class(),
-                "Set",
-                3,
+                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
+                "IncRange1",
+                2,
                 param_types,
                 false,
             )
@@ -32903,161 +29058,289 @@ mod __AIThink_EnchantThink_SurroundingInfo_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_EnchantThink_SurroundingInfo as ::unity2::ClassIdentity>::NAME,
-                        "Set",
+                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
+                        "IncRange1",
                         e
                     )
                 },
             }
         }
     }
-    pub unsafe fn set(
-        this: AIThink_EnchantThink_SurroundingInfo,
-        mask: u32,
-        shift: i32,
-        v: i32,
+    pub unsafe fn inc_range1(this: AIThink_EngageWaitAdditionalAttackImage, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_inc_range1::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inc_range2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
+                "IncRange2",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
+                        "IncRange2",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn inc_range2(this: AIThink_EngageWaitAdditionalAttackImage, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_inc_range2::get_method_info().method_ptr);
+        inner(this, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_range12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
+                "SetRange12",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
+                        "SetRange12",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_range12(
+        this: AIThink_EngageWaitAdditionalAttackImage,
+        x: i32,
+        z: i32,
+        range1: u8,
+        range2: u8,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(AIThink_EnchantThink_SurroundingInfo, u32, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
-        inner(this, mask, shift, v, __unity2_method_info)
+        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, u8, u8, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_range12::get_method_info().method_ptr);
+        inner(this, x, z, range1, range2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_range12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+                <u8 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
+                "GetRange12",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
+                        "GetRange12",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_range12(
+        this: AIThink_EngageWaitAdditionalAttackImage,
+        x: i32,
+        z: i32,
+        range1: *mut u8,
+        range2: *mut u8,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, i32, i32, *mut u8, *mut u8, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_range12::get_method_info().method_ptr);
+        inner(this, x, z, range1, range2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EngageWaitAdditionalAttackImage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AIThink_EngageWaitAdditionalAttackImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EngageWaitAdditionalAttackImage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_EnchantThink_SurroundingInfo {
-    #[doc = "`get_MorphCount()` overload"]
-    pub fn get_morph_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_morph_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MorphCount(i32)` overload"]
-    pub fn set_morph_count(self, value: impl ::core::convert::Into<i32>) -> () {
+pub trait IAIThink_EngageWaitAdditionalAttackImageMethods: IAIThink_EngageWaitAdditionalAttackImage {
+    #[doc = "`Add(i32, u16)` overload"]
+    fn add(self, index: impl ::core::convert::Into<i32>, v: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_morph_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`get_PhysicalAttackCount()` overload"]
-    pub fn get_physical_attack_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_physical_attack_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_PhysicalAttackCount(i32)` overload"]
-    pub fn set_physical_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_physical_attack_count(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_MagicAttackCount()` overload"]
-    pub fn get_magic_attack_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_magic_attack_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_MagicAttackCount(i32)` overload"]
-    pub fn set_magic_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_magic_attack_count(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_AttackCount()` overload"]
-    pub fn get_attack_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_attack_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_ChainAttackCount()` overload"]
-    pub fn get_chain_attack_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_ChainAttackCount(i32)` overload"]
-    pub fn set_chain_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_chain_attack_count(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_BreakCount()` overload"]
-    pub fn get_break_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_break_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_BreakCount(i32)` overload"]
-    pub fn set_break_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_break_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
-    }
-
-    #[doc = "`get_SilenceCount()` overload"]
-    pub fn get_silence_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_silence_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_SilenceCount(i32)` overload"]
-    pub fn set_silence_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_silence_count(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`get_FreezeCount()` overload"]
-    pub fn get_freeze_count(self) -> i32 {
-        unsafe { __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get_freeze_count(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_FreezeCount(i32)` overload"]
-    pub fn set_freeze_count(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set_freeze_count(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Get(u32, i32)` overload"]
-    pub fn get(self, mask: impl ::core::convert::Into<u32>, shift: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::get(
-                self,
-                ::core::convert::Into::into(mask),
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
-        }
-    }
-
-    #[doc = "`Set(u32, i32, i32)` overload"]
-    pub fn set(self, mask: impl ::core::convert::Into<u32>, shift: impl ::core::convert::Into<i32>, v: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_EnchantThink_SurroundingInfo_unity2_raw::set(
-                self,
-                ::core::convert::Into::into(mask),
-                ::core::convert::Into::into(shift),
+            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(index),
                 ::core::convert::Into::into(v),
                 ::core::option::Option::None,
             )
         }
+    }
+    #[doc = "`IncRange1(i32, i32)` overload"]
+    fn inc_range1(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::inc_range1(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IncRange2(i32, i32)` overload"]
+    fn inc_range2(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::inc_range2(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRange12(i32, i32, u8, u8)` overload"]
+    fn set_range12(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        range1: impl ::core::convert::Into<u8>,
+        range2: impl ::core::convert::Into<u8>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::set_range12(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(range1),
+                ::core::convert::Into::into(range2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRange12(i32, i32, *mutu8, *mutu8)` overload"]
+    fn get_range12(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> (u8, u8) {
+        unsafe {
+            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<u8>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<u8>::uninit();
+            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::get_range12(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AIThink_EngageWaitAdditionalAttackImage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AIThink_EngageWaitAdditionalAttackImage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl<__T: IAIThink_EngageWaitAdditionalAttackImage> IAIThink_EngageWaitAdditionalAttackImageMethods for __T {}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EngageWaitAdditionalAttackImage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_EngageWaitAdditionalAttackImage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_EngageWaitAdditionalAttackImageMethods>::ctor(this);
+        this
     }
 }
 
@@ -33801,276 +30084,8 @@ impl AIThink_ActionFunc {
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_MoveFlag_unity2_raw {
+mod __AIThink_EntrustAttackScoreResult_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_MoveFlag as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_MoveFlag as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AIThink_MoveFlag, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_MoveFlag, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-pub trait IAIThink_MoveFlagMethods: IAIThink_MoveFlag {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AIThink_MoveFlag as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIThink_MoveFlag_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl<__T: IAIThink_MoveFlag> IAIThink_MoveFlagMethods for __T {}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_MoveFlag {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_MoveFlag),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_MoveFlagMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_RescueRodTarget_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_Unit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_unit(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "set_Unit",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_Unit",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_unit(this: AIThink_RescueRodTarget, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_X",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_X",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_x(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "set_X",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_X",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_x(this: AIThink_RescueRodTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_x::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_Z",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_Z",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_z(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "set_Z",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "set_Z",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn set_z(this: AIThink_RescueRodTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_set_z::get_method_info().method_ptr);
-        inner(this, value, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_score {
@@ -34078,7 +30093,7 @@ mod __AIThink_RescueRodTarget_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "get_Score",
                 0,
                 param_types,
@@ -34091,7 +30106,7 @@ mod __AIThink_RescueRodTarget_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "get_Score",
                         e
                     )
@@ -34099,392 +30114,8 @@ mod __AIThink_RescueRodTarget_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_score(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_MoveX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_x(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_MoveZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_MoveZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_move_z(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_x {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_AttackX",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackX",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_x(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_attack_z {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "get_AttackZ",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "get_AttackZ",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_attack_z(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "Clear",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn clear(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_new {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aithink::AIThink_RescueRodTarget as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
-                "New",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
-                        "New",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
-        inner(inst, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_RescueRodTarget {
-    #[doc = "`New(*mutcrate::app::aithink::AIThink_RescueRodTarget)` overload"]
-    pub fn new() -> crate::app::aithink::AIThink_RescueRodTarget {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_RescueRodTarget>::uninit();
-            __AIThink_RescueRodTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_RescueRodTarget {
-    #[doc = "`get_Unit()` overload"]
-    pub fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    pub fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_X()` overload"]
-    pub fn get_x(self) -> i32 {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_X(i32)` overload"]
-    pub fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::set_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Z()` overload"]
-    pub fn get_z(self) -> i32 {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`set_Z(i32)` overload"]
-    pub fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::set_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_Score()` overload"]
-    pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveX()` overload"]
-    pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_MoveZ()` overload"]
-    pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackX()` overload"]
-    pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`get_AttackZ()` overload"]
-    pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
-    }
-
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __AIThink_RescueRodTarget_unity2_raw::clear(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_UpdateFlag_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UpdateFlag as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UpdateFlag as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: AIThink_UpdateFlag, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UpdateFlag, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-pub trait IAIThink_UpdateFlagMethods: IAIThink_UpdateFlag {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AIThink_UpdateFlag as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __AIThink_UpdateFlag_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-impl<__T: IAIThink_UpdateFlag> IAIThink_UpdateFlagMethods for __T {}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_UpdateFlag {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_UpdateFlag),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_UpdateFlagMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_score {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
-                "get_Score",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
-                        "get_Score",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn get_score(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> u32 =
+    pub unsafe fn get_score(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> u32 =
             ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -34495,7 +30126,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "set_Score",
                 1,
                 param_types,
@@ -34508,7 +30139,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "set_Score",
                         e
                     )
@@ -34516,8 +30147,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn set_score(this: AIThink_UncontrollAttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn set_score(this: AIThink_EntrustAttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
@@ -34528,7 +30159,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "get_MoveX",
                 0,
                 param_types,
@@ -34541,7 +30172,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "get_MoveX",
                         e
                     )
@@ -34549,8 +30180,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_move_x(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_move_x(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -34561,7 +30192,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "set_MoveX",
                 1,
                 param_types,
@@ -34574,7 +30205,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "set_MoveX",
                         e
                     )
@@ -34582,8 +30213,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn set_move_x(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn set_move_x(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
@@ -34594,7 +30225,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "get_MoveZ",
                 0,
                 param_types,
@@ -34607,7 +30238,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "get_MoveZ",
                         e
                     )
@@ -34615,8 +30246,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_move_z(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_move_z(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -34627,7 +30258,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "set_MoveZ",
                 1,
                 param_types,
@@ -34640,7 +30271,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "set_MoveZ",
                         e
                     )
@@ -34648,8 +30279,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn set_move_z(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn set_move_z(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
@@ -34660,7 +30291,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "get_AttackX",
                 0,
                 param_types,
@@ -34673,7 +30304,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "get_AttackX",
                         e
                     )
@@ -34681,8 +30312,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_attack_x(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_attack_x(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -34693,7 +30324,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "set_AttackX",
                 1,
                 param_types,
@@ -34706,7 +30337,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "set_AttackX",
                         e
                     )
@@ -34714,8 +30345,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn set_attack_x(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn set_attack_x(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
@@ -34726,7 +30357,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "get_AttackZ",
                 0,
                 param_types,
@@ -34739,7 +30370,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "get_AttackZ",
                         e
                     )
@@ -34747,8 +30378,8 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn get_attack_z(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+    pub unsafe fn get_attack_z(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
@@ -34759,7 +30390,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "set_AttackZ",
                 1,
                 param_types,
@@ -34772,7 +30403,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "set_AttackZ",
                         e
                     )
@@ -34780,9 +30411,141 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn set_attack_z(this: AIThink_UncontrollAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn set_attack_z(this: AIThink_EntrustAttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_kill_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_KillRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_KillRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_kill_rate(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_kill_rate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_kill_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_KillRate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_KillRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_kill_rate(this: AIThink_EntrustAttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_kill_rate::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dead_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_DeadRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_DeadRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dead_rate(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_dead_rate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dead_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_DeadRate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_DeadRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_dead_rate(this: AIThink_EntrustAttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_dead_rate::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -34792,7 +30555,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
         static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::class(),
+                <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::class(),
                 "Clear",
                 0,
                 param_types,
@@ -34805,7 +30568,7 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
                 ::core::result::Result::Err(e) => {
                     panic!(
                         "method lookup failed: {}::{}: {}",
-                        <AIThink_UncontrollAttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        <AIThink_EntrustAttackScoreResult as ::unity2::ClassIdentity>::NAME,
                         "Clear",
                         e
                     )
@@ -34813,76 +30576,92 @@ mod __AIThink_UncontrollAttackScoreResult_unity2_raw {
             }
         }
     }
-    pub unsafe fn clear(this: AIThink_UncontrollAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIThink_UncontrollAttackScoreResult, ::unity2::OptionalMethod) -> () =
+    pub unsafe fn clear(this: AIThink_EntrustAttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_EntrustAttackScoreResult, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_UncontrollAttackScoreResult {
+impl AIThink_EntrustAttackScoreResult {
     #[doc = "`get_Score()` overload"]
     pub fn get_score(self) -> u32 {
-        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
     }
 
     #[doc = "`set_Score(u32)` overload"]
     pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
-        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_MoveX()` overload"]
     pub fn get_move_x(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
     }
 
     #[doc = "`set_MoveX(i32)` overload"]
     pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_MoveZ()` overload"]
     pub fn get_move_z(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
     }
 
     #[doc = "`set_MoveZ(i32)` overload"]
     pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_AttackX()` overload"]
     pub fn get_attack_x(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
     }
 
     #[doc = "`set_AttackX(i32)` overload"]
     pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None)
-        }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
 
     #[doc = "`get_AttackZ()` overload"]
     pub fn get_attack_z(self) -> i32 {
-        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
     }
 
     #[doc = "`set_AttackZ(i32)` overload"]
     pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_KillRate()` overload"]
+    pub fn get_kill_rate(self) -> f32 {
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_kill_rate(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_KillRate(f32)` overload"]
+    pub fn set_kill_rate(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            __AIThink_UncontrollAttackScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+            __AIThink_EntrustAttackScoreResult_unity2_raw::set_kill_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`get_DeadRate()` overload"]
+    pub fn get_dead_rate(self) -> f32 {
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::get_dead_rate(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_DeadRate(f32)` overload"]
+    pub fn set_dead_rate(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __AIThink_EntrustAttackScoreResult_unity2_raw::set_dead_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
-        unsafe { __AIThink_UncontrollAttackScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
+        unsafe { __AIThink_EntrustAttackScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
@@ -35311,6 +31090,1049 @@ impl AIThink_RescueRodScoreResult {
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
         unsafe { __AIThink_RescueRodScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_HealRodScoreResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_Score",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_score(this: AIThink_HealRodScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_ItemIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_index(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_ItemIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item_index(this: AIThink_HealRodScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Heal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Heal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_heal(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_heal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Damage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Damage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_damage(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_damage::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_HealRodScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_HealRodScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_HealRodScoreResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_HealRodScoreResult {
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Score(u32)` overload"]
+    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_ItemIndex()` overload"]
+    pub fn get_item_index(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_item_index(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_ItemIndex(i32)` overload"]
+    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::set_item_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Heal()` overload"]
+    pub fn get_heal(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_heal(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Damage()` overload"]
+    pub fn get_damage(self) -> i32 {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::get_damage(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_HealRodScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_WarpRodTarget_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_Unit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "set_Unit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_unit(this: AIThink_WarpRodTarget, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "set_Score",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_score(this: AIThink_WarpRodTarget, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_warp_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_WarpX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_WarpX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_warp_x(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_warp_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_warp_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_WarpZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_WarpZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_warp_z(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_warp_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::aithink::AIThink_WarpRodTarget as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::class(),
+                "New",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_WarpRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "New",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_WarpRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_WarpRodTarget, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
+        inner(inst, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_WarpRodTarget {
+    #[doc = "`New(*mutcrate::app::aithink::AIThink_WarpRodTarget)` overload"]
+    pub fn new() -> crate::app::aithink::AIThink_WarpRodTarget {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_WarpRodTarget>::uninit();
+            __AIThink_WarpRodTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_WarpRodTarget {
+    #[doc = "`get_Unit()` overload"]
+    pub fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    pub fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Score(u32)` overload"]
+    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_WarpX()` overload"]
+    pub fn get_warp_x(self) -> i32 {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_warp_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_WarpZ()` overload"]
+    pub fn get_warp_z(self) -> i32 {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::get_warp_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_WarpRodTarget_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_UpdateFlag_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_UpdateFlag as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_UpdateFlag as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AIThink_UpdateFlag, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_UpdateFlag, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+pub trait IAIThink_UpdateFlagMethods: IAIThink_UpdateFlag {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AIThink_UpdateFlag as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIThink_UpdateFlag_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl<__T: IAIThink_UpdateFlag> IAIThink_UpdateFlagMethods for __T {}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_UpdateFlag {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_UpdateFlag),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_UpdateFlagMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_EnchantThink_Desc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EnchantThink_Desc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EnchantThink_Desc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AIThink_EnchantThink_Desc,
+        priority: i32,
+        calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AIThink_EnchantThink_Desc,
+            i32,
+            crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, priority, calc_unit_score, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EnchantThink_Desc {
+    #[doc = "`.ctor(i32, crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)` overload"]
+    pub fn ctor(
+        self,
+        priority: impl ::core::convert::Into<i32>,
+        calc_unit_score: impl ::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction>,
+    ) -> () {
+        unsafe {
+            __AIThink_EnchantThink_Desc_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(priority),
+                ::core::convert::Into::into(calc_unit_score),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 
@@ -37487,6 +34309,3219 @@ impl AIThink_EnchantThink {
         });
         <Self as IAIThink_EnchantThinkMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_TrimasteriesSkills_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
+                "Prepare",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
+                        "Prepare",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn prepare(this: AIThink_TrimasteriesSkills, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_TrimasteriesSkills, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add(
+        this: AIThink_TrimasteriesSkills,
+        skill: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_TrimasteriesSkills, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, skill, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
+                "get_Count",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: AIThink_TrimasteriesSkills, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mad_storm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
+                "get_MadStorm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
+                        "get_MadStorm",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_mad_storm(
+        this: AIThink_TrimasteriesSkills,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_mad_storm::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_miserable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
+                "get_Miserable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
+                        "get_Miserable",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_miserable(
+        this: AIThink_TrimasteriesSkills,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_miserable::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_falling_stars {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
+                "get_FallingStars",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
+                        "get_FallingStars",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_falling_stars(
+        this: AIThink_TrimasteriesSkills,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(AIThink_TrimasteriesSkills, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_falling_stars::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_kind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::class(),
+                "GetKind",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_TrimasteriesSkills as ::unity2::ClassIdentity>::NAME,
+                        "GetKind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_kind(
+        this: AIThink_TrimasteriesSkills,
+        skill: crate::app::skilldata::SkillData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds {
+        let inner: extern "C" fn(
+            AIThink_TrimasteriesSkills,
+            crate::app::skilldata::SkillData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds = ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
+        inner(this, skill, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_TrimasteriesSkills {
+    #[doc = "`Prepare(crate::app::unit::Unit)` overload"]
+    pub fn prepare(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::prepare(self, ::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
+    pub fn add(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
+        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::add(self, ::core::convert::Into::into(skill), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Count()` overload"]
+    pub fn get_count(self) -> i32 {
+        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MadStorm()` overload"]
+    pub fn get_mad_storm(self) -> crate::app::skilldata::SkillData {
+        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_mad_storm(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Miserable()` overload"]
+    pub fn get_miserable(self) -> crate::app::skilldata::SkillData {
+        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_miserable(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_FallingStars()` overload"]
+    pub fn get_falling_stars(self) -> crate::app::skilldata::SkillData {
+        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_falling_stars(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetKind(crate::app::skilldata::SkillData)` overload"]
+    pub fn get_kind(
+        self,
+        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
+    ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds {
+        unsafe { __AIThink_TrimasteriesSkills_unity2_raw::get_kind(self, ::core::convert::Into::into(skill), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_RescueRodTarget_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_Unit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "set_Unit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_unit(this: AIThink_RescueRodTarget, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_X",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_X",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_x(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "set_X",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_X",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_x(this: AIThink_RescueRodTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_Z",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Z",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_z(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "set_Z",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_Z",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_z(this: AIThink_RescueRodTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::aithink::AIThink_RescueRodTarget as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::class(),
+                "New",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_RescueRodTarget as ::unity2::ClassIdentity>::NAME,
+                        "New",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_RescueRodTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_RescueRodTarget, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
+        inner(inst, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_RescueRodTarget {
+    #[doc = "`New(*mutcrate::app::aithink::AIThink_RescueRodTarget)` overload"]
+    pub fn new() -> crate::app::aithink::AIThink_RescueRodTarget {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_RescueRodTarget>::uninit();
+            __AIThink_RescueRodTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_RescueRodTarget {
+    #[doc = "`get_Unit()` overload"]
+    pub fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    pub fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_X()` overload"]
+    pub fn get_x(self) -> i32 {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_X(i32)` overload"]
+    pub fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::set_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Z()` overload"]
+    pub fn get_z(self) -> i32 {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Z(i32)` overload"]
+    pub fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::set_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_RescueRodTarget_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_AttackTarget_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_Unit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "set_Unit",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_Unit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_unit(this: AIThink_AttackTarget, value: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackTarget, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_X",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_X",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_x(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "set_X",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_X",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_x(this: AIThink_AttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackTarget, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_Z",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Z",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_z(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "set_Z",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "set_Z",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_z(this: AIThink_AttackTarget, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackTarget, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_ItemIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_index(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_kill_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_KillRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_KillRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_kill_rate(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_kill_rate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dead_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_DeadRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_DeadRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dead_rate(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_dead_rate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_expectation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_Expectation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_Expectation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_expectation(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_expectation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blow_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_BlowScore",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_BlowScore",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_blow_score(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_blow_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chain_attack_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "get_ChainAttackCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "get_ChainAttackCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_chain_attack_count(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_chain_attack_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackTarget, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aithink::AIThink_AttackTarget as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackTarget as ::unity2::ClassIdentity>::class(),
+                "New",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackTarget as ::unity2::ClassIdentity>::NAME,
+                        "New",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn new(inst: *mut crate::app::aithink::AIThink_AttackTarget, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(*mut crate::app::aithink::AIThink_AttackTarget, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
+        inner(inst, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_AttackTarget {
+    #[doc = "`New(*mutcrate::app::aithink::AIThink_AttackTarget)` overload"]
+    pub fn new() -> crate::app::aithink::AIThink_AttackTarget {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_AttackTarget>::uninit();
+            __AIThink_AttackTarget_unity2_raw::new(__out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_AttackTarget {
+    #[doc = "`get_Unit()` overload"]
+    pub fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_unit(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    pub fn set_unit(self, value: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe { __AIThink_AttackTarget_unity2_raw::set_unit(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_X()` overload"]
+    pub fn get_x(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_X(i32)` overload"]
+    pub fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackTarget_unity2_raw::set_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Z()` overload"]
+    pub fn get_z(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Z(i32)` overload"]
+    pub fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackTarget_unity2_raw::set_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_ItemIndex()` overload"]
+    pub fn get_item_index(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_item_index(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_KillRate()` overload"]
+    pub fn get_kill_rate(self) -> f32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_kill_rate(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_DeadRate()` overload"]
+    pub fn get_dead_rate(self) -> f32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_dead_rate(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Expectation()` overload"]
+    pub fn get_expectation(self) -> f32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_expectation(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_BlowScore()` overload"]
+    pub fn get_blow_score(self) -> u32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_blow_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_ChainAttackCount()` overload"]
+    pub fn get_chain_attack_count(self) -> i32 {
+        unsafe { __AIThink_AttackTarget_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_AttackTarget_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_InterferenceScoreResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_Score",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_score(this: AIThink_InterferenceScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_x(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_z(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_x(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_z(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_ItemIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_index(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_ItemIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item_index(this: AIThink_InterferenceScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_InterferenceScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_InterferenceScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_InterferenceScoreResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_InterferenceScoreResult {
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Score(u32)` overload"]
+    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_ItemIndex()` overload"]
+    pub fn get_item_index(self) -> i32 {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::get_item_index(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_ItemIndex(i32)` overload"]
+    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_InterferenceScoreResult_unity2_raw::set_item_index(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_InterferenceScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_AcFunc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AcFunc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AcFunc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AIThink_AcFunc,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_AcFunc, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
+                <crate::app::aivalue::AIValue as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AcFunc as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AcFunc as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: AIThink_AcFunc,
+        command: i32,
+        v0: crate::app::aivalue::AIValue,
+        v1: crate::app::aivalue::AIValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AIThink_AcFunc, i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, command, v0, v1, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+pub trait IAIThink_AcFuncMethods: IAIThink_AcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <AIThink_AcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIThink_AcFunc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
+    fn invoke(
+        self,
+        command: impl ::core::convert::Into<i32>,
+        v0: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
+        v1: impl ::core::convert::Into<crate::app::aivalue::AIValue>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <AIThink_AcFunc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIThink_AcFunc_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(command),
+                ::core::convert::Into::into(v0),
+                ::core::convert::Into::into(v1),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl<__T: IAIThink_AcFunc> IAIThink_AcFuncMethods for __T {}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_AcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_AcFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_AcFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_EngageWaitResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_and_swap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::class(),
+                "CompareAndSwap",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::NAME,
+                        "CompareAndSwap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare_and_swap(
+        this: AIThink_EngageWaitResult,
+        temp_score: u32,
+        temp_x: i32,
+        temp_z: i32,
+        temp_item_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AIThink_EngageWaitResult, u32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_compare_and_swap::get_method_info().method_ptr);
+        inner(this, temp_score, temp_x, temp_z, temp_item_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::aithink::AIThink_EngageWaitResult as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::class(),
+                "New",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_EngageWaitResult as ::unity2::ClassIdentity>::NAME,
+                        "New",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn new(
+        unit: crate::app::unit::Unit,
+        inst: *mut crate::app::aithink::AIThink_EngageWaitResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::unit::Unit, *mut crate::app::aithink::AIThink_EngageWaitResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_new::get_method_info().method_ptr);
+        inner(unit, inst, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EngageWaitResult {
+    #[doc = "`New(crate::app::unit::Unit, *mutcrate::app::aithink::AIThink_EngageWaitResult)` overload"]
+    pub fn new(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::aithink::AIThink_EngageWaitResult {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::aithink::AIThink_EngageWaitResult>::uninit();
+            __AIThink_EngageWaitResult_unity2_raw::new(::core::convert::Into::into(unit), __out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EngageWaitResult {
+    #[doc = "`CompareAndSwap(u32, i32, i32, i32)` overload"]
+    pub fn compare_and_swap(
+        self,
+        temp_score: impl ::core::convert::Into<u32>,
+        temp_x: impl ::core::convert::Into<i32>,
+        temp_z: impl ::core::convert::Into<i32>,
+        temp_item_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __AIThink_EngageWaitResult_unity2_raw::compare_and_swap(
+                self,
+                ::core::convert::Into::into(temp_score),
+                ::core::convert::Into::into(temp_x),
+                ::core::convert::Into::into(temp_z),
+                ::core::convert::Into::into(temp_item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIThink_AttackScoreResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Score",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_score(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_Score",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Score",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_score(this: AIThink_AttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_x(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_x(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_MoveZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_z(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_move_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_MoveZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_MoveZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_z(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackX",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_x(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_x::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_x {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackX",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackX",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_x(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_x::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_AttackZ",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_attack_z(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_attack_z::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_attack_z {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_AttackZ",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_AttackZ",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_attack_z(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack_z::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_ItemIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_item_index(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_item_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_ItemIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_ItemIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_item_index(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_kill_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_KillRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_KillRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_kill_rate(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_kill_rate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_kill_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_KillRate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_KillRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_kill_rate(this: AIThink_AttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_kill_rate::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dead_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_DeadRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_DeadRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dead_rate(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_dead_rate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dead_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_DeadRate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_DeadRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_dead_rate(this: AIThink_AttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_dead_rate::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_expectation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_Expectation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Expectation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_expectation(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_expectation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_expectation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_Expectation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_Expectation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_expectation(this: AIThink_AttackScoreResult, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_expectation::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_blow_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_BlowScore",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_BlowScore",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_blow_score(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_blow_score::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_blow_score {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_BlowScore",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_BlowScore",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_blow_score(this: AIThink_AttackScoreResult, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_blow_score::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chain_attack_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "get_ChainAttackCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "get_ChainAttackCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_chain_attack_count(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_chain_attack_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chain_attack_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "set_ChainAttackCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "set_ChainAttackCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_chain_attack_count(this: AIThink_AttackScoreResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_chain_attack_count::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIThink_AttackScoreResult as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: AIThink_AttackScoreResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIThink_AttackScoreResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_AttackScoreResult {
+    #[doc = "`get_Score()` overload"]
+    pub fn get_score(self) -> u32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Score(u32)` overload"]
+    pub fn set_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveX()` overload"]
+    pub fn get_move_x(self) -> i32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_move_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    pub fn set_move_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_move_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_MoveZ()` overload"]
+    pub fn get_move_z(self) -> i32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_move_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    pub fn set_move_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_move_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackX()` overload"]
+    pub fn get_attack_x(self) -> i32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_attack_x(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    pub fn set_attack_x(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_attack_x(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_AttackZ()` overload"]
+    pub fn get_attack_z(self) -> i32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_attack_z(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    pub fn set_attack_z(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_attack_z(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_ItemIndex()` overload"]
+    pub fn get_item_index(self) -> i32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_item_index(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_ItemIndex(i32)` overload"]
+    pub fn set_item_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_item_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_KillRate()` overload"]
+    pub fn get_kill_rate(self) -> f32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_kill_rate(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_KillRate(f32)` overload"]
+    pub fn set_kill_rate(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_kill_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_DeadRate()` overload"]
+    pub fn get_dead_rate(self) -> f32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_dead_rate(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_DeadRate(f32)` overload"]
+    pub fn set_dead_rate(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_dead_rate(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_Expectation()` overload"]
+    pub fn get_expectation(self) -> f32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_expectation(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_Expectation(f32)` overload"]
+    pub fn set_expectation(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_expectation(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_BlowScore()` overload"]
+    pub fn get_blow_score(self) -> u32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_blow_score(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_BlowScore(u32)` overload"]
+    pub fn set_blow_score(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::set_blow_score(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_ChainAttackCount()` overload"]
+    pub fn get_chain_attack_count(self) -> i32 {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::get_chain_attack_count(self, ::core::option::Option::None) }
+    }
+
+    #[doc = "`set_ChainAttackCount(i32)` overload"]
+    pub fn set_chain_attack_count(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __AIThink_AttackScoreResult_unity2_raw::set_chain_attack_count(self, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __AIThink_AttackScoreResult_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 

@@ -23,14 +23,19 @@ mod __types {
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterController")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct TalkCharacterController {
+        #[offset(52)]
         #[rename(name = "m_FadeType")]
         pub m_fade_type: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController_FadeType,
+        #[offset(56)]
         #[rename(name = "m_FadeTimeTo")]
         pub m_fade_time_to: f32,
+        #[offset(60)]
         #[rename(name = "m_FadeTimer")]
         pub m_fade_timer: f32,
+        #[offset(80)]
         #[rename(name = "m_CurrentAnimeName")]
         pub m_current_anime_name: ::unity2::Il2CppString,
+        #[offset(88)]
         #[rename(name = "m_ReservedFaceAnime")]
         pub m_reserved_face_anime: ::unity2::Il2CppString,
     }

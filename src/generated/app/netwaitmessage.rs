@@ -24,6 +24,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcCloseWait")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct NetWaitMessage_ProcCloseWait {
+        #[offset(112)]
         #[rename(name = "m_IsSuccess")]
         pub m_is_success: bool,
     }

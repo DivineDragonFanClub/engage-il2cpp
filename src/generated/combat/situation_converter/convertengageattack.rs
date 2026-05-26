@@ -14,10 +14,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertEngageAttack")]
     #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
     pub struct ConvertEngageAttack {
+        #[offset(24)]
         #[rename(name = "m_IsFirstEnterApproach")]
         pub m_is_first_enter_approach: bool,
+        #[offset(25)]
         #[rename(name = "m_BeforeSpace")]
         pub m_before_space: bool,
+        #[offset(26)]
         #[rename(name = "m_IsStartGTSP")]
         pub m_is_start_gtsp: bool,
     }

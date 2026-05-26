@@ -14,6 +14,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequenceTemporarySave")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MapSequenceTemporarySave {
+        #[offset(112)]
         #[rename(name = "m_IsSuccess")]
         pub m_is_success: bool,
     }

@@ -26,6 +26,7 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "RefineShopExchangeTargetMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct RefineShopExchangeTargetMenu {
+        #[offset(200)]
         #[rename(name = "m_CloseEventHandler")]
         pub m_close_event_handler: crate::app::refineshopexchangetargetmenu::RefineShopExchangeTargetMenu_CloseEventHandler,
     }

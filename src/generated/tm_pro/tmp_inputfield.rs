@@ -28,58 +28,301 @@ mod __types {
         },
     };
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_LineType.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-    pub struct TMP_InputField_LineType {
-        pub value: i32,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField")]
+    #[parent(crate::unity_engine::ui::selectable::Selectable)]
+    pub struct TMP_InputField {
+        #[offset(248)]
+        #[rename(name = "m_SoftKeyboard")]
+        pub m_soft_keyboard: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
+        #[static_field]
+        #[rename(name = "kSeparators")]
+        pub k_separators: ::unity2::Array<u16>,
+        #[offset(256)]
+        #[rename(name = "m_RectTransform")]
+        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(264)]
+        #[rename(name = "m_TextViewport")]
+        pub m_text_viewport: crate::unity_engine::recttransform::RectTransform,
+        #[offset(272)]
+        #[rename(name = "m_TextComponentRectMask")]
+        pub m_text_component_rect_mask: crate::unity_engine::ui::rectmask2d::RectMask2D,
+        #[offset(280)]
+        #[rename(name = "m_TextViewportRectMask")]
+        pub m_text_viewport_rect_mask: crate::unity_engine::ui::rectmask2d::RectMask2D,
+        #[offset(288)]
+        #[rename(name = "m_CachedViewportRect")]
+        pub m_cached_viewport_rect: crate::unity_engine::rect::Rect,
+        #[offset(304)]
+        #[rename(name = "m_TextComponent")]
+        pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
+        #[offset(312)]
+        #[rename(name = "m_TextComponentRectTransform")]
+        pub m_text_component_rect_transform: crate::unity_engine::recttransform::RectTransform,
+        #[offset(320)]
+        #[rename(name = "m_Placeholder")]
+        pub m_placeholder: crate::unity_engine::ui::graphic::Graphic,
+        #[offset(328)]
+        #[rename(name = "m_VerticalScrollbar")]
+        pub m_vertical_scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
+        #[offset(336)]
+        #[rename(name = "m_VerticalScrollbarEventHandler")]
+        pub m_vertical_scrollbar_event_handler: crate::tm_pro::tmp_scrollbareventhandler::TMP_ScrollbarEventHandler,
+        #[offset(344)]
+        #[rename(name = "m_IsDrivenByLayoutComponents")]
+        pub m_is_driven_by_layout_components: bool,
+        #[offset(352)]
+        #[rename(name = "m_LayoutGroup")]
+        pub m_layout_group: crate::unity_engine::ui::layoutgroup::LayoutGroup,
+        #[offset(360)]
+        #[rename(name = "m_IScrollHandlerParent")]
+        pub m_i_scroll_handler_parent: crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+        #[offset(368)]
+        #[rename(name = "m_ScrollPosition")]
+        pub m_scroll_position: f32,
+        #[offset(372)]
+        #[rename(name = "m_ScrollSensitivity")]
+        pub m_scroll_sensitivity: f32,
+        #[offset(376)]
+        #[rename(name = "m_ContentType")]
+        pub m_content_type: crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType,
+        #[offset(380)]
+        #[rename(name = "m_InputType")]
+        pub m_input_type: crate::tm_pro::tmp_inputfield::TMP_InputField_InputType,
+        #[offset(384)]
+        #[rename(name = "m_AsteriskChar")]
+        pub m_asterisk_char: u16,
+        #[offset(388)]
+        #[rename(name = "m_KeyboardType")]
+        pub m_keyboard_type: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+        #[offset(392)]
+        #[rename(name = "m_LineType")]
+        pub m_line_type: crate::tm_pro::tmp_inputfield::TMP_InputField_LineType,
+        #[offset(396)]
+        #[rename(name = "m_HideMobileInput")]
+        pub m_hide_mobile_input: bool,
+        #[offset(397)]
+        #[rename(name = "m_HideSoftKeyboard")]
+        pub m_hide_soft_keyboard: bool,
+        #[offset(400)]
+        #[rename(name = "m_CharacterValidation")]
+        pub m_character_validation: crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
+        #[offset(408)]
+        #[rename(name = "m_RegexValue")]
+        pub m_regex_value: ::unity2::Il2CppString,
+        #[offset(416)]
+        #[rename(name = "m_GlobalPointSize")]
+        pub m_global_point_size: f32,
+        #[offset(420)]
+        #[rename(name = "m_CharacterLimit")]
+        pub m_character_limit: i32,
+        #[offset(424)]
+        #[rename(name = "m_OnEndEdit")]
+        pub m_on_end_edit: crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
+        #[offset(432)]
+        #[rename(name = "m_OnSubmit")]
+        pub m_on_submit: crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
+        #[offset(440)]
+        #[rename(name = "m_OnSelect")]
+        pub m_on_select: crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
+        #[offset(448)]
+        #[rename(name = "m_OnDeselect")]
+        pub m_on_deselect: crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
+        #[offset(456)]
+        #[rename(name = "m_OnTextSelection")]
+        pub m_on_text_selection: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
+        #[offset(464)]
+        #[rename(name = "m_OnEndTextSelection")]
+        pub m_on_end_text_selection: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
+        #[offset(472)]
+        #[rename(name = "m_OnValueChanged")]
+        pub m_on_value_changed: crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent,
+        #[offset(480)]
+        #[rename(name = "m_OnTouchScreenKeyboardStatusChanged")]
+        pub m_on_touch_screen_keyboard_status_changed: crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent,
+        #[offset(488)]
+        #[rename(name = "m_OnValidateInput")]
+        pub m_on_validate_input: crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput,
+        #[offset(496)]
+        #[rename(name = "m_CaretColor")]
+        pub m_caret_color: crate::unity_engine::color::Color,
+        #[offset(512)]
+        #[rename(name = "m_CustomCaretColor")]
+        pub m_custom_caret_color: bool,
+        #[offset(516)]
+        #[rename(name = "m_SelectionColor")]
+        pub m_selection_color: crate::unity_engine::color::Color,
+        #[offset(536)]
+        #[rename(name = "m_Text")]
+        pub m_text: ::unity2::Il2CppString,
+        #[offset(544)]
+        #[rename(name = "m_CaretBlinkRate")]
+        pub m_caret_blink_rate: f32,
+        #[offset(548)]
+        #[rename(name = "m_CaretWidth")]
+        pub m_caret_width: i32,
+        #[offset(552)]
+        #[rename(name = "m_ReadOnly")]
+        pub m_read_only: bool,
+        #[offset(553)]
+        #[rename(name = "m_RichText")]
+        pub m_rich_text: bool,
+        #[offset(556)]
+        #[rename(name = "m_StringPosition")]
+        pub m_string_position: i32,
+        #[offset(560)]
+        #[rename(name = "m_StringSelectPosition")]
+        pub m_string_select_position: i32,
+        #[offset(564)]
+        #[rename(name = "m_CaretPosition")]
+        pub m_caret_position: i32,
+        #[offset(568)]
+        #[rename(name = "m_CaretSelectPosition")]
+        pub m_caret_select_position: i32,
+        #[offset(576)]
+        #[rename(name = "caretRectTrans")]
+        pub caret_rect_trans: crate::unity_engine::recttransform::RectTransform,
+        #[offset(584)]
+        #[rename(name = "m_CursorVerts")]
+        pub m_cursor_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex>,
+        #[offset(592)]
+        #[rename(name = "m_CachedInputRenderer")]
+        pub m_cached_input_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+        #[offset(600)]
+        #[rename(name = "m_LastPosition")]
+        pub m_last_position: crate::unity_engine::vector2::Vector2,
+        #[offset(608)]
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::unity_engine::mesh::Mesh,
+        #[offset(616)]
+        #[rename(name = "m_AllowInput")]
+        pub m_allow_input: bool,
+        #[offset(617)]
+        #[rename(name = "m_ShouldActivateNextUpdate")]
+        pub m_should_activate_next_update: bool,
+        #[offset(618)]
+        #[rename(name = "m_UpdateDrag")]
+        pub m_update_drag: bool,
+        #[offset(619)]
+        #[rename(name = "m_DragPositionOutOfBounds")]
+        pub m_drag_position_out_of_bounds: bool,
+        #[static_field]
+        #[rename(name = "kHScrollSpeed")]
+        pub k_h_scroll_speed: f32,
+        #[static_field]
+        #[rename(name = "kVScrollSpeed")]
+        pub k_v_scroll_speed: f32,
+        #[offset(620)]
+        #[rename(name = "m_CaretVisible")]
+        pub m_caret_visible: bool,
+        #[offset(624)]
+        #[rename(name = "m_BlinkCoroutine")]
+        pub m_blink_coroutine: crate::unity_engine::coroutine::Coroutine,
+        #[offset(632)]
+        #[rename(name = "m_BlinkStartTime")]
+        pub m_blink_start_time: f32,
+        #[offset(640)]
+        #[rename(name = "m_DragCoroutine")]
+        pub m_drag_coroutine: crate::unity_engine::coroutine::Coroutine,
+        #[offset(648)]
+        #[rename(name = "m_OriginalText")]
+        pub m_original_text: ::unity2::Il2CppString,
+        #[offset(656)]
+        #[rename(name = "m_WasCanceled")]
+        pub m_was_canceled: bool,
+        #[offset(657)]
+        #[rename(name = "m_HasDoneFocusTransition")]
+        pub m_has_done_focus_transition: bool,
+        #[offset(664)]
+        #[rename(name = "m_WaitForSecondsRealtime")]
+        pub m_wait_for_seconds_realtime: crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime,
+        #[offset(672)]
+        #[rename(name = "m_PreventCallback")]
+        pub m_prevent_callback: bool,
+        #[offset(673)]
+        #[rename(name = "m_TouchKeyboardAllowsInPlaceEditing")]
+        pub m_touch_keyboard_allows_in_place_editing: bool,
+        #[offset(674)]
+        #[rename(name = "m_IsTextComponentUpdateRequired")]
+        pub m_is_text_component_update_required: bool,
+        #[offset(675)]
+        #[rename(name = "m_isLastKeyBackspace")]
+        pub m_is_last_key_backspace: bool,
+        #[offset(676)]
+        #[rename(name = "m_PointerDownClickStartTime")]
+        pub m_pointer_down_click_start_time: f32,
+        #[offset(680)]
+        #[rename(name = "m_KeyDownStartTime")]
+        pub m_key_down_start_time: f32,
+        #[offset(684)]
+        #[rename(name = "m_DoubleClickDelay")]
+        pub m_double_click_delay: f32,
+        #[static_field]
+        #[rename(name = "kEmailSpecialCharacters")]
+        pub k_email_special_characters: ::unity2::Il2CppString,
+        #[offset(688)]
+        #[rename(name = "m_IsCompositionActive")]
+        pub m_is_composition_active: bool,
+        #[offset(689)]
+        #[rename(name = "m_ShouldUpdateIMEWindowPosition")]
+        pub m_should_update_ime_window_position: bool,
+        #[offset(692)]
+        #[rename(name = "m_PreviousIMEInsertionLine")]
+        pub m_previous_ime_insertion_line: i32,
+        #[offset(696)]
+        #[rename(name = "m_GlobalFontAsset")]
+        pub m_global_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[offset(704)]
+        #[rename(name = "m_OnFocusSelectAll")]
+        pub m_on_focus_select_all: bool,
+        #[offset(705)]
+        #[rename(name = "m_isSelectAll")]
+        pub m_is_select_all: bool,
+        #[offset(706)]
+        #[rename(name = "m_ResetOnDeActivation")]
+        pub m_reset_on_de_activation: bool,
+        #[offset(707)]
+        #[rename(name = "m_SelectionStillActive")]
+        pub m_selection_still_active: bool,
+        #[offset(708)]
+        #[rename(name = "m_ReleaseSelection")]
+        pub m_release_selection: bool,
+        #[offset(712)]
+        #[rename(name = "m_PreviouslySelectedObject")]
+        pub m_previously_selected_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(720)]
+        #[rename(name = "m_RestoreOriginalTextOnEscape")]
+        pub m_restore_original_text_on_escape: bool,
+        #[offset(721)]
+        #[rename(name = "m_isRichTextEditingAllowed")]
+        pub m_is_rich_text_editing_allowed: bool,
+        #[offset(724)]
+        #[rename(name = "m_LineLimit")]
+        pub m_line_limit: i32,
+        #[offset(728)]
+        #[rename(name = "m_InputValidator")]
+        pub m_input_validator: crate::tm_pro::tmp_inputvalidator::TMP_InputValidator,
+        #[offset(736)]
+        #[rename(name = "m_isSelected")]
+        pub m_is_selected: bool,
+        #[offset(737)]
+        #[rename(name = "m_IsStringPositionDirty")]
+        pub m_is_string_position_dirty: bool,
+        #[offset(738)]
+        #[rename(name = "m_IsCaretPositionDirty")]
+        pub m_is_caret_position_dirty: bool,
+        #[offset(739)]
+        #[rename(name = "m_forceRectTransformAdjustment")]
+        pub m_force_rect_transform_adjustment: bool,
+        #[offset(744)]
+        #[rename(name = "m_ProcessingEvent")]
+        pub m_processing_event: crate::unity_engine::event::Event,
     }
 
-    impl ::unity2::ClassIdentity for TMP_InputField_LineType {
-        const NAME: &'static str = "TMP_InputField.LineType";
-        const NAMESPACE: &'static str = "TMPro";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_InputField_LineType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-        }
-    }
-
-    impl TMP_InputField_LineType {
-        pub fn single_line() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn multi_line_submit() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn multi_line_newline() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnChangeEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-    pub struct TMP_InputField_OnChangeEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SelectionEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-    pub struct TMP_InputField_SelectionEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TextSelectionEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_3 :: UnityEvent_3 < :: unity2 :: Il2CppString , i32 , i32 >)]
-    pub struct TMP_InputField_TextSelectionEvent {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnValidateInput.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnValidateInput")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TMP_InputField_OnValidateInput {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_ContentType.md"))]
     #[repr(C)]
@@ -146,6 +389,11 @@ mod __types {
             Self { value: 9 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TextSelectionEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_3 :: UnityEvent_3 < :: unity2 :: Il2CppString , i32 , i32 >)]
+    pub struct TMP_InputField_TextSelectionEvent {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_InputType.md"))]
     #[repr(C)]
@@ -247,215 +495,53 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnChangeEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+    pub struct TMP_InputField_OnChangeEvent {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_LineType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TMP_InputField_LineType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_InputField_LineType {
+        const NAME: &'static str = "TMP_InputField.LineType";
+        const NAMESPACE: &'static str = "TMPro";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_InputField_LineType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TMP_InputField_LineType {
+        pub fn single_line() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn multi_line_submit() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn multi_line_newline() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TouchScreenKeyboardEvent.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TouchScreenKeyboardEvent")]
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard_Status >)]
     pub struct TMP_InputField_TouchScreenKeyboardEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnValidateInput.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnValidateInput")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TMP_InputField_OnValidateInput {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct TMP_InputField {
-        #[rename(name = "m_SoftKeyboard")]
-        pub m_soft_keyboard: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
-        #[static_field]
-        #[rename(name = "kSeparators")]
-        pub k_separators: ::unity2::Array<u16>,
-        #[rename(name = "m_RectTransform")]
-        pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_TextViewport")]
-        pub m_text_viewport: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_TextComponentRectMask")]
-        pub m_text_component_rect_mask: crate::unity_engine::ui::rectmask2d::RectMask2D,
-        #[rename(name = "m_TextViewportRectMask")]
-        pub m_text_viewport_rect_mask: crate::unity_engine::ui::rectmask2d::RectMask2D,
-        #[rename(name = "m_CachedViewportRect")]
-        pub m_cached_viewport_rect: crate::unity_engine::rect::Rect,
-        #[rename(name = "m_TextComponent")]
-        pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
-        #[rename(name = "m_TextComponentRectTransform")]
-        pub m_text_component_rect_transform: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Placeholder")]
-        pub m_placeholder: crate::unity_engine::ui::graphic::Graphic,
-        #[rename(name = "m_VerticalScrollbar")]
-        pub m_vertical_scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
-        #[rename(name = "m_VerticalScrollbarEventHandler")]
-        pub m_vertical_scrollbar_event_handler: crate::tm_pro::tmp_scrollbareventhandler::TMP_ScrollbarEventHandler,
-        #[rename(name = "m_IsDrivenByLayoutComponents")]
-        pub m_is_driven_by_layout_components: bool,
-        #[rename(name = "m_LayoutGroup")]
-        pub m_layout_group: crate::unity_engine::ui::layoutgroup::LayoutGroup,
-        #[rename(name = "m_IScrollHandlerParent")]
-        pub m_i_scroll_handler_parent: crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
-        #[rename(name = "m_ScrollPosition")]
-        pub m_scroll_position: f32,
-        #[rename(name = "m_ScrollSensitivity")]
-        pub m_scroll_sensitivity: f32,
-        #[rename(name = "m_ContentType")]
-        pub m_content_type: crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType,
-        #[rename(name = "m_InputType")]
-        pub m_input_type: crate::tm_pro::tmp_inputfield::TMP_InputField_InputType,
-        #[rename(name = "m_AsteriskChar")]
-        pub m_asterisk_char: u16,
-        #[rename(name = "m_KeyboardType")]
-        pub m_keyboard_type: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
-        #[rename(name = "m_LineType")]
-        pub m_line_type: crate::tm_pro::tmp_inputfield::TMP_InputField_LineType,
-        #[rename(name = "m_HideMobileInput")]
-        pub m_hide_mobile_input: bool,
-        #[rename(name = "m_HideSoftKeyboard")]
-        pub m_hide_soft_keyboard: bool,
-        #[rename(name = "m_CharacterValidation")]
-        pub m_character_validation: crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
-        #[rename(name = "m_RegexValue")]
-        pub m_regex_value: ::unity2::Il2CppString,
-        #[rename(name = "m_GlobalPointSize")]
-        pub m_global_point_size: f32,
-        #[rename(name = "m_CharacterLimit")]
-        pub m_character_limit: i32,
-        #[rename(name = "m_OnEndEdit")]
-        pub m_on_end_edit: crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
-        #[rename(name = "m_OnSubmit")]
-        pub m_on_submit: crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
-        #[rename(name = "m_OnSelect")]
-        pub m_on_select: crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
-        #[rename(name = "m_OnDeselect")]
-        pub m_on_deselect: crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
-        #[rename(name = "m_OnTextSelection")]
-        pub m_on_text_selection: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
-        #[rename(name = "m_OnEndTextSelection")]
-        pub m_on_end_text_selection: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
-        #[rename(name = "m_OnValueChanged")]
-        pub m_on_value_changed: crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent,
-        #[rename(name = "m_OnTouchScreenKeyboardStatusChanged")]
-        pub m_on_touch_screen_keyboard_status_changed: crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent,
-        #[rename(name = "m_OnValidateInput")]
-        pub m_on_validate_input: crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput,
-        #[rename(name = "m_CaretColor")]
-        pub m_caret_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_CustomCaretColor")]
-        pub m_custom_caret_color: bool,
-        #[rename(name = "m_SelectionColor")]
-        pub m_selection_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_Text")]
-        pub m_text: ::unity2::Il2CppString,
-        #[rename(name = "m_CaretBlinkRate")]
-        pub m_caret_blink_rate: f32,
-        #[rename(name = "m_CaretWidth")]
-        pub m_caret_width: i32,
-        #[rename(name = "m_ReadOnly")]
-        pub m_read_only: bool,
-        #[rename(name = "m_RichText")]
-        pub m_rich_text: bool,
-        #[rename(name = "m_StringPosition")]
-        pub m_string_position: i32,
-        #[rename(name = "m_StringSelectPosition")]
-        pub m_string_select_position: i32,
-        #[rename(name = "m_CaretPosition")]
-        pub m_caret_position: i32,
-        #[rename(name = "m_CaretSelectPosition")]
-        pub m_caret_select_position: i32,
-        #[rename(name = "caretRectTrans")]
-        pub caret_rect_trans: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_CursorVerts")]
-        pub m_cursor_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex>,
-        #[rename(name = "m_CachedInputRenderer")]
-        pub m_cached_input_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
-        #[rename(name = "m_LastPosition")]
-        pub m_last_position: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Mesh")]
-        pub m_mesh: crate::unity_engine::mesh::Mesh,
-        #[rename(name = "m_AllowInput")]
-        pub m_allow_input: bool,
-        #[rename(name = "m_ShouldActivateNextUpdate")]
-        pub m_should_activate_next_update: bool,
-        #[rename(name = "m_UpdateDrag")]
-        pub m_update_drag: bool,
-        #[rename(name = "m_DragPositionOutOfBounds")]
-        pub m_drag_position_out_of_bounds: bool,
-        #[static_field]
-        #[rename(name = "kHScrollSpeed")]
-        pub k_h_scroll_speed: f32,
-        #[static_field]
-        #[rename(name = "kVScrollSpeed")]
-        pub k_v_scroll_speed: f32,
-        #[rename(name = "m_CaretVisible")]
-        pub m_caret_visible: bool,
-        #[rename(name = "m_BlinkCoroutine")]
-        pub m_blink_coroutine: crate::unity_engine::coroutine::Coroutine,
-        #[rename(name = "m_BlinkStartTime")]
-        pub m_blink_start_time: f32,
-        #[rename(name = "m_DragCoroutine")]
-        pub m_drag_coroutine: crate::unity_engine::coroutine::Coroutine,
-        #[rename(name = "m_OriginalText")]
-        pub m_original_text: ::unity2::Il2CppString,
-        #[rename(name = "m_WasCanceled")]
-        pub m_was_canceled: bool,
-        #[rename(name = "m_HasDoneFocusTransition")]
-        pub m_has_done_focus_transition: bool,
-        #[rename(name = "m_WaitForSecondsRealtime")]
-        pub m_wait_for_seconds_realtime: crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime,
-        #[rename(name = "m_PreventCallback")]
-        pub m_prevent_callback: bool,
-        #[rename(name = "m_TouchKeyboardAllowsInPlaceEditing")]
-        pub m_touch_keyboard_allows_in_place_editing: bool,
-        #[rename(name = "m_IsTextComponentUpdateRequired")]
-        pub m_is_text_component_update_required: bool,
-        #[rename(name = "m_isLastKeyBackspace")]
-        pub m_is_last_key_backspace: bool,
-        #[rename(name = "m_PointerDownClickStartTime")]
-        pub m_pointer_down_click_start_time: f32,
-        #[rename(name = "m_KeyDownStartTime")]
-        pub m_key_down_start_time: f32,
-        #[rename(name = "m_DoubleClickDelay")]
-        pub m_double_click_delay: f32,
-        #[static_field]
-        #[rename(name = "kEmailSpecialCharacters")]
-        pub k_email_special_characters: ::unity2::Il2CppString,
-        #[rename(name = "m_IsCompositionActive")]
-        pub m_is_composition_active: bool,
-        #[rename(name = "m_ShouldUpdateIMEWindowPosition")]
-        pub m_should_update_ime_window_position: bool,
-        #[rename(name = "m_PreviousIMEInsertionLine")]
-        pub m_previous_ime_insertion_line: i32,
-        #[rename(name = "m_GlobalFontAsset")]
-        pub m_global_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_OnFocusSelectAll")]
-        pub m_on_focus_select_all: bool,
-        #[rename(name = "m_isSelectAll")]
-        pub m_is_select_all: bool,
-        #[rename(name = "m_ResetOnDeActivation")]
-        pub m_reset_on_de_activation: bool,
-        #[rename(name = "m_SelectionStillActive")]
-        pub m_selection_still_active: bool,
-        #[rename(name = "m_ReleaseSelection")]
-        pub m_release_selection: bool,
-        #[rename(name = "m_PreviouslySelectedObject")]
-        pub m_previously_selected_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RestoreOriginalTextOnEscape")]
-        pub m_restore_original_text_on_escape: bool,
-        #[rename(name = "m_isRichTextEditingAllowed")]
-        pub m_is_rich_text_editing_allowed: bool,
-        #[rename(name = "m_LineLimit")]
-        pub m_line_limit: i32,
-        #[rename(name = "m_InputValidator")]
-        pub m_input_validator: crate::tm_pro::tmp_inputvalidator::TMP_InputValidator,
-        #[rename(name = "m_isSelected")]
-        pub m_is_selected: bool,
-        #[rename(name = "m_IsStringPositionDirty")]
-        pub m_is_string_position_dirty: bool,
-        #[rename(name = "m_IsCaretPositionDirty")]
-        pub m_is_caret_position_dirty: bool,
-        #[rename(name = "m_forceRectTransformAdjustment")]
-        pub m_force_rect_transform_adjustment: bool,
-        #[rename(name = "m_ProcessingEvent")]
-        pub m_processing_event: crate::unity_engine::event::Event,
-    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_EditState.md"))]
     #[repr(C)]
@@ -495,442 +581,15 @@ mod __types {
     #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SubmitEvent")]
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
     pub struct TMP_InputField_SubmitEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SelectionEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+    pub struct TMP_InputField_SelectionEvent {}
 }
 
 #[cfg(feature = "tm_pro-tmp_inputfield-types")]
 pub use __types::*;
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_OnChangeEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_InputField_OnChangeEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_InputField_OnChangeEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_OnChangeEventMethods: ITMP_InputField_OnChangeEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_InputField_OnChangeEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_InputField_OnChangeEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_OnChangeEvent> ITMP_InputField_OnChangeEventMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_OnChangeEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_OnChangeEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_OnChangeEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_SelectionEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_InputField_SelectionEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_InputField_SelectionEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_SelectionEventMethods: ITMP_InputField_SelectionEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_InputField_SelectionEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_InputField_SelectionEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_SelectionEvent> ITMP_InputField_SelectionEventMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_SelectionEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_SelectionEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_SelectionEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_TextSelectionEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_InputField_TextSelectionEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_InputField_TextSelectionEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_TextSelectionEventMethods: ITMP_InputField_TextSelectionEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_InputField_TextSelectionEvent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_TextSelectionEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_TextSelectionEvent> ITMP_InputField_TextSelectionEventMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_TextSelectionEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_TextSelectionEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_TextSelectionEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(this: TMP_InputField_TouchScreenKeyboardEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_InputField_TouchScreenKeyboardEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_TouchScreenKeyboardEventMethods: ITMP_InputField_TouchScreenKeyboardEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_TouchScreenKeyboardEvent> ITMP_InputField_TouchScreenKeyboardEventMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_TouchScreenKeyboardEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_TouchScreenKeyboardEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_TouchScreenKeyboardEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_OnValidateInput_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
-                        ".ctor",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_InputField_OnValidateInput,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TMP_InputField_OnValidateInput, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => {
-                    panic!(
-                        "method lookup failed: {}::{}: {}",
-                        <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
-                        "Invoke",
-                        e
-                    )
-                },
-            }
-        }
-    }
-    pub unsafe fn invoke(
-        this: TMP_InputField_OnValidateInput,
-        text: ::unity2::Il2CppString,
-        char_index: i32,
-        added_char: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(TMP_InputField_OnValidateInput, ::unity2::Il2CppString, i32, u16, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
-        inner(this, text, char_index, added_char, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_OnValidateInputMethods: ITMP_InputField_OnValidateInput {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_InputField_OnValidateInput_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(::unity2::Il2CppString, i32, u16)` overload"]
-    fn invoke(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        char_index: impl ::core::convert::Into<i32>,
-        added_char: impl ::core::convert::Into<u16>,
-    ) -> u16 {
-        unsafe {
-            let __receiver =
-                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
-            __TMP_InputField_OnValidateInput_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::convert::Into::into(char_index),
-                ::core::convert::Into::into(added_char),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_OnValidateInput> ITMP_InputField_OnValidateInputMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_OnValidateInput {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_OnValidateInput),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_OnValidateInputMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[doc(hidden)]
@@ -10564,6 +10223,367 @@ impl TMP_InputField {
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_OnValidateInput_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_InputField_OnValidateInput,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_InputField_OnValidateInput, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: TMP_InputField_OnValidateInput,
+        text: ::unity2::Il2CppString,
+        char_index: i32,
+        added_char: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(TMP_InputField_OnValidateInput, ::unity2::Il2CppString, i32, u16, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, text, char_index, added_char, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_OnValidateInputMethods: ITMP_InputField_OnValidateInput {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_OnValidateInput_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(::unity2::Il2CppString, i32, u16)` overload"]
+    fn invoke(
+        self,
+        text: impl ::core::convert::Into<::unity2::Il2CppString>,
+        char_index: impl ::core::convert::Into<i32>,
+        added_char: impl ::core::convert::Into<u16>,
+    ) -> u16 {
+        unsafe {
+            let __receiver =
+                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_OnValidateInput_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(text),
+                ::core::convert::Into::into(char_index),
+                ::core::convert::Into::into(added_char),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_OnValidateInput> ITMP_InputField_OnValidateInputMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_OnValidateInput {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_OnValidateInput),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_OnValidateInputMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_TextSelectionEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_InputField_TextSelectionEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_TextSelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_TextSelectionEventMethods: ITMP_InputField_TextSelectionEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_InputField_TextSelectionEvent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_InputField_TextSelectionEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_TextSelectionEvent> ITMP_InputField_TextSelectionEventMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_TextSelectionEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_TextSelectionEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_TextSelectionEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_OnChangeEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_InputField_OnChangeEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_OnChangeEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_OnChangeEventMethods: ITMP_InputField_OnChangeEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_InputField_OnChangeEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_OnChangeEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_OnChangeEvent> ITMP_InputField_OnChangeEventMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_OnChangeEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_OnChangeEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_OnChangeEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_InputField_TouchScreenKeyboardEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_TouchScreenKeyboardEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_TouchScreenKeyboardEventMethods: ITMP_InputField_TouchScreenKeyboardEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_TouchScreenKeyboardEvent> ITMP_InputField_TouchScreenKeyboardEventMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_TouchScreenKeyboardEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_TouchScreenKeyboardEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_TouchScreenKeyboardEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __TMP_InputField_SubmitEvent_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -10628,6 +10648,77 @@ impl TMP_InputField_SubmitEvent {
             )
         });
         <Self as ITMP_InputField_SubmitEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_SelectionEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_InputField_SelectionEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_SelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_SelectionEventMethods: ITMP_InputField_SelectionEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_InputField_SelectionEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_SelectionEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_SelectionEvent> ITMP_InputField_SelectionEventMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_SelectionEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_SelectionEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_SelectionEventMethods>::ctor(this);
         this
     }
 }

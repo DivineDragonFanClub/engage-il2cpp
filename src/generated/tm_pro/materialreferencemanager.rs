@@ -14,15 +14,19 @@ mod __types {
         #[static_field]
         #[rename(name = "s_Instance")]
         pub s_instance: crate::tm_pro::materialreferencemanager::MaterialReferenceManager,
+        #[offset(16)]
         #[rename(name = "m_FontMaterialReferenceLookup")]
         pub m_font_material_reference_lookup:
             crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::unity_engine::material::Material>,
+        #[offset(24)]
         #[rename(name = "m_FontAssetReferenceLookup")]
         pub m_font_asset_reference_lookup:
             crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+        #[offset(32)]
         #[rename(name = "m_SpriteAssetReferenceLookup")]
         pub m_sprite_asset_reference_lookup:
             crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
+        #[offset(40)]
         #[rename(name = "m_ColorGradientReferenceLookup")]
         pub m_color_gradient_reference_lookup:
             crate::system::collections::generic::dictionary_2::Dictionary_2<i32, crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,

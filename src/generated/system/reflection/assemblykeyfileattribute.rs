@@ -9,6 +9,7 @@ mod __types {
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblykeyfileattribute/AssemblyKeyFileAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyKeyFileAttribute")]
     pub struct AssemblyKeyFileAttribute {
+        #[offset(16)]
         #[rename(name = "m_keyFile")]
         pub m_key_file: ::unity2::Il2CppString,
     }

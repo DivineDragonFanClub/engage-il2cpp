@@ -19,10 +19,13 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "CharacterSignal")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CharacterSignal {
+        #[offset(24)]
         #[rename(name = "cp_cached")]
         pub cp_cached: bool,
+        #[offset(32)]
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[offset(40)]
         #[rename(name = "hitPassed")]
         pub hit_passed: bool,
     }

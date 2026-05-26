@@ -139,28 +139,40 @@ mod __types {
     #[::unity2::class(namespace = "Combat", name = "Phase")]
     #[parent(crate::system::object::Object)]
     pub struct Phase {
+        #[offset(32)]
         #[rename(name = "kind")]
         pub kind: crate::combat::phase::Phase_Kind,
+        #[offset(36)]
         #[rename(name = "hitType")]
         pub hit_type: crate::combat::phase::Phase_HitType,
+        #[offset(40)]
         #[rename(name = "detail")]
         pub detail: crate::combat::phase::Phase_Detail,
+        #[offset(44)]
         #[rename(name = "AttackSide")]
         pub attack_side: i32,
+        #[offset(48)]
         #[rename(name = "AttackHash")]
         pub attack_hash: i32,
+        #[offset(52)]
         #[rename(name = "DamageHash")]
         pub damage_hash: i32,
+        #[offset(56)]
         #[rename(name = "Skills")]
         pub skills: crate::combat::skillstack::SkillStack,
+        #[offset(64)]
         #[rename(name = "Decorators")]
         pub decorators: crate::combat::decorators::Decorators,
+        #[offset(72)]
         #[rename(name = "MaxHP")]
         pub max_hp: ::unity2::Array<i32>,
+        #[offset(80)]
         #[rename(name = "HP")]
         pub hp: ::unity2::Array<i32>,
+        #[offset(88)]
         #[rename(name = "Damage")]
         pub damage: ::unity2::Array<i32>,
+        #[offset(96)]
         #[rename(name = "EngageCount")]
         pub engage_count: ::unity2::Array<i32>,
     }

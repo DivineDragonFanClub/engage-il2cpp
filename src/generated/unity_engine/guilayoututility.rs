@@ -31,8 +31,10 @@ mod __types {
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutUtility.LayoutCache")]
     #[parent(crate::system::object::Object)]
     pub struct GUILayoutUtility_LayoutCache {
+        #[offset(24)]
         #[rename(name = "topLevel")]
         pub top_level: crate::unity_engine::guilayoutgroup::GUILayoutGroup,
+        #[offset(40)]
         #[rename(name = "windows")]
         pub windows: crate::unity_engine::guilayoutgroup::GUILayoutGroup,
     }

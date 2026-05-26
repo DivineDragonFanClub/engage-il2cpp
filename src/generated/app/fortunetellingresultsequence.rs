@@ -17,32 +17,6 @@ mod __types {
         },
     };
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "FortuneTellingResultSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: fortunetellingresultsequence :: FortuneTellingResultSequence >)]
-    pub struct FortuneTellingResultSequence {
-        #[static_field]
-        #[rename(name = "ResPaths")]
-        pub res_paths: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_RootAnim")]
-        pub m_root_anim: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_CardAnim")]
-        pub m_card_anim: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_ObjCharaImage")]
-        pub m_obj_chara_image: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ObjUnitName")]
-        pub m_obj_unit_name: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ObjResultMessage")]
-        pub m_obj_result_message: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Window")]
-        pub m_window: crate::app::fortunetellingresultmenu::FortuneTellingResultMenu,
-        #[static_field]
-        #[rename(name = "m_unit")]
-        pub m_unit: crate::app::unit::Unit,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_ResId.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
@@ -83,6 +57,39 @@ mod __types {
         pub fn count() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "FortuneTellingResultSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: fortunetellingresultsequence :: FortuneTellingResultSequence >)]
+    pub struct FortuneTellingResultSequence {
+        #[static_field]
+        #[rename(name = "ResPaths")]
+        pub res_paths: ::unity2::Array<::unity2::Il2CppString>,
+        #[offset(120)]
+        #[rename(name = "m_RootAnim")]
+        pub m_root_anim: crate::unity_engine::animator::Animator,
+        #[offset(128)]
+        #[rename(name = "m_CardAnim")]
+        pub m_card_anim: crate::unity_engine::animator::Animator,
+        #[offset(136)]
+        #[rename(name = "m_ObjCharaImage")]
+        pub m_obj_chara_image: crate::unity_engine::gameobject::GameObject,
+        #[offset(144)]
+        #[rename(name = "m_ObjUnitName")]
+        pub m_obj_unit_name: crate::unity_engine::gameobject::GameObject,
+        #[offset(152)]
+        #[rename(name = "m_ObjResultMessage")]
+        pub m_obj_result_message: crate::unity_engine::gameobject::GameObject,
+        #[offset(160)]
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[offset(168)]
+        #[rename(name = "m_Window")]
+        pub m_window: crate::app::fortunetellingresultmenu::FortuneTellingResultMenu,
+        #[static_field]
+        #[rename(name = "m_unit")]
+        pub m_unit: crate::app::unit::Unit,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_Label2.md"))]

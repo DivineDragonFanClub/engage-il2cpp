@@ -22,18 +22,25 @@ mod __types {
         #[static_field]
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
+        #[offset(24)]
         #[rename(name = "m_MenuContent")]
         pub m_menu_content: crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent,
+        #[offset(32)]
         #[rename(name = "m_LevelSetter")]
         pub m_level_setter: crate::app::arenabondlevelselectsetter::ArenaBondLevelSelectSetter,
+        #[offset(40)]
         #[rename(name = "m_BondSetter")]
         pub m_bond_setter: crate::app::menubondsetter::MenuBondSetter,
+        #[offset(48)]
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler: crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
+        #[offset(56)]
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu,
+        #[offset(64)]
         #[rename(name = "m_SelectUnit")]
         pub m_select_unit: crate::app::unit::Unit,
+        #[offset(72)]
         #[rename(name = "m_SelectGodIndex")]
         pub m_select_god_index: i32,
     }
